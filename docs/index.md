@@ -11,9 +11,9 @@ bibliography: [book.bib, packages.bib]
 csl: include/apa.csl
 link-citations: yes
 description: | # edit
-  Bu notlar OLC731 dersi için hazırlanmıştır.
-url: https://github.com/atalay-k/OLC731 # edit
-github-repo: atalay-k/OLC731# edit
+  Bu notlar OLC733 dersi için hazırlanmıştır.
+url: https://github.com/atalay-k/OLC733 # edit
+github-repo: atalay-k/OLC733# edit
 cover-image: images/logos/logo.png # replace with your logo
 apple-touch-icon: images/logos/apple-touch-icon.png # replace with your logo
 apple-touch-icon-size: 180
@@ -37,7 +37,19 @@ Bu dersin amacı, R yazılımını kullanarak veri üzerinde istenilen çok değ
 
 Tez ve makale çalışmalarında öğrencilerimizin analizlerini R yazılımı ile hiçbir paket programa ihtiyaç duymadan kendi başlarına yapmalarını sağlamaktır.
 
-(İzlence) [**İzlence**](Izlence.html).
+Ders İçeriği: 
+
+- Varsayımlar  
+- Çoklu Regresyon  
+- Basit Doğrusal Regresyon  
+- Çoklu Regresyon 
+- Yol Analizi- I  
+- Açımlayıcı Faktör Analizi  
+- Doğrulayıcı Faktör Analizi  
+- Progralamaya Giriş  
+- Klasik Test Kuramı  
+- Madde Tepki Kuramı  
+- Veri Üretimi  
 
 ## Eğitmen {.unnumbered}
 
@@ -59,29 +71,8 @@ Tez ve makale çalışmalarında öğrencilerimizin analizlerini R yazılımı i
 
 ## Kaynaklar {.unnumbered}
 
-* Bu ders materyallerine ek olarak, R öğrenmek için bir dizi mükemmel kaynak vardır:
+- Kline,R. B. (2019). Yapısal Eşitlik Modellemesinin İlkeleri ve Uygulaması(4. Baskı). (S. Şen, Çev.) Ankara: Nobel Yayınevi.
 
-- 🔗 [R kurulumu ile ilgili bilgiler içerir. ](https://psyteachr.github.io/data-skills-v2/installing-r.html)
+- Şen, S. (2020). Mplus ile Yapısal Eşitlik Modellemesi Uygulamaları (2020).Nobel Yayınevi.
 
-- 🔗 [R studio ve güncellemeler ile ilgili bilgiler içerir. ](https://psyteachr.github.io/analysis-v2/updating-r-rstudio-and-packages.html)
-
--   * 🔗[Alana ozgu paketlerini inceleyebilirsiniz ](https://cran.r* project.org/web/views/Psychometrics.html)
-
-
--  🔗 📖[R Cookbook](http://www.cookbook-r.com/)
-
--  🔗📖[Veri Bilimi için R](https://r4ds.had.co.nz/)
-
-* 🔗 👨 [Hadley Wickham](https://hadley.nz/)
-
-
--  🔗[StackOverflow soru-cevap platfromu](https://stackoverflow.com/)
-
--  Twitter'da [#rstats](https://twitter.com/search?f=tweets&q=%23rstats&src=typd) hashtag'ini arayın veya kullanın. 
-  
-  -  e-posta gruplarındaki e-postalara `RSiteSearch ("sample.int")` "
-
-* 🔗[R ile ilgili farklı ücretsiz kaynakları bulabilirsiniz (kitaplar, videolar, websiteleri). Bu kaynakların bazıları başlangıç seviyesinde.](https://www.learnr4free.com/tr/index.html){.uri}
-* 🔗[Referans kartları](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
-
-* 🔗[Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+- Wolf, E. J., Harrington, K. M., Clark, S. L., & Miller, M. W. (2013). Sample Size Requirements for Structural Equation Models: An Evaluation of Power, Bias, and Solution Propriety. Educational and Psychological Measurement, 73(6), 913–934. https://doi.org/10.1177/0013164413495237

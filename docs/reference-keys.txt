@@ -1,1 +1,4 @@
-inclusion
+tab:unnamed-chunk-5
+tab:unnamed-chunk-6
+tab:unnamed-chunk-7
+varsayımlar

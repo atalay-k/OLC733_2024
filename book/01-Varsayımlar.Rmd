@@ -1,0 +1,65 @@
+# Varsayımlar
+
+-   Varsayımlar incelenirken ilk olarka yanlış girilmiş bir değer olup olmadığına bakılmalıdır.
+
+-   Bu derste `r emo::ji("link")` [SCREEN.sav](data\SCREEN.sav) adlı veri seti kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465 kadının 6 değişkene ilişkin bilgileri vardır. Değişkenlerden timedrs, attdrug, atthouse ve income değişkenleri sürekli, mstatus ve race değişkenleriyse iki kategorili değişkenlerdir.
+
+```{r}
+
+library(haven)
+screen <- read_sav("data/SCREEN.sav")
+head(screen)
+```
+
+-   Veri setindeki maksimum ve minumum değerleri belirlenmiştir.
+
+```{r}
+
+summary(screen)
+```
+
+-   Elde edilen değerlerin makul olduğu söylenebilir. Ancak bunu elde etmek için başka yollar da bulunmaktadır.
+
+-   `psych` paketi ile inceleme daha ayrıntılı yapılabilir.
+
+```{r}
+library(psych)
+describe(screen[,-1])
+```
+
+`r emo::ji("link")` [personality-project sayfasını](https://personality-project.org/r/psych/) daha fazla örnek için inceleyebilirsiniz.
+
+-   `gtsummary` paketi ile inceleme
+
+```{r}
+library(gtsummary)
+screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
+"{min}, {max}"),missing ="always")
+```
+
+-   `r emo::ji("link")`[Presentation-Ready Summary Tables] withgtsummary(<https://education.rstudio.com/blog/2020/07/gtsummary/>)
+
+-   `vtable` paketi ile inceleme
+
+```{r}
+library(vtable)
+sumtable(screen, summ=c('notNA(x)','min(x)','max(x)'))
+```
+
+-   `r emo::ji("link")` [vtable paketi için örnekler](https://nickch-k.github.io/vtable/index.html)
+
+-   vtablepaketi ile inceleme
+
+```{r}
+st(screen, summ = c('notNA(x)','min(x)','max(x)'),summ.names = c('Frekans'
+,'Minimum','Maximum'))
+```
+
+-   `kable` paketi ile `psych` paketi çıktılarını düzenleme
+
+```{r}
+ozet <- describe(screen[,-1])
+kable(ozet,format='markdown',caption="Betimsel İstatistikler",digits=2)
+```
+
+-   `r emo::ji("link")` [rmarkdown-cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
