@@ -67,8 +67,19 @@
 <span class="header-section-number">1</span> Varsayımlar<a class="anchor" aria-label="anchor" href="#varsay%C4%B1mlar"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
-<li><p>Varsayımlar incelenirken ilk olarka yanlış girilmiş bir değer olup olmadığına bakılmalıdır.</p></li>
-<li><p>Bu derste 🔗 <a href="data%5CSCREEN.sav">SCREEN.sav</a> adlı veri seti kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465 kadının 6 değişkene ilişkin bilgileri vardır. Değişkenlerden timedrs, attdrug, atthouse ve income değişkenleri sürekli, mstatus ve race değişkenleriyse iki kategorili değişkenlerdir.</p></li>
+<li><p>Varsayımlar incelenirken ilk olarka yanlış girilmiş bir değer olup
+olmadığına bakılmalıdır.</p></li>
+<li><p>Bu derste 🔗 <a href="data%5CSCREEN.sav">SCREEN.sav</a> adlı veri seti
+kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465 kadının 6 değişkene
+ilişkin bilgileri bulunmaktadır. Değişkenlerden timedrs, attdrug, atthouse ve
+income değişkenleri sürekli, mstatus ve race değişkenleriyse iki kategorili değişkenlerdir.</p></li>
+<li><p>Bu veri seti <strong>Tabachnick, B. G., &amp; Fidell, L. S. (2012). Using Multivariate
+Statistics (4rd ed.). New York: Harper Collins.</strong> kitabının 4. bölümünde
+kullanılmaktadır.</p></li>
+<li><p>Veri incelemede birden fazla paket kullanılabilir. En temel fonksiyon <code>base</code>
+paketin <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> fonksiyonudur. <code>psych</code> paketinde <code>describe</code>;
+<code>gtsummary</code> paketinde <code>describe</code>;<code>vtable</code> paketinde <code>sumtable</code>
+fonksiyonu da aynı amaçla kullanılabilir.</p></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://haven.tidyverse.org">haven</a></span><span class="op">)</span></span>
@@ -165,8 +176,7 @@
 ##  Max.   :10.00   Max.   :2.000   Max.   :2.000  
 ##  NA's   :26</code></pre>
 <ul>
-<li><p>Elde edilen değerlerin makul olduğu söylenebilir. Ancak bunu elde etmek için başka yollar da bulunmaktadır.</p></li>
-<li><p><code>psych</code> paketi ile inceleme daha ayrıntılı yapılabilir.</p></li>
+<li>Elde edilen değerlerin makul olduğu söylenebilir. Ancak bunu elde etmek için başka yollar da bulunmaktadır. <code>psych</code> paketi ile inceleme daha ayrıntılı yapılabilir.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span></span></code></pre></div>
@@ -320,23 +330,23 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary">gtsummary</a></span><span class="op">)</span></span>
 <span><span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a></span><span class="op">(</span>statistic <span class="op">=</span> <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/select_helpers.html">all_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span><span class="st">"{min}, {max}"</span><span class="op">)</span>,missing <span class="op">=</span><span class="st">"always"</span><span class="op">)</span></span></code></pre></div>
-<div id="gurngbspqd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gurngbspqd table {
+<div id="sokxbfeeug" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sokxbfeeug table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gurngbspqd thead, #gurngbspqd tbody, #gurngbspqd tfoot, #gurngbspqd tr, #gurngbspqd td, #gurngbspqd th {
+#sokxbfeeug thead, #sokxbfeeug tbody, #sokxbfeeug tfoot, #sokxbfeeug tr, #sokxbfeeug td, #sokxbfeeug th {
   border-style: none;
 }
 
-#gurngbspqd p {
+#sokxbfeeug p {
   margin: 0;
   padding: 0;
 }
 
-#gurngbspqd .gt_table {
+#sokxbfeeug .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -362,12 +372,12 @@
   border-left-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_caption {
+#sokxbfeeug .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gurngbspqd .gt_title {
+#sokxbfeeug .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -379,7 +389,7 @@
   border-bottom-width: 0;
 }
 
-#gurngbspqd .gt_subtitle {
+#sokxbfeeug .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -391,7 +401,7 @@
   border-top-width: 0;
 }
 
-#gurngbspqd .gt_heading {
+#sokxbfeeug .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -403,13 +413,13 @@
   border-right-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_bottom_border {
+#sokxbfeeug .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_col_headings {
+#sokxbfeeug .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -424,7 +434,7 @@
   border-right-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_col_heading {
+#sokxbfeeug .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -444,7 +454,7 @@
   overflow-x: hidden;
 }
 
-#gurngbspqd .gt_column_spanner_outer {
+#sokxbfeeug .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -456,15 +466,15 @@
   padding-right: 4px;
 }
 
-#gurngbspqd .gt_column_spanner_outer:first-child {
+#sokxbfeeug .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gurngbspqd .gt_column_spanner_outer:last-child {
+#sokxbfeeug .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gurngbspqd .gt_column_spanner {
+#sokxbfeeug .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -476,11 +486,11 @@
   width: 100%;
 }
 
-#gurngbspqd .gt_spanner_row {
+#sokxbfeeug .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gurngbspqd .gt_group_heading {
+#sokxbfeeug .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -506,7 +516,7 @@
   text-align: left;
 }
 
-#gurngbspqd .gt_empty_group_heading {
+#sokxbfeeug .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -521,15 +531,15 @@
   vertical-align: middle;
 }
 
-#gurngbspqd .gt_from_md > :first-child {
+#sokxbfeeug .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gurngbspqd .gt_from_md > :last-child {
+#sokxbfeeug .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gurngbspqd .gt_row {
+#sokxbfeeug .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -548,7 +558,7 @@
   overflow-x: hidden;
 }
 
-#gurngbspqd .gt_stub {
+#sokxbfeeug .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -561,7 +571,7 @@
   padding-right: 5px;
 }
 
-#gurngbspqd .gt_stub_row_group {
+#sokxbfeeug .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -575,15 +585,15 @@
   vertical-align: top;
 }
 
-#gurngbspqd .gt_row_group_first td {
+#sokxbfeeug .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gurngbspqd .gt_row_group_first th {
+#sokxbfeeug .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gurngbspqd .gt_summary_row {
+#sokxbfeeug .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -593,16 +603,16 @@
   padding-right: 5px;
 }
 
-#gurngbspqd .gt_first_summary_row {
+#sokxbfeeug .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_first_summary_row.thick {
+#sokxbfeeug .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gurngbspqd .gt_last_summary_row {
+#sokxbfeeug .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -612,7 +622,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_grand_summary_row {
+#sokxbfeeug .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -622,7 +632,7 @@
   padding-right: 5px;
 }
 
-#gurngbspqd .gt_first_grand_summary_row {
+#sokxbfeeug .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -632,7 +642,7 @@
   border-top-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_last_grand_summary_row_top {
+#sokxbfeeug .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -642,11 +652,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_striped {
+#sokxbfeeug .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gurngbspqd .gt_table_body {
+#sokxbfeeug .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -655,7 +665,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_footnotes {
+#sokxbfeeug .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -669,7 +679,7 @@
   border-right-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_footnote {
+#sokxbfeeug .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -678,7 +688,7 @@
   padding-right: 5px;
 }
 
-#gurngbspqd .gt_sourcenotes {
+#sokxbfeeug .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -692,7 +702,7 @@
   border-right-color: #D3D3D3;
 }
 
-#gurngbspqd .gt_sourcenote {
+#sokxbfeeug .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -700,63 +710,63 @@
   padding-right: 5px;
 }
 
-#gurngbspqd .gt_left {
+#sokxbfeeug .gt_left {
   text-align: left;
 }
 
-#gurngbspqd .gt_center {
+#sokxbfeeug .gt_center {
   text-align: center;
 }
 
-#gurngbspqd .gt_right {
+#sokxbfeeug .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gurngbspqd .gt_font_normal {
+#sokxbfeeug .gt_font_normal {
   font-weight: normal;
 }
 
-#gurngbspqd .gt_font_bold {
+#sokxbfeeug .gt_font_bold {
   font-weight: bold;
 }
 
-#gurngbspqd .gt_font_italic {
+#sokxbfeeug .gt_font_italic {
   font-style: italic;
 }
 
-#gurngbspqd .gt_super {
+#sokxbfeeug .gt_super {
   font-size: 65%;
 }
 
-#gurngbspqd .gt_footnote_marks {
+#sokxbfeeug .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gurngbspqd .gt_asterisk {
+#sokxbfeeug .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gurngbspqd .gt_indent_1 {
+#sokxbfeeug .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gurngbspqd .gt_indent_2 {
+#sokxbfeeug .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gurngbspqd .gt_indent_3 {
+#sokxbfeeug .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gurngbspqd .gt_indent_4 {
+#sokxbfeeug .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gurngbspqd .gt_indent_5 {
+#sokxbfeeug .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -982,10 +992,11 @@ race
 </table></div>
 <ul>
 <li><p>🔗 <a href="https://nickch-k.github.io/vtable/index.html">vtable paketi için örnekler</a></p></li>
-<li><p>vtablepaketi ile inceleme</p></li>
+<li><p>sütun isimleri aşağıdaki gibi değiştirilebilir.</p></li>
 </ul>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://nickch-k.github.io/vtable/reference/sumtable.html">st</a></span><span class="op">(</span><span class="va">screen</span>, summ <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'notNA(x)'</span>,<span class="st">'min(x)'</span>,<span class="st">'max(x)'</span><span class="op">)</span>,summ.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Frekans'</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://nickch-k.github.io/vtable/reference/sumtable.html">sumtable</a></span><span class="op">(</span><span class="va">screen</span>, summ <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'notNA(x)'</span>,<span class="st">'min(x)'</span>,<span class="st">'max(x)'</span><span class="op">)</span>,</span>
+<span>         summ.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Frekans'</span></span>
 <span>,<span class="st">'Minimum'</span>,<span class="st">'Maximum'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -1112,7 +1123,8 @@ race
 </ul>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ozet</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.html">describe</a></span><span class="op">(</span><span class="va">screen</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">ozet</span>,format<span class="op">=</span><span class="st">'markdown'</span>,caption<span class="op">=</span><span class="st">"Betimsel İstatistikler"</span>,digits<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">ozet</span>,format<span class="op">=</span><span class="st">'markdown'</span>,</span>
+<span>      caption<span class="op">=</span><span class="st">"Betimsel İstatistikler"</span>,digits<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
 <caption>
 <span id="tab:unnamed-chunk-7">Table 1.3: </span>Betimsel İstatistikler</caption>

@@ -1,8 +1,23 @@
 # Varsayımlar
 
--   Varsayımlar incelenirken ilk olarka yanlış girilmiş bir değer olup olmadığına bakılmalıdır.
+-   Varsayımlar incelenirken ilk olarka yanlış girilmiş bir değer olup
+olmadığına bakılmalıdır.
 
--   Bu derste `r emo::ji("link")` [SCREEN.sav](data\SCREEN.sav) adlı veri seti kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465 kadının 6 değişkene ilişkin bilgileri vardır. Değişkenlerden timedrs, attdrug, atthouse ve income değişkenleri sürekli, mstatus ve race değişkenleriyse iki kategorili değişkenlerdir.
+-   Bu derste `r emo::ji("link")` [SCREEN.sav](data\SCREEN.sav) adlı veri seti
+kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465 kadının 6 değişkene
+ilişkin bilgileri bulunmaktadır. Değişkenlerden timedrs, attdrug, atthouse ve 
+income değişkenleri sürekli, mstatus ve race değişkenleriyse iki kategorili değişkenlerdir.
+
+-   Bu veri seti **Tabachnick, B. G., & Fidell, L. S. (2012). Using Multivariate
+Statistics (4rd ed.). New York: Harper Collins.** kitabının 4. bölümünde 
+kullanılmaktadır.
+
+- Veri incelemede birden fazla paket kullanılabilir. En temel fonksiyon `base`
+paketin `summary()` fonksiyonudur. `psych` paketinde `describe`; 
+`gtsummary` paketinde `describe`;`vtable` paketinde `sumtable` 
+fonksiyonu da aynı amaçla kullanılabilir.
+ 
+
 
 ```{r}
 
@@ -14,13 +29,10 @@ head(screen)
 -   Veri setindeki maksimum ve minumum değerleri belirlenmiştir.
 
 ```{r}
-
 summary(screen)
 ```
 
--   Elde edilen değerlerin makul olduğu söylenebilir. Ancak bunu elde etmek için başka yollar da bulunmaktadır.
-
--   `psych` paketi ile inceleme daha ayrıntılı yapılabilir.
+-   Elde edilen değerlerin makul olduğu söylenebilir. Ancak bunu elde etmek için başka yollar da bulunmaktadır.  `psych` paketi ile inceleme daha ayrıntılı yapılabilir.
 
 ```{r}
 library(psych)
@@ -48,10 +60,11 @@ sumtable(screen, summ=c('notNA(x)','min(x)','max(x)'))
 
 -   `r emo::ji("link")` [vtable paketi için örnekler](https://nickch-k.github.io/vtable/index.html)
 
--   vtablepaketi ile inceleme
+-   sütun isimleri aşağıdaki gibi değiştirilebilir.
 
 ```{r}
-st(screen, summ = c('notNA(x)','min(x)','max(x)'),summ.names = c('Frekans'
+sumtable(screen, summ = c('notNA(x)','min(x)','max(x)'),
+         summ.names = c('Frekans'
 ,'Minimum','Maximum'))
 ```
 
@@ -59,7 +72,8 @@ st(screen, summ = c('notNA(x)','min(x)','max(x)'),summ.names = c('Frekans'
 
 ```{r}
 ozet <- describe(screen[,-1])
-kable(ozet,format='markdown',caption="Betimsel İstatistikler",digits=2)
+kable(ozet,format='markdown',
+      caption="Betimsel İstatistikler",digits=2)
 ```
 
 -   `r emo::ji("link")` [rmarkdown-cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
