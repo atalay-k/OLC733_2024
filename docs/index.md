@@ -23,14 +23,7 @@ favicon: images/logos/favicon.ico # replace with your logo
 
 
 
-#```{r cite-packages, include = FALSE}
-# automatically create a bib database for R packages
-# add any packages you want to cite here
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'tidyverse', 'tinytex'
-), 'packages.bib')
 
-```
 
 ::: small_right
 <img src="images/logos/logo.png" alt="ADS Hex Logo"/>
