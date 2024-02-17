@@ -1,7 +1,12 @@
 Version: 1.0
 
+<<<<<<< HEAD
 RestoreWorkspace: No
 SaveWorkspace: No
+=======
+RestoreWorkspace: Default
+SaveWorkspace: Default
+>>>>>>> 572821b15337c42ffcfc55aba36e394a4ada2d7a
 AlwaysSaveHistory: Default
 
 EnableCodeIndexing: Yes
@@ -11,9 +16,12 @@ Encoding: UTF-8
 
 RnwWeave: Sweave
 LaTeX: pdfLaTeX
+<<<<<<< HEAD
 
 AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
 LineEndingConversion: Posix
 
 BuildType: Makefile
+=======
+>>>>>>> 572821b15337c42ffcfc55aba36e394a4ada2d7a
