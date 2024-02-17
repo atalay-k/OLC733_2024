@@ -1,0 +1,113 @@
+---
+title: "OLC733" # edit
+subtitle: "R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" 
+author: "Kubra Atalay Kabasakal" # edit
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+classoption: oneside # for PDFs
+geometry: margin=1in # for PDFs
+bibliography: [book.bib, packages.bib]
+csl: include/apa.csl
+link-citations: yes
+description: | # edit
+  Bu notlar OLC731 dersi için hazırlanmıştır.
+url: https://github.com/atalay-k/OLC731 # edit
+github-repo: atalay-k/OLC731# edit
+cover-image: images/logos/logo.png # replace with your logo
+apple-touch-icon: images/logos/apple-touch-icon.png # replace with your logo
+apple-touch-icon-size: 180
+favicon: images/logos/favicon.ico # replace with your logo
+---
+
+
+```{r cite-packages, include = FALSE}
+# automatically create a bib database for R packages
+# add any packages you want to cite here
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'tidyverse', 'tinytex'
+), 'packages.bib')
+
+```
+
+#```{r cite-packages, include = FALSE}
+# automatically create a bib database for R packages
+# add any packages you want to cite here
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'tidyverse', 'tinytex'
+), 'packages.bib')
+
+```
+
+::: small_right
+<img src="images/logos/logo.png" alt="ADS Hex Logo"/>
+:::
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE}
+# remotes::install_github("mitchelloharawild/icons")
+# devtools::install_github("ropenscilabs/icon")
+# https://www.r-bloggers.com/2018/05/icon-web-icons-for-rmarkdown/
+
+# Search icons: https://fontawesome.com/v5.15/icons
+library("fontawesome")
+
+#Setup knitr
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE, warning = FALSE, background = "gray85",
+                      message = FALSE, fig.width=8, fig.height=6, comment = NA,
+                      fig.align = 'center')
+```
+
+# Ders Hakkında {.unnumbered}
+
+Bu dersin amacı, R yazılımını kullanarak veri üzerinde istenilen çok değişkenli istatistiksel ve psikometrik işlemlerin yapılabilmesini sağlamaktır.
+
+Tez ve makale çalışmalarında öğrencilerimizin analizlerini R yazılımı ile hiçbir paket programa ihtiyaç duymadan kendi başlarına yapmalarını sağlamaktır.
+
+(İzlence) [**İzlence**](Izlence.html).
+
+## Eğitmen {.unnumbered}
+
+`r fontawesome::fa("user-tie", fill = "black")` [Dr. Kübra Atalay Kabasakal](https://avesis.hacettepe.edu.tr/katalay)
+
+`r fontawesome::fa("envelope", fill = "black")` [kkatalay\@gmail.com](mailto:kkatalay@gmail.com){.email}
+
+`r fontawesome::fa("envelope", fill = "black")` [katalay\@hacettepe.edu.tr](mailto:katalay@hacettepe.edu.tr){.email}
+
+## Kitaplar {.unnumbered}
+
+-   Atar, B., Atalay Kabasakal, K, Unsal Ozberk, E. B., Ozberk, E. H. & Kibrislioglu Uysal, N. (2020). R ile Veri Analizi ve Psikometri Uygulamaları, Pegem Akademi, Ankara.`r emo::ji("link")` [`r emo::ji("book")`](https://pegem.net/urun/R-ile-Veri-Analizi-ve-Psikometri-Uygulamalari/60801)
+
+
+-   Desjardins, C. D., & Bulut, O. (2018). Handbook of educational measurement and psychometrics using R. Boca Raton, FL: CRC Press. `r emo::ji("link")`[`r emo::ji("book")`](https://www.routledge.com/Handbook-of-Educational-Measurement-and-Psychometrics-Using-R/Desjardins-Bulut/p/book/9780367734671)
+
+- Demir, E. R Diliyle İstatistik Uygulamaları. Pegem Akademi, Ankara.(2021). `r emo::ji("link")`[`r emo::ji("book")`](https://pegem.net/urun/R-Diliyle-Istatistik-Uygulamalari/61912)
+
+
+## Kaynaklar {.unnumbered}
+
+* Bu ders materyallerine ek olarak, R öğrenmek için bir dizi mükemmel kaynak vardır:
+
+- `r emo::ji("link")` [R kurulumu ile ilgili bilgiler içerir. ](https://psyteachr.github.io/data-skills-v2/installing-r.html)
+
+- `r emo::ji("link")` [R studio ve güncellemeler ile ilgili bilgiler içerir. ](https://psyteachr.github.io/analysis-v2/updating-r-rstudio-and-packages.html)
+
+-   * `r emo::ji("link")`[Alana ozgu paketlerini inceleyebilirsiniz ](https://cran.r* project.org/web/views/Psychometrics.html)
+
+
+-  `r emo::ji("link")` `r emo::ji("book")`[R Cookbook](http://www.cookbook-r.com/)
+
+-  `r emo::ji("link")``r emo::ji("book")`[Veri Bilimi için R](https://r4ds.had.co.nz/)
+
+* `r emo::ji("link")` `r emo::ji("man")` [Hadley Wickham](https://hadley.nz/)
+
+
+-  `r emo::ji("link")`[StackOverflow soru-cevap platfromu](https://stackoverflow.com/)
+
+-  Twitter'da [#rstats](https://twitter.com/search?f=tweets&q=%23rstats&src=typd) hashtag'ini arayın veya kullanın. 
+  
+  -  e-posta gruplarındaki e-postalara `RSiteSearch ("sample.int")` "
+
+* `r emo::ji("link")`[R ile ilgili farklı ücretsiz kaynakları bulabilirsiniz (kitaplar, videolar, websiteleri). Bu kaynakların bazıları başlangıç seviyesinde.](https://www.learnr4free.com/tr/index.html){.uri}
+* `r emo::ji("link")`[Referans kartları](https://cran.r-project.org/doc/contrib/Short-refcard.pdf)
+
+* `r emo::ji("link")`[Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
