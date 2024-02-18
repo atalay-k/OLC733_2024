@@ -14,3 +14,4 @@ kayıp-veri-ile-başetme
 veri-setindeki-kayıp-veriler
 veri-setindeki-kayıp-veriler-1
 veri-setindeki-kayıp-veriler-2
+cr
