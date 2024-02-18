@@ -388,7 +388,7 @@ summary(screen)
 
 
 
-daha fazla bilgi için [\<https://bookdown.org/mwheymans/bookmi/missing-data-evaluation.html\>](https://bookdown.org/mwheymans/bookmi/missing-data-evaluation.html){.uri}
+daha fazla bilgi için [https://bookdown.org/mwheymans/bookmi/missing-data-evaluation.html](https://bookdown.org/mwheymans/bookmi/missing-data-evaluation.html){.uri}
 
 
 Rubin, D. B. (1976). Inference with missing data. Biometrika , 63, 581 592.
