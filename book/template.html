@@ -156,7 +156,7 @@
 <ul>
 <li><p>Varsayımlar incelenirken ilk olarak yanlış girilmiş bir değer olup
 olmadığına bakılmalıdır.</p></li>
-<li><p>Bu bölümde 🔗 <a href="import\SCREEN.sav">SCREEN.sav</a> adlı veri seti
+<li><p>Bu bölümde 🔗 <a href="import\SCREEN.SAV">SCREEN.sav</a> adlı veri seti
 kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465 kadının 6 değişkene
 ilişkin bilgileri bulunmaktadır. Değişkenlerden timedrs, attdrug, atthouse ve
 income değişkenleri sürekli, mstatus ve race değişkenleriyse iki kategorili değişkenlerdir.</p></li>
@@ -415,23 +415,23 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>screen <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span><span class="fu">tbl_summary</span>(<span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(</span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="st">&quot;{min}, {max}&quot;</span>),<span class="at">missing =</span><span class="st">&quot;always&quot;</span>)</span></code></pre></div>
-<div id="ebnbxkvvqu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ebnbxkvvqu table {
+<div id="nkukqolxty" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nkukqolxty table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ebnbxkvvqu thead, #ebnbxkvvqu tbody, #ebnbxkvvqu tfoot, #ebnbxkvvqu tr, #ebnbxkvvqu td, #ebnbxkvvqu th {
+#nkukqolxty thead, #nkukqolxty tbody, #nkukqolxty tfoot, #nkukqolxty tr, #nkukqolxty td, #nkukqolxty th {
   border-style: none;
 }
 
-#ebnbxkvvqu p {
+#nkukqolxty p {
   margin: 0;
   padding: 0;
 }
 
-#ebnbxkvvqu .gt_table {
+#nkukqolxty .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -457,12 +457,12 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-left-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_caption {
+#nkukqolxty .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ebnbxkvvqu .gt_title {
+#nkukqolxty .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -474,7 +474,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-width: 0;
 }
 
-#ebnbxkvvqu .gt_subtitle {
+#nkukqolxty .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -486,7 +486,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-top-width: 0;
 }
 
-#ebnbxkvvqu .gt_heading {
+#nkukqolxty .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -498,13 +498,13 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_bottom_border {
+#nkukqolxty .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_col_headings {
+#nkukqolxty .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -519,7 +519,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_col_heading {
+#nkukqolxty .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -539,7 +539,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   overflow-x: hidden;
 }
 
-#ebnbxkvvqu .gt_column_spanner_outer {
+#nkukqolxty .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -551,15 +551,15 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 4px;
 }
 
-#ebnbxkvvqu .gt_column_spanner_outer:first-child {
+#nkukqolxty .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ebnbxkvvqu .gt_column_spanner_outer:last-child {
+#nkukqolxty .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ebnbxkvvqu .gt_column_spanner {
+#nkukqolxty .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -571,11 +571,11 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   width: 100%;
 }
 
-#ebnbxkvvqu .gt_spanner_row {
+#nkukqolxty .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ebnbxkvvqu .gt_group_heading {
+#nkukqolxty .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -601,7 +601,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   text-align: left;
 }
 
-#ebnbxkvvqu .gt_empty_group_heading {
+#nkukqolxty .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -616,15 +616,15 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   vertical-align: middle;
 }
 
-#ebnbxkvvqu .gt_from_md > :first-child {
+#nkukqolxty .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ebnbxkvvqu .gt_from_md > :last-child {
+#nkukqolxty .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ebnbxkvvqu .gt_row {
+#nkukqolxty .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -643,7 +643,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   overflow-x: hidden;
 }
 
-#ebnbxkvvqu .gt_stub {
+#nkukqolxty .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -656,7 +656,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#ebnbxkvvqu .gt_stub_row_group {
+#nkukqolxty .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -670,15 +670,15 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   vertical-align: top;
 }
 
-#ebnbxkvvqu .gt_row_group_first td {
+#nkukqolxty .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ebnbxkvvqu .gt_row_group_first th {
+#nkukqolxty .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ebnbxkvvqu .gt_summary_row {
+#nkukqolxty .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -688,16 +688,16 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#ebnbxkvvqu .gt_first_summary_row {
+#nkukqolxty .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_first_summary_row.thick {
+#nkukqolxty .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ebnbxkvvqu .gt_last_summary_row {
+#nkukqolxty .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -707,7 +707,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_grand_summary_row {
+#nkukqolxty .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -717,7 +717,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#ebnbxkvvqu .gt_first_grand_summary_row {
+#nkukqolxty .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -727,7 +727,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-top-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_last_grand_summary_row_top {
+#nkukqolxty .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -737,11 +737,11 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_striped {
+#nkukqolxty .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ebnbxkvvqu .gt_table_body {
+#nkukqolxty .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -750,7 +750,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_footnotes {
+#nkukqolxty .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -764,7 +764,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_footnote {
+#nkukqolxty .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -773,7 +773,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#ebnbxkvvqu .gt_sourcenotes {
+#nkukqolxty .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -787,7 +787,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#ebnbxkvvqu .gt_sourcenote {
+#nkukqolxty .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -795,63 +795,63 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#ebnbxkvvqu .gt_left {
+#nkukqolxty .gt_left {
   text-align: left;
 }
 
-#ebnbxkvvqu .gt_center {
+#nkukqolxty .gt_center {
   text-align: center;
 }
 
-#ebnbxkvvqu .gt_right {
+#nkukqolxty .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ebnbxkvvqu .gt_font_normal {
+#nkukqolxty .gt_font_normal {
   font-weight: normal;
 }
 
-#ebnbxkvvqu .gt_font_bold {
+#nkukqolxty .gt_font_bold {
   font-weight: bold;
 }
 
-#ebnbxkvvqu .gt_font_italic {
+#nkukqolxty .gt_font_italic {
   font-style: italic;
 }
 
-#ebnbxkvvqu .gt_super {
+#nkukqolxty .gt_super {
   font-size: 65%;
 }
 
-#ebnbxkvvqu .gt_footnote_marks {
+#nkukqolxty .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ebnbxkvvqu .gt_asterisk {
+#nkukqolxty .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ebnbxkvvqu .gt_indent_1 {
+#nkukqolxty .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ebnbxkvvqu .gt_indent_2 {
+#nkukqolxty .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ebnbxkvvqu .gt_indent_3 {
+#nkukqolxty .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ebnbxkvvqu .gt_indent_4 {
+#nkukqolxty .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ebnbxkvvqu .gt_indent_5 {
+#nkukqolxty .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2016,7 +2016,7 @@ $( document ).ready(function() {
   <div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-02-18.</p>
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-02-19.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

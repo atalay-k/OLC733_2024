@@ -16,7 +16,7 @@
 -   Varsayımlar incelenirken ilk olarak yanlış girilmiş bir değer olup
 olmadığına bakılmalıdır.
 
--   Bu bölümde `r emo::ji("link")` [SCREEN.sav](import\SCREEN.sav) adlı veri seti
+-   Bu bölümde `r emo::ji("link")` [SCREEN.sav](import\SCREEN.SAV) adlı veri seti
 kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465 kadının 6 değişkene
 ilişkin bilgileri bulunmaktadır. Değişkenlerden timedrs, attdrug, atthouse ve 
 income değişkenleri sürekli, mstatus ve race değişkenleriyse iki kategorili değişkenlerdir.
