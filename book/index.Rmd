@@ -58,9 +58,9 @@ Tez ve makale çalışmalarında öğrencilerimizin analizlerini R yazılımı i
 
 Ders İçeriği: 
 
-- Varsayımlar  
+- Çok değişkenli İstatistik Varsayımları  
 - Çoklu Regresyon  
-- Yol Analizi- I  
+- Yol Analizi
 - Açımlayıcı Faktör Analizi  
 - Doğrulayıcı Faktör Analizi  
 - Progralamaya Giriş  

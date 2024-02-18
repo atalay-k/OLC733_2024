@@ -2,7 +2,7 @@
 title: "OLC733" # edit
 subtitle: "R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" 
 author: "Kubra Atalay Kabasakal" # edit
-date: "2024-02-17"
+date: "2024-02-18"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -39,11 +39,9 @@ Tez ve makale çalışmalarında öğrencilerimizin analizlerini R yazılımı i
 
 Ders İçeriği: 
 
-- Varsayımlar  
+- Çok değişkenli İstatistik Varsayımları  
 - Çoklu Regresyon  
-- Basit Doğrusal Regresyon  
-- Çoklu Regresyon 
-- Yol Analizi- I  
+- Yol Analizi
 - Açımlayıcı Faktör Analizi  
 - Doğrulayıcı Faktör Analizi  
 - Progralamaya Giriş  
@@ -67,9 +65,6 @@ Ders İçeriği:
 -   Desjardins, C. D., & Bulut, O. (2018). Handbook of educational measurement and psychometrics using R. Boca Raton, FL: CRC Press. 🔗[📖](https://www.routledge.com/Handbook-of-Educational-Measurement-and-Psychometrics-Using-R/Desjardins-Bulut/p/book/9780367734671)
 
 - Demir, E. R Diliyle İstatistik Uygulamaları. Pegem Akademi, Ankara.(2021). 🔗[📖](https://pegem.net/urun/R-Diliyle-Istatistik-Uygulamalari/61912)
-
-
-## Kaynaklar {.unnumbered}
 
 - Kline,R. B. (2019). Yapısal Eşitlik Modellemesinin İlkeleri ve Uygulaması(4. Baskı). (S. Şen, Çev.) Ankara: Nobel Yayınevi.
 

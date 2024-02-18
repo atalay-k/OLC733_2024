@@ -1,9 +1,22 @@
 # Varsayımlar
 
--   Varsayımlar incelenirken ilk olarka yanlış girilmiş bir değer olup
+
+-   Veri Dosyasındaki Verinin Doğruluğu
+
+-   Kayıp Verinin Miktarı ve Dağılımı
+
+-   Tek Değişkenli ve Çok Değişkenli Uç Değerler (Outliers)
+
+-   Sayıltılar
+
+-   Çoklu Bağlantı (Multicollinearity) ve Tekillik (Singularity)
+
+## Veri İnceleme
+
+-   Varsayımlar incelenirken ilk olarak yanlış girilmiş bir değer olup
 olmadığına bakılmalıdır.
 
--   Bu derste `r emo::ji("link")` [SCREEN.sav](data\SCREEN.sav) adlı veri seti
+-   Bu bölümde `r emo::ji("link")` [SCREEN.sav](data\SCREEN.sav) adlı veri seti
 kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465 kadının 6 değişkene
 ilişkin bilgileri bulunmaktadır. Değişkenlerden timedrs, attdrug, atthouse ve 
 income değişkenleri sürekli, mstatus ve race değişkenleriyse iki kategorili değişkenlerdir.
@@ -49,7 +62,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
 "{min}, {max}"),missing ="always")
 ```
 
--   `r emo::ji("link")`[Presentation-Ready Summary Tables] withgtsummary(<https://education.rstudio.com/blog/2020/07/gtsummary/>)
+-   `r emo::ji("link")`[Presentation-Ready Summary Tables] with gtsummary(https://education.rstudio.com/blog/2020/07/gtsummary)
 
 -   `vtable` paketi ile inceleme
 
@@ -77,3 +90,404 @@ kable(ozet,format='markdown',
 ```
 
 -   `r emo::ji("link")` [rmarkdown-cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
+
+
+## Kayıp Değerler
+
+- Kayıp veri, veri analizindeki en yaygın problemlerden biridir.
+
+- Kayıp verinin önemi kayıp verinin miktarına, örüntüsüne ve neden eksik olduğuna
+bağlıdır.
+
+- Bir değişkene ait beklenmeyen miktarda kayıp veri varsa, ilk olarak 
+bununnedeni araştırılmalıdır. Daha sonra kayıp verinin örüntüsüne bakılarak,rastlantısal mı
+yoksa sistematik bir örüntü mü gösterdiği belirlenmelidir.
+
+    - Örneğin, 30 yaşın üstündeki birçok kadın yaş ile ilgili soruyu
+cevaplamak istemezler.
+
+- Genellikle kayıp verinin örüntüsü miktarından daha önemlidir. Rastlantısal 
+dağılmayan kayıp veriler sonuçların genellenebilirliğini 
+etkileyeceğinden miktarları az da olsa,
+rastlantısal dağılan kayıp verilere oranla daha ciddi problemlere yol açarlar.
+
+### Kayıp Veri Türleri
+
+- Kayıp veri türleri arasındaki ayrım 1976 yılında Rubin tarafından yapılmıştır.
+Rubin (1976) kayıp veriyi aşağıdaki şekilde sınıfl andırmıştır.
+
+- Tamamen Rastlantısal Olarak Kayıp (TROK) - Missing Completely at Random MCAR
+
+- Rastlantısal Olarak Kayıp (ROK) -  Missing at R andom (MAR)
+
+- Rastlantısal Olmayarak Kayıp / İhmal Edilemez Kayıp (İEK) - Not Missing at Random
+(NMAR)
+
+- Kayıp veri en azından MAR türünde değilse, kayıp verinin
+ihmal edilemeyeceği söylenir.Bu türdeki kayıp veri
+rastlantısal olamyan kayıp veya ihmal edilemez kayıp olarak adlandırılır.
+
+- Büyük bir veri setinde, verinin %5’i veya daha azı rastlantısal olarak kayıpsa
+çok ciddi problemlerle karşılaşılmaz ve kayıp veri ile ilgili problemleri
+çözmek için kullanılan herhangi bir yöntem benzer sonuçlar verir.
+Halbuki küçük veya orta büyüklükteki bir veri setinde çok sayıda veri kaybı
+varsa ciddi problemler ortaya çıkabilir.
+
+- Eldeki bilgiden yararlanarak kayıp verideki örüntüler test edilebilir.
+
+- Örneğin, kayıp verinin bulunduğu değişkene göre eksik değerlere sahip
+bireyler ve tam değerlere sahip bireylerden iki grup oluşturulabilir. Sonra
+analizde bu değişkenle ilgili olabilecek diğer değişkenlerde t testi ile iki
+grup arasındaki ortalama farklara bakılabilir
+
+
+### MAR
+
+- MAR türünde veri gerçekte rastlantısal olarak kayıp değildir, veri kaybı veri
+setindeki değişkenlerden bazılarına bağlıdır.
+
+- MAR türünde bir veri noktasının kayıp olma eğilimi kayıp veriyle ilişkili
+değildir ancak gözlenen verinin bir kısmıyla İlişkilidir.
+
+- Rastlantısal olarak kayıp değerler ve gözlenen değerler arasında sistematik
+farklılıkların olabileceği ancak bu farklılıkların diğer gözlenen değişkenlerle
+tamamen açıklanabileceği anlamındadır.
+
+- Bir değişkenin gözlemleri rastlantısal olarak kayıpsa, şartlı değişkenler
+kontrol edilebilirse , rastlantısal küme elde edilebilir; kayıp ve gözlenen
+değerler kontrol altına alınan gruplarda benzer dağılımlara sahip
+olacaklardır.
+
+
+- Kayıp veriyi incelemek ve kayıp veri ile baş etmek konusunda birden fazla
+paket mevcuttur. Bu paketler arasında
+- VIM
+- missMethods
+- Amelia
+- naniar paketi sayılabilir.
+
+Kayıp veriyi incelemek ve kayıp veri ile başetmek konusunda birden fazla paket mevcuttur. Bu paketler arasında **VIM**,**missMethods**,**Amelia**, **naniar** paketi sayılabilir. İlk örnekler **naniar** üzerinden gösterilmektedir.
+
+- **herhangi bir eksik veri olup olmadığının kontrolu**
+
+```{r}
+library(naniar)
+
+any_na(screen)
+```
+
+- **toplam kaç eksik veri var**
+
+```{r}
+n_miss(screen)
+```
+
+**eksik veri oranı ne?**
+
+```{r}
+prop_miss(screen)
+```
+
+- **eksik veriler hangi sütunlarda**
+
+```{r}
+screen %>% is.na() %>% colSums()
+
+```
+
+- **eksik veri tablosu, frekans ve oran**
+
+```{r}
+miss_var_summary(screen)
+```
+
+- **değişkenlere göre eksik veri tablosu**
+
+```{r}
+miss_var_table(screen)
+```
+
+- **Hangi bireylerde/satırlarda eksik veri var**
+
+```{r}
+miss_case_summary(screen)
+```
+
+- **tam ve eksik veri tablosu**
+
+```{r}
+miss_case_table(screen)
+
+```
+
+- **Eksik verinin görselleştirilmesi**
+
+```{r}
+gg_miss_var(screen)
+
+```
+
+- **Eksik verinin görselleştirilmesi**
+
+```{r}
+
+vis_miss(screen) + theme(axis.text.x = element_text(angle=80))
+gg_miss_upset(screen)
+```
+
+
+### Kayıp Veri Testi
+
+Veri kaybının diğer değişkenlerle ilişkili olup olmadığının incelenmesi
+
+### finalfit paketi
+
+```{r}
+
+# değişkeni kopyala
+screen2 <- screen
+screen2$income_m <- screen2$income
+
+library(finalfit)
+
+explanatory = c("timedrs", "attdrug", "atthouse")
+dependent = "income_m"
+screen2 %>% 
+  missing_compare(dependent, explanatory) %>% 
+    knitr::kable(row.names=FALSE, align = c("l", "l", "r", "r", "r"), 
+        caption = "Eksik veriye sahip olan ve olmayan değişkenlerin ortalama karşılaştırması") 
+```
+
+
+```{r}
+library(finalfit)
+library(dplyr)
+
+screen2 <- screen2 %>% 
+  mutate(mstatus2 = 
+    case_when(
+      mstatus ==1 ~ "not married",
+      mstatus ==2  ~ "married")) %>% 
+  mutate_if(is.character,as.factor)
+
+screen2 %>% 
+  ff_glimpse()
+```
+
+#### Bir değişkenin kategorilerinde inceleme
+
+```{r}
+miss_test <- screen2 %>%
+  mutate(miss_income = is.na(income))
+  
+# evli olmayanlar için
+notmarried <- miss_test %>%
+  filter(mstatus2 == "not married") %>%
+   pull(miss_income)
+  
+# Evliler için
+married <- miss_test %>%
+  filter(mstatus2 == "married") %>%
+  pull(miss_income)
+  
+#c Oran
+t.test(notmarried, married)
+```
+
+```{r}
+gg_miss_fct(screen2, fct = mstatus2)
+
+```
+
+### MCAR test
+
+```{r}
+library(naniar)
+mcar_test(data=screen[,2:5])
+```
+
+### Kayıp veri ile başetme
+
+Liste bazında silme işlemi **na.omit** ve **complete.cases** fonkisyonları ile sağlanabilir.
+
+```{r}
+na.omit(screen) 
+screen[!complete.cases(screen),]
+screen[complete.cases(screen),]
+
+```
+
+### Çiftler bazında silme
+
+**generalCorr paketi ile**
+
+```{r}
+library(generalCorr)
+
+x=sample(1:10);y=sample(1:10);x[2]=NA; y[3]=NA
+x
+y
+cbind(x,y)
+ napair(x,y)
+
+napair(screen$attdrug,screen$atthouse)
+
+
+rowMeans(screen)
+rowMeans(screen, na.rm=TRUE)
+cov(screen, use="pairwise.complete.obs")
+
+data <- airquality[, c("Ozone", "Solar.R", "Wind")]
+mu <- colMeans(data, na.rm = TRUE)
+cv <- cov(data, use = "pairwise")
+
+library(lavaan)
+fit <- lavaan("Ozone ~ 1 + Wind + Solar.R
+              Ozone ~~ Ozone",
+             sample.mean = mu, sample.cov = cv,
+             sample.nobs = sum(complete.cases(data)))
+     lm(Ozone ~ 1 + Wind + Solar.R,data=airquality)      
+summary(fit)
+
+## https://stefvanbuuren.name/fimd/sec-simplesolutions.html
+```
+
+**regtools paketi**
+
+```{r eval=FALSE, include=FALSE}
+library(regtools)
+acout <- lmac(cbind(x,y))
+  acout$r2
+coef(acout)  
+acout$coefficients
+```
+
+### Ortalama atama
+
+Tek bir değişkene ortalama atama
+
+```{r}
+df = data.frame(x = 1:20, y = c(1:10,rep(NA,10)))
+df$y[is.na(df$y)] = mean(df$y, na.rm=TRUE)
+
+screen3 <- screen
+screen3$income[is.na(screen3$income)]<- mean(screen3$income, na.rm=TRUE)
+summary(screen3$income)
+```
+
+Bu işlem birden farklı şekilde yapılabilir. Her bir sütunda eksik veriyi ortalama ile tamamlama
+
+```{r message=FALSE, warning=FALSE,error=TRUE}
+screen4 <- screen[,2:5]
+for(i in 1:ncol(screen4)) {
+screen4[ , i][is.na(screen4[ , i])] <- mean(screen4[ , i], na.rm = TRUE)
+}
+
+```
+
+**if_else()** ile
+
+```{r}
+# df = transform(df, y = ifelse(is.na(y), mean(y, na.rm=TRUE), y))
+screen5 <- screen
+
+screen5 = transform(screen5, income = ifelse(is.na(income), mean(income, na.rm=TRUE), income))
+summary(screen5)
+   
+```
+
+**mutate() ile**
+
+```{r}
+screen %>%  
+mutate(income = ifelse(is.na(income), mean(income, na.rm =TRUE), income))
+
+```
+
+### Beklenti Maksimizasyonu
+
+**mvdalab** paketi ile önce eksik veri olusturulup sonra eksik veri BM yöntemi ile doldurulmuştur.
+
+```{r}
+library(mvdalab)
+dat <- introNAs(iris, percent = 25)
+imputeEM(dat)
+
+```
+
+**mvdalab** paketi ile önce eksik veri olusturulup sonra eksik veri BM yöntemi ile doldurulmuştur.
+
+```{r}
+
+library(missMethods)
+dat2 <- delete_MCAR(iris[,2:4], p=0.2)
+dat2<-impute_EM(dat2,stochastic = FALSE)
+```
+
+### Çoklu Atama
+
+Çoklu atama için en sık kullanılan paketler **mice** ve **VIM** paketleridir.
+
+```{r}
+library(mice)
+# https://datascienceplus.com/imputing-missing-data-with-r-mice-package/
+```
+
+Çoklu atama yapmadan önce **naniar** paketindekine benzer olarak **VIM** paketi ile de inceleyebilirsiniz.
+
+```{r}
+library(VIM)
+mice_plot <- VIM::aggr(screen[,2:6], col=c('yellow','black'),
+                       numbers=TRUE, sortVars=TRUE,
+                       labels=names(screen[,2:6]), cex.axis=.8,
+                       gap=1, ylab=c("Missing data","Pattern"))
+
+
+
+# logreg(Logistic Regression) – Used For Binary Variables polyreg(Bayesian polytomous regression) – Used For unordered levels>= 2
+
+screen7 <- mice::mice(screen[2:5],m=1,maxit=20,
+                    method = "pmm")
+   mice::complete(screen7)
+
+```
+
+### Veri setindeki kayıp veriler
+
+```{r}
+
+screen <- screen %>% mutate(income = ifelse(is.na(income), mean(income, na.rm =TRUE), income)) %>% na.omit()
+summary(screen)
+```
+
+daha fazla bilgi için [\<https://bookdown.org/mwheymans/bookmi/missing-data-evaluation.html\>](https://bookdown.org/mwheymans/bookmi/missing-data-evaluation.html){.uri}
+
+### Veri setindeki kayıp veriler
+
+- **atthouse** değişkeninde bir kayıp değer bulunmaktadır 
+ve liste bazında silme yöntemi ile veri setinden 
+çıkarılmıştır.
+
+- Veri setinde **income** değişkeni 26 kayıp değere sahiptir 
+ve bu sayı örneklemin %5’inden fazladır. Eğer bu 
+değişken araştırma açısından öneme sahip değilse, veri 
+setinden çıkarılabilir, aksi halde kayıp verinin tahmin 
+edilmesi yöntemlerinden biri kullanılabilir.
+
+- income değişkenindeki kayıp değerler için kayıp verinin 
+tahmin edilmesi yöntemlerinden ortalamanın 
+yerleştirilmesi kullanılarak kayıp değer yerine değişkenin ortalama değeri (4.21 değeri) yerleştirilmiştir.
+
+
+---
+### Veri setindeki kayıp veriler
+
+```{r}
+
+screen <- screen %>% 
+  mutate(income = ifelse(is.na(income), mean(income, na.rm =TRUE), income)) %>% na.omit()
+summary(screen)
+```
+
+
+Rubin, D. B. (1976). Inference with missing data. Biometrika , 63, 581 592.
