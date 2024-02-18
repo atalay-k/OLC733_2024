@@ -8,14 +8,9 @@ kayıp-değerler
 kayıp-veri-türleri
 mar
 kayıp-veri-testi
-finalfit-paketi
 bir-değişkenin-kategorilerinde-inceleme
 mcar-test
 kayıp-veri-ile-başetme
-çiftler-bazında-silme
-ortalama-atama
-beklenti-maksimizasyonu
-çoklu-atama
 veri-setindeki-kayıp-veriler
 veri-setindeki-kayıp-veriler-1
 veri-setindeki-kayıp-veriler-2
