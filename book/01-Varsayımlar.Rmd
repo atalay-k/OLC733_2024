@@ -337,7 +337,7 @@ summary(screen2$income)
 
 **mutate() ile**
 
-```{r echo=FALSE}
+```{r echo=TRUE, include=TRUE, eval =FALSE}
 screen %>%  
 mutate(income = ifelse(is.na(income), mean(income, na.rm =TRUE), income))
 

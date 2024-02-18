@@ -412,26 +412,27 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
 <ul>
 <li><code>gtsummary</code> paketi ile inceleme</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>screen <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span><span class="fu">tbl_summary</span>(<span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="st">&quot;{min}, {max}&quot;</span>),<span class="at">missing =</span><span class="st">&quot;always&quot;</span>)</span></code></pre></div>
-<div id="dozooyqaww" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dozooyqaww table {
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span></code></pre></div>
+<pre><code>## #Uighur</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>screen <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span><span class="fu">tbl_summary</span>(<span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="st">&quot;{min}, {max}&quot;</span>),<span class="at">missing =</span><span class="st">&quot;always&quot;</span>)</span></code></pre></div>
+<div id="vjibsfbxgd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vjibsfbxgd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dozooyqaww thead, #dozooyqaww tbody, #dozooyqaww tfoot, #dozooyqaww tr, #dozooyqaww td, #dozooyqaww th {
+#vjibsfbxgd thead, #vjibsfbxgd tbody, #vjibsfbxgd tfoot, #vjibsfbxgd tr, #vjibsfbxgd td, #vjibsfbxgd th {
   border-style: none;
 }
 
-#dozooyqaww p {
+#vjibsfbxgd p {
   margin: 0;
   padding: 0;
 }
 
-#dozooyqaww .gt_table {
+#vjibsfbxgd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -457,12 +458,12 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-left-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_caption {
+#vjibsfbxgd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dozooyqaww .gt_title {
+#vjibsfbxgd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -474,7 +475,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-width: 0;
 }
 
-#dozooyqaww .gt_subtitle {
+#vjibsfbxgd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -486,7 +487,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-top-width: 0;
 }
 
-#dozooyqaww .gt_heading {
+#vjibsfbxgd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -498,13 +499,13 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_bottom_border {
+#vjibsfbxgd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_col_headings {
+#vjibsfbxgd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -519,7 +520,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_col_heading {
+#vjibsfbxgd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -539,7 +540,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   overflow-x: hidden;
 }
 
-#dozooyqaww .gt_column_spanner_outer {
+#vjibsfbxgd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -551,15 +552,15 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 4px;
 }
 
-#dozooyqaww .gt_column_spanner_outer:first-child {
+#vjibsfbxgd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dozooyqaww .gt_column_spanner_outer:last-child {
+#vjibsfbxgd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dozooyqaww .gt_column_spanner {
+#vjibsfbxgd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -571,11 +572,11 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   width: 100%;
 }
 
-#dozooyqaww .gt_spanner_row {
+#vjibsfbxgd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dozooyqaww .gt_group_heading {
+#vjibsfbxgd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -601,7 +602,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   text-align: left;
 }
 
-#dozooyqaww .gt_empty_group_heading {
+#vjibsfbxgd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -616,15 +617,15 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   vertical-align: middle;
 }
 
-#dozooyqaww .gt_from_md > :first-child {
+#vjibsfbxgd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dozooyqaww .gt_from_md > :last-child {
+#vjibsfbxgd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dozooyqaww .gt_row {
+#vjibsfbxgd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -643,7 +644,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   overflow-x: hidden;
 }
 
-#dozooyqaww .gt_stub {
+#vjibsfbxgd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -656,7 +657,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#dozooyqaww .gt_stub_row_group {
+#vjibsfbxgd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -670,15 +671,15 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   vertical-align: top;
 }
 
-#dozooyqaww .gt_row_group_first td {
+#vjibsfbxgd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dozooyqaww .gt_row_group_first th {
+#vjibsfbxgd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dozooyqaww .gt_summary_row {
+#vjibsfbxgd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -688,16 +689,16 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#dozooyqaww .gt_first_summary_row {
+#vjibsfbxgd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_first_summary_row.thick {
+#vjibsfbxgd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dozooyqaww .gt_last_summary_row {
+#vjibsfbxgd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -707,7 +708,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_grand_summary_row {
+#vjibsfbxgd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -717,7 +718,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#dozooyqaww .gt_first_grand_summary_row {
+#vjibsfbxgd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -727,7 +728,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-top-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_last_grand_summary_row_top {
+#vjibsfbxgd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -737,11 +738,11 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_striped {
+#vjibsfbxgd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dozooyqaww .gt_table_body {
+#vjibsfbxgd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -750,7 +751,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_footnotes {
+#vjibsfbxgd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -764,7 +765,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_footnote {
+#vjibsfbxgd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -773,7 +774,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#dozooyqaww .gt_sourcenotes {
+#vjibsfbxgd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -787,7 +788,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#dozooyqaww .gt_sourcenote {
+#vjibsfbxgd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -795,63 +796,63 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#dozooyqaww .gt_left {
+#vjibsfbxgd .gt_left {
   text-align: left;
 }
 
-#dozooyqaww .gt_center {
+#vjibsfbxgd .gt_center {
   text-align: center;
 }
 
-#dozooyqaww .gt_right {
+#vjibsfbxgd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dozooyqaww .gt_font_normal {
+#vjibsfbxgd .gt_font_normal {
   font-weight: normal;
 }
 
-#dozooyqaww .gt_font_bold {
+#vjibsfbxgd .gt_font_bold {
   font-weight: bold;
 }
 
-#dozooyqaww .gt_font_italic {
+#vjibsfbxgd .gt_font_italic {
   font-style: italic;
 }
 
-#dozooyqaww .gt_super {
+#vjibsfbxgd .gt_super {
   font-size: 65%;
 }
 
-#dozooyqaww .gt_footnote_marks {
+#vjibsfbxgd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dozooyqaww .gt_asterisk {
+#vjibsfbxgd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dozooyqaww .gt_indent_1 {
+#vjibsfbxgd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dozooyqaww .gt_indent_2 {
+#vjibsfbxgd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dozooyqaww .gt_indent_3 {
+#vjibsfbxgd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dozooyqaww .gt_indent_4 {
+#vjibsfbxgd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dozooyqaww .gt_indent_5 {
+#vjibsfbxgd .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -912,8 +913,8 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
 <li><p>🔗[Presentation-Ready Summary Tables] with gtsummary(<a href="https://education.rstudio.com/blog/2020/07/gtsummary" class="uri">https://education.rstudio.com/blog/2020/07/gtsummary</a>)</p></li>
 <li><p><code>vtable</code> paketi ile inceleme</p></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">library</span>(vtable)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">sumtable</span>(screen, <span class="at">summ=</span><span class="fu">c</span>(<span class="st">&#39;notNA(x)&#39;</span>,<span class="st">&#39;min(x)&#39;</span>,<span class="st">&#39;max(x)&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">library</span>(vtable)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">sumtable</span>(screen, <span class="at">summ=</span><span class="fu">c</span>(<span class="st">&#39;notNA(x)&#39;</span>,<span class="st">&#39;min(x)&#39;</span>,<span class="st">&#39;max(x)&#39;</span>))</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 (#tab:unnamed-chunk-5)Summary Statistics
@@ -1039,9 +1040,9 @@ race
 <li><p>🔗 <a href="https://nickch-k.github.io/vtable/index.html">vtable paketi için örnekler</a></p></li>
 <li><p>sütun isimleri aşağıdaki gibi değiştirilebilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">sumtable</span>(screen, <span class="at">summ =</span> <span class="fu">c</span>(<span class="st">&#39;notNA(x)&#39;</span>,<span class="st">&#39;min(x)&#39;</span>,<span class="st">&#39;max(x)&#39;</span>),</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>         <span class="at">summ.names =</span> <span class="fu">c</span>(<span class="st">&#39;Frekans&#39;</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>,<span class="st">&#39;Minimum&#39;</span>,<span class="st">&#39;Maksimum&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">sumtable</span>(screen, <span class="at">summ =</span> <span class="fu">c</span>(<span class="st">&#39;notNA(x)&#39;</span>,<span class="st">&#39;min(x)&#39;</span>,<span class="st">&#39;max(x)&#39;</span>),</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>         <span class="at">summ.names =</span> <span class="fu">c</span>(<span class="st">&#39;Frekans&#39;</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>,<span class="st">&#39;Minimum&#39;</span>,<span class="st">&#39;Maksimum&#39;</span>))</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 (#tab:unnamed-chunk-6)Summary Statistics
@@ -1166,9 +1167,9 @@ race
 <ul>
 <li><code>kable</code> paketi ile <code>psych</code> paketi çıktılarını düzenleme</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>ozet <span class="ot">&lt;-</span> <span class="fu">describe</span>(screen[,<span class="sc">-</span><span class="dv">1</span>])</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">kable</span>(ozet,<span class="at">format=</span><span class="st">&#39;markdown&#39;</span>,</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>      <span class="at">caption=</span><span class="st">&quot;Betimsel İstatistikler&quot;</span>,<span class="at">digits=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>ozet <span class="ot">&lt;-</span> <span class="fu">describe</span>(screen[,<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">kable</span>(ozet,<span class="at">format=</span><span class="st">&#39;markdown&#39;</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>      <span class="at">caption=</span><span class="st">&quot;Betimsel İstatistikler&quot;</span>,<span class="at">digits=</span><span class="dv">2</span>)</span></code></pre></div>
 <table style="width:100%;">
 <caption>(#tab:unnamed-chunk-7)Betimsel İstatistikler</caption>
 <colgroup>
@@ -1379,30 +1380,30 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>herhangi bir eksik veri olup olmadığının kontrolü</strong></li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="fu">any_na</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="fu">any_na</span>(screen)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <ul>
 <li><strong>toplam kaç eksik veri var</strong></li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">n_miss</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">n_miss</span>(screen)</span></code></pre></div>
 <pre><code>## [1] 27</code></pre>
 <ul>
 <li><strong>eksik veri oranı ne?</strong></li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">prop_miss</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">prop_miss</span>(screen)</span></code></pre></div>
 <pre><code>## [1] 0.008294931</code></pre>
 <ul>
 <li><strong>eksik veriler hangi sütunlarda</strong></li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>screen <span class="sc">%&gt;%</span> <span class="fu">is.na</span>() <span class="sc">%&gt;%</span> <span class="fu">colSums</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>screen <span class="sc">%&gt;%</span> <span class="fu">is.na</span>() <span class="sc">%&gt;%</span> <span class="fu">colSums</span>()</span></code></pre></div>
 <pre><code>##    subno  timedrs  attdrug atthouse   income  mstatus     race 
 ##        0        0        0        1       26        0        0</code></pre>
 <ul>
 <li><strong>eksik veri tablosu, frekans ve oran</strong></li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">miss_var_summary</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">miss_var_summary</span>(screen)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1454,7 +1455,7 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>değişkenlere göre eksik veri tablosu</strong></li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">miss_var_table</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">miss_var_table</span>(screen)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1486,7 +1487,7 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>Hangi bireylerde/satırlarda eksik veri var</strong></li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">miss_case_summary</span>(screen))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">miss_case_summary</span>(screen))</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1533,7 +1534,7 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>tam ve eksik veri tablosu</strong></li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">miss_case_table</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">miss_case_table</span>(screen)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1560,15 +1561,15 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>Eksik verinin görselleştirilmesi</strong></li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">gg_miss_var</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">gg_miss_var</span>(screen)</span></code></pre></div>
 <p><img src="01-Varsay%C4%B1mlar_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li><strong>Eksik verinin görselleştirilmesi</strong></li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="fu">vis_miss</span>(screen) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">80</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="fu">vis_miss</span>(screen) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">80</span>))</span></code></pre></div>
 <p><img src="01-Varsay%C4%B1mlar_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(screen)</span></code></pre></div>
 <pre><code>## `geom_line()`: Each group consists of only one observation.
 ## ℹ Do you need to adjust the group aesthetic?</code></pre>
 <p><img src="01-Varsay%C4%B1mlar_files/figure-html/unnamed-chunk-17-2.png" width="100%" style="display: block; margin: auto;" /></p>
@@ -1580,18 +1581,18 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li>income değişleninde eksik veriler diğer değişkenlerle ilişkili mi?</li>
 </ul>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># değişkeni kopyala</span></span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>screen2<span class="sc">$</span>income_m <span class="ot">&lt;-</span> screen2<span class="sc">$</span>income</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="fu">library</span>(finalfit)</span>
-<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a></span>
-<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a>explanatory <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;timedrs&quot;</span>, <span class="st">&quot;attdrug&quot;</span>, <span class="st">&quot;atthouse&quot;</span>)</span>
-<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a>dependent <span class="ot">=</span> <span class="st">&quot;income_m&quot;</span></span>
-<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a>screen2 <span class="sc">%&gt;%</span> </span>
-<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a>  <span class="fu">missing_compare</span>(dependent, explanatory) <span class="sc">%&gt;%</span> </span>
-<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a>    knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">row.names=</span><span class="cn">FALSE</span>, <span class="at">align =</span> <span class="fu">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;r&quot;</span>), </span>
-<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Eksik veriye sahip olan ve olmayan değişkenlerin ortalama karşılaştırması&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># değişkeni kopyala</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>screen2<span class="sc">$</span>income_m <span class="ot">&lt;-</span> screen2<span class="sc">$</span>income</span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a><span class="fu">library</span>(finalfit)</span>
+<span id="cb30-6"><a href="#cb30-6" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" tabindex="-1"></a>explanatory <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;timedrs&quot;</span>, <span class="st">&quot;attdrug&quot;</span>, <span class="st">&quot;atthouse&quot;</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" tabindex="-1"></a>dependent <span class="ot">=</span> <span class="st">&quot;income_m&quot;</span></span>
+<span id="cb30-9"><a href="#cb30-9" tabindex="-1"></a>screen2 <span class="sc">%&gt;%</span> </span>
+<span id="cb30-10"><a href="#cb30-10" tabindex="-1"></a>  <span class="fu">missing_compare</span>(dependent, explanatory) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-11"><a href="#cb30-11" tabindex="-1"></a>    knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">row.names=</span><span class="cn">FALSE</span>, <span class="at">align =</span> <span class="fu">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;r&quot;</span>), </span>
+<span id="cb30-12"><a href="#cb30-12" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Eksik veriye sahip olan ve olmayan değişkenlerin ortalama karşılaştırması&quot;</span>) </span></code></pre></div>
 <table>
 <caption>(#tab:unnamed-chunk-18)Eksik veriye sahip olan ve olmayan değişkenlerin ortalama karşılaştırması</caption>
 <colgroup>
@@ -1636,18 +1637,18 @@ paket mevcuttur. Bu paketler arasında</p>
 </table>
 <div id="bir-değişkenin-kategorilerinde-inceleme" class="section level4" number="1.2.3.1">
 <h4><span class="header-section-number">1.2.3.1</span> Bir değişkenin kategorilerinde inceleme</h4>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>miss_test <span class="ot">&lt;-</span> screen2 <span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">miss_income =</span> <span class="fu">is.na</span>(income))</span>
-<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>  </span>
-<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a><span class="co"># evli olmayanlar için</span></span>
-<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>notmarried <span class="ot">&lt;-</span> miss_test <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mstatus <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>   <span class="fu">pull</span>(miss_income)</span>
-<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>  </span>
-<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a><span class="co"># Evliler için</span></span>
-<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a>married <span class="ot">&lt;-</span> miss_test <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mstatus <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(miss_income)</span>
-<span id="cb29-10"><a href="#cb29-10" tabindex="-1"></a>  </span>
-<span id="cb29-11"><a href="#cb29-11" tabindex="-1"></a><span class="co">#c Oran</span></span>
-<span id="cb29-12"><a href="#cb29-12" tabindex="-1"></a><span class="fu">t.test</span>(notmarried, married)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>miss_test <span class="ot">&lt;-</span> screen2 <span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">miss_income =</span> <span class="fu">is.na</span>(income))</span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>  </span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a><span class="co"># evli olmayanlar için</span></span>
+<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>notmarried <span class="ot">&lt;-</span> miss_test <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mstatus <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a>   <span class="fu">pull</span>(miss_income)</span>
+<span id="cb31-7"><a href="#cb31-7" tabindex="-1"></a>  </span>
+<span id="cb31-8"><a href="#cb31-8" tabindex="-1"></a><span class="co"># Evliler için</span></span>
+<span id="cb31-9"><a href="#cb31-9" tabindex="-1"></a>married <span class="ot">&lt;-</span> miss_test <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mstatus <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(miss_income)</span>
+<span id="cb31-10"><a href="#cb31-10" tabindex="-1"></a>  </span>
+<span id="cb31-11"><a href="#cb31-11" tabindex="-1"></a><span class="co">#c Oran</span></span>
+<span id="cb31-12"><a href="#cb31-12" tabindex="-1"></a><span class="fu">t.test</span>(notmarried, married)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -1659,14 +1660,14 @@ paket mevcuttur. Bu paketler arasında</p>
 ## sample estimates:
 ##  mean of x  mean of y 
 ## 0.03883495 0.06077348</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">gg_miss_fct</span>(screen, <span class="at">fct =</span> mstatus)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">gg_miss_fct</span>(screen, <span class="at">fct =</span> mstatus)</span></code></pre></div>
 <p><img src="01-Varsay%C4%B1mlar_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="mcar-test" class="section level3" number="1.2.4">
 <h3><span class="header-section-number">1.2.4</span> MCAR test</h3>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="fu">mcar_test</span>(<span class="at">data=</span>screen[,<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="fu">mcar_test</span>(<span class="at">data=</span>screen[,<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1697,4241 +1698,41 @@ Böylece kayıp verinin MCAR olduğu sonucuna varılabilir.</li>
 <ul>
 <li>Liste bazında silme işlemi <strong>na.omit</strong> ve <strong>complete.cases</strong> fonkisyonları ile sağlanabilir.</li>
 </ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">na.omit</span>(screen) </span>
-<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>screen[<span class="sc">!</span><span class="fu">complete.cases</span>(screen),]</span>
-<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>screen[<span class="fu">complete.cases</span>(screen),]</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="fu">na.omit</span>(screen) </span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a>screen[<span class="sc">!</span><span class="fu">complete.cases</span>(screen),]</span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a>screen[<span class="fu">complete.cases</span>(screen),]</span></code></pre></div>
 <ul>
 <li>Ortalama atama işlemi yapılabir. Tek bir değişkene ortalama atama</li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="fu">rep</span>(<span class="cn">NA</span>,<span class="dv">10</span>)))</span>
-<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>df<span class="sc">$</span>y[<span class="fu">is.na</span>(df<span class="sc">$</span>y)] <span class="ot">=</span> <span class="fu">mean</span>(df<span class="sc">$</span>y, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
-<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a>screen2<span class="sc">$</span>income[<span class="fu">is.na</span>(screen2<span class="sc">$</span>income)]<span class="ot">&lt;-</span> <span class="fu">mean</span>(screen2<span class="sc">$</span>income, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a><span class="fu">summary</span>(screen2<span class="sc">$</span>income)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="fu">rep</span>(<span class="cn">NA</span>,<span class="dv">10</span>)))</span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a>df<span class="sc">$</span>y[<span class="fu">is.na</span>(df<span class="sc">$</span>y)] <span class="ot">=</span> <span class="fu">mean</span>(df<span class="sc">$</span>y, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a>screen2<span class="sc">$</span>income[<span class="fu">is.na</span>(screen2<span class="sc">$</span>income)]<span class="ot">&lt;-</span> <span class="fu">mean</span>(screen2<span class="sc">$</span>income, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a><span class="fu">summary</span>(screen2<span class="sc">$</span>income)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    1.00    3.00    4.00    4.21    6.00   10.00</code></pre>
 <ul>
 <li><strong>if_else()</strong> ile Ortalama atama işlemi yapılabir.</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>screen3 <span class="ot">&lt;-</span> screen</span>
-<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>screen3 <span class="ot">=</span> <span class="fu">transform</span>(screen3, <span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm=</span><span class="cn">TRUE</span>), income))</span>
-<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a><span class="fu">summary</span>(screen3<span class="sc">$</span>income)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a>screen3 <span class="ot">&lt;-</span> screen</span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a>screen3 <span class="ot">=</span> <span class="fu">transform</span>(screen3, <span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm=</span><span class="cn">TRUE</span>), income))</span>
+<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a><span class="fu">summary</span>(screen3<span class="sc">$</span>income)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    1.00    3.00    4.00    4.21    6.00   10.00</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
-<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a>screen2<span class="sc">$</span>income[<span class="fu">is.na</span>(screen3<span class="sc">$</span>income)]<span class="ot">&lt;-</span> <span class="fu">mean</span>(screen3<span class="sc">$</span>income, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a><span class="fu">summary</span>(screen2<span class="sc">$</span>income)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a>screen2<span class="sc">$</span>income[<span class="fu">is.na</span>(screen3<span class="sc">$</span>income)]<span class="ot">&lt;-</span> <span class="fu">mean</span>(screen3<span class="sc">$</span>income, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="fu">summary</span>(screen2<span class="sc">$</span>income)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
 ##    1.00    2.50    4.00    4.21    6.00   10.00      26</code></pre>
 <p><strong>mutate() ile</strong></p>
-<div class="kable-table">
-<table>
-<thead>
-<tr class="header">
-<th align="right">subno</th>
-<th align="right">timedrs</th>
-<th align="right">attdrug</th>
-<th align="right">atthouse</th>
-<th align="right">income</th>
-<th align="right">mstatus</th>
-<th align="right">race</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">27</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">20</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">13</td>
-<td align="right">9</td>
-<td align="right">28</td>
-<td align="right">8.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">5</td>
-<td align="right">15</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">6</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">7</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">30</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">8</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">9</td>
-<td align="right">7</td>
-<td align="right">7</td>
-<td align="right">20</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">10</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">30</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">11</td>
-<td align="right">15</td>
-<td align="right">9</td>
-<td align="right">15</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">12</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">13</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">19</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">14</td>
-<td align="right">13</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">15</td>
-<td align="right">2</td>
-<td align="right">5</td>
-<td align="right">17</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">16</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">21</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">22</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">21</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">23</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">24</td>
-<td align="right">5</td>
-<td align="right">10</td>
-<td align="right">25</td>
-<td align="right">9.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">25</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">19</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">26</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">31</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">27</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">28</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">29</td>
-<td align="right">13</td>
-<td align="right">9</td>
-<td align="right">26</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">30</td>
-<td align="right">7</td>
-<td align="right">9</td>
-<td align="right">33</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">31</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">20</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">32</td>
-<td align="right">12</td>
-<td align="right">9</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">33</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">27</td>
-<td align="right">3.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">34</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">30</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">35</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">31</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">36</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">25</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">37</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">27</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">38</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">39</td>
-<td align="right">14</td>
-<td align="right">9</td>
-<td align="right">15</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">40</td>
-<td align="right">7</td>
-<td align="right">7</td>
-<td align="right">32</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">45</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">21</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">46</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">47</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">16</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">48</td>
-<td align="right">60</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">49</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">50</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">23</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">51</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">8.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">52</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">31</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">53</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">54</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">55</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">56</td>
-<td align="right">13</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">57</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">65</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">26</td>
-<td align="right">5.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">66</td>
-<td align="right">12</td>
-<td align="right">6</td>
-<td align="right">27</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">67</td>
-<td align="right">12</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">68</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">27</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">69</td>
-<td align="right">20</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">70</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">71</td>
-<td align="right">5</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">72</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">73</td>
-<td align="right">8</td>
-<td align="right">10</td>
-<td align="right">25</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">74</td>
-<td align="right">9</td>
-<td align="right">8</td>
-<td align="right">15</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">75</td>
-<td align="right">10</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">76</td>
-<td align="right">1</td>
-<td align="right">10</td>
-<td align="right">25</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">77</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">78</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">21</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">79</td>
-<td align="right">23</td>
-<td align="right">6</td>
-<td align="right">29</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">80</td>
-<td align="right">7</td>
-<td align="right">6</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">81</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">82</td>
-<td align="right">39</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">83</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">21</td>
-<td align="right">3.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">84</td>
-<td align="right">7</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">85</td>
-<td align="right">9</td>
-<td align="right">7</td>
-<td align="right">31</td>
-<td align="right">5.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">86</td>
-<td align="right">0</td>
-<td align="right">5</td>
-<td align="right">35</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">87</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">88</td>
-<td align="right">16</td>
-<td align="right">10</td>
-<td align="right">28</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">89</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">20</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">90</td>
-<td align="right">16</td>
-<td align="right">8</td>
-<td align="right">24</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">91</td>
-<td align="right">33</td>
-<td align="right">9</td>
-<td align="right">25</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">95</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">97</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">16</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">98</td>
-<td align="right">38</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">99</td>
-<td align="right">8</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">101</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">24</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">102</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">29</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">103</td>
-<td align="right">0</td>
-<td align="right">9</td>
-<td align="right">16</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">104</td>
-<td align="right">15</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">105</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">27</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">106</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">107</td>
-<td align="right">5</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">108</td>
-<td align="right">7</td>
-<td align="right">9</td>
-<td align="right">30</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">109</td>
-<td align="right">10</td>
-<td align="right">6</td>
-<td align="right">23</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">110</td>
-<td align="right">22</td>
-<td align="right">9</td>
-<td align="right">26</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">111</td>
-<td align="right">10</td>
-<td align="right">7</td>
-<td align="right">30</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">112</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">113</td>
-<td align="right">11</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">114</td>
-<td align="right">9</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">115</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">16</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">116</td>
-<td align="right">34</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">117</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">118</td>
-<td align="right">1</td>
-<td align="right">6</td>
-<td align="right">20</td>
-<td align="right">5.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">119</td>
-<td align="right">0</td>
-<td align="right">10</td>
-<td align="right">18</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">120</td>
-<td align="right">10</td>
-<td align="right">6</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">121</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">17</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">122</td>
-<td align="right">27</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">123</td>
-<td align="right">7</td>
-<td align="right">9</td>
-<td align="right">23</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">124</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">22</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">125</td>
-<td align="right">7</td>
-<td align="right">10</td>
-<td align="right">22</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">126</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">127</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">17</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">128</td>
-<td align="right">11</td>
-<td align="right">6</td>
-<td align="right">27</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">129</td>
-<td align="right">9</td>
-<td align="right">6</td>
-<td align="right">18</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">130</td>
-<td align="right">11</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">131</td>
-<td align="right">11</td>
-<td align="right">8</td>
-<td align="right">21</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">132</td>
-<td align="right">8</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">133</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">134</td>
-<td align="right">4</td>
-<td align="right">9</td>
-<td align="right">26</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">135</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">21</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">136</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">18</td>
-<td align="right">8.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">137</td>
-<td align="right">30</td>
-<td align="right">5</td>
-<td align="right">24</td>
-<td align="right">10.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">138</td>
-<td align="right">7</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">4.209567</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">139</td>
-<td align="right">15</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">140</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">8.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">141</td>
-<td align="right">7</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">142</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">143</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">144</td>
-<td align="right">5</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">145</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">29</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">146</td>
-<td align="right">11</td>
-<td align="right">6</td>
-<td align="right">20</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">148</td>
-<td align="right">16</td>
-<td align="right">10</td>
-<td align="right">20</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">149</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">150</td>
-<td align="right">14</td>
-<td align="right">5</td>
-<td align="right">24</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">151</td>
-<td align="right">8</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">152</td>
-<td align="right">17</td>
-<td align="right">8</td>
-<td align="right">32</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">153</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">154</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">22</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">155</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">27</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">156</td>
-<td align="right">1</td>
-<td align="right">6</td>
-<td align="right">21</td>
-<td align="right">4.209567</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">157</td>
-<td align="right">10</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">1.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">158</td>
-<td align="right">7</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">159</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">17</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">160</td>
-<td align="right">5</td>
-<td align="right">6</td>
-<td align="right">25</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">166</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">31</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">167</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">16</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">183</td>
-<td align="right">16</td>
-<td align="right">10</td>
-<td align="right">17</td>
-<td align="right">8.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">184</td>
-<td align="right">0</td>
-<td align="right">5</td>
-<td align="right">14</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">185</td>
-<td align="right">17</td>
-<td align="right">7</td>
-<td align="right">30</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">187</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">190</td>
-<td align="right">10</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">192</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">202</td>
-<td align="right">20</td>
-<td align="right">8</td>
-<td align="right">24</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">203</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">21</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">204</td>
-<td align="right">25</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">205</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">27</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">206</td>
-<td align="right">6</td>
-<td align="right">9</td>
-<td align="right">20</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">208</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">210</td>
-<td align="right">8</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">212</td>
-<td align="right">9</td>
-<td align="right">9</td>
-<td align="right">27</td>
-<td align="right">3.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">213</td>
-<td align="right">19</td>
-<td align="right">10</td>
-<td align="right">23</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">214</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">27</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">225</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">226</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">227</td>
-<td align="right">7</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">228</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">229</td>
-<td align="right">8</td>
-<td align="right">6</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">230</td>
-<td align="right">49</td>
-<td align="right">8</td>
-<td align="right">34</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">231</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">27</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">232</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">233</td>
-<td align="right">5</td>
-<td align="right">6</td>
-<td align="right">14</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">234</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">235</td>
-<td align="right">60</td>
-<td align="right">10</td>
-<td align="right">29</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">236</td>
-<td align="right">10</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">237</td>
-<td align="right">27</td>
-<td align="right">8</td>
-<td align="right">17</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">238</td>
-<td align="right">7</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">239</td>
-<td align="right">8</td>
-<td align="right">7</td>
-<td align="right">20</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">240</td>
-<td align="right">12</td>
-<td align="right">8</td>
-<td align="right">30</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">241</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">17</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">242</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">243</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">244</td>
-<td align="right">6</td>
-<td align="right">5</td>
-<td align="right">29</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">245</td>
-<td align="right">27</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">246</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">20</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">247</td>
-<td align="right">9</td>
-<td align="right">10</td>
-<td align="right">30</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">248</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">25</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">249</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">250</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">19</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">251</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">24</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">252</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">253</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">21</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">254</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">255</td>
-<td align="right">7</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">258</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">259</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">260</td>
-<td align="right">7</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">261</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">262</td>
-<td align="right">52</td>
-<td align="right">9</td>
-<td align="right">31</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">263</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">264</td>
-<td align="right">18</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">265</td>
-<td align="right">14</td>
-<td align="right">7</td>
-<td align="right">29</td>
-<td align="right">4.209567</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">266</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">267</td>
-<td align="right">8</td>
-<td align="right">9</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">268</td>
-<td align="right">16</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">269</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">17</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">270</td>
-<td align="right">12</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">271</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">272</td>
-<td align="right">24</td>
-<td align="right">10</td>
-<td align="right">25</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">273</td>
-<td align="right">0</td>
-<td align="right">9</td>
-<td align="right">19</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">274</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">16</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">276</td>
-<td align="right">57</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">277</td>
-<td align="right">11</td>
-<td align="right">9</td>
-<td align="right">29</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">278</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">20</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">279</td>
-<td align="right">18</td>
-<td align="right">6</td>
-<td align="right">25</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">280</td>
-<td align="right">1</td>
-<td align="right">5</td>
-<td align="right">16</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">289</td>
-<td align="right">11</td>
-<td align="right">9</td>
-<td align="right">35</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">290</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">24</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">291</td>
-<td align="right">52</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">292</td>
-<td align="right">12</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">293</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">29</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">294</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">3.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">295</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">29</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">299</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">20</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">300</td>
-<td align="right">13</td>
-<td align="right">10</td>
-<td align="right">25</td>
-<td align="right">1.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">301</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">31</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">302</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">33</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">303</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">304</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">305</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">20</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">306</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">17</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">307</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">308</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">309</td>
-<td align="right">5</td>
-<td align="right">5</td>
-<td align="right">27</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">310</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">311</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">28</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">312</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">313</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">27</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">314</td>
-<td align="right">7</td>
-<td align="right">10</td>
-<td align="right">24</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">315</td>
-<td align="right">7</td>
-<td align="right">6</td>
-<td align="right">23</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">316</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">317</td>
-<td align="right">7</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">318</td>
-<td align="right">8</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">319</td>
-<td align="right">9</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">320</td>
-<td align="right">8</td>
-<td align="right">6</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">321</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">21</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">322</td>
-<td align="right">14</td>
-<td align="right">9</td>
-<td align="right">30</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">323</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">32</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">324</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">325</td>
-<td align="right">8</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">326</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">24</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">327</td>
-<td align="right">10</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">328</td>
-<td align="right">21</td>
-<td align="right">10</td>
-<td align="right">28</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">329</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">29</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">330</td>
-<td align="right">58</td>
-<td align="right">7</td>
-<td align="right">29</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">335</td>
-<td align="right">12</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">336</td>
-<td align="right">5</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">337</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">338</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">NA</td>
-<td align="right">5.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">339</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">340</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">341</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">342</td>
-<td align="right">0</td>
-<td align="right">9</td>
-<td align="right">18</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">343</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">344</td>
-<td align="right">7</td>
-<td align="right">9</td>
-<td align="right">23</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">345</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">19</td>
-<td align="right">8.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">346</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">2</td>
-<td align="right">1.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">347</td>
-<td align="right">1</td>
-<td align="right">6</td>
-<td align="right">26</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">348</td>
-<td align="right">4</td>
-<td align="right">6</td>
-<td align="right">24</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">349</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">30</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">355</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">30</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">357</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">358</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">359</td>
-<td align="right">13</td>
-<td align="right">6</td>
-<td align="right">30</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">361</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">362</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">24</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">363</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">365</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">367</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">369</td>
-<td align="right">1</td>
-<td align="right">6</td>
-<td align="right">34</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">370</td>
-<td align="right">57</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">372</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">13</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">374</td>
-<td align="right">17</td>
-<td align="right">9</td>
-<td align="right">27</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">378</td>
-<td align="right">11</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">379</td>
-<td align="right">43</td>
-<td align="right">6</td>
-<td align="right">28</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">380</td>
-<td align="right">6</td>
-<td align="right">9</td>
-<td align="right">28</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">381</td>
-<td align="right">6</td>
-<td align="right">8</td>
-<td align="right">20</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">382</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">21</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">383</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">25</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">384</td>
-<td align="right">10</td>
-<td align="right">6</td>
-<td align="right">27</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">385</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">23</td>
-<td align="right">10.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">386</td>
-<td align="right">37</td>
-<td align="right">9</td>
-<td align="right">25</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">387</td>
-<td align="right">6</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">392</td>
-<td align="right">11</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">397</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">15</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">398</td>
-<td align="right">75</td>
-<td align="right">9</td>
-<td align="right">33</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">399</td>
-<td align="right">7</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">400</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">29</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">401</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">402</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">403</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">29</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">404</td>
-<td align="right">5</td>
-<td align="right">9</td>
-<td align="right">21</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">405</td>
-<td align="right">2</td>
-<td align="right">10</td>
-<td align="right">21</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">406</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">18</td>
-<td align="right">5.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">407</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">2</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">413</td>
-<td align="right">11</td>
-<td align="right">9</td>
-<td align="right">28</td>
-<td align="right">2.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">414</td>
-<td align="right">0</td>
-<td align="right">6</td>
-<td align="right">20</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">417</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">27</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">418</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">420</td>
-<td align="right">6</td>
-<td align="right">9</td>
-<td align="right">27</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">421</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">27</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">424</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">425</td>
-<td align="right">5</td>
-<td align="right">6</td>
-<td align="right">22</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">434</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">435</td>
-<td align="right">10</td>
-<td align="right">9</td>
-<td align="right">23</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">436</td>
-<td align="right">29</td>
-<td align="right">9</td>
-<td align="right">14</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">437</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">438</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">29</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">439</td>
-<td align="right">21</td>
-<td align="right">8</td>
-<td align="right">27</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">440</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">441</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">442</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">20</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">443</td>
-<td align="right">9</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">444</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">445</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">446</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">447</td>
-<td align="right">6</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">448</td>
-<td align="right">4</td>
-<td align="right">9</td>
-<td align="right">16</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">451</td>
-<td align="right">16</td>
-<td align="right">5</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">452</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">25</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">453</td>
-<td align="right">13</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">454</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">455</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">23</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">456</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">457</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">458</td>
-<td align="right">7</td>
-<td align="right">7</td>
-<td align="right">27</td>
-<td align="right">5.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">459</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">21</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">460</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">18</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">461</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">462</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">463</td>
-<td align="right">5</td>
-<td align="right">10</td>
-<td align="right">19</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">464</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">465</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">23</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">466</td>
-<td align="right">4</td>
-<td align="right">9</td>
-<td align="right">28</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">467</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">469</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">27</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">472</td>
-<td align="right">6</td>
-<td align="right">9</td>
-<td align="right">27</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">473</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">474</td>
-<td align="right">30</td>
-<td align="right">8</td>
-<td align="right">29</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">476</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">479</td>
-<td align="right">25</td>
-<td align="right">7</td>
-<td align="right">27</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">480</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">31</td>
-<td align="right">3.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">481</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">482</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">483</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">32</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">484</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">20</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">485</td>
-<td align="right">9</td>
-<td align="right">8</td>
-<td align="right">21</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">486</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">487</td>
-<td align="right">13</td>
-<td align="right">6</td>
-<td align="right">21</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">488</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">489</td>
-<td align="right">4</td>
-<td align="right">9</td>
-<td align="right">29</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">490</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">1.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">491</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">20</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">492</td>
-<td align="right">7</td>
-<td align="right">9</td>
-<td align="right">21</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">493</td>
-<td align="right">7</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">494</td>
-<td align="right">14</td>
-<td align="right">6</td>
-<td align="right">21</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">495</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">496</td>
-<td align="right">15</td>
-<td align="right">6</td>
-<td align="right">26</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">497</td>
-<td align="right">37</td>
-<td align="right">9</td>
-<td align="right">30</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">498</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">18</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">499</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">500</td>
-<td align="right">6</td>
-<td align="right">9</td>
-<td align="right">25</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">501</td>
-<td align="right">10</td>
-<td align="right">6</td>
-<td align="right">21</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">502</td>
-<td align="right">56</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">503</td>
-<td align="right">3</td>
-<td align="right">10</td>
-<td align="right">23</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">504</td>
-<td align="right">0</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">505</td>
-<td align="right">18</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">506</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">507</td>
-<td align="right">18</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">508</td>
-<td align="right">7</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">509</td>
-<td align="right">29</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">510</td>
-<td align="right">0</td>
-<td align="right">5</td>
-<td align="right">24</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">511</td>
-<td align="right">5</td>
-<td align="right">6</td>
-<td align="right">25</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">512</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">513</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">27</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">514</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">29</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">515</td>
-<td align="right">21</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">516</td>
-<td align="right">1</td>
-<td align="right">8</td>
-<td align="right">25</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">517</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">27</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">518</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">519</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">28</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">520</td>
-<td align="right">13</td>
-<td align="right">10</td>
-<td align="right">19</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">521</td>
-<td align="right">5</td>
-<td align="right">6</td>
-<td align="right">23</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">522</td>
-<td align="right">5</td>
-<td align="right">8</td>
-<td align="right">33</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">523</td>
-<td align="right">37</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">524</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">525</td>
-<td align="right">11</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">526</td>
-<td align="right">13</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">9.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">527</td>
-<td align="right">2</td>
-<td align="right">9</td>
-<td align="right">21</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">528</td>
-<td align="right">4</td>
-<td align="right">9</td>
-<td align="right">31</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">529</td>
-<td align="right">21</td>
-<td align="right">9</td>
-<td align="right">23</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">530</td>
-<td align="right">2</td>
-<td align="right">10</td>
-<td align="right">26</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">533</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">534</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">535</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">24</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">536</td>
-<td align="right">12</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">538</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">21</td>
-<td align="right">5.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">539</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">540</td>
-<td align="right">13</td>
-<td align="right">7</td>
-<td align="right">17</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">547</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">548</td>
-<td align="right">81</td>
-<td align="right">8</td>
-<td align="right">24</td>
-<td align="right">9.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">549</td>
-<td align="right">12</td>
-<td align="right">7</td>
-<td align="right">31</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">550</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">551</td>
-<td align="right">16</td>
-<td align="right">7</td>
-<td align="right">28</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">552</td>
-<td align="right">27</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">553</td>
-<td align="right">2</td>
-<td align="right">5</td>
-<td align="right">26</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">554</td>
-<td align="right">2</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">2.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">555</td>
-<td align="right">8</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">556</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">16</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">557</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">558</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">14</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">559</td>
-<td align="right">19</td>
-<td align="right">7</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">560</td>
-<td align="right">4</td>
-<td align="right">9</td>
-<td align="right">29</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">567</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">19</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">568</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">569</td>
-<td align="right">15</td>
-<td align="right">6</td>
-<td align="right">20</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">570</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">22</td>
-<td align="right">4.209567</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">571</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">21</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">572</td>
-<td align="right">13</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">573</td>
-<td align="right">6</td>
-<td align="right">9</td>
-<td align="right">26</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">574</td>
-<td align="right">1</td>
-<td align="right">10</td>
-<td align="right">18</td>
-<td align="right">10.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">575</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">18</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">576</td>
-<td align="right">3</td>
-<td align="right">9</td>
-<td align="right">28</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">577</td>
-<td align="right">0</td>
-<td align="right">9</td>
-<td align="right">31</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">578</td>
-<td align="right">22</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">579</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">28</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">580</td>
-<td align="right">14</td>
-<td align="right">7</td>
-<td align="right">20</td>
-<td align="right">2.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">581</td>
-<td align="right">6</td>
-<td align="right">9</td>
-<td align="right">20</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">582</td>
-<td align="right">16</td>
-<td align="right">7</td>
-<td align="right">26</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">583</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">27</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">584</td>
-<td align="right">0</td>
-<td align="right">8</td>
-<td align="right">11</td>
-<td align="right">4.209567</td>
-<td align="right">2</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">585</td>
-<td align="right">8</td>
-<td align="right">6</td>
-<td align="right">26</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">586</td>
-<td align="right">0</td>
-<td align="right">7</td>
-<td align="right">27</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">587</td>
-<td align="right">4</td>
-<td align="right">7</td>
-<td align="right">16</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">588</td>
-<td align="right">5</td>
-<td align="right">6</td>
-<td align="right">12</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">589</td>
-<td align="right">2</td>
-<td align="right">8</td>
-<td align="right">20</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">590</td>
-<td align="right">6</td>
-<td align="right">8</td>
-<td align="right">19</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">591</td>
-<td align="right">11</td>
-<td align="right">8</td>
-<td align="right">26</td>
-<td align="right">7.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">592</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">20</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">593</td>
-<td align="right">23</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">7.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">683</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">30</td>
-<td align="right">6.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">685</td>
-<td align="right">4</td>
-<td align="right">9</td>
-<td align="right">25</td>
-<td align="right">1.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">686</td>
-<td align="right">16</td>
-<td align="right">9</td>
-<td align="right">23</td>
-<td align="right">6.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">687</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">22</td>
-<td align="right">8.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">688</td>
-<td align="right">1</td>
-<td align="right">9</td>
-<td align="right">24</td>
-<td align="right">5.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">689</td>
-<td align="right">2</td>
-<td align="right">6</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">1</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">690</td>
-<td align="right">6</td>
-<td align="right">9</td>
-<td align="right">27</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">691</td>
-<td align="right">6</td>
-<td align="right">6</td>
-<td align="right">28</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">706</td>
-<td align="right">3</td>
-<td align="right">7</td>
-<td align="right">24</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">707</td>
-<td align="right">1</td>
-<td align="right">7</td>
-<td align="right">17</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">708</td>
-<td align="right">15</td>
-<td align="right">9</td>
-<td align="right">22</td>
-<td align="right">10.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">709</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">23</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">710</td>
-<td align="right">7</td>
-<td align="right">8</td>
-<td align="right">16</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">711</td>
-<td align="right">9</td>
-<td align="right">6</td>
-<td align="right">18</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">717</td>
-<td align="right">18</td>
-<td align="right">6</td>
-<td align="right">21</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">724</td>
-<td align="right">14</td>
-<td align="right">9</td>
-<td align="right">19</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">754</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">17</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">755</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">17</td>
-<td align="right">3.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">756</td>
-<td align="right">15</td>
-<td align="right">10</td>
-<td align="right">19</td>
-<td align="right">8.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">757</td>
-<td align="right">4</td>
-<td align="right">8</td>
-<td align="right">23</td>
-<td align="right">2.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-<tr class="odd">
-<td align="right">758</td>
-<td align="right">3</td>
-<td align="right">8</td>
-<td align="right">18</td>
-<td align="right">4.000000</td>
-<td align="right">2</td>
-<td align="right">1</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a>screen <span class="sc">%&gt;%</span>  </span>
+<span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income))</span></code></pre></div>
 </div>
 <div id="veri-setindeki-kayıp-veriler" class="section level3" number="1.2.6">
 <h3><span class="header-section-number">1.2.6</span> Veri setindeki kayıp veriler</h3>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a>screen <span class="ot">&lt;-</span> screen <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income)) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>()</span>
-<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a><span class="fu">summary</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a>screen <span class="ot">&lt;-</span> screen <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income)) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>()</span>
+<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a><span class="fu">summary</span>(screen)</span></code></pre></div>
 <pre><code>##      subno          timedrs          attdrug         atthouse    
 ##  Min.   :  1.0   Min.   : 0.000   Min.   : 5.00   Min.   : 2.00  
 ##  1st Qu.:136.8   1st Qu.: 2.000   1st Qu.: 7.00   1st Qu.:21.00  
@@ -5966,9 +1767,9 @@ yerleştirilmesi kullanılarak kayıp değer yerine değişkenin ortalama değer
 </div>
 <div id="veri-setindeki-kayıp-veriler-2" class="section level3" number="1.2.8">
 <h3><span class="header-section-number">1.2.8</span> Veri setindeki kayıp veriler</h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a>screen <span class="ot">&lt;-</span> screen <span class="sc">%&gt;%</span> </span>
-<span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income)) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>()</span>
-<span id="cb43-3"><a href="#cb43-3" tabindex="-1"></a><span class="fu">summary</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a>screen <span class="ot">&lt;-</span> screen <span class="sc">%&gt;%</span> </span>
+<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income)) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>()</span>
+<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a><span class="fu">summary</span>(screen)</span></code></pre></div>
 <pre><code>##      subno          timedrs          attdrug         atthouse    
 ##  Min.   :  1.0   Min.   : 0.000   Min.   : 5.00   Min.   : 2.00  
 ##  1st Qu.:136.8   1st Qu.: 2.000   1st Qu.: 7.00   1st Qu.:21.00  
