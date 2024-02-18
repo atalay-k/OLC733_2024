@@ -156,7 +156,7 @@
 <ul>
 <li><p>Varsayımlar incelenirken ilk olarak yanlış girilmiş bir değer olup
 olmadığına bakılmalıdır.</p></li>
-<li><p>Bu bölümde 🔗 <a href="book\data\SCREEN.sav">SCREEN.sav</a> adlı veri seti
+<li><p>Bu bölümde 🔗 <a href="import\SCREEN.sav">SCREEN.sav</a> adlı veri seti
 kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465 kadının 6 değişkene
 ilişkin bilgileri bulunmaktadır. Değişkenlerden timedrs, attdrug, atthouse ve
 income değişkenleri sürekli, mstatus ve race değişkenleriyse iki kategorili değişkenlerdir.</p></li>
@@ -169,7 +169,7 @@ paketin <code>summary()</code> fonksiyonudur. <code>psych</code> paketinde <code
 fonksiyonu da aynı amaçla kullanılabilir.</p></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>screen <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">&quot;data/SCREEN.sav&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>screen <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">&quot;import/SCREEN.sav&quot;</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">head</span>(screen)</span></code></pre></div>
 <div class="kable-table">
 <table>
@@ -412,27 +412,26 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
 <ul>
 <li><code>gtsummary</code> paketi ile inceleme</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span></code></pre></div>
-<pre><code>## #Uighur</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>screen <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span><span class="fu">tbl_summary</span>(<span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="st">&quot;{min}, {max}&quot;</span>),<span class="at">missing =</span><span class="st">&quot;always&quot;</span>)</span></code></pre></div>
-<div id="vjibsfbxgd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vjibsfbxgd table {
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>screen <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>) <span class="sc">%&gt;%</span><span class="fu">tbl_summary</span>(<span class="at">statistic =</span> <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="fu">c</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="st">&quot;{min}, {max}&quot;</span>),<span class="at">missing =</span><span class="st">&quot;always&quot;</span>)</span></code></pre></div>
+<div id="ebnbxkvvqu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ebnbxkvvqu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vjibsfbxgd thead, #vjibsfbxgd tbody, #vjibsfbxgd tfoot, #vjibsfbxgd tr, #vjibsfbxgd td, #vjibsfbxgd th {
+#ebnbxkvvqu thead, #ebnbxkvvqu tbody, #ebnbxkvvqu tfoot, #ebnbxkvvqu tr, #ebnbxkvvqu td, #ebnbxkvvqu th {
   border-style: none;
 }
 
-#vjibsfbxgd p {
+#ebnbxkvvqu p {
   margin: 0;
   padding: 0;
 }
 
-#vjibsfbxgd .gt_table {
+#ebnbxkvvqu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -458,12 +457,12 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-left-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_caption {
+#ebnbxkvvqu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vjibsfbxgd .gt_title {
+#ebnbxkvvqu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -475,7 +474,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-width: 0;
 }
 
-#vjibsfbxgd .gt_subtitle {
+#ebnbxkvvqu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -487,7 +486,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-top-width: 0;
 }
 
-#vjibsfbxgd .gt_heading {
+#ebnbxkvvqu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -499,13 +498,13 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_bottom_border {
+#ebnbxkvvqu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_col_headings {
+#ebnbxkvvqu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -520,7 +519,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_col_heading {
+#ebnbxkvvqu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -540,7 +539,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   overflow-x: hidden;
 }
 
-#vjibsfbxgd .gt_column_spanner_outer {
+#ebnbxkvvqu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -552,15 +551,15 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 4px;
 }
 
-#vjibsfbxgd .gt_column_spanner_outer:first-child {
+#ebnbxkvvqu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vjibsfbxgd .gt_column_spanner_outer:last-child {
+#ebnbxkvvqu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vjibsfbxgd .gt_column_spanner {
+#ebnbxkvvqu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -572,11 +571,11 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   width: 100%;
 }
 
-#vjibsfbxgd .gt_spanner_row {
+#ebnbxkvvqu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vjibsfbxgd .gt_group_heading {
+#ebnbxkvvqu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -602,7 +601,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   text-align: left;
 }
 
-#vjibsfbxgd .gt_empty_group_heading {
+#ebnbxkvvqu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -617,15 +616,15 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   vertical-align: middle;
 }
 
-#vjibsfbxgd .gt_from_md > :first-child {
+#ebnbxkvvqu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vjibsfbxgd .gt_from_md > :last-child {
+#ebnbxkvvqu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vjibsfbxgd .gt_row {
+#ebnbxkvvqu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -644,7 +643,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   overflow-x: hidden;
 }
 
-#vjibsfbxgd .gt_stub {
+#ebnbxkvvqu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -657,7 +656,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#vjibsfbxgd .gt_stub_row_group {
+#ebnbxkvvqu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -671,15 +670,15 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   vertical-align: top;
 }
 
-#vjibsfbxgd .gt_row_group_first td {
+#ebnbxkvvqu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vjibsfbxgd .gt_row_group_first th {
+#ebnbxkvvqu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vjibsfbxgd .gt_summary_row {
+#ebnbxkvvqu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -689,16 +688,16 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#vjibsfbxgd .gt_first_summary_row {
+#ebnbxkvvqu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_first_summary_row.thick {
+#ebnbxkvvqu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vjibsfbxgd .gt_last_summary_row {
+#ebnbxkvvqu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -708,7 +707,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_grand_summary_row {
+#ebnbxkvvqu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -718,7 +717,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#vjibsfbxgd .gt_first_grand_summary_row {
+#ebnbxkvvqu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -728,7 +727,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-top-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_last_grand_summary_row_top {
+#ebnbxkvvqu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -738,11 +737,11 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_striped {
+#ebnbxkvvqu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vjibsfbxgd .gt_table_body {
+#ebnbxkvvqu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -751,7 +750,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-bottom-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_footnotes {
+#ebnbxkvvqu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -765,7 +764,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_footnote {
+#ebnbxkvvqu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -774,7 +773,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#vjibsfbxgd .gt_sourcenotes {
+#ebnbxkvvqu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -788,7 +787,7 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   border-right-color: #D3D3D3;
 }
 
-#vjibsfbxgd .gt_sourcenote {
+#ebnbxkvvqu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -796,63 +795,63 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
   padding-right: 5px;
 }
 
-#vjibsfbxgd .gt_left {
+#ebnbxkvvqu .gt_left {
   text-align: left;
 }
 
-#vjibsfbxgd .gt_center {
+#ebnbxkvvqu .gt_center {
   text-align: center;
 }
 
-#vjibsfbxgd .gt_right {
+#ebnbxkvvqu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vjibsfbxgd .gt_font_normal {
+#ebnbxkvvqu .gt_font_normal {
   font-weight: normal;
 }
 
-#vjibsfbxgd .gt_font_bold {
+#ebnbxkvvqu .gt_font_bold {
   font-weight: bold;
 }
 
-#vjibsfbxgd .gt_font_italic {
+#ebnbxkvvqu .gt_font_italic {
   font-style: italic;
 }
 
-#vjibsfbxgd .gt_super {
+#ebnbxkvvqu .gt_super {
   font-size: 65%;
 }
 
-#vjibsfbxgd .gt_footnote_marks {
+#ebnbxkvvqu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vjibsfbxgd .gt_asterisk {
+#ebnbxkvvqu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vjibsfbxgd .gt_indent_1 {
+#ebnbxkvvqu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vjibsfbxgd .gt_indent_2 {
+#ebnbxkvvqu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vjibsfbxgd .gt_indent_3 {
+#ebnbxkvvqu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vjibsfbxgd .gt_indent_4 {
+#ebnbxkvvqu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vjibsfbxgd .gt_indent_5 {
+#ebnbxkvvqu .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -913,8 +912,8 @@ fonksiyonu da aynı amaçla kullanılabilir.</p></li>
 <li><p>🔗[Presentation-Ready Summary Tables] with gtsummary(<a href="https://education.rstudio.com/blog/2020/07/gtsummary" class="uri">https://education.rstudio.com/blog/2020/07/gtsummary</a>)</p></li>
 <li><p><code>vtable</code> paketi ile inceleme</p></li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">library</span>(vtable)</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">sumtable</span>(screen, <span class="at">summ=</span><span class="fu">c</span>(<span class="st">&#39;notNA(x)&#39;</span>,<span class="st">&#39;min(x)&#39;</span>,<span class="st">&#39;max(x)&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">library</span>(vtable)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">sumtable</span>(screen, <span class="at">summ=</span><span class="fu">c</span>(<span class="st">&#39;notNA(x)&#39;</span>,<span class="st">&#39;min(x)&#39;</span>,<span class="st">&#39;max(x)&#39;</span>))</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 (#tab:unnamed-chunk-5)Summary Statistics
@@ -1040,9 +1039,9 @@ race
 <li><p>🔗 <a href="https://nickch-k.github.io/vtable/index.html">vtable paketi için örnekler</a></p></li>
 <li><p>sütun isimleri aşağıdaki gibi değiştirilebilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">sumtable</span>(screen, <span class="at">summ =</span> <span class="fu">c</span>(<span class="st">&#39;notNA(x)&#39;</span>,<span class="st">&#39;min(x)&#39;</span>,<span class="st">&#39;max(x)&#39;</span>),</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>         <span class="at">summ.names =</span> <span class="fu">c</span>(<span class="st">&#39;Frekans&#39;</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>,<span class="st">&#39;Minimum&#39;</span>,<span class="st">&#39;Maksimum&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">sumtable</span>(screen, <span class="at">summ =</span> <span class="fu">c</span>(<span class="st">&#39;notNA(x)&#39;</span>,<span class="st">&#39;min(x)&#39;</span>,<span class="st">&#39;max(x)&#39;</span>),</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>         <span class="at">summ.names =</span> <span class="fu">c</span>(<span class="st">&#39;Frekans&#39;</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>,<span class="st">&#39;Minimum&#39;</span>,<span class="st">&#39;Maksimum&#39;</span>))</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 (#tab:unnamed-chunk-6)Summary Statistics
@@ -1167,9 +1166,9 @@ race
 <ul>
 <li><code>kable</code> paketi ile <code>psych</code> paketi çıktılarını düzenleme</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>ozet <span class="ot">&lt;-</span> <span class="fu">describe</span>(screen[,<span class="sc">-</span><span class="dv">1</span>])</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="fu">kable</span>(ozet,<span class="at">format=</span><span class="st">&#39;markdown&#39;</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>      <span class="at">caption=</span><span class="st">&quot;Betimsel İstatistikler&quot;</span>,<span class="at">digits=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>ozet <span class="ot">&lt;-</span> <span class="fu">describe</span>(screen[,<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">kable</span>(ozet,<span class="at">format=</span><span class="st">&#39;markdown&#39;</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>      <span class="at">caption=</span><span class="st">&quot;Betimsel İstatistikler&quot;</span>,<span class="at">digits=</span><span class="dv">2</span>)</span></code></pre></div>
 <table style="width:100%;">
 <caption>(#tab:unnamed-chunk-7)Betimsel İstatistikler</caption>
 <colgroup>
@@ -1380,30 +1379,30 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>herhangi bir eksik veri olup olmadığının kontrolü</strong></li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="fu">any_na</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="fu">any_na</span>(screen)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <ul>
 <li><strong>toplam kaç eksik veri var</strong></li>
 </ul>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">n_miss</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="fu">n_miss</span>(screen)</span></code></pre></div>
 <pre><code>## [1] 27</code></pre>
 <ul>
 <li><strong>eksik veri oranı ne?</strong></li>
 </ul>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">prop_miss</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">prop_miss</span>(screen)</span></code></pre></div>
 <pre><code>## [1] 0.008294931</code></pre>
 <ul>
 <li><strong>eksik veriler hangi sütunlarda</strong></li>
 </ul>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>screen <span class="sc">%&gt;%</span> <span class="fu">is.na</span>() <span class="sc">%&gt;%</span> <span class="fu">colSums</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>screen <span class="sc">%&gt;%</span> <span class="fu">is.na</span>() <span class="sc">%&gt;%</span> <span class="fu">colSums</span>()</span></code></pre></div>
 <pre><code>##    subno  timedrs  attdrug atthouse   income  mstatus     race 
 ##        0        0        0        1       26        0        0</code></pre>
 <ul>
 <li><strong>eksik veri tablosu, frekans ve oran</strong></li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">miss_var_summary</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">miss_var_summary</span>(screen)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1455,7 +1454,7 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>değişkenlere göre eksik veri tablosu</strong></li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">miss_var_table</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="fu">miss_var_table</span>(screen)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1487,7 +1486,7 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>Hangi bireylerde/satırlarda eksik veri var</strong></li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">miss_case_summary</span>(screen))</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">miss_case_summary</span>(screen))</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1534,7 +1533,7 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>tam ve eksik veri tablosu</strong></li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">miss_case_table</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">miss_case_table</span>(screen)</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1561,15 +1560,15 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li><strong>Eksik verinin görselleştirilmesi</strong></li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">gg_miss_var</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">gg_miss_var</span>(screen)</span></code></pre></div>
 <p><img src="01-Varsay%C4%B1mlar_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
 <li><strong>Eksik verinin görselleştirilmesi</strong></li>
 </ul>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="fu">vis_miss</span>(screen) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">80</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="fu">vis_miss</span>(screen) <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">80</span>))</span></code></pre></div>
 <p><img src="01-Varsay%C4%B1mlar_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">gg_miss_upset</span>(screen)</span></code></pre></div>
 <pre><code>## `geom_line()`: Each group consists of only one observation.
 ## ℹ Do you need to adjust the group aesthetic?</code></pre>
 <p><img src="01-Varsay%C4%B1mlar_files/figure-html/unnamed-chunk-17-2.png" width="100%" style="display: block; margin: auto;" /></p>
@@ -1581,18 +1580,18 @@ paket mevcuttur. Bu paketler arasında</p>
 <ul>
 <li>income değişleninde eksik veriler diğer değişkenlerle ilişkili mi?</li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># değişkeni kopyala</span></span>
-<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
-<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>screen2<span class="sc">$</span>income_m <span class="ot">&lt;-</span> screen2<span class="sc">$</span>income</span>
-<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a><span class="fu">library</span>(finalfit)</span>
-<span id="cb30-6"><a href="#cb30-6" tabindex="-1"></a></span>
-<span id="cb30-7"><a href="#cb30-7" tabindex="-1"></a>explanatory <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;timedrs&quot;</span>, <span class="st">&quot;attdrug&quot;</span>, <span class="st">&quot;atthouse&quot;</span>)</span>
-<span id="cb30-8"><a href="#cb30-8" tabindex="-1"></a>dependent <span class="ot">=</span> <span class="st">&quot;income_m&quot;</span></span>
-<span id="cb30-9"><a href="#cb30-9" tabindex="-1"></a>screen2 <span class="sc">%&gt;%</span> </span>
-<span id="cb30-10"><a href="#cb30-10" tabindex="-1"></a>  <span class="fu">missing_compare</span>(dependent, explanatory) <span class="sc">%&gt;%</span> </span>
-<span id="cb30-11"><a href="#cb30-11" tabindex="-1"></a>    knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">row.names=</span><span class="cn">FALSE</span>, <span class="at">align =</span> <span class="fu">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;r&quot;</span>), </span>
-<span id="cb30-12"><a href="#cb30-12" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Eksik veriye sahip olan ve olmayan değişkenlerin ortalama karşılaştırması&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="co"># değişkeni kopyala</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>screen2<span class="sc">$</span>income_m <span class="ot">&lt;-</span> screen2<span class="sc">$</span>income</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="fu">library</span>(finalfit)</span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a>explanatory <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;timedrs&quot;</span>, <span class="st">&quot;attdrug&quot;</span>, <span class="st">&quot;atthouse&quot;</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" tabindex="-1"></a>dependent <span class="ot">=</span> <span class="st">&quot;income_m&quot;</span></span>
+<span id="cb28-9"><a href="#cb28-9" tabindex="-1"></a>screen2 <span class="sc">%&gt;%</span> </span>
+<span id="cb28-10"><a href="#cb28-10" tabindex="-1"></a>  <span class="fu">missing_compare</span>(dependent, explanatory) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-11"><a href="#cb28-11" tabindex="-1"></a>    knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">row.names=</span><span class="cn">FALSE</span>, <span class="at">align =</span> <span class="fu">c</span>(<span class="st">&quot;l&quot;</span>, <span class="st">&quot;l&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;r&quot;</span>, <span class="st">&quot;r&quot;</span>), </span>
+<span id="cb28-12"><a href="#cb28-12" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Eksik veriye sahip olan ve olmayan değişkenlerin ortalama karşılaştırması&quot;</span>) </span></code></pre></div>
 <table>
 <caption>(#tab:unnamed-chunk-18)Eksik veriye sahip olan ve olmayan değişkenlerin ortalama karşılaştırması</caption>
 <colgroup>
@@ -1637,18 +1636,18 @@ paket mevcuttur. Bu paketler arasında</p>
 </table>
 <div id="bir-değişkenin-kategorilerinde-inceleme" class="section level4" number="1.2.3.1">
 <h4><span class="header-section-number">1.2.3.1</span> Bir değişkenin kategorilerinde inceleme</h4>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>miss_test <span class="ot">&lt;-</span> screen2 <span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">miss_income =</span> <span class="fu">is.na</span>(income))</span>
-<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>  </span>
-<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a><span class="co"># evli olmayanlar için</span></span>
-<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>notmarried <span class="ot">&lt;-</span> miss_test <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mstatus <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a>   <span class="fu">pull</span>(miss_income)</span>
-<span id="cb31-7"><a href="#cb31-7" tabindex="-1"></a>  </span>
-<span id="cb31-8"><a href="#cb31-8" tabindex="-1"></a><span class="co"># Evliler için</span></span>
-<span id="cb31-9"><a href="#cb31-9" tabindex="-1"></a>married <span class="ot">&lt;-</span> miss_test <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mstatus <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(miss_income)</span>
-<span id="cb31-10"><a href="#cb31-10" tabindex="-1"></a>  </span>
-<span id="cb31-11"><a href="#cb31-11" tabindex="-1"></a><span class="co">#c Oran</span></span>
-<span id="cb31-12"><a href="#cb31-12" tabindex="-1"></a><span class="fu">t.test</span>(notmarried, married)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>miss_test <span class="ot">&lt;-</span> screen2 <span class="sc">%&gt;%</span><span class="fu">mutate</span>(<span class="at">miss_income =</span> <span class="fu">is.na</span>(income))</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>  </span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a><span class="co"># evli olmayanlar için</span></span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>notmarried <span class="ot">&lt;-</span> miss_test <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mstatus <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>   <span class="fu">pull</span>(miss_income)</span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>  </span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a><span class="co"># Evliler için</span></span>
+<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a>married <span class="ot">&lt;-</span> miss_test <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mstatus <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">pull</span>(miss_income)</span>
+<span id="cb29-10"><a href="#cb29-10" tabindex="-1"></a>  </span>
+<span id="cb29-11"><a href="#cb29-11" tabindex="-1"></a><span class="co">#c Oran</span></span>
+<span id="cb29-12"><a href="#cb29-12" tabindex="-1"></a><span class="fu">t.test</span>(notmarried, married)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -1660,14 +1659,14 @@ paket mevcuttur. Bu paketler arasında</p>
 ## sample estimates:
 ##  mean of x  mean of y 
 ## 0.03883495 0.06077348</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">gg_miss_fct</span>(screen, <span class="at">fct =</span> mstatus)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="fu">gg_miss_fct</span>(screen, <span class="at">fct =</span> mstatus)</span></code></pre></div>
 <p><img src="01-Varsay%C4%B1mlar_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="mcar-test" class="section level3" number="1.2.4">
 <h3><span class="header-section-number">1.2.4</span> MCAR test</h3>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
-<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="fu">mcar_test</span>(<span class="at">data=</span>screen[,<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">library</span>(naniar)</span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="fu">mcar_test</span>(<span class="at">data=</span>screen[,<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
 <div class="kable-table">
 <table>
 <thead>
@@ -1698,41 +1697,41 @@ Böylece kayıp verinin MCAR olduğu sonucuna varılabilir.</li>
 <ul>
 <li>Liste bazında silme işlemi <strong>na.omit</strong> ve <strong>complete.cases</strong> fonkisyonları ile sağlanabilir.</li>
 </ul>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="fu">na.omit</span>(screen) </span>
-<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a>screen[<span class="sc">!</span><span class="fu">complete.cases</span>(screen),]</span>
-<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a>screen[<span class="fu">complete.cases</span>(screen),]</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="fu">na.omit</span>(screen) </span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>screen[<span class="sc">!</span><span class="fu">complete.cases</span>(screen),]</span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>screen[<span class="fu">complete.cases</span>(screen),]</span></code></pre></div>
 <ul>
 <li>Ortalama atama işlemi yapılabir. Tek bir değişkene ortalama atama</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="fu">rep</span>(<span class="cn">NA</span>,<span class="dv">10</span>)))</span>
-<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a>df<span class="sc">$</span>y[<span class="fu">is.na</span>(df<span class="sc">$</span>y)] <span class="ot">=</span> <span class="fu">mean</span>(df<span class="sc">$</span>y, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
-<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a>screen2<span class="sc">$</span>income[<span class="fu">is.na</span>(screen2<span class="sc">$</span>income)]<span class="ot">&lt;-</span> <span class="fu">mean</span>(screen2<span class="sc">$</span>income, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a><span class="fu">summary</span>(screen2<span class="sc">$</span>income)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="fu">rep</span>(<span class="cn">NA</span>,<span class="dv">10</span>)))</span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>df<span class="sc">$</span>y[<span class="fu">is.na</span>(df<span class="sc">$</span>y)] <span class="ot">=</span> <span class="fu">mean</span>(df<span class="sc">$</span>y, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a>screen2<span class="sc">$</span>income[<span class="fu">is.na</span>(screen2<span class="sc">$</span>income)]<span class="ot">&lt;-</span> <span class="fu">mean</span>(screen2<span class="sc">$</span>income, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a><span class="fu">summary</span>(screen2<span class="sc">$</span>income)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    1.00    3.00    4.00    4.21    6.00   10.00</code></pre>
 <ul>
 <li><strong>if_else()</strong> ile Ortalama atama işlemi yapılabir.</li>
 </ul>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a>screen3 <span class="ot">&lt;-</span> screen</span>
-<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a>screen3 <span class="ot">=</span> <span class="fu">transform</span>(screen3, <span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm=</span><span class="cn">TRUE</span>), income))</span>
-<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a><span class="fu">summary</span>(screen3<span class="sc">$</span>income)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>screen3 <span class="ot">&lt;-</span> screen</span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>screen3 <span class="ot">=</span> <span class="fu">transform</span>(screen3, <span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm=</span><span class="cn">TRUE</span>), income))</span>
+<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a><span class="fu">summary</span>(screen3<span class="sc">$</span>income)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    1.00    3.00    4.00    4.21    6.00   10.00</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
-<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a>screen2<span class="sc">$</span>income[<span class="fu">is.na</span>(screen3<span class="sc">$</span>income)]<span class="ot">&lt;-</span> <span class="fu">mean</span>(screen3<span class="sc">$</span>income, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="fu">summary</span>(screen2<span class="sc">$</span>income)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a>screen2 <span class="ot">&lt;-</span> screen</span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a>screen2<span class="sc">$</span>income[<span class="fu">is.na</span>(screen3<span class="sc">$</span>income)]<span class="ot">&lt;-</span> <span class="fu">mean</span>(screen3<span class="sc">$</span>income, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a><span class="fu">summary</span>(screen2<span class="sc">$</span>income)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
 ##    1.00    2.50    4.00    4.21    6.00   10.00      26</code></pre>
 <p><strong>mutate() ile</strong></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a>screen <span class="sc">%&gt;%</span>  </span>
-<span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income))</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a>screen <span class="sc">%&gt;%</span>  </span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income))</span></code></pre></div>
 </div>
 <div id="veri-setindeki-kayıp-veriler" class="section level3" number="1.2.6">
 <h3><span class="header-section-number">1.2.6</span> Veri setindeki kayıp veriler</h3>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a>screen <span class="ot">&lt;-</span> screen <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income)) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>()</span>
-<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a><span class="fu">summary</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a>screen <span class="ot">&lt;-</span> screen <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income)) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>()</span>
+<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="fu">summary</span>(screen)</span></code></pre></div>
 <pre><code>##      subno          timedrs          attdrug         atthouse    
 ##  Min.   :  1.0   Min.   : 0.000   Min.   : 5.00   Min.   : 2.00  
 ##  1st Qu.:136.8   1st Qu.: 2.000   1st Qu.: 7.00   1st Qu.:21.00  
@@ -1767,9 +1766,9 @@ yerleştirilmesi kullanılarak kayıp değer yerine değişkenin ortalama değer
 </div>
 <div id="veri-setindeki-kayıp-veriler-2" class="section level3" number="1.2.8">
 <h3><span class="header-section-number">1.2.8</span> Veri setindeki kayıp veriler</h3>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" tabindex="-1"></a>screen <span class="ot">&lt;-</span> screen <span class="sc">%&gt;%</span> </span>
-<span id="cb46-2"><a href="#cb46-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income)) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>()</span>
-<span id="cb46-3"><a href="#cb46-3" tabindex="-1"></a><span class="fu">summary</span>(screen)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" tabindex="-1"></a>screen <span class="ot">&lt;-</span> screen <span class="sc">%&gt;%</span> </span>
+<span id="cb44-2"><a href="#cb44-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(income), <span class="fu">mean</span>(income, <span class="at">na.rm =</span><span class="cn">TRUE</span>), income)) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>()</span>
+<span id="cb44-3"><a href="#cb44-3" tabindex="-1"></a><span class="fu">summary</span>(screen)</span></code></pre></div>
 <pre><code>##      subno          timedrs          attdrug         atthouse    
 ##  Min.   :  1.0   Min.   : 0.000   Min.   : 5.00   Min.   : 2.00  
 ##  1st Qu.:136.8   1st Qu.: 2.000   1st Qu.: 7.00   1st Qu.:21.00  
