@@ -2,7 +2,7 @@
 title: "OLC733" # edit
 subtitle: "R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" 
 author: "Kubra Atalay Kabasakal" # edit
-date: "2024-02-19"
+date: "2024-02-20"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
@@ -69,5 +69,8 @@ Ders İçeriği:
 - Kline,R. B. (2019). Yapısal Eşitlik Modellemesinin İlkeleri ve Uygulaması(4. Baskı). (S. Şen, Çev.) Ankara: Nobel Yayınevi.
 
 - Şen, S. (2020). Mplus ile Yapısal Eşitlik Modellemesi Uygulamaları (2020).Nobel Yayınevi.
+
+- Tabachnick, B. G., & Fidell, L. S. (2012). Using Multivariate Statistics (4rd ed.). New York: Harper Collins.
+
 
 - Wolf, E. J., Harrington, K. M., Clark, S. L., & Miller, M. W. (2013). Sample Size Requirements for Structural Equation Models: An Evaluation of Power, Bias, and Solution Propriety. Educational and Psychological Measurement, 73(6), 913–934. https://doi.org/10.1177/0013164413495237

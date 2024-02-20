@@ -81,3 +81,4 @@ pkg <- function(txt, url = NULL) {
     sprintf("<code class='package'><a href='%s' target='_blank'>%s</a></code>", url, txt)
   }
 }
+

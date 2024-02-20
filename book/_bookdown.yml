@@ -9,11 +9,11 @@ delete_merged_file: yes
 clean: ["packages.bib"]
 language:
   ui:
-    chapter_name: 'Chapter '
+    chapter_name: 'Bölüm '
   label:
-    fig: 'Figure '
-    tab: 'Table '
-    eq: 'Equation '
+    fig: 'Şekil '
+    tab: 'Tablo '
+    eq: 'Deklem '
     thm: 'Theorem '
     lem: 'Lemma '
     cor: 'Corollary '
