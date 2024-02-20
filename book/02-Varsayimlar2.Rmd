@@ -1,0 +1,481 @@
+# Varsayımlar II
+
+## Uç değerler
+
+-  Uç değerler hem I. tip hem de II. tip hatalara neden olurlar ve 
+sonuçların genellenebilirliğini düşürürler.
+
+- Veri setinde uç değer bulunmasının 4 nedeni olabilir:
+  - Verinin veri dosyasına yanlış girilmesi
+  - Kayıp veri kodlamasında hata yapılması
+  - Uç değerin örneklemin alındığı evrenin üyesi olmaması
+  - Uç değerin örneklemin alındığı evrenin üyesi olması ancak 
+  değişkenin evrendeki dağılımının normal dağılıma göre aşırı 
+  değerlere sahip olması
+  
+- Hatalı veri girişi ve kayıp değer kodlaması kolaylıkla 
+bulunup düzeltilebilir ancak 3. ve 4. durumlar arasında 
+ayrım yapıp uç değerin veri setinden silinip 
+silinmemesine karar vermek oldukça güçtür.
+
+
+- Tek değişkenli uç değerlerin belirlenmesi çok değişkenli 
+uç değerlerin belirlenmesine göre daha kolaydır.
+
+- İki kategorili değişkenler için, eşit büyüklükte olmayan 
+kategorilerde yanlış kategoride gözlenen bir değer olasılıkla uç 
+değerdir. Rummel (1970) iki kategorili bir değişken için kategorilerden biri 
+örneklemdeki bireylerin %90’ını diğeri ise %10’unu içeriyorsa, 
+değişkenin analiz dışı bırakılmasını önermektedir.
+
+
+### İki kategorili değişkenlerde uç değerlerin Belirlenmesi
+
+- summarytools paketinde `freq()` fonksiyonu ile frekans tabloları oluşturulabilir.
+
+- Veri setinde yer alan mstatus ve race değişkenlerinin frekans tabloları incelenmiştir.
+
+- İlk olarak eksik veri düzenlenmesi
+```{r}
+library(haven)
+screen <- read_sav("import/SCREEN.sav")
+screen <- screen %>% 
+mutate(income = ifelse(is.na(income), mean(income, na.rm =TRUE),
+                       income)) %>% na.omit()
+```
+
+- race değişkenin frkans tablosu
+```{r}
+library(summarytools)
+freq(screen$race, plain.ascii = FALSE, 
+     round.digits=2,report.nas = FALSE,
+ style = "rmarkdown") 
+
+```
+
+
+- İki kategorili değişkenlerden **race** değişkeninin kategorilere dağılımları 
+incelendiğinde kategoriler arasında yaklaşık 10.1:1 (91/9) oranı olduğu 
+görülmektedir. Bu oran oldukça yüksektir. Değişken araştırma için 
+önemli değilse çıkarılabilir, aksi halde değişkenle ilgili sonuçlar 
+yorumlanırken bu durum göz önüne alınmalıdır.
+
+- mstatus  değişkenin frkans tablosu oluşturulurken kable fonksiyonu ile tablolaştırılmıştır. 
+```{r}
+library(knitr)
+freq(screen$mstatus, plain.ascii = FALSE,report.nas = FALSE) %>%
+  kable(format='markdown', 
+      caption="Frekans Tablosu",digits = 2)
+  
+```
+
+- İki kategorili değişkenlerden **mstatus** değişkeninin kategorilere 
+dağılımları incelendiğinde kategoriler arasında yaklaşık 3.5:1 (78/22) 
+oranı olduğu görülmektedir. Bu oran kabul edilebilir bir orandır.
+
+- `r emo::ji('link')` [summarytools için] (https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html)
+
+### Sürekli değişkenlerde uç değerlerin Belirlenmesi
+
+- Sürekli değişkenler için tek değişkenli uç değerleri belirlemenin bir 
+yolu, değişkene ait bütün değerlerin ortalama 0, standart sapma 1 
+olacak şekilde standart değerlere (z puanlarına) dönüştürülmesidir. 
+Tek değişkenli uç değerler çok büyük z puanlarına sahiptirler.
+
+- Örneklem büyüklüğü 100 veya daha az olduğunda, eğer herhangi 
+bir gözlemin **z puanı ±3.0** veya daha fazlaysa, gözlem uç değerdir. 
+
+- Örneklem büyüklüğü 100’den fazla olduğunda, eğer herhangi bir 
+gözlemin **z puanı ±4.0** veya daha fazlaysa, gözlem uç değerdir. 
+
+- Bu yöntem eşit aralık veya eşit oran düzeyinde ölçülen değişkenler 
+için veya sürekli değişken olarak ele alınan sıralama ölçeğinde 
+ölçülen değişkenler için geçerli olup sınıflama düzeyinde ölçülen 
+değişkenler için geçerli değildir.
+
+- outliers paketinde `select()` fonksiyonu ile z değerleri  hesaplanabilir.
+
+```{r}
+
+library(outliers)
+z.scores <- screen %>%  
+ select(2:5) %>% 
+ scores(type = "z") %>%
+ round(2)
+head(z.scores)
+```
+
+- outliers paketinde `descr()` fonksiyonu ile z değerlerinin minumum ve maksimum değerleri incelenebilir.
+
+```{r}
+
+summarytools::descr(z.scores,
+ stats     = c("min", "max"),
+ transpose = TRUE,
+ headings  = FALSE) %>%   
+ kable()
+```
+
+
+- **timedrs** değişkeni için z puanlarının maksimum değerin 4.0’ten büyük olduğu,**atthouse** değişkeni z puanlarının içinse minimum değerin 4.0’ten küçük olduğu görülmektedir.  Diğer değişkenler için değerler beklenen sınırlar içerisindedir.
+
+```{r}
+library(DT)
+
+DT::datatable(z.scores)
+```
+
+
+- Tek değişkenli uç değerleri saptamak için grafiksel yöntemlerden de 
+yararlanılabilir (Örneğin, histogramlar, kutu grafikleri, normal olasılık 
+grafikleri gibi). 
+
+- Histogramlar kolay anlaşılan ve yorumlanan grafiklerdir ve uç 
+değerlerin belirlenmesine yardımcı olabilirler. Genellikle ortalamanın 
+yakınındaki çoğu gözlemle birlikte ortalamanın iki yönüne doğru 
+uzanan gözlemler vardır. Uç değer dağılımın geri kalanıyla 
+bağlantısı bulunmayan gözlemdir.
+
+- Kutu grafikleri de basittir. Medyan etrafındaki gözlemler kutu içine 
+alınır. Kutudan çok uzağa düşen gözlemler uç değerdir. 
+
+- Normal olasılık grafikleri değişkenlerin dağılımlarının normalliğinin 
+değerlendirilmesinde oldukça kullanışlıdır. Uç değerler de bu 
+grafiklerde gözlenebilir; diğerlerinden önemli derecede uzakta 
+bulunan nokta uçdeğerdir.
+
+```{r}
+library(ggplot2)
+ggplot(screen, aes(x = timedrs)) +
+  geom_histogram(bins = 30L, fill = "#0c4c8a") +
+  theme_minimal()
+
+```
+
+- yoğunluk grafiği ile uç değerlerin incelenmesi
+
+```{r}
+ggplot(screen, aes(x = timedrs)) +
+ geom_histogram(aes(y=..density..))+
+ geom_density(alpha=.5, fill="#0c4c8a") +
+  theme_minimal()
+```
+
+- interaktif grafik eklenmesi
+
+```{r}
+library(plotly)
+plot_ly(x = screen$timedrs,  type = "histogram", 
+histnorm = "probability")
+
+```
+
+- grafk üzerinde ortalamanın gösterilmesi
+```{r}
+library(ggpmisc)
+ggplot(screen, aes(x = timedrs)) + geom_histogram() + 
+geom_vline(xintercept =7.914, color = "red", 
+linetype = "dashed") + 
+annotate("text", label = "Mean = 7.913", x = 10, y = 100,  color ="black")
+```
+
+- kutu  grafiği
+
+```{r}
+ggplot(screen, aes(y = timedrs)) + 
+  geom_boxplot()  
+```
+
+
+
+
+```{r}
+boxplot.stats(screen$timedrs)$out
+out <- boxplot.stats(screen$timedrs)$out
+out
+out_ind <- which(screen$timedrs %in% c(out))
+out_ind
+
+```
+
+
+
+```{r}
+plot_ly(y = screen$timedrs, type = 'box') 
+
+```
+
+
+
+
+```{r}
+
+plot_ly(y = screen$timedrs, type = 'box')  %>% layout(title = 'Box Plot',
+annotations = list( x = -0.01,  y = boxplot.stats(screen$timedrs)$out, 
+text = paste(out_ind), showarrow = FALSE,
+xanchor = "right"))
+
+```
+
+
+
+
+```{r}
+ggplot(screen, aes(x = factor(mstatus), 
+y = timedrs, fill = factor(mstatus))) +
+  geom_boxplot()
+```
+
+
+
+
+
+
+
+
+```{r}
+
+ggplot(screen) + aes(x =  attdrug) +
+  geom_histogram( bins = 6, fill = "#0c4c8a")+
+theme_minimal()
+```
+
+
+
+```{r}
+ggplot(screen) +
+aes(x =  atthouse) +
+geom_histogram( bins = 10, fill = "darkgreen") +
+theme_minimal()
+```
+
+
+
+### Uç değerlerin Belirlenmesi
+
+`r emo::ji('link')`[Color codes](https://htmlcolorcodes.com/)
+.pull-left[
+
+```{r}
+atthouse_plt <- 
+ggplot(screen) +
+aes(x = "", y = atthouse) +
+geom_boxplot(fill = "#3357FF") +
+theme_minimal()
+```
+
+
+```{r}
+atthouse_plt
+```
+
+
+- Veri setinde potansiyel tek değişkenli uç değerler tespit 
+edildiğinde, önce uç değerin nedeni araştırılmalıdır. Eğer 
+veri girişinde hata varsa veya kayıp veri kodlanırken hata 
+yapıldıysa düzeltilmelidir. 
+
+- Bunun dışındaki nedenlerde değişkenin 
+dönüştürülmesinin uygun olup olmayacağına karar 
+verilmelidir.
+
+- Dönüşümler hem dağılımların normalliğini geliştirir hem de tek 
+değişkenli uç değerleri dağılımın merkezine çekerler ve etkisini 
+azaltırlar.
+
+- Dönüşüme karar verilirse çok değişkenli uç değerler 
+incelenmeden dönüşüm yapılmalıdır. Çünkü çok değişkenli uç 
+değerlerin belirlenmesinde kullanılan istatistikler normal dağılımı 
+gerektirir. 
+
+
+### Uç değerlerin Belirlenmesi
+
+- Veri setinde iki değişken – timedrs ve atthouse uç 
+değerlere sahiptir. 
+
+- **timedrs** değişkeni için uç değer olarak belirlenen değerlerin 
+beklenen değerlerin üstünde olduğu ancak veri girişinde hata 
+bulunmadığı rapor edilmiş, bu değerlere sahip bireylerin veri 
+setinde kalmasına karar verilmiştir. 
+
+- **atthouse** değişkeni için uç değerler olarak belirlenen değerler 
+diğer değerlerden kopuktur. Bu değerlerin evren için beklenen 
+değerler mi olduğuna veya veri girişinde hata yapılıp 
+yapılmadığına karar verilmelidir. 
+
+- Her iki durumda da veri setinde 
+260. ve 296. satırda yer alan 2 birey (346 ve 407 subno.lu 
+bireyler) veri setinden çıkarılabilir. 2 bireyin veri setinden 
+çıkarılması sonucu örneklem büyüklüğü 462’ye eşit olacaktır. 
+
+
+
+### Uç değerlerin Belirlenmesi
+```{r}
+screen[c(260,298),]
+screen <- screen[-c(260,298),]
+
+
+```
+
+
+### Mahalanobis Uzaklığı
+
+- Çok değişkenli uç değerleri belirlemenin bir yolu
+**Mahalanobis uzaklığını** hesaplamaktır. Mahalanobis uzaklığı z puanının çok 
+boyutlu versiyonudur. Bir gözlemin, dağılımın kovaryansı (çok 
+boyutlu varyansı) verildiğinde, dağılımın ağırlık merkezinden (çok 
+boyutlu ortalamasından) uzaklığını ölçer. 
+
+- **Mahalonobis uzaklığı** ki-kare dağılımı gösterir (serbestlik derecesi 
+hesaplamada kullanılan değişken sayısına eşittir) ve ki-kare dağılımı 
+kullanılarak değerlendirilebilir. Eğer hesaplanan Mahalonobis 
+uzaklığının gözlenme olasılığı 0.001 veya daha küçükse gözlem 
+uçdeğerdir. 
+
+- Bu yöntem eşit aralık veya eşit oran düzeyinde ölçülen değişkenler 
+için veya sürekli değişken olarak ele alınan sıralama ölçeğinde 
+ölçülen değişkenler için geçerli olup sınıflama düzeyinde ölçülen 
+değişkenler için geçerli değildir.
+
+
+### Mahalanobis Uzaklığı
+
+Mahalanobis Uzaklığı hesaplama
+```{r}
+
+library(psych)
+veri <- screen[,1:5]
+md <- mahalanobis(veri, center = colMeans(veri), cov = cov(veri))
+md
+```
+
+
+
+### Mahalanobis Uzaklığı
+
+Kritik değer belirleme
+```{r}
+
+library(psych)
+alpha <- .001
+cutoff <- (qchisq(p = 1 - alpha, df = ncol(veri)))
+cutoff
+```
+
+
+### Mahalanobis Uzaklığı
+
+Kritik değer belirleme
+```{r}
+
+ucdegerler <- which(md > cutoff)
+veri[ucdegerler, ]
+
+data_temiz <- veri[-ucdegerler, ]
+
+```
+
+
+### Mahalanobis Uzaklığı
+
+- Mahalonobis uzaklığı değerleri ki-kare ile değerlendirilir (serbestlik 
+derecesi bağımsız değişken sayısına eşittir). Buna göre 18.4668 kritik 
+değerinden büyük olan değerler 0.001 alfa düzeyinde istatistiksel olarak 
+anlamlı olarak değerlendirilir. 
+- 548, 398, 48, 235, 330, 502, 276, 291 ve 370 subno.lu bireyler için 
+Mahalonobis uzaklık değerleri kritik değerden büyüktür. Bu gözlemler 
+çok değişkenli uç değerler olarak değerlendirilir. 
+
+```{r}
+veri[ucdegerler, ]
+```
+
+
+### Çok Değişkenli Normallik Sayıltısı
+
+- Çok değişkenli normallik her bir değişkenin ve değişkenlerin bütün 
+doğrusal kombinasyonlarının normal dağıldığı 
+sayıltısıdır.
+
+- Sayıltının karşılanması durumunda analizin artıkları 
+(hataları) da normal dağılır. 
+
+- Bir değişken çok değişkenli normal dağılıma sahipse, tek 
+değişkenli normal dağılıma da sahiptir ancak bunun tersi 
+sağlanmayabilir; iki veya daha fazla tek dağılımlı 
+normallik gösteren değişkenler çok değişkenli normallik 
+göstermeyebilir. 
+
+
+
+
+### Çok Değişkenli Normallik Sayıltısı
+
+
+- Çok değişkenli normallik sayıltısını test etmek için 
+doğrudan bir test bulunmadığından, genellikle her bir 
+değişken ayrı ayrı test edilir ve eğer her bir değişken 
+normal dağılım gösteriyorsa, çok değişkenli normal 
+oldukları varsayılır. 
+
+  - Not: Her bir değişkenin normal olarak dağılımı çok değişkenli 
+normallik için gereklidir ancak yeterli değildir.
+
+- Normalliğin değerlendirilmesi için hem istatistiksel hem 
+de grafiksel yöntemler vardır.
+
+  - İstatistiksel yöntemler normallik için hipotez testlerini içerir.
+  - Grafiksel yöntemler histogram ve normallik grafiklerinin 
+incelenmelerini içerir. 
+
+
+
+### Normallik Sayıltısı
+
+ Normalliğin iki bileşeni vardır: Çarpıklık ve basıklık
+ 
+- Bir değişkene ait dağılım normal olduğunda, değişkenin çarpıklık ve basıklık 
+değerleri sıfıra eşittir. 
+
+- Kural olarak eğer değişkenin çarpıklık ve basıklık değerleri -1.0 ile +1.0 
+arasındaysa, değişkenin normale oldukça yakın olduğu söylenebilir. 
+
+- Hem çarpıklık hem de basıklık için istatistiksel anlamlılık testleri vardır. Bu  testlerde z dağılımı kullanılarak elde edilen çarpıklık veya basıklık değeri sıfır  ile karşılaştırılır:
+
+
+
+
+### Normallik Sayıltısı
+
+
+
+```{r message=FALSE, warning=FALSE}
+library(sur)
+attach(screen)
+
+skew(timedrs)
+se.skew(timedrs)
+skew.ratio(timedrs)
+```
+
+
+
+### Normallik Sayıltısı
+
+```{r message=FALSE, warning=FALSE}
+library(moments)
+library(labelled)
+jarque.test(remove_labels(timedrs))
+jarque.test(remove_labels(attdrug))
+jarque.test(remove_labels(atthouse))
+
+```
+
+`r emo::ji('link')` [summarytools için](https://www.statology.org/skewness-kurtosis-in-r/)
+
+
+
+Rummel, R. J. (1970). Applied Factor Analyis. Evanston,IL: Northwestern University 
+Press.

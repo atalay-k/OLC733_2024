@@ -1,10 +1,6 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
 
-# Varsayımlar
+
+# Varsayımlar I
 
 -   Veri Dosyasındaki Verinin Doğruluğu
 
@@ -21,7 +17,7 @@ editor_options:
 -   Varsayımlar incelenirken ilk olarak yanlış girilmiş bir değer olup
     olmadığına bakılmalıdır.
 
--   Bu bölümde 🔗 [SCREEN.SAV](import\SCREEN.SAV) adlı
+-   Bu bölümde 🔗 [SCREEN.SAV](import/SCREEN.SAV) adlı
     veri seti kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465
     kadının 6 değişkene ilişkin bilgileri bulunmaktadır. Değişkenlerden
     timedrs, attdrug, atthouse ve income değişkenleri sürekli, mstatus
@@ -126,35 +122,28 @@ için inceleyebilirsiniz.
 
 ```r
 library(gtsummary)
-```
-
-```
-## #BlackLivesMatter
-```
-
-```r
 screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
 "{min}, {max}"),missing ="always")
 ```
 
 ```{=html}
-<div id="hjzboxvevs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hjzboxvevs table {
+<div id="uypskvckdh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uypskvckdh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hjzboxvevs thead, #hjzboxvevs tbody, #hjzboxvevs tfoot, #hjzboxvevs tr, #hjzboxvevs td, #hjzboxvevs th {
+#uypskvckdh thead, #uypskvckdh tbody, #uypskvckdh tfoot, #uypskvckdh tr, #uypskvckdh td, #uypskvckdh th {
   border-style: none;
 }
 
-#hjzboxvevs p {
+#uypskvckdh p {
   margin: 0;
   padding: 0;
 }
 
-#hjzboxvevs .gt_table {
+#uypskvckdh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -180,12 +169,12 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-left-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_caption {
+#uypskvckdh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hjzboxvevs .gt_title {
+#uypskvckdh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -197,7 +186,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-width: 0;
 }
 
-#hjzboxvevs .gt_subtitle {
+#uypskvckdh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -209,7 +198,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-width: 0;
 }
 
-#hjzboxvevs .gt_heading {
+#uypskvckdh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -221,13 +210,13 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_bottom_border {
+#uypskvckdh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_col_headings {
+#uypskvckdh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -242,7 +231,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_col_heading {
+#uypskvckdh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -262,7 +251,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#hjzboxvevs .gt_column_spanner_outer {
+#uypskvckdh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -274,15 +263,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 4px;
 }
 
-#hjzboxvevs .gt_column_spanner_outer:first-child {
+#uypskvckdh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hjzboxvevs .gt_column_spanner_outer:last-child {
+#uypskvckdh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hjzboxvevs .gt_column_spanner {
+#uypskvckdh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -294,11 +283,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   width: 100%;
 }
 
-#hjzboxvevs .gt_spanner_row {
+#uypskvckdh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hjzboxvevs .gt_group_heading {
+#uypskvckdh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -324,7 +313,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   text-align: left;
 }
 
-#hjzboxvevs .gt_empty_group_heading {
+#uypskvckdh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -339,15 +328,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: middle;
 }
 
-#hjzboxvevs .gt_from_md > :first-child {
+#uypskvckdh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hjzboxvevs .gt_from_md > :last-child {
+#uypskvckdh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hjzboxvevs .gt_row {
+#uypskvckdh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -366,7 +355,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#hjzboxvevs .gt_stub {
+#uypskvckdh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -379,7 +368,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#hjzboxvevs .gt_stub_row_group {
+#uypskvckdh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -393,15 +382,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: top;
 }
 
-#hjzboxvevs .gt_row_group_first td {
+#uypskvckdh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hjzboxvevs .gt_row_group_first th {
+#uypskvckdh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hjzboxvevs .gt_summary_row {
+#uypskvckdh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -411,16 +400,16 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#hjzboxvevs .gt_first_summary_row {
+#uypskvckdh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_first_summary_row.thick {
+#uypskvckdh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hjzboxvevs .gt_last_summary_row {
+#uypskvckdh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -430,7 +419,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_grand_summary_row {
+#uypskvckdh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -440,7 +429,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#hjzboxvevs .gt_first_grand_summary_row {
+#uypskvckdh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -450,7 +439,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_last_grand_summary_row_top {
+#uypskvckdh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -460,11 +449,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_striped {
+#uypskvckdh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hjzboxvevs .gt_table_body {
+#uypskvckdh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -473,7 +462,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_footnotes {
+#uypskvckdh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -487,7 +476,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_footnote {
+#uypskvckdh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -496,7 +485,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#hjzboxvevs .gt_sourcenotes {
+#uypskvckdh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -510,7 +499,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#hjzboxvevs .gt_sourcenote {
+#uypskvckdh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -518,63 +507,63 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#hjzboxvevs .gt_left {
+#uypskvckdh .gt_left {
   text-align: left;
 }
 
-#hjzboxvevs .gt_center {
+#uypskvckdh .gt_center {
   text-align: center;
 }
 
-#hjzboxvevs .gt_right {
+#uypskvckdh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hjzboxvevs .gt_font_normal {
+#uypskvckdh .gt_font_normal {
   font-weight: normal;
 }
 
-#hjzboxvevs .gt_font_bold {
+#uypskvckdh .gt_font_bold {
   font-weight: bold;
 }
 
-#hjzboxvevs .gt_font_italic {
+#uypskvckdh .gt_font_italic {
   font-style: italic;
 }
 
-#hjzboxvevs .gt_super {
+#uypskvckdh .gt_super {
   font-size: 65%;
 }
 
-#hjzboxvevs .gt_footnote_marks {
+#uypskvckdh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hjzboxvevs .gt_asterisk {
+#uypskvckdh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hjzboxvevs .gt_indent_1 {
+#uypskvckdh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hjzboxvevs .gt_indent_2 {
+#uypskvckdh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hjzboxvevs .gt_indent_3 {
+#uypskvckdh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hjzboxvevs .gt_indent_4 {
+#uypskvckdh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hjzboxvevs .gt_indent_5 {
+#uypskvckdh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -964,7 +953,7 @@ Table: (\#tab:unnamed-chunk-7)Betimsel İstatistikler
 
 ### Model tabanlı yöntemler
 
-- - Gözlenmiş değerler üzerinden kurulan bir modelde olabilirlik ve sonsal dağılımlara
+-  Gözlenmiş değerler üzerinden kurulan bir modelde olabilirlik ve sonsal dağılımlara
 bağlı olarak parametrelerin kestirilmesine dayanan kayıp veri yöntemleridir. Bu
 yöntemlerin en önemli getirisi esneklikleridir. Geçici yöntemlerden kaçınarak model
 varsayımları altında çözümleme yaparlar. Ayrıca veri matrisinde gözlenememiş
@@ -1322,19 +1311,14 @@ summary(screen)
 -   daha fazla bilgi için
     <https://bookdown.org/mwheymans/bookmi/missing-data-evaluation.html>
 
-## Kayıp Veri Atama Yöntemleri
+## Daha Fazlası için
 
-Beklenti Maksimizasyonu, çoklu atama gibi çok sayıda eksik veri atama
-yöntemi bulmaktadır.
+- [naniar paketi vigneti](https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html)
 
-[naniar paketi
-vigneti](https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html)
-
-Stef van Buuren "Flexible Imputation of Missing Data" kitabına [linkten
+- Stef van Buuren "Flexible Imputation of Missing Data" kitabına [linkten
 erişebilirsiniz.](Shttps://stefvanbuuren.name/fimd/)
 
-**mvdalab** paketi ile önce eksik veri olusturulup sonra eksik veri BM
-yöntemi ile doldurulmuştur.
+
 
 ## Kaynaklar
 

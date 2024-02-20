@@ -1,10 +1,6 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
 
-# Varsayımlar
+
+# Varsayımlar I
 
 -   Veri Dosyasındaki Verinin Doğruluğu
 
@@ -21,7 +17,7 @@ editor_options:
 -   Varsayımlar incelenirken ilk olarak yanlış girilmiş bir değer olup
     olmadığına bakılmalıdır.
 
--   Bu bölümde `r emo::ji("link")` [SCREEN.SAV](import\SCREEN.SAV) adlı
+-   Bu bölümde `r emo::ji("link")` [SCREEN.SAV](import/SCREEN.SAV) adlı
     veri seti kullanılmıştır. Bu veri setinde 20-59 yaşları arasında 465
     kadının 6 değişkene ilişkin bilgileri bulunmaktadır. Değişkenlerden
     timedrs, attdrug, atthouse ve income değişkenleri sürekli, mstatus
@@ -271,7 +267,7 @@ kable(ozet,format='markdown',
 
 ### Model tabanlı yöntemler
 
-- - Gözlenmiş değerler üzerinden kurulan bir modelde olabilirlik ve sonsal dağılımlara
+-  Gözlenmiş değerler üzerinden kurulan bir modelde olabilirlik ve sonsal dağılımlara
 bağlı olarak parametrelerin kestirilmesine dayanan kayıp veri yöntemleridir. Bu
 yöntemlerin en önemli getirisi esneklikleridir. Geçici yöntemlerden kaçınarak model
 varsayımları altında çözümleme yaparlar. Ayrıca veri matrisinde gözlenememiş
@@ -485,19 +481,14 @@ summary(screen)
 -   daha fazla bilgi için
     <https://bookdown.org/mwheymans/bookmi/missing-data-evaluation.html>
 
-## Kayıp Veri Atama Yöntemleri
+## Daha Fazlası için
 
-Beklenti Maksimizasyonu, çoklu atama gibi çok sayıda eksik veri atama
-yöntemi bulmaktadır.
+- [naniar paketi vigneti](https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html)
 
-[naniar paketi
-vigneti](https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html)
-
-Stef van Buuren "Flexible Imputation of Missing Data" kitabına [linkten
+- Stef van Buuren "Flexible Imputation of Missing Data" kitabına [linkten
 erişebilirsiniz.](Shttps://stefvanbuuren.name/fimd/)
 
-**mvdalab** paketi ile önce eksik veri olusturulup sonra eksik veri BM
-yöntemi ile doldurulmuştur.
+
 
 ## Kaynaklar
 
