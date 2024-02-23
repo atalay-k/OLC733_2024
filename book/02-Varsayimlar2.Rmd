@@ -37,13 +37,13 @@ değerdir. Rummel (1970) iki kategorili bir değişken için kategorilerden biri
 değişkenin analiz dışı bırakılmasını önermektedir.
 
 
-### İki kategorili değişkenlerde uç değerlerin Belirlenmesi
+### İki kategorili değişkenlerde uç değerlerin belirlenmesi
 
 - summarytools paketinde `freq()` fonksiyonu ile frekans tabloları oluşturulabilir.
 
 - Veri setinde yer alan mstatus ve race değişkenlerinin frekans tabloları incelenmiştir.
 
-- İlk olarak eksik veri düzenlenmesi
+- İlk olarak eksik veri düzenlenmesi yapılmıştır.
 ```{r}
 library(haven)
 library(dplyr)
@@ -53,7 +53,7 @@ mutate(income = ifelse(is.na(income), mean(income, na.rm =TRUE),
                        income)) %>% na.omit()
 ```
 
-- race değişkenin frkans tablosu
+- race değişkenin frekans tablosu
 ```{r}
 library(summarytools)
 freq(screen$race, 
@@ -66,7 +66,7 @@ freq(screen$race,
 - İki kategorili değişkenlerden **race** değişkeninin kategorilere dağılımları incelendiğinde kategoriler arasında yaklaşık 10.1:1 (91/9) oranı olduğu görülmektedir. Bu oran oldukça yüksektir. Değişken araştırma için önemli değilse çıkarılabilir, aksi halde değişkenle ilgili sonuçlar 
 yorumlanırken bu durum göz önüne alınmalıdır.
 
-- mstatus  değişkenin frkans tablosu oluşturulurken kable fonksiyonu ile tablolaştırılmıştır. 
+- mstatus  değişkenin frekans tablosu oluşturulurup `kable()` fonksiyonu ile tablolaştırılmıştır. 
 ```{r}
 library(knitr)
 freq(screen$mstatus,report.nas = FALSE) %>%
@@ -81,7 +81,7 @@ oranı olduğu görülmektedir. Bu oran kabul edilebilir bir orandır.
 
 - `r emo::ji('link')` [summarytools paketinin vignettei için] (https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html)
 
-### Sürekli değişkenlerde uç değerlerin Belirlenmesi
+### Sürekli değişkenlerde uç değerlerin belirlenmesi
 
 - Sürekli değişkenler için tek değişkenli uç değerleri belirlemenin bir 
 yolu, değişkene ait bütün değerlerin ortalama 0, standart sapma 1 
@@ -123,7 +123,7 @@ summarytools::descr(z.scores,
 ```
 
 
-- **timedrs** değişkeni için z puanlarının maksimum değerin 4.0’ten büyük olduğu,**atthouse** değişkeni z puanlarının içinse minimum değerin 4.0’ten küçük olduğu görülmektedir.  Diğer değişkenler için değerler beklenen sınırlar içerisindedir.
+- **timedrs** değişkeni için z puanlarının maksimum değerin 4.0’ten büyük olduğu, **atthouse** değişkeni z puanlarının içinse minimum değerin 4.0’ten küçük olduğu görülmektedir.  Diğer değişkenler için değerler beklenen sınırlar içerisindedir.
 
 ```{r}
 library(DT)
@@ -150,8 +150,8 @@ değerlendirilmesinde oldukça kullanışlıdır. Uç değerler de bu
 grafiklerde gözlenebilir; diğerlerinden önemli derecede uzakta 
 bulunan nokta uçdeğerdir.
 
-#### timedrs değişkenin incelenmesi
-##### histogram
+### timedrs değişkenin incelenmesi
+#### histogram
 ```{r}
 library(ggplot2)
 ggplot(screen, aes(x = timedrs)) +
@@ -161,16 +161,16 @@ ggplot(screen, aes(x = timedrs)) +
 ```
 
 
-- grafk üzerinde ortalamanın gösterilmesi
+- grafik üzerinde ortalamanın gösterilmesi
 ```{r}
 library(ggpmisc)
 ggplot(screen, aes(x = timedrs)) + geom_histogram() + 
 geom_vline(xintercept =7.914, color = "red", 
 linetype = "dashed") + 
-annotate("text", label = "Mean = 7.913", x = 10, y = 100,  color ="black")
+annotate("text", label = "Ort = 7.913", x = 10, y = 100,  color ="black")
 ```
 
-##### yoğunluk grafiği
+#### yoğunluk grafiği
 
 ```{r}
 ggplot(screen, aes(x = timedrs)) +
@@ -179,7 +179,7 @@ ggplot(screen, aes(x = timedrs)) +
   theme_minimal()
 ```
 
-##### interaktif grafik
+#### interaktif grafik
 
 ```{r}
 library(plotly)
@@ -189,7 +189,7 @@ histnorm = "probability")
 ```
 
 
-##### kutu grafik
+#### kutu grafik
 
 ```{r}
 ggplot(screen, aes(y = timedrs)) + 
@@ -197,15 +197,20 @@ ggplot(screen, aes(y = timedrs)) +
 ```
 
 
-
+- boxplot.stats fonksiyonun out bileşini uç değerleri vermektedir.
 
 ```{r}
-boxplot.stats(screen$timedrs)$out
 out <- boxplot.stats(screen$timedrs)$out
 out
+
+
+```
+
+- Bu uç değerlerin timedrs değişkeninde hangi gözlemlerde olduğu ise aşağıdaki kodlarla belirlenebilir.
+
+```{r}
 out_ind <- which(screen$timedrs %in% c(out))
 out_ind
-
 ```
 
 - interaktif kutu grafiği 
@@ -216,11 +221,12 @@ plot_ly(y = screen$timedrs, type = 'box')
 ```
 
 
-- interaktif kutu grafiği 
+- interaktif kutu grafiği üzerine uç değerlerin idlerinin işaretlenmesi ise aşağıdaki kodla yapılabilir.
 
 ```{r}
 
-plot_ly(y = screen$timedrs, type = 'box')  %>% layout(title = 'Box Plot',
+plot_ly(y = screen$timedrs, type = 'box')  %>% 
+  layout(title = 'Box Plot',
 annotations = list( x = -0.01,  y = boxplot.stats(screen$timedrs)$out, 
 text = paste(out_ind), showarrow = FALSE,
 xanchor = "right"))
@@ -239,7 +245,7 @@ y = timedrs, fill = factor(mstatus))) +
 
 
 
-#### attdrug değişkenin  incelenmesi
+### attdrug değişkenin  incelenmesi
 
 
 ```{r}
@@ -249,8 +255,8 @@ ggplot(screen) + aes(x =  attdrug) +
 theme_minimal()
 ```
 
-#### atthouse değişkenin  incelenmesi
-##### histogram
+### atthouse değişkenin  incelenmesi
+#### histogram
 
 ```{r}
 ggplot(screen) +
@@ -261,7 +267,7 @@ theme_minimal()
 
 
 
-##### kutu grafiği
+#### kutu grafiği
 
 `r emo::ji('link')`[Color codes](https://htmlcolorcodes.com/)
 
@@ -308,10 +314,7 @@ diğer değerlerden kopuktur. Bu değerlerin evren için beklenen
 değerler mi olduğuna veya veri girişinde hata yapılıp 
 yapılmadığına karar verilmelidir. 
 
-- Her iki durumda da veri setinde 
-260. ve 296. satırda yer alan 2 birey (346 ve 407 subno.lu 
-bireyler) veri setinden çıkarılabilir. 2 bireyin veri setinden 
-çıkarılması sonucu örneklem büyüklüğü 462’ye eşit olacaktır. 
+- Her iki durumda da veri setinde  260. ve 296. satırda yer alan 2 birey (346 ve 407 subno.lu bireyler) veri setinden çıkarılabilir. 2 bireyin veri setinden çıkarılması sonucu örneklem büyüklüğü 462’ye eşit olacaktır. 
 
 ```{r}
 screen[c(260,298),]
@@ -322,6 +325,34 @@ screen <- screen[-c(260,298),]
 
 
 ### Mahalanobis Uzaklığı
+
+- Çok degiskenli normallik her bir degiskenin ve degiskenlerin bütün
+dogrusal kombinasyonlarının normal dagıldıgı
+sayıltısıdır.
+-  Sayıltının karsılanması durumunda analizin artıkları
+(hataları) da normal dagılır.
+-  Çok degiskenli normallik sayıltısı farklı çok degiskenli
+istatistikler için farklı ele alınır.
+
+  -  Gruplanmamıs veride çok degiskenli normallik degiskenlerin
+  kendileri veya analizin artıklarının dagılımı ile ilgilidir.
+  
+  -Gruplanmıs verilerde ise degiskenlerin ortalamalarının
+  örneklenmis dagılımları ile ilgilidir.
+
+- Çok degiskenli normallik sayıltısını test etmek için
+dogrudan bir test bulunmadıgından, genellikle her bir
+degisken ayrı ayrı test edilir ve eger her bir degisken
+normal dagılım gösteriyorsa çok degiskenli normal
+oldukları varsayılır.
+- Not: Her bir degiskenin normal olarak dagılımı çok degiskenli
+normallik için gereklidir ancak yeterli degildir.
+- Normalligin degerlendirilmesi için hem istatistiksel hem
+de grafiksel yöntemler vardır.
+- Istatistiksel yöntemler normallik için hipotez testlerini içerir.
+- Grafiksel yöntemler histogram ve normallik grafiklerinin
+incelenmelerini içerir.
+
 
 - Çok değişkenli uç değerleri belirlemenin bir yolu
 **Mahalanobis uzaklığını** hesaplamaktır. Mahalanobis uzaklığı z puanının çok boyutlu versiyonudur. Bir gözlemin, dağılımın kovaryansı (çok 
@@ -340,7 +371,7 @@ için veya sürekli değişken olarak ele alınan sıralama ölçeğinde
 değişkenler için geçerli değildir.
 
 
-#### Mahalanobis Uzaklığı hesaplama
+- Mahalanobis Uzaklığı hesaplama
 ```{r}
 
 library(psych)
@@ -350,7 +381,7 @@ head(md,20)
 ```
 
 
-### Mahalanobis Uzaklığı Kritik değer belirleme
+- Mahalanobis Uzaklığı Kritik değer belirleme
 ```{r}
 
 library(psych)
@@ -436,8 +467,7 @@ library(sur)
 attach(screen)
 
 skew(timedrs)
-se.skew(timedrs)
-skew.ratio(timedrs)
+
 ```
 
 ```{r message=FALSE, warning=FALSE}
@@ -453,6 +483,8 @@ skew.ratio(timedrs)
 skew(timedrs)/se.skew(timedrs)
 
 ```
+
+- `jarque.test` fonksiyonu veri normal dağılımdan farklılaşmamaktır yokluk hipotezini test etmektedir.
 
 ```{r message=FALSE, warning=FALSE}
 library(moments)
@@ -506,8 +538,25 @@ ggplot(data = screen, aes(sample = atthouse )) +
   geom_qq_line( ) 
 ```
 
+## Doğrusallık
 
--
+- Dogrusallık iki degisken arasında
+dogrusal bir iliskinin oldugu sayıltısıdır.
+
+- Iki degisken arasındaki dogrusallık iki degiskenli serpme
+grafik incelenerek degerlendirilebilir. Gruplanmamıs
+veride bütün bireyler analize katılırken, gruplanmamıs
+veride analiz her bir grup içinde ayrı ayrı yapılır.
+
+- Eger iki degisken de normal dagılıyorsa ve dogrusal olarak
+iliskiliyse, serpme grafik oval seklindedir.
+
+- Eger degiskenlerden bir normal dagılmıyorsa, serpme grafik
+oval seklinde olmayacaktır.
+
+- Eger veri setinde çok sayıda degisken varsa,olası bütün
+degisken çiftlerini incelemek yerine dogrusallıktan
+uzaklasabilecek degisken çiftleri incelenebilir
 
 ## Varyansların homejenliği
 
@@ -525,6 +574,16 @@ bağımsız değişkenin her değerinde oldukça eşit olmalıdır.
 Çok değişkenli normallik sayıltısı karşılandığında, 
 değişkenler arasındaki ilişkiler homojendir. 
 
+- Varyansların heterojenligi, gruplanmamıs veri için çok
+önemli degildir. Iki degiskenli serpme grafik incelenerek
+degerlendirilebilir. Degiskenler arasındaki varyans
+farklılıkları tahmin edilebiliyorsa serpme grafikte bu
+farklılıklar gözlenebilir. Grafikte açıklanamayan farklılıklar
+varsa analizi zayıflar ve geçerligi düser.
+
+-  Varyansların heterojenligi gruplanmıs veride daha
+önemlidir. Varyans homojenligini test etmek için Box’s M
+test kullanılabilir
 - Varyansların heterojenliği değişkenlerden birinin normal 
 dağılım göstermemesinden veya bağımsız değişkendeki 
 hatalı ölçümlerden kaynaklanabilir.
@@ -534,7 +593,7 @@ hatalı ölçümlerden kaynaklanabilir.
 pairs(screen[,2:5])
 ```
 
--
+
 ### Veri Dönüştürme
 
 - Normallik ve varyansların homojenliği sayıltıları ihlal 
@@ -593,7 +652,6 @@ describe(ltimedrs)
 ```
 
 
--
 ### Çoklu Bağlantı ve Tekillik
 
 -  (Çoklu) bağlantı ve tekillik bağımsız değişkenler 
@@ -618,6 +676,17 @@ korelasyon matrisi incelenebilir.
 - Örneğin, iki değişken arasındaki korelasyon katsayısının 0.90 
 veya 0.90’dan daha yüksek olması bağlantı problemine işarettir. 
 
+```{r}
+library(corrplot)
+cor(screen[,2:5]) %>% kable(digit=2)
+```
+
+```{r}
+
+corrplot(cor(screen[,2:5]))
+```
+
+
   - Not: Yüksek korelasyon değerlerinin bulunmaması, bağlantı 
 probleminin olmadığı anlamına gelmez. Bağlantı ilgili bağımsız 
 değişken dışındaki diğer bağımsız değişkenlerden iki veya daha 
@@ -627,7 +696,6 @@ fazlasının bir aradaki etkisinden kaynaklanabilir ki bu durumda
 - Çoklu bağlantının değerlendirilmesi için her bir bağımsız 
 değişkenin diğer bağımsız değişkenler tarafından ne 
 ölçüde açıklandığının tespit edilmesi gerekir.
-
 
 
 - Çoklu bağlantının belirlenmesinde her bir değişken için 
@@ -676,6 +744,19 @@ değerinde bir çoklu korelasyona karşılık gelmektedir.
 
 
 
+
+
+
+
+
+```{r message=FALSE, warning=FALSE}
+model <- lm(subno ~ timedrs  +   attdrug  +  atthouse  +income + race+ mstatus ,
+data = screen)
+library(olsrr)
+ols_vif_tol(model) %>% kable(digit=2)
+
+```
+
 - Çoklu bağlantı problemi belirlenirse,
 
 - Birinci seçenek çoklu bağlantıya neden olan değişkenlerden en 
@@ -686,33 +767,6 @@ değerlerin toplanması veya ortalamasının alınmasıdır.
 
 - Üçüncü seçenek temel bileşenlerin hesaplanıp analizlerde temel 
 bileşenlerin kullanılmasıdır.
-
-
-
-```{r}
-library(corrplot)
-cor(screen[,2:5])
-```
-
-```{r}
-
-corrplot(cor(screen[,2:5]))
-```
-
-```{r}
-
-corrplot(cor(screen[,2:5]))
-```
-
-
-
-```{r message=FALSE, warning=FALSE}
-model <- lm(subno ~ timedrs  +   attdrug  +  atthouse  +income + race+ mstatus ,
-data = screen)
-library(olsrr)
-ols_vif_tol(model)
-
-```
 
 
 - `r emo::ji('link')` [summarytools için](https://www.statology.org/skewness-kurtosis-in-r/)

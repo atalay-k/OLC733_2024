@@ -46,3 +46,6 @@ normallik-sayıltısı
 varyansların-homejenliği
 kaynaklar-1
 cr
+veri-dönüştürme
+çoklu-bağlantı-ve-tekillik
+doğrusallık

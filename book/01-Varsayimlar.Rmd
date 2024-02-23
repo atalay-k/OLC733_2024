@@ -264,6 +264,47 @@ kable(ozet,format='markdown',
 - En Yakın Komşu Yöntemi 
 - Son Gözlemi İleri Taşıma
 
+####  Ortalama veri atama
+
+- Bu yöntemde mevcut veriden ilgili
+degiskenlere ait ortalamalar hesaplanır ve analize baslamadan
+önce kayıp deger yerine ortalama deger koyulur.
+
+-  Örnegin, income degiskeni için ortalama deger 4 ise, gelirini
+belirtmeyen birey için gelir 4 olarak kabul edilir.
+
+-  Diger bütün bilgilerin eksikliginde, ortalama, bir degiskenin degeri
+hakkındaki en iyi tahmindir. Ancak ortalama deger ortalamaya
+kayıp degerden daha yakın olacagından degiskenin varyansı
+daralır, degiskenin diger degiskenlerle korelasyonu da daralır.
+Varyans daralmasının derecesi kayıp verinin miktarına ve kayıp
+olan gerçek degere baglıdır.
+
+- Bir alternatif kayıp deger yerine grup ortalaması yerlestirmektir.
+Bu yaklasım, yerine ortalama yerlestirme yönteminden daha iyi
+sonuç saglar. Kayıp degerler için atıflar daha yerindedir ve
+varyans çok fazla daralmamıs olur. Ancak grupiçi varyansın
+daralması gruplar arasında çok büyük farklılıklara neden olabilir.
+
+
+#### Regresyon Kullanılması
+
+- Bu yöntemde kayıp veriye sahip
+degisken bagımlı degisken, diger degiskenlerse bagımsız
+degiskenler olarak ele alınarak bir regresyon esitligi yazılır. Tam
+veriye sahip bireyler regresyon esitliginin üretilmesinde kullanılır.
+Daha sonra esitlik kayıp degerleri tahmin etmek için kullanılır.
+
+-  Bu yöntemle tahmin edilen deger olasılıkla ortalama degere daha
+yakın olacagından varyans daralması olabilir.
+
+- Veri setinde iyi bagımsız degiskenlerin bulunması gerekir. Eger
+veri setindeki degiskenler kayıp veriye sahip degiskenin iyi birer
+yordayıcısı degillerse regresyon tahminini yerlestirmek
+ortalamayı yerlestirmek gibidir.
+
+- Bu yöntemle tahmin edilen deger degiskenin alabilecegi olası
+deger aralıgındaysa kullanılır, aksi halde kullanılmamalıdır.
 
 ### Model tabanlı yöntemler
 
@@ -276,6 +317,52 @@ değerleri de hesaba katarak varyans kestirimleri verirler.
 - ML Yöntemi
 - EM Algoritması
 - Çoklu Veri Atama 
+
+
+#### Beklenti Maksimizasyonu: 
+
+- Bu yöntem iki adımdan olusan
+iteratif bir yöntemdir – beklenti (expectation (E) ve
+maksimizasyon (maximization (M)).
+
+- Ilk olarak, E adımında gözlenen degerlerden ve korelasyon gibi
+tahmin edilen parametrelerden kayıp verinin beklentisi bulunur.
+Bu beklentiler kayıp veri yerine yerlestirilir.
+
+- Sonra, M adımında kayıp veri doldurulmus gibi maksimum
+olabilirlik tahmini gerçeklestirilir.
+
+- Daha sonra,eger yakınsanma basarılırsa, EM varyans/kovaryans
+matrisi elde edilebilir veya doldurulan veri, veri setinde
+kaydedilebilir.
+
+- Bu yöntemde EM veri seti veri setine hata eklenmedigi için
+yanlıdır. Böylece bu veri setine dayalı analizlerde hipotez testleri
+için uygun olmayan standart hatalar elde edilebilir.
+
+
+#### Çoklu Atıf: 
+
+- Bu yöntemde ilk olarak lojistik regresyon kullanılır;
+belli bir degiskende kayıp veriye sahip ve sahip olmayan
+gözlemler iki kategorili bagımlı degiskeni olusturur, bagımsız
+degiskenler olarak ele alınacak diger degiskenler belirlenir ve bir
+regresyon esitligi yazılır.
+
+- Sonra tam veriye sahip gözlemlerden rastlantısal bir örneklem
+seçilir ve bu örneklem kayıp veriye sahip degiskenin dagılımının
+belirlenmesinde kullanılır.
+
+- Daha sonra kayıp veriye sahip degiskenin dagılımından m tane
+rastlantısal örneklem seçilir ve m tane veri seti için degiskene ait
+kestirimlerde bulunulur. Çogu durumda bes hatta üç örneklem
+yeterli olacaktır.
+
+- Istatistiksel analiz m veri seti için ayrı ayrı uygulanır ve ortalama
+parametre kestirimi rapor edilir.
+
+- Bu yöntemin bir avantajı kayıp verinin rastlantısal olduguyla ilgili
+bir varsayımda bulunmamasıdır.
 
 ### Kayıp Veri Analizinde Kullanılan Paketler
 
