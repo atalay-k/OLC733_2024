@@ -440,18 +440,280 @@ se.skew(timedrs)
 skew.ratio(timedrs)
 ```
 
+```{r message=FALSE, warning=FALSE}
+se.skew(timedrs)
+```
+
+```{r message=FALSE, warning=FALSE}
+skew.ratio(timedrs)
+```
 
 
-### Normallik Sayıltısı
+```{r}
+skew(timedrs)/se.skew(timedrs)
+
+```
 
 ```{r message=FALSE, warning=FALSE}
 library(moments)
 library(labelled)
 jarque.test(remove_labels(timedrs))
+
+
+```
+
+```{r message=FALSE, warning=FALSE}
+
 jarque.test(remove_labels(attdrug))
+```
+
+```{r message=FALSE, warning=FALSE}
+
 jarque.test(remove_labels(atthouse))
 
 ```
+
+
+```{r}
+set.seed(0)
+normal <- rnorm(200)
+non_normal<- rexp(200, rate=3)
+```
+
+
+```{r}
+par(mfrow=c(1,2)) 
+hist(normal, col='steelblue', main='Normal')
+hist(non_normal, col='steelblue', main='Non-normal')
+```
+
+
+```{r}
+par(mfrow=c(1,2)) 
+qqnorm(normal, main='Normal')
+qqline(normal)
+qqnorm(non_normal, main='Non-normal')
+qqline(non_normal)
+
+```
+
+
+
+
+```{r}
+ggplot(data = screen, aes(sample = atthouse )) + 
+  geom_qq()+
+  geom_qq_line( ) 
+```
+
+
+---
+
+## Varyansların homejenliği
+
+
+-  Varyansların homojenliği (homoscedasticity), bağımlı 
+değişken(ler)in bağımsız değişken(ler)in aralığı boyunca 
+aynı düzeyde varyansa sahip olduğu sayıltısıdır.
+
+- Çoğu durumda, bağımsız değişkenin her bir değerinde bağımlı 
+değişkenin çok farklı değerleri bulunur. Bu ilişkinin ele 
+alınabilmesi için bağımlı değişkenin değerlerinin varyansı, 
+bağımsız değişkenin her değerinde oldukça eşit olmalıdır. 
+
+- Varyansların homojenliği normallik sayıltısı ile ilişkilidir. 
+Çok değişkenli normallik sayıltısı karşılandığında, 
+değişkenler arasındaki ilişkiler homojendir. 
+
+- Varyansların heterojenliği değişkenlerden birinin normal 
+dağılım göstermemesinden veya bağımsız değişkendeki 
+hatalı ölçümlerden kaynaklanabilir.
+
+-
+```{r}
+pairs(screen[,2:5])
+```
+
+---
+### Veri Dönüştürme
+
+- Normallik ve varyansların homojenliği sayıltıları ihlal 
+edildiği zaman veri dönüştürme düşünülebilir. Ancak veri 
+dönüştürüldüğü zaman yorumlanmasının da 
+güçleşebileceği göz önünde bulundurulmalıdır. 
+
+- Veri dönüştürmede değişkenlerin normallikten ne kadar 
+uzaklaştıkları önemlidir. 
+
+- Eğer dağılım normalden orta derecede farklılık gösteriyorsa, ilk 
+olarak karekök dönüştürme denenir.
+
+- Eğer dağılım normalden önemli derecede farklılık gösteriyorsa, 
+log dönüştürme denenir.
+
+- Eğer dağılım normalden ciddi derecede farklılık gösteriyorsa, ters 
+dönüştürme denenir.
+
+
+- Veri dönüştürmede değişkenlerin normallikten ne yönde 
+uzaklaştıkları önemlidir. 
+
+- Eğer sola çarpıklık varsa, değişkenin yansıtılması ve yansıtılma 
+sonucu sağa çarpık şekle dönüşen dağılım üzerinden 
+dönüştürme işlemlerinin yapılması önerilir.
+
+- Değişkeni yansıtmak için önce dağılımdaki en yüksek değer bulunur 
+ve bu değere 1 eklenerek sabit bir değer elde edilir. Sonra 
+dağılımdaki her bir değer sabit değerden çıkarılarak yeni bir değişken 
+elde edilir. Böylece dönüştürme işleminden önce sola çarpık dağılım 
+sağa çarpık dağılıma dönüştürülmüş olur. 
+
+- Veri dönüştürme işlemlerinden sonra sayıltılar tekrar 
+kontrol edilmelidir.
+
+
+| Dağılım  | Dönüşüm   |
+|---|---|
+|  Orta düzeyde pozitif çarpık |  Karekök |
+|   Yüksek düzeyde pozitif çarpık | Logaritma  |
+|   Aşırı düzeyde pozitif çarpık |  Ters Çevirme |
+|  Orta düzeyde negatif çarpık | Yansıtma ve karakök   |
+|  Yüksek düzeyde negatif çarpık |   Yansıtma ve logaritma |
+|   Aşırı düzeyde negatif çarpık|  Yansıtma ve ters çevirme |
+
+
+
+- timedrs değişkeni üzerinde yapılan dönüşüm
+
+```{r}
+ltimedrs <- log(timedrs+1)
+describe(timedrs)
+
+describe(ltimedrs)
+```
+
+
+---
+### Çoklu Bağlantı ve Tekillik
+
+-  (Çoklu) bağlantı ve tekillik bağımsız değişkenler 
+arasındaki **korelasyon çok yüksek** olduğunda ortaya 
+çıkan problemlerdir. 
+
+  - (Çoklu) bağlantıda değişkenler arasındaki korelasyon çok 
+yüksektir.
+
+  - Tekillikte değişkenler fazlalıktır; değişkenlerden biri analizdeki iki 
+veya daha fazla değişkenin bileşimidir.
+
+- Değişkenler (çoklu) bağlantılıysa veya tekilse, gereksiz 
+bilgi içerirler ve analizde bu değişkenlerin hepsine ihtiyaç 
+yoktur. Bu değişkenlerin hepsinin modele yer alması 
+modeldeki hataları artırır ve analizi zayıflatır. 
+
+- Bağlantı problemini belirlemek için bağımsız değişkenler 
+arasındaki iki değişkenli korelasyon katsayılarını içeren 
+korelasyon matrisi incelenebilir. 
+
+- Örneğin, iki değişken arasındaki korelasyon katsayısının 0.90 
+veya 0.90’dan daha yüksek olması bağlantı problemine işarettir. 
+
+  - Not: Yüksek korelasyon değerlerinin bulunmaması, bağlantı 
+probleminin olmadığı anlamına gelmez. Bağlantı ilgili bağımsız 
+değişken dışındaki diğer bağımsız değişkenlerden iki veya daha 
+fazlasının bir aradaki etkisinden kaynaklanabilir ki bu durumda 
+çoklu bağlantı söz konusudur. 
+
+- Çoklu bağlantının değerlendirilmesi için her bir bağımsız 
+değişkenin diğer bağımsız değişkenler tarafından ne 
+ölçüde açıklandığının tespit edilmesi gerekir.
+
+
+
+- Çoklu bağlantının belirlenmesinde her bir değişken için 
+SMC (squared multiple correlation, $R^2$) değeri 
+incelenebilir.  $R^2$ değeri regresyon modelinde belli bir 
+bağımsız değişkenin gözlenen varyansının diğer bütün 
+bağımsız değişkenler tarafından açıklanan miktarıdır.
+
+-  $R^2$ değeri bağımsız değişkenlerden birinin (Örneğin, X1) bağımlı 
+değişken, diğer bağımsız değişkenlerinse bağımsız değişken 
+(Örneğin, X2, X3 gibi) olarak ele alındığı bir regresyon modeli 
+kurularak hesaplanır.
+
+-  $R^2$ değeri yüksekse, değişken diğer değişkenlerle oldukça 
+ilişkilidir ve yüksek değerler çoklu bağlantıya işarettir. 
+
+-  $R^2$ değeri 1’e eşitse, değişken diğer değişkenlerle mükemmel 
+derecede ilişkilidir ve bu değer tekilliğe işarettir.
+
+
+- Çoklu bağlantının belirlenmesinde her bir değişken için 
+tolerans (tolerance) ( $1- R^2$) değeri incelenebilir. Bu değer 
+belli bir bağımsız değişkenin gözlenen varyansının 
+modeldeki diğer bağımsız değişkenler tarafından 
+açıklanmayan miktarıdır.
+
+- Örneğin, X1 değişkeninin gözlenen varyansının yaklaşık %25’i 
+modeldeki diğer bağımsız değişkenler tarafından açıklanırsa ( $R^2$
+= 0.25), X1 değişkeninin tolerans değeri yaklaşık 0.75’tir ( $1- R^2$= 
+1-0.25 = 0.75).
+
+- Tolerans değerinin yüksek olması gerekir. Daha düşük tolerans 
+değerleri, daha yüksek derecede çoklu bağlantı anlamına gelir. 
+Tolerans değeri için önerilen kesme değeri 0.10’dur. Bu değer bir 
+bağımsız değişken ve diğer bağımsız değişkenler arasında 0.95 
+değerinde bir çoklu korelasyona karşılık gelmektedir.
+
+
+- Çoklu bağlantının belirlenmesinde her bir değişken için 
+**VIF** değeri incelenebilir. **VIF** değeri tolerance değerinin tersi alınarak hesaplanır.( $1/(1- R^2)$)
+
+
+- Örneğin X1 değişkenin tolerans değeri yaklaşık 0.75 ise **VIF** değeri 1.33 olacaktır. **VIF** değerinin karekoku çoklu bağlantıdan kaynaklı standart hatanın artma derecesini yansıtır.
+
+-**VIF** değerinin kesem değeri 10dur. Dolayısla standart hatalar hiç çoklu bağlantı bulunmayan duruma oranla üç kattan daha fazla artacaktır.
+
+
+
+- Çoklu bağlantı problemi belirlenirse,
+
+- Birinci seçenek çoklu bağlantıya neden olan değişkenlerden en 
+az birisinin analizden çıkarılmasıdır. 
+
+- İkinci seçenek çoklu bağlantıya neden olan değişkenlere ait 
+değerlerin toplanması veya ortalamasının alınmasıdır.
+
+- Üçüncü seçenek temel bileşenlerin hesaplanıp analizlerde temel 
+bileşenlerin kullanılmasıdır.
+
+
+
+```{r}
+library(corrplot)
+cor(screen[,2:5])
+```
+
+```{r}
+
+corrplot(cor(screen[,2:5]))
+```
+
+```{r}
+
+corrplot(cor(screen[,2:5]))
+```
+
+
+
+```{r message=FALSE, warning=FALSE}
+model <- lm(subno ~ timedrs  +   attdrug  +  atthouse  +income + race+ mstatus ,
+data = screen)
+library(olsrr)
+ols_vif_tol(model)
+
+```
+
 
 - `r emo::ji('link')` [summarytools için](https://www.statology.org/skewness-kurtosis-in-r/)
 
