@@ -1,3 +1,11 @@
+```{r setup ,	include = FALSE}
+knitr::opts_chunk$set(
+	message = FALSE,
+	warning = FALSE
+
+)
+```
+
 # Varsayımlar II
 
 ## Uç değerler
@@ -38,6 +46,7 @@ değişkenin analiz dışı bırakılmasını önermektedir.
 - İlk olarak eksik veri düzenlenmesi
 ```{r}
 library(haven)
+library(dplyr)
 screen <- read_sav("import/SCREEN.sav")
 screen <- screen %>% 
 mutate(income = ifelse(is.na(income), mean(income, na.rm =TRUE),
@@ -47,23 +56,20 @@ mutate(income = ifelse(is.na(income), mean(income, na.rm =TRUE),
 - race değişkenin frkans tablosu
 ```{r}
 library(summarytools)
-freq(screen$race, plain.ascii = FALSE, 
+freq(screen$race, 
      round.digits=2,report.nas = FALSE,
  style = "rmarkdown") 
 
 ```
 
 
-- İki kategorili değişkenlerden **race** değişkeninin kategorilere dağılımları 
-incelendiğinde kategoriler arasında yaklaşık 10.1:1 (91/9) oranı olduğu 
-görülmektedir. Bu oran oldukça yüksektir. Değişken araştırma için 
-önemli değilse çıkarılabilir, aksi halde değişkenle ilgili sonuçlar 
+- İki kategorili değişkenlerden **race** değişkeninin kategorilere dağılımları incelendiğinde kategoriler arasında yaklaşık 10.1:1 (91/9) oranı olduğu görülmektedir. Bu oran oldukça yüksektir. Değişken araştırma için önemli değilse çıkarılabilir, aksi halde değişkenle ilgili sonuçlar 
 yorumlanırken bu durum göz önüne alınmalıdır.
 
 - mstatus  değişkenin frkans tablosu oluşturulurken kable fonksiyonu ile tablolaştırılmıştır. 
 ```{r}
 library(knitr)
-freq(screen$mstatus, plain.ascii = FALSE,report.nas = FALSE) %>%
+freq(screen$mstatus,report.nas = FALSE) %>%
   kable(format='markdown', 
       caption="Frekans Tablosu",digits = 2)
   
@@ -73,7 +79,7 @@ freq(screen$mstatus, plain.ascii = FALSE,report.nas = FALSE) %>%
 dağılımları incelendiğinde kategoriler arasında yaklaşık 3.5:1 (78/22) 
 oranı olduğu görülmektedir. Bu oran kabul edilebilir bir orandır.
 
-- `r emo::ji('link')` [summarytools için] (https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html)
+- `r emo::ji('link')` [summarytools paketinin vignettei için] (https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html)
 
 ### Sürekli değişkenlerde uç değerlerin Belirlenmesi
 
@@ -105,7 +111,7 @@ z.scores <- screen %>%
 head(z.scores)
 ```
 
-- outliers paketinde `descr()` fonksiyonu ile z değerlerinin minumum ve maksimum değerleri incelenebilir.
+- summarytools paketinde `descr()` fonksiyonu ile z değerlerinin minumum ve maksimum değerleri incelenebilir.
 
 ```{r}
 
@@ -144,6 +150,8 @@ değerlendirilmesinde oldukça kullanışlıdır. Uç değerler de bu
 grafiklerde gözlenebilir; diğerlerinden önemli derecede uzakta 
 bulunan nokta uçdeğerdir.
 
+#### timedrs değişkenin incelenmesi
+##### histogram
 ```{r}
 library(ggplot2)
 ggplot(screen, aes(x = timedrs)) +
@@ -152,23 +160,6 @@ ggplot(screen, aes(x = timedrs)) +
 
 ```
 
-- yoğunluk grafiği ile uç değerlerin incelenmesi
-
-```{r}
-ggplot(screen, aes(x = timedrs)) +
- geom_histogram(aes(y=..density..))+
- geom_density(alpha=.5, fill="#0c4c8a") +
-  theme_minimal()
-```
-
-- interaktif grafik eklenmesi
-
-```{r}
-library(plotly)
-plot_ly(x = screen$timedrs,  type = "histogram", 
-histnorm = "probability")
-
-```
 
 - grafk üzerinde ortalamanın gösterilmesi
 ```{r}
@@ -179,7 +170,26 @@ linetype = "dashed") +
 annotate("text", label = "Mean = 7.913", x = 10, y = 100,  color ="black")
 ```
 
-- kutu  grafiği
+##### yoğunluk grafiği
+
+```{r}
+ggplot(screen, aes(x = timedrs)) +
+ geom_histogram(aes(y=..density..))+
+ geom_density(alpha=.5, fill="#0c4c8a") +
+  theme_minimal()
+```
+
+##### interaktif grafik
+
+```{r}
+library(plotly)
+plot_ly(x = screen$timedrs,  type = "histogram", 
+histnorm = "probability")
+
+```
+
+
+##### kutu grafik
 
 ```{r}
 ggplot(screen, aes(y = timedrs)) + 
@@ -198,7 +208,7 @@ out_ind
 
 ```
 
-
+- interaktif kutu grafiği 
 
 ```{r}
 plot_ly(y = screen$timedrs, type = 'box') 
@@ -206,7 +216,7 @@ plot_ly(y = screen$timedrs, type = 'box')
 ```
 
 
-
+- interaktif kutu grafiği 
 
 ```{r}
 
@@ -218,6 +228,7 @@ xanchor = "right"))
 ```
 
 
+#### timedrs değişkenin mstatus değişkenine göre incelenmesi
 
 
 ```{r}
@@ -228,9 +239,7 @@ y = timedrs, fill = factor(mstatus))) +
 
 
 
-
-
-
+#### attdrug değişkenin  incelenmesi
 
 
 ```{r}
@@ -240,7 +249,8 @@ ggplot(screen) + aes(x =  attdrug) +
 theme_minimal()
 ```
 
-
+#### atthouse değişkenin  incelenmesi
+##### histogram
 
 ```{r}
 ggplot(screen) +
@@ -251,23 +261,17 @@ theme_minimal()
 
 
 
-### Uç değerlerin Belirlenmesi
+##### kutu grafiği
 
 `r emo::ji('link')`[Color codes](https://htmlcolorcodes.com/)
-.pull-left[
 
 ```{r}
-atthouse_plt <- 
 ggplot(screen) +
 aes(x = "", y = atthouse) +
 geom_boxplot(fill = "#3357FF") +
 theme_minimal()
 ```
 
-
-```{r}
-atthouse_plt
-```
 
 
 - Veri setinde potansiyel tek değişkenli uç değerler tespit 
@@ -309,9 +313,6 @@ yapılmadığına karar verilmelidir.
 bireyler) veri setinden çıkarılabilir. 2 bireyin veri setinden 
 çıkarılması sonucu örneklem büyüklüğü 462’ye eşit olacaktır. 
 
-
-
-### Uç değerlerin Belirlenmesi
 ```{r}
 screen[c(260,298),]
 screen <- screen[-c(260,298),]
@@ -323,8 +324,7 @@ screen <- screen[-c(260,298),]
 ### Mahalanobis Uzaklığı
 
 - Çok değişkenli uç değerleri belirlemenin bir yolu
-**Mahalanobis uzaklığını** hesaplamaktır. Mahalanobis uzaklığı z puanının çok 
-boyutlu versiyonudur. Bir gözlemin, dağılımın kovaryansı (çok 
+**Mahalanobis uzaklığını** hesaplamaktır. Mahalanobis uzaklığı z puanının çok boyutlu versiyonudur. Bir gözlemin, dağılımın kovaryansı (çok 
 boyutlu varyansı) verildiğinde, dağılımın ağırlık merkezinden (çok 
 boyutlu ortalamasından) uzaklığını ölçer. 
 
@@ -340,22 +340,17 @@ için veya sürekli değişken olarak ele alınan sıralama ölçeğinde
 değişkenler için geçerli değildir.
 
 
-### Mahalanobis Uzaklığı
-
-Mahalanobis Uzaklığı hesaplama
+#### Mahalanobis Uzaklığı hesaplama
 ```{r}
 
 library(psych)
 veri <- screen[,1:5]
 md <- mahalanobis(veri, center = colMeans(veri), cov = cov(veri))
-md
+head(md,20)
 ```
 
 
-
-### Mahalanobis Uzaklığı
-
-Kritik değer belirleme
+### Mahalanobis Uzaklığı Kritik değer belirleme
 ```{r}
 
 library(psych)
@@ -364,10 +359,11 @@ cutoff <- (qchisq(p = 1 - alpha, df = ncol(veri)))
 cutoff
 ```
 
+- Mahalonobis uzaklığı değerleri ki-kare ile değerlendirilir (serbestlik 
+derecesi bağımsız değişken sayısına eşittir). Buna göre 20.51501 kritik 
+değerinden büyük olan değerler 0.001 alfa düzeyinde istatistiksel olarak 
+anlamlı olarak değerlendirilir.
 
-### Mahalanobis Uzaklığı
-
-Kritik değer belirleme
 ```{r}
 
 ucdegerler <- which(md > cutoff)
@@ -377,13 +373,7 @@ data_temiz <- veri[-ucdegerler, ]
 
 ```
 
-
-### Mahalanobis Uzaklığı
-
-- Mahalonobis uzaklığı değerleri ki-kare ile değerlendirilir (serbestlik 
-derecesi bağımsız değişken sayısına eşittir). Buna göre 18.4668 kritik 
-değerinden büyük olan değerler 0.001 alfa düzeyinde istatistiksel olarak 
-anlamlı olarak değerlendirilir. 
+ 
 - 548, 398, 48, 235, 330, 502, 276, 291 ve 370 subno.lu bireyler için 
 Mahalonobis uzaklık değerleri kritik değerden büyüktür. Bu gözlemler 
 çok değişkenli uç değerler olarak değerlendirilir. 
@@ -396,8 +386,7 @@ veri[ucdegerler, ]
 ### Çok Değişkenli Normallik Sayıltısı
 
 - Çok değişkenli normallik her bir değişkenin ve değişkenlerin bütün 
-doğrusal kombinasyonlarının normal dağıldığı 
-sayıltısıdır.
+doğrusal kombinasyonlarının normal dağıldığı sayıltısıdır.
 
 - Sayıltının karşılanması durumunda analizin artıkları 
 (hataları) da normal dağılır. 
@@ -407,11 +396,6 @@ değişkenli normal dağılıma da sahiptir ancak bunun tersi
 sağlanmayabilir; iki veya daha fazla tek dağılımlı 
 normallik gösteren değişkenler çok değişkenli normallik 
 göstermeyebilir. 
-
-
-
-
-### Çok Değişkenli Normallik Sayıltısı
 
 
 - Çok değişkenli normallik sayıltısını test etmek için 
@@ -426,13 +410,13 @@ normallik için gereklidir ancak yeterli değildir.
 - Normalliğin değerlendirilmesi için hem istatistiksel hem 
 de grafiksel yöntemler vardır.
 
-  - İstatistiksel yöntemler normallik için hipotez testlerini içerir.
-  - Grafiksel yöntemler histogram ve normallik grafiklerinin 
+- İstatistiksel yöntemler normallik için hipotez testlerini içerir.
+- Grafiksel yöntemler histogram ve normallik grafiklerinin 
 incelenmelerini içerir. 
 
 
 
-### Normallik Sayıltısı
+#### Normallik Sayıltısı
 
  Normalliğin iki bileşeni vardır: Çarpıklık ve basıklık
  
@@ -444,10 +428,6 @@ arasındaysa, değişkenin normale oldukça yakın olduğu söylenebilir.
 
 - Hem çarpıklık hem de basıklık için istatistiksel anlamlılık testleri vardır. Bu  testlerde z dağılımı kullanılarak elde edilen çarpıklık veya basıklık değeri sıfır  ile karşılaştırılır:
 
-
-
-
-### Normallik Sayıltısı
 
 
 
@@ -473,9 +453,10 @@ jarque.test(remove_labels(atthouse))
 
 ```
 
-`r emo::ji('link')` [summarytools için](https://www.statology.org/skewness-kurtosis-in-r/)
+- `r emo::ji('link')` [summarytools için](https://www.statology.org/skewness-kurtosis-in-r/)
 
 
+## Kaynaklar
 
 Rummel, R. J. (1970). Applied Factor Analyis. Evanston,IL: Northwestern University 
 Press.

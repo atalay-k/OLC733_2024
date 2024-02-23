@@ -40,3 +40,17 @@ normallik-sayıltısı
 normallik-sayıltısı-1
 normallik-sayıltısı-2
 cr
+odev
+timedrs-değişkenin-incelenmesi
+histogram
+yoğunluk-grafiği
+interaktif-grafik
+kutu-grafik
+timedrs-değişkenin-mstatus-değişkenine-göre-incelenmesi
+attdrug-değişkenin-incelenmesi
+atthouse-değişkenin-incelenmesi
+histogram-1
+kutu-grafiği
+mahalanobis-uzaklığı-hesaplama
+mahalanobis-uzaklığı-kritik-değer-belirleme
+kaynaklar-1

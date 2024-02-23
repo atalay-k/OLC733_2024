@@ -208,7 +208,7 @@ kable(ozet,format='markdown',
 
 -   Kayıp veriyle baş etme yöntemleri
 
-    -   veri silmeye dayalı yöntemler (liste baznda - çiftler bazında)
+    -   veri silmeye dayalı yöntemler (liste bazında - çiftler bazında)
 
     -   Veri atamaya dayalı yöntemler
     -    Model tabanlı yöntemler
@@ -478,15 +478,22 @@ mutate(income = ifelse(is.na(income), mean(income, na.rm =TRUE),
 summary(screen)
 ```
 
--   daha fazla bilgi için
-    <https://bookdown.org/mwheymans/bookmi/missing-data-evaluation.html>
 
 ## Daha Fazlası için
 
-- [naniar paketi vigneti](https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html)
+-  `r emo::ji("link")`[Heymans, MW and Eekhout, I. (2019).Applied missing data analysis with SPSS
+and (R) Studio. Heymans and Eekhout: Amsterdam, The Netherlands](https://bookdown.org/mwheymans/bookmi/)
 
-- Stef van Buuren "Flexible Imputation of Missing Data" kitabına [linkten
-erişebilirsiniz.](Shttps://stefvanbuuren.name/fimd/)
+
+-  `r emo::ji("link")`[naniar paketi vigneti](https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html)
+
+-  `r emo::ji("link")` [Van Buuren, S. (2018). Flexible imputation of missing data. CRC press.](https://stefvanbuuren.name/fimd/)
+
+## ODEV
+
+- Dealing With Missing Data in R ilk üç bölümü
+- Handling Missing Data with Imputations in R ilk bölümü
+- Introduction to Statistics in R ilk bölümü
 
 
 
@@ -504,3 +511,5 @@ Peugh ve Enders, 2004
 - Rubin, D. B. (1976). Inference with missing data. Biometrika , 63, 581
 592.
 -   Robitzsch ve Rupp, 2009
+
+
