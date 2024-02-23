@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 -  Uç değerler hem I. tip hem de II. tip hatalara neden olurlar ve 
 sonuçların genellenebilirliğini düşürürler.
 
-- Veri setinde uç değer bulunmasının 4 nedeni olabilir:
+- Veri setinde uç değer bulunmasının 4 nedeni olabilir
   - Verinin veri dosyasına yanlış girilmesi
   - Kayıp veri kodlamasında hata yapılması
   - Uç değerin örneklemin alındığı evrenin üyesi olmaması
@@ -507,7 +507,7 @@ ggplot(data = screen, aes(sample = atthouse )) +
 ```
 
 
----
+-
 
 ## Varyansların homejenliği
 
@@ -534,7 +534,7 @@ hatalı ölçümlerden kaynaklanabilir.
 pairs(screen[,2:5])
 ```
 
----
+-
 ### Veri Dönüştürme
 
 - Normallik ve varyansların homojenliği sayıltıları ihlal 
@@ -573,7 +573,7 @@ kontrol edilmelidir.
 
 
 | Dağılım  | Dönüşüm   |
-|---|---|
+|-|-|
 |  Orta düzeyde pozitif çarpık |  Karekök |
 |   Yüksek düzeyde pozitif çarpık | Logaritma  |
 |   Aşırı düzeyde pozitif çarpık |  Ters Çevirme |
@@ -593,7 +593,7 @@ describe(ltimedrs)
 ```
 
 
----
+-
 ### Çoklu Bağlantı ve Tekillik
 
 -  (Çoklu) bağlantı ve tekillik bağımsız değişkenler 
