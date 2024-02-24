@@ -326,33 +326,6 @@ screen <- screen[-c(260,298),]
 
 ### Mahalanobis Uzaklığı
 
-- Çok degiskenli normallik her bir degiskenin ve degiskenlerin bütün
-dogrusal kombinasyonlarının normal dagıldıgı
-sayıltısıdır.
--  Sayıltının karsılanması durumunda analizin artıkları
-(hataları) da normal dagılır.
--  Çok degiskenli normallik sayıltısı farklı çok degiskenli
-istatistikler için farklı ele alınır.
-
-  -  Gruplanmamıs veride çok degiskenli normallik degiskenlerin
-  kendileri veya analizin artıklarının dagılımı ile ilgilidir.
-  
-  -Gruplanmıs verilerde ise degiskenlerin ortalamalarının
-  örneklenmis dagılımları ile ilgilidir.
-
-- Çok degiskenli normallik sayıltısını test etmek için
-dogrudan bir test bulunmadıgından, genellikle her bir
-degisken ayrı ayrı test edilir ve eger her bir degisken
-normal dagılım gösteriyorsa çok degiskenli normal
-oldukları varsayılır.
-- Not: Her bir degiskenin normal olarak dagılımı çok degiskenli
-normallik için gereklidir ancak yeterli degildir.
-- Normalligin degerlendirilmesi için hem istatistiksel hem
-de grafiksel yöntemler vardır.
-- Istatistiksel yöntemler normallik için hipotez testlerini içerir.
-- Grafiksel yöntemler histogram ve normallik grafiklerinin
-incelenmelerini içerir.
-
 
 - Çok değişkenli uç değerleri belirlemenin bir yolu
 **Mahalanobis uzaklığını** hesaplamaktır. Mahalanobis uzaklığı z puanının çok boyutlu versiyonudur. Bir gözlemin, dağılımın kovaryansı (çok 
@@ -371,7 +344,7 @@ için veya sürekli değişken olarak ele alınan sıralama ölçeğinde
 değişkenler için geçerli değildir.
 
 
-- Mahalanobis Uzaklığı hesaplama
+- Mahalanobis uzaklığı hesaplama
 ```{r}
 
 library(psych)
@@ -381,7 +354,7 @@ head(md,20)
 ```
 
 
-- Mahalanobis Uzaklığı Kritik değer belirleme
+- Mahalanobis uzaklığı kritik değer belirleme
 ```{r}
 
 library(psych)
@@ -414,36 +387,30 @@ veri[ucdegerler, ]
 ```
 
 
-### Çok Değişkenli Normallik Sayıltısı
+## Çok Değişkenli Normallik Sayıltısı
 
-- Çok değişkenli normallik her bir değişkenin ve değişkenlerin bütün 
-doğrusal kombinasyonlarının normal dağıldığı sayıltısıdır.
+- Çok degiskenli normallik sayıltısını test etmek için
+doğrudan bir test bulunmadığından, genellikle her bir
+değişken ayrı ayrı test edilir ve eğer her bir değişken
+normal dağılım gösteriyorsa çok değişkenli normal
+oldukları varsayılır.
 
-- Sayıltının karşılanması durumunda analizin artıkları 
-(hataları) da normal dağılır. 
+    - Not: Her bir değişkenin normal olarak dağılım çok değişkenli
+normallik için gereklidir ancak yeterli degildir.
 
-- Bir değişken çok değişkenli normal dağılıma sahipse, tek 
-değişkenli normal dağılıma da sahiptir ancak bunun tersi 
-sağlanmayabilir; iki veya daha fazla tek dağılımlı 
-normallik gösteren değişkenler çok değişkenli normallik 
-göstermeyebilir. 
-
-
-- Çok değişkenli normallik sayıltısını test etmek için 
-doğrudan bir test bulunmadığından, genellikle her bir 
-değişken ayrı ayrı test edilir ve eğer her bir değişken 
-normal dağılım gösteriyorsa, çok değişkenli normal 
-oldukları varsayılır. 
-
-  - Not: Her bir değişkenin normal olarak dağılımı çok değişkenli 
-normallik için gereklidir ancak yeterli değildir.
-
-- Normalliğin değerlendirilmesi için hem istatistiksel hem 
+- Normalliğin değerlendirilmesi için hem istatistiksel hem
 de grafiksel yöntemler vardır.
 
-- İstatistiksel yöntemler normallik için hipotez testlerini içerir.
-- Grafiksel yöntemler histogram ve normallik grafiklerinin 
-incelenmelerini içerir. 
+- Istatistiksel yöntemler normallik için hipotez testlerini içerir.
+
+- Grafiksel yöntemler histogram ve normallik grafiklerinin
+incelenmelerini içerir.
+
+- Çok değişkenli normallik her bir değişkenin ve degiskenlerin bütün doğrusal kombinasyonlarının normal dağıldığı sayıltısıdır.
+
+- Sayıltının karşılanması durumunda analizin artıkları (hataları) da normal dağılır.
+
+- Çok değişkenli normallik sayıltısı farklı çok değişkenli istatistikler için farklı ele alınır.
 
 
 
@@ -540,23 +507,18 @@ ggplot(data = screen, aes(sample = atthouse )) +
 
 ## Doğrusallık
 
-- Dogrusallık iki degisken arasında
-dogrusal bir iliskinin oldugu sayıltısıdır.
 
-- Iki degisken arasındaki dogrusallık iki degiskenli serpme
-grafik incelenerek degerlendirilebilir. Gruplanmamıs
-veride bütün bireyler analize katılırken, gruplanmamıs
-veride analiz her bir grup içinde ayrı ayrı yapılır.
+- Doğrusallık iki değişken arasında doğrusal bir iliskinin oldugu sayıltısıdır.
 
-- Eger iki degisken de normal dagılıyorsa ve dogrusal olarak
-iliskiliyse, serpme grafik oval seklindedir.
+- İki değişken arasındaki dogrusallık iki değişkenli saçılım grafik incelenerek degerlendirilebilir. 
 
-- Eger degiskenlerden bir normal dagılmıyorsa, serpme grafik
-oval seklinde olmayacaktır.
+- Gruplanmamış veride bütün bireyler analize katılırken, gruplanmamış veride analiz her bir grup içinde ayrı ayrı yapılır.
 
-- Eger veri setinde çok sayıda degisken varsa,olası bütün
-degisken çiftlerini incelemek yerine dogrusallıktan
-uzaklasabilecek degisken çiftleri incelenebilir
+- Eger iki degisken de normal dağılıyorsa ve doğrusal olarak ilişkiliyse, saçılım  grafiği oval şeklindedir.
+
+- Eger değişkenlerden bir normal dağılmıyorsa, saçılım grafik oval şeklinde olmayacaktır.
+
+- Eğer veri setinde çok sayıda değişken varsa, olası bütün değişken çiftlerini incelemek yerine doğrusallıktan uzaklaşabilecek değişken çiftleri incelenebilir
 
 ## Varyansların homejenliği
 
@@ -574,20 +536,20 @@ bağımsız değişkenin her değerinde oldukça eşit olmalıdır.
 Çok değişkenli normallik sayıltısı karşılandığında, 
 değişkenler arasındaki ilişkiler homojendir. 
 
-- Varyansların heterojenligi, gruplanmamıs veri için çok
-önemli degildir. Iki degiskenli serpme grafik incelenerek
-degerlendirilebilir. Degiskenler arasındaki varyans
-farklılıkları tahmin edilebiliyorsa serpme grafikte bu
+- Varyansların heterojenliği, gruplanmış veri için çok
+önemli degildir. İki değişkenli saçılım grafik incelenerek
+degerlendirilebilir. Değişkenler arasındaki varyans
+farklılıkları tahmin edilebiliyorsa saçılım grafikte bu
 farklılıklar gözlenebilir. Grafikte açıklanamayan farklılıklar
-varsa analizi zayıflar ve geçerligi düser.
+varsa analizi zayıflar ve geçerliği düşer.
 
--  Varyansların heterojenligi gruplanmıs veride daha
+- Varyansların heterojenligi gruplanmış veride daha
 önemlidir. Varyans homojenligini test etmek için Box’s M
-test kullanılabilir
+test kullanılabilir.
+
 - Varyansların heterojenliği değişkenlerden birinin normal 
 dağılım göstermemesinden veya bağımsız değişkendeki 
 hatalı ölçümlerden kaynaklanabilir.
-
 -
 ```{r}
 pairs(screen[,2:5])
@@ -740,7 +702,7 @@ değerinde bir çoklu korelasyona karşılık gelmektedir.
 
 - Örneğin X1 değişkenin tolerans değeri yaklaşık 0.75 ise **VIF** değeri 1.33 olacaktır. **VIF** değerinin karekoku çoklu bağlantıdan kaynaklı standart hatanın artma derecesini yansıtır.
 
--**VIF** değerinin kesem değeri 10dur. Dolayısla standart hatalar hiç çoklu bağlantı bulunmayan duruma oranla üç kattan daha fazla artacaktır.
+- **VIF** değerinin kesme değeri 10'dur. Dolayısla standart hatalar hiç çoklu bağlantı bulunmayan duruma oranla üç kattan daha fazla artacaktır.
 
 
 
@@ -769,7 +731,7 @@ değerlerin toplanması veya ortalamasının alınmasıdır.
 bileşenlerin kullanılmasıdır.
 
 
-- `r emo::ji('link')` [summarytools için](https://www.statology.org/skewness-kurtosis-in-r/)
+
 
 
 ## Kaynaklar

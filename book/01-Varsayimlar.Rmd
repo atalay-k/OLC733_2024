@@ -568,7 +568,7 @@ summary(screen)
 
 ## Daha Fazlası için
 
--  `r emo::ji("link")`[Heymans, MW and Eekhout, I. (2019).Applied missing data analysis with SPSS
+-  `r emo::ji("link")`[Heymans, MW and Eekhout, I. (2019). Applied missing data analysis with SPSS
 and (R) Studio. Heymans and Eekhout: Amsterdam, The Netherlands](https://bookdown.org/mwheymans/bookmi/)
 
 
