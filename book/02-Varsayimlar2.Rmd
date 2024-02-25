@@ -707,10 +707,6 @@ değerinde bir çoklu korelasyona karşılık gelmektedir.
 
 
 
-
-
-
-
 ```{r message=FALSE, warning=FALSE}
 model <- lm(subno ~ timedrs  +   attdrug  +  atthouse  +income + race+ mstatus ,
 data = screen)
