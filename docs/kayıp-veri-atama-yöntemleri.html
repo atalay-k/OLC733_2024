@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bölüm 2 Kayıp Veri Atama Yöntemleri | OLC733</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Kayıp veriyle baş etme yöntemleri veri silmeye dayalı yöntemler (liste bazında - çiftler bazında) Veri atamaya dayalı yöntemler Model tabanlı yöntemler Veri silmeye dayalı yöntemler TRK veri...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Bölüm 2 Kayıp Veri Atama Yöntemleri | OLC733">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC733/kayıp-veri-atama-yöntemleri.html">
+<meta property="og:description" content="Kayıp veriyle baş etme yöntemleri veri silmeye dayalı yöntemler (liste bazında - çiftler bazında) Veri atamaya dayalı yöntemler Model tabanlı yöntemler Veri silmeye dayalı yöntemler TRK veri...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bölüm 2 Kayıp Veri Atama Yöntemleri | OLC733">
+<meta name="twitter:description" content="Kayıp veriyle baş etme yöntemleri veri silmeye dayalı yöntemler (liste bazında - çiftler bazında) Veri atamaya dayalı yöntemler Model tabanlı yöntemler Veri silmeye dayalı yöntemler TRK veri...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.32/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="libs/plotly-binding-4.10.4/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">OLC733</a>:
+        <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="varsay%C4%B1mlar-i.html"><span class="header-section-number">1</span> Varsayımlar I</a></li>
+<li><a class="active" href="kay%C4%B1p-veri-atama-y%C3%B6ntemleri.html"><span class="header-section-number">2</span> Kayıp Veri Atama Yöntemleri</a></li>
+<li><a class="" href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">3</span> Varsayımlar II</a></li>
+<li><a class="" href="cr.html"><span class="header-section-number">4</span> CR</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="kayıp-veri-atama-yöntemleri" class="section level1" number="2">
+<h1>
+<span class="header-section-number">Bölüm 2</span> Kayıp Veri Atama Yöntemleri<a class="anchor" aria-label="anchor" href="#kay%C4%B1p-veri-atama-y%C3%B6ntemleri"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li>
+<p>Kayıp veriyle baş etme yöntemleri</p>
+<ul>
+<li><p>veri silmeye dayalı yöntemler (liste bazında - çiftler bazında)</p></li>
+<li><p>Veri atamaya dayalı yöntemler</p></li>
+<li><p>Model tabanlı yöntemler</p></li>
+</ul>
+</li>
+<li><p>Veri silmeye dayalı yöntemler TRK veri mekanizmasını
+gerektirmektedir ve bu varsayım sağlanmadığında yanlış parametre
+kestirimleri verebilir. MCAR varsayımı sağlandığında bile verinin
+silinmesi analizin gücünün düşmesine neden olabilmektedir (Enders,
+2010).</p></li>
+</ul>
+<div id="veri-silmeye-dayalı-yöntemler" class="section level3" number="2.0.1">
+<h3>
+<span class="header-section-number">2.0.1</span> Veri Silmeye Dayalı Yöntemler<a class="anchor" aria-label="anchor" href="#veri-silmeye-dayal%C4%B1-y%C3%B6ntemler"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>Gözlem</th>
+<th>Y1</th>
+<th>Y2</th>
+<th>Y3</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>13</td>
+<td>23</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>14</td>
+<td>22</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>15</td>
+<td>-</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>16</td>
+<td>18</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>17</td>
+<td>17</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>-</td>
+<td>20</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>-</td>
+<td>20</td>
+<td>15</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><p>Liste bazında veri silme yöntemi uygulandığında veri kümesinde
+sadece birinci,
+ikinci ve beşinci gözlemler üzerinden istatistiksel çözümlemeler
+yapılacaktır.
+Üçüncü, dördüncü, altıncı ve yedinci gözlemler kayıp veri
+bulundurduklarından
+çözümleme dışında bırakılmıştır.</p></li>
+<li><p>çiftler bazında veri silme ile ele alındığında birinci ve ikinci
+değişken için birinci, ikinci, dördüncü ve beşinci gözlemler
+üzerinden işlem yapılacaktır. Birinci ve üçüncü değişken için yapılacak
+kestirimler,
+birinci, ikinci, üçüncü ve beşinci gözlemler üzerinden yapılacaktır.
+İkinci ve üçüncü değişkenler baz alındığında ise üçüncü ve dördüncü gözlem hariç diğer gözlemler üzerinden çözümlemeler yapılacaktır. Yapılan işlemler dikkate
+alındığında ilk altküme için dört gözlem çifti, ikinci altküme için
+dört gözlem çifti ve üçüncü altküme için beş gözlem çifti üzerinden
+çözümlemeler yapılarak birleştirilecektir.
+Görüldüğü gibi altkümelerin gözlem sayıları birbirlerinden farklı
+olabilmektedir. Liste bazında veri silme yönteminde gözlenmesine
+rağmen çözümleme dışında kalan değerlerden oluşan bilgi kaybı, çiftler
+bazında veri silme yöntemi ile azaltılmıştır. Her değişkenin farklı
+örneklem sayısı bulundurmasının ANOVA ve regresyon çözümlemesi gibi yöntemlerin kullanılacağı durumlarda problemli olduğunu belirtilmiştir.</p></li>
+</ul>
+</div>
+<div id="veri-atamaya-dayalı-yöntemler" class="section level3" number="2.0.2">
+<h3>
+<span class="header-section-number">2.0.2</span> Veri atamaya dayalı yöntemler<a class="anchor" aria-label="anchor" href="#veri-atamaya-dayal%C4%B1-y%C3%B6ntemler"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Ortalama veri atama</li>
+<li>Regresyon İle veri atama</li>
+<li>Deck/Deste ile Veri Yükleme</li>
+<li>En Yakın Komşu Yöntemi</li>
+<li>Son Gözlemi İleri Taşıma</li>
+</ul>
+<div id="ortalama-veri-atama" class="section level4" number="2.0.2.1">
+<h4>
+<span class="header-section-number">2.0.2.1</span> Ortalama veri atama<a class="anchor" aria-label="anchor" href="#ortalama-veri-atama"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><p>Bu yöntemde mevcut veriden ilgili
+degiskenlere ait ortalamalar hesaplanır ve analize baslamadan
+önce kayıp deger yerine ortalama deger koyulur.</p></li>
+<li><p>Örnegin, income degiskeni için ortalama deger 4 ise, gelirini
+belirtmeyen birey için gelir 4 olarak kabul edilir.</p></li>
+<li><p>Diger bütün bilgilerin eksikliginde, ortalama, bir degiskenin degeri
+hakkındaki en iyi tahmindir. Ancak ortalama deger ortalamaya
+kayıp degerden daha yakın olacagından degiskenin varyansı
+daralır, degiskenin diger degiskenlerle korelasyonu da daralır.
+Varyans daralmasının derecesi kayıp verinin miktarına ve kayıp
+olan gerçek degere baglıdır.</p></li>
+<li><p>Bir alternatif kayıp deger yerine grup ortalaması yerlestirmektir.
+Bu yaklasım, yerine ortalama yerlestirme yönteminden daha iyi
+sonuç saglar. Kayıp degerler için atıflar daha yerindedir ve
+varyans çok fazla daralmamıs olur. Ancak grupiçi varyansın
+daralması gruplar arasında çok büyük farklılıklara neden olabilir.</p></li>
+</ul>
+</div>
+<div id="regresyon-kullanılması" class="section level4" number="2.0.2.2">
+<h4>
+<span class="header-section-number">2.0.2.2</span> Regresyon Kullanılması<a class="anchor" aria-label="anchor" href="#regresyon-kullan%C4%B1lmas%C4%B1"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><p>Bu yöntemde kayıp veriye sahip
+degisken bagımlı degisken, diger degiskenlerse bagımsız
+degiskenler olarak ele alınarak bir regresyon esitligi yazılır. Tam
+veriye sahip bireyler regresyon esitliginin üretilmesinde kullanılır.
+Daha sonra esitlik kayıp degerleri tahmin etmek için kullanılır.</p></li>
+<li><p>Bu yöntemle tahmin edilen deger olasılıkla ortalama degere daha
+yakın olacagından varyans daralması olabilir.</p></li>
+<li><p>Veri setinde iyi bagımsız degiskenlerin bulunması gerekir. Eger
+veri setindeki degiskenler kayıp veriye sahip degiskenin iyi birer
+yordayıcısı degillerse regresyon tahminini yerlestirmek
+ortalamayı yerlestirmek gibidir.</p></li>
+<li><p>Bu yöntemle tahmin edilen deger degiskenin alabilecegi olası
+deger aralıgındaysa kullanılır, aksi halde kullanılmamalıdır.</p></li>
+</ul>
+</div>
+</div>
+<div id="model-tabanlı-yöntemler" class="section level3" number="2.0.3">
+<h3>
+<span class="header-section-number">2.0.3</span> Model tabanlı yöntemler<a class="anchor" aria-label="anchor" href="#model-tabanl%C4%B1-y%C3%B6ntemler"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Gözlenmiş değerler üzerinden kurulan bir modelde olabilirlik ve sonsal dağılımlara
+bağlı olarak parametrelerin kestirilmesine dayanan kayıp veri yöntemleridir. Bu
+yöntemlerin en önemli getirisi esneklikleridir. Geçici yöntemlerden kaçınarak model
+varsayımları altında çözümleme yaparlar. Ayrıca veri matrisinde gözlenememiş
+değerleri de hesaba katarak varyans kestirimleri verirler.</p></li>
+<li><p>ML Yöntemi</p></li>
+<li><p>EM Algoritması</p></li>
+<li><p>Çoklu Veri Atama</p></li>
+</ul>
+<div id="beklenti-maksimizasyonu" class="section level4" number="2.0.3.1">
+<h4>
+<span class="header-section-number">2.0.3.1</span> Beklenti Maksimizasyonu:<a class="anchor" aria-label="anchor" href="#beklenti-maksimizasyonu"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><p>Bu yöntem iki adımdan olusan
+iteratif bir yöntemdir – beklenti (expectation (E) ve
+maksimizasyon (maximization (M)).</p></li>
+<li><p>Ilk olarak, E adımında gözlenen degerlerden ve korelasyon gibi
+tahmin edilen parametrelerden kayıp verinin beklentisi bulunur.
+Bu beklentiler kayıp veri yerine yerlestirilir.</p></li>
+<li><p>Sonra, M adımında kayıp veri doldurulmus gibi maksimum
+olabilirlik tahmini gerçeklestirilir.</p></li>
+<li><p>Daha sonra,eger yakınsanma basarılırsa, EM varyans/kovaryans
+matrisi elde edilebilir veya doldurulan veri, veri setinde
+kaydedilebilir.</p></li>
+<li><p>Bu yöntemde EM veri seti veri setine hata eklenmedigi için
+yanlıdır. Böylece bu veri setine dayalı analizlerde hipotez testleri
+için uygun olmayan standart hatalar elde edilebilir.</p></li>
+</ul>
+</div>
+<div id="çoklu-atıf" class="section level4" number="2.0.3.2">
+<h4>
+<span class="header-section-number">2.0.3.2</span> Çoklu Atıf:<a class="anchor" aria-label="anchor" href="#%C3%A7oklu-at%C4%B1f"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li><p>Bu yöntemde ilk olarak lojistik regresyon kullanılır;
+belli bir degiskende kayıp veriye sahip ve sahip olmayan
+gözlemler iki kategorili bagımlı degiskeni olusturur, bagımsız
+degiskenler olarak ele alınacak diger degiskenler belirlenir ve bir
+regresyon esitligi yazılır.</p></li>
+<li><p>Sonra tam veriye sahip gözlemlerden rastlantısal bir örneklem
+seçilir ve bu örneklem kayıp veriye sahip degiskenin dagılımının
+belirlenmesinde kullanılır.</p></li>
+<li><p>Daha sonra kayıp veriye sahip degiskenin dagılımından m tane
+rastlantısal örneklem seçilir ve m tane veri seti için degiskene ait
+kestirimlerde bulunulur. Çogu durumda bes hatta üç örneklem
+yeterli olacaktır.</p></li>
+<li><p>Istatistiksel analiz m veri seti için ayrı ayrı uygulanır ve ortalama
+parametre kestirimi rapor edilir.</p></li>
+<li><p>Bu yöntemin bir avantajı kayıp verinin rastlantısal olduguyla ilgili
+bir varsayımda bulunmamasıdır.</p></li>
+</ul>
+</div>
+</div>
+<div id="kayıp-veri-analizinde-kullanılan-paketler" class="section level3" number="2.0.4">
+<h3>
+<span class="header-section-number">2.0.4</span> Kayıp Veri Analizinde Kullanılan Paketler<a class="anchor" aria-label="anchor" href="#kay%C4%B1p-veri-analizinde-kullan%C4%B1lan-paketler"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Kayıp veriyi incelemek ve kayıp veri ile baş etmek konusunda birden
+fazla paket mevcuttur. Bu paketler arasında
+<ul>
+<li>VIM</li>
+<li>missMethods</li>
+<li>Amelia</li>
+<li>naniar paketi sayılabilir.</li>
+</ul>
+</li>
+</ul>
+<p>İlk örnekler <strong>naniar</strong> üzerinden gösterilmektedir.</p>
+<ul>
+<li><strong>herhangi bir eksik veri olup olmadığının kontrolü</strong></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/njtierney/naniar">naniar</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/any-na.html">any_na</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<ul>
+<li><strong>toplam kaç eksik veri var</strong></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/n_miss.html">n_miss</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 27</code></pre>
+<ul>
+<li><strong>eksik veri oranı ne?</strong></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/prop_miss.html">prop_miss</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 0.008294931</code></pre>
+<ul>
+<li><strong>eksik veriler hangi sütunlarda</strong></li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##    subno  timedrs  attdrug atthouse   income  mstatus     race 
+##        0        0        0        1       26        0        0</code></pre>
+<ul>
+<li><strong>eksik veri tablosu, frekans ve oran</strong></li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/miss_var_summary.html">miss_var_summary</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">variable</th>
+<th align="right">n_miss</th>
+<th align="right">pct_miss</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">income</td>
+<td align="right">26</td>
+<td align="right">5.5913978</td>
+</tr>
+<tr class="even">
+<td align="left">atthouse</td>
+<td align="right">1</td>
+<td align="right">0.2150538</td>
+</tr>
+<tr class="odd">
+<td align="left">subno</td>
+<td align="right">0</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">timedrs</td>
+<td align="right">0</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">attdrug</td>
+<td align="right">0</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="even">
+<td align="left">mstatus</td>
+<td align="right">0</td>
+<td align="right">0.0000000</td>
+</tr>
+<tr class="odd">
+<td align="left">race</td>
+<td align="right">0</td>
+<td align="right">0.0000000</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li><strong>değişkenlere göre eksik veri tablosu</strong></li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/miss_var_table.html">miss_var_table</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">n_miss_in_var</th>
+<th align="right">n_vars</th>
+<th align="right">pct_vars</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">5</td>
+<td align="right">71.42857</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">14.28571</td>
+</tr>
+<tr class="odd">
+<td align="right">26</td>
+<td align="right">1</td>
+<td align="right">14.28571</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li><strong>Hangi bireylerde/satırlarda eksik veri var</strong></li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/miss_case_summary.html">miss_case_summary</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">case</th>
+<th align="right">n_miss</th>
+<th align="right">pct_miss</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">52</td>
+<td align="right">1</td>
+<td align="right">14.28571</td>
+</tr>
+<tr class="even">
+<td align="right">64</td>
+<td align="right">1</td>
+<td align="right">14.28571</td>
+</tr>
+<tr class="odd">
+<td align="right">69</td>
+<td align="right">1</td>
+<td align="right">14.28571</td>
+</tr>
+<tr class="even">
+<td align="right">77</td>
+<td align="right">1</td>
+<td align="right">14.28571</td>
+</tr>
+<tr class="odd">
+<td align="right">118</td>
+<td align="right">1</td>
+<td align="right">14.28571</td>
+</tr>
+<tr class="even">
+<td align="right">135</td>
+<td align="right">1</td>
+<td align="right">14.28571</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li><strong>tam ve eksik veri tablosu</strong></li>
+</ul>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/miss_case_table.html">miss_case_table</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">n_miss_in_case</th>
+<th align="right">n_cases</th>
+<th align="right">pct_cases</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">438</td>
+<td align="right">94.193548</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">27</td>
+<td align="right">5.806452</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li><strong>Eksik verinin görselleştirilmesi</strong></li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/gg_miss_var.html">gg_miss_var</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="01-Varsayimlar_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;"></div>
+<ul>
+<li><strong>Eksik verinin görselleştirilmesi</strong></li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://docs.ropensci.org/visdat/reference/vis_miss.html">vis_miss</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle<span class="op">=</span><span class="fl">80</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="01-Varsayimlar_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/gg_miss_upset.html">gg_miss_upset</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## `geom_line()`: Each group consists of only one observation.
+## ℹ Do you need to adjust the group aesthetic?</code></pre>
+<div class="inline-figure"><img src="01-Varsayimlar_files/figure-html/unnamed-chunk-17-2.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+<div id="kayıp-veri-testi" class="section level3" number="2.0.5">
+<h3>
+<span class="header-section-number">2.0.5</span> Kayıp Veri Testi<a class="anchor" aria-label="anchor" href="#kay%C4%B1p-veri-testi"><i class="fas fa-link"></i></a>
+</h3>
+<p>Veri kaybının diğer değişkenlerle ilişkili olup olmadığının incelenmesi
+<code>finalfit</code> paketi ile gerçekleştirilebilir.</p>
+<ul>
+<li>income değişleninde eksik veriler diğer değişkenlerle ilişkili mi?</li>
+</ul>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># değişkeni kopyala</span></span>
+<span><span class="va">screen2</span> <span class="op">&lt;-</span> <span class="va">screen</span></span>
+<span><span class="va">screen2</span><span class="op">$</span><span class="va">income_m</span> <span class="op">&lt;-</span> <span class="va">screen2</span><span class="op">$</span><span class="va">income</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ewenharrison/finalfit">finalfit</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">explanatory</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"timedrs"</span>, <span class="st">"attdrug"</span>, <span class="st">"atthouse"</span><span class="op">)</span></span>
+<span><span class="va">dependent</span> <span class="op">=</span> <span class="st">"income_m"</span></span>
+<span><span class="va">screen2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/finalfit/man/missing_compare.html">missing_compare</a></span><span class="op">(</span><span class="va">dependent</span>, <span class="va">explanatory</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>    <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>row.names<span class="op">=</span><span class="cn">FALSE</span>, align <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"l"</span>, <span class="st">"l"</span>, <span class="st">"r"</span>, <span class="st">"r"</span>, <span class="st">"r"</span><span class="op">)</span>, </span>
+<span>        caption <span class="op">=</span> <span class="st">"Eksik veriye sahip olan ve olmayan değişkenlerin ortalama karşılaştırması"</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:unnamed-chunk-18">Tablo 2.1: </span>Eksik veriye sahip olan ve olmayan değişkenlerin ortalama karşılaştırması</caption>
+<colgroup>
+<col width="44%">
+<col width="14%">
+<col width="17%">
+<col width="15%">
+<col width="8%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Missing data analysis: Income</th>
+<th align="left"></th>
+<th align="right">Not missing</th>
+<th align="right">Missing</th>
+<th align="right">p</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Visits to health professionals</td>
+<td align="left">Mean (SD)</td>
+<td align="right">7.9 (11.1)</td>
+<td align="right">7.6 (7.4)</td>
+<td align="right">0.891</td>
+</tr>
+<tr class="even">
+<td align="left">Attitudes toward medication</td>
+<td align="left">Mean (SD)</td>
+<td align="right">7.7 (1.2)</td>
+<td align="right">7.9 (1.0)</td>
+<td align="right">0.368</td>
+</tr>
+<tr class="odd">
+<td align="left">Attitudes toward housework</td>
+<td align="left">Mean (SD)</td>
+<td align="right">23.5 (4.5)</td>
+<td align="right">23.7 (4.2)</td>
+<td align="right">0.860</td>
+</tr>
+</tbody>
+</table></div>
+<div id="bir-değişkenin-kategorilerinde-inceleme" class="section level4" number="2.0.5.1">
+<h4>
+<span class="header-section-number">2.0.5.1</span> Bir değişkenin kategorilerinde inceleme<a class="anchor" aria-label="anchor" href="#bir-de%C4%9Fi%C5%9Fkenin-kategorilerinde-inceleme"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="va">miss_test</span> <span class="op">&lt;-</span> <span class="va">screen2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>miss_income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="co"># evli olmayanlar için</span></span>
+<span><span class="va">notmarried</span> <span class="op">&lt;-</span> <span class="va">miss_test</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">mstatus</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">miss_income</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="co"># Evliler için</span></span>
+<span><span class="va">married</span> <span class="op">&lt;-</span> <span class="va">miss_test</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">mstatus</span> <span class="op">==</span> <span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">miss_income</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="co">#c Oran</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">notmarried</span>, <span class="va">married</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  notmarried and married
+## t = -0.95833, df = 198.7, p-value = 0.3391
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.06708191  0.02320485
+## sample estimates:
+##  mean of x  mean of y 
+## 0.03883495 0.06077348</code></pre>
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/gg_miss_fct.html">gg_miss_fct</a></span><span class="op">(</span><span class="va">screen</span>, fct <span class="op">=</span> <span class="va">mstatus</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="01-Varsayimlar_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="mcar-test" class="section level3" number="2.0.6">
+<h3>
+<span class="header-section-number">2.0.6</span> MCAR test<a class="anchor" aria-label="anchor" href="#mcar-test"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/njtierney/naniar">naniar</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/mcar_test.html">mcar_test</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">screen</span><span class="op">[</span>,<span class="fl">2</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">statistic</th>
+<th align="right">df</th>
+<th align="right">p.value</th>
+<th align="right">missing.patterns</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">3.286262</td>
+<td align="right">6</td>
+<td align="right">0.7721547</td>
+<td align="right">3</td>
+</tr></tbody>
+</table></div>
+</div>
+<ul>
+<li>Littleın MCAR testine ilişkin p değerinin . 773 olduğu
+görülmektedir. Böylece kayıp verinin MCAR olduğu sonucuna
+varılabilir.</li>
+</ul>
+</div>
+<div id="kayıp-veri-ile-başetme" class="section level3" number="2.0.7">
+<h3>
+<span class="header-section-number">2.0.7</span> Kayıp veri ile başetme<a class="anchor" aria-label="anchor" href="#kay%C4%B1p-veri-ile-ba%C5%9Fetme"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Liste bazında silme işlemi <strong>na.omit</strong> ve <strong>complete.cases</strong>
+fonkisyonları ile sağlanabilir.</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html">na.omit</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span> </span>
+<span><span class="va">screen</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/stats/complete.cases.html">complete.cases</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span>,<span class="op">]</span></span>
+<span><span class="va">screen</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/stats/complete.cases.html">complete.cases</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span>,<span class="op">]</span></span></code></pre></div>
+<ul>
+<li>Ortalama atama işlemi yapılabir. Tek bir değişkene ortalama atama</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="cn">NA</span>,<span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">df</span><span class="op">$</span><span class="va">y</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">y</span><span class="op">)</span><span class="op">]</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">y</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">screen2</span> <span class="op">&lt;-</span> <span class="va">screen</span></span>
+<span><span class="va">screen2</span><span class="op">$</span><span class="va">income</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">screen2</span><span class="op">$</span><span class="va">income</span><span class="op">)</span><span class="op">]</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">screen2</span><span class="op">$</span><span class="va">income</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>
+<strong>if_else()</strong> ile ortalama atama işlemi yapılabir.</li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">screen3</span> <span class="op">&lt;-</span> <span class="va">screen</span></span>
+<span></span>
+<span><span class="va">screen3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/transform.html">transform</a></span><span class="op">(</span><span class="va">screen3</span>, income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, </span>
+<span>                                        <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">income</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>, <span class="va">income</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">screen3</span><span class="op">$</span><span class="va">income</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    1.00    3.00    4.00    4.21    6.00   10.00</code></pre>
+<ul>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> ile ortalama atama işlemi yapılabilir</li>
+</ul>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  </span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">income</span>, na.rm <span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>, <span class="va">income</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="veri-setindeki-kayıp-veriler" class="section level3" number="2.0.8">
+<h3>
+<span class="header-section-number">2.0.8</span> Veri setindeki kayıp veriler<a class="anchor" aria-label="anchor" href="#veri-setindeki-kay%C4%B1p-veriler"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p><strong>atthouse</strong> değişkeninde bir kayıp değer bulunmaktadır ve liste
+bazında silme yöntemi ile veri setinden çıkarılmıştır.</p></li>
+<li><p>Veri setinde <strong>income</strong> değişkeni 26 kayıp değere sahiptir ve bu
+sayı örneklemin %5’inden fazladır. Eğer bu değişken araştırma
+açısından öneme sahip değilse, veri setinden çıkarılabilir, aksi
+halde kayıp verinin tahmin edilmesi yöntemlerinden biri
+kullanılabilir.</p></li>
+<li><p>income değişkenindeki kayıp değerler için kayıp verinin tahmin
+edilmesi yöntemlerinden ortalamanın yerleştirilmesi kullanılarak
+kayıp değer yerine değişkenin ortalama değeri (4.21 değeri)
+yerleştirilmiştir.</p></li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">screen</span> <span class="op">&lt;-</span> <span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">income</span>, na.rm <span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>                       <span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html">na.omit</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##      subno          timedrs          attdrug         atthouse    
+##  Min.   :  1.0   Min.   : 0.000   Min.   : 5.00   Min.   : 2.00  
+##  1st Qu.:136.8   1st Qu.: 2.000   1st Qu.: 7.00   1st Qu.:21.00  
+##  Median :313.5   Median : 4.000   Median : 8.00   Median :24.00  
+##  Mean   :317.3   Mean   : 7.914   Mean   : 7.69   Mean   :23.54  
+##  3rd Qu.:483.2   3rd Qu.:10.000   3rd Qu.: 9.00   3rd Qu.:27.00  
+##  Max.   :758.0   Max.   :81.000   Max.   :10.00   Max.   :35.00  
+##      income          mstatus          race      
+##  Min.   : 1.000   Min.   :1.00   Min.   :1.000  
+##  1st Qu.: 3.000   1st Qu.:2.00   1st Qu.:1.000  
+##  Median : 4.000   Median :2.00   Median :1.000  
+##  Mean   : 4.208   Mean   :1.78   Mean   :1.086  
+##  3rd Qu.: 6.000   3rd Qu.:2.00   3rd Qu.:1.000  
+##  Max.   :10.000   Max.   :2.00   Max.   :2.000</code></pre>
+</div>
+<div id="daha-fazlası-için" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Daha Fazlası için<a class="anchor" aria-label="anchor" href="#daha-fazlas%C4%B1-i%C3%A7in"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>🔗<a href="https://bookdown.org/mwheymans/bookmi/">Heymans, MW and Eekhout, I. (2019). Applied missing data analysis with SPSS
+and (R) Studio. Heymans and Eekhout: Amsterdam, The Netherlands</a></p></li>
+<li><p>🔗<a href="https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html">naniar paketi vigneti</a></p></li>
+<li><p>🔗 <a href="https://stefvanbuuren.name/fimd/">Van Buuren, S. (2018). Flexible imputation of missing data. CRC press.</a></p></li>
+</ul>
+</div>
+<div id="odev" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> ODEV<a class="anchor" aria-label="anchor" href="#odev"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Dealing With Missing Data in R ilk üç bölümü</li>
+<li>Handling Missing Data with Imputations in R ilk bölümü</li>
+<li>Introduction to Statistics in R ilk bölümü</li>
+</ul>
+</div>
+<div id="kaynaklar" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Allison, P. D. (2003). Missing Data Techniques for Structural Equation Modeling.
+Journal of Abnormal Psychology. 112(4), 545-557.</p></li>
+<li><p>Peugh, J.L. &amp; Enders, J.K. (2004). Missing Data in Educational Research: A Review of
+Reporting Practices and Suggestions for İmprovement. Review of
+EducationalResearch, 74(4), 525-556, DOI: 10.3102/00346543074004525
+Peugh ve Enders, 2004</p></li>
+<li><p>Rubin, D. B. (1976). Inference with missing data. Biometrika , 63, 581</p></li>
+</ul>
+<ol start="592" style="list-style-type: decimal">
+<li>
+</ol>
+<ul>
+<li>Robitzsch ve Rupp, 2009</li>
+</ul>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="varsay%C4%B1mlar-i.html"><span class="header-section-number">1</span> Varsayımlar I</a></div>
+<div class="next"><a href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">3</span> Varsayımlar II</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li>
+<a class="nav-link" href="#kay%C4%B1p-veri-atama-y%C3%B6ntemleri"><span class="header-section-number">2</span> Kayıp Veri Atama Yöntemleri</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#veri-silmeye-dayal%C4%B1-y%C3%B6ntemler"><span class="header-section-number">2.0.1</span> Veri Silmeye Dayalı Yöntemler</a></li>
+<li><a class="nav-link" href="#veri-atamaya-dayal%C4%B1-y%C3%B6ntemler"><span class="header-section-number">2.0.2</span> Veri atamaya dayalı yöntemler</a></li>
+<li><a class="nav-link" href="#model-tabanl%C4%B1-y%C3%B6ntemler"><span class="header-section-number">2.0.3</span> Model tabanlı yöntemler</a></li>
+<li><a class="nav-link" href="#kay%C4%B1p-veri-analizinde-kullan%C4%B1lan-paketler"><span class="header-section-number">2.0.4</span> Kayıp Veri Analizinde Kullanılan Paketler</a></li>
+<li><a class="nav-link" href="#kay%C4%B1p-veri-testi"><span class="header-section-number">2.0.5</span> Kayıp Veri Testi</a></li>
+<li><a class="nav-link" href="#mcar-test"><span class="header-section-number">2.0.6</span> MCAR test</a></li>
+<li><a class="nav-link" href="#kay%C4%B1p-veri-ile-ba%C5%9Fetme"><span class="header-section-number">2.0.7</span> Kayıp veri ile başetme</a></li>
+<li><a class="nav-link" href="#veri-setindeki-kay%C4%B1p-veriler"><span class="header-section-number">2.0.8</span> Veri setindeki kayıp veriler</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#daha-fazlas%C4%B1-i%C3%A7in"><span class="header-section-number">2.1</span> Daha Fazlası için</a></li>
+<li><a class="nav-link" href="#odev"><span class="header-section-number">2.2</span> ODEV</a></li>
+<li><a class="nav-link" href="#kaynaklar"><span class="header-section-number">2.3</span> Kaynaklar</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="/blob/master/book/01-Varsayimlar.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/01-Varsayimlar.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-02-26.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
