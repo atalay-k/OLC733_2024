@@ -1,3 +1,6 @@
+
+# Varsayımlar II
+
 ```{r setup ,	include = FALSE}
 knitr::opts_chunk$set(
 	message = FALSE,
@@ -5,8 +8,6 @@ knitr::opts_chunk$set(
 
 )
 ```
-
-# Varsayımlar II
 
 ## Uç değerler
 
@@ -79,7 +80,7 @@ freq(screen$mstatus,report.nas = FALSE) %>%
 dağılımları incelendiğinde kategoriler arasında yaklaşık 3.5:1 (78/22) 
 oranı olduğu görülmektedir. Bu oran kabul edilebilir bir orandır.
 
-- `r emo::ji('link')` [summarytools paketinin vignettei için] (https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html)
+- `r emo::ji('link')` [summarytools paketinin vignettei için](https://cran.r-project.org/web/packages/summarytools/vignettes/introduction.html)
 
 ### Sürekli değişkenlerde uç değerlerin belirlenmesi
 
@@ -510,17 +511,17 @@ ggplot(data = screen, aes(sample = atthouse )) +
 
 - Doğrusallık iki değişken arasında doğrusal bir iliskinin oldugu sayıltısıdır.
 
-- İki değişken arasındaki dogrusallık iki değişkenli saçılım grafik incelenerek degerlendirilebilir. 
+- İki değişken arasındaki doğrusallık iki değişkenli saçılım grafik incelenerek değerlendirilebilir. 
 
 - Gruplanmamış veride bütün bireyler analize katılırken, gruplanmamış veride analiz her bir grup içinde ayrı ayrı yapılır.
 
-- Eger iki degisken de normal dağılıyorsa ve doğrusal olarak ilişkiliyse, saçılım  grafiği oval şeklindedir.
+- Eğer iki değişken de normal dağılıyorsa ve doğrusal olarak ilişkiliyse, saçılım  grafiği oval şeklindedir.
 
-- Eger değişkenlerden bir normal dağılmıyorsa, saçılım grafik oval şeklinde olmayacaktır.
+- Eğer değişkenlerden bir normal dağılmıyorsa, saçılım grafik oval şeklinde olmayacaktır.
 
 - Eğer veri setinde çok sayıda değişken varsa, olası bütün değişken çiftlerini incelemek yerine doğrusallıktan uzaklaşabilecek değişken çiftleri incelenebilir
 
-## Varyansların homejenliği
+## Varyansların homojenliği
 
 
 -  Varyansların homojenliği (homoscedasticity), bağımlı 
@@ -639,11 +640,11 @@ korelasyon matrisi incelenebilir.
 veya 0.90’dan daha yüksek olması bağlantı problemine işarettir. 
 
 ```{r}
-library(corrplot)
 cor(screen[,2:5]) %>% kable(digit=2)
 ```
 
 ```{r}
+library(corrplot)
 
 corrplot(cor(screen[,2:5]))
 ```

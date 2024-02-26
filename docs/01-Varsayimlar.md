@@ -125,7 +125,7 @@ library(gtsummary)
 ```
 
 ```
-## #StandWithUkraine
+## #BlackLivesMatter
 ```
 
 ```r
@@ -134,23 +134,23 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
 ```
 
 ```{=html}
-<div id="ecupsbcpyr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ecupsbcpyr table {
+<div id="ksosqalish" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ksosqalish table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ecupsbcpyr thead, #ecupsbcpyr tbody, #ecupsbcpyr tfoot, #ecupsbcpyr tr, #ecupsbcpyr td, #ecupsbcpyr th {
+#ksosqalish thead, #ksosqalish tbody, #ksosqalish tfoot, #ksosqalish tr, #ksosqalish td, #ksosqalish th {
   border-style: none;
 }
 
-#ecupsbcpyr p {
+#ksosqalish p {
   margin: 0;
   padding: 0;
 }
 
-#ecupsbcpyr .gt_table {
+#ksosqalish .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -176,12 +176,12 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-left-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_caption {
+#ksosqalish .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ecupsbcpyr .gt_title {
+#ksosqalish .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -193,7 +193,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-width: 0;
 }
 
-#ecupsbcpyr .gt_subtitle {
+#ksosqalish .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -205,7 +205,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-width: 0;
 }
 
-#ecupsbcpyr .gt_heading {
+#ksosqalish .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -217,13 +217,13 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_bottom_border {
+#ksosqalish .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_col_headings {
+#ksosqalish .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -238,7 +238,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_col_heading {
+#ksosqalish .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -258,7 +258,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#ecupsbcpyr .gt_column_spanner_outer {
+#ksosqalish .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -270,15 +270,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 4px;
 }
 
-#ecupsbcpyr .gt_column_spanner_outer:first-child {
+#ksosqalish .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ecupsbcpyr .gt_column_spanner_outer:last-child {
+#ksosqalish .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ecupsbcpyr .gt_column_spanner {
+#ksosqalish .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -290,11 +290,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   width: 100%;
 }
 
-#ecupsbcpyr .gt_spanner_row {
+#ksosqalish .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ecupsbcpyr .gt_group_heading {
+#ksosqalish .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -320,7 +320,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   text-align: left;
 }
 
-#ecupsbcpyr .gt_empty_group_heading {
+#ksosqalish .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -335,15 +335,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: middle;
 }
 
-#ecupsbcpyr .gt_from_md > :first-child {
+#ksosqalish .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ecupsbcpyr .gt_from_md > :last-child {
+#ksosqalish .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ecupsbcpyr .gt_row {
+#ksosqalish .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -362,7 +362,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#ecupsbcpyr .gt_stub {
+#ksosqalish .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -375,7 +375,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ecupsbcpyr .gt_stub_row_group {
+#ksosqalish .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -389,15 +389,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: top;
 }
 
-#ecupsbcpyr .gt_row_group_first td {
+#ksosqalish .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ecupsbcpyr .gt_row_group_first th {
+#ksosqalish .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ecupsbcpyr .gt_summary_row {
+#ksosqalish .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -407,16 +407,16 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ecupsbcpyr .gt_first_summary_row {
+#ksosqalish .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_first_summary_row.thick {
+#ksosqalish .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ecupsbcpyr .gt_last_summary_row {
+#ksosqalish .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -426,7 +426,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_grand_summary_row {
+#ksosqalish .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -436,7 +436,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ecupsbcpyr .gt_first_grand_summary_row {
+#ksosqalish .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -446,7 +446,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_last_grand_summary_row_top {
+#ksosqalish .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -456,11 +456,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_striped {
+#ksosqalish .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ecupsbcpyr .gt_table_body {
+#ksosqalish .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -469,7 +469,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_footnotes {
+#ksosqalish .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -483,7 +483,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_footnote {
+#ksosqalish .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -492,7 +492,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ecupsbcpyr .gt_sourcenotes {
+#ksosqalish .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -506,7 +506,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ecupsbcpyr .gt_sourcenote {
+#ksosqalish .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -514,63 +514,63 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ecupsbcpyr .gt_left {
+#ksosqalish .gt_left {
   text-align: left;
 }
 
-#ecupsbcpyr .gt_center {
+#ksosqalish .gt_center {
   text-align: center;
 }
 
-#ecupsbcpyr .gt_right {
+#ksosqalish .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ecupsbcpyr .gt_font_normal {
+#ksosqalish .gt_font_normal {
   font-weight: normal;
 }
 
-#ecupsbcpyr .gt_font_bold {
+#ksosqalish .gt_font_bold {
   font-weight: bold;
 }
 
-#ecupsbcpyr .gt_font_italic {
+#ksosqalish .gt_font_italic {
   font-style: italic;
 }
 
-#ecupsbcpyr .gt_super {
+#ksosqalish .gt_super {
   font-size: 65%;
 }
 
-#ecupsbcpyr .gt_footnote_marks {
+#ksosqalish .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ecupsbcpyr .gt_asterisk {
+#ksosqalish .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ecupsbcpyr .gt_indent_1 {
+#ksosqalish .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ecupsbcpyr .gt_indent_2 {
+#ksosqalish .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ecupsbcpyr .gt_indent_3 {
+#ksosqalish .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ecupsbcpyr .gt_indent_4 {
+#ksosqalish .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ecupsbcpyr .gt_indent_5 {
+#ksosqalish .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -957,6 +957,47 @@ Table: (\#tab:unnamed-chunk-7)Betimsel İstatistikler
 - En Yakın Komşu Yöntemi 
 - Son Gözlemi İleri Taşıma
 
+####  Ortalama veri atama
+
+- Bu yöntemde mevcut veriden ilgili
+degiskenlere ait ortalamalar hesaplanır ve analize baslamadan
+önce kayıp deger yerine ortalama deger koyulur.
+
+-  Örnegin, income degiskeni için ortalama deger 4 ise, gelirini
+belirtmeyen birey için gelir 4 olarak kabul edilir.
+
+-  Diger bütün bilgilerin eksikliginde, ortalama, bir degiskenin degeri
+hakkındaki en iyi tahmindir. Ancak ortalama deger ortalamaya
+kayıp degerden daha yakın olacagından degiskenin varyansı
+daralır, degiskenin diger degiskenlerle korelasyonu da daralır.
+Varyans daralmasının derecesi kayıp verinin miktarına ve kayıp
+olan gerçek degere baglıdır.
+
+- Bir alternatif kayıp deger yerine grup ortalaması yerlestirmektir.
+Bu yaklasım, yerine ortalama yerlestirme yönteminden daha iyi
+sonuç saglar. Kayıp degerler için atıflar daha yerindedir ve
+varyans çok fazla daralmamıs olur. Ancak grupiçi varyansın
+daralması gruplar arasında çok büyük farklılıklara neden olabilir.
+
+
+#### Regresyon Kullanılması
+
+- Bu yöntemde kayıp veriye sahip
+degisken bagımlı degisken, diger degiskenlerse bagımsız
+degiskenler olarak ele alınarak bir regresyon esitligi yazılır. Tam
+veriye sahip bireyler regresyon esitliginin üretilmesinde kullanılır.
+Daha sonra esitlik kayıp degerleri tahmin etmek için kullanılır.
+
+-  Bu yöntemle tahmin edilen deger olasılıkla ortalama degere daha
+yakın olacagından varyans daralması olabilir.
+
+- Veri setinde iyi bagımsız degiskenlerin bulunması gerekir. Eger
+veri setindeki degiskenler kayıp veriye sahip degiskenin iyi birer
+yordayıcısı degillerse regresyon tahminini yerlestirmek
+ortalamayı yerlestirmek gibidir.
+
+- Bu yöntemle tahmin edilen deger degiskenin alabilecegi olası
+deger aralıgındaysa kullanılır, aksi halde kullanılmamalıdır.
 
 ### Model tabanlı yöntemler
 
@@ -969,6 +1010,52 @@ değerleri de hesaba katarak varyans kestirimleri verirler.
 - ML Yöntemi
 - EM Algoritması
 - Çoklu Veri Atama 
+
+
+#### Beklenti Maksimizasyonu: 
+
+- Bu yöntem iki adımdan olusan
+iteratif bir yöntemdir – beklenti (expectation (E) ve
+maksimizasyon (maximization (M)).
+
+- Ilk olarak, E adımında gözlenen degerlerden ve korelasyon gibi
+tahmin edilen parametrelerden kayıp verinin beklentisi bulunur.
+Bu beklentiler kayıp veri yerine yerlestirilir.
+
+- Sonra, M adımında kayıp veri doldurulmus gibi maksimum
+olabilirlik tahmini gerçeklestirilir.
+
+- Daha sonra,eger yakınsanma basarılırsa, EM varyans/kovaryans
+matrisi elde edilebilir veya doldurulan veri, veri setinde
+kaydedilebilir.
+
+- Bu yöntemde EM veri seti veri setine hata eklenmedigi için
+yanlıdır. Böylece bu veri setine dayalı analizlerde hipotez testleri
+için uygun olmayan standart hatalar elde edilebilir.
+
+
+#### Çoklu Atıf: 
+
+- Bu yöntemde ilk olarak lojistik regresyon kullanılır;
+belli bir degiskende kayıp veriye sahip ve sahip olmayan
+gözlemler iki kategorili bagımlı degiskeni olusturur, bagımsız
+degiskenler olarak ele alınacak diger degiskenler belirlenir ve bir
+regresyon esitligi yazılır.
+
+- Sonra tam veriye sahip gözlemlerden rastlantısal bir örneklem
+seçilir ve bu örneklem kayıp veriye sahip degiskenin dagılımının
+belirlenmesinde kullanılır.
+
+- Daha sonra kayıp veriye sahip degiskenin dagılımından m tane
+rastlantısal örneklem seçilir ve m tane veri seti için degiskene ait
+kestirimlerde bulunulur. Çogu durumda bes hatta üç örneklem
+yeterli olacaktır.
+
+- Istatistiksel analiz m veri seti için ayrı ayrı uygulanır ve ortalama
+parametre kestirimi rapor edilir.
+
+- Bu yöntemin bir avantajı kayıp verinin rastlantısal olduguyla ilgili
+bir varsayımda bulunmamasıdır.
 
 ### Kayıp Veri Analizinde Kullanılan Paketler
 
@@ -1318,7 +1405,7 @@ summary(screen)
 
 ## Daha Fazlası için
 
--  🔗[Heymans, MW and Eekhout, I. (2019).Applied missing data analysis with SPSS
+-  🔗[Heymans, MW and Eekhout, I. (2019). Applied missing data analysis with SPSS
 and (R) Studio. Heymans and Eekhout: Amsterdam, The Netherlands](https://bookdown.org/mwheymans/bookmi/)
 
 
