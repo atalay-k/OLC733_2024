@@ -615,7 +615,7 @@ describe(ltimedrs)
 ```
 
 
-### Çoklu Bağlantı ve Tekillik
+## Çoklu Bağlantı ve Tekillik
 
 -  (Çoklu) bağlantı ve tekillik bağımsız değişkenler 
 arasındaki **korelasyon çok yüksek** olduğunda ortaya 

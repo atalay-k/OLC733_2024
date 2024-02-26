@@ -115,7 +115,7 @@ kable(ozet,format='markdown',
     rastlantısal dağılan kayıp verilere oranla daha ciddi problemlere
     yol açarlar.
 
-### Kayıp Veri Türleri
+## Kayıp Veri Türleri
 
 -   Kayıp veri türleri arasındaki ayrım 1976 yılında Rubin tarafından
     yapılmıştır. Rubin (1976) kayıp veriyi aşağıdaki şekilde
@@ -339,7 +339,7 @@ yanlıdır. Böylece bu veri setine dayalı analizlerde hipotez testleri
 için uygun olmayan standart hatalar elde edilebilir.
 
 
-#### Çoklu Atıf: 
+#### Çoklu Atıf
 
 - Bu yöntemde ilk olarak lojistik regresyon kullanılır;
 belli bir degiskende kayıp veriye sahip ve sahip olmayan
