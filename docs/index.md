@@ -14,10 +14,6 @@ description: | # edit
   Bu notlar OLC733 dersi için hazırlanmıştır.
 url: https://github.com/atalay-k/OLC733 # edit
 github-repo: atalay-k/OLC733# edit
-cover-image: images/logos/logo.png # replace with your logo
-apple-touch-icon: images/logos/apple-touch-icon.png # replace with your logo
-apple-touch-icon-size: 180
-favicon: images/logos/favicon.ico # replace with your logo
 ---
 
 

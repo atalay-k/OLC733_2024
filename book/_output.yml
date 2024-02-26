@@ -3,7 +3,6 @@ bookdown::bs4_book:
   md_extensions: -smart
   df_print: kable
   repo:
-    base: https://github.com/psyteachr/template
     branch: master
     subdir: book
   includes:
@@ -27,6 +26,5 @@ bookdown::epub_book:
   stylesheet:
   - include/webex.css
   - include/epub.css
-  cover_image: images/logos/logo.png
   toc: yes
   toc_depth: 2
