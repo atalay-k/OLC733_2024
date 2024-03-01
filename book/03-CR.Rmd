@@ -200,13 +200,13 @@ glance(basitreg)[,c(1,2,4,6,5)]
 
 - Yani regresyon modelinde lise matematik puanları ile genel matematik puanları arasında doğrusal ilişki anlamlı düzeydedir. Regresyon modelindeki $df$ 1 olması nedeni,regresyon modelindeki sabit ve eğimi katsayı olarak almasıdır. 2-1
 
+- $p$ değerleri sabitin ve yordayıcı değişkenin katsayısının anlamlılık testi sonuçları
 
 
 ```{r}
 tidy(basitreg)
 ```
 
-- $p$ değerleri sabitin ve yordayıcı değişkenin katsayısının anlamlılık testi sonuçları
 
 
 
