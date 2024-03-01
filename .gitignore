@@ -6,4 +6,5 @@
 .*.rproj
 .RData
 .Ruserdata
+*.Rmd
 

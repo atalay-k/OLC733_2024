@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bölüm 3 Regresyon | OLC733</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Bilindiği üzere, t-testi, varyans analizi gibi ortalama farkları ile ilgili hipotez testleri değişkenler arasındaki ilişkiye dair herhangi bir bilgi vermemektedir. Oysa serpilme diyagramlarına...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Bölüm 3 Regresyon | OLC733">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC733/regresyon.html">
+<meta property="og:description" content="Bilindiği üzere, t-testi, varyans analizi gibi ortalama farkları ile ilgili hipotez testleri değişkenler arasındaki ilişkiye dair herhangi bir bilgi vermemektedir. Oysa serpilme diyagramlarına...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bölüm 3 Regresyon | OLC733">
+<meta name="twitter:description" content="Bilindiği üzere, t-testi, varyans analizi gibi ortalama farkları ile ilgili hipotez testleri değişkenler arasındaki ilişkiye dair herhangi bir bilgi vermemektedir. Oysa serpilme diyagramlarına...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.32/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="libs/plotly-binding-4.10.4/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script><link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet">
+<script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script><script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script><script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script><script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script><script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script><script src="libs/rglwidgetClass-1.2.8/init.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script><script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script><script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script><script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script><script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script><script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script><script src="libs/viz-1.8.2/viz.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">OLC733</a>:
+        <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Bölüm 3</span> Regresyon</a></li></ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="regresyon" class="section level1" number="3">
+<h1>
+<span class="header-section-number">Bölüm 3</span> Regresyon<a class="anchor" aria-label="anchor" href="#regresyon"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li><p>Bilindiği üzere, t-testi, varyans analizi gibi ortalama farkları ile ilgili hipotez testleri değişkenler arasındaki ilişkiye dair herhangi bir bilgi vermemektedir.</p></li>
+<li><p>Oysa serpilme diyagramlarına bakıldığında değişkenler arasında bir <strong>ilişki</strong> olabileceği hissedilebilmekte fakat bu tür analizlerle bu <strong>ilişkiler</strong> ortaya koyulamamaktadır.</p></li>
+<li><p>Dolayısıyla değişkenler arasındaki <strong>ilişkinin şeklini, yönünü ve kuvvetini</strong> belirleyebilmemiz için yeni metotlara ihtiyaç vardır. Bu metotlar ise genel olarak <strong>regresyon (eğri uydurma) ve korelasyon analizi</strong> olarak adlandırılır.</p></li>
+</ul>
+<div id="regresyon-kullanım-alanları" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Regresyon Kullanım Alanları<a class="anchor" aria-label="anchor" href="#regresyon-kullan%C4%B1m-alanlar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Tarımda belli ürünlerin verimi etkileyen toprak türü, tohum, sulama v.b. faktörlerin saptanması ve bunlar yardımıyla belli şartlarda alınacak ürün miktarının kestirilmesi tarımın önemli konusudur.</p></li>
+<li><p>Bir değişkenin değerlerinin ilgili başka değişkenler yardımıyla kestirilmesi, günlük yaşamımızın, ticaretin ekonominin, doğa ve sosyal bilimlerin önemli konularını içendedir.</p></li>
+<li><p>günlük yaşamımızın, ticaretin ekonominin, doğa ve sosyal bilimlerin pek çok alanındaki çalışmalarda iki ya da daha çok değişken arasında fonksiyonel ilişkiler vardır. Bu ilişkiler matematiksel bir denklem yazılabilir.</p></li>
+</ul>
+<p>Örneğin taksi hizmeti ödenen <span class="math inline">\(ücret = a + bx\)</span>
+<br>
+a: sabit (taksimetre açılış ücreti)
+<br>
+b: her kilometrede artan ücret</p>
+</div>
+<div id="regresyon-kullanım-alanları-1" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Regresyon Kullanım Alanları<a class="anchor" aria-label="anchor" href="#regresyon-kullan%C4%B1m-alanlar%C4%B1-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Regresyon çözümlemenin temel amacı; bağımlı değişken ile bağımsız değişken(ler) arasındaki ilişkiyi matematiksel modelle açıklayarak bağlantılar bulmak ve bağımsız değişken(ler) yardımıyla bağımlı değişkenli kestirmek şeklinde özetlenebilir.</p></li>
+<li><p>Sosyal bilimlerde değişkenler arasındaki ilişkiler bir dereceye kadar fonksiyoneldir. (taksimetre örneği kadar net değildir!) Bu ilişkiye <strong>probabilisitik</strong> ilişki denir.</p></li>
+<li><p>Sosyal bilimlerde değişkenler arasındaki ilişkilerin matematiksel olarak kesin ifadelerle yazılamaması, bu değişkenlere ait önceki bilgiler yardımıyla elde edilmesi ve matematiksel ifadelerin bu bilgilere dayanılarak yazılması yolunu açmıştır.</p></li>
+<li><p>Regresyon terimi 19. yüzyılda İngiliz istatistikçisi Francis Galton tarafından bir biyolojik inceleme için ortaya atılmıştır. Bu incelemenin ana konusu kalıtım olup, aile içinde baba ve annenin boyu ile çocukların boyu arasındaki bağlantıyı araştırmakta ve çocukların boylarının bir nesil içinde eski ata nesillerinin ortalamasına geri döndüklerini yani bir nesil içinde ortalamaya geri dönüş olduğu inceleme konusudur.</p></li>
+</ul>
+</div>
+<div id="basit-doğrusal-regresyon" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Basit Doğrusal Regresyon<a class="anchor" aria-label="anchor" href="#basit-do%C4%9Frusal-regresyon"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Bir bağımsız <span class="math inline">\(X\)</span> değişkeninin değerlerinden ona bağlı değişkeninin değerlerinin kestirilmesini sağlayan denkleme <strong><span class="math inline">\(Y\)</span>’in <span class="math inline">\(X\)</span>’e göre regresyonu</strong> denir.</li>
+</ul>
+<p><span class="math display">\[Y= bx + a\]</span>
+- Regresyon denkleminde
+<span class="math inline">\(b\)</span> doğrunun eğimidir – <span class="math inline">\(X\)</span>’in 1 puanlık değişimine karşılık Y’nin ne kadar değişeceğini belirtir. (buna <strong>regresyon katsayısı</strong> denir)</p>
+<ul>
+<li><p><span class="math inline">\(a\)</span> ise <span class="math inline">\(Y\)</span>-kesişim noktasıdır – <span class="math inline">\(X\)</span> sıfıra eşit olduğunda <span class="math inline">\(Y\)</span>’nin alacağı değerdir (buna <strong>regresyon sabiti</strong> denir)</p></li>
+<li><p><strong>Lise matematik puanlarından</strong> yararlanarak <strong>üniversite genel matematik puanlarını</strong> kestirme amacıyla üniversite genel matematik dersini alan öğrencilerden uygun bir örneklem alınmıştır.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">lise_not</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">18</span>,<span class="fl">35</span>,<span class="fl">53</span>,<span class="fl">24</span>,<span class="fl">64</span>,<span class="fl">58</span>,<span class="fl">32</span>,<span class="fl">39</span>,<span class="fl">64</span>,<span class="fl">82</span>,<span class="fl">32</span>,<span class="fl">49</span>,<span class="fl">48</span>,<span class="fl">70</span>,<span class="fl">57</span><span class="op">)</span></span>
+<span><span class="va">uni_not</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">33</span>,<span class="fl">46</span>,<span class="fl">47</span>,<span class="fl">21</span>,<span class="fl">73</span>,<span class="fl">55</span>,<span class="fl">74</span>,<span class="fl">32</span>,<span class="fl">56</span>,<span class="fl">68</span>,<span class="fl">43</span>,<span class="fl">46</span>,<span class="fl">68</span>,<span class="fl">84</span>,<span class="fl">61</span><span class="op">)</span></span>
+<span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">lise_not</span>, <span class="va">uni_not</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Regresyon analizi yapmadan önce <strong>saçılım diagramı</strong> incelenmelidir. Puanlar saçılım grafiğinde tek bir doğru oluşturmamaktadır. Ancak doğru oluşturma eğilimleri vardır.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">veri</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">lise_not</span>, y <span class="op">=</span> <span class="va">uni_not</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>   <span class="fu">geom_smooth</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, se <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="03-CR_files/figure-html/unnamed-chunk-2-1.png" width="100%" style="display: block; margin: auto;"></div>
+<ul>
+<li>Noktalardan olabildiğince yakın geçecek bir doğru çizilebilirse bu doğrudan yararlanarak <span class="math inline">\(X\)</span> puanı bilinen öğrencilerin <span class="math inline">\(Y\)</span> puanları kestirilebilir.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">basitreg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">uni_not</span> <span class="op">~</span> <span class="va">lise_not</span> , <span class="va">veri</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">basitreg</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = uni_not ~ lise_not, data = veri)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -16.475  -8.349  -0.449   5.037  31.158 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)   
+## (Intercept)   21.373     10.196    2.10   0.0562 . 
+## lise_not       0.671      0.198    3.38   0.0049 **
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 13.4 on 13 degrees of freedom
+## Multiple R-squared:  0.468,  Adjusted R-squared:  0.427 
+## F-statistic: 11.4 on 1 and 13 DF,  p-value: 0.0049</code></pre>
+</div>
+<div id="en-küçük-kareler-yöntemi" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> En küçük kareler yöntemi<a class="anchor" aria-label="anchor" href="#en-k%C3%BC%C3%A7%C3%BCk-kareler-y%C3%B6ntemi"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Bu yönteme göre <strong>a</strong> ve <strong>b</strong> öyle bir belirlenmelidir ki dağılımdaki noktaların, doğrunun etrafındaki değişkenliği en aza indirgenmiş olmalıdır.</p></li>
+<li><p>Regresyon doğrusu, noktalar ile regresyon doğrusu arasındaki sapmaların kareler toplamı en az olacak şekilde, saçılım grafiğindeki noktalar kümesine en uygun yere çizildiğinden bu ölçüte <strong>en küçük kareler ölçütü</strong> adı verilir.</p></li>
+</ul>
+<div class="inline-figure"><img src="images/LS.png" width="50%" style="display: block; margin: auto;"></div>
+<ul>
+<li><p><span class="math inline">\(Y\)</span> değeri ve regresyon doğrusundaki <span class="math inline">\(Y′\)</span> arasındaki farkın en küçük olacak şekilde yerleştirilir.</p></li>
+<li><p><span class="math inline">\(\sum(Y-Y′)^2\)</span> en küçük olacak şekilde yerleştirir.</p></li>
+<li><p><span class="math inline">\(b_{yx}=\frac{n\sum{XY}-\sum{X}\sum{Y}}{n\sum{X^2}-(\sum{X})^2}\)</span></p></li>
+<li><p><span class="math inline">\(a_{yx}=\frac{n\sum{Y}-b_{YX}\sum{X}}{n}\)</span></p></li>
+<li><p><span class="math inline">\(b_{yx}\)</span> hesaplama</p></li>
+<li><p><span class="math inline">\(b_{YX}=\frac{n\sum{XY}-\sum{X}\sum{Y}}{n\sum{X^2}-(\sum{X})^2}\)</span></p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">lise_not</span><span class="op">)</span></span>
+<span><span class="va">byx</span> <span class="op">=</span> <span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lise_not</span><span class="op">*</span><span class="va">uni_not</span><span class="op">)</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lise_not</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">uni_not</span><span class="op">)</span><span class="op">)</span><span class="op">/</span></span>
+<span>  <span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lise_not</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lise_not</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">byx</span></span></code></pre></div>
+<pre><code>## [1] 0.671</code></pre>
+<ul>
+<li>
+<strong>Regresyon doğrusunun eğimi</strong>, değişkenlerin <strong>standart sapmalarının oranlarıyla</strong> bunlar arasındaki <strong>korelasyonun</strong> çarpımına eşittir.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">uni_not</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">lise_not</span><span class="op">)</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">lise_not</span>,<span class="va">uni_not</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 0.671</code></pre>
+<ul>
+<li><p><span class="math inline">\(a_{yx}\)</span> hesaplama</p></li>
+<li><p><span class="math inline">\(a_{yx}=\frac{n\sum{Y}-b_{yx}\sum{X}}{n}\)</span></p></li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span>
+<span><span class="va">ayx</span> <span class="op">=</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">uni_not</span><span class="op">)</span> <span class="op">-</span> <span class="va">byx</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">lise_not</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fl">15</span></span>
+<span><span class="va">ayx</span></span></code></pre></div>
+<pre><code>## [1] 21.4</code></pre>
+</div>
+<div id="kestirimin-standart-hatası" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> Kestirimin Standart Hatası<a class="anchor" aria-label="anchor" href="#kestirimin-standart-hatas%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Kestirim sonunda <span class="math inline">\(Y\)</span> <strong>değişkeninin gözlenen değerleri</strong> ile <strong>regresyon değerleri</strong> <span class="math inline">\(Y'\)</span> arasında fark olmaması veya bu farkın olabildiği kadar küçük olması istenir.</p></li>
+<li><p><strong>Gözlenen</strong> <span class="math inline">\(Y\)</span> ve <strong>kestirilen</strong> <span class="math inline">\(Y'\)</span> değerleri arasındaki farklar kestirimdeki hatalardır. Bu farkların karelerinin ortalamasının kare köküne kestirimin standart hatası adı verilir.</p></li>
+<li><p><span class="math display">\[S_{yx}=\sqrt{\sum{\frac{(Y-Y')^2}{n-2}}}\]</span></p></li>
+<li><p><span class="math display">\[S_{yx}=\sqrt{\frac{\sum{Y^2}-a\sum{Y}-b\sum{XY}}{n-2}}\]</span></p></li>
+<li><p>Ortak dağılımın için <strong>kestirimin standart hatası</strong> tek değişkenli dağılımın standart sapmasına benzer.</p></li>
+<li><p>Standart sapma tek değişkenli dağılımın ortalamadan farkının standart bir ölçüsü olduğu gibi, kestirimin standart hatası da noktaların standart regresyon çizgisinden farkının ölçüsüdür.</p></li>
+<li><p>Bu nedenle kestirimin standart hatası verilen X değeri için kestirilen Y değerinin standart sapması şeklinde okunabilen <span class="math inline">\(S_{yx}\)</span> sembolü ile gösterilir.</p></li>
+</ul>
+<p><span class="math inline">\(X\)</span> değerlerinden kestirilen <span class="math inline">\(Y'\)</span> ’lerin standart hatası</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">uni_not</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">-</span><span class="va">ayx</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">uni_not</span><span class="op">)</span><span class="op">-</span></span>
+<span>       <span class="va">byx</span><span class="op">*</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">uni_not</span><span class="op">*</span><span class="va">lise_not</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fl">13</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="va">basitreg</span><span class="op">$</span><span class="va">residuals</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">(</span><span class="va">res</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span><span class="op">)</span> <span class="op">^</span> <span class="fl">2</span> <span class="op">/</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span><span class="op">-</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 13.4
+## [1] 13.4</code></pre>
+<div id="basit-doğrusal-regresyon-uygulama" class="section level3" number="3.5.1">
+<h3>
+<span class="header-section-number">3.5.1</span> Basit Doğrusal Regresyon Uygulama<a class="anchor" aria-label="anchor" href="#basit-do%C4%9Frusal-regresyon-uygulama"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">basitreg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">uni_not</span> <span class="op">~</span> <span class="va">lise_not</span> , <span class="va">veri</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="va">basitreg</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">kable</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="10%">
+<col width="15%">
+<col width="6%">
+<col width="10%">
+<col width="8%">
+<col width="3%">
+<col width="7%">
+<col width="4%">
+<col width="4%">
+<col width="9%">
+<col width="13%">
+<col width="5%">
+</colgroup>
+<thead><tr class="header">
+<th align="right">r.squared</th>
+<th align="right">adj.r.squared</th>
+<th align="right">sigma</th>
+<th align="right">statistic</th>
+<th align="right">p.value</th>
+<th align="right">df</th>
+<th align="right">logLik</th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+<th align="right">deviance</th>
+<th align="right">df.residual</th>
+<th align="right">nobs</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">0.468</td>
+<td align="right">0.427</td>
+<td align="right">13.4</td>
+<td align="right">11.4</td>
+<td align="right">0.005</td>
+<td align="right">1</td>
+<td align="right">-59.2</td>
+<td align="right">124</td>
+<td align="right">127</td>
+<td align="right">2350</td>
+<td align="right">13</td>
+<td align="right">15</td>
+</tr></tbody>
+</table></div>
+<ul>
+<li><p><span class="math inline">\(R\)</span> İki değişken arasında pearson korelasyon katsayısı</p></li>
+<li><p><span class="math inline">\(R-Square:\)</span> Determinasyon katsayısı/bağımsız değişkenin bağımlı değişken üzerindeki açıklama oranı</p></li>
+<li><p><span class="math inline">\(\text{Adjusted R Square:}\)</span>: Düzeltmiş determinasyon katsayısı, şans eseri açıklanan değişimin neden olduğu hatanın arındırılmış hali.</p></li>
+<li><p><span class="math inline">\(\text{Standart Kestirimin Hatası:}\)</span> Hata teriminin standart sapmasıdır.</p></li>
+<li><p>Tablodaki <span class="math inline">\(p\)</span> değeri regresyon modelindeki yordanan ve yordayan değişkenler arasındaki ilişki için hesaplanan değerin anlamlı olup olmadığını göstermektedir.</p></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="va">basitreg</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">4</span>,<span class="fl">6</span>,<span class="fl">5</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">r.squared</th>
+<th align="right">adj.r.squared</th>
+<th align="right">statistic</th>
+<th align="right">df</th>
+<th align="right">p.value</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">0.468</td>
+<td align="right">0.427</td>
+<td align="right">11.4</td>
+<td align="right">1</td>
+<td align="right">0.005</td>
+</tr></tbody>
+</table></div>
+</div>
+<ul>
+<li>Yani regresyon modelinde lise matematik puanları ile genel matematik puanları arasında doğrusal ilişki anlamlı düzeydedir. Regresyon modelindeki <span class="math inline">\(df\)</span> 1 olması nedeni,regresyon modelindeki sabit ve eğimi katsayı olarak almasıdır. 2-1</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">basitreg</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">term</th>
+<th align="right">estimate</th>
+<th align="right">std.error</th>
+<th align="right">statistic</th>
+<th align="right">p.value</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="right">21.373</td>
+<td align="right">10.196</td>
+<td align="right">2.10</td>
+<td align="right">0.056</td>
+</tr>
+<tr class="even">
+<td align="left">lise_not</td>
+<td align="right">0.671</td>
+<td align="right">0.198</td>
+<td align="right">3.38</td>
+<td align="right">0.005</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<span class="math inline">\(p\)</span> değerleri sabitin ve yordayıcı değişkenin katsayısının anlamlılık testi sonuçları</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="empty"></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-02-26.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
