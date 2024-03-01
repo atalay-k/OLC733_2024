@@ -125,23 +125,23 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
 ```
 
 ```{=html}
-<div id="mtiujyaqhw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mtiujyaqhw table {
+<div id="reajefnsly" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#reajefnsly table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mtiujyaqhw thead, #mtiujyaqhw tbody, #mtiujyaqhw tfoot, #mtiujyaqhw tr, #mtiujyaqhw td, #mtiujyaqhw th {
+#reajefnsly thead, #reajefnsly tbody, #reajefnsly tfoot, #reajefnsly tr, #reajefnsly td, #reajefnsly th {
   border-style: none;
 }
 
-#mtiujyaqhw p {
+#reajefnsly p {
   margin: 0;
   padding: 0;
 }
 
-#mtiujyaqhw .gt_table {
+#reajefnsly .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -167,12 +167,12 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-left-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_caption {
+#reajefnsly .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mtiujyaqhw .gt_title {
+#reajefnsly .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -184,7 +184,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-width: 0;
 }
 
-#mtiujyaqhw .gt_subtitle {
+#reajefnsly .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -196,7 +196,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-width: 0;
 }
 
-#mtiujyaqhw .gt_heading {
+#reajefnsly .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -208,13 +208,13 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_bottom_border {
+#reajefnsly .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_col_headings {
+#reajefnsly .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -229,7 +229,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_col_heading {
+#reajefnsly .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -249,7 +249,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#mtiujyaqhw .gt_column_spanner_outer {
+#reajefnsly .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -261,15 +261,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 4px;
 }
 
-#mtiujyaqhw .gt_column_spanner_outer:first-child {
+#reajefnsly .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mtiujyaqhw .gt_column_spanner_outer:last-child {
+#reajefnsly .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mtiujyaqhw .gt_column_spanner {
+#reajefnsly .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -281,11 +281,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   width: 100%;
 }
 
-#mtiujyaqhw .gt_spanner_row {
+#reajefnsly .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mtiujyaqhw .gt_group_heading {
+#reajefnsly .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -311,7 +311,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   text-align: left;
 }
 
-#mtiujyaqhw .gt_empty_group_heading {
+#reajefnsly .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -326,15 +326,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: middle;
 }
 
-#mtiujyaqhw .gt_from_md > :first-child {
+#reajefnsly .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mtiujyaqhw .gt_from_md > :last-child {
+#reajefnsly .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mtiujyaqhw .gt_row {
+#reajefnsly .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -353,7 +353,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#mtiujyaqhw .gt_stub {
+#reajefnsly .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -366,7 +366,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#mtiujyaqhw .gt_stub_row_group {
+#reajefnsly .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -380,15 +380,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: top;
 }
 
-#mtiujyaqhw .gt_row_group_first td {
+#reajefnsly .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mtiujyaqhw .gt_row_group_first th {
+#reajefnsly .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mtiujyaqhw .gt_summary_row {
+#reajefnsly .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -398,16 +398,16 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#mtiujyaqhw .gt_first_summary_row {
+#reajefnsly .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_first_summary_row.thick {
+#reajefnsly .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mtiujyaqhw .gt_last_summary_row {
+#reajefnsly .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -417,7 +417,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_grand_summary_row {
+#reajefnsly .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -427,7 +427,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#mtiujyaqhw .gt_first_grand_summary_row {
+#reajefnsly .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -437,7 +437,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_last_grand_summary_row_top {
+#reajefnsly .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -447,11 +447,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_striped {
+#reajefnsly .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mtiujyaqhw .gt_table_body {
+#reajefnsly .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -460,7 +460,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_footnotes {
+#reajefnsly .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -474,7 +474,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_footnote {
+#reajefnsly .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -483,7 +483,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#mtiujyaqhw .gt_sourcenotes {
+#reajefnsly .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -497,7 +497,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#mtiujyaqhw .gt_sourcenote {
+#reajefnsly .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -505,63 +505,63 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#mtiujyaqhw .gt_left {
+#reajefnsly .gt_left {
   text-align: left;
 }
 
-#mtiujyaqhw .gt_center {
+#reajefnsly .gt_center {
   text-align: center;
 }
 
-#mtiujyaqhw .gt_right {
+#reajefnsly .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mtiujyaqhw .gt_font_normal {
+#reajefnsly .gt_font_normal {
   font-weight: normal;
 }
 
-#mtiujyaqhw .gt_font_bold {
+#reajefnsly .gt_font_bold {
   font-weight: bold;
 }
 
-#mtiujyaqhw .gt_font_italic {
+#reajefnsly .gt_font_italic {
   font-style: italic;
 }
 
-#mtiujyaqhw .gt_super {
+#reajefnsly .gt_super {
   font-size: 65%;
 }
 
-#mtiujyaqhw .gt_footnote_marks {
+#reajefnsly .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mtiujyaqhw .gt_asterisk {
+#reajefnsly .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mtiujyaqhw .gt_indent_1 {
+#reajefnsly .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mtiujyaqhw .gt_indent_2 {
+#reajefnsly .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mtiujyaqhw .gt_indent_3 {
+#reajefnsly .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mtiujyaqhw .gt_indent_4 {
+#reajefnsly .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mtiujyaqhw .gt_indent_5 {
+#reajefnsly .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -801,7 +801,7 @@ Table: (\#tab:unnamed-chunk-7)Betimsel İstatistikler
     rastlantısal dağılan kayıp verilere oranla daha ciddi problemlere
     yol açarlar.
 
-### Kayıp Veri Türleri
+## Kayıp Veri Türleri
 
 -   Kayıp veri türleri arasındaki ayrım 1976 yılında Rubin tarafından
     yapılmıştır. Rubin (1976) kayıp veriyi aşağıdaki şekilde
@@ -1025,7 +1025,7 @@ yanlıdır. Böylece bu veri setine dayalı analizlerde hipotez testleri
 için uygun olmayan standart hatalar elde edilebilir.
 
 
-#### Çoklu Atıf: 
+#### Çoklu Atıf
 
 - Bu yöntemde ilk olarak lojistik regresyon kullanılır;
 belli bir degiskende kayıp veriye sahip ve sahip olmayan
