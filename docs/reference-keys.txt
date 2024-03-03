@@ -74,5 +74,6 @@ yol-şeması
 aşamalı-stepwise-regresyon
 etkili-gözlemlerin-belirlenmesi
 kategorik-bağımsız-bir-değişken-ile-çoklu-regresyon
+dummy-değişken-kategorik-bir-değişkenin-düzeylerinin-sayısal
 dummy-değişkenlerin-oluşturulması-örnek-performansın-yordanması
-coklu-regresyonda-iki-yonlu-etkilesim-etkisi
+çoklu-regresyonda-iki-yönlü-etkileşim-etkisi
