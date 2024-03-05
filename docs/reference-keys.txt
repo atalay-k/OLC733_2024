@@ -69,6 +69,7 @@ regresyon-sabiti
 standart-puanlar-ile-regresyon
 yordanan-ve-artık-değerler
 yordanan-ve-artık-değerlerin-standart-puanları
+model-grafikleri
 çoklu-regresyon-1
 yol-şeması
 aşamalı-stepwise-regresyon
@@ -77,3 +78,8 @@ kategorik-bağımsız-bir-değişken-ile-çoklu-regresyon
 dummy-değişken-kategorik-bir-değişkenin-düzeylerinin-sayısal
 dummy-değişkenlerin-oluşturulması-örnek-performansın-yordanması
 çoklu-regresyonda-iki-yönlü-etkileşim-etkisi
+anscombeun-dörtlüsü
+simpson-paradoxu
+berkeleydeki-cinsiyete-dayalı-kabul-oranları
+iki-değişken-arasındaki-ilişki
+üç-değişken-arasındaki-ilişki
