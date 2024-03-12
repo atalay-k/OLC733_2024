@@ -120,28 +120,35 @@ için inceleyebilirsiniz.
 
 ```r
 library(gtsummary)
+```
+
+```
+## #BlackLivesMatter
+```
+
+```r
 screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
 "{min}, {max}"),missing ="always")
 ```
 
 ```{=html}
-<div id="ldloyojlbc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ldloyojlbc table {
+<div id="ackdplpelf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ackdplpelf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ldloyojlbc thead, #ldloyojlbc tbody, #ldloyojlbc tfoot, #ldloyojlbc tr, #ldloyojlbc td, #ldloyojlbc th {
+#ackdplpelf thead, #ackdplpelf tbody, #ackdplpelf tfoot, #ackdplpelf tr, #ackdplpelf td, #ackdplpelf th {
   border-style: none;
 }
 
-#ldloyojlbc p {
+#ackdplpelf p {
   margin: 0;
   padding: 0;
 }
 
-#ldloyojlbc .gt_table {
+#ackdplpelf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -167,12 +174,12 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-left-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_caption {
+#ackdplpelf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ldloyojlbc .gt_title {
+#ackdplpelf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -184,7 +191,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-width: 0;
 }
 
-#ldloyojlbc .gt_subtitle {
+#ackdplpelf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -196,7 +203,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-width: 0;
 }
 
-#ldloyojlbc .gt_heading {
+#ackdplpelf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -208,13 +215,13 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_bottom_border {
+#ackdplpelf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_col_headings {
+#ackdplpelf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -229,7 +236,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_col_heading {
+#ackdplpelf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -249,7 +256,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#ldloyojlbc .gt_column_spanner_outer {
+#ackdplpelf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -261,15 +268,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 4px;
 }
 
-#ldloyojlbc .gt_column_spanner_outer:first-child {
+#ackdplpelf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ldloyojlbc .gt_column_spanner_outer:last-child {
+#ackdplpelf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ldloyojlbc .gt_column_spanner {
+#ackdplpelf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -281,11 +288,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   width: 100%;
 }
 
-#ldloyojlbc .gt_spanner_row {
+#ackdplpelf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ldloyojlbc .gt_group_heading {
+#ackdplpelf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -311,7 +318,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   text-align: left;
 }
 
-#ldloyojlbc .gt_empty_group_heading {
+#ackdplpelf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -326,15 +333,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: middle;
 }
 
-#ldloyojlbc .gt_from_md > :first-child {
+#ackdplpelf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ldloyojlbc .gt_from_md > :last-child {
+#ackdplpelf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ldloyojlbc .gt_row {
+#ackdplpelf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -353,7 +360,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#ldloyojlbc .gt_stub {
+#ackdplpelf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -366,7 +373,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ldloyojlbc .gt_stub_row_group {
+#ackdplpelf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -380,15 +387,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: top;
 }
 
-#ldloyojlbc .gt_row_group_first td {
+#ackdplpelf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ldloyojlbc .gt_row_group_first th {
+#ackdplpelf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ldloyojlbc .gt_summary_row {
+#ackdplpelf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -398,16 +405,16 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ldloyojlbc .gt_first_summary_row {
+#ackdplpelf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_first_summary_row.thick {
+#ackdplpelf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ldloyojlbc .gt_last_summary_row {
+#ackdplpelf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -417,7 +424,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_grand_summary_row {
+#ackdplpelf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -427,7 +434,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ldloyojlbc .gt_first_grand_summary_row {
+#ackdplpelf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -437,7 +444,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_last_grand_summary_row_top {
+#ackdplpelf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -447,11 +454,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_striped {
+#ackdplpelf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ldloyojlbc .gt_table_body {
+#ackdplpelf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -460,7 +467,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_footnotes {
+#ackdplpelf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -474,7 +481,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_footnote {
+#ackdplpelf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -483,7 +490,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ldloyojlbc .gt_sourcenotes {
+#ackdplpelf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -497,7 +504,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ldloyojlbc .gt_sourcenote {
+#ackdplpelf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -505,63 +512,63 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ldloyojlbc .gt_left {
+#ackdplpelf .gt_left {
   text-align: left;
 }
 
-#ldloyojlbc .gt_center {
+#ackdplpelf .gt_center {
   text-align: center;
 }
 
-#ldloyojlbc .gt_right {
+#ackdplpelf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ldloyojlbc .gt_font_normal {
+#ackdplpelf .gt_font_normal {
   font-weight: normal;
 }
 
-#ldloyojlbc .gt_font_bold {
+#ackdplpelf .gt_font_bold {
   font-weight: bold;
 }
 
-#ldloyojlbc .gt_font_italic {
+#ackdplpelf .gt_font_italic {
   font-style: italic;
 }
 
-#ldloyojlbc .gt_super {
+#ackdplpelf .gt_super {
   font-size: 65%;
 }
 
-#ldloyojlbc .gt_footnote_marks {
+#ackdplpelf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ldloyojlbc .gt_asterisk {
+#ackdplpelf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ldloyojlbc .gt_indent_1 {
+#ackdplpelf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ldloyojlbc .gt_indent_2 {
+#ackdplpelf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ldloyojlbc .gt_indent_3 {
+#ackdplpelf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ldloyojlbc .gt_indent_4 {
+#ackdplpelf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ldloyojlbc .gt_indent_5 {
+#ackdplpelf .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
