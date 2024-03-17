@@ -3,8 +3,8 @@ tab:unnamed-chunk-6
 tab:unnamed-chunk-7
 tab:unnamed-chunk-18
 tab:unnamed-chunk-3
+tab:unnamed-chunk-39
 tab:unnamed-chunk-40
-tab:unnamed-chunk-41
 varsayımlar-i
 veri-inceleme
 kayıp-değerler
@@ -78,7 +78,6 @@ aşamalı-stepwise-regresyon
 etkili-gözlemlerin-belirlenmesi
 kategorik-bağımsız-bir-değişken-ile-çoklu-regresyon
 dummy-değişkenlerin-oluşturulması-örnek-performansın-yordanması
-çoklu-regresyonda-iki-yönlü-etkileşim-etkisi
 anscombeun-dörtlüsü
 simpson-paradoxu
 berkeleydeki-cinsiyete-dayalı-kabul-oranları

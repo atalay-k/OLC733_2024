@@ -8,7 +8,7 @@ biridir ve halen yaygın olarak kullanılmaktadır.
 
 
 - **Herbir yapının sadece tek bir gözlenen ölçümün**
-(gostergesinin) olduğu durumlar bulunabilir ve bu
+(göstergesinin) olduğu durumlar bulunabilir ve bu
 durumlarda da **tek-gösterge tekniği olan yol analizi**
 kullanılabilir. Bu analizde **ele alınan ölçülen değişkenlerin
 mükemmel derecede güvenilir** olduğu varsayılır.
@@ -301,20 +301,29 @@ olacaktır.
 ### Hastalık Faktörleri (Yol Şeması)
 
 ```r
-semPaths(yol_fit,rotation=2,
-           sizeMan = 10,
-           edge.label.cex = 1.15,
-           style = "ram")
+library(lavaan)
+yol_model <-  'stres     ~ egzersiz + dayaniklilik
+               hastalik  ~ egzersiz + dayaniklilik + form + stres
+               form      ~ egzersiz + dayaniklilik
+egzersiz ~~ dayaniklilik'
+yol_fit <- sem(yol_model, veri)
+
+semPaths(yol_fit,rotation=2, curvePivot = TRUE,
+           sizeMan = 12, sizeInt = 1, 
+            sizeLat = 4,
+           edge.label.cex = 1.8,
+           pastel=TRUE,
+           nCharNodes = 0, nCharEdges = 0)
 ```
 
-<img src="05-Yolanalizi_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="05-Yolanalizi_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 
 
 ## Evren Kovaryans Matrisi
 
-- hastalik faktörleri örneği için gözlenen değişkenlerin evren 
+- hastalık faktörleri örneği için gözlenen değişkenlerin evren 
 kovaryans matrisi $\sum$ aşağıdaki gibidir:
 
 $$\begin{bmatrix}{}
@@ -590,7 +599,7 @@ zayıf uyum sağlayabilir. **
 - Uyum indeksleri sonuçların **kuramsal olarak anlamlı olup 
 olmadığını belirtmezler.**
 
-- Örneğin,bazı yol katsayılarının işaretleri beklenenin aksi yönde 
+- Örneğin, bazı yol katsayılarının işaretleri beklenenin aksi yönde 
 olabilir. Uyum indekslerinin değerleri uygun bile görünse 
 **beklenmeyen sonuçlar açıklama gerektirir. **
 
@@ -649,20 +658,18 @@ model ki-kare değeri sıfıra eşitse model **veriye mükemmel bir şekilde**
 uyar (kestirilen korelasyon ve kovaryans değerleri gözlenenlere 
 eşittir). 
 
-- Model ki-kare değeri arttıkça, **aşırı tanımlanan (overidentified) bir 
+- Model ki-kare değeri arttıkça,  **aşırı tanımlanan (overidentified) bir 
 modelin uyumu giderek kötüleşir.** 
 
 - Örneğin, sd = 1 ile 12.30’a eşit model ki-kare değeri. 
 
 
 
-- Model **ki-kare değeri arttıkça**,modelin veriye uyumu kötüleştiği için 
+- Model **ki-kare değeri arttıkça**, modelin veriye uyumu kötüleştiği için 
 model ki-kare aslında bir **kötülük uyum** indeksidir. 
 
 - Geleneksel hipotez testinin aksine, ki-kare testinin sıfır hipotezinin 
-**reddedilmemesi** tercih edilir. 
-
-- **Sıfır hipotezinin reddedilmemesi modelin veriye uyduğunu önerir.** 
+**reddedilmemesi** tercih edilir.  **Sıfır hipotezinin reddedilmemesi modelin veriye uyduğunu önerir.** 
 
 - Diğer yandan sıfır hipotezinin reddedilmesi **model-veri uyumunun iyi olmadığını önerir. **
 
@@ -687,22 +694,15 @@ anlamlıdır.
 -  12.3 değerini elde etme olasılığını da verir. 
 Örnekte bu olasılık 0.0005’tir. Bu değer 0.05 alfa düzeyinden 
 küçüktür.
-]
 
-- Ki-kare testi **örneklem büyüklüğünden doğrudan etkilenir.** 
-
-- Eğer ***n** büyükse ki bu durum YEM için genellikle istenen 
-bir durumdur, ki-kare testine dayanarak modeli zayıf 
-uyumlu gerekçesiyle reddetmek daha olasıdır (gözlenen 
+- Ki-kare testi **örneklem büyüklüğünden doğrudan etkilenir.**  Eğer ***n** büyükse ki bu durum YEM için genellikle istenen  bir durumdur, ki-kare testine dayanarak modeli zayıf uyumlu gerekçesiyle reddetmek daha olasıdır (gözlenen 
 ve kestirilen kovaryans değerleri arasındaki fark çok 
 minimal düzeyde olsa bile).
 
 - Eğer ki-kare testine dayalı sıfır hipotezi reddedilirse, modelin 
 yeterliğini incelemek için **diğer indeksler** düşünülmelidir.
 
-- Eğer **n** küçükse ve güç eksikliğinden dolayı sıfır hipotezi 
-reddedilmediyse, diğer uyum indeksleri modelin desteklenip 
-desteklenmemesinde yardımcı olacaktır. 
+- Eğer **n** küçükse ve güç eksikliğinden dolayı sıfır hipotezi  reddedilmediyse, diğer uyum indeksleri modelin desteklenip desteklenmemesinde yardımcı olacaktır. 
 
 
 - **Ki-kare testi örneklem büyüklüğüne** bağlılığından dolayı iyilik uyumunun değerlendirilmesi için **çok ideal değildir.** Ancak geleneksel olarak rapor edilir ve diğer uyum indeksleriyle desteklenir.  
@@ -889,19 +889,19 @@ değildir.**
 
 
 ```r
-fitmeasures(yol_fit,fit.measures = c("cfi","tli"))
+fitmeasures(yol_fit,fit.measures = c("cfi","tli","nnfi"))
 ```
 
 ```
-##   cfi   tli 
-## 0.948 0.485
+##   cfi   tli  nnfi 
+## 0.948 0.485 0.485
 ```
 
 
 - Kestirilen CFI değeri 0.949’dur. 0.949 değeri 0.90 değerinden 
 büyük olduğundan CFI indeksi model için iyi uyum belirtir.
 
-- Kestirilen TLI değeri 0.539’dur. 0.539 değeri 0.90 değerinden küçük 
+- Kestirilen TLI değeri 0.485’dur. 0.485 değeri 0.90 değerinden küçük 
 olduğundan TLI indeksi model için zayıf uyum belirtir
 
 ## Uyum İndekslerini Raporlarken Öneriler
@@ -1064,7 +1064,7 @@ nCharNodes = 0, nCharEdges = 0)
 
 
 
-<img src="05-Yolanalizi_files/figure-html/unnamed-chunk-27-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="05-Yolanalizi_files/figure-html/unnamed-chunk-26-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 - Yeni tanımlanan model için verilen uyum indeksleri 
@@ -1096,7 +1096,7 @@ plot(p_pa_2)
 ```
 good fit vs parsinomy parsinomy principle
 
-<img src="05-Yolanalizi_files/figure-html/unnamed-chunk-30-1.png" width="100%" style="display: block; margin: auto;" /><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-30-2.png" width="100%" style="display: block; margin: auto;" />
+<img src="05-Yolanalizi_files/figure-html/unnamed-chunk-29-1.png" width="100%" style="display: block; margin: auto;" /><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-29-2.png" width="100%" style="display: block; margin: auto;" />
 
 
 
@@ -1137,7 +1137,7 @@ fitmeasures(yol_fit_v2,c("rmsea","cfi","srmr"))
 ## 0.000 1.000 0.011
 ```
 
-<img src="05-Yolanalizi_files/figure-html/unnamed-chunk-33-1.png" width="45%" style="display: block; margin: auto;" /><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-33-2.png" width="45%" style="display: block; margin: auto;" />
+<img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-1.png" width="45%" style="display: block; margin: auto;" /><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-2.png" width="45%" style="display: block; margin: auto;" />
 
 
 
@@ -1520,7 +1520,7 @@ parameterEstimates(yol_fit, standardized=TRUE) %>%
 
 
 
-Table: (\#tab:unnamed-chunk-40)Factor Loadings
+Table: (\#tab:unnamed-chunk-39)Factor Loadings
 
 |Bağımlı Değişkenler |Gosterge     |      B|    SE|      Z| p-value|   Beta|
 |:-------------------|:------------|------:|-----:|------:|-------:|------:|
@@ -1544,7 +1544,7 @@ sem_anova(yol_fit_v2,yol_fit_v1)
 ```
 
 <table data-quarto-disable-processing="true" class="table" style="width: auto !important; ">
-<caption>(\#tab:unnamed-chunk-41)Model Comparison</caption>
+<caption>(\#tab:unnamed-chunk-40)Model Comparison</caption>
  <thead>
   <tr>
    <th style="text-align:right;"> term </th>
@@ -1593,23 +1593,23 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
 ```
 
 ```{=html}
-<div id="fatdbrkjvk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fatdbrkjvk table {
+<div id="amkfdbqwlr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#amkfdbqwlr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fatdbrkjvk thead, #fatdbrkjvk tbody, #fatdbrkjvk tfoot, #fatdbrkjvk tr, #fatdbrkjvk td, #fatdbrkjvk th {
+#amkfdbqwlr thead, #amkfdbqwlr tbody, #amkfdbqwlr tfoot, #amkfdbqwlr tr, #amkfdbqwlr td, #amkfdbqwlr th {
   border-style: none;
 }
 
-#fatdbrkjvk p {
+#amkfdbqwlr p {
   margin: 0;
   padding: 0;
 }
 
-#fatdbrkjvk .gt_table {
+#amkfdbqwlr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1635,12 +1635,12 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-left-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_caption {
+#amkfdbqwlr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fatdbrkjvk .gt_title {
+#amkfdbqwlr .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1652,7 +1652,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-width: 0;
 }
 
-#fatdbrkjvk .gt_subtitle {
+#amkfdbqwlr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1664,7 +1664,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-width: 0;
 }
 
-#fatdbrkjvk .gt_heading {
+#amkfdbqwlr .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1676,13 +1676,13 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_bottom_border {
+#amkfdbqwlr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_col_headings {
+#amkfdbqwlr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1697,7 +1697,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_col_heading {
+#amkfdbqwlr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1717,7 +1717,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#fatdbrkjvk .gt_column_spanner_outer {
+#amkfdbqwlr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1729,15 +1729,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 4px;
 }
 
-#fatdbrkjvk .gt_column_spanner_outer:first-child {
+#amkfdbqwlr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fatdbrkjvk .gt_column_spanner_outer:last-child {
+#amkfdbqwlr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fatdbrkjvk .gt_column_spanner {
+#amkfdbqwlr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1749,11 +1749,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   width: 100%;
 }
 
-#fatdbrkjvk .gt_spanner_row {
+#amkfdbqwlr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fatdbrkjvk .gt_group_heading {
+#amkfdbqwlr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1779,7 +1779,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   text-align: left;
 }
 
-#fatdbrkjvk .gt_empty_group_heading {
+#amkfdbqwlr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1794,15 +1794,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: middle;
 }
 
-#fatdbrkjvk .gt_from_md > :first-child {
+#amkfdbqwlr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fatdbrkjvk .gt_from_md > :last-child {
+#amkfdbqwlr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fatdbrkjvk .gt_row {
+#amkfdbqwlr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1821,7 +1821,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#fatdbrkjvk .gt_stub {
+#amkfdbqwlr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1834,7 +1834,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_stub_row_group {
+#amkfdbqwlr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1848,15 +1848,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: top;
 }
 
-#fatdbrkjvk .gt_row_group_first td {
+#amkfdbqwlr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fatdbrkjvk .gt_row_group_first th {
+#amkfdbqwlr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fatdbrkjvk .gt_summary_row {
+#amkfdbqwlr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1866,16 +1866,16 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_first_summary_row {
+#amkfdbqwlr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_first_summary_row.thick {
+#amkfdbqwlr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fatdbrkjvk .gt_last_summary_row {
+#amkfdbqwlr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1885,7 +1885,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_grand_summary_row {
+#amkfdbqwlr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1895,7 +1895,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_first_grand_summary_row {
+#amkfdbqwlr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1905,7 +1905,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_last_grand_summary_row_top {
+#amkfdbqwlr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1915,11 +1915,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_striped {
+#amkfdbqwlr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fatdbrkjvk .gt_table_body {
+#amkfdbqwlr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1928,7 +1928,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_footnotes {
+#amkfdbqwlr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1942,7 +1942,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_footnote {
+#amkfdbqwlr .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1951,7 +1951,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_sourcenotes {
+#amkfdbqwlr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1965,7 +1965,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_sourcenote {
+#amkfdbqwlr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1973,63 +1973,63 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_left {
+#amkfdbqwlr .gt_left {
   text-align: left;
 }
 
-#fatdbrkjvk .gt_center {
+#amkfdbqwlr .gt_center {
   text-align: center;
 }
 
-#fatdbrkjvk .gt_right {
+#amkfdbqwlr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fatdbrkjvk .gt_font_normal {
+#amkfdbqwlr .gt_font_normal {
   font-weight: normal;
 }
 
-#fatdbrkjvk .gt_font_bold {
+#amkfdbqwlr .gt_font_bold {
   font-weight: bold;
 }
 
-#fatdbrkjvk .gt_font_italic {
+#amkfdbqwlr .gt_font_italic {
   font-style: italic;
 }
 
-#fatdbrkjvk .gt_super {
+#amkfdbqwlr .gt_super {
   font-size: 65%;
 }
 
-#fatdbrkjvk .gt_footnote_marks {
+#amkfdbqwlr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fatdbrkjvk .gt_asterisk {
+#amkfdbqwlr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fatdbrkjvk .gt_indent_1 {
+#amkfdbqwlr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fatdbrkjvk .gt_indent_2 {
+#amkfdbqwlr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fatdbrkjvk .gt_indent_3 {
+#amkfdbqwlr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fatdbrkjvk .gt_indent_4 {
+#amkfdbqwlr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fatdbrkjvk .gt_indent_5 {
+#amkfdbqwlr .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2214,20 +2214,18 @@ toplam etki = doğrudan etki + toplam dolaylı etki
 ## Kaynaklar
 
 
-Roth, D. L., Wiebe, D. J., Fillingim, R. B., & Shay, K. A. (1989). Life events, fitness, 
-hardiness, and health: A simultaneous analysis of proposed stress-resistance effects. 
-Journal of Personality and Social Psychology, 57 (1), 136-142.
-
+- Roth, D. L., Wiebe, D. J., Fillingim, R. B., & Shay, K. A. (1989). Life events, fitness, hardiness, and health: A simultaneous analysis of proposed stress-resistance effects.Journal of Personality and Social Psychology, 57 (1), 136-142.
 
 - Bentler, P. M. (1990). Comparative fit indexes in structural models. 
 Psychological Bulletin, 107, 238-246. 
+
 - Steiger, J. H. (1990). Structural model evaluation and modification: An
 interval estimation approach. Multivariate Behavioral Research, 25, 173-80.
 
-Bentler, P. M. & Hu, L. (1999). Cutoff criteria fpr fit indexes in 
+- Bentler, P. M. & Hu, L. (1999). Cutoff criteria fpr fit indexes in 
 covariance structure analysis: Conventional criteri versus new 
 alternatives. Structural Equation Modeling, 6(1), 1-55.
 
 
- Marsh, Hau, & Wen, 2004: The Special Issue in Personality and 
+- Marsh, Hau, & Wen, 2004: The Special Issue in Personality and 
 Individual Differences, 2007

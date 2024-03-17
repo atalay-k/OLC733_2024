@@ -120,35 +120,28 @@ için inceleyebilirsiniz.
 
 ```r
 library(gtsummary)
-```
-
-```
-## #BlackLivesMatter
-```
-
-```r
 screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
 "{min}, {max}"),missing ="always")
 ```
 
 ```{=html}
-<div id="ackdplpelf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ackdplpelf table {
+<div id="yocwirotyn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yocwirotyn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ackdplpelf thead, #ackdplpelf tbody, #ackdplpelf tfoot, #ackdplpelf tr, #ackdplpelf td, #ackdplpelf th {
+#yocwirotyn thead, #yocwirotyn tbody, #yocwirotyn tfoot, #yocwirotyn tr, #yocwirotyn td, #yocwirotyn th {
   border-style: none;
 }
 
-#ackdplpelf p {
+#yocwirotyn p {
   margin: 0;
   padding: 0;
 }
 
-#ackdplpelf .gt_table {
+#yocwirotyn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -174,12 +167,12 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-left-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_caption {
+#yocwirotyn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ackdplpelf .gt_title {
+#yocwirotyn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -191,7 +184,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-width: 0;
 }
 
-#ackdplpelf .gt_subtitle {
+#yocwirotyn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -203,7 +196,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-width: 0;
 }
 
-#ackdplpelf .gt_heading {
+#yocwirotyn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -215,13 +208,13 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_bottom_border {
+#yocwirotyn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_col_headings {
+#yocwirotyn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -236,7 +229,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_col_heading {
+#yocwirotyn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -256,7 +249,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#ackdplpelf .gt_column_spanner_outer {
+#yocwirotyn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -268,15 +261,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 4px;
 }
 
-#ackdplpelf .gt_column_spanner_outer:first-child {
+#yocwirotyn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ackdplpelf .gt_column_spanner_outer:last-child {
+#yocwirotyn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ackdplpelf .gt_column_spanner {
+#yocwirotyn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -288,11 +281,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   width: 100%;
 }
 
-#ackdplpelf .gt_spanner_row {
+#yocwirotyn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ackdplpelf .gt_group_heading {
+#yocwirotyn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -318,7 +311,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   text-align: left;
 }
 
-#ackdplpelf .gt_empty_group_heading {
+#yocwirotyn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -333,15 +326,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: middle;
 }
 
-#ackdplpelf .gt_from_md > :first-child {
+#yocwirotyn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ackdplpelf .gt_from_md > :last-child {
+#yocwirotyn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ackdplpelf .gt_row {
+#yocwirotyn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -360,7 +353,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   overflow-x: hidden;
 }
 
-#ackdplpelf .gt_stub {
+#yocwirotyn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -373,7 +366,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ackdplpelf .gt_stub_row_group {
+#yocwirotyn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -387,15 +380,15 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   vertical-align: top;
 }
 
-#ackdplpelf .gt_row_group_first td {
+#yocwirotyn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ackdplpelf .gt_row_group_first th {
+#yocwirotyn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ackdplpelf .gt_summary_row {
+#yocwirotyn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -405,16 +398,16 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ackdplpelf .gt_first_summary_row {
+#yocwirotyn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_first_summary_row.thick {
+#yocwirotyn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ackdplpelf .gt_last_summary_row {
+#yocwirotyn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -424,7 +417,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_grand_summary_row {
+#yocwirotyn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -434,7 +427,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ackdplpelf .gt_first_grand_summary_row {
+#yocwirotyn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -444,7 +437,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-top-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_last_grand_summary_row_top {
+#yocwirotyn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -454,11 +447,11 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_striped {
+#yocwirotyn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ackdplpelf .gt_table_body {
+#yocwirotyn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -467,7 +460,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-bottom-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_footnotes {
+#yocwirotyn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -481,7 +474,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_footnote {
+#yocwirotyn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -490,7 +483,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ackdplpelf .gt_sourcenotes {
+#yocwirotyn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -504,7 +497,7 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   border-right-color: #D3D3D3;
 }
 
-#ackdplpelf .gt_sourcenote {
+#yocwirotyn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -512,63 +505,63 @@ screen %>% select(2:6) %>%tbl_summary(statistic = all_continuous() ~ c(
   padding-right: 5px;
 }
 
-#ackdplpelf .gt_left {
+#yocwirotyn .gt_left {
   text-align: left;
 }
 
-#ackdplpelf .gt_center {
+#yocwirotyn .gt_center {
   text-align: center;
 }
 
-#ackdplpelf .gt_right {
+#yocwirotyn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ackdplpelf .gt_font_normal {
+#yocwirotyn .gt_font_normal {
   font-weight: normal;
 }
 
-#ackdplpelf .gt_font_bold {
+#yocwirotyn .gt_font_bold {
   font-weight: bold;
 }
 
-#ackdplpelf .gt_font_italic {
+#yocwirotyn .gt_font_italic {
   font-style: italic;
 }
 
-#ackdplpelf .gt_super {
+#yocwirotyn .gt_super {
   font-size: 65%;
 }
 
-#ackdplpelf .gt_footnote_marks {
+#yocwirotyn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ackdplpelf .gt_asterisk {
+#yocwirotyn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ackdplpelf .gt_indent_1 {
+#yocwirotyn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ackdplpelf .gt_indent_2 {
+#yocwirotyn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ackdplpelf .gt_indent_3 {
+#yocwirotyn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ackdplpelf .gt_indent_4 {
+#yocwirotyn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ackdplpelf .gt_indent_5 {
+#yocwirotyn .gt_indent_5 {
   text-indent: 25px;
 }
 </style>

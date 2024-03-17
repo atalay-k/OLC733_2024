@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Bölüm 5 Yol Analizi | OLC733</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="Yol analizi modeli YEM ailesinin en eski üyelerinden biridir ve halen yaygın olarak kullanılmaktadır. Herbir yapının sadece tek bir gözlenen ölçümün (gostergesinin) olduğu durumlar bulunabilir ve...">
+<meta name="description" content="Yol analizi modeli YEM ailesinin en eski üyelerinden biridir ve halen yaygın olarak kullanılmaktadır. Herbir yapının sadece tek bir gözlenen ölçümün (göstergesinin) olduğu durumlar bulunabilir ve...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
 <meta property="og:title" content="Bölüm 5 Yol Analizi | OLC733">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC733/yol-analizi.html">
-<meta property="og:description" content="Yol analizi modeli YEM ailesinin en eski üyelerinden biridir ve halen yaygın olarak kullanılmaktadır. Herbir yapının sadece tek bir gözlenen ölçümün (gostergesinin) olduğu durumlar bulunabilir ve...">
+<meta property="og:description" content="Yol analizi modeli YEM ailesinin en eski üyelerinden biridir ve halen yaygın olarak kullanılmaktadır. Herbir yapının sadece tek bir gözlenen ölçümün (göstergesinin) olduğu durumlar bulunabilir ve...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bölüm 5 Yol Analizi | OLC733">
-<meta name="twitter:description" content="Yol analizi modeli YEM ailesinin en eski üyelerinden biridir ve halen yaygın olarak kullanılmaktadır. Herbir yapının sadece tek bir gözlenen ölçümün (gostergesinin) olduğu durumlar bulunabilir ve...">
+<meta name="twitter:description" content="Yol analizi modeli YEM ailesinin en eski üyelerinden biridir ve halen yaygın olarak kullanılmaktadır. Herbir yapının sadece tek bir gözlenen ölçümün (göstergesinin) olduğu durumlar bulunabilir ve...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 <li><p><strong>Yol analizi modeli</strong> <strong>YEM</strong> ailesinin en eski üyelerinden
 biridir ve halen yaygın olarak kullanılmaktadır.</p></li>
 <li><p><strong>Herbir yapının sadece tek bir gözlenen ölçümün</strong>
-(gostergesinin) olduğu durumlar bulunabilir ve bu
+(göstergesinin) olduğu durumlar bulunabilir ve bu
 durumlarda da <strong>tek-gösterge tekniği olan yol analizi</strong>
 kullanılabilir. Bu analizde <strong>ele alınan ölçülen değişkenlerin
 mükemmel derecede güvenilir</strong> olduğu varsayılır.</p></li>
@@ -335,11 +335,20 @@ olacaktır.</p></li>
 <span class="header-section-number">5.6.1</span> Hastalık Faktörleri (Yol Şeması)<a class="anchor" aria-label="anchor" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-%C5%9Femas%C4%B1"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">yol_fit</span>,rotation<span class="op">=</span><span class="fl">2</span>,</span>
-<span>           sizeMan <span class="op">=</span> <span class="fl">10</span>,</span>
-<span>           edge.label.cex <span class="op">=</span> <span class="fl">1.15</span>,</span>
-<span>           style <span class="op">=</span> <span class="st">"ram"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;"></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span>
+<span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
+<span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
+<span><span class="st">               form      ~ egzersiz + dayaniklilik</span></span>
+<span><span class="st">egzersiz ~~ dayaniklilik'</span></span>
+<span><span class="va">yol_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/sem.html">sem</a></span><span class="op">(</span><span class="va">yol_model</span>, <span class="va">veri</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">yol_fit</span>,rotation<span class="op">=</span><span class="fl">2</span>, curvePivot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>           sizeMan <span class="op">=</span> <span class="fl">12</span>, sizeInt <span class="op">=</span> <span class="fl">1</span>, </span>
+<span>            sizeLat <span class="op">=</span> <span class="fl">4</span>,</span>
+<span>           edge.label.cex <span class="op">=</span> <span class="fl">1.8</span>,</span>
+<span>           pastel<span class="op">=</span><span class="cn">TRUE</span>,</span>
+<span>           nCharNodes <span class="op">=</span> <span class="fl">0</span>, nCharEdges <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
 <div id="evren-kovaryans-matrisi" class="section level2" number="5.7">
@@ -347,7 +356,7 @@ olacaktır.</p></li>
 <span class="header-section-number">5.7</span> Evren Kovaryans Matrisi<a class="anchor" aria-label="anchor" href="#evren-kovaryans-matrisi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
-<li>hastalik faktörleri örneği için gözlenen değişkenlerin evren
+<li>hastalık faktörleri örneği için gözlenen değişkenlerin evren
 kovaryans matrisi <span class="math inline">\(\sum\)</span> aşağıdaki gibidir:</li>
 </ul>
 <p><span class="math display">\[\begin{bmatrix}{}
@@ -614,7 +623,7 @@ değeri uygun bile görünse, modelin belli kısımları veriye
 zayıf uyum sağlayabilir. </strong></p></li>
 <li><p>Uyum indeksleri sonuçların <strong>kuramsal olarak anlamlı olup
 olmadığını belirtmezler.</strong></p></li>
-<li><p>Örneğin,bazı yol katsayılarının işaretleri beklenenin aksi yönde
+<li><p>Örneğin, bazı yol katsayılarının işaretleri beklenenin aksi yönde
 olabilir. Uyum indekslerinin değerleri uygun bile görünse
 <strong>beklenmeyen sonuçlar açıklama gerektirir. </strong></p></li>
 <li><p>Yeterli uyumu öneren uyum indekslerinin değerleri
@@ -676,11 +685,10 @@ eşittir).</p></li>
 <li><p>Model ki-kare değeri arttıkça, <strong>aşırı tanımlanan (overidentified) bir
 modelin uyumu giderek kötüleşir.</strong></p></li>
 <li><p>Örneğin, sd = 1 ile 12.30’a eşit model ki-kare değeri.</p></li>
-<li><p>Model <strong>ki-kare değeri arttıkça</strong>,modelin veriye uyumu kötüleştiği için
+<li><p>Model <strong>ki-kare değeri arttıkça</strong>, modelin veriye uyumu kötüleştiği için
 model ki-kare aslında bir <strong>kötülük uyum</strong> indeksidir.</p></li>
 <li><p>Geleneksel hipotez testinin aksine, ki-kare testinin sıfır hipotezinin
-<strong>reddedilmemesi</strong> tercih edilir.</p></li>
-<li><p><strong>Sıfır hipotezinin reddedilmemesi modelin veriye uyduğunu önerir.</strong></p></li>
+<strong>reddedilmemesi</strong> tercih edilir. <strong>Sıfır hipotezinin reddedilmemesi modelin veriye uyduğunu önerir.</strong></p></li>
 <li><p>Diğer yandan sıfır hipotezinin reddedilmesi <strong>model-veri uyumunun iyi olmadığını önerir. </strong></p></li>
 </ul>
 <div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
@@ -694,19 +702,13 @@ model ki-kare aslında bir <strong>kötülük uyum</strong> indeksidir.</p></li>
 anlamlıdır.</p></li>
 <li><p>12.3 değerini elde etme olasılığını da verir.
 Örnekte bu olasılık 0.0005’tir. Bu değer 0.05 alfa düzeyinden
-küçüktür.
-]</p></li>
-<li><p>Ki-kare testi <strong>örneklem büyüklüğünden doğrudan etkilenir.</strong></p></li>
-<li><p>Eğer *<strong>n</strong> büyükse ki bu durum YEM için genellikle istenen
-bir durumdur, ki-kare testine dayanarak modeli zayıf
-uyumlu gerekçesiyle reddetmek daha olasıdır (gözlenen
+küçüktür.</p></li>
+<li><p>Ki-kare testi <strong>örneklem büyüklüğünden doğrudan etkilenir.</strong> Eğer *<strong>n</strong> büyükse ki bu durum YEM için genellikle istenen bir durumdur, ki-kare testine dayanarak modeli zayıf uyumlu gerekçesiyle reddetmek daha olasıdır (gözlenen
 ve kestirilen kovaryans değerleri arasındaki fark çok
 minimal düzeyde olsa bile).</p></li>
 <li><p>Eğer ki-kare testine dayalı sıfır hipotezi reddedilirse, modelin
 yeterliğini incelemek için <strong>diğer indeksler</strong> düşünülmelidir.</p></li>
-<li><p>Eğer <strong>n</strong> küçükse ve güç eksikliğinden dolayı sıfır hipotezi
-reddedilmediyse, diğer uyum indeksleri modelin desteklenip
-desteklenmemesinde yardımcı olacaktır.</p></li>
+<li><p>Eğer <strong>n</strong> küçükse ve güç eksikliğinden dolayı sıfır hipotezi reddedilmediyse, diğer uyum indeksleri modelin desteklenip desteklenmemesinde yardımcı olacaktır.</p></li>
 <li><p><strong>Ki-kare testi örneklem büyüklüğüne</strong> bağlılığından dolayı iyilik uyumunun değerlendirilmesi için <strong>çok ideal değildir.</strong> Ancak geleneksel olarak rapor edilir ve diğer uyum indeksleriyle desteklenir.</p></li>
 <li><p>Model ki-kare değerinin örneklem büyüklüğüne hassasiyetini azaltmak için bazı araştırmacılar bu değeri ilgili serbestlik derecesine bölerler. Elde edilen değer normed chi-square (NC) değeri olarak adlandırılır.</p></li>
 <li>
@@ -884,13 +886,13 @@ değildir.</strong></p></li>
 <li><p>sıfır modeli için ki-kare testine ait değerleri ve CFI ve TLI değerlerini verir:</p></li>
 </ul>
 <div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cfi"</span>,<span class="st">"tli"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##   cfi   tli 
-## 0.948 0.485</code></pre>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"nnfi"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##   cfi   tli  nnfi 
+## 0.948 0.485 0.485</code></pre>
 <ul>
 <li><p>Kestirilen CFI değeri 0.949’dur. 0.949 değeri 0.90 değerinden
 büyük olduğundan CFI indeksi model için iyi uyum belirtir.</p></li>
-<li><p>Kestirilen TLI değeri 0.539’dur. 0.539 değeri 0.90 değerinden küçük
+<li><p>Kestirilen TLI değeri 0.485’dur. 0.485 değeri 0.90 değerinden küçük
 olduğundan TLI indeksi model için zayıf uyum belirtir</p></li>
 </ul>
 </div>
@@ -1124,7 +1126,7 @@ yolu eklenir.</li>
 <span>edge.label.cex <span class="op">=</span> <span class="fl">1.8</span>,</span>
 <span>pastel<span class="op">=</span><span class="cn">TRUE</span>,</span>
 <span>nCharNodes <span class="op">=</span> <span class="fl">0</span>, nCharEdges <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-27-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-26-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li><p>Yeni tanımlanan model için verilen uyum indeksleri
 beklendiği gibidir.</p></li>
@@ -1145,7 +1147,7 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <span><span class="va">p_pa_2</span> <span class="op">&lt;-</span> <span class="fu">semptools</span><span class="fu">::</span><span class="fu"><a href="https://sfcheung.github.io/semptools/reference/mark_sig.html">mark_sig</a></span><span class="op">(</span><span class="va">p_pa</span>, <span class="va">yol_fit_v1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">p_pa_2</span><span class="op">)</span></span></code></pre></div>
 <p>good fit vs parsinomy parsinomy principle</p>
-<p><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-30-1.png" width="100%" style="display: block; margin: auto;"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-30-2.png" width="100%" style="display: block; margin: auto;"></p>
+<p><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-29-1.png" width="100%" style="display: block; margin: auto;"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-29-2.png" width="100%" style="display: block; margin: auto;"></p>
 </div>
 <div id="modelin-yeniden-tanımlanması-1" class="section level2" number="5.15">
 <h2>
@@ -1178,7 +1180,7 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rmsea"</span>,<span class="st">"cfi"</span>,<span class="st">"srmr"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## rmsea   cfi  srmr 
 ## 0.000 1.000 0.011</code></pre>
-<p><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-33-1.png" width="45%" style="display: block; margin: auto;"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-33-2.png" width="45%" style="display: block; margin: auto;"></p>
+<p><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-1.png" width="45%" style="display: block; margin: auto;"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-2.png" width="45%" style="display: block; margin: auto;"></p>
 <div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> , <span class="st">"pvalue"</span>,</span>
 <span>                                        <span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"rmsea"</span>,</span>
@@ -1783,15 +1785,15 @@ artık varyansının toplamı “1”e eşit olmalıdır:
 </h2>
 <div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">yol_fit</span>, standardized<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/magrittr/man/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/filter.html">filter</a></span><span class="op">(</span><span class="va">op</span> <span class="op">==</span> <span class="st">"~"</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/magrittr/man/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/select.html">select</a></span><span class="op">(</span><span class="st">'Bağımlı Değişkenler'</span><span class="op">=</span><span class="va">lhs</span>, Gosterge<span class="op">=</span><span class="va">rhs</span>,</span>
-<span>         B<span class="op">=</span><span class="va">est</span>, SE<span class="op">=</span><span class="va">se</span>, Z<span class="op">=</span><span class="va">z</span>, <span class="st">'p-value'</span><span class="op">=</span><span class="va">pvalue</span>, Beta<span class="op">=</span><span class="va">std.all</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/magrittr/man/pipe.html">%&gt;%</a></span> </span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">yol_fit</span>, standardized<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">op</span> <span class="op">==</span> <span class="st">"~"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="st">'Bağımlı Değişkenler'</span><span class="op">=</span><span class="va">lhs</span>, Gosterge<span class="op">=</span><span class="va">rhs</span>,</span>
+<span>         B<span class="op">=</span><span class="va">est</span>, SE<span class="op">=</span><span class="va">se</span>, Z<span class="op">=</span><span class="va">z</span>, <span class="st">'p-value'</span><span class="op">=</span><span class="va">pvalue</span>, Beta<span class="op">=</span><span class="va">std.all</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">3</span>, booktabs<span class="op">=</span><span class="cn">TRUE</span>, format<span class="op">=</span><span class="st">"markdown"</span>,</span>
 <span>               caption<span class="op">=</span><span class="st">"Factor Loadings"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:unnamed-chunk-40">Tablo 5.1: </span>Factor Loadings</caption>
+<span id="tab:unnamed-chunk-39">Tablo 5.1: </span>Factor Loadings</caption>
 <colgroup>
 <col width="29%">
 <col width="19%">
@@ -1895,7 +1897,7 @@ artık varyansının toplamı “1”e eşit olmalıdır:
 <span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_anova.html">sem_anova</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="va">yol_fit_v1</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table data-quarto-disable-processing="true" class="table" style="width: auto !important; ">
 <caption>
-<span id="tab:unnamed-chunk-41">Tablo 5.2: </span>Model Comparison
+<span id="tab:unnamed-chunk-40">Tablo 5.2: </span>Model Comparison
 </caption>
 <thead><tr>
 <th style="text-align:right;">
@@ -1994,23 +1996,23 @@ NA
 </h2>
 <div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_modelcomp.html">sem_modelcomp</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="va">yol_fit_v1</span><span class="op">)</span></span></code></pre></div>
-<div id="fatdbrkjvk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fatdbrkjvk table {
+<div id="amkfdbqwlr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#amkfdbqwlr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fatdbrkjvk thead, #fatdbrkjvk tbody, #fatdbrkjvk tfoot, #fatdbrkjvk tr, #fatdbrkjvk td, #fatdbrkjvk th {
+#amkfdbqwlr thead, #amkfdbqwlr tbody, #amkfdbqwlr tfoot, #amkfdbqwlr tr, #amkfdbqwlr td, #amkfdbqwlr th {
   border-style: none;
 }
 
-#fatdbrkjvk p {
+#amkfdbqwlr p {
   margin: 0;
   padding: 0;
 }
 
-#fatdbrkjvk .gt_table {
+#amkfdbqwlr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2036,12 +2038,12 @@ NA
   border-left-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_caption {
+#amkfdbqwlr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fatdbrkjvk .gt_title {
+#amkfdbqwlr .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2053,7 +2055,7 @@ NA
   border-bottom-width: 0;
 }
 
-#fatdbrkjvk .gt_subtitle {
+#amkfdbqwlr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2065,7 +2067,7 @@ NA
   border-top-width: 0;
 }
 
-#fatdbrkjvk .gt_heading {
+#amkfdbqwlr .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2077,13 +2079,13 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_bottom_border {
+#amkfdbqwlr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_col_headings {
+#amkfdbqwlr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2098,7 +2100,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_col_heading {
+#amkfdbqwlr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2118,7 +2120,7 @@ NA
   overflow-x: hidden;
 }
 
-#fatdbrkjvk .gt_column_spanner_outer {
+#amkfdbqwlr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2130,15 +2132,15 @@ NA
   padding-right: 4px;
 }
 
-#fatdbrkjvk .gt_column_spanner_outer:first-child {
+#amkfdbqwlr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fatdbrkjvk .gt_column_spanner_outer:last-child {
+#amkfdbqwlr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fatdbrkjvk .gt_column_spanner {
+#amkfdbqwlr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2150,11 +2152,11 @@ NA
   width: 100%;
 }
 
-#fatdbrkjvk .gt_spanner_row {
+#amkfdbqwlr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fatdbrkjvk .gt_group_heading {
+#amkfdbqwlr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2180,7 +2182,7 @@ NA
   text-align: left;
 }
 
-#fatdbrkjvk .gt_empty_group_heading {
+#amkfdbqwlr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2195,15 +2197,15 @@ NA
   vertical-align: middle;
 }
 
-#fatdbrkjvk .gt_from_md > :first-child {
+#amkfdbqwlr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fatdbrkjvk .gt_from_md > :last-child {
+#amkfdbqwlr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fatdbrkjvk .gt_row {
+#amkfdbqwlr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2222,7 +2224,7 @@ NA
   overflow-x: hidden;
 }
 
-#fatdbrkjvk .gt_stub {
+#amkfdbqwlr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2235,7 +2237,7 @@ NA
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_stub_row_group {
+#amkfdbqwlr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2249,15 +2251,15 @@ NA
   vertical-align: top;
 }
 
-#fatdbrkjvk .gt_row_group_first td {
+#amkfdbqwlr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fatdbrkjvk .gt_row_group_first th {
+#amkfdbqwlr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fatdbrkjvk .gt_summary_row {
+#amkfdbqwlr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2267,16 +2269,16 @@ NA
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_first_summary_row {
+#amkfdbqwlr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_first_summary_row.thick {
+#amkfdbqwlr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fatdbrkjvk .gt_last_summary_row {
+#amkfdbqwlr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2286,7 +2288,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_grand_summary_row {
+#amkfdbqwlr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2296,7 +2298,7 @@ NA
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_first_grand_summary_row {
+#amkfdbqwlr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2306,7 +2308,7 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_last_grand_summary_row_top {
+#amkfdbqwlr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2316,11 +2318,11 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_striped {
+#amkfdbqwlr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fatdbrkjvk .gt_table_body {
+#amkfdbqwlr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2329,7 +2331,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_footnotes {
+#amkfdbqwlr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2343,7 +2345,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_footnote {
+#amkfdbqwlr .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -2352,7 +2354,7 @@ NA
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_sourcenotes {
+#amkfdbqwlr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2366,7 +2368,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#fatdbrkjvk .gt_sourcenote {
+#amkfdbqwlr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2374,63 +2376,63 @@ NA
   padding-right: 15px;
 }
 
-#fatdbrkjvk .gt_left {
+#amkfdbqwlr .gt_left {
   text-align: left;
 }
 
-#fatdbrkjvk .gt_center {
+#amkfdbqwlr .gt_center {
   text-align: center;
 }
 
-#fatdbrkjvk .gt_right {
+#amkfdbqwlr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fatdbrkjvk .gt_font_normal {
+#amkfdbqwlr .gt_font_normal {
   font-weight: normal;
 }
 
-#fatdbrkjvk .gt_font_bold {
+#amkfdbqwlr .gt_font_bold {
   font-weight: bold;
 }
 
-#fatdbrkjvk .gt_font_italic {
+#amkfdbqwlr .gt_font_italic {
   font-style: italic;
 }
 
-#fatdbrkjvk .gt_super {
+#amkfdbqwlr .gt_super {
   font-size: 65%;
 }
 
-#fatdbrkjvk .gt_footnote_marks {
+#amkfdbqwlr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fatdbrkjvk .gt_asterisk {
+#amkfdbqwlr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fatdbrkjvk .gt_indent_1 {
+#amkfdbqwlr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fatdbrkjvk .gt_indent_2 {
+#amkfdbqwlr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fatdbrkjvk .gt_indent_3 {
+#amkfdbqwlr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fatdbrkjvk .gt_indent_4 {
+#amkfdbqwlr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fatdbrkjvk .gt_indent_5 {
+#amkfdbqwlr .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2735,21 +2737,18 @@ toplam etki = doğrudan etki + toplam dolaylı etki</p></li>
 <h2>
 <span class="header-section-number">5.24</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar-3"><i class="fas fa-link"></i></a>
 </h2>
-<p>Roth, D. L., Wiebe, D. J., Fillingim, R. B., &amp; Shay, K. A. (1989). Life events, fitness,
-hardiness, and health: A simultaneous analysis of proposed stress-resistance effects.
-Journal of Personality and Social Psychology, 57 (1), 136-142.</p>
 <ul>
-<li>Bentler, P. M. (1990). Comparative fit indexes in structural models.
-Psychological Bulletin, 107, 238-246.</li>
-<li>Steiger, J. H. (1990). Structural model evaluation and modification: An
-interval estimation approach. Multivariate Behavioral Research, 25, 173-80.</li>
-</ul>
-<p>Bentler, P. M. &amp; Hu, L. (1999). Cutoff criteria fpr fit indexes in
+<li><p>Roth, D. L., Wiebe, D. J., Fillingim, R. B., &amp; Shay, K. A. (1989). Life events, fitness, hardiness, and health: A simultaneous analysis of proposed stress-resistance effects.Journal of Personality and Social Psychology, 57 (1), 136-142.</p></li>
+<li><p>Bentler, P. M. (1990). Comparative fit indexes in structural models.
+Psychological Bulletin, 107, 238-246.</p></li>
+<li><p>Steiger, J. H. (1990). Structural model evaluation and modification: An
+interval estimation approach. Multivariate Behavioral Research, 25, 173-80.</p></li>
+<li><p>Bentler, P. M. &amp; Hu, L. (1999). Cutoff criteria fpr fit indexes in
 covariance structure analysis: Conventional criteri versus new
-alternatives. Structural Equation Modeling, 6(1), 1-55.</p>
-<p>Marsh, Hau, &amp; Wen, 2004: The Special Issue in Personality and
-Individual Differences, 2007</p>
-
+alternatives. Structural Equation Modeling, 6(1), 1-55.</p></li>
+<li><p>Marsh, Hau, &amp; Wen, 2004: The Special Issue in Personality and
+Individual Differences, 2007</p></li>
+</ul>
 </div>
 </div>
 <script>
@@ -3026,7 +3025,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-03-12.</p>
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-03-17.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
