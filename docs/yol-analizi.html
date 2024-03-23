@@ -67,6 +67,7 @@
 <li><a class="" href="regresyon.html"><span class="header-section-number">3</span> Regresyon</a></li>
 <li><a class="" href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></li>
 <li><a class="active" href="yol-analizi.html"><span class="header-section-number">5</span> Yol Analizi</a></li>
+<li><a class="" href="afa.html"><span class="header-section-number">6</span> AFA</a></li>
 </ul>
 
         <div class="book-extra">
@@ -123,21 +124,21 @@ tanımlanmasına</strong> ve test edilmesine izin verir</p></li>
 <p><span class="math inline">\(\text{stres}_i = \beta_0 + \beta_{\text{eegzersiz}_i} + \beta_{\text{dayanıklılık}_i} + e_{fi}\)</span></p>
 <p><span class="math inline">\(\text{hastalık}_i = \beta_0 + \beta_{\text{eegzersiz}_i} + \beta_{\text{dayanıklılık}_i} + \beta_{\text{form}_i} + \beta_{\text{stres}_i} + e_{fi}\)</span></p>
 <p>Bu modeller R'da <strong>lavaan paketi</strong> ile model denklemi oluşturularak kullanılmalıdır.</p>
-<div class="sourceCode" id="cb220"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
 <span><span class="st">               form      ~ egzersiz + dayaniklilik'</span></span></code></pre></div>
 <ul>
 <li>Veri setini okuma</li>
 </ul>
-<div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
 <span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_table.html">read_table</a></span><span class="op">(</span><span class="st">"import/illness.dat"</span>, col_names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"form"</span>, <span class="st">"stres"</span>, <span class="st">"hastalik"</span>, <span class="st">"egzersiz"</span>, <span class="st">"dayaniklilik"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Yol modelini kurma</li>
 </ul>
-<div class="sourceCode" id="cb222"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span>
 <span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -334,7 +335,7 @@ olacaktır.</p></li>
 <h3>
 <span class="header-section-number">5.6.1</span> Hastalık Faktörleri (Yol Şeması)<a class="anchor" aria-label="anchor" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-%C5%9Femas%C4%B1"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span>
 <span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -478,7 +479,10 @@ değişkenlerin (yol modelinde bozuklukların) varyansı 1.0’e
 eşitlenir böylece gizil değişkenin varyansı standartlaştırılmış
 ölçekte olur.</p></li>
 </ul>
-<p><strong>Yetersiz Tanımlanma (Underidentification)</strong></p>
+<div id="yetersiz-tanımlanma-underidentification" class="section level3" number="5.8.1">
+<h3>
+<span class="header-section-number">5.8.1</span> <strong>Yetersiz Tanımlanma (Underidentification)</strong><a class="anchor" aria-label="anchor" href="#yetersiz-tan%C4%B1mlanma-underidentification"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li><p>Yetersiz tanımlanan bir modelde <strong>serbest model parametrelerinin</strong>
 sayısı gözlem sayısından büyüktür, <strong>diğer bir ifadeyle modelin
@@ -488,10 +492,6 @@ tanımlanması gerekir. Bu durumda en az bir parametrenin çözümü yoktur.</p>
 <li><p>Örnek:</p></li>
 </ul>
 <div class="inline-figure"><img src="images/PA_1.PNG" width="100%" style="display: block; margin: auto;"></div>
-<div id="yetersiz-tanımlanma-underidentification" class="section level3" number="5.8.1">
-<h3>
-<span class="header-section-number">5.8.1</span> <strong>Yetersiz Tanımlanma (Underidentification)</strong><a class="anchor" aria-label="anchor" href="#yetersiz-tan%C4%B1mlanma-underidentification"><i class="fas fa-link"></i></a>
-</h3>
 <ul>
 <li>
 <p>Gözlem eksikliğinin tanımlanmamaya nasıl yol açtığının
@@ -691,7 +691,7 @@ model ki-kare aslında bir <strong>kötülük uyum</strong> indeksidir.</p></li>
 <strong>reddedilmemesi</strong> tercih edilir. <strong>Sıfır hipotezinin reddedilmemesi modelin veriye uyduğunu önerir.</strong></p></li>
 <li><p>Diğer yandan sıfır hipotezinin reddedilmesi <strong>model-veri uyumunun iyi olmadığını önerir. </strong></p></li>
 </ul>
-<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> , <span class="st">"pvalue"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  chisq     df pvalue 
 ##   12.3    1.0    0.0</code></pre>
@@ -751,9 +751,6 @@ parametrelerinin sayısı).</p></li>
 <li><p>RMSEA ≥ 0.08 zayıf uyumu belirtir.</p></li>
 </ul>
 </li>
-</ul>
-<p><br><br></p>
-<ul>
 <li><p>RMSEA tarafından kestirilen evren parametresi <span class="math inline">\(\epsilon\)</span> için
 %90 güven aralığı genellikle YEM yazılımlarının
 çıktısında verilir.</p></li>
@@ -767,7 +764,7 @@ hipotezi <span class="math inline">\(H_{0}:\epsilon_{0} ≤ 0.05\)</span> redded
 <li><p>Çıktıda kestirilen RMSEA değeri ve
 ilgili %90 güven aralığı (90% C. I.) verilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="co"># summary(yol_fit, fit.measures = TRUE)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rmsea"</span>,<span class="st">"rmsea.ci.lower"</span>,</span>
 <span>                       <span class="st">"rmsea.ci.upper"</span>,<span class="st">"rmsea.pvalue"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -781,10 +778,24 @@ araştırmacının modelinin evrende tahmini yaklaşık uyuma sahip
 olduğu hipotezi reddedilir.</p></li>
 </ul>
 </div>
-<div id="rmr" class="section level3" number="5.9.3">
+<div id="srmr" class="section level3" number="5.9.3">
 <h3>
-<span class="header-section-number">5.9.3</span> RMR<a class="anchor" aria-label="anchor" href="#rmr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9.3</span> SRMR<a class="anchor" aria-label="anchor" href="#srmr"><i class="fas fa-link"></i></a>
 </h3>
+<p><strong>Standardized Root Mean Square Residual (SRMR)</strong> Bu indeks RMR
+indeksinin hesaplandığı şekilde hesaplanır ancak standartlaştırılmış
+artıklar kullanılır.</p>
+<ul>
+<li>0.08’den küçük değerler uygun olarak düşünülür (Hu &amp; Bentler, 1999).</li>
+</ul>
+<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>, <span class="st">"srmr"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##  srmr 
+## 0.043</code></pre>
+<ul>
+<li>Kestirilen SRMR değeri 0.043’dir. 0.043 değeri 0.08 değerinden küçük
+olduğundan SRMR indeksi model için kabul edilebilir uyum belirtir.</li>
+</ul>
 <p><strong>Root Mean Square Residual (RMR)</strong> Bu indeksi hesaplamak için her
 bir artık öğenin karesi alınır, karelerin toplanmasıyla elde edilen
 toplam artık sayısına bölünür ve bu ortalama kare artıkların kare kökü
@@ -793,28 +804,9 @@ alınır.</p>
 <li>Sıfır değeri mükemmel bir uyum belirtir ancak sıfırdan büyük değerlerin yorumlanması zordur.</li>
 </ul>
 </div>
-<div id="srmr" class="section level3" number="5.9.4">
+<div id="karşılaştırmalı-uyum-indeksleri" class="section level3" number="5.9.4">
 <h3>
-<span class="header-section-number">5.9.4</span> SRMR<a class="anchor" aria-label="anchor" href="#srmr"><i class="fas fa-link"></i></a>
-</h3>
-<p><strong>Standardized Root Mean Square Residual (SRMR)</strong> Bu indeks RMR
-indeksinin hesaplandığı şekilde hesaplanır ancak standartlaştırılmış
-artıklar kullanılır.</p>
-<ul>
-<li>0.08’den küçük değerler uygun olarak düşünülür (Hu &amp; Bentler, 1999).</li>
-</ul>
-<div class="sourceCode" id="cb228"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>, <span class="st">"srmr"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##  srmr 
-## 0.043</code></pre>
-<ul>
-<li>Kestirilen SRMR değeri 0.043’dir. 0.043 değeri 0.08 değerinden küçük
-olduğundan SRMR indeksi model için kabul edilebilir uyum belirtir.</li>
-</ul>
-</div>
-<div id="karşılaştırmalı-uyum-indeksleri" class="section level3" number="5.9.5">
-<h3>
-<span class="header-section-number">5.9.5</span> Karşılaştırmalı Uyum İndeksleri<a class="anchor" aria-label="anchor" href="#kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmal%C4%B1-uyum-indeksleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9.4</span> Karşılaştırmalı Uyum İndeksleri<a class="anchor" aria-label="anchor" href="#kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmal%C4%B1-uyum-indeksleri"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>(Comparative Fit Indices)</strong></p>
 <ul>
@@ -885,7 +877,7 @@ büyüklükteki verilerin kullanıldığı çalışmalarda kararlı
 değildir.</strong></p></li>
 <li><p>sıfır modeli için ki-kare testine ait değerleri ve CFI ve TLI değerlerini verir:</p></li>
 </ul>
-<div class="sourceCode" id="cb230"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"nnfi"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   cfi   tli  nnfi 
 ## 0.948 0.485 0.485</code></pre>
@@ -927,7 +919,7 @@ yansıtır. Araştırmacılar aşağıdakilerin rapor edilmesini
 <tr class="odd">
 <td>SRMR</td>
 <td>0 ≤SRMR ≤ .05</td>
-<td>.05 &lt; SRMR &lt; .10</td>
+<td>.05 &lt; SRMR &lt; .08</td>
 </tr>
 <tr class="even">
 <td>RMSEA</td>
@@ -947,7 +939,7 @@ tartışma vardır.</p>
 <li>Önerilen uyum indeksleri göz önüne alınınca model-veri
 uyumu ile ilgili ne söylenebilir?</li>
 </ul>
-<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> ,<span class="st">"pvalue"</span>,</span>
 <span>                                     <span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"rmsea"</span>,    </span>
 <span>                                     <span class="st">"rmsea.ci.lower"</span>,<span class="st">"rmsea.ci.upper"</span></span>
@@ -979,11 +971,6 @@ ilişkilidir.</p></li>
 değiştirecektir. Bu da hatalı tanımlamadan dolayı hatalara sebep
 olabilir</p></li>
 </ul>
-</div>
-<div id="bireysel-artık-ve" class="section level2" number="5.12">
-<h2>
-<span class="header-section-number">5.12</span> Bireysel Artık ve<a class="anchor" aria-label="anchor" href="#bireysel-art%C4%B1k-ve"><i class="fas fa-link"></i></a>
-</h2>
 <p><strong>Standartlaştırılmış Artık</strong></p>
 <ul>
 <li>İdeal olarak <strong>artık değerleri küçük ve tek biçimli olmalıdır.</strong>
@@ -1000,7 +987,7 @@ ortalaması tipik bir artığı temsil eden bir indeks sağlar.</li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb234"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># lavResiduals(yol_fit)</span></span>
 <span><span class="co"># resid(yol_fit)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">yol_fit</span>, type<span class="op">=</span><span class="st">'normalized'</span><span class="op">)</span></span></code></pre></div>
@@ -1018,15 +1005,15 @@ ortalaması tipik bir artığı temsil eden bir indeks sağlar.</li>
 <li>Standarlaştırılmış hata kovaryans matrisinde yer alan diyagonal dışındaki her bir değerin mutlak değerinin 1.96’dan küçük olması beklenir.</li>
 </ul>
 </div>
-<div id="modifikasyon-indeksleri" class="section level2" number="5.13">
+<div id="modifikasyon-indeksleri" class="section level2" number="5.12">
 <h2>
-<span class="header-section-number">5.13</span> Modifikasyon İndeksleri<a class="anchor" aria-label="anchor" href="#modifikasyon-indeksleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.12</span> Modifikasyon İndeksleri<a class="anchor" aria-label="anchor" href="#modifikasyon-indeksleri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>modindices</strong> fonksiyonu ile modifikasyon indeksleri istenebilir.</p></li>
 <li><p><strong>mi</strong> sütunu yapılacak modifikasyon sonucunda ki-karedeki düşüsü göstermektedir.</p></li>
 </ul>
-<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/modificationIndices.html">modindices</a></span><span class="op">(</span><span class="va">yol_fit</span>, sort <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">## modindices(yol_fit, sort = TRUE, maximum.number = 5)</span></span></code></pre></div>
 <div class="kable-table">
@@ -1102,16 +1089,16 @@ eklenebilir</p></li>
 veriye mükemmel uyum sağlayacaktır</p></li>
 </ul>
 </div>
-<div id="modelin-yeniden-tanımlanması" class="section level2" number="5.14">
+<div id="modelin-yeniden-tanımlanması" class="section level2" number="5.13">
 <h2>
-<span class="header-section-number">5.14</span> Modelin Yeniden Tanımlanması<a class="anchor" aria-label="anchor" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.13</span> Modelin Yeniden Tanımlanması<a class="anchor" aria-label="anchor" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>Revised Model 1</strong></p>
 <ul>
 <li>stres ~ form
 yolu eklenir.</li>
 </ul>
-<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model_v1</span> <span class="op">&lt;-</span> </span>
 <span><span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -1119,7 +1106,7 @@ yolu eklenir.</li>
 <span><span class="st">stres     ~ form</span></span>
 <span><span class="st">egzersiz ~~ dayaniklilik'</span> </span>
 <span><span class="va">yol_fit_v1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/sem.html">sem</a></span><span class="op">(</span><span class="va">yol_model_v1</span>, <span class="va">veri</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>,rotation<span class="op">=</span><span class="fl">2</span>, curvePivot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>sizeMan <span class="op">=</span> <span class="fl">12</span>, sizeInt <span class="op">=</span> <span class="fl">1</span>, </span>
 <span>sizeLat <span class="op">=</span> <span class="fl">4</span>,</span>
@@ -1133,11 +1120,11 @@ beklendiği gibidir.</p></li>
 <li><p>Kikare = 0 ve sd = 0 olduğunda, p değerini 0,0000 olarak
 yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p></li>
 </ul>
-<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>,fit.measures<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span>,<span class="st">"p"</span>,<span class="st">"df"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## chisq    df 
 ##     0     0</code></pre>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p_pa</span> <span class="op">&lt;-</span> </span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>, whatLabels <span class="op">=</span> <span class="st">"est"</span>,</span>
 <span>sizeMan <span class="op">=</span> <span class="fl">10</span>,</span>
@@ -1149,15 +1136,15 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <p>good fit vs parsinomy parsinomy principle</p>
 <p><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-29-1.png" width="100%" style="display: block; margin: auto;"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-29-2.png" width="100%" style="display: block; margin: auto;"></p>
 </div>
-<div id="modelin-yeniden-tanımlanması-1" class="section level2" number="5.15">
+<div id="modelin-yeniden-tanımlanması-1" class="section level2" number="5.14">
 <h2>
-<span class="header-section-number">5.15</span> Modelin Yeniden Tanımlanması<a class="anchor" aria-label="anchor" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.14</span> Modelin Yeniden Tanımlanması<a class="anchor" aria-label="anchor" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1-1"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>Revised Model 2</strong></p>
 <ul>
 <li>anlamlı olmayan yol katsayıları kaldırıldır</li>
 </ul>
-<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model_v1</span> <span class="op">&lt;-</span> </span>
 <span><span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -1176,12 +1163,12 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <ul>
 <li>anlamlı olmayan yol katsayıları kaldırıldır</li>
 </ul>
-<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rmsea"</span>,<span class="st">"cfi"</span>,<span class="st">"srmr"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## rmsea   cfi  srmr 
 ## 0.000 1.000 0.011</code></pre>
 <p><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-1.png" width="45%" style="display: block; margin: auto;"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-2.png" width="45%" style="display: block; margin: auto;"></p>
-<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> , <span class="st">"pvalue"</span>,</span>
 <span>                                        <span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"rmsea"</span>,</span>
 <span>                                        <span class="st">"rmsea.ci.lower"</span>,   <span class="st">"rmsea.ci.upper"</span></span>
@@ -1197,9 +1184,9 @@ değeri (1,354) 0.05 alfa düzeyinde istatistiksel olarak anlamlı
 değildir.</p></li>
 <li><p>RMSEA, CFI ve SRMR indekslerinin değerleri istenilen değerdedir</p></li>
 </ul>
-<div id="ki-kare-fark-testi" class="section level3" number="5.15.1">
+<div id="ki-kare-fark-testi" class="section level3" number="5.14.1">
 <h3>
-<span class="header-section-number">5.15.1</span> Ki-Kare Fark Testi<a class="anchor" aria-label="anchor" href="#ki-kare-fark-testi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.14.1</span> Ki-Kare Fark Testi<a class="anchor" aria-label="anchor" href="#ki-kare-fark-testi"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
@@ -1268,9 +1255,9 @@ olan) revised model 1’e (daha karmaşık olan) tercih edilir
 </li>
 </ul>
 </div>
-<div id="aic-ve-bic" class="section level3" number="5.15.2">
+<div id="aic-ve-bic" class="section level3" number="5.14.2">
 <h3>
-<span class="header-section-number">5.15.2</span> AIC ve BIC<a class="anchor" aria-label="anchor" href="#aic-ve-bic"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.14.2</span> AIC ve BIC<a class="anchor" aria-label="anchor" href="#aic-ve-bic"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>Akaike Information Criterion (AIC) ve Bayesian
@@ -1293,12 +1280,12 @@ hiyerarşik olmayan modellerin arasından seçim yapmak
 için kullanılır. Bağıl olarak daha küçük değerler uygundur</p></li>
 </ul>
 <p>model1</p>
-<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"AIC"</span>,<span class="st">"BIC"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   aic   bic 
 ## 21423 21483</code></pre>
 <p>model2</p>
-<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"AIC"</span>,<span class="st">"BIC"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   aic   bic 
 ## 21418 21466</code></pre>
@@ -1320,9 +1307,9 @@ ilkesi), ama hala veriye iyi uyan modeldir.</p></li>
 <p><strong>İyi Uyuma karşı Model Tutumluluğu</strong></p>
 </div>
 </div>
-<div id="sem-fonksiyonu" class="section level2" number="5.16">
+<div id="sem-fonksiyonu" class="section level2" number="5.15">
 <h2>
-<span class="header-section-number">5.16</span> sem fonksiyonu<a class="anchor" aria-label="anchor" href="#sem-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.15</span> sem fonksiyonu<a class="anchor" aria-label="anchor" href="#sem-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -1420,7 +1407,7 @@ ardı edilir.</p></li>
 <li><p>Ortalamalar/kesişimler çıkarılınca, kestirilen
 <strong>parametre sayısı 14</strong> olmalıdır.</p></li>
 </ul>
-<div class="sourceCode" id="cb251"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## lavaan 0.6.17 ended normally after 8 iterations
 ## 
@@ -1481,6 +1468,192 @@ bölünmesiyle t istatistiği elde edilir:
 <li><p>İki yönlü t testi 0.206 değerinin
 <strong>anlamlı olarak 0’dan farklı
 olduğunu önerir.</strong></p></li>
+</ul>
+<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/standardizedSolution.html">standardizedsolution</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="17%">
+<col width="4%">
+<col width="17%">
+<col width="10%">
+<col width="8%">
+<col width="9%">
+<col width="9%">
+<col width="12%">
+<col width="12%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">lhs</th>
+<th align="left">op</th>
+<th align="left">rhs</th>
+<th align="right">est.std</th>
+<th align="right">se</th>
+<th align="right">z</th>
+<th align="right">pvalue</th>
+<th align="right">ci.lower</th>
+<th align="right">ci.upper</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">stres</td>
+<td align="left">~</td>
+<td align="left">egzersiz</td>
+<td align="right">-0.080</td>
+<td align="right">0.047</td>
+<td align="right">-1.683</td>
+<td align="right">0.092</td>
+<td align="right">-0.172</td>
+<td align="right">0.013</td>
+</tr>
+<tr class="even">
+<td align="left">stres</td>
+<td align="left">~</td>
+<td align="left">dayaniklilik</td>
+<td align="right">-0.307</td>
+<td align="right">0.045</td>
+<td align="right">-6.802</td>
+<td align="right">0.000</td>
+<td align="right">-0.396</td>
+<td align="right">-0.219</td>
+</tr>
+<tr class="odd">
+<td align="left">hastalik</td>
+<td align="left">~</td>
+<td align="left">egzersiz</td>
+<td align="right">0.054</td>
+<td align="right">0.048</td>
+<td align="right">1.116</td>
+<td align="right">0.264</td>
+<td align="right">-0.041</td>
+<td align="right">0.148</td>
+</tr>
+<tr class="even">
+<td align="left">hastalik</td>
+<td align="left">~</td>
+<td align="left">dayaniklilik</td>
+<td align="right">-0.007</td>
+<td align="right">0.048</td>
+<td align="right">-0.138</td>
+<td align="right">0.891</td>
+<td align="right">-0.100</td>
+<td align="right">0.087</td>
+</tr>
+<tr class="odd">
+<td align="left">hastalik</td>
+<td align="left">~</td>
+<td align="left">form</td>
+<td align="right">-0.260</td>
+<td align="right">0.048</td>
+<td align="right">-5.474</td>
+<td align="right">0.000</td>
+<td align="right">-0.354</td>
+<td align="right">-0.167</td>
+</tr>
+<tr class="even">
+<td align="left">hastalik</td>
+<td align="left">~</td>
+<td align="left">stres</td>
+<td align="right">0.362</td>
+<td align="right">0.044</td>
+<td align="right">8.165</td>
+<td align="right">0.000</td>
+<td align="right">0.275</td>
+<td align="right">0.449</td>
+</tr>
+<tr class="odd">
+<td align="left">form</td>
+<td align="left">~</td>
+<td align="left">egzersiz</td>
+<td align="right">0.371</td>
+<td align="right">0.043</td>
+<td align="right">8.721</td>
+<td align="right">0.000</td>
+<td align="right">0.288</td>
+<td align="right">0.455</td>
+</tr>
+<tr class="even">
+<td align="left">form</td>
+<td align="left">~</td>
+<td align="left">dayaniklilik</td>
+<td align="right">0.160</td>
+<td align="right">0.045</td>
+<td align="right">3.544</td>
+<td align="right">0.000</td>
+<td align="right">0.072</td>
+<td align="right">0.249</td>
+</tr>
+<tr class="odd">
+<td align="left">egzersiz</td>
+<td align="left">~~</td>
+<td align="left">dayaniklilik</td>
+<td align="right">0.000</td>
+<td align="right">0.050</td>
+<td align="right">0.000</td>
+<td align="right">1.000</td>
+<td align="right">-0.098</td>
+<td align="right">0.098</td>
+</tr>
+<tr class="even">
+<td align="left">stres</td>
+<td align="left">~~</td>
+<td align="left">stres</td>
+<td align="right">0.899</td>
+<td align="right">0.029</td>
+<td align="right">31.527</td>
+<td align="right">0.000</td>
+<td align="right">0.843</td>
+<td align="right">0.955</td>
+</tr>
+<tr class="odd">
+<td align="left">hastalik</td>
+<td align="left">~~</td>
+<td align="left">hastalik</td>
+<td align="right">0.795</td>
+<td align="right">0.035</td>
+<td align="right">22.445</td>
+<td align="right">0.000</td>
+<td align="right">0.725</td>
+<td align="right">0.864</td>
+</tr>
+<tr class="even">
+<td align="left">form</td>
+<td align="left">~~</td>
+<td align="left">form</td>
+<td align="right">0.836</td>
+<td align="right">0.034</td>
+<td align="right">24.730</td>
+<td align="right">0.000</td>
+<td align="right">0.770</td>
+<td align="right">0.903</td>
+</tr>
+<tr class="odd">
+<td align="left">egzersiz</td>
+<td align="left">~~</td>
+<td align="left">egzersiz</td>
+<td align="right">1.000</td>
+<td align="right">0.000</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+</tr>
+<tr class="even">
+<td align="left">dayaniklilik</td>
+<td align="left">~~</td>
+<td align="left">dayaniklilik</td>
+<td align="right">1.000</td>
+<td align="right">0.000</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
 <li><p>Örneğin, <strong>form ~ egzersiz</strong> standartlaştırılmış kestirimi
 0.371’dir. Bu değer, egzersiz
 puanındaki bir standart sapmalık artışın yordanan
@@ -1496,6 +1669,13 @@ olduğunu önerir.</p></li>
 <li><p><strong>egzersiz ~~ dayaniklilik</strong> değeri 9.105’tir. Bu değer egzersiz ve
 dayaniklilik değişkenleri arasındaki <strong>kovaryans</strong>
 tahminidir.</p></li>
+</ul>
+</div>
+<div id="standartlaştırılmış-artık" class="section level2" number="5.16">
+<h2>
+<span class="header-section-number">5.16</span> Standartlaştırılmış Artık<a class="anchor" aria-label="anchor" href="#standartla%C5%9Ft%C4%B1r%C4%B1lm%C4%B1%C5%9F-art%C4%B1k"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
 <li><p>Standartlaştırılmamış artık varyans (unstandardized
 residual variance), her bir içsel değişkendeki yordayıcılar
 tarafından açıklanmayan varyans miktarını söyler.</p></li>
@@ -1503,16 +1683,6 @@ tarafından açıklanmayan varyans miktarını söyler.</p></li>
 varyans yaklaşık 1261.54’tür.</p></li>
 <li><p>Bu değer, form değişkeninin varyansı(1508.75) ile karşılaştırılarak
 açıklanmayan varyans yüzdesi hesaplanabilir</p></li>
-</ul>
-</div>
-<div id="standartlaştırılmış-artık" class="section level2" number="5.17">
-<h2>
-<span class="header-section-number">5.17</span> Standartlaştırılmış Artık<a class="anchor" aria-label="anchor" href="#standartla%C5%9Ft%C4%B1r%C4%B1lm%C4%B1%C5%9F-art%C4%B1k"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li><p>Standartlaştırılmış artık varyans (standardized residual
-variance), <strong>her bir içsel değişkendeki yordayıcılar
-tarafından açıklanmayan varyans oranını söyler.</strong></p></li>
 <li><p>Örneğin, form değişkenindeki açıklanmayan
 varyans oranı yaklaşık 0.836’dır. form değişkeni
 için toplam varyansın yaklaşık
@@ -1520,27 +1690,27 @@ için toplam varyansın yaklaşık
 <li><p><strong>1261.4 / 1508.75 = 0.836</strong></p></li>
 </ul>
 </div>
-<div id="kestirim" class="section level2" number="5.18">
+<div id="kestirim" class="section level2" number="5.17">
 <h2>
-<span class="header-section-number">5.18</span> Kestirim<a class="anchor" aria-label="anchor" href="#kestirim"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.17</span> Kestirim<a class="anchor" aria-label="anchor" href="#kestirim"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">yol_fit</span>, standardized<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Standartlaştırılmamış sonuçlar</li>
+</ul>
+<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<div class="inline-table"><table style="width:100%;" class="table table-sm">
+<div class="inline-table"><table class="table table-sm">
 <colgroup>
-<col width="12%">
-<col width="2%">
-<col width="12%">
-<col width="8%">
-<col width="7%">
-<col width="6%">
-<col width="6%">
+<col width="16%">
+<col width="3%">
+<col width="16%">
+<col width="11%">
+<col width="10%">
 <col width="8%">
 <col width="8%">
-<col width="8%">
-<col width="7%">
-<col width="7%">
+<col width="11%">
+<col width="11%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">lhs</th>
@@ -1552,9 +1722,6 @@ için toplam varyansın yaklaşık
 <th align="right">pvalue</th>
 <th align="right">ci.lower</th>
 <th align="right">ci.upper</th>
-<th align="right">std.lv</th>
-<th align="right">std.all</th>
-<th align="right">std.nox</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1567,9 +1734,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.093</td>
 <td align="right">-0.173</td>
 <td align="right">0.013</td>
-<td align="right">-0.080</td>
-<td align="right">-0.080</td>
-<td align="right">-0.080</td>
 </tr>
 <tr class="even">
 <td align="left">stres</td>
@@ -1581,9 +1745,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">-0.725</td>
 <td align="right">-0.388</td>
-<td align="right">-0.556</td>
-<td align="right">-0.307</td>
-<td align="right">-0.307</td>
 </tr>
 <tr class="odd">
 <td align="left">hastalik</td>
@@ -1595,9 +1756,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.265</td>
 <td align="right">-0.035</td>
 <td align="right">0.129</td>
-<td align="right">0.047</td>
-<td align="right">0.054</td>
-<td align="right">0.054</td>
 </tr>
 <tr class="even">
 <td align="left">hastalik</td>
@@ -1609,9 +1767,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.891</td>
 <td align="right">-0.157</td>
 <td align="right">0.136</td>
-<td align="right">-0.010</td>
-<td align="right">-0.007</td>
-<td align="right">-0.007</td>
 </tr>
 <tr class="odd">
 <td align="left">hastalik</td>
@@ -1623,9 +1778,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">-0.557</td>
 <td align="right">-0.258</td>
-<td align="right">-0.408</td>
-<td align="right">-0.260</td>
-<td align="right">-0.260</td>
 </tr>
 <tr class="even">
 <td align="left">hastalik</td>
@@ -1637,9 +1789,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">0.234</td>
 <td align="right">0.394</td>
-<td align="right">0.314</td>
-<td align="right">0.362</td>
-<td align="right">0.362</td>
 </tr>
 <tr class="odd">
 <td align="left">form</td>
@@ -1651,9 +1800,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">0.156</td>
 <td align="right">0.256</td>
-<td align="right">0.206</td>
-<td align="right">0.371</td>
-<td align="right">0.371</td>
 </tr>
 <tr class="even">
 <td align="left">form</td>
@@ -1665,9 +1811,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">0.071</td>
 <td align="right">0.251</td>
-<td align="right">0.161</td>
-<td align="right">0.160</td>
-<td align="right">0.160</td>
 </tr>
 <tr class="odd">
 <td align="left">egzersiz</td>
@@ -1679,9 +1822,6 @@ için toplam varyansın yaklaşık
 <td align="right">1.000</td>
 <td align="right">-264.929</td>
 <td align="right">264.929</td>
-<td align="right">0.000</td>
-<td align="right">0.000</td>
-<td align="right">0.000</td>
 </tr>
 <tr class="even">
 <td align="left">stres</td>
@@ -1693,9 +1833,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">3806.692</td>
 <td align="right">5031.593</td>
-<td align="right">4419.143</td>
-<td align="right">0.899</td>
-<td align="right">0.899</td>
 </tr>
 <tr class="odd">
 <td align="left">hastalik</td>
@@ -1707,9 +1844,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">2529.972</td>
 <td align="right">3344.056</td>
-<td align="right">2937.014</td>
-<td align="right">0.795</td>
-<td align="right">0.795</td>
 </tr>
 <tr class="even">
 <td align="left">form</td>
@@ -1721,9 +1855,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">1086.724</td>
 <td align="right">1436.406</td>
-<td align="right">1261.565</td>
-<td align="right">0.836</td>
-<td align="right">0.836</td>
 </tr>
 <tr class="odd">
 <td align="left">egzersiz</td>
@@ -1735,9 +1866,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">4206.843</td>
 <td align="right">5560.503</td>
-<td align="right">4883.673</td>
-<td align="right">1.000</td>
-<td align="right">1.000</td>
 </tr>
 <tr class="even">
 <td align="left">dayaniklilik</td>
@@ -1749,9 +1877,6 @@ için toplam varyansın yaklaşık
 <td align="right">0.000</td>
 <td align="right">1289.098</td>
 <td align="right">1703.899</td>
-<td align="right">1496.499</td>
-<td align="right">1.000</td>
-<td align="right">1.000</td>
 </tr>
 </tbody>
 </table></div>
@@ -1768,7 +1893,7 @@ yordayıcılar tarafından açıklandığını önerir.</p></li>
 <p>Not: Her bir içsel değişken için <span class="math inline">\(R^2\)</span> değeri ve standartlaştırılmış
 artık varyansının toplamı “1”e eşit olmalıdır:
 0.164 + 0.836 = 1</p>
-<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">yol_fit</span>, rsquare<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">out</span><span class="op">$</span><span class="va">PE</span><span class="op">[</span><span class="fl">15</span><span class="op">:</span><span class="fl">17</span>,<span class="op">]</span></span></code></pre></div>
 <ul>
@@ -1779,30 +1904,21 @@ artık varyansının toplamı “1”e eşit olmalıdır:
 <li>form 0.164</li>
 </ul>
 </div>
-<div id="model-sonuçlarının-rapor-edilmesi" class="section level2" number="5.19">
+<div id="model-sonuçlarının-rapor-edilmesi" class="section level2" number="5.18">
 <h2>
-<span class="header-section-number">5.19</span> Model Sonuçlarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.18</span> Model Sonuçlarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">yol_fit</span>, standardized<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/standardizedSolution.html">standardizedsolution</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">op</span> <span class="op">==</span> <span class="st">"~"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="st">'Bağımlı Değişkenler'</span><span class="op">=</span><span class="va">lhs</span>, Gosterge<span class="op">=</span><span class="va">rhs</span>,</span>
-<span>         B<span class="op">=</span><span class="va">est</span>, SE<span class="op">=</span><span class="va">se</span>, Z<span class="op">=</span><span class="va">z</span>, <span class="st">'p-value'</span><span class="op">=</span><span class="va">pvalue</span>, Beta<span class="op">=</span><span class="va">std.all</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>         B<span class="op">=</span><span class="va">est.std</span>, SE<span class="op">=</span><span class="va">se</span>, Z<span class="op">=</span><span class="va">z</span>, <span class="st">'p-value'</span><span class="op">=</span><span class="va">pvalue</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">3</span>, booktabs<span class="op">=</span><span class="cn">TRUE</span>, format<span class="op">=</span><span class="st">"markdown"</span>,</span>
 <span>               caption<span class="op">=</span><span class="st">"Factor Loadings"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:unnamed-chunk-39">Tablo 5.1: </span>Factor Loadings</caption>
-<colgroup>
-<col width="29%">
-<col width="19%">
-<col width="10%">
-<col width="8%">
-<col width="10%">
-<col width="11%">
-<col width="10%">
-</colgroup>
+<span id="tab:unnamed-chunk-40">Tablo 5.1: </span>Factor Loadings</caption>
 <thead><tr class="header">
 <th align="left">Bağımlı Değişkenler</th>
 <th align="left">Gosterge</th>
@@ -1810,94 +1926,80 @@ artık varyansının toplamı “1”e eşit olmalıdır:
 <th align="right">SE</th>
 <th align="right">Z</th>
 <th align="right">p-value</th>
-<th align="right">Beta</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
 <td align="left">stres</td>
 <td align="left">egzersiz</td>
 <td align="right">-0.080</td>
-<td align="right">0.048</td>
-<td align="right">-1.678</td>
-<td align="right">0.093</td>
-<td align="right">-0.080</td>
+<td align="right">0.047</td>
+<td align="right">-1.683</td>
+<td align="right">0.092</td>
 </tr>
 <tr class="even">
 <td align="left">stres</td>
 <td align="left">dayaniklilik</td>
-<td align="right">-0.556</td>
-<td align="right">0.086</td>
-<td align="right">-6.475</td>
-<td align="right">0.000</td>
 <td align="right">-0.307</td>
+<td align="right">0.045</td>
+<td align="right">-6.802</td>
+<td align="right">0.000</td>
 </tr>
 <tr class="odd">
 <td align="left">hastalik</td>
 <td align="left">egzersiz</td>
-<td align="right">0.047</td>
-<td align="right">0.042</td>
-<td align="right">1.115</td>
-<td align="right">0.265</td>
 <td align="right">0.054</td>
+<td align="right">0.048</td>
+<td align="right">1.116</td>
+<td align="right">0.264</td>
 </tr>
 <tr class="even">
 <td align="left">hastalik</td>
 <td align="left">dayaniklilik</td>
-<td align="right">-0.010</td>
-<td align="right">0.075</td>
+<td align="right">-0.007</td>
+<td align="right">0.048</td>
 <td align="right">-0.138</td>
 <td align="right">0.891</td>
-<td align="right">-0.007</td>
 </tr>
 <tr class="odd">
 <td align="left">hastalik</td>
 <td align="left">form</td>
-<td align="right">-0.408</td>
-<td align="right">0.076</td>
-<td align="right">-5.342</td>
-<td align="right">0.000</td>
 <td align="right">-0.260</td>
+<td align="right">0.048</td>
+<td align="right">-5.474</td>
+<td align="right">0.000</td>
 </tr>
 <tr class="even">
 <td align="left">hastalik</td>
 <td align="left">stres</td>
-<td align="right">0.314</td>
-<td align="right">0.041</td>
-<td align="right">7.704</td>
-<td align="right">0.000</td>
 <td align="right">0.362</td>
+<td align="right">0.044</td>
+<td align="right">8.165</td>
+<td align="right">0.000</td>
 </tr>
 <tr class="odd">
 <td align="left">form</td>
 <td align="left">egzersiz</td>
-<td align="right">0.206</td>
-<td align="right">0.025</td>
-<td align="right">8.118</td>
-<td align="right">0.000</td>
 <td align="right">0.371</td>
+<td align="right">0.043</td>
+<td align="right">8.721</td>
+<td align="right">0.000</td>
 </tr>
 <tr class="even">
 <td align="left">form</td>
 <td align="left">dayaniklilik</td>
-<td align="right">0.161</td>
-<td align="right">0.046</td>
-<td align="right">3.506</td>
-<td align="right">0.000</td>
 <td align="right">0.160</td>
+<td align="right">0.045</td>
+<td align="right">3.544</td>
+<td align="right">0.000</td>
 </tr>
 </tbody>
 </table></div>
-</div>
-<div id="model-sonuçlarının-rapor-edilmesi-1" class="section level2" number="5.20">
-<h2>
-<span class="header-section-number">5.20</span> Model Sonuçlarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi-1"><i class="fas fa-link"></i></a>
-</h2>
-<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dr-JT/semoutput">semoutput</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_anova.html">sem_anova</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="va">yol_fit_v1</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table data-quarto-disable-processing="true" class="table" style="width: auto !important; ">
 <caption>
-<span id="tab:unnamed-chunk-40">Tablo 5.2: </span>Model Comparison
+<span id="tab:unnamed-chunk-41">Tablo 5.2: </span>Model Comparison
 </caption>
 <thead><tr>
 <th style="text-align:right;">
@@ -1990,29 +2092,29 @@ NA
 </tbody>
 </table></div>
 </div>
-<div id="model-sonuçlarının-rapor-edilmesi-2" class="section level2" number="5.21">
+<div id="model-karşılaştırmalarının-rapor-edilmesi" class="section level2" number="5.19">
 <h2>
-<span class="header-section-number">5.21</span> Model Sonuçlarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.19</span> Model Karşılaştırmalarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmalar%C4%B1n%C4%B1n-rapor-edilmesi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_modelcomp.html">sem_modelcomp</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="va">yol_fit_v1</span><span class="op">)</span></span></code></pre></div>
-<div id="tkbzqwzksi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tkbzqwzksi table {
+<div id="gdujcivytw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gdujcivytw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tkbzqwzksi thead, #tkbzqwzksi tbody, #tkbzqwzksi tfoot, #tkbzqwzksi tr, #tkbzqwzksi td, #tkbzqwzksi th {
+#gdujcivytw thead, #gdujcivytw tbody, #gdujcivytw tfoot, #gdujcivytw tr, #gdujcivytw td, #gdujcivytw th {
   border-style: none;
 }
 
-#tkbzqwzksi p {
+#gdujcivytw p {
   margin: 0;
   padding: 0;
 }
 
-#tkbzqwzksi .gt_table {
+#gdujcivytw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2038,12 +2140,12 @@ NA
   border-left-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_caption {
+#gdujcivytw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tkbzqwzksi .gt_title {
+#gdujcivytw .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2055,7 +2157,7 @@ NA
   border-bottom-width: 0;
 }
 
-#tkbzqwzksi .gt_subtitle {
+#gdujcivytw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2067,7 +2169,7 @@ NA
   border-top-width: 0;
 }
 
-#tkbzqwzksi .gt_heading {
+#gdujcivytw .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2079,13 +2181,13 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_bottom_border {
+#gdujcivytw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_col_headings {
+#gdujcivytw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2100,7 +2202,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_col_heading {
+#gdujcivytw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2120,7 +2222,7 @@ NA
   overflow-x: hidden;
 }
 
-#tkbzqwzksi .gt_column_spanner_outer {
+#gdujcivytw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2132,15 +2234,15 @@ NA
   padding-right: 4px;
 }
 
-#tkbzqwzksi .gt_column_spanner_outer:first-child {
+#gdujcivytw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tkbzqwzksi .gt_column_spanner_outer:last-child {
+#gdujcivytw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tkbzqwzksi .gt_column_spanner {
+#gdujcivytw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2152,11 +2254,11 @@ NA
   width: 100%;
 }
 
-#tkbzqwzksi .gt_spanner_row {
+#gdujcivytw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tkbzqwzksi .gt_group_heading {
+#gdujcivytw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2182,7 +2284,7 @@ NA
   text-align: left;
 }
 
-#tkbzqwzksi .gt_empty_group_heading {
+#gdujcivytw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2197,15 +2299,15 @@ NA
   vertical-align: middle;
 }
 
-#tkbzqwzksi .gt_from_md > :first-child {
+#gdujcivytw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tkbzqwzksi .gt_from_md > :last-child {
+#gdujcivytw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tkbzqwzksi .gt_row {
+#gdujcivytw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2224,7 +2326,7 @@ NA
   overflow-x: hidden;
 }
 
-#tkbzqwzksi .gt_stub {
+#gdujcivytw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2237,7 +2339,7 @@ NA
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_stub_row_group {
+#gdujcivytw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2251,15 +2353,15 @@ NA
   vertical-align: top;
 }
 
-#tkbzqwzksi .gt_row_group_first td {
+#gdujcivytw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tkbzqwzksi .gt_row_group_first th {
+#gdujcivytw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tkbzqwzksi .gt_summary_row {
+#gdujcivytw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2269,16 +2371,16 @@ NA
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_first_summary_row {
+#gdujcivytw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_first_summary_row.thick {
+#gdujcivytw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tkbzqwzksi .gt_last_summary_row {
+#gdujcivytw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2288,7 +2390,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_grand_summary_row {
+#gdujcivytw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2298,7 +2400,7 @@ NA
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_first_grand_summary_row {
+#gdujcivytw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2308,7 +2410,7 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_last_grand_summary_row_top {
+#gdujcivytw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2318,11 +2420,11 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_striped {
+#gdujcivytw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tkbzqwzksi .gt_table_body {
+#gdujcivytw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2331,7 +2433,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_footnotes {
+#gdujcivytw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2345,7 +2447,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_footnote {
+#gdujcivytw .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -2354,7 +2456,7 @@ NA
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_sourcenotes {
+#gdujcivytw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2368,7 +2470,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_sourcenote {
+#gdujcivytw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2376,63 +2478,63 @@ NA
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_left {
+#gdujcivytw .gt_left {
   text-align: left;
 }
 
-#tkbzqwzksi .gt_center {
+#gdujcivytw .gt_center {
   text-align: center;
 }
 
-#tkbzqwzksi .gt_right {
+#gdujcivytw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tkbzqwzksi .gt_font_normal {
+#gdujcivytw .gt_font_normal {
   font-weight: normal;
 }
 
-#tkbzqwzksi .gt_font_bold {
+#gdujcivytw .gt_font_bold {
   font-weight: bold;
 }
 
-#tkbzqwzksi .gt_font_italic {
+#gdujcivytw .gt_font_italic {
   font-style: italic;
 }
 
-#tkbzqwzksi .gt_super {
+#gdujcivytw .gt_super {
   font-size: 65%;
 }
 
-#tkbzqwzksi .gt_footnote_marks {
+#gdujcivytw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tkbzqwzksi .gt_asterisk {
+#gdujcivytw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tkbzqwzksi .gt_indent_1 {
+#gdujcivytw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tkbzqwzksi .gt_indent_2 {
+#gdujcivytw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tkbzqwzksi .gt_indent_3 {
+#gdujcivytw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tkbzqwzksi .gt_indent_4 {
+#gdujcivytw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tkbzqwzksi .gt_indent_5 {
+#gdujcivytw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2485,9 +2587,9 @@ NA
 </table></div>
 </div>
 </div>
-<div id="doğrudan-dolaylı-ve-toplam-etkiler" class="section level2" number="5.22">
+<div id="doğrudan-dolaylı-ve-toplam-etkiler" class="section level2" number="5.20">
 <h2>
-<span class="header-section-number">5.22</span> Doğrudan, Dolaylı ve Toplam Etkiler<a class="anchor" aria-label="anchor" href="#do%C4%9Frudan-dolayl%C4%B1-ve-toplam-etkiler"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.20</span> Doğrudan, Dolaylı ve Toplam Etkiler<a class="anchor" aria-label="anchor" href="#do%C4%9Frudan-dolayl%C4%B1-ve-toplam-etkiler"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>Toplam etki</strong>, bir değişken bir birim değiştiğinde diğer bir
@@ -2533,11 +2635,11 @@ standartlaştırılmış yol katsayılarının çarpılması sonucu elde edilir:
 </ul>
 </li>
 </ul>
-<p>egzersiz → form → hastalik</p>
-<p>egzersiz → stres → hastalik</p>
-<p>dayaniklilik → form → hastalik</p>
-<p>dayaniklilik → stres → hastalik</p>
-<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
+<p>egzersiz → form → hastalık</p>
+<p>egzersiz → stres → hastalık</p>
+<p>dayanıklılık → form → hastalık</p>
+<p>dayanıklılık → stres → hastalık</p>
+<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ s_e*egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ h_e*egzersiz + dayaniklilik + h_f*form + h_s*stres</span></span>
 <span><span class="st">               form      ~ f_e*egzersiz + dayaniklilik</span></span>
@@ -2557,82 +2659,274 @@ standartlaştırılmış yol katsayılarının çarpılması sonucu elde edilir:
 <span><span class="st">               tot:=tot_ind + h_e'</span></span>
 <span></span>
 <span><span class="va">fsem1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/sem.html">sem</a></span><span class="op">(</span><span class="va">yol_model</span>,<span class="va">veri</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">fsem1</span>,standardized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">7</span>,<span class="fl">17</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,<span class="fl">12</span><span class="op">)</span><span class="op">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/standardizedSolution.html">standardizedsolution</a></span><span class="op">(</span><span class="va">fsem1</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table style="width:100%;" class="table table-sm">
+<colgroup>
+<col width="15%">
+<col width="3%">
+<col width="16%">
+<col width="9%">
+<col width="9%">
+<col width="7%">
+<col width="8%">
+<col width="8%">
+<col width="10%">
+<col width="10%">
+</colgroup>
 <thead><tr class="header">
-<th align="left"></th>
 <th align="left">lhs</th>
 <th align="left">op</th>
 <th align="left">rhs</th>
 <th align="left">label</th>
-<th align="right">std.all</th>
+<th align="right">est.std</th>
+<th align="right">se</th>
+<th align="right">z</th>
+<th align="right">pvalue</th>
+<th align="right">ci.lower</th>
+<th align="right">ci.upper</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">1</td>
 <td align="left">stres</td>
 <td align="left">~</td>
 <td align="left">egzersiz</td>
 <td align="left">s_e</td>
 <td align="right">-0.080</td>
+<td align="right">0.047</td>
+<td align="right">-1.683</td>
+<td align="right">0.092</td>
+<td align="right">-0.172</td>
+<td align="right">0.013</td>
 </tr>
 <tr class="even">
-<td align="left">3</td>
+<td align="left">stres</td>
+<td align="left">~</td>
+<td align="left">dayaniklilik</td>
+<td align="left"></td>
+<td align="right">-0.307</td>
+<td align="right">0.045</td>
+<td align="right">-6.802</td>
+<td align="right">0.000</td>
+<td align="right">-0.396</td>
+<td align="right">-0.219</td>
+</tr>
+<tr class="odd">
 <td align="left">hastalik</td>
 <td align="left">~</td>
 <td align="left">egzersiz</td>
 <td align="left">h_e</td>
 <td align="right">0.054</td>
+<td align="right">0.048</td>
+<td align="right">1.116</td>
+<td align="right">0.264</td>
+<td align="right">-0.041</td>
+<td align="right">0.148</td>
+</tr>
+<tr class="even">
+<td align="left">hastalik</td>
+<td align="left">~</td>
+<td align="left">dayaniklilik</td>
+<td align="left"></td>
+<td align="right">-0.007</td>
+<td align="right">0.048</td>
+<td align="right">-0.138</td>
+<td align="right">0.891</td>
+<td align="right">-0.100</td>
+<td align="right">0.087</td>
 </tr>
 <tr class="odd">
-<td align="left">5</td>
 <td align="left">hastalik</td>
 <td align="left">~</td>
 <td align="left">form</td>
 <td align="left">h_f</td>
 <td align="right">-0.260</td>
+<td align="right">0.048</td>
+<td align="right">-5.474</td>
+<td align="right">0.000</td>
+<td align="right">-0.354</td>
+<td align="right">-0.167</td>
 </tr>
 <tr class="even">
-<td align="left">7</td>
+<td align="left">hastalik</td>
+<td align="left">~</td>
+<td align="left">stres</td>
+<td align="left">h_s</td>
+<td align="right">0.362</td>
+<td align="right">0.044</td>
+<td align="right">8.165</td>
+<td align="right">0.000</td>
+<td align="right">0.275</td>
+<td align="right">0.449</td>
+</tr>
+<tr class="odd">
 <td align="left">form</td>
 <td align="left">~</td>
 <td align="left">egzersiz</td>
 <td align="left">f_e</td>
 <td align="right">0.371</td>
+<td align="right">0.043</td>
+<td align="right">8.721</td>
+<td align="right">0.000</td>
+<td align="right">0.288</td>
+<td align="right">0.455</td>
+</tr>
+<tr class="even">
+<td align="left">form</td>
+<td align="left">~</td>
+<td align="left">dayaniklilik</td>
+<td align="left"></td>
+<td align="right">0.160</td>
+<td align="right">0.045</td>
+<td align="right">3.544</td>
+<td align="right">0.000</td>
+<td align="right">0.072</td>
+<td align="right">0.249</td>
 </tr>
 <tr class="odd">
-<td align="left">17</td>
+<td align="left">egzersiz</td>
+<td align="left">~~</td>
+<td align="left">dayaniklilik</td>
+<td align="left"></td>
+<td align="right">0.000</td>
+<td align="right">0.050</td>
+<td align="right">0.000</td>
+<td align="right">1.000</td>
+<td align="right">-0.098</td>
+<td align="right">0.098</td>
+</tr>
+<tr class="even">
+<td align="left">stres</td>
+<td align="left">~~</td>
+<td align="left">stres</td>
+<td align="left"></td>
+<td align="right">0.899</td>
+<td align="right">0.029</td>
+<td align="right">31.527</td>
+<td align="right">0.000</td>
+<td align="right">0.843</td>
+<td align="right">0.955</td>
+</tr>
+<tr class="odd">
+<td align="left">hastalik</td>
+<td align="left">~~</td>
+<td align="left">hastalik</td>
+<td align="left"></td>
+<td align="right">0.795</td>
+<td align="right">0.035</td>
+<td align="right">22.445</td>
+<td align="right">0.000</td>
+<td align="right">0.725</td>
+<td align="right">0.864</td>
+</tr>
+<tr class="even">
+<td align="left">form</td>
+<td align="left">~~</td>
+<td align="left">form</td>
+<td align="left"></td>
+<td align="right">0.836</td>
+<td align="right">0.034</td>
+<td align="right">24.730</td>
+<td align="right">0.000</td>
+<td align="right">0.770</td>
+<td align="right">0.903</td>
+</tr>
+<tr class="odd">
+<td align="left">egzersiz</td>
+<td align="left">~~</td>
+<td align="left">egzersiz</td>
+<td align="left"></td>
+<td align="right">1.000</td>
+<td align="right">0.000</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+</tr>
+<tr class="even">
+<td align="left">dayaniklilik</td>
+<td align="left">~~</td>
+<td align="left">dayaniklilik</td>
+<td align="left"></td>
+<td align="right">1.000</td>
+<td align="right">0.000</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1.000</td>
+<td align="right">1.000</td>
+</tr>
+<tr class="odd">
+<td align="left">dir_fm</td>
+<td align="left">:=</td>
+<td align="left">h_f</td>
+<td align="left">dir_fm</td>
+<td align="right">-0.260</td>
+<td align="right">0.048</td>
+<td align="right">-5.474</td>
+<td align="right">0.000</td>
+<td align="right">-0.354</td>
+<td align="right">-0.167</td>
+</tr>
+<tr class="even">
+<td align="left">dir_sh</td>
+<td align="left">:=</td>
+<td align="left">h_s</td>
+<td align="left">dir_sh</td>
+<td align="right">0.362</td>
+<td align="right">0.044</td>
+<td align="right">8.165</td>
+<td align="right">0.000</td>
+<td align="right">0.275</td>
+<td align="right">0.449</td>
+</tr>
+<tr class="odd">
 <td align="left">ind_h1</td>
 <td align="left">:=</td>
 <td align="left">f_e*h_f</td>
 <td align="left">ind_h1</td>
 <td align="right">-0.097</td>
+<td align="right">0.021</td>
+<td align="right">-4.540</td>
+<td align="right">0.000</td>
+<td align="right">-0.138</td>
+<td align="right">-0.055</td>
 </tr>
 <tr class="even">
-<td align="left">18</td>
 <td align="left">ind_h2</td>
 <td align="left">:=</td>
 <td align="left">s_e*h_s</td>
 <td align="left">ind_h2</td>
 <td align="right">-0.029</td>
+<td align="right">0.018</td>
+<td align="right">-1.646</td>
+<td align="right">0.100</td>
+<td align="right">-0.063</td>
+<td align="right">0.005</td>
 </tr>
 <tr class="odd">
-<td align="left">19</td>
 <td align="left">tot_ind</td>
 <td align="left">:=</td>
 <td align="left">ind_h1+ind_h2</td>
 <td align="left">tot_ind</td>
 <td align="right">-0.125</td>
+<td align="right">0.027</td>
+<td align="right">-4.592</td>
+<td align="right">0.000</td>
+<td align="right">-0.179</td>
+<td align="right">-0.072</td>
 </tr>
 <tr class="even">
-<td align="left">20</td>
 <td align="left">tot</td>
 <td align="left">:=</td>
 <td align="left">tot_ind+h_e</td>
 <td align="left">tot</td>
 <td align="right">-0.072</td>
+<td align="right">0.049</td>
+<td align="right">-1.459</td>
+<td align="right">0.144</td>
+<td align="right">-0.168</td>
+<td align="right">0.025</td>
 </tr>
 </tbody>
 </table></div>
@@ -2648,9 +2942,9 @@ toplam etki = doğrudan etki + toplam dolaylı etki</p></li>
 </ul>
 <div class="inline-figure"><img src="images/PA_8.PNG" width="75%" style="display: block; margin: auto;"></div>
 </div>
-<div id="sempaths" class="section level2" number="5.23">
+<div id="sempaths" class="section level2" number="5.21">
 <h2>
-<span class="header-section-number">5.23</span> semPaths<a class="anchor" aria-label="anchor" href="#sempaths"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.21</span> semPaths<a class="anchor" aria-label="anchor" href="#sempaths"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -2733,9 +3027,9 @@ toplam etki = doğrudan etki + toplam dolaylı etki</p></li>
 </table></div>
 <!-- https://shiny.rit.albany.edu/stat/cfa1test/lavaan.html -->
 </div>
-<div id="kaynaklar-3" class="section level2" number="5.24">
+<div id="kaynaklar-3" class="section level2" number="5.22">
 <h2>
-<span class="header-section-number">5.24</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.22</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar-3"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Roth, D. L., Wiebe, D. J., Fillingim, R. B., &amp; Shay, K. A. (1989). Life events, fitness, hardiness, and health: A simultaneous analysis of proposed stress-resistance effects.Journal of Personality and Social Psychology, 57 (1), 136-142.</p></li>
@@ -2954,7 +3248,7 @@ $( document ).ready(function() {
 });
 </script><div class="chapter-nav">
 <div class="prev"><a href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></div>
-<div class="empty"></div>
+<div class="next"><a href="afa.html"><span class="header-section-number">6</span> AFA</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -2983,31 +3277,28 @@ $( document ).ready(function() {
 <a class="nav-link" href="#model-veri-uyumunun-de%C4%9Ferlendirilmesi"><span class="header-section-number">5.9</span> Model-Veri Uyumunun Değerlendirilmesi</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#ki-kare-testi-chi-square-test"><span class="header-section-number">5.9.1</span> Ki-Kare Testi (Chi-Square Test)</a></li>
 <li><a class="nav-link" href="#rmsea"><span class="header-section-number">5.9.2</span> RMSEA</a></li>
-<li><a class="nav-link" href="#rmr"><span class="header-section-number">5.9.3</span> RMR</a></li>
-<li><a class="nav-link" href="#srmr"><span class="header-section-number">5.9.4</span> SRMR</a></li>
-<li><a class="nav-link" href="#kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmal%C4%B1-uyum-indeksleri"><span class="header-section-number">5.9.5</span> Karşılaştırmalı Uyum İndeksleri</a></li>
+<li><a class="nav-link" href="#srmr"><span class="header-section-number">5.9.3</span> SRMR</a></li>
+<li><a class="nav-link" href="#kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmal%C4%B1-uyum-indeksleri"><span class="header-section-number">5.9.4</span> Karşılaştırmalı Uyum İndeksleri</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#uyum-indekslerini-raporlarken-%C3%B6neriler"><span class="header-section-number">5.10</span> Uyum İndekslerini Raporlarken Öneriler</a></li>
 <li><a class="nav-link" href="#bireysel-istatistiksel-testler"><span class="header-section-number">5.11</span> Bireysel İstatistiksel testler:</a></li>
-<li><a class="nav-link" href="#bireysel-art%C4%B1k-ve"><span class="header-section-number">5.12</span> Bireysel Artık ve</a></li>
-<li><a class="nav-link" href="#modifikasyon-indeksleri"><span class="header-section-number">5.13</span> Modifikasyon İndeksleri</a></li>
-<li><a class="nav-link" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1"><span class="header-section-number">5.14</span> Modelin Yeniden Tanımlanması</a></li>
+<li><a class="nav-link" href="#modifikasyon-indeksleri"><span class="header-section-number">5.12</span> Modifikasyon İndeksleri</a></li>
+<li><a class="nav-link" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1"><span class="header-section-number">5.13</span> Modelin Yeniden Tanımlanması</a></li>
 <li>
-<a class="nav-link" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1-1"><span class="header-section-number">5.15</span> Modelin Yeniden Tanımlanması</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ki-kare-fark-testi"><span class="header-section-number">5.15.1</span> Ki-Kare Fark Testi</a></li>
-<li><a class="nav-link" href="#aic-ve-bic"><span class="header-section-number">5.15.2</span> AIC ve BIC</a></li>
+<a class="nav-link" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1-1"><span class="header-section-number">5.14</span> Modelin Yeniden Tanımlanması</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ki-kare-fark-testi"><span class="header-section-number">5.14.1</span> Ki-Kare Fark Testi</a></li>
+<li><a class="nav-link" href="#aic-ve-bic"><span class="header-section-number">5.14.2</span> AIC ve BIC</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#sem-fonksiyonu"><span class="header-section-number">5.16</span> sem fonksiyonu</a></li>
-<li><a class="nav-link" href="#standartla%C5%9Ft%C4%B1r%C4%B1lm%C4%B1%C5%9F-art%C4%B1k"><span class="header-section-number">5.17</span> Standartlaştırılmış Artık</a></li>
-<li><a class="nav-link" href="#kestirim"><span class="header-section-number">5.18</span> Kestirim</a></li>
-<li><a class="nav-link" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi"><span class="header-section-number">5.19</span> Model Sonuçlarının Rapor Edilmesi</a></li>
-<li><a class="nav-link" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi-1"><span class="header-section-number">5.20</span> Model Sonuçlarının Rapor Edilmesi</a></li>
-<li><a class="nav-link" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi-2"><span class="header-section-number">5.21</span> Model Sonuçlarının Rapor Edilmesi</a></li>
-<li><a class="nav-link" href="#do%C4%9Frudan-dolayl%C4%B1-ve-toplam-etkiler"><span class="header-section-number">5.22</span> Doğrudan, Dolaylı ve Toplam Etkiler</a></li>
-<li><a class="nav-link" href="#sempaths"><span class="header-section-number">5.23</span> semPaths</a></li>
-<li><a class="nav-link" href="#kaynaklar-3"><span class="header-section-number">5.24</span> Kaynaklar</a></li>
+<li><a class="nav-link" href="#sem-fonksiyonu"><span class="header-section-number">5.15</span> sem fonksiyonu</a></li>
+<li><a class="nav-link" href="#standartla%C5%9Ft%C4%B1r%C4%B1lm%C4%B1%C5%9F-art%C4%B1k"><span class="header-section-number">5.16</span> Standartlaştırılmış Artık</a></li>
+<li><a class="nav-link" href="#kestirim"><span class="header-section-number">5.17</span> Kestirim</a></li>
+<li><a class="nav-link" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi"><span class="header-section-number">5.18</span> Model Sonuçlarının Rapor Edilmesi</a></li>
+<li><a class="nav-link" href="#model-kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmalar%C4%B1n%C4%B1n-rapor-edilmesi"><span class="header-section-number">5.19</span> Model Karşılaştırmalarının Rapor Edilmesi</a></li>
+<li><a class="nav-link" href="#do%C4%9Frudan-dolayl%C4%B1-ve-toplam-etkiler"><span class="header-section-number">5.20</span> Doğrudan, Dolaylı ve Toplam Etkiler</a></li>
+<li><a class="nav-link" href="#sempaths"><span class="header-section-number">5.21</span> semPaths</a></li>
+<li><a class="nav-link" href="#kaynaklar-3"><span class="header-section-number">5.22</span> Kaynaklar</a></li>
 </ul>
 
       <div class="book-extra">
@@ -3025,7 +3316,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-03-18.</p>
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-03-23.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

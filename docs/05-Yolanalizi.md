@@ -450,8 +450,7 @@ değişkenlerin (yol modelinde bozuklukların) varyansı 1.0’e
 eşitlenir böylece gizil değişkenin varyansı standartlaştırılmış 
 ölçekte olur. 
 
-
-**Yetersiz Tanımlanma (Underidentification)**
+### **Yetersiz Tanımlanma (Underidentification)**
 
 - Yetersiz tanımlanan bir modelde **serbest model parametrelerinin**
 sayısı gözlem sayısından büyüktür, **diğer bir ifadeyle modelin 
@@ -465,7 +464,7 @@ tanımlanması gerekir. Bu durumda en az bir parametrenin çözümü yoktur.
 
 
 
-### **Yetersiz Tanımlanma (Underidentification)**
+
 
 - Gözlem eksikliğinin tanımlanmamaya nasıl yol açtığının 
 bir örneği 
@@ -747,10 +746,6 @@ parametrelerinin sayısı).
   
   - RMSEA ≥ 0.08 zayıf uyumu belirtir.
 
-<br>
-<br>
-
-
 
 -  RMSEA tarafından kestirilen evren parametresi $\epsilon$ için 
 %90 güven aralığı genellikle YEM yazılımlarının 
@@ -790,17 +785,6 @@ büyük olduğundan RMSEA indeksi model için zayıf uyum belirtir.
 araştırmacının modelinin evrende tahmini yaklaşık uyuma sahip 
 olduğu hipotezi reddedilir.
 
-
-### RMR 
-
-**Root Mean Square Residual (RMR)** Bu indeksi hesaplamak için her 
-bir artık öğenin karesi alınır, karelerin toplanmasıyla elde edilen 
-toplam artık sayısına bölünür ve bu ortalama kare artıkların kare kökü 
-alınır. 
-
-- Sıfır değeri mükemmel bir uyum belirtir ancak sıfırdan büyük değerlerin yorumlanması zordur. 
-
-
 ### SRMR 
 
 **Standardized Root Mean Square Residual (SRMR)** Bu indeks RMR 
@@ -822,6 +806,13 @@ fitMeasures(yol_fit, "srmr")
 
 - Kestirilen SRMR değeri 0.043’dir. 0.043 değeri 0.08 değerinden küçük 
 olduğundan SRMR indeksi model için kabul edilebilir uyum belirtir.
+
+**Root Mean Square Residual (RMR)** Bu indeksi hesaplamak için her 
+bir artık öğenin karesi alınır, karelerin toplanmasıyla elde edilen 
+toplam artık sayısına bölünür ve bu ortalama kare artıkların kare kökü 
+alınır. 
+
+- Sıfır değeri mükemmel bir uyum belirtir ancak sıfırdan büyük değerlerin yorumlanması zordur.
 
 
 ### Karşılaştırmalı Uyum İndeksleri
@@ -915,7 +906,7 @@ yansıtır. Araştırmacılar aşağıdakilerin rapor edilmesini
 |----|-----|------|
 | $\chi^2$    |p| |
 | $\chi^2/df$ |	0 ≤ $\chi^2/df$ ≤ 2|	2 < $\chi^2/df$ < 8 |	
-| SRMR |	0 ≤SRMR ≤ .05|	.05 < SRMR < .10 |	
+| SRMR |	0 ≤SRMR ≤ .05|	.05 < SRMR < .08 |	
 | RMSEA |	0 ≤RMSEA ≤ .05|	.05 < RMSEA < .08 |			
 | CFI	   | .95 ≤GFI ≤ 1 | .90 < GFI < .95 |
 		
@@ -963,7 +954,6 @@ ilişkilidir.
 değiştirecektir. Bu da hatalı tanımlamadan dolayı hatalara sebep 
 olabilir
 
-## Bireysel Artık ve
 **Standartlaştırılmış Artık**
 
 - İdeal olarak **artık değerleri küçük ve tek biçimli olmalıdır.**
@@ -1401,6 +1391,32 @@ bölünmesiyle t istatistiği elde edilir:
 olduğunu önerir.**
 
 
+```r
+standardizedsolution(yol_fit)
+```
+
+<div class="kable-table">
+
+|lhs          |op |rhs          | est.std|    se|      z| pvalue| ci.lower| ci.upper|
+|:------------|:--|:------------|-------:|-----:|------:|------:|--------:|--------:|
+|stres        |~  |egzersiz     |  -0.080| 0.047| -1.683|  0.092|   -0.172|    0.013|
+|stres        |~  |dayaniklilik |  -0.307| 0.045| -6.802|  0.000|   -0.396|   -0.219|
+|hastalik     |~  |egzersiz     |   0.054| 0.048|  1.116|  0.264|   -0.041|    0.148|
+|hastalik     |~  |dayaniklilik |  -0.007| 0.048| -0.138|  0.891|   -0.100|    0.087|
+|hastalik     |~  |form         |  -0.260| 0.048| -5.474|  0.000|   -0.354|   -0.167|
+|hastalik     |~  |stres        |   0.362| 0.044|  8.165|  0.000|    0.275|    0.449|
+|form         |~  |egzersiz     |   0.371| 0.043|  8.721|  0.000|    0.288|    0.455|
+|form         |~  |dayaniklilik |   0.160| 0.045|  3.544|  0.000|    0.072|    0.249|
+|egzersiz     |~~ |dayaniklilik |   0.000| 0.050|  0.000|  1.000|   -0.098|    0.098|
+|stres        |~~ |stres        |   0.899| 0.029| 31.527|  0.000|    0.843|    0.955|
+|hastalik     |~~ |hastalik     |   0.795| 0.035| 22.445|  0.000|    0.725|    0.864|
+|form         |~~ |form         |   0.836| 0.034| 24.730|  0.000|    0.770|    0.903|
+|egzersiz     |~~ |egzersiz     |   1.000| 0.000|     NA|     NA|    1.000|    1.000|
+|dayaniklilik |~~ |dayaniklilik |   1.000| 0.000|     NA|     NA|    1.000|    1.000|
+
+</div>
+
+
 - Örneğin, **form ~ egzersiz** standartlaştırılmış kestirimi 
 0.371’dir. Bu değer, egzersiz 
 puanındaki bir standart sapmalık artışın yordanan 
@@ -1421,6 +1437,9 @@ olduğunu önerir.
 dayaniklilik değişkenleri arasındaki **kovaryans**
 tahminidir.
 
+
+## Standartlaştırılmış Artık
+
 - Standartlaştırılmamış artık varyans (unstandardized 
 residual variance), her bir içsel değişkendeki yordayıcılar 
 tarafından açıklanmayan varyans miktarını söyler.
@@ -1432,12 +1451,6 @@ varyans yaklaşık 1261.54’tür.
 açıklanmayan varyans yüzdesi hesaplanabilir
 
 
-## Standartlaştırılmış Artık
-
--  Standartlaştırılmış artık  varyans (standardized residual 
-variance), **her bir içsel değişkendeki yordayıcılar 
-tarafından açıklanmayan varyans oranını söyler.**
-
 - Örneğin, form değişkenindeki açıklanmayan 
 varyans oranı yaklaşık 0.836’dır. form değişkeni 
 için toplam varyansın yaklaşık 
@@ -1447,29 +1460,30 @@ için toplam varyansın yaklaşık
 
 ## Kestirim
 
+- Standartlaştırılmamış sonuçlar
 
 ```r
-parameterEstimates(yol_fit, standardized=TRUE)
+parameterEstimates(yol_fit)
 ```
 
 <div class="kable-table">
 
-|lhs          |op |rhs          |      est|      se|      z| pvalue| ci.lower| ci.upper|   std.lv| std.all| std.nox|
-|:------------|:--|:------------|--------:|-------:|------:|------:|--------:|--------:|--------:|-------:|-------:|
-|stres        |~  |egzersiz     |   -0.080|   0.048| -1.678|  0.093|   -0.173|    0.013|   -0.080|  -0.080|  -0.080|
-|stres        |~  |dayaniklilik |   -0.556|   0.086| -6.475|  0.000|   -0.725|   -0.388|   -0.556|  -0.307|  -0.307|
-|hastalik     |~  |egzersiz     |    0.047|   0.042|  1.115|  0.265|   -0.035|    0.129|    0.047|   0.054|   0.054|
-|hastalik     |~  |dayaniklilik |   -0.010|   0.075| -0.138|  0.891|   -0.157|    0.136|   -0.010|  -0.007|  -0.007|
-|hastalik     |~  |form         |   -0.408|   0.076| -5.342|  0.000|   -0.557|   -0.258|   -0.408|  -0.260|  -0.260|
-|hastalik     |~  |stres        |    0.314|   0.041|  7.704|  0.000|    0.234|    0.394|    0.314|   0.362|   0.362|
-|form         |~  |egzersiz     |    0.206|   0.025|  8.118|  0.000|    0.156|    0.256|    0.206|   0.371|   0.371|
-|form         |~  |dayaniklilik |    0.161|   0.046|  3.506|  0.000|    0.071|    0.251|    0.161|   0.160|   0.160|
-|egzersiz     |~~ |dayaniklilik |    0.000| 135.170|  0.000|  1.000| -264.929|  264.929|    0.000|   0.000|   0.000|
-|stres        |~~ |stres        | 4419.143| 312.481| 14.142|  0.000| 3806.692| 5031.593| 4419.143|   0.899|   0.899|
-|hastalik     |~~ |hastalik     | 2937.014| 207.678| 14.142|  0.000| 2529.972| 3344.056| 2937.014|   0.795|   0.795|
-|form         |~~ |form         | 1261.565|  89.206| 14.142|  0.000| 1086.724| 1436.406| 1261.565|   0.836|   0.836|
-|egzersiz     |~~ |egzersiz     | 4883.673| 345.328| 14.142|  0.000| 4206.843| 5560.503| 4883.673|   1.000|   1.000|
-|dayaniklilik |~~ |dayaniklilik | 1496.499| 105.818| 14.142|  0.000| 1289.098| 1703.899| 1496.499|   1.000|   1.000|
+|lhs          |op |rhs          |      est|      se|      z| pvalue| ci.lower| ci.upper|
+|:------------|:--|:------------|--------:|-------:|------:|------:|--------:|--------:|
+|stres        |~  |egzersiz     |   -0.080|   0.048| -1.678|  0.093|   -0.173|    0.013|
+|stres        |~  |dayaniklilik |   -0.556|   0.086| -6.475|  0.000|   -0.725|   -0.388|
+|hastalik     |~  |egzersiz     |    0.047|   0.042|  1.115|  0.265|   -0.035|    0.129|
+|hastalik     |~  |dayaniklilik |   -0.010|   0.075| -0.138|  0.891|   -0.157|    0.136|
+|hastalik     |~  |form         |   -0.408|   0.076| -5.342|  0.000|   -0.557|   -0.258|
+|hastalik     |~  |stres        |    0.314|   0.041|  7.704|  0.000|    0.234|    0.394|
+|form         |~  |egzersiz     |    0.206|   0.025|  8.118|  0.000|    0.156|    0.256|
+|form         |~  |dayaniklilik |    0.161|   0.046|  3.506|  0.000|    0.071|    0.251|
+|egzersiz     |~~ |dayaniklilik |    0.000| 135.170|  0.000|  1.000| -264.929|  264.929|
+|stres        |~~ |stres        | 4419.143| 312.481| 14.142|  0.000| 3806.692| 5031.593|
+|hastalik     |~~ |hastalik     | 2937.014| 207.678| 14.142|  0.000| 2529.972| 3344.056|
+|form         |~~ |form         | 1261.565|  89.206| 14.142|  0.000| 1086.724| 1436.406|
+|egzersiz     |~~ |egzersiz     | 4883.673| 345.328| 14.142|  0.000| 4206.843| 5560.503|
+|dayaniklilik |~~ |dayaniklilik | 1496.499| 105.818| 14.142|  0.000| 1289.098| 1703.899|
 
 </div>
 
@@ -1510,31 +1524,28 @@ out$PE[15:17,]
 
 ```r
 library(knitr)
-parameterEstimates(yol_fit, standardized=TRUE) %>% 
+standardizedsolution(yol_fit) %>% 
   filter(op == "~") %>% 
   select('Bağımlı Değişkenler'=lhs, Gosterge=rhs,
-         B=est, SE=se, Z=z, 'p-value'=pvalue, Beta=std.all) %>% 
+         B=est.std, SE=se, Z=z, 'p-value'=pvalue) %>% 
   knitr::kable(digits = 3, booktabs=TRUE, format="markdown",
                caption="Factor Loadings")
 ```
 
 
 
-Table: (\#tab:unnamed-chunk-39)Factor Loadings
+Table: (\#tab:unnamed-chunk-40)Factor Loadings
 
-|Bağımlı Değişkenler |Gosterge     |      B|    SE|      Z| p-value|   Beta|
-|:-------------------|:------------|------:|-----:|------:|-------:|------:|
-|stres               |egzersiz     | -0.080| 0.048| -1.678|   0.093| -0.080|
-|stres               |dayaniklilik | -0.556| 0.086| -6.475|   0.000| -0.307|
-|hastalik            |egzersiz     |  0.047| 0.042|  1.115|   0.265|  0.054|
-|hastalik            |dayaniklilik | -0.010| 0.075| -0.138|   0.891| -0.007|
-|hastalik            |form         | -0.408| 0.076| -5.342|   0.000| -0.260|
-|hastalik            |stres        |  0.314| 0.041|  7.704|   0.000|  0.362|
-|form                |egzersiz     |  0.206| 0.025|  8.118|   0.000|  0.371|
-|form                |dayaniklilik |  0.161| 0.046|  3.506|   0.000|  0.160|
-
-
-## Model Sonuçlarının Rapor Edilmesi
+|Bağımlı Değişkenler |Gosterge     |      B|    SE|      Z| p-value|
+|:-------------------|:------------|------:|-----:|------:|-------:|
+|stres               |egzersiz     | -0.080| 0.047| -1.683|   0.092|
+|stres               |dayaniklilik | -0.307| 0.045| -6.802|   0.000|
+|hastalik            |egzersiz     |  0.054| 0.048|  1.116|   0.264|
+|hastalik            |dayaniklilik | -0.007| 0.048| -0.138|   0.891|
+|hastalik            |form         | -0.260| 0.048| -5.474|   0.000|
+|hastalik            |stres        |  0.362| 0.044|  8.165|   0.000|
+|form                |egzersiz     |  0.371| 0.043|  8.721|   0.000|
+|form                |dayaniklilik |  0.160| 0.045|  3.544|   0.000|
 
 
 
@@ -1544,7 +1555,7 @@ sem_anova(yol_fit_v2,yol_fit_v1)
 ```
 
 <table data-quarto-disable-processing="true" class="table" style="width: auto !important; ">
-<caption>(\#tab:unnamed-chunk-40)Model Comparison</caption>
+<caption>(\#tab:unnamed-chunk-41)Model Comparison</caption>
  <thead>
   <tr>
    <th style="text-align:right;"> term </th>
@@ -1584,7 +1595,7 @@ sem_anova(yol_fit_v2,yol_fit_v1)
 </tbody>
 </table>
 
-## Model Sonuçlarının Rapor Edilmesi
+## Model Karşılaştırmalarının Rapor Edilmesi
 
 
 
@@ -1593,23 +1604,23 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
 ```
 
 ```{=html}
-<div id="tkbzqwzksi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tkbzqwzksi table {
+<div id="gdujcivytw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gdujcivytw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tkbzqwzksi thead, #tkbzqwzksi tbody, #tkbzqwzksi tfoot, #tkbzqwzksi tr, #tkbzqwzksi td, #tkbzqwzksi th {
+#gdujcivytw thead, #gdujcivytw tbody, #gdujcivytw tfoot, #gdujcivytw tr, #gdujcivytw td, #gdujcivytw th {
   border-style: none;
 }
 
-#tkbzqwzksi p {
+#gdujcivytw p {
   margin: 0;
   padding: 0;
 }
 
-#tkbzqwzksi .gt_table {
+#gdujcivytw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1635,12 +1646,12 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-left-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_caption {
+#gdujcivytw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tkbzqwzksi .gt_title {
+#gdujcivytw .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1652,7 +1663,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-width: 0;
 }
 
-#tkbzqwzksi .gt_subtitle {
+#gdujcivytw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1664,7 +1675,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-width: 0;
 }
 
-#tkbzqwzksi .gt_heading {
+#gdujcivytw .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1676,13 +1687,13 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_bottom_border {
+#gdujcivytw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_col_headings {
+#gdujcivytw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1697,7 +1708,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_col_heading {
+#gdujcivytw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1717,7 +1728,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#tkbzqwzksi .gt_column_spanner_outer {
+#gdujcivytw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1729,15 +1740,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 4px;
 }
 
-#tkbzqwzksi .gt_column_spanner_outer:first-child {
+#gdujcivytw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tkbzqwzksi .gt_column_spanner_outer:last-child {
+#gdujcivytw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tkbzqwzksi .gt_column_spanner {
+#gdujcivytw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1749,11 +1760,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   width: 100%;
 }
 
-#tkbzqwzksi .gt_spanner_row {
+#gdujcivytw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tkbzqwzksi .gt_group_heading {
+#gdujcivytw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1779,7 +1790,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   text-align: left;
 }
 
-#tkbzqwzksi .gt_empty_group_heading {
+#gdujcivytw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1794,15 +1805,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: middle;
 }
 
-#tkbzqwzksi .gt_from_md > :first-child {
+#gdujcivytw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tkbzqwzksi .gt_from_md > :last-child {
+#gdujcivytw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tkbzqwzksi .gt_row {
+#gdujcivytw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1821,7 +1832,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#tkbzqwzksi .gt_stub {
+#gdujcivytw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1834,7 +1845,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_stub_row_group {
+#gdujcivytw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1848,15 +1859,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: top;
 }
 
-#tkbzqwzksi .gt_row_group_first td {
+#gdujcivytw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tkbzqwzksi .gt_row_group_first th {
+#gdujcivytw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tkbzqwzksi .gt_summary_row {
+#gdujcivytw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1866,16 +1877,16 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_first_summary_row {
+#gdujcivytw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_first_summary_row.thick {
+#gdujcivytw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tkbzqwzksi .gt_last_summary_row {
+#gdujcivytw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1885,7 +1896,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_grand_summary_row {
+#gdujcivytw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1895,7 +1906,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_first_grand_summary_row {
+#gdujcivytw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1905,7 +1916,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_last_grand_summary_row_top {
+#gdujcivytw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1915,11 +1926,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_striped {
+#gdujcivytw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tkbzqwzksi .gt_table_body {
+#gdujcivytw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1928,7 +1939,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_footnotes {
+#gdujcivytw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1942,7 +1953,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_footnote {
+#gdujcivytw .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1951,7 +1962,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_sourcenotes {
+#gdujcivytw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1965,7 +1976,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#tkbzqwzksi .gt_sourcenote {
+#gdujcivytw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1973,63 +1984,63 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#tkbzqwzksi .gt_left {
+#gdujcivytw .gt_left {
   text-align: left;
 }
 
-#tkbzqwzksi .gt_center {
+#gdujcivytw .gt_center {
   text-align: center;
 }
 
-#tkbzqwzksi .gt_right {
+#gdujcivytw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tkbzqwzksi .gt_font_normal {
+#gdujcivytw .gt_font_normal {
   font-weight: normal;
 }
 
-#tkbzqwzksi .gt_font_bold {
+#gdujcivytw .gt_font_bold {
   font-weight: bold;
 }
 
-#tkbzqwzksi .gt_font_italic {
+#gdujcivytw .gt_font_italic {
   font-style: italic;
 }
 
-#tkbzqwzksi .gt_super {
+#gdujcivytw .gt_super {
   font-size: 65%;
 }
 
-#tkbzqwzksi .gt_footnote_marks {
+#gdujcivytw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tkbzqwzksi .gt_asterisk {
+#gdujcivytw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tkbzqwzksi .gt_indent_1 {
+#gdujcivytw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tkbzqwzksi .gt_indent_2 {
+#gdujcivytw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tkbzqwzksi .gt_indent_3 {
+#gdujcivytw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tkbzqwzksi .gt_indent_4 {
+#gdujcivytw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tkbzqwzksi .gt_indent_5 {
+#gdujcivytw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2119,13 +2130,13 @@ standartlaştırılmış yol katsayılarının çarpılması sonucu elde edilir:
   - = 0.054 + (-0.125)
   - = 0.071
 
-egzersiz → form → hastalik
+egzersiz → form → hastalık
 
-egzersiz → stres → hastalik
+egzersiz → stres → hastalık
 
-dayaniklilik → form → hastalik
+dayanıklılık → form → hastalık
 
-dayaniklilik → stres → hastalik
+dayanıklılık → stres → hastalık
 
 
 
@@ -2154,21 +2165,33 @@ fsem1 <- sem(yol_model,veri)
 
 
 ```r
-parameterEstimates(fsem1,standardized = TRUE)[c(1,3,5,7,17:20),c(1:4,12)]
+standardizedsolution(fsem1)
 ```
 
 <div class="kable-table">
 
-|   |lhs      |op |rhs           |label   | std.all|
-|:--|:--------|:--|:-------------|:-------|-------:|
-|1  |stres    |~  |egzersiz      |s_e     |  -0.080|
-|3  |hastalik |~  |egzersiz      |h_e     |   0.054|
-|5  |hastalik |~  |form          |h_f     |  -0.260|
-|7  |form     |~  |egzersiz      |f_e     |   0.371|
-|17 |ind_h1   |:= |f_e*h_f       |ind_h1  |  -0.097|
-|18 |ind_h2   |:= |s_e*h_s       |ind_h2  |  -0.029|
-|19 |tot_ind  |:= |ind_h1+ind_h2 |tot_ind |  -0.125|
-|20 |tot      |:= |tot_ind+h_e   |tot     |  -0.072|
+|lhs          |op |rhs           |label   | est.std|    se|      z| pvalue| ci.lower| ci.upper|
+|:------------|:--|:-------------|:-------|-------:|-----:|------:|------:|--------:|--------:|
+|stres        |~  |egzersiz      |s_e     |  -0.080| 0.047| -1.683|  0.092|   -0.172|    0.013|
+|stres        |~  |dayaniklilik  |        |  -0.307| 0.045| -6.802|  0.000|   -0.396|   -0.219|
+|hastalik     |~  |egzersiz      |h_e     |   0.054| 0.048|  1.116|  0.264|   -0.041|    0.148|
+|hastalik     |~  |dayaniklilik  |        |  -0.007| 0.048| -0.138|  0.891|   -0.100|    0.087|
+|hastalik     |~  |form          |h_f     |  -0.260| 0.048| -5.474|  0.000|   -0.354|   -0.167|
+|hastalik     |~  |stres         |h_s     |   0.362| 0.044|  8.165|  0.000|    0.275|    0.449|
+|form         |~  |egzersiz      |f_e     |   0.371| 0.043|  8.721|  0.000|    0.288|    0.455|
+|form         |~  |dayaniklilik  |        |   0.160| 0.045|  3.544|  0.000|    0.072|    0.249|
+|egzersiz     |~~ |dayaniklilik  |        |   0.000| 0.050|  0.000|  1.000|   -0.098|    0.098|
+|stres        |~~ |stres         |        |   0.899| 0.029| 31.527|  0.000|    0.843|    0.955|
+|hastalik     |~~ |hastalik      |        |   0.795| 0.035| 22.445|  0.000|    0.725|    0.864|
+|form         |~~ |form          |        |   0.836| 0.034| 24.730|  0.000|    0.770|    0.903|
+|egzersiz     |~~ |egzersiz      |        |   1.000| 0.000|     NA|     NA|    1.000|    1.000|
+|dayaniklilik |~~ |dayaniklilik  |        |   1.000| 0.000|     NA|     NA|    1.000|    1.000|
+|dir_fm       |:= |h_f           |dir_fm  |  -0.260| 0.048| -5.474|  0.000|   -0.354|   -0.167|
+|dir_sh       |:= |h_s           |dir_sh  |   0.362| 0.044|  8.165|  0.000|    0.275|    0.449|
+|ind_h1       |:= |f_e*h_f       |ind_h1  |  -0.097| 0.021| -4.540|  0.000|   -0.138|   -0.055|
+|ind_h2       |:= |s_e*h_s       |ind_h2  |  -0.029| 0.018| -1.646|  0.100|   -0.063|    0.005|
+|tot_ind      |:= |ind_h1+ind_h2 |tot_ind |  -0.125| 0.027| -4.592|  0.000|   -0.179|   -0.072|
+|tot          |:= |tot_ind+h_e   |tot     |  -0.072| 0.049| -1.459|  0.144|   -0.168|    0.025|
 
 </div>
 
