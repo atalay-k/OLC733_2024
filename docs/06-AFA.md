@@ -1464,11 +1464,6 @@ $x_2= .6\xi_1 + (-6)\xi_2 + \delta_2$
 
 ## Dik Döndürme
 
-<img src="images/AFA_6.PNG" width="75%" style="display: block; margin: auto;" />
-
-<img src="images/AFA_8.PNG" width="75%" style="display: block; margin: auto;" />
-
-<img src="images/AFA_9.PNG" width="75%" style="display: block; margin: auto;" />
 
 - AFA modeli aşağıdaki eşitlikle gösterilebilir:
 
@@ -1658,11 +1653,11 @@ out_dik$Vaccounted[2:3,]
 
 döndürmeden sonraki çözüm için yük grafiği verilir
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-41-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-38-1.png" width="75%" style="display: block; margin: auto;" />
 
 Döndürmeden önceki yük grafiğiyle
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-42-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-39-1.png" width="75%" style="display: block; margin: auto;" />
 
 karşılaştırınca değişkenler arasındaki **ilişkiler değişmez** ancak
 **faktör uzayındaki faktör eksenleri değişir.**
@@ -1931,11 +1926,11 @@ Eğik
 
 Dik
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-50-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-47-1.png" width="100%" style="display: block; margin: auto;" />
 
 Egik
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;" />
 
 İki yük grafiğinin karşılaştırılmasıyla aynı sonuçlara ulaşılır. Dik
 Döndürme: Eğik Döndürme
