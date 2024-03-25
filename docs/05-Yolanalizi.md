@@ -1463,27 +1463,27 @@ için toplam varyansın yaklaşık
 - Standartlaştırılmamış sonuçlar
 
 ```r
-parameterEstimates(yol_fit)
+parameterEstimates(yol_fit,standardized = TRUE)
 ```
 
 <div class="kable-table">
 
-|lhs          |op |rhs          |      est|      se|      z| pvalue| ci.lower| ci.upper|
-|:------------|:--|:------------|--------:|-------:|------:|------:|--------:|--------:|
-|stres        |~  |egzersiz     |   -0.080|   0.048| -1.678|  0.093|   -0.173|    0.013|
-|stres        |~  |dayaniklilik |   -0.556|   0.086| -6.475|  0.000|   -0.725|   -0.388|
-|hastalik     |~  |egzersiz     |    0.047|   0.042|  1.115|  0.265|   -0.035|    0.129|
-|hastalik     |~  |dayaniklilik |   -0.010|   0.075| -0.138|  0.891|   -0.157|    0.136|
-|hastalik     |~  |form         |   -0.408|   0.076| -5.342|  0.000|   -0.557|   -0.258|
-|hastalik     |~  |stres        |    0.314|   0.041|  7.704|  0.000|    0.234|    0.394|
-|form         |~  |egzersiz     |    0.206|   0.025|  8.118|  0.000|    0.156|    0.256|
-|form         |~  |dayaniklilik |    0.161|   0.046|  3.506|  0.000|    0.071|    0.251|
-|egzersiz     |~~ |dayaniklilik |    0.000| 135.170|  0.000|  1.000| -264.929|  264.929|
-|stres        |~~ |stres        | 4419.143| 312.481| 14.142|  0.000| 3806.692| 5031.593|
-|hastalik     |~~ |hastalik     | 2937.014| 207.678| 14.142|  0.000| 2529.972| 3344.056|
-|form         |~~ |form         | 1261.565|  89.206| 14.142|  0.000| 1086.724| 1436.406|
-|egzersiz     |~~ |egzersiz     | 4883.673| 345.328| 14.142|  0.000| 4206.843| 5560.503|
-|dayaniklilik |~~ |dayaniklilik | 1496.499| 105.818| 14.142|  0.000| 1289.098| 1703.899|
+|lhs          |op |rhs          |      est|      se|      z| pvalue| ci.lower| ci.upper|   std.lv| std.all| std.nox|
+|:------------|:--|:------------|--------:|-------:|------:|------:|--------:|--------:|--------:|-------:|-------:|
+|stres        |~  |egzersiz     |   -0.080|   0.048| -1.678|  0.093|   -0.173|    0.013|   -0.080|  -0.080|  -0.080|
+|stres        |~  |dayaniklilik |   -0.556|   0.086| -6.475|  0.000|   -0.725|   -0.388|   -0.556|  -0.307|  -0.307|
+|hastalik     |~  |egzersiz     |    0.047|   0.042|  1.115|  0.265|   -0.035|    0.129|    0.047|   0.054|   0.054|
+|hastalik     |~  |dayaniklilik |   -0.010|   0.075| -0.138|  0.891|   -0.157|    0.136|   -0.010|  -0.007|  -0.007|
+|hastalik     |~  |form         |   -0.408|   0.076| -5.342|  0.000|   -0.557|   -0.258|   -0.408|  -0.260|  -0.260|
+|hastalik     |~  |stres        |    0.314|   0.041|  7.704|  0.000|    0.234|    0.394|    0.314|   0.362|   0.362|
+|form         |~  |egzersiz     |    0.206|   0.025|  8.118|  0.000|    0.156|    0.256|    0.206|   0.371|   0.371|
+|form         |~  |dayaniklilik |    0.161|   0.046|  3.506|  0.000|    0.071|    0.251|    0.161|   0.160|   0.160|
+|egzersiz     |~~ |dayaniklilik |    0.000| 135.170|  0.000|  1.000| -264.929|  264.929|    0.000|   0.000|   0.000|
+|stres        |~~ |stres        | 4419.143| 312.481| 14.142|  0.000| 3806.692| 5031.593| 4419.143|   0.899|   0.899|
+|hastalik     |~~ |hastalik     | 2937.014| 207.678| 14.142|  0.000| 2529.972| 3344.056| 2937.014|   0.795|   0.795|
+|form         |~~ |form         | 1261.565|  89.206| 14.142|  0.000| 1086.724| 1436.406| 1261.565|   0.836|   0.836|
+|egzersiz     |~~ |egzersiz     | 4883.673| 345.328| 14.142|  0.000| 4206.843| 5560.503| 4883.673|   1.000|   1.000|
+|dayaniklilik |~~ |dayaniklilik | 1496.499| 105.818| 14.142|  0.000| 1289.098| 1703.899| 1496.499|   1.000|   1.000|
 
 </div>
 
@@ -1604,23 +1604,23 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
 ```
 
 ```{=html}
-<div id="pyckenxluq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pyckenxluq table {
+<div id="bawewkqiff" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bawewkqiff table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pyckenxluq thead, #pyckenxluq tbody, #pyckenxluq tfoot, #pyckenxluq tr, #pyckenxluq td, #pyckenxluq th {
+#bawewkqiff thead, #bawewkqiff tbody, #bawewkqiff tfoot, #bawewkqiff tr, #bawewkqiff td, #bawewkqiff th {
   border-style: none;
 }
 
-#pyckenxluq p {
+#bawewkqiff p {
   margin: 0;
   padding: 0;
 }
 
-#pyckenxluq .gt_table {
+#bawewkqiff .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1646,12 +1646,12 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-left-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_caption {
+#bawewkqiff .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pyckenxluq .gt_title {
+#bawewkqiff .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1663,7 +1663,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-width: 0;
 }
 
-#pyckenxluq .gt_subtitle {
+#bawewkqiff .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1675,7 +1675,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-width: 0;
 }
 
-#pyckenxluq .gt_heading {
+#bawewkqiff .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1687,13 +1687,13 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_bottom_border {
+#bawewkqiff .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_col_headings {
+#bawewkqiff .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1708,7 +1708,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_col_heading {
+#bawewkqiff .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1728,7 +1728,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#pyckenxluq .gt_column_spanner_outer {
+#bawewkqiff .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1740,15 +1740,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 4px;
 }
 
-#pyckenxluq .gt_column_spanner_outer:first-child {
+#bawewkqiff .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pyckenxluq .gt_column_spanner_outer:last-child {
+#bawewkqiff .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pyckenxluq .gt_column_spanner {
+#bawewkqiff .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1760,11 +1760,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   width: 100%;
 }
 
-#pyckenxluq .gt_spanner_row {
+#bawewkqiff .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pyckenxluq .gt_group_heading {
+#bawewkqiff .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1790,7 +1790,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   text-align: left;
 }
 
-#pyckenxluq .gt_empty_group_heading {
+#bawewkqiff .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1805,15 +1805,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: middle;
 }
 
-#pyckenxluq .gt_from_md > :first-child {
+#bawewkqiff .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pyckenxluq .gt_from_md > :last-child {
+#bawewkqiff .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pyckenxluq .gt_row {
+#bawewkqiff .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1832,7 +1832,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#pyckenxluq .gt_stub {
+#bawewkqiff .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1845,7 +1845,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#pyckenxluq .gt_stub_row_group {
+#bawewkqiff .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1859,15 +1859,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: top;
 }
 
-#pyckenxluq .gt_row_group_first td {
+#bawewkqiff .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pyckenxluq .gt_row_group_first th {
+#bawewkqiff .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pyckenxluq .gt_summary_row {
+#bawewkqiff .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1877,16 +1877,16 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#pyckenxluq .gt_first_summary_row {
+#bawewkqiff .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_first_summary_row.thick {
+#bawewkqiff .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pyckenxluq .gt_last_summary_row {
+#bawewkqiff .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1896,7 +1896,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_grand_summary_row {
+#bawewkqiff .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1906,7 +1906,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#pyckenxluq .gt_first_grand_summary_row {
+#bawewkqiff .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1916,7 +1916,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_last_grand_summary_row_top {
+#bawewkqiff .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1926,11 +1926,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_striped {
+#bawewkqiff .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pyckenxluq .gt_table_body {
+#bawewkqiff .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1939,7 +1939,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_footnotes {
+#bawewkqiff .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1953,7 +1953,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_footnote {
+#bawewkqiff .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1962,7 +1962,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#pyckenxluq .gt_sourcenotes {
+#bawewkqiff .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1976,7 +1976,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#pyckenxluq .gt_sourcenote {
+#bawewkqiff .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1984,63 +1984,63 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#pyckenxluq .gt_left {
+#bawewkqiff .gt_left {
   text-align: left;
 }
 
-#pyckenxluq .gt_center {
+#bawewkqiff .gt_center {
   text-align: center;
 }
 
-#pyckenxluq .gt_right {
+#bawewkqiff .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pyckenxluq .gt_font_normal {
+#bawewkqiff .gt_font_normal {
   font-weight: normal;
 }
 
-#pyckenxluq .gt_font_bold {
+#bawewkqiff .gt_font_bold {
   font-weight: bold;
 }
 
-#pyckenxluq .gt_font_italic {
+#bawewkqiff .gt_font_italic {
   font-style: italic;
 }
 
-#pyckenxluq .gt_super {
+#bawewkqiff .gt_super {
   font-size: 65%;
 }
 
-#pyckenxluq .gt_footnote_marks {
+#bawewkqiff .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pyckenxluq .gt_asterisk {
+#bawewkqiff .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pyckenxluq .gt_indent_1 {
+#bawewkqiff .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pyckenxluq .gt_indent_2 {
+#bawewkqiff .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pyckenxluq .gt_indent_3 {
+#bawewkqiff .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pyckenxluq .gt_indent_4 {
+#bawewkqiff .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pyckenxluq .gt_indent_5 {
+#bawewkqiff .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2128,7 +2128,7 @@ standartlaştırılmış yol katsayılarının çarpılması sonucu elde edilir:
   - toplam etki = doğrudan etki + toplam dolaylı etki
   - = 0.054 + (-0.096) + (-0.029)
   - = 0.054 + (-0.125)
-  - = 0.071
+  - = - 0.071
 
 egzersiz → form → hastalık
 
@@ -2201,7 +2201,7 @@ standardizedsolution(fsem1)
 - Böylece Exercise’in Illness üzerindeki toplam etkisi:
 toplam etki = doğrudan etki + toplam dolaylı etki
 - = 0.054 + (0.096) + ( 0.029)
-- = 0.054 + (0.125)
+- = 0.054 - (0.125)
 - = 0.071
 
 
