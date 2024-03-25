@@ -1,8 +1,3 @@
-tab:unnamed-chunk-5
-tab:unnamed-chunk-6
-tab:unnamed-chunk-7
-tab:unnamed-chunk-18
-tab:unnamed-chunk-3
 tab:unnamed-chunk-40
 tab:unnamed-chunk-41
 varsayımlar-i
