@@ -1467,38 +1467,39 @@ $x_2= .6\xi_1 + (-6)\xi_2 + \delta_2$
 
 - AFA modeli aşağıdaki eşitlikle gösterilebilir:
 
- $x= \Lambda\xi + \delta$ 
+  -  $x= \Lambda\xi + \delta$ 
 
-- Λ matrisinin bir birim matrisi ile çarpılması eşitliği \
+- Λ matrisinin bir birim matrisi ile çarpılması eşitliği 
 değiştirmeyecektir: 
-$x= \Lambda*I*\xi + \delta$ 
 
-- B Bir T matrisi transpozu olan T’ ile çarpılırsa, çarpım bir birim matrisine eşit olacaktır: 
+  - $x= \Lambda*I*\xi + \delta$ 
 
-$x= \Lambda*(TT')*\xi + \delta$ =>   $x= (\Lambda*T)(T'*\xi) + \delta$
+- Bir T matrisi transpozu olan T’ ile çarpılırsa,
+çarpım bir birim matrisine eşit olacaktır: 
 
- Bu yeni eşitliğe dayalı model, örüntü matrisindeki ve artık
+  - $x= \Lambda*(TT')*\xi + \delta$   =>  
+  - $x= (\Lambda*T)(T'*\xi) + \delta$
+
+- Bu yeni eşitliğe dayalı model, örüntü matrisindeki ve artık
 matrisindeki değerler de dahil olmak üzere parametre
 kestirimlerini değiştirmeyecektir, çünkü: 
 
-$x= (\Lambda*T)(T'*\xi) + \delta$
-$x= \Lambda*TΦT'*\Lambda'+ \R_{res}$
+  - $x= (\Lambda*T)(T'*\xi) + \delta$  
+  - $x= \Lambda*T \phi T'*\Lambda'+ R_{res}$
 
-- Burada Φ bir birim
+- Burada $$\phi$$ bir birim
 matristir. Böylece verilen eşitlik aşağıdaki eşitliğe
 indirgenebilir: 
 
-$x= \Lambda*TT'TT'*\Lambda' + \R_{res}$
-
+  - $x= \Lambda*TT'TT'*\Lambda' + R_{res}$
 
 - Burada TT’TT’ iki tane birim matrise eşit
 olduğundan, verilen eşitlik aşağıdaki eşitliğe indirgenebilir:
 
-$x= \Lambda*\Lambda' + \R_{res}$
+  - $x= \Lambda*\Lambda' + R_{res}$
 
 
-$x= (\Lambda*T)(T'*\xi) + \delta$ eşitliğindeki T matrisi  transformasyon matrisi olarak
-adlandırılır ve ΛT  matrislerinin çarpımıyla elde edilen matris
+  - $x= (\Lambda*T)(T'*\xi) + \delta$ eşitliğindeki T matrisi  transformasyon matrisi olarak adlandırılır ve ΛT  matrislerinin çarpımıyla elde edilen matris
 döndürülen örüntü matrisi olarak adlandırılır. 
 
 - İki faktör olduğunda, T matrisi aşağıdaki gibidir: 
@@ -1510,10 +1511,7 @@ cos(a)  &   sin(a)\\
 
 
 
-
-
-
-Burada $$a$$ saat yönünde döndürme açısıdır. Verilen örnekte 
+Burada $a$ saat yönünde döndürme açısıdır. Verilen örnekte 
 
 $$\begin{bmatrix}{}
 .6 &   .6\\
@@ -1525,9 +1523,6 @@ $$\begin{bmatrix}{}
 0 & 0.0848\\
 0.0848 & 0\\
 \end{bmatrix}$$
-
-
-## Dik Döndürme
 
 **Varimax:** En yaygın olarak kullanılan dik döndürme yöntemidir.
 
@@ -1552,26 +1547,6 @@ out_dik <- fa(veri,3,fm="pa",rotate="varimax")
 
 
 ```r
-print(out$loadings[,1:3], digits = 3, cutoff = 0.30)
-```
-
-```
-##         PA1     PA2      PA3
-## per1  0.803 -0.4468 -0.37851
-## per2  0.775 -0.3224 -0.20784
-## per3  0.799 -0.2461 -0.09132
-## per4  0.753 -0.2298 -0.21389
-## per5  0.772  0.4739 -0.00517
-## per6  0.607  0.4716 -0.14484
-## per7  0.784  0.4178 -0.08044
-## per8  0.727  0.3954 -0.00837
-## per9  0.665 -0.2234  0.47732
-## per10 0.601 -0.0727  0.40929
-## per11 0.671 -0.1440  0.44205
-```
-
-
-```r
 print(out_dik$loadings[,1:3], digits = 3, cutoff = 0.30)
 ```
 
@@ -1590,24 +1565,7 @@ print(out_dik$loadings[,1:3], digits = 3, cutoff = 0.30)
 ## per11 0.263 0.223 0.7397
 ```
 
-## Dik Döndürme
-
--   İlk çözümle karşılaştırıldığında, aşağıdaki ilişkiler
-    gözlenmektedir:
-
--   per1-4 **birinci faktörde daha yüksek** ancak **diğer iki faktörde
-    daha düşük yüklere** sahiptir.
-
--   per5-8 **ikinci faktörde daha yüksek** ancak diğer **iki faktörde
-    daha düşük yüklere** sahiptir.
-
--   per-11 **üçüncü faktörde daha yüksek** ancak diğer **iki faktörde
-    daha düşük yüklere** sahiptir.
-
--   Sonuç olarak, **döndürülen 3 faktör ilkine göre daha basit yapıya
-    sahiptir.**
-
-## Döndürülen Yüklerin Kareleri Toplamı
+### Döndürülen Yüklerin Kareleri Toplamı
 
 -   Döndürmeden önce, her bir faktör için yüklerin kareleri toplamı
     örüntü katsayılarının kareleri toplanarak hesaplanır.
@@ -1626,7 +1584,7 @@ sum(out_dik$loadings[,1]^2)
 
 $0.958^2 + 0.777^2 +...+0.263^2$
 
-## Toplam Açıklanan Varyans
+### Toplam Açıklanan Varyans
 
 -   3 faktör tarafından açıklanan toplam varyans döndürmeden önce ve
     sonra aynıdır (yaklaşık %72,23).
@@ -1649,15 +1607,15 @@ out_dik$Vaccounted[2:3,]
 ## Cumulative Var 0.264 0.527 0.722
 ```
 
-## Dik Döndürmede Yük Grafiği
+### Dik Döndürmede Yük Grafiği
 
 döndürmeden sonraki çözüm için yük grafiği verilir
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-38-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-37-1.png" width="75%" style="display: block; margin: auto;" />
 
 Döndürmeden önceki yük grafiğiyle
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-39-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-38-1.png" width="75%" style="display: block; margin: auto;" />
 
 karşılaştırınca değişkenler arasındaki **ilişkiler değişmez** ancak
 **faktör uzayındaki faktör eksenleri değişir.**
@@ -1686,7 +1644,6 @@ print(out_dik$loadings[2:3,], digits = 3, cutoff = 0.30)
 
 -   Eğik döndürme daha basit yapı bulmak için kullanılır. Eğik
     döndürmeden sonra faktörler arasındaki ilişki sıfır olarak kalmaz.
-
 
 
 -   **Direct oblimin** eğik döndürme yöntemi döndürülen faktörler
@@ -1724,7 +1681,7 @@ hesaplanabildiğinden büyük veri setleri için **kullanışlıdır.**
 Burada $$\Lambda_T$$ döndürülen örüntü matrisini simgeler. 
 
 
-$x= \Lambda_T*\Lambda'_T+ \R_{res}$
+ - $x= \Lambda_T*\Lambda'_T+ R_{res}$
 
 Burada $$\Lambda_T$$  döndürmeden önceki örüntü matrisidir. 
 
@@ -1837,7 +1794,6 @@ print(out_egik$Structure, digits = 3, cutoff = 0.30)
 ## Cumulative Var 0.41 0.822 1.183
 ```
 
-## 
 
 
 ```r
@@ -1926,11 +1882,11 @@ Eğik
 
 Dik
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-47-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-46-1.png" width="100%" style="display: block; margin: auto;" />
 
 Egik
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-47-1.png" width="100%" style="display: block; margin: auto;" />
 
 İki yük grafiğinin karşılaştırılmasıyla aynı sonuçlara ulaşılır. Dik
 Döndürme: Eğik Döndürme
@@ -2002,31 +1958,31 @@ head(fa_egik$scores)
 
 ## Kaynaklar
 
--   Thompson, B. (2004). *Exploratory and confirmatory factor analysis:
-    Understanding concepts and applications.* Washington, DC: American
-    Psychological Association.
+-   Thompson, B. (2004). *Exploratory and confirmatory factor analysis:    Understanding concepts and applications.* Washington, DC: American    Psychological Association.
 
-- Gorsuch, R. L. (1983). Factor analysis (2nd ed.). Hillsdale, NJ:
+- Gorsuch, R. L. (1983). *Factor analysis* (2nd ed.). Hillsdale, NJ:
 Erlbaum
 
 - Cook, C., &. Thompson, B. (2001). Psychometric properties of
 scores from the Web-based LibQUAL+™ study of perceptions of library
-service quality. Library Trends, 49, 585-604. - Thompson, B. (2004).
-Exploratory and confirmatory factor analysis: Understanding concepts and
-applications. Washington, DC: American Psychological Association. 
-- Thompson, B., Cook, C., & Heath, F. (2001). How many dimensions does it
-take to measure users' perceptions of libraries?: A "LibQUAL+™" study,
-portal: Libraries and the Academy, 1, 129-138. - Thompson, B., Cook, C.,
-& Thompson, R. L. (2002). Reliability and structure of LibQUAL+™ scores:
-Measuring perceived library service quality, portal: Libraries and the
-Academy, 2, 3-12.]
+service quality. *Library Trends, 49,* 585-604. 
+
+
+- Thompson, B. (2004).*Exploratory and confirmatory factor analysis: Understanding concepts and applications.* Washington, DC: American Psychological Association. 
+
+- Thompson, B., Cook, C., & Heath, F. (2001). *How many dimensions does it take to measure users' perceptions of libraries?: A "LibQUAL+™" study,portal: *Libraries and the Academy, 1,* 129-138. 
+
+- Thompson, B., Cook, C.,& Thompson, R. L. (2002). Reliability and structure of LibQUAL+™ scores:Measuring perceived library service quality, portal: *Libraries and the Academy, 2,* 3-12.
+
 - Guadagnoli, E., & Velicer, W. (1988). Relation of sample size
-to the stability of component patterns. Psychological Bulletin, 103,
+to the stability of component patterns. *Psychological Bulletin, 103,*
 265—275.
 
 -   MacCallum, R. C., Widaman, K. F., Zhang, S., & Hong, S. (1999).
-    Sample size in factor analysis. Psychological Methods, 4, 84-99.
+    Sample size in factor analysis. *Psychological Methods, 4,* 84-99.
+
 - Guttman, L. (1954). Some necessary conditions for
-common-factor analysis. Psychometrika,19, 149-161.
+common-factor analysis. *Psychometrika,19,* 149-161.
+
 - Cattell, R. B. (1966). The scree test for the number of factors.
-Multivariate Behavioral Research, 1, 245-276.
+*Multivariate Behavioral Research, 1,* 245-276.
