@@ -1604,23 +1604,23 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
 ```
 
 ```{=html}
-<div id="daaifjzbjg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#daaifjzbjg table {
+<div id="pyckenxluq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pyckenxluq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#daaifjzbjg thead, #daaifjzbjg tbody, #daaifjzbjg tfoot, #daaifjzbjg tr, #daaifjzbjg td, #daaifjzbjg th {
+#pyckenxluq thead, #pyckenxluq tbody, #pyckenxluq tfoot, #pyckenxluq tr, #pyckenxluq td, #pyckenxluq th {
   border-style: none;
 }
 
-#daaifjzbjg p {
+#pyckenxluq p {
   margin: 0;
   padding: 0;
 }
 
-#daaifjzbjg .gt_table {
+#pyckenxluq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1646,12 +1646,12 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-left-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_caption {
+#pyckenxluq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#daaifjzbjg .gt_title {
+#pyckenxluq .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1663,7 +1663,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-width: 0;
 }
 
-#daaifjzbjg .gt_subtitle {
+#pyckenxluq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1675,7 +1675,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-width: 0;
 }
 
-#daaifjzbjg .gt_heading {
+#pyckenxluq .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1687,13 +1687,13 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_bottom_border {
+#pyckenxluq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_col_headings {
+#pyckenxluq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1708,7 +1708,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_col_heading {
+#pyckenxluq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1728,7 +1728,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#daaifjzbjg .gt_column_spanner_outer {
+#pyckenxluq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1740,15 +1740,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 4px;
 }
 
-#daaifjzbjg .gt_column_spanner_outer:first-child {
+#pyckenxluq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#daaifjzbjg .gt_column_spanner_outer:last-child {
+#pyckenxluq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#daaifjzbjg .gt_column_spanner {
+#pyckenxluq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1760,11 +1760,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   width: 100%;
 }
 
-#daaifjzbjg .gt_spanner_row {
+#pyckenxluq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#daaifjzbjg .gt_group_heading {
+#pyckenxluq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1790,7 +1790,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   text-align: left;
 }
 
-#daaifjzbjg .gt_empty_group_heading {
+#pyckenxluq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1805,15 +1805,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: middle;
 }
 
-#daaifjzbjg .gt_from_md > :first-child {
+#pyckenxluq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#daaifjzbjg .gt_from_md > :last-child {
+#pyckenxluq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#daaifjzbjg .gt_row {
+#pyckenxluq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1832,7 +1832,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#daaifjzbjg .gt_stub {
+#pyckenxluq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1845,7 +1845,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#daaifjzbjg .gt_stub_row_group {
+#pyckenxluq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1859,15 +1859,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: top;
 }
 
-#daaifjzbjg .gt_row_group_first td {
+#pyckenxluq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#daaifjzbjg .gt_row_group_first th {
+#pyckenxluq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#daaifjzbjg .gt_summary_row {
+#pyckenxluq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1877,16 +1877,16 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#daaifjzbjg .gt_first_summary_row {
+#pyckenxluq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_first_summary_row.thick {
+#pyckenxluq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#daaifjzbjg .gt_last_summary_row {
+#pyckenxluq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1896,7 +1896,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_grand_summary_row {
+#pyckenxluq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1906,7 +1906,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#daaifjzbjg .gt_first_grand_summary_row {
+#pyckenxluq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1916,7 +1916,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_last_grand_summary_row_top {
+#pyckenxluq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1926,11 +1926,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_striped {
+#pyckenxluq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#daaifjzbjg .gt_table_body {
+#pyckenxluq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1939,7 +1939,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_footnotes {
+#pyckenxluq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1953,7 +1953,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_footnote {
+#pyckenxluq .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1962,7 +1962,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#daaifjzbjg .gt_sourcenotes {
+#pyckenxluq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1976,7 +1976,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#daaifjzbjg .gt_sourcenote {
+#pyckenxluq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1984,63 +1984,63 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#daaifjzbjg .gt_left {
+#pyckenxluq .gt_left {
   text-align: left;
 }
 
-#daaifjzbjg .gt_center {
+#pyckenxluq .gt_center {
   text-align: center;
 }
 
-#daaifjzbjg .gt_right {
+#pyckenxluq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#daaifjzbjg .gt_font_normal {
+#pyckenxluq .gt_font_normal {
   font-weight: normal;
 }
 
-#daaifjzbjg .gt_font_bold {
+#pyckenxluq .gt_font_bold {
   font-weight: bold;
 }
 
-#daaifjzbjg .gt_font_italic {
+#pyckenxluq .gt_font_italic {
   font-style: italic;
 }
 
-#daaifjzbjg .gt_super {
+#pyckenxluq .gt_super {
   font-size: 65%;
 }
 
-#daaifjzbjg .gt_footnote_marks {
+#pyckenxluq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#daaifjzbjg .gt_asterisk {
+#pyckenxluq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#daaifjzbjg .gt_indent_1 {
+#pyckenxluq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#daaifjzbjg .gt_indent_2 {
+#pyckenxluq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#daaifjzbjg .gt_indent_3 {
+#pyckenxluq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#daaifjzbjg .gt_indent_4 {
+#pyckenxluq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#daaifjzbjg .gt_indent_5 {
+#pyckenxluq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2237,18 +2237,17 @@ toplam etki = doğrudan etki + toplam dolaylı etki
 ## Kaynaklar
 
 
-- Roth, D. L., Wiebe, D. J., Fillingim, R. B., & Shay, K. A. (1989). Life events, fitness, hardiness, and health: A simultaneous analysis of proposed stress-resistance effects.Journal of Personality and Social Psychology, 57 (1), 136-142.
+- Roth, D. L., Wiebe, D. J., Fillingim, R. B., & Shay, K. A. (1989). Life events, fitness, hardiness, and health: A simultaneous analysis of proposed stress-resistance effects. *Journal of Personality and Social Psychology, 57*(1), 136-142.
 
 - Bentler, P. M. (1990). Comparative fit indexes in structural models. 
-Psychological Bulletin, 107, 238-246. 
+*Psychological Bulletin, 107,*238-246. 
 
 - Steiger, J. H. (1990). Structural model evaluation and modification: An
-interval estimation approach. Multivariate Behavioral Research, 25, 173-80.
+interval estimation approach. *Multivariate Behavioral Research, 25,* 173-80.
 
 - Bentler, P. M. & Hu, L. (1999). Cutoff criteria fpr fit indexes in 
 covariance structure analysis: Conventional criteri versus new 
-alternatives. Structural Equation Modeling, 6(1), 1-55.
+alternatives. *Structural Equation Modeling, 6*(1), 1-55.
 
 
-- Marsh, Hau, & Wen, 2004: The Special Issue in Personality and 
-Individual Differences, 2007
+- Marsh, H. W., & Hau, K. T. (2007). Applications of latent-variable models in educational psychology: The need for methodological-substantive synergies. *Contemporary educational psychology, 32*(1), 151-170.

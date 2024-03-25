@@ -1487,7 +1487,7 @@ kestirimlerini değiştirmeyecektir, çünkü:
   - $x= (\Lambda*T)(T'*\xi) + \delta$  
   - $x= \Lambda*T \phi T'*\Lambda'+ R_{res}$
 
-- Burada $$\phi$$ bir birim
+- Burada $\phi$ bir birim
 matristir. Böylece verilen eşitlik aşağıdaki eşitliğe
 indirgenebilir: 
 
@@ -1678,12 +1678,12 @@ hesaplanabildiğinden büyük veri setleri için **kullanışlıdır.**
 -   Bu nedenle, döndürülen çözüm için model eşitliği aşağıdaki şekilde
     gösterilir:
 
-Burada $$\Lambda_T$$ döndürülen örüntü matrisini simgeler. 
+Burada $\Lambda_T$ döndürülen örüntü matrisini simgeler. 
 
 
  - $x= \Lambda_T*\Lambda'_T+ R_{res}$
 
-Burada $$\Lambda_T$$  döndürmeden önceki örüntü matrisidir. 
+Burada $\Lambda_T$  döndürmeden önceki örüntü matrisidir. 
 
 
 -   Hangi egik döndürme seçeneği seçilirse seçilsin,
@@ -1724,19 +1724,18 @@ Burada $$\Lambda_T$$  döndürmeden önceki örüntü matrisidir.
 
 ## Örüntü Katsayısı ve Yapı Katsayısı
 
-<img src="images/AFA_11.PNG" width="75%" style="display: block; margin: auto;" />
 
 - Örüntü matrisi ve yapı matrisi arasındaki ilişki aşağıdaki 
 eşitlikle gösterilebilir: 
-$$\Lambda _T\Phi$$
+$$\Lambda _T\Phi = S $$
 - Burada, 
-- $$\Lambda _T$$  döndürülen örüntü matrisi
- - $$\Phi$$ faktörler arasındaki korelasyon matrisi 
- - $$S$$ yapı matrisi 
- -  $$\Phi$$ bir birim matris olduğunda
- $$\Lambda _T=S$$
+- $\Lambda _T$  döndürülen örüntü matrisi
+ - $\Phi$ faktörler arasındaki korelasyon matrisi 
+ - $S$ yapı matrisi 
+ -  $\Phi$ bir birim matris olduğunda
+ $\Lambda _T=S$
  - Döndürme olmadığında 
-  $$\Lambda=S$$
+  $\Lambda=S$
 
 
 ```r
@@ -1882,11 +1881,11 @@ Eğik
 
 Dik
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-46-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-45-1.png" width="100%" style="display: block; margin: auto;" />
 
 Egik
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-47-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-46-1.png" width="100%" style="display: block; margin: auto;" />
 
 İki yük grafiğinin karşılaştırılmasıyla aynı sonuçlara ulaşılır. Dik
 Döndürme: Eğik Döndürme

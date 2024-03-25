@@ -146,8 +146,6 @@ döndürmeden-önceki-örüntü-matrisi
 dik-döndürmeden-sonra-örüntü-matrisi
 dik-döndürme
 dik-döndürme-1
-dik-döndürme-2
-dik-döndürme-3
 döndürülen-yüklerin-kareleri-toplamı
 toplam-açıklanan-varyans
 dik-döndürmede-yük-grafiği
@@ -155,7 +153,6 @@ eğik-döndürme-oblique-rotation
 eğik-döndürme
 örüntü-katsayısı-ve-yapı-katsayısı
 örüntü-katsayısı-ve-yapı-katsayısı-1
-section
 eğik-döndürme-1
 dik-ve-eğik-döndürme
 dik-ve-eğik-döndürme-1
