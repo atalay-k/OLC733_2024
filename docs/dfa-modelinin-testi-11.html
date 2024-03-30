@@ -1,0 +1,3238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Bölüm 23 DFA modelinin testi | OLC733</title>
+
+    <meta name="author" content="Kubra Atalay Kabasakal" />
+  
+   <meta name="description" content="Bu notlar OLC733 dersi için hazırlanmıştır." />
+   <meta name="generator" content="placeholder" />
+  <meta property="og:title" content="Bölüm 23 DFA modelinin testi | OLC733" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/atalay-k/OLC733" />
+  
+  <meta property="og:description" content="Bu notlar OLC733 dersi için hazırlanmıştır." />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bölüm 23 DFA modelinin testi | OLC733" />
+  
+  <meta name="twitter:description" content="Bu notlar OLC733 dersi için hazırlanmıştır." />
+  
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+    <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+    <script src="libs/bs3compat-0.6.1/transition.js"></script>
+    <script src="libs/bs3compat-0.6.1/tabs.js"></script>
+    <script src="libs/bs3compat-0.6.1/bs3compat.js"></script>
+    <link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet" />
+    <script src="libs/bs4_book-1.0.0/bs4_book.js"></script>
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+    <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding-0.32/datatables.js"></script>
+    <link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+    <script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+    <script src="libs/typedarray-0.1/typedarray.min.js"></script>
+    <link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+    <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+    <script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script>
+    <link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet" />
+    <script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/init.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script>
+    <script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script>
+    <script src="libs/viz-1.8.2/viz.js"></script>
+    <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+      <link rel="stylesheet" href="include/psyteachr.css" />
+    <link rel="stylesheet" href="include/webex.css" />
+    <link rel="stylesheet" href="include/style.css" />
+  
+</head>
+
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book">
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">OLC733</a>:
+        <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+      <nav aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <div id="book-toc"></div>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="#">View book source <i class="fab fa-github"></i></a></li></p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="col-sm-12 col-md-9 col-lg-7" id="content">
+<div id="dfa-modelinin-testi-11" class="section level1" number="23">
+<h1><span class="header-section-number">Bölüm 23</span> DFA modelinin testi</h1>
+<p>Standartlaştırılmamış Çözümler</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="dfa-modelinin-testi-11.html#cb33-1" tabindex="-1"></a> <span class="fu">library</span>(lavaan)</span>
+<span id="cb33-2"><a href="dfa-modelinin-testi-11.html#cb33-2" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="dfa-modelinin-testi-11.html#cb33-3" tabindex="-1"></a>model_1_v1 <span class="ot">&lt;-</span> </span>
+<span id="cb33-4"><a href="dfa-modelinin-testi-11.html#cb33-4" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb33-5"><a href="dfa-modelinin-testi-11.html#cb33-5" tabindex="-1"></a><span class="st">okul =~ NA*okul1 + okul2 + okul3</span></span>
+<span id="cb33-6"><a href="dfa-modelinin-testi-11.html#cb33-6" tabindex="-1"></a><span class="st">kisi =~ NA*kisi1 + kisi2</span></span>
+<span id="cb33-7"><a href="dfa-modelinin-testi-11.html#cb33-7" tabindex="-1"></a><span class="st">arkadas =~ NA*arkadas1 + arkadas2</span></span>
+<span id="cb33-8"><a href="dfa-modelinin-testi-11.html#cb33-8" tabindex="-1"></a><span class="st">aile =~ NA*aile1 + aile2 + aile3</span></span>
+<span id="cb33-9"><a href="dfa-modelinin-testi-11.html#cb33-9" tabindex="-1"></a><span class="st"> okul ~~ 1*okul</span></span>
+<span id="cb33-10"><a href="dfa-modelinin-testi-11.html#cb33-10" tabindex="-1"></a><span class="st"> kisi ~~ 1*kisi</span></span>
+<span id="cb33-11"><a href="dfa-modelinin-testi-11.html#cb33-11" tabindex="-1"></a><span class="st"> arkadas ~~ 1*arkadas</span></span>
+<span id="cb33-12"><a href="dfa-modelinin-testi-11.html#cb33-12" tabindex="-1"></a><span class="st"> aile ~~ 1*aile</span></span>
+<span id="cb33-13"><a href="dfa-modelinin-testi-11.html#cb33-13" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb33-14"><a href="dfa-modelinin-testi-11.html#cb33-14" tabindex="-1"></a>model_1_v1_fit <span class="ot">&lt;-</span> <span class="fu">cfa</span>(model_1_v1,yasamdoyum)</span>
+<span id="cb33-15"><a href="dfa-modelinin-testi-11.html#cb33-15" tabindex="-1"></a><span class="fu">parameterestimates</span>(model_1_v1_fit,<span class="at">standardized =</span> <span class="cn">TRUE</span>)[<span class="dv">11</span><span class="sc">:</span><span class="dv">14</span>,]</span></code></pre></div>
+<div class="kable-table">
+<table>
+<colgroup>
+<col width="3%" />
+<col width="10%" />
+<col width="3%" />
+<col width="10%" />
+<col width="5%" />
+<col width="3%" />
+<col width="3%" />
+<col width="8%" />
+<col width="11%" />
+<col width="11%" />
+<col width="8%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">lhs</th>
+<th align="left">op</th>
+<th align="left">rhs</th>
+<th align="right">est</th>
+<th align="right">se</th>
+<th align="right">z</th>
+<th align="right">pvalue</th>
+<th align="right">ci.lower</th>
+<th align="right">ci.upper</th>
+<th align="right">std.lv</th>
+<th align="right">std.all</th>
+<th align="right">std.nox</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">11</td>
+<td align="left">okul</td>
+<td align="left">~~</td>
+<td align="left">okul</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">12</td>
+<td align="left">kisi</td>
+<td align="left">~~</td>
+<td align="left">kisi</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">13</td>
+<td align="left">arkadas</td>
+<td align="left">~~</td>
+<td align="left">arkadas</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">14</td>
+<td align="left">aile</td>
+<td align="left">~~</td>
+<td align="left">aile</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>aynı standartlaştırılmış çözümleri sağlar.</p>
+<div id="modifikasyon-indeksleri-1" class="section level2" number="23.1">
+<h2><span class="header-section-number">23.1</span> Modifikasyon indeksleri</h2>
+<ul>
+<li><p><strong>modindices()</strong> fonksiyonu doğrudan <strong>cfa()</strong> fonksiyonun çıktılarının atandığı ile çalıştırıldığında tüm modifikasyonları,</p></li>
+<li><p>modifikasyon yapıldığında ki-karedeki değişimi (mi değeri),</p></li>
+<li><p>parametrelerdeki beklenen değişimi (epc) ve</p></li>
+<li><p>istenmesi durumunda epc değerinin standartlaştırılmış değerlerini verir.</p></li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="dfa-modelinin-testi-11.html#cb34-1" tabindex="-1"></a><span class="fu">modindices</span>(model_1_fit, <span class="at">sort=</span><span class="cn">TRUE</span>, <span class="at">standardized=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="kable-table">
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">lhs</th>
+<th align="left">op</th>
+<th align="left">rhs</th>
+<th align="right">mi</th>
+<th align="right">epc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">54</td>
+<td align="left">aile</td>
+<td align="left">=~</td>
+<td align="left">okul1</td>
+<td align="right">8.4664413</td>
+<td align="right">0.3465472</td>
+</tr>
+<tr class="even">
+<td align="left">44</td>
+<td align="left">kisi</td>
+<td align="left">=~</td>
+<td align="left">aile2</td>
+<td align="right">7.9320531</td>
+<td align="right">-0.2679600</td>
+</tr>
+<tr class="odd">
+<td align="left">103</td>
+<td align="left">aile1</td>
+<td align="left">~~</td>
+<td align="left">aile2</td>
+<td align="right">7.7371217</td>
+<td align="right">0.5914338</td>
+</tr>
+<tr class="even">
+<td align="left">45</td>
+<td align="left">kisi</td>
+<td align="left">=~</td>
+<td align="left">aile3</td>
+<td align="right">7.2831048</td>
+<td align="right">0.2363170</td>
+</tr>
+<tr class="odd">
+<td align="left">67</td>
+<td align="left">okul1</td>
+<td align="left">~~</td>
+<td align="left">aile1</td>
+<td align="right">7.0147996</td>
+<td align="right">0.1696009</td>
+</tr>
+<tr class="even">
+<td align="left">104</td>
+<td align="left">aile1</td>
+<td align="left">~~</td>
+<td align="left">aile3</td>
+<td align="right">6.4640041</td>
+<td align="right">-0.1982293</td>
+</tr>
+<tr class="odd">
+<td align="left">70</td>
+<td align="left">okul2</td>
+<td align="left">~~</td>
+<td align="left">okul3</td>
+<td align="right">5.7458198</td>
+<td align="right">1.1010761</td>
+</tr>
+<tr class="even">
+<td align="left">37</td>
+<td align="left">okul</td>
+<td align="left">=~</td>
+<td align="left">aile3</td>
+<td align="right">4.9175790</td>
+<td align="right">0.2346590</td>
+</tr>
+<tr class="odd">
+<td align="left">53</td>
+<td align="left">arkadas</td>
+<td align="left">=~</td>
+<td align="left">aile3</td>
+<td align="right">4.4840672</td>
+<td align="right">0.2177665</td>
+</tr>
+<tr class="even">
+<td align="left">52</td>
+<td align="left">arkadas</td>
+<td align="left">=~</td>
+<td align="left">aile2</td>
+<td align="right">4.1728247</td>
+<td align="right">-0.2381767</td>
+</tr>
+<tr class="odd">
+<td align="left">56</td>
+<td align="left">aile</td>
+<td align="left">=~</td>
+<td align="left">okul3</td>
+<td align="right">3.9559177</td>
+<td align="right">-0.2768320</td>
+</tr>
+<tr class="even">
+<td align="left">95</td>
+<td align="left">kisi2</td>
+<td align="left">~~</td>
+<td align="left">aile3</td>
+<td align="right">3.9207998</td>
+<td align="right">0.0727622</td>
+</tr>
+<tr class="odd">
+<td align="left">73</td>
+<td align="left">okul2</td>
+<td align="left">~~</td>
+<td align="left">arkadas1</td>
+<td align="right">3.5211874</td>
+<td align="right">-0.0920687</td>
+</tr>
+<tr class="even">
+<td align="left">84</td>
+<td align="left">okul3</td>
+<td align="left">~~</td>
+<td align="left">aile3</td>
+<td align="right">3.4164447</td>
+<td align="right">0.1008241</td>
+</tr>
+<tr class="odd">
+<td align="left">83</td>
+<td align="left">okul3</td>
+<td align="left">~~</td>
+<td align="left">aile2</td>
+<td align="right">2.8233488</td>
+<td align="right">-0.0870106</td>
+</tr>
+<tr class="even">
+<td align="left">80</td>
+<td align="left">okul3</td>
+<td align="left">~~</td>
+<td align="left">arkadas1</td>
+<td align="right">2.7340636</td>
+<td align="right">0.0933873</td>
+</tr>
+<tr class="odd">
+<td align="left">64</td>
+<td align="left">okul1</td>
+<td align="left">~~</td>
+<td align="left">kisi2</td>
+<td align="right">2.6634906</td>
+<td align="right">0.0927052</td>
+</tr>
+<tr class="even">
+<td align="left">32</td>
+<td align="left">okul</td>
+<td align="left">=~</td>
+<td align="left">kisi2</td>
+<td align="right">2.3866534</td>
+<td align="right">-0.1915528</td>
+</tr>
+<tr class="odd">
+<td align="left">31</td>
+<td align="left">okul</td>
+<td align="left">=~</td>
+<td align="left">kisi1</td>
+<td align="right">2.3866339</td>
+<td align="right">0.2038740</td>
+</tr>
+<tr class="even">
+<td align="left">47</td>
+<td align="left">arkadas</td>
+<td align="left">=~</td>
+<td align="left">okul2</td>
+<td align="right">2.1608690</td>
+<td align="right">-0.2150073</td>
+</tr>
+<tr class="odd">
+<td align="left">46</td>
+<td align="left">arkadas</td>
+<td align="left">=~</td>
+<td align="left">okul1</td>
+<td align="right">2.1096979</td>
+<td align="right">0.2260292</td>
+</tr>
+<tr class="even">
+<td align="left">100</td>
+<td align="left">arkadas2</td>
+<td align="left">~~</td>
+<td align="left">aile1</td>
+<td align="right">2.1058651</td>
+<td align="right">0.0509694</td>
+</tr>
+<tr class="odd">
+<td align="left">50</td>
+<td align="left">arkadas</td>
+<td align="left">=~</td>
+<td align="left">kisi2</td>
+<td align="right">2.0923152</td>
+<td align="right">-2.2339608</td>
+</tr>
+<tr class="even">
+<td align="left">49</td>
+<td align="left">arkadas</td>
+<td align="left">=~</td>
+<td align="left">kisi1</td>
+<td align="right">2.0922055</td>
+<td align="right">2.3776029</td>
+</tr>
+<tr class="odd">
+<td align="left">38</td>
+<td align="left">kisi</td>
+<td align="left">=~</td>
+<td align="left">okul1</td>
+<td align="right">1.9757836</td>
+<td align="right">0.1861382</td>
+</tr>
+<tr class="even">
+<td align="left">36</td>
+<td align="left">okul</td>
+<td align="left">=~</td>
+<td align="left">aile2</td>
+<td align="right">1.9572301</td>
+<td align="right">-0.1576327</td>
+</tr>
+<tr class="odd">
+<td align="left">72</td>
+<td align="left">okul2</td>
+<td align="left">~~</td>
+<td align="left">kisi2</td>
+<td align="right">1.7710321</td>
+<td align="right">-0.0644269</td>
+</tr>
+<tr class="even">
+<td align="left">87</td>
+<td align="left">kisi1</td>
+<td align="left">~~</td>
+<td align="left">arkadas2</td>
+<td align="right">1.6038542</td>
+<td align="right">-0.0545331</td>
+</tr>
+<tr class="odd">
+<td align="left">57</td>
+<td align="left">aile</td>
+<td align="left">=~</td>
+<td align="left">kisi1</td>
+<td align="right">1.5612359</td>
+<td align="right">-0.1273236</td>
+</tr>
+<tr class="even">
+<td align="left">58</td>
+<td align="left">aile</td>
+<td align="left">=~</td>
+<td align="left">kisi2</td>
+<td align="right">1.5612333</td>
+<td align="right">0.1196282</td>
+</tr>
+<tr class="odd">
+<td align="left">86</td>
+<td align="left">kisi1</td>
+<td align="left">~~</td>
+<td align="left">arkadas1</td>
+<td align="right">1.5347094</td>
+<td align="right">0.0754753</td>
+</tr>
+<tr class="even">
+<td align="left">43</td>
+<td align="left">kisi</td>
+<td align="left">=~</td>
+<td align="left">aile1</td>
+<td align="right">1.4978389</td>
+<td align="right">0.1153024</td>
+</tr>
+<tr class="odd">
+<td align="left">63</td>
+<td align="left">okul1</td>
+<td align="left">~~</td>
+<td align="left">kisi1</td>
+<td align="right">1.4547633</td>
+<td align="right">-0.0874788</td>
+</tr>
+<tr class="even">
+<td align="left">89</td>
+<td align="left">kisi1</td>
+<td align="left">~~</td>
+<td align="left">aile2</td>
+<td align="right">1.3265400</td>
+<td align="right">-0.0492529</td>
+</tr>
+<tr class="odd">
+<td align="left">39</td>
+<td align="left">kisi</td>
+<td align="left">=~</td>
+<td align="left">okul2</td>
+<td align="right">1.2902504</td>
+<td align="right">-0.1351944</td>
+</tr>
+<tr class="even">
+<td align="left">78</td>
+<td align="left">okul3</td>
+<td align="left">~~</td>
+<td align="left">kisi1</td>
+<td align="right">1.2864572</td>
+<td align="right">0.0713450</td>
+</tr>
+<tr class="odd">
+<td align="left">74</td>
+<td align="left">okul2</td>
+<td align="left">~~</td>
+<td align="left">arkadas2</td>
+<td align="right">1.2326309</td>
+<td align="right">0.0514224</td>
+</tr>
+<tr class="even">
+<td align="left">91</td>
+<td align="left">kisi2</td>
+<td align="left">~~</td>
+<td align="left">arkadas1</td>
+<td align="right">1.1390864</td>
+<td align="right">-0.0575294</td>
+</tr>
+<tr class="odd">
+<td align="left">69</td>
+<td align="left">okul1</td>
+<td align="left">~~</td>
+<td align="left">aile3</td>
+<td align="right">1.1273034</td>
+<td align="right">-0.0687090</td>
+</tr>
+<tr class="even">
+<td align="left">92</td>
+<td align="left">kisi2</td>
+<td align="left">~~</td>
+<td align="left">arkadas2</td>
+<td align="right">1.1210099</td>
+<td align="right">0.0396105</td>
+</tr>
+<tr class="odd">
+<td align="left">93</td>
+<td align="left">kisi2</td>
+<td align="left">~~</td>
+<td align="left">aile1</td>
+<td align="right">1.1149976</td>
+<td align="right">0.0390350</td>
+</tr>
+<tr class="even">
+<td align="left">81</td>
+<td align="left">okul3</td>
+<td align="left">~~</td>
+<td align="left">arkadas2</td>
+<td align="right">1.0857148</td>
+<td align="right">-0.0495089</td>
+</tr>
+<tr class="odd">
+<td align="left">71</td>
+<td align="left">okul2</td>
+<td align="left">~~</td>
+<td align="left">kisi1</td>
+<td align="right">1.0586864</td>
+<td align="right">0.0632675</td>
+</tr>
+<tr class="even">
+<td align="left">66</td>
+<td align="left">okul1</td>
+<td align="left">~~</td>
+<td align="left">arkadas2</td>
+<td align="right">1.0571211</td>
+<td align="right">-0.0560107</td>
+</tr>
+<tr class="odd">
+<td align="left">94</td>
+<td align="left">kisi2</td>
+<td align="left">~~</td>
+<td align="left">aile2</td>
+<td align="right">1.0480415</td>
+<td align="right">-0.0355103</td>
+</tr>
+<tr class="even">
+<td align="left">97</td>
+<td align="left">arkadas1</td>
+<td align="left">~~</td>
+<td align="left">aile1</td>
+<td align="right">0.9612407</td>
+<td align="right">-0.0366447</td>
+</tr>
+<tr class="odd">
+<td align="left">62</td>
+<td align="left">okul1</td>
+<td align="left">~~</td>
+<td align="left">okul3</td>
+<td align="right">0.9421540</td>
+<td align="right">-0.2091752</td>
+</tr>
+<tr class="even">
+<td align="left">76</td>
+<td align="left">okul2</td>
+<td align="left">~~</td>
+<td align="left">aile2</td>
+<td align="right">0.9032528</td>
+<td align="right">0.0469449</td>
+</tr>
+<tr class="odd">
+<td align="left">79</td>
+<td align="left">okul3</td>
+<td align="left">~~</td>
+<td align="left">kisi2</td>
+<td align="right">0.8638594</td>
+<td align="right">-0.0485911</td>
+</tr>
+<tr class="even">
+<td align="left">60</td>
+<td align="left">aile</td>
+<td align="left">=~</td>
+<td align="left">arkadas2</td>
+<td align="right">0.6790789</td>
+<td align="right">0.0647526</td>
+</tr>
+<tr class="odd">
+<td align="left">59</td>
+<td align="left">aile</td>
+<td align="left">=~</td>
+<td align="left">arkadas1</td>
+<td align="right">0.6790527</td>
+<td align="right">-0.1055261</td>
+</tr>
+<tr class="even">
+<td align="left">82</td>
+<td align="left">okul3</td>
+<td align="left">~~</td>
+<td align="left">aile1</td>
+<td align="right">0.6444897</td>
+<td align="right">-0.0442193</td>
+</tr>
+<tr class="odd">
+<td align="left">65</td>
+<td align="left">okul1</td>
+<td align="left">~~</td>
+<td align="left">arkadas1</td>
+<td align="right">0.5916391</td>
+<td align="right">0.0431662</td>
+</tr>
+<tr class="even">
+<td align="left">105</td>
+<td align="left">aile2</td>
+<td align="left">~~</td>
+<td align="left">aile3</td>
+<td align="right">0.5761211</td>
+<td align="right">0.0651573</td>
+</tr>
+<tr class="odd">
+<td align="left">33</td>
+<td align="left">okul</td>
+<td align="left">=~</td>
+<td align="left">arkadas1</td>
+<td align="right">0.5499756</td>
+<td align="right">0.1229967</td>
+</tr>
+<tr class="even">
+<td align="left">34</td>
+<td align="left">okul</td>
+<td align="left">=~</td>
+<td align="left">arkadas2</td>
+<td align="right">0.5499403</td>
+<td align="right">-0.0754689</td>
+</tr>
+<tr class="odd">
+<td align="left">51</td>
+<td align="left">arkadas</td>
+<td align="left">=~</td>
+<td align="left">aile1</td>
+<td align="right">0.5177127</td>
+<td align="right">0.0823868</td>
+</tr>
+<tr class="even">
+<td align="left">61</td>
+<td align="left">okul1</td>
+<td align="left">~~</td>
+<td align="left">okul2</td>
+<td align="right">0.3653140</td>
+<td align="right">-0.0884480</td>
+</tr>
+<tr class="odd">
+<td align="left">75</td>
+<td align="left">okul2</td>
+<td align="left">~~</td>
+<td align="left">aile1</td>
+<td align="right">0.3013903</td>
+<td align="right">-0.0298254</td>
+</tr>
+<tr class="even">
+<td align="left">48</td>
+<td align="left">arkadas</td>
+<td align="left">=~</td>
+<td align="left">okul3</td>
+<td align="right">0.2338373</td>
+<td align="right">0.0924018</td>
+</tr>
+<tr class="odd">
+<td align="left">101</td>
+<td align="left">arkadas2</td>
+<td align="left">~~</td>
+<td align="left">aile2</td>
+<td align="right">0.1945523</td>
+<td align="right">-0.0142193</td>
+</tr>
+<tr class="even">
+<td align="left">68</td>
+<td align="left">okul1</td>
+<td align="left">~~</td>
+<td align="left">aile2</td>
+<td align="right">0.1790594</td>
+<td align="right">0.0244680</td>
+</tr>
+<tr class="odd">
+<td align="left">99</td>
+<td align="left">arkadas1</td>
+<td align="left">~~</td>
+<td align="left">aile3</td>
+<td align="right">0.1670106</td>
+<td align="right">0.0148066</td>
+</tr>
+<tr class="even">
+<td align="left">55</td>
+<td align="left">aile</td>
+<td align="left">=~</td>
+<td align="left">okul2</td>
+<td align="right">0.0945859</td>
+<td align="right">0.0332459</td>
+</tr>
+<tr class="odd">
+<td align="left">102</td>
+<td align="left">arkadas2</td>
+<td align="left">~~</td>
+<td align="left">aile3</td>
+<td align="right">0.0685821</td>
+<td align="right">-0.0092179</td>
+</tr>
+<tr class="even">
+<td align="left">40</td>
+<td align="left">kisi</td>
+<td align="left">=~</td>
+<td align="left">okul3</td>
+<td align="right">0.0542009</td>
+<td align="right">0.0355410</td>
+</tr>
+<tr class="odd">
+<td align="left">77</td>
+<td align="left">okul2</td>
+<td align="left">~~</td>
+<td align="left">aile3</td>
+<td align="right">0.0440470</td>
+<td align="right">0.0114872</td>
+</tr>
+<tr class="even">
+<td align="left">98</td>
+<td align="left">arkadas1</td>
+<td align="left">~~</td>
+<td align="left">aile2</td>
+<td align="right">0.0385601</td>
+<td align="right">0.0070842</td>
+</tr>
+<tr class="odd">
+<td align="left">41</td>
+<td align="left">kisi</td>
+<td align="left">=~</td>
+<td align="left">arkadas1</td>
+<td align="right">0.0076079</td>
+<td align="right">0.0273552</td>
+</tr>
+<tr class="even">
+<td align="left">42</td>
+<td align="left">kisi</td>
+<td align="left">=~</td>
+<td align="left">arkadas2</td>
+<td align="right">0.0076006</td>
+<td align="right">-0.0167773</td>
+</tr>
+<tr class="odd">
+<td align="left">90</td>
+<td align="left">kisi1</td>
+<td align="left">~~</td>
+<td align="left">aile3</td>
+<td align="right">0.0066585</td>
+<td align="right">0.0038253</td>
+</tr>
+<tr class="even">
+<td align="left">35</td>
+<td align="left">okul</td>
+<td align="left">=~</td>
+<td align="left">aile1</td>
+<td align="right">0.0053191</td>
+<td align="right">0.0081676</td>
+</tr>
+<tr class="odd">
+<td align="left">88</td>
+<td align="left">kisi1</td>
+<td align="left">~~</td>
+<td align="left">aile1</td>
+<td align="right">0.0000395</td>
+<td align="right">-0.0002935</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="uc-faktorlu-model" class="section level2" number="23.2">
+<h2><span class="header-section-number">23.2</span> Uc faktorlu model</h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="dfa-modelinin-testi-11.html#cb35-1" tabindex="-1"></a>model_2f <span class="ot">&lt;-</span> <span class="st">&quot;</span></span>
+<span id="cb35-2"><a href="dfa-modelinin-testi-11.html#cb35-2" tabindex="-1"></a><span class="st">okul =~ okul1 + okul2 + okul3</span></span>
+<span id="cb35-3"><a href="dfa-modelinin-testi-11.html#cb35-3" tabindex="-1"></a><span class="st">kisi_arkadas =~ kisi1 + kisi2 + arkadas1 + arkadas2</span></span>
+<span id="cb35-4"><a href="dfa-modelinin-testi-11.html#cb35-4" tabindex="-1"></a><span class="st">aile =~ aile1 + aile2 + aile3</span></span>
+<span id="cb35-5"><a href="dfa-modelinin-testi-11.html#cb35-5" tabindex="-1"></a><span class="st">&quot;</span></span>
+<span id="cb35-6"><a href="dfa-modelinin-testi-11.html#cb35-6" tabindex="-1"></a>model_2_fit <span class="ot">&lt;-</span> <span class="fu">cfa</span>(model_2f, <span class="at">data =</span> yasamdoyum)</span>
+<span id="cb35-7"><a href="dfa-modelinin-testi-11.html#cb35-7" tabindex="-1"></a><span class="fu">sem_sig</span>(model_2_fit)</span></code></pre></div>
+<div id="oqsuqqigec" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oqsuqqigec table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#oqsuqqigec thead, #oqsuqqigec tbody, #oqsuqqigec tfoot, #oqsuqqigec tr, #oqsuqqigec td, #oqsuqqigec th {
+  border-style: none;
+}
+
+#oqsuqqigec p {
+  margin: 0;
+  padding: 0;
+}
+
+#oqsuqqigec .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: 0;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#oqsuqqigec .gt_title {
+  color: #333333;
+  font-size: 18px;
+  font-weight: bolder;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#oqsuqqigec .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 9px;
+  padding-bottom: 11px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#oqsuqqigec .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 6px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow-x: hidden;
+}
+
+#oqsuqqigec .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#oqsuqqigec .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#oqsuqqigec .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#oqsuqqigec .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#oqsuqqigec .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#oqsuqqigec .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#oqsuqqigec .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#oqsuqqigec .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#oqsuqqigec .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#oqsuqqigec .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#oqsuqqigec .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#oqsuqqigec .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 15px;
+  padding-right: 15px;
+  vertical-align: top;
+}
+
+#oqsuqqigec .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#oqsuqqigec .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#oqsuqqigec .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#oqsuqqigec .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#oqsuqqigec .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#oqsuqqigec .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#oqsuqqigec .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_footnote {
+  margin: 0px;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#oqsuqqigec .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#oqsuqqigec .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#oqsuqqigec .gt_left {
+  text-align: left;
+}
+
+#oqsuqqigec .gt_center {
+  text-align: center;
+}
+
+#oqsuqqigec .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#oqsuqqigec .gt_font_normal {
+  font-weight: normal;
+}
+
+#oqsuqqigec .gt_font_bold {
+  font-weight: bold;
+}
+
+#oqsuqqigec .gt_font_italic {
+  font-style: italic;
+}
+
+#oqsuqqigec .gt_super {
+  font-size: 65%;
+}
+
+#oqsuqqigec .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#oqsuqqigec .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#oqsuqqigec .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#oqsuqqigec .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#oqsuqqigec .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#oqsuqqigec .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#oqsuqqigec .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Model Significance</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="N">N</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;chi;&lt;sup&gt;2&lt;/sup&gt;">&chi;<sup>2</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="df">df</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="p">p</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="N" class="gt_row gt_right">255 </td>
+<td headers="Chi_Square" class="gt_row gt_right">79.522</td>
+<td headers="df" class="gt_row gt_right">32 </td>
+<td headers="p" class="gt_row gt_right">&lt;0.001</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+<div id="uc-faktorlu-model-1" class="section level2" number="23.3">
+<h2><span class="header-section-number">23.3</span> Uc faktorlu model</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="dfa-modelinin-testi-11.html#cb36-1" tabindex="-1"></a><span class="co"># sem_fitmeasures(model_2_fit)</span></span></code></pre></div>
+</div>
+<div id="uc-faktorlu-model-2" class="section level2" number="23.4">
+<h2><span class="header-section-number">23.4</span> Uc faktorlu model</h2>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="dfa-modelinin-testi-11.html#cb37-1" tabindex="-1"></a>fits.esnek2 <span class="ot">&lt;-</span> <span class="fu">gen_fit</span>(<span class="at">mod1 =</span> model_2f , <span class="at">x =</span> yasamdoyum[,<span class="dv">4</span><span class="sc">:</span><span class="dv">13</span>], <span class="at">rep =</span> <span class="dv">100</span>)</span></code></pre></div>
+<pre><code>## Warning in pop_mod(mod = mod1, x = x, type = type, standardized =
+## standardized): At least one loading is &gt; 1. Consider revision of standardized.</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="dfa-modelinin-testi-11.html#cb39-1" tabindex="-1"></a><span class="fu">flex_co</span>(<span class="at">fits =</span> fits.esnek2, <span class="at">index =</span> <span class="fu">c</span>(<span class="st">&quot;CFI&quot;</span>, <span class="st">&quot;SRMR&quot;</span>))<span class="sc">$</span>cutoff</span></code></pre></div>
+<pre><code>## Warning in flex_co(fits = fits.esnek2, index = c(&quot;CFI&quot;, &quot;SRMR&quot;)): The number of
+## replications is lower than the recommended minimum of 500. Consider with care.</code></pre>
+<pre><code>##        CFI       SRMR 
+## 0.94518618 0.05021492</code></pre>
+</div>
+<div id="uc-faktorlu-model-3" class="section level2" number="23.5">
+<h2><span class="header-section-number">23.5</span> Uc faktorlu model</h2>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="dfa-modelinin-testi-11.html#cb42-1" tabindex="-1"></a><span class="fu">sem_factorloadings</span>(model_2_fit)</span></code></pre></div>
+<div id="bvwyreflcz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bvwyreflcz table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bvwyreflcz thead, #bvwyreflcz tbody, #bvwyreflcz tfoot, #bvwyreflcz tr, #bvwyreflcz td, #bvwyreflcz th {
+  border-style: none;
+}
+
+#bvwyreflcz p {
+  margin: 0;
+  padding: 0;
+}
+
+#bvwyreflcz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: 0;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bvwyreflcz .gt_title {
+  color: #333333;
+  font-size: 18px;
+  font-weight: bolder;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bvwyreflcz .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 9px;
+  padding-bottom: 11px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bvwyreflcz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 6px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow-x: hidden;
+}
+
+#bvwyreflcz .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bvwyreflcz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bvwyreflcz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bvwyreflcz .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bvwyreflcz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bvwyreflcz .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bvwyreflcz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bvwyreflcz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bvwyreflcz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bvwyreflcz .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bvwyreflcz .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bvwyreflcz .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 15px;
+  padding-right: 15px;
+  vertical-align: top;
+}
+
+#bvwyreflcz .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bvwyreflcz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bvwyreflcz .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bvwyreflcz .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bvwyreflcz .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bvwyreflcz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bvwyreflcz .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_footnote {
+  margin: 0px;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bvwyreflcz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bvwyreflcz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bvwyreflcz .gt_left {
+  text-align: left;
+}
+
+#bvwyreflcz .gt_center {
+  text-align: center;
+}
+
+#bvwyreflcz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bvwyreflcz .gt_font_normal {
+  font-weight: normal;
+}
+
+#bvwyreflcz .gt_font_bold {
+  font-weight: bold;
+}
+
+#bvwyreflcz .gt_font_italic {
+  font-style: italic;
+}
+
+#bvwyreflcz .gt_super {
+  font-size: 65%;
+}
+
+#bvwyreflcz .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bvwyreflcz .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bvwyreflcz .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bvwyreflcz .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bvwyreflcz .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bvwyreflcz .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bvwyreflcz .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Factor Loadings</td>
+    </tr>
+    
+    <tr class="gt_col_headings gt_spanner_row">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" style="text-align: center;" scope="col" id="Latent Factor">Latent Factor</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" style="text-align: center;" scope="col" id="Indicator">Indicator</th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="6" scope="colgroup" id="Standardized">
+        <span class="gt_column_spanner">Standardized</span>
+      </th>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="Loading">Loading</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="95% CI">95% CI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="sig">sig</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="SE">SE</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="z">z</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="p">p</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="lhs" class="gt_row gt_left">aile</td>
+<td headers="rhs" class="gt_row gt_left">aile1</td>
+<td headers="est.std" class="gt_row gt_right">0.747</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.651&nbsp;&mdash;&nbsp;0.842</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.049</td>
+<td headers="z" class="gt_row gt_right">15.330</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">aile</td>
+<td headers="rhs" class="gt_row gt_left">aile2</td>
+<td headers="est.std" class="gt_row gt_right">0.840</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.745&nbsp;&mdash;&nbsp;0.935</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.048</td>
+<td headers="z" class="gt_row gt_right">17.344</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">aile</td>
+<td headers="rhs" class="gt_row gt_left">aile3</td>
+<td headers="est.std" class="gt_row gt_right">0.511</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.403&nbsp;&mdash;&nbsp;0.619</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.055</td>
+<td headers="z" class="gt_row gt_right"> 9.265</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">kisi_arkadas</td>
+<td headers="rhs" class="gt_row gt_left">arkadas1</td>
+<td headers="est.std" class="gt_row gt_right">0.608</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.499&nbsp;&mdash;&nbsp;0.717</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.056</td>
+<td headers="z" class="gt_row gt_right">10.913</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">kisi_arkadas</td>
+<td headers="rhs" class="gt_row gt_left">arkadas2</td>
+<td headers="est.std" class="gt_row gt_right">0.450</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.327&nbsp;&mdash;&nbsp;0.573</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.063</td>
+<td headers="z" class="gt_row gt_right"> 7.162</td>
+<td headers="pvalue" class="gt_row gt_right">&lt;0.001</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">kisi_arkadas</td>
+<td headers="rhs" class="gt_row gt_left">kisi1</td>
+<td headers="est.std" class="gt_row gt_right">0.629</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.521&nbsp;&mdash;&nbsp;0.737</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.055</td>
+<td headers="z" class="gt_row gt_right">11.443</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">kisi_arkadas</td>
+<td headers="rhs" class="gt_row gt_left">kisi2</td>
+<td headers="est.std" class="gt_row gt_right">0.698</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.594&nbsp;&mdash;&nbsp;0.801</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.053</td>
+<td headers="z" class="gt_row gt_right">13.156</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">okul</td>
+<td headers="rhs" class="gt_row gt_left">okul1</td>
+<td headers="est.std" class="gt_row gt_right">0.424</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.300&nbsp;&mdash;&nbsp;0.547</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.063</td>
+<td headers="z" class="gt_row gt_right"> 6.703</td>
+<td headers="pvalue" class="gt_row gt_right">&lt;0.001</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">okul</td>
+<td headers="rhs" class="gt_row gt_left">okul2</td>
+<td headers="est.std" class="gt_row gt_right">0.645</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.521&nbsp;&mdash;&nbsp;0.769</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.063</td>
+<td headers="z" class="gt_row gt_right">10.209</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">okul</td>
+<td headers="rhs" class="gt_row gt_left">okul3</td>
+<td headers="est.std" class="gt_row gt_right">0.847</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.711&nbsp;&mdash;&nbsp;0.983</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.069</td>
+<td headers="z" class="gt_row gt_right">12.203</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="8"> * p &lt; .05; ** p &lt; .01; *** p &lt; .001</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</div>
+<div id="model-karşılaştırma" class="section level2" number="23.6">
+<h2><span class="header-section-number">23.6</span> Model karşılaştırma</h2>
+<ul>
+<li>Eğer iki model hiyerarşikse ve her ikisi de veriye kabul
+edilebilir ölçüde uyum sağlıyorsa, iki modelin veriye
+uyumunu karşılaştırmak için ki-kare fark test
+uygulanabilir.</li>
+</ul>
+<p>-UC faktörlü model iyi uyum göstermediği için sadece örnek amaçlı:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="dfa-modelinin-testi-11.html#cb43-1" tabindex="-1"></a><span class="fu">anova</span>(model_1_fit,model_2_fit )</span></code></pre></div>
+<div class="kable-table">
+<table>
+<colgroup>
+<col width="14%" />
+<col width="3%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="13%" />
+<col width="12%" />
+<col width="9%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Df</th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+<th align="right">Chisq</th>
+<th align="right">Chisq diff</th>
+<th align="right">RMSEA</th>
+<th align="right">Df diff</th>
+<th align="right">Pr(&gt;Chisq)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">model_1_fit</td>
+<td align="right">29</td>
+<td align="right">6907.520</td>
+<td align="right">6999.593</td>
+<td align="right">51.43258</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">model_2_fit</td>
+<td align="right">32</td>
+<td align="right">6929.609</td>
+<td align="right">7011.058</td>
+<td align="right">79.52151</td>
+<td align="right">28.08893</td>
+<td align="right">0.1810966</td>
+<td align="right">3</td>
+<td align="right">3.5e-06</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="model-karşılaştırma-1" class="section level2" number="23.7">
+<h2><span class="header-section-number">23.7</span> Model karşılaştırma</h2>
+<ul>
+<li><p>Verilen örneklerde, uc faktörlü model dort faktörlü modelin
+içinde kümelenmiştir.</p></li>
+<li><p>Üç faktörlü model veriye iyi uyum sağlamamıştır, dört
+faktörlü model çeşitli uyum indekslerinin de gösterdiği
+üzere çok daha iyi uyum sağlamıştır. Bu nedenle, dört
+faktörlü modelin seçimini desteklemek için ki-kare fark
+testi uygulamaya gerek yoktur</p></li>
+<li><p>Ki-kare fark testi dört faktörlü modelin üç faktörlü modelden
+anlamlı olarak daha iyi uyum sağladığını önerir. Bu nedenle dört
+faktörlü model tercih edilir.</p></li>
+</ul>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri" class="section level2" number="23.8">
+<h2><span class="header-section-number">23.8</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<ul>
+<li><p>Bazı durumlarda sadece ölçümler arasındaki
+kovaryansları değil, <strong>faktörler arasındaki kovaryansları
+açılayacak faktörlerin</strong> hipotez edildiği daha yüksek
+dereceli faktör modelleri geliştirilebilir.</p>
+<ul>
+<li><p>Birinci dereceli faktörler (First-order factors): Bir grup göstergenin
+altında yatan faktörler.</p></li>
+<li><p>İkinci dereceli faktörler (Second-order factors): Birinci dereceli
+faktörlerin altında yatan faktörler.</p></li>
+<li><p>Daha yüksek dereceli faktörler (Higher-order factors): Potensiyel
+olarak eğer aralarında korelasyon bulunan bir grup ikinci dereceli
+faktör varsa, bu faktörlerin altında yatan daha yüksek dereceli
+faktörler önerilebilir.</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-1" class="section level2" number="23.9">
+<h2><span class="header-section-number">23.9</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<p>Bir Örnek: Zeka</p>
+<ul>
+<li><p>Bazı zeka araştırmacıları zeka ölçümlerinin hiyerarşik
+faktör yapılarıyla daha doğru bir şekilde
+modellenebileceğini belirtmişlerdir:</p>
+<ul>
+<li>Birinci dereceli faktörler (First-order factors): sözel, sayısal,
+mekanik bilgi, uzamsal ve psikomotor beceriler</li>
+<li>İkinci dereceli faktörler (Second-order factors):
+<ul>
+<li>Sözel/eğitimsel faktör: Birinci-dereceli faktörlerden sözel ve
+sayısal faktörleri kontrol edebilir.</li>
+<li>Beceri/pratik faktör: Birinci-dereceli faktörlerden mekanik bilgi,
+uzamsal ve psikomotor beceriler faktörlerini kontrol edebilir.</li>
+<li>Üçüncü dereceli faktör (Third-order factor): genel zeka</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-2" class="section level2" number="23.10">
+<h2><span class="header-section-number">23.10</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<p><img src="images/DFA_13.PNG" width="60%" style="display: block; margin: auto;" /></p>
+<p>F1, F2 ve F3 faktörleri arasındaki
+kovaryanslar daha yüksek dereceli bir faktör
+tarafından açıklanır: F4</p>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-3" class="section level2" number="23.11">
+<h2><span class="header-section-number">23.11</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<p>Standart bir DFA modelinde faktörler
+- dışsaldır ve
+- içsel olan ölçülen değişkenleri etkilerler.
+Bu nedenle, hem ULI hem de UVI faktörlere ölçek
+atanmasında uygundur.</p>
+<ul>
+<li>Daha yüksek dereceli faktör modellerinde, daha yüksek
+dereceli faktörler
+<ul>
+<li>dışsaldır ve</li>
+<li>içsel olan ölçülen değişkenleri daha düşük faktörler aracılığıyla
+dolaylı olarak etkilerler.</li>
+</ul></li>
+<li>Bu nedenle, hem ULI hem de UVI daha yüksek dereceli
+faktörlere ölçek atanmasında uygundur.</li>
+</ul>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-4" class="section level2" number="23.12">
+<h2><span class="header-section-number">23.12</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<ul>
+<li>Ancak yüksek dereceli bir faktör modelinde, bütün daha
+düşük dereceli faktörler artık dışsal değildir (örneğin, F1,
+F2 ve F3 faktörleri F4 faktöründen etkilenir. Bu nedenle
+F1, F2 ve F3 faktörleri içseldir).</li>
+</ul>
+<p><span class="math inline">\(F_2= \beta_2*F_4 + \zeta_2\)</span>
+- Sonuç olarak, her bir daha düşük dereceli faktörün bir
+artığı vardır (örneğin, F2 faktörü için ζ2)</p>
+<ul>
+<li><p><span class="math inline">\(\zeta_2\)</span>’nin varyansı F4 faktörü tarafından açıklanmayan F2 faktörünün
+varyansının bir parçası olarak açıklanabilir.</p></li>
+<li><p>Bu nedenle daha düşük dereceli faktörlerin varyansları
+1’e eşitlenemez, diğer bir ifadeyle UVI uygun
+olmayacaktır.</p></li>
+<li><p>Bunun yerine her bir daha düşük dereceli faktör için
+ölçekleme yüklerinden birinin 1’e sabitlenmesiyle
+tanımlanabilir, diğer bir ifadeyle ULI uygun olacaktır.</p></li>
+</ul>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-5" class="section level2" number="23.13">
+<h2><span class="header-section-number">23.13</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<p>Rindskopf ve Rose (1988) daha yüksek dereceli bir
+modelin değerlendirilmesinin diğer üç modelle
+karşılaştırılmasını içermesi gerektiğini önermişlerdir.
+Adımsal modelleme yöntemi önermişlerdir:
+- Adım 1: Genel, tek faktörlü modelin uyumu
+- Adım 2: İkinci dereceli faktör modeliyle karşılaştırma
+- Adım 3: Korelasyonlu grup faktör modeliyle karşılaştırma
+- Adım 4: İkili faktörlü (bi-factor) modelle karşılaştırma</p>
+<p>.xsmall[Rindskopf, D. &amp; Rose, T. (1988. Some theory and applications of confirmatory
+second-order factor analysis. Multivariate Behavioral Research, 23(1), 51-67]</p>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-6" class="section level2" number="23.14">
+<h2><span class="header-section-number">23.14</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<p><img src="images/DFA_18.PNG" width="60%" style="display: block; margin: auto;" />
+*Şemalar Rindskopf ve Rose (1988)’dan alınmıştır.</p>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-7" class="section level2" number="23.15">
+<h2><span class="header-section-number">23.15</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="dfa-modelinin-testi-11.html#cb44-1" tabindex="-1"></a>model_2order <span class="ot">&lt;-</span>  <span class="st">&quot;</span></span>
+<span id="cb44-2"><a href="dfa-modelinin-testi-11.html#cb44-2" tabindex="-1"></a><span class="st">okul =~ okul1 + okul2 + okul3</span></span>
+<span id="cb44-3"><a href="dfa-modelinin-testi-11.html#cb44-3" tabindex="-1"></a><span class="st">kisi =~ kisi1 + kisi2</span></span>
+<span id="cb44-4"><a href="dfa-modelinin-testi-11.html#cb44-4" tabindex="-1"></a><span class="st">arkadas =~ arkadas1 + arkadas2</span></span>
+<span id="cb44-5"><a href="dfa-modelinin-testi-11.html#cb44-5" tabindex="-1"></a><span class="st">aile =~ aile1 + aile2 + aile3</span></span>
+<span id="cb44-6"><a href="dfa-modelinin-testi-11.html#cb44-6" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="dfa-modelinin-testi-11.html#cb44-7" tabindex="-1"></a><span class="st"># ikinci düzey model</span></span>
+<span id="cb44-8"><a href="dfa-modelinin-testi-11.html#cb44-8" tabindex="-1"></a><span class="st">doyum =~ okul + kisi + arkadas + aile</span></span>
+<span id="cb44-9"><a href="dfa-modelinin-testi-11.html#cb44-9" tabindex="-1"></a><span class="st">&quot;</span></span></code></pre></div>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-8" class="section level2" number="23.16">
+<h2><span class="header-section-number">23.16</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="dfa-modelinin-testi-11.html#cb45-1" tabindex="-1"></a>fit_model_2order <span class="ot">&lt;-</span> <span class="fu">cfa</span>(model_2order, yasamdoyum)</span>
+<span id="cb45-2"><a href="dfa-modelinin-testi-11.html#cb45-2" tabindex="-1"></a><span class="fu">summary</span>(fit_model_2order, <span class="at">fit.measures =</span> <span class="cn">TRUE</span>, <span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## lavaan 0.6.17 ended normally after 67 iterations
+## 
+##   Estimator                                         ML
+##   Optimization method                           NLMINB
+##   Number of model parameters                        24
+## 
+##   Number of observations                           255
+## 
+## Model Test User Model:
+##                                                       
+##   Test statistic                                53.372
+##   Degrees of freedom                                31
+##   P-value (Chi-square)                           0.008
+## 
+## Model Test Baseline Model:
+## 
+##   Test statistic                               583.039
+##   Degrees of freedom                                45
+##   P-value                                        0.000
+## 
+## User Model versus Baseline Model:
+## 
+##   Comparative Fit Index (CFI)                    0.958
+##   Tucker-Lewis Index (TLI)                       0.940
+## 
+## Loglikelihood and Information Criteria:
+## 
+##   Loglikelihood user model (H0)              -3428.730
+##   Loglikelihood unrestricted model (H1)      -3402.044
+##                                                       
+##   Akaike (AIC)                                6905.459
+##   Bayesian (BIC)                              6990.450
+##   Sample-size adjusted Bayesian (SABIC)       6914.364
+## 
+## Root Mean Square Error of Approximation:
+## 
+##   RMSEA                                          0.053
+##   90 Percent confidence interval - lower         0.027
+##   90 Percent confidence interval - upper         0.077
+##   P-value H_0: RMSEA &lt;= 0.050                    0.387
+##   P-value H_0: RMSEA &gt;= 0.080                    0.030
+## 
+## Standardized Root Mean Square Residual:
+## 
+##   SRMR                                           0.060
+## 
+## Parameter Estimates:
+## 
+##   Standard errors                             Standard
+##   Information                                 Expected
+##   Information saturated (h1) model          Structured
+## 
+## Latent Variables:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##   okul =~                                                               
+##     okul1             1.000                               0.555    0.407
+##     okul2             1.439    0.261    5.508    0.000    0.799    0.622
+##     okul3             2.118    0.449    4.713    0.000    1.175    0.883
+##   kisi =~                                                               
+##     kisi1             1.000                               0.736    0.675
+##     kisi2             0.924    0.153    6.040    0.000    0.680    0.777
+##   arkadas =~                                                            
+##     arkadas1          1.000                               0.662    0.792
+##     arkadas2          0.612    0.117    5.229    0.000    0.405    0.530
+##   aile =~                                                               
+##     aile1             1.000                               0.780    0.741
+##     aile2             1.068    0.131    8.136    0.000    0.833    0.849
+##     aile3             0.595    0.084    7.106    0.000    0.465    0.507
+##   doyum =~                                                              
+##     okul              1.000                               0.322    0.322
+##     kisi              2.720    0.985    2.763    0.006    0.661    0.661
+##     arkadas           3.397    1.250    2.717    0.007    0.917    0.917
+##     aile              1.686    0.661    2.550    0.011    0.386    0.386
+## 
+## Variances:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##    .okul1             1.547    0.148   10.481    0.000    1.547    0.834
+##    .okul2             1.011    0.139    7.278    0.000    1.011    0.613
+##    .okul3             0.390    0.231    1.689    0.091    0.390    0.220
+##    .kisi1             0.647    0.100    6.442    0.000    0.647    0.544
+##    .kisi2             0.303    0.075    4.020    0.000    0.303    0.396
+##    .arkadas1          0.261    0.080    3.277    0.001    0.261    0.373
+##    .arkadas2          0.420    0.047    8.958    0.000    0.420    0.719
+##    .aile1             0.501    0.079    6.317    0.000    0.501    0.452
+##    .aile2             0.268    0.078    3.429    0.001    0.268    0.279
+##    .aile3             0.625    0.061   10.256    0.000    0.625    0.743
+##    .okul              0.276    0.095    2.915    0.004    0.896    0.896
+##    .kisi              0.305    0.091    3.369    0.001    0.563    0.563
+##    .arkadas           0.070    0.106    0.661    0.509    0.159    0.159
+##    .aile              0.518    0.097    5.360    0.000    0.851    0.851
+##     doyum             0.032    0.021    1.536    0.125    1.000    1.000</code></pre>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-9" class="section level2" number="23.17">
+<h2><span class="header-section-number">23.17</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="dfa-modelinin-testi-11.html#cb47-1" tabindex="-1"></a><span class="co"># sem_fitmeasures(fit_model_2order)</span></span></code></pre></div>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-10" class="section level2" number="23.18">
+<h2><span class="header-section-number">23.18</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="dfa-modelinin-testi-11.html#cb48-1" tabindex="-1"></a><span class="fu">sem_factorloadings</span>(fit_model_2order,<span class="at">standardized =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div id="bigbmhwyua" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bigbmhwyua table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bigbmhwyua thead, #bigbmhwyua tbody, #bigbmhwyua tfoot, #bigbmhwyua tr, #bigbmhwyua td, #bigbmhwyua th {
+  border-style: none;
+}
+
+#bigbmhwyua p {
+  margin: 0;
+  padding: 0;
+}
+
+#bigbmhwyua .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: 0;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bigbmhwyua .gt_title {
+  color: #333333;
+  font-size: 18px;
+  font-weight: bolder;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bigbmhwyua .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 9px;
+  padding-bottom: 11px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bigbmhwyua .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 6px;
+  padding-bottom: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow-x: hidden;
+}
+
+#bigbmhwyua .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bigbmhwyua .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bigbmhwyua .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bigbmhwyua .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bigbmhwyua .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bigbmhwyua .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bigbmhwyua .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bigbmhwyua .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bigbmhwyua .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bigbmhwyua .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bigbmhwyua .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bigbmhwyua .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 15px;
+  padding-right: 15px;
+  vertical-align: top;
+}
+
+#bigbmhwyua .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bigbmhwyua .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bigbmhwyua .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bigbmhwyua .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bigbmhwyua .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bigbmhwyua .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bigbmhwyua .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_footnote {
+  margin: 0px;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bigbmhwyua .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bigbmhwyua .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#bigbmhwyua .gt_left {
+  text-align: left;
+}
+
+#bigbmhwyua .gt_center {
+  text-align: center;
+}
+
+#bigbmhwyua .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bigbmhwyua .gt_font_normal {
+  font-weight: normal;
+}
+
+#bigbmhwyua .gt_font_bold {
+  font-weight: bold;
+}
+
+#bigbmhwyua .gt_font_italic {
+  font-style: italic;
+}
+
+#bigbmhwyua .gt_super {
+  font-size: 65%;
+}
+
+#bigbmhwyua .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bigbmhwyua .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bigbmhwyua .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bigbmhwyua .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bigbmhwyua .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bigbmhwyua .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bigbmhwyua .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Factor Loadings</td>
+    </tr>
+    
+    <tr class="gt_col_headings gt_spanner_row">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" style="text-align: center;" scope="col" id="Latent Factor">Latent Factor</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" style="text-align: center;" scope="col" id="Indicator">Indicator</th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="6" scope="colgroup" id="Standardized">
+        <span class="gt_column_spanner">Standardized</span>
+      </th>
+    </tr>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="Loading">Loading</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="95% CI">95% CI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="sig">sig</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="SE">SE</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="z">z</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="p">p</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="lhs" class="gt_row gt_left">aile</td>
+<td headers="rhs" class="gt_row gt_left">aile1</td>
+<td headers="est.std" class="gt_row gt_right">0.741</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.645&nbsp;&mdash;&nbsp;0.837</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.049</td>
+<td headers="z" class="gt_row gt_right">15.115</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">aile</td>
+<td headers="rhs" class="gt_row gt_left">aile2</td>
+<td headers="est.std" class="gt_row gt_right">0.849</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.754&nbsp;&mdash;&nbsp;0.945</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.049</td>
+<td headers="z" class="gt_row gt_right">17.404</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">aile</td>
+<td headers="rhs" class="gt_row gt_left">aile3</td>
+<td headers="est.std" class="gt_row gt_right">0.507</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.398&nbsp;&mdash;&nbsp;0.615</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.055</td>
+<td headers="z" class="gt_row gt_right"> 9.158</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">arkadas</td>
+<td headers="rhs" class="gt_row gt_left">arkadas1</td>
+<td headers="est.std" class="gt_row gt_right">0.792</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.649&nbsp;&mdash;&nbsp;0.934</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.073</td>
+<td headers="z" class="gt_row gt_right">10.900</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">arkadas</td>
+<td headers="rhs" class="gt_row gt_left">arkadas2</td>
+<td headers="est.std" class="gt_row gt_right">0.530</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.404&nbsp;&mdash;&nbsp;0.656</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.064</td>
+<td headers="z" class="gt_row gt_right"> 8.233</td>
+<td headers="pvalue" class="gt_row gt_right">&lt;0.001</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">doyum</td>
+<td headers="rhs" class="gt_row gt_left">aile</td>
+<td headers="est.std" class="gt_row gt_right">0.386</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.227&nbsp;&mdash;&nbsp;0.546</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.081</td>
+<td headers="z" class="gt_row gt_right"> 4.755</td>
+<td headers="pvalue" class="gt_row gt_right">&lt;0.001</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">doyum</td>
+<td headers="rhs" class="gt_row gt_left">arkadas</td>
+<td headers="est.std" class="gt_row gt_right">0.917</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.674&nbsp;&mdash;&nbsp;1.160</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.124</td>
+<td headers="z" class="gt_row gt_right"> 7.406</td>
+<td headers="pvalue" class="gt_row gt_right">&lt;0.001</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">doyum</td>
+<td headers="rhs" class="gt_row gt_left">kisi</td>
+<td headers="est.std" class="gt_row gt_right">0.661</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.475&nbsp;&mdash;&nbsp;0.847</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.095</td>
+<td headers="z" class="gt_row gt_right"> 6.972</td>
+<td headers="pvalue" class="gt_row gt_right">&lt;0.001</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">doyum</td>
+<td headers="rhs" class="gt_row gt_left">okul</td>
+<td headers="est.std" class="gt_row gt_right">0.322</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.159&nbsp;&mdash;&nbsp;0.486</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.083</td>
+<td headers="z" class="gt_row gt_right"> 3.862</td>
+<td headers="pvalue" class="gt_row gt_right">&lt;0.001</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">kisi</td>
+<td headers="rhs" class="gt_row gt_left">kisi1</td>
+<td headers="est.std" class="gt_row gt_right">0.675</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.554&nbsp;&mdash;&nbsp;0.796</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.062</td>
+<td headers="z" class="gt_row gt_right">10.938</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">kisi</td>
+<td headers="rhs" class="gt_row gt_left">kisi2</td>
+<td headers="est.std" class="gt_row gt_right">0.777</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.651&nbsp;&mdash;&nbsp;0.903</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.064</td>
+<td headers="z" class="gt_row gt_right">12.105</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">okul</td>
+<td headers="rhs" class="gt_row gt_left">okul1</td>
+<td headers="est.std" class="gt_row gt_right">0.407</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.283&nbsp;&mdash;&nbsp;0.532</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.064</td>
+<td headers="z" class="gt_row gt_right"> 6.405</td>
+<td headers="pvalue" class="gt_row gt_right">&lt;0.001</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">okul</td>
+<td headers="rhs" class="gt_row gt_left">okul2</td>
+<td headers="est.std" class="gt_row gt_right">0.622</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.496&nbsp;&mdash;&nbsp;0.748</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.064</td>
+<td headers="z" class="gt_row gt_right"> 9.647</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+    <tr><td headers="lhs" class="gt_row gt_left">okul</td>
+<td headers="rhs" class="gt_row gt_left">okul3</td>
+<td headers="est.std" class="gt_row gt_right">0.883</td>
+<td headers="ci.lower_std" class="gt_row gt_right">0.738&nbsp;&mdash;&nbsp;1.029</td>
+<td headers="stars" class="gt_row gt_right">***</td>
+<td headers="se" class="gt_row gt_right">0.074</td>
+<td headers="z" class="gt_row gt_right">11.895</td>
+<td headers="pvalue" class="gt_row gt_right">    0.000</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="8"> * p &lt; .05; ** p &lt; .01; *** p &lt; .001</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-11" class="section level2" number="23.19">
+<h2><span class="header-section-number">23.19</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="dfa-modelinin-testi-11.html#cb49-1" tabindex="-1"></a><span class="fu">anova</span>(fit_model_2order, model_2_fit, model_1_fit )</span></code></pre></div>
+<div class="kable-table">
+<table>
+<colgroup>
+<col width="19%" />
+<col width="3%" />
+<col width="10%" />
+<col width="10%" />
+<col width="10%" />
+<col width="12%" />
+<col width="11%" />
+<col width="9%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Df</th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+<th align="right">Chisq</th>
+<th align="right">Chisq diff</th>
+<th align="right">RMSEA</th>
+<th align="right">Df diff</th>
+<th align="right">Pr(&gt;Chisq)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">model_1_fit</td>
+<td align="right">29</td>
+<td align="right">6907.520</td>
+<td align="right">6999.593</td>
+<td align="right">51.43258</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="even">
+<td align="left">fit_model_2order</td>
+<td align="right">31</td>
+<td align="right">6905.459</td>
+<td align="right">6990.450</td>
+<td align="right">53.37207</td>
+<td align="right">1.939491</td>
+<td align="right">0.0000000</td>
+<td align="right">2</td>
+<td align="right">0.3791795</td>
+</tr>
+<tr class="odd">
+<td align="left">model_2_fit</td>
+<td align="right">32</td>
+<td align="right">6929.609</td>
+<td align="right">7011.058</td>
+<td align="right">79.52151</td>
+<td align="right">26.149441</td>
+<td align="right">0.3140466</td>
+<td align="right">1</td>
+<td align="right">0.0000003</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="daha-yüksek-dereceli-faktör-modelleri-12" class="section level2" number="23.20">
+<h2><span class="header-section-number">23.20</span> Daha Yüksek Dereceli Faktör Modelleri</h2>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="dfa-modelinin-testi-11.html#cb50-1" tabindex="-1"></a><span class="fu">semPaths</span>(fit_model_2order, <span class="st">&quot;std&quot;</span>, <span class="at">weighted =</span> <span class="cn">FALSE</span>, <span class="at">nCharNodes =</span> <span class="dv">7</span>, </span>
+<span id="cb50-2"><a href="dfa-modelinin-testi-11.html#cb50-2" tabindex="-1"></a>         <span class="at">shapeMan =</span> <span class="st">&quot;rectangle&quot;</span>, <span class="at">sizeMan =</span> <span class="dv">8</span>, <span class="at">sizeMan2 =</span> <span class="dv">5</span>)</span></code></pre></div>
+<p><img src="07_DFA_files/figure-html/unnamed-chunk-58-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="ölçme-değişmezliği-modelleri" class="section level2" number="23.21">
+<h2><span class="header-section-number">23.21</span> Ölçme Değişmezliği Modelleri</h2>
+<ul>
+<li><p>Belirli bir özelliğin <strong>gruplar arasında karşılaştırılması yapılırken</strong>,
+söz konusu özelliği ölçmek üzere geliştirilen ölçme araçlarından alınan puanların <strong>karşılaştırılabilir olması</strong> için öncelikle <strong>ölçme aracının gruplar arasında ölçme değişmezliğini</strong> (measurement invariance) sağlanması gerekir.</p></li>
+<li><p>Ölçme değişmezliği, <strong>gizil değişkenler ve gözlenen değişkenler arasındaki ilişkinin gruplar
+arasında aynı olmasıdır.</strong></p></li>
+</ul>
+</div>
+<div id="ölçme-değişmezliği-modelleri-1" class="section level2" number="23.22">
+<h2><span class="header-section-number">23.22</span> Ölçme Değişmezliği Modelleri</h2>
+<ul>
+<li><p>Ölçme değişmezliği, <strong>çoklu grup doğrulayıcı faktör analizi (ÇG-DFA) </strong> ile incelenebilir. Çoklu grup doğrulayıcı faktör analizinin temel amacı bir grup göstergenin farklı gruplarda aynı yapıyı ölçüp ölçmediğinin değerlendirilmesidir.</p></li>
+<li><p>Bir ölçme aracı bir grupta diğer gruba göre faklı bir özelliği ölçüyorsa, <strong>ölçme aracının yapı yanlılığına (construct bias) sahip olduğu söylenebilir. </strong></p></li>
+<li><p>Yapı yanlılığı söz konusuysa, <strong>grup üyeliği DFA modelindeki göstergeler ve faktörler arasındaki ilişkilere etki eder.</strong></p></li>
+</ul>
+</div>
+<div id="ölçme-değişmezliği-modelleri-2" class="section level2" number="23.23">
+<h2><span class="header-section-number">23.23</span> Ölçme Değişmezliği Modelleri</h2>
+<ol style="list-style-type: decimal">
+<li><p>Şekil değişmezliği (configural invariance) modeli</p></li>
+<li><p>Zayıf değişmezlik (weak invariance) modeli</p></li>
+<li><p>Güçlü değişmezlik (strong invariance) modeli</p></li>
+<li><p>Katı değişmezlik (strict invariance) modeli</p></li>
+</ol>
+<ul>
+<li><p><strong>Şekil değişmezliği (configural /pattern invariance)</strong></p>
+<ul>
+<li>Gruplar aynı genel faktör yapısına sahip mi?
+<ul>
+<li>en az kısıtlayıcı model</li>
+<li>model veri ile uyumlu değilse, hiç bir temel düzeyde geçerli olmaz.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="şekil-değişmezlik" class="section level2" number="23.24">
+<h2><span class="header-section-number">23.24</span> Şekil Değişmezlik</h2>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="2%" />
+<col width="46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grup 1</th>
+<th></th>
+<th>Grup 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(y_{11s} = \mu_{11} + \lambda_{11}F_{1s} + e_{11s}\)</span></td>
+<td></td>
+<td><span class="math inline">\(y_{12s} = \mu_{12} + \lambda_{12}F_{1s} + e_{12s}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(y_{21s} = \mu_{21} + \lambda_{21}F_{1s} + e_{21s}\)</span></td>
+<td></td>
+<td><span class="math inline">\(y_{22s} = \mu_{22} + \lambda_{22}F_{1s} + e_{22s}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(y_{31s} = \mu_{31} + \lambda_{31}F_{1s} + e_{31s}\)</span></td>
+<td></td>
+<td><span class="math inline">\(y_{32s} = \mu_{32} + \lambda_{32}F_{1s} + e_{32s}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(y_{41s} = \mu_{41} + \lambda_{41}F_{2s} + e_{41s}\)</span></td>
+<td></td>
+<td><span class="math inline">\(y_{42s} = \mu_{42} + \lambda_{42}F_{2s} + e_{42s}\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(y_{51s} = \mu_{51} + \lambda_{51}F_{2s} + e_{51s}\)</span></td>
+<td></td>
+<td><span class="math inline">\(y_{52s} = \mu_{52} + \lambda_{52}F_{2s} + e_{52s}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(y_{61s} = \mu_{61} + \lambda_{61}F_{6s} + e_{61s}\)</span></td>
+<td></td>
+<td><span class="math inline">\(y_{62s} = \mu_{62} + \lambda_{62}F_{2s} + e_{62s}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Alt indislerin ilki madde, ikincisi grup için kullanılmıştır.</p>
+<p><span class="math display">\[sd = 54 - (12\mu - 12\sigma^2_{e} - 12\lambda + 0\sigma^2_{F} + 2\sigma_{F_{12}} + 0K_{F}) = 16\]</span></p></li>
+</ul>
+<ul>
+<li><p><strong>Zayıf Değişmezlik (Metric/Weak factorial invariance)</strong></p>
+<ul>
+<li><p>Gruplar aynı faktör yüklerine sahip mi?</p>
+<ul>
+<li>her bir göstergenin yükü (standartlaştırılmış katsayısı üzerinde gruplarda eşitlik kısıtı getirilir.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Güçlü Değişmezlik (Strong/Scalar invariance)</strong></p>
+<ul>
+<li>Gruplar aynı gösterge sabitlerine sahip mi?
+<ul>
+<li>eşit standartlaştırılmış kesen değere sahip mi?</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Katı Değişmezlik</strong></p>
+<ul>
+<li>Gruplar aynı artık varyanslara sahip mi?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script>
+<script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script>
+  </main>
+
+  <div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          <li><a id="book-source" href="#">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="#">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5">
+  <div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-03-25.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+<script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+
+</html>

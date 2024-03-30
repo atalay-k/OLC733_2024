@@ -49,6 +49,17 @@ editor_options:
         katsayıları, tetrakorik korelasyon katsayısı).
 
 
+```r
+df <- data.frame(matrix(c(
+  1,6,5,4,8,6,2,
+  2,8,7,2,7,5,3,
+  3,9,8,1,9,7,1,
+  4,5,4,5,9,7,1,
+  5,4,3,6,9,7,1,
+  6,7,6,3,7,5,3,
+  7,3,2,7,7,5,3),nrow=7,byrow = TRUE))
+colnames(df) <- c("id", "handsome", "beatiful","ugly","brillant","smart","dumb")
+```
 
 
 ```r
@@ -104,9 +115,8 @@ cor(df[,-1])%>% kable(align = "c")
     **korelasyon yoktur.**
 
 -   6 değişken yerine bu **2 faktör** kullanılarak, 6 ölçülen değişken
-    arasındaki **korelasyonun örüntüsü özetlenir.**
-
--   6 ölçülen değişken **2 gizil faktöre** indirgenir.
+    arasındaki **korelasyonun örüntüsü özetlenir.** 6 ölçülen değişken
+    **2 gizil faktöre** indirgenir.
 
     -   Bu 3 değişkenlik **2 alt kümedeki korelasyonlar 1 veya -1**
         olduğundan, gözlenen/ölçülen korelasyon matrisindeki bilgiden
@@ -118,27 +128,26 @@ cor(df[,-1])%>% kable(align = "c")
 ## Örüntü Katsayıları
 
 -   Korelasyon matrisinin faktör analizi sonucunda elde edilen **karesi
-    alınmamış faktör ağırlıkları** (**MR1** ve **MR2**), **karesi
-    alınmış faktör ağırlıkları** aşağıdaki gibidir.
+    alınmamış** (**MR1** ve **MR2**), **karesi alınmış** (**MR1** ve
+    **MR2**)**faktör ağırlıkları** aşağıdaki gibidir.
 
 
 ```r
 library(psych)
 fa1 <- round(fa(df[,-1],2)$loading[,1:2],2)
-cbind(fa1,fa1^2)%>% kable(align = "c",
-col.names = c("MR1","MR2", "MR1*MR1","MR2*MR2"))
+cbind(fa1,fa1^2)%>% kable(align = "c",col.names = c("MR1","MR2", "MR1^2","MR2^2"))
 ```
 
 
 
-|         | MR1 | MR2 | MR1*MR1 | MR2*MR2 |
-|:--------|:---:|:---:|:-------:|:-------:|
-|handsome |  1  |  0  |    1    |    0    |
-|beatiful |  1  |  0  |    1    |    0    |
-|ugly     | -1  |  0  |    1    |    0    |
-|brillant |  0  |  1  |    0    |    1    |
-|smart    |  0  |  1  |    0    |    1    |
-|dumb     |  0  | -1  |    0    |    1    |
+|         | MR1 | MR2 | MR1^2 | MR2^2 |
+|:--------|:---:|:---:|:-----:|:-----:|
+|handsome |  1  |  0  |   1   |   0   |
+|beatiful |  1  |  0  |   1   |   0   |
+|ugly     | -1  |  0  |   1   |   0   |
+|brillant |  0  |  1  |   0   |   1   |
+|smart    |  0  |  1  |   0   |   1   |
+|dumb     |  0  | -1  |   0   |   1   |
 
 -   Faktör analizinde **örüntü katsayıları (pattern coefficients)**
     faktör analizindeki gizil değişkenler üzerinde puanlar (faktör
@@ -176,41 +185,42 @@ col.names = c("MR1","MR2", "MR1*MR1","MR2*MR2"))
 -   Faktör örüntü katsayıları, korelasyon matrisini mükemmel bir şekilde
     yeniden oluşturursa, $R_{VxV^-}$ matrisinin girdileri **tamamen
     sıfırlardan** oluşur ve bu **matriste hiçbir bilgi veya varyans**
-    kalmadığını gösterir.
-
--   Faktör örüntü katsayıları korelasyon matrisini mükemmel şekilde
-    yeniden oluşturursa, $R_{VxV^±}$ matrisindeki girdiler $R_{VxV}$
-    matrisindeki girdilerle tam olarak eşleşir.
+    kalmadığını gösterir. Faktör örüntü katsayıları korelasyon matrisini
+    mükemmel şekilde yeniden oluşturursa, $R_{VxV^±}$ matrisindeki
+    girdiler $R_{VxV}$ matrisindeki girdilerle tam olarak eşleşir.
 
 -   Regresyon analizinde, belirli bir analizde yalnızca tek bir eşitlik
     $\beta$ ağırlıkları seti vardır. Faktör analizinde ağırlık setlerine
     (örüntü katsayıları gibi) eşitlikler yerine **faktörler** denir.
 
--   Örnekteki değişkenler arası korelasyon matrisindeki her girdi **+1
-    veya -1** olsaydı, her ölçülen değişken çifti arasındaki $r^2$
-    değeri %100 olacaktı. Bu da derecelendirmelerin altında **tek bir
-    faktörün yattığı** anlamına gelecekti.
+-   **Örnekteki değişkenler arası korelasyon matrisindeki her girdi +1
+    veya -1 olsaydı**
 
--   Bu durumda sadece eksi veya artı örüntü katsayılarından $P_{6x1}$
-    oluşan **bir faktör çıkarılacaktı.** Bu tek faktör, orijinal
-    $P_{6x6}$ matrisini **mükemmel şekilde yeniden üretecekti.**
+    -   her ölçülen değişken çifti arasındaki $r^2$ değeri %100
+        olacaktı. Bu da derecelendirmelerin altında **tek bir faktörün
+        yattığı** anlamına gelecekti. Bu durumda sadece eksi veya artı
+        örüntü katsayılarından $P_{6x1}$ oluşan **bir faktör
+        çıkarılacaktı.** Bu tek faktör, orijinal $P_{6x6}$ matrisini
+        **mükemmel şekilde yeniden üretecekti.**
 
--   Teknik olarak, her biri sadece sıfır değerindeki örüntü
-    katsayılarından oluşan, yani her birinin hiçbir bilgi içermediği ve
-    **değişkenliğin yeniden üretilmediği beş ek faktör** olacaktı. Ancak
-    bu tür faktörlerle ilgilenilmez.
+    -   Teknik olarak, her biri sadece sıfır değerindeki örüntü
+        katsayılarından oluşan, yani her birinin hiçbir bilgi içermediği
+        ve **değişkenliğin yeniden üretilmediği beş ek faktör**
+        olacaktı. Ancak bu tür faktörlerle ilgilenilmez.
 
--   Örnekteki değişkenler arasındaki korelasyon **sıfır** olsaydı,
+-   **Örnekteki değişkenler arasındaki korelasyon sıfır olsaydı,**
     korelasyon matrisindeki **köşegen dışındaki her girdi 0 olacaktı,**
-    her ölçülen değişken çifti arasındaki $r^2$ değeri **%0** olacaktı.
-    Bu da bir faktör oluşturmak için **iki değişken
-    birleştirilemeyeceği** (yani her ölçülen değişken kendi faktörünü
-    tanımlayacağı) anlamına gelecekti. Dolayısıyla **6 faktör**
-    olacaktı.
 
--   Her faktör bir **+1 değerinde örüntü katsayısına** sahip olacaktı ve
-    geri kalan **beş girdi sıfır olacaktı**. Bu altı faktör, orijinal
-    $P_{6x6}$ matrisini mükemmel şekilde yeniden üretecekti.
+    -   her ölçülen değişken çifti arasındaki $r^2$ değeri **%0**
+        olacaktı.
+
+    -   Bu da bir faktör oluşturmak için **iki değişken
+        birleştirilemeyeceği** (yani her ölçülen değişken kendi
+        faktörünü tanımlayacağı) anlamına gelecekti. Dolayısıyla **6
+        faktör** olacaktı. Her faktör bir **+1 değerinde örüntü
+        katsayısına** sahip olacaktı ve geri kalan **beş girdi sıfır
+        olacaktı**. Bu altı faktör, orijinal $P_{6x6}$ matrisini
+        mükemmel şekilde yeniden üretecekti.
 
     -   Aslında, tüm olası faktörler çıkarıldığında (yani faktörlerin
         sayısı ölçülen değişkenlerin sayısına eşit olduğunda), örüntü
@@ -235,13 +245,13 @@ col.names = c("MR1","MR2", "MR1*MR1","MR2*MR2"))
 
 -   Burada,
 
--   $R_{FxF}$ faktörler arasındaki korelasyon matrisidir.
+    -   $R_{FxF}$ faktörler arasındaki korelasyon matrisidir.
 
--   **Faktörler arasındaki korelasyon sıfır** olduğunda (yani faktörler
-    tamamen ilişkisiz olduğunda), faktörler arasındaki korelasyon
-    matrisi birim matrise eşit olacağından ( $R_{FxF}=I_{FxF}$ ),
-    **örüntü katsayıları matrisi** de **yapı katsayıları matrisine**
-    eşit olacaktır ( $P_{VxF}=S_{VxF}$ ).
+    -   **Faktörler arasındaki korelasyon sıfır** olduğunda (yani
+        faktörler tamamen ilişkisiz olduğunda), faktörler arasındaki
+        korelasyon matrisi birim matrise eşit olacağından (
+        $R_{FxF}=I_{FxF}$ ), **örüntü katsayıları matrisi** de **yapı
+        katsayıları matrisine** eşit olacaktır ( $P_{VxF}=S_{VxF}$ ).
 
 -   Faktörler ilk çıkarıldığında, faktörler her zaman tamamen
     ilişkisizdir.
@@ -273,27 +283,27 @@ col.names = c("MR1","MR2", "MR1*MR1","MR2*MR2"))
 
 
 ```r
-fa(df[,-1],2,n.obs=7) %>% target.rot()
+fa1 %>% target.rot()
 ```
 
 ```
 ## 
 ## Call: NULL
 ## Standardized loadings (pattern matrix) based upon correlation matrix
-##          MR1 MR2 h2     u2
-## handsome   1   0  1 0.0017
-## beatiful   1   0  1 0.0017
-## ugly      -1   0  1 0.0017
-## brillant   0   1  1 0.0017
-## smart      0   1  1 0.0017
-## dumb       0  -1  1 0.0017
+##          MR1 MR2 h2 u2
+## handsome   1   0  1  0
+## beatiful   1   0  1  0
+## ugly      -1   0  1  0
+## brillant   0   1  1  0
+## smart      0   1  1  0
+## dumb       0  -1  1  0
 ## 
-##                        MR1  MR2
-## SS loadings           2.99 2.99
-## Proportion Var        0.50 0.50
-## Cumulative Var        0.50 1.00
-## Proportion Explained  0.50 0.50
-## Cumulative Proportion 0.50 1.00
+##                       MR1 MR2
+## SS loadings           3.0 3.0
+## Proportion Var        0.5 0.5
+## Cumulative Var        0.5 1.0
+## Proportion Explained  0.5 0.5
+## Cumulative Proportion 0.5 1.0
 ##     MR1 MR2
 ## MR1   1   0
 ## MR2   0   1
@@ -431,8 +441,7 @@ $\delta$ : ölçme hatası
 
 -   Sonuç olarak $R_{res}$ mümkün olduğunca küçük olacaktır.
 
-<div style="font-family: Arial; font-size: 8px;">
-
+::: {style="font-family: Arial; font-size: 8px;"}
 $$\begin{bmatrix}{}
 \lambda_{11} & \lambda_{12} \\
 \lambda_{21} & \lambda_{22} \\
@@ -468,7 +477,7 @@ $$=\begin{bmatrix}{}
 \Psi_{11} & \Psi_{21} & \Psi_{31} & \Psi_{41} & \Psi_{51}\\
 \Psi_{11} & \Psi_{21} & \Psi_{31} & \Psi_{41} & \Psi_{51} & \Psi_{61}\\
 \end{bmatrix}$$
-</div>
+:::
 
 ## AFA’da Örneklem Büyüklüğü
 
@@ -558,11 +567,9 @@ $$=\begin{bmatrix}{}
     Spearman’s rho şu soruya yanıt verir: **İki değişken, bireyleri tam
     olarak aynı sırada mı sıralıyor?** Pearson r bu soruyu da
     değerlendirir ancak sıralı puanlar arasındaki mesafeleri de hesaba
-    katar.
-
--   Spearman’s rho, verilerde böyle bir bilginin bulunmadığını varsayar
-    (veya bu bilgiyi göz ardı eder), bu nedenle her iki değişken de
-    sıralı olarak ölçeklendiğinde **rho** kullanılabilir.
+    katar. Spearman’s rho, verilerde böyle bir bilginin bulunmadığını
+    varsayar (veya bu bilgiyi göz ardı eder), bu nedenle her iki
+    değişken de sıralı olarak ölçeklendiğinde **rho** kullanılabilir.
 
 -   ikili puanlana veriler için ise korelasyon matrisinin **tetrakorik
     korelasyonlardan** elde edilmesi gerekmektedir.
@@ -570,25 +577,31 @@ $$=\begin{bmatrix}{}
 -   Bu iki ilişki matrisi, **kovaryans matrisi** de olabilir. Birçok
     bağlamda kovaryans, ilişkiyi veya ilişkiyi tanımlamak için değil,
     korelasyon katsayısının elde edilmesinde **bir ara hesaplama
-    olarak** kullanılır.
+    olarak** kullanılır. Kovaryans nadiren kullanılır, çünkü
+    korelasyondan farklı olarak **kovaryans, kesin bir olası değerler
+    aralığına sahip değildir.**
 
--   Kovaryans nadiren kullanılır, çünkü korelasyondan farklı olarak
-    **kovaryans, kesin bir olası değerler aralığına sahip değildir.**
+<!-- -   Kovaryans, iki değişkenin üç yönünden ortaklaşa etkilenir: -->
 
--   Kovaryans, iki değişkenin üç yönünden ortaklaşa etkilenir:
+<!--     -   iki değişken arasındaki **korelasyon**, -->
 
-    -   iki değişken arasındaki **korelasyon**,
-    -   birinci değişkenin **değişkenliği** ve
-    -   ikinci değişkenin **değişkenliği**.
+<!--     -   birinci değişkenin **değişkenliği** ve -->
 
--   Bu nedenle, açımlayıcı faktörler bir kovaryans matrisinden
-    çıkarıldığında, bazı faktörler korelasyonların bir işlevi
-    olabilirken, diğerleri daha çok puan yayılmasının bir işlevi
-    olabilir.
+<!--     -   ikinci değişkenin **değişkenliği**. -->
 
--   Bazen faktörlerimizin puanların bir dizi yönüne duyarlı olmasını
-    isteriz. Ancak diğer zamanlarda, tüm faktörlerin verilerimizin
-    yalnızca tek bir yönüne duyarlı olmasını tercih edebiliriz.
+<!-- -   Bu nedenle, açımlayıcı faktörler bir kovaryans matrisinden -->
+
+<!--     çıkarıldığında, bazı faktörler korelasyonların bir işlevi -->
+
+<!--     olabilirken, diğerleri daha çok puan yayılmasının bir işlevi -->
+
+<!--     olabilir. -->
+
+<!-- -   Bazen faktörlerimizin puanların bir dizi yönüne duyarlı olmasını -->
+
+<!--     isteriz. Ancak diğer zamanlarda, tüm faktörlerin verilerimizin -->
+
+<!--     yalnızca tek bir yönüne duyarlı olmasını tercih edebiliriz. -->
 
 -   AFA’da analiz edilen **ilişkiler matrisidir.** Örnek veri için
     $R_{11 x 11}$ korelasyon matrisi aşağıdaki gibidir
@@ -623,7 +636,7 @@ per11 0.43 0.49 0.55 0.42 0.46 0.25 0.42 0.44 0.68  0.59     1
     hedeflenmektedir. Bu nedenle değişkenler bazı ortak şeyler
     paylaşmalıdır. Eğer bu **11 değişkenin altında yatan hiçbir ortak
     faktör yoksa evren korelasyon matrisi 11x11 boyutunda bir birim**
-    matris olacaktır
+    matris olacaktır.
 
 $$\begin{bmatrix}{}
 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
@@ -679,20 +692,6 @@ KMO(veri)
     raporlanır. Madde bazında KMO değeri ise **belirli bir maddenin
     testin tamamından** farklı olup olmadığına ilişkin bilgi verebilir.
 
-
-```r
-KMO(veri)
-```
-
-```
-## Kaiser-Meyer-Olkin factor adequacy
-## Call: KMO(r = veri)
-## Overall MSA =  0.88
-## MSA for each item = 
-##  per1  per2  per3  per4  per5  per6  per7  per8  per9 per10 per11 
-##  0.79  0.89  0.91  0.91  0.85  0.89  0.88  0.91  0.86  0.91  0.89
-```
-
 Veri seti iki kategorik ise **KMO** aşağıdaki şekilde hesaplanabilir.
 
 
@@ -711,15 +710,18 @@ KMO(kor_mat)
 
 
 ```r
-bartlett.test(EFA)
+cortest.bartlett(veri)
 ```
 
 ```
+## $chisq
+## [1] 808
 ## 
-## 	Bartlett test of homogeneity of variances
+## $p.value
+## [1] 2.51e-134
 ## 
-## data:  EFA
-## Bartlett's K-squared = 3497, df = 12, p-value <2e-16
+## $df
+## [1] 55
 ```
 
 Burada **sıfır hipotezi reddedilir.** AFA analizi devam edebilir.
@@ -743,11 +745,9 @@ Burada **sıfır hipotezi reddedilir.** AFA analizi devam edebilir.
 
 -   Bartlett'e (1950) bağlı istatistiksel anlamlılık testleri,
     korelasyon matrisinin bir birim matrisi olup olmadığını test etmek
-    için kullanılabilir.
-
--   Korelasyon matrisinin bir birim matrisi olduğuna ilişkin **sıfır
-    hipotezi reddedilemezse, faktörler matristen makul bir şekilde
-    çıkarılamaz.**
+    için kullanılabilir. Korelasyon matrisinin bir birim matrisi
+    olduğuna ilişkin **sıfır hipotezi reddedilemezse, faktörler
+    matristen makul bir şekilde çıkarılamaz.**
 
 -   Bu uygulamadaki sorun, tüm istatistiksel anlamlılık testlerinde
     karşılaşılan genel sorundur. İstatistiksel anlamlılık, büyük ölçüde
@@ -760,10 +760,8 @@ Burada **sıfır hipotezi reddedilir.** AFA analizi devam edebilir.
 **Özdeğerin 1,0’dan Büyük Olması Kuralı**
 
 -   Guttman (1954), kayda değer faktörlerin **özdeğerlerinin 1,0'dan
-    büyük olması** gerektiğini düşünmüştür.
-
--   Bazen bu mantık Kaiser'e atfedilir ve **K1** kuralı olarak
-    adlandırılır.
+    büyük olması** gerektiğini düşünmüştür. Bazen bu mantık Kaiser'e
+    atfedilir ve **K1** kuralı olarak adlandırılır.
 
 -   Faktörler, tanım gereği, gözlenen değişkenlerin toplamları olarak
     oluşturulan gizli yapılardır ve bu nedenle birden fazla gözlenen
@@ -772,11 +770,9 @@ Burada **sıfır hipotezi reddedilir.** AFA analizi devam edebilir.
 -   Bir faktör tek bir gözlenen değişkenden oluşuyorsa, gözlenen
     değişkenin örüntü/yapı katsayısı **1,0 (veya -1,0)** olsa ve bu
     faktördeki diğer tüm değişkenler **0** örüntü/yapı katsayılarına
-    sahip olsa, faktörün özdeğeri **1,0** olacaktır.
-
--   Dolayısıyla kayda değer faktörlerin (gözlenen değişkenlerin
-    toplamlarını temsil eden yapıların) **öz değerlerinin** 1,0'dan\*\*
-    büyük olması beklenmektedir.\*\*
+    sahip olsa, faktörün özdeğeri **1,0** olacaktır. Dolayısıyla kayda
+    değer faktörlerin (gözlenen değişkenlerin toplamlarını temsil eden
+    yapıların) **öz değerlerinin 1,0'dan büyük olması beklenmektedir.**
 
 -   Özdeğerler, tüm örnek istatistikler gibi, bazı örnekleme hatalarına
     sahiptir. Bu nedenle bir araştırmacı kuram ve önceki ilgili AFA
@@ -806,9 +802,8 @@ Burada **sıfır hipotezi reddedilir.** AFA analizi devam edebilir.
 
 $6.078 + 1.521 + 1.154 + … + 0.168 + 0.099 = 11$
 
--   İlk üç özdeğer 1’den büyüktür: 6,078, 1,521 ve 1,154.
-
--   **K1** kuralına göre **AFA’dan 3 faktör** çıkarılacaktır
+-   İlk üç özdeğer 1’den büyüktür: 6,078, 1,521 ve 1,154. **K1**
+    kuralına göre **AFA’dan 3 faktör** çıkarılacaktır
 
 -   3 faktör çıkarma işlemi
 
@@ -867,14 +862,43 @@ out
 
 ## psych fa()
 
-|          |                                                                                                                           |                                                                                                                                                                                                       |
-|-----------------|-----------------|---------------------|
-| ARGÜMAN  | AÇIKLAMA                                                                                                                  | DEĞERLERİ                                                                                                                                                                                             |
-| r        | Girdi veri matrisidir.                                                                                                    | Ham veri, korelasyon ya da kovaryans matrisi olabilir.                                                                                                                                                |
-| nfactors | Çıkarılacak faktör sayısıdır.                                                                                             | Araştırmacı tarafından belirlenir.                                                                                                                                                                    |
-| n.obs    | Gözlem sayısıdır. r girdisi korelasyon ya da kovaryans matrisi olduğu durumlarda verideki gözlem sayısı bel irtilmelidir. |                                                                                                                                                                                                       |
-| rotate  | F aktörleştirme yapılırken kullanılacak olan döndürme yöntemi tanımlanır                                                  | "none" ,"varimax", "quartimax", \| "bentlerT", "equamax", \| "varimin", geominT", \| "bifactor" "Promax", \| "promax", "oblimin", "simplimax", "bentlerQ, \| "geominQ" , "biquartimin" , \| "cluster" |
-| scores   | Faktör puanlarının hangi yöntemle hesaplanacağı tanımlanır.                                                               | "regression", "Thurstone", "tenBerge", "Anderson" , "Bartlett"                                                                                                                                        |
++---------------+----------------+------------------------------+
+| ARGÜMAN       | AÇIKLAMA       | DEĞERLERİ                    |
++---------------+----------------+------------------------------+
+| r             | Girdi veri     | Ham veri, korelasyon ya da   |
+|               | matrisidir.    | kovaryans matrisi olabilir.  |
++---------------+----------------+------------------------------+
+| nfactors      | Çıkarılacak    | Araştırmacı tarafından       |
+|               | faktör         | belirlenir.                  |
+|               | sayısıdır.     |                              |
++---------------+----------------+------------------------------+
+| n.obs         | Gözlem         |                              |
+|               | sayısıdır. r   |                              |
+|               | girdisi        |                              |
+|               | korelasyon ya  |                              |
+|               | da kovaryans   |                              |
+|               | matrisi olduğu |                              |
+|               | durumlarda     |                              |
+|               | verideki       |                              |
+|               | gözlem sayısı  |                              |
+|               | bel            |                              |
+|               | irtilmelidir.  |                              |
++---------------+----------------+------------------------------+
+| rotate        | F              | "none" ,"varimax",           |
+|               | aktörleştirme  | "quartimax", "bentlerT",     |
+|               | yapılırken     | "equamax", "varimin",        |
+|               | kullanılacak   | geominT", "bifactor"         |
+|               | olan döndürme  | "Promax", "promax",          |
+|               | yöntemi        | "oblimin", "simplimax",      |
+|               | tanımlanır     | "bentlerQ, "geominQ" ,       |
+|               |                | "biquartimin" , "cluster"    |
++---------------+----------------+------------------------------+
+| scores        | Faktör         | "regression", "Thurstone",   |
+|               | puanlarının    | "tenBerge", "Anderson" ,     |
+|               | hangi yöntemle | "Bartlett"                   |
+|               | hesaplanacağı  |                              |
+|               | tanımlanır.    |                              |
++---------------+----------------+------------------------------+
 
 **Yamaç Birikinti Grafiği**
 
@@ -895,28 +919,39 @@ out
     çizilir.
 
 -   Özdeğerler grafikte işaretlenir ve ardışık değerler bir çizgiyle
-    bağlanır. Faktör çıkarma, bir "dirsek" bulunan noktada veya grafiğin
-    düzleştiği noktada durdurulmalıdır.
+    bağlanır. Faktör çıkarma, bir **dirsek** bulunan noktada veya
+    grafiğin düzleştiği noktada durdurulmalıdır.
 
--   İstatistiksel anlam içermeyen bu görsel yaklaşıma bazen "kalem
-    testi" denir, çünkü dirseğin veya düzleşmenin nerede oluştuğunu
+-   İstatistiksel anlam içermeyen bu görsel yaklaşıma bazen **kalem
+    testi** denir, çünkü dirseğin veya düzleşmenin nerede oluştuğunu
     belirlemek için ilgili grafiğin en sağ kısmına bir kalem
     yerleştirilebilir.
+
+    
+    ```r
+    scree(cor(veri), factors = FALSE)
+    ```
+    
+    <img src="06-AFA_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" />
+
+-   
+
+**Artık Korelasyon Matrisinin İncelenmesi**
 
 -   Daha fazla faktör çıkarıldıkça, **artık korelasyon matrisindeki
     girdiler sıfıra yaklaşır.** Tüm olası faktörler çıkarılırsa, **artık
     matris her zaman yalnızca sıfırlardan oluşacaktır.**
 
-
-
-**Artık Korelasyon Matrisinin İncelenmesi**
 -   Dolayısıyla, kayda değer faktörlerin sayısını belirlemeye yönelik
     diğer bir yaklaşım, ardışık faktörler çıkarılırken **artık matrisin
     incelenmesini** içerir.
 
+<!-- -->
+
 -   Yazılımlar talep üzerine artık matrisi sağlar. Ve bazı paketler
     artık matrisin bir üçgeninde **\|0.05\|'den büyük olan girdilerin
     sayısını verir.**
+
 
 ```r
 (residuals <-round(out$residual,2))
@@ -972,6 +1007,17 @@ sum(abs(residuals[lower.tri(residuals)])>0.05)
     öz değerlerden büyük olan öz değer sayısına** göre belirlenir
     (Franklin vd. 1995).
 
+    
+    ```r
+    fa.parallel(veri, fa = "fa")
+    ```
+    
+    <img src="06-AFA_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" />
+    
+    ```
+    ## Parallel analysis suggests that the number of factors =  3  and the number of components =  NA
+    ```
+
 
 ```r
 library(nFactors) 
@@ -992,7 +1038,7 @@ PA$Components
 plotnScree(PA, legend=TRUE, ylab="Ozdegerler", main="Faktor Cozumu")
 ```
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;" />
 
 -   Paralel analizde, **gerçek verilerden ve rastgele sıralı verilerden
     ardışık çiftlerdeki özdeğerler karşılaştırılır.**
@@ -1005,11 +1051,11 @@ plotnScree(PA, legend=TRUE, ylab="Ozdegerler", main="Faktor Cozumu")
 
 -   AFA modeli aşağıdaki gibidir.
 
-$X=\Lambda\xi +\delta$
+-   $X=\Lambda\xi +\delta$
 
 -   $\Lambda$ (lambda) matrisindeki katsayılara **örüntü
-    katsayıları**adı verilir (DFA’daki faktör yüklerine ve çoklu
-    regresyondaki eğim katsayılarına benzerler).
+    katsayılarıdır.** (DFA’daki faktör yüklerine ve çoklu regresyondaki
+    eğim katsayılarına benzerler).
 
 -   Örüntü katsayıları ölçülen değişkendeki puanları elde etmek için
     **faktöre uygulanan ağırlıklardır.**
@@ -1038,32 +1084,38 @@ out$loadings[,1:3]
 ## per11 0.671 -0.1440  0.44205
 ```
 
--   Bu tablo çıkarılan 3 faktör için örüntü katsayılarını listeler.
-
--   Bu tabloya dayanarak her bir değişken için eşitlik yazılabilir:
+-   Bu tablo çıkarılan 3 faktör için örüntü katsayılarını listeler. Bu
+    tabloya dayanarak her bir değişken için eşitlik yazılabilir:
 
 $X=\Lambda\xi +\delta$
 
-$per1= .80\xi_1 + (-0.45)\xi_2 + (-0.38)\xi_3 + \delta_1$
-$per2= .78\xi_1 + (-0.32)\xi_2 + (-0.21)\xi_3 + \delta_2$ <br> ...\
-.... .... <br> $per11= .67\xi_1 + (-0.14)\xi_2 + 0.44\xi_3 + \delta_3$
+$per1= .80\xi_1 + (-0.45)\xi _2 + (-0.38)\xi_3 + \delta_1$
+
+$per2= .78\xi_1 + (-0.32)\xi_2 + (-0.21)\xi_3 + \delta_2$
+............................
+
+............................
+
+............................
+
+$per11= .67\xi_1 + (-0.14)\xi_2 + 0.44\xi_3 + \delta_3$
 
 -   Faktörler birbirinden bağımsız olduğundan, örüntü katsayısının
     karesi, örneğin,
 
-$\lambda^2_{11} = .80^2 = .64$ değeri PER1 değişkenindeki varyansın
-yaklaşık **%64,6’**sının birinci faktör tarafından açıklandığını önerir.
-Benzer şekilde,
+-   $\lambda^2_{11} = .80^2 = .64$ değeri PER1 değişkenindeki varyansın
+    yaklaşık **%64,6’**sının birinci faktör tarafından açıklandığını
+    önerir. Benzer şekilde,
 
-$\lambda^2_{12} = -0.45^2 = .20$
+-   $\lambda^2_{12} = -0.45^2 = .20$
 
-$\lambda^2_{13} = -0.38^2 = .14$
+-   $\lambda^2_{13} = -0.38^2 = .14$
 
 değeri PER1 değişkenindeki varyansın yaklaşık **%20’inin**
 ve**%14,4**’ünün ikinci ve üçüncü faktör tarafından açıklandığını
-önerir. 
+önerir.
 
-- Diğer örüntü katsayıları için de benzer açıklamalar yapılır.
+-   Diğer örüntü katsayıları için de benzer açıklamalar yapılır.
 
 ## Ortak varyans Katsayıları (Communality Coefficients)
 
@@ -1080,14 +1132,14 @@ ve**%14,4**’ünün ikinci ve üçüncü faktör tarafından açıklandığın�
     kareleri toplanarak hesaplanır.
 
 -   Örneğin, PER1 değişkeni için:
-
-$\lambda^2_{11} + \lambda^2_{12} +\lambda^2_{13} = .80^2 + (-0.45)^2 + (-0.38)^2 = .99$
+    $\lambda^2_{11} + \lambda^2_{12} +\lambda^2_{13} = .80^2 + (-0.45)^2 + (-0.38)^2 = .99$
 
 -   Bu değer, toplamda PER1 değişkenindeki varyansın yaklaşık
     **%99**’unun çıkarılan **3 faktör tarafından açıklanacağını**
     önerir.
 
-Her bir değişken için ortak varyans hesaplanabilir:Örneğin per 11 için
+-   Her bir değişken için ortak varyans hesaplanabilir. Örneğin per 11
+    için
 
 $\lambda^2_{11} + \lambda^2_{12} +\lambda^2_{13} = .67^2 + (-0.14)^2 + (-0.44)^2 = .67$
 
@@ -1160,48 +1212,64 @@ $\lambda^2_{11} + \lambda^2_{12} +\lambda^2_{13} = .67^2 + (-0.14)^2 + (-0.44)^2
     katsayıları ile karşılaşmak mümkündür. Bu durumlar **uygun olmayan
     çözümler** olarak adlandırılır.
 
-## Yüklerin Kareleri Toplamı
+## Yüklerin Kareleri Toplamı-Açıklanan Varyans
 
 -   Her bir faktör için, örüntü katsayılarının karesi toplanarak
     yüklerin kareleri toplamı hesaplanır.
+-   Her bir faktör için hesaplanan **yüklerin karelerinin toplamının
+    ölçülen değişkenlerin sayısına bölünmesiyle elde edilen değer**, her
+    bir faktör tarafından açıklanan varyans yüzdesini verir.
 -   Birinci faktör için:
 
 
 ```r
-sum(out$loadings[,1]^2)
+sum(out$loadings[,1]^2)/11*100
 ```
 
 ```
-## [1] 5.81
+## [1] 52.9
 ```
 
 -   Bu değer **11 değişkendeki toplam varyansın birinci faktör
     tarafından açıklanan miktarıdır.**
 
--   İkinci ve üçüncü faktörler için
+-   Örneğin, birinci faktör için elde edilen $5.814/11 = 52.85$ değeri
+    11 değişkendeki toplam varyansın yaklaşık % $52.85$’inin birinci
+    faktör tarafından açıklandığını önerir
+
+-   İkinci faktör için
 
 
 ```r
-c(sum(out$loadings[,2]^2),sum(out$loadings[,3]^2))
+sum(out$loadings[,2]^2)/11*100
 ```
 
 ```
-## [1] 1.271 0.859
+## [1] 11.6
 ```
 
-## Açıklanan Toplam Varyansın Yüzdesi
+-   Bu değer **11 değişkendeki toplam varyansın ikini faktör tarafından
+    açıklanan miktarıdır.**
 
--   Her bir faktör için hesaplanan **yüklerin karelerinin toplamının
-    ölçülen değişkenlerin sayısına bölünmesiyle elde edilen değer**, her
-    bir faktör tarafından açıklanan varyans yüzdesini verir.
+-   üçüncü faktör için
 
--   Örneğin, birinci faktör için elde edilen $5.814/11 = 52.85$ değeri
-    11 değişkendeki toplam varyansın yaklaşık % $52.85$’inin birinci
-    faktör tarafından açıklandığını önerir.
+    
+    ```r
+    sum(out$loadings[,3]^2)/11*100
+    ```
+    
+    ```
+    ## [1] 7.81
+    ```
 
-İkici ve üçüncü faktör tarafından açıklanan varyans yüzdeleri de benzer
-şekilde hesaplanır. - Böylece 3 faktör varyansların sırasıyla yaklaşık
-$52.86$, $11.57$ ve $7.81$’ini açıklar.
+    -   Bu değer **11 değişkendeki toplam varyansın üçüncü faktör
+        tarafından açıklanan miktarıdır.**
+
+    -   İkinci ve üçüncü faktör tarafından açıklanan varyans yüzdeleri
+        de benzer şekilde hesaplanır.
+
+    -   Böylece 3 faktör varyansların sırasıyla yaklaşık $52.86$,
+        $11.57$ ve $7.81$’ini açıklar.
 
 
 ```r
@@ -1223,8 +1291,8 @@ varılabilir
 
 ## Üretilen ve Artık Korelasyon Matrisleri
 
-Üretilen korelasyon matrisinin köşegenindeki öğeler çıkarılan ortak
-varyanslardır.
+-   Üretilen korelasyon matrisinin köşegenindeki öğeler çıkarılan ortak
+    varyanslardır.
 
 
 ```r
@@ -1246,8 +1314,8 @@ factor.model(out$loadings)
 ## per11 0.436 0.475 0.531 0.444 0.447 0.276 0.430 0.427 0.689 0.595 0.666
 ```
 
-Üretilen korelasyon matrisinin köşegenindeki öğeler çıkarılan ortak
-varyanslardır.
+-   Üretilen korelasyon matrisinin köşegenindeki öğeler çıkarılan ortak
+    varyanslardır.
 
 
 ```r
@@ -1311,21 +1379,16 @@ out$loadings
 -   Ancak örüntü matrisi tablosu incelenerek bu 11 değişkenden 3 faktörü
     **ayırmak ve yorumlamak** oldukça zordur.
 
--   Yandaki grafikte 3 küme birikinti görünmektedir:
+-   Aşağıdaki grafikte 3 küme birikinti görünmektedir:
 
--   PER1-4 birlikte
-
--   PER5-8 birlikte
-
--   PER9-11 birlikte
+-   PER1-4 birlikte, PER5-8 birlikte, PER9-11 birlikte
 
 -   Eğer faktör eksenleri faktör uzayında hareket ederse, altta yatan
-    faktörlerin doğası daha açık hale gelecektir.
-
--   Bu da **Faktör Döndürme** (Factor Rotation) adı verilen bir yöntemle
+    faktörlerin doğası daha açık hale gelecektir. Bu da **Faktör
+    Döndürme** (Factor Rotation) adı verilen bir yöntemle
     gerçekleştirilir
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-27-1.png" width="120%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-29-1.png" width="120%" style="display: block; margin: auto;" />
 
 ## Maddelerin Analizden Çıkarılması
 
@@ -1355,9 +1418,7 @@ out$loadings
     complexity = 1 u2) beklenir **basit yapı**
 
 -   AFA’dan elde edilen çoğu ilk çözümler ile **basit bir yapı** elde
-    edilemeyebilir.
-
--   Faktör döndürmenin amacı bu hedefe ulaşmaktır.
+    edilemeyebilir. Faktör döndürmenin amacı bu hedefe ulaşmaktır.
 
 -   **Faktör döndürme**, faktör uzayında ölçülen değişkenlerin
     konumlarını ölçen **faktör eksenlerinin hareket ettirilmesini**
@@ -1373,20 +1434,16 @@ out$loadings
         -   **Dik Döndürme** (Orthogonal Rotation):
 
         -   Çıkarılan faktörler döndürme işleminden sonra dik olarak
-            kalırlar.
-
-        -   Bu yöntem genellikle araştırmacıların altta yatan faktörler
-            arasında korelasyon olmadığına inandığı zaman uygulanır.
+            kalırlar. Bu yöntem genellikle araştırmacıların altta yatan
+            faktörler arasında korelasyon olmadığına inandığı zaman
+            uygulanır.
 
     -   **Eğik Döndürme** (Oblique Rotation):
 
         -   Döndürme işleminden sonra çıkarılan faktörlerin arasında
-            korelasyon olmasına izin verilir.
-
-        -   Bu yöntem genellikle araştırmacıların altta yatan
-            faktörlerin ilişkili olduğunu varsaydıkları zaman uygulanır.
-
-## Döndürmeden Önceki Örüntü Matrisi
+            korelasyon olmasına izin verilir. Bu yöntem genellikle
+            araştırmacıların altta yatan faktörlerin ilişkili olduğunu
+            varsaydıkları zaman uygulanır.
 
 -   Aşağıdaki örüntü katsayılarına sahip **iki değişken** olduğunu
     varsayalım:
@@ -1402,24 +1459,20 @@ $x_1= .6\xi_1 + .6\xi_2 + \delta_1$
 
 $x_2= .6\xi_1 + (-6)\xi_2 + \delta_2$
 
--   Faktörlere karşılık gelen örüntü katsayıları sağdaki grafikte
+-   Faktörlere karşılık gelen örüntü katsayıları aşağıdaki grafikte
     gösterilebilir.
 
 <img src="images/AFA_3.PNG" width="75%" style="display: block; margin: auto;" />
 
 -   İki değişkenin her iki faktörde de yükü olduğundan, faktörleri
-    yorumlamak çok zordur.
-
--   Eğer her bir değişken sadece bir faktöre yüklenip diğerlerine
-    yüklenmezse, yorum yapmak daha kolay olacaktır.
+    yorumlamak çok zordur. Eğer her bir değişken sadece bir faktöre
+    yüklenip diğerlerine yüklenmezse, yorum yapmak daha kolay olacaktır.
 
 -   Faktör döndürmenin amacı, faktör uzayındaki faktör eksenlerini
     döndürmektir. Döndürme sonucunda altta yatan faktörler mümkün
     olduğunca basit bir yapıya sahip olacaktır.
 
 <img src="images/AFA_3.PNG" width="75%" style="display: block; margin: auto;" />
-
-## Dik Döndürmeden Sonra Örüntü Matrisi
 
 -   Eğer her iki eksen de saat yönünde 45° döndürülürse:
 
@@ -1436,21 +1489,18 @@ $x_2= .6\xi_1 + (-6)\xi_2 + \delta_2$
 
 -   Yeni yükler gözle bakarak kestirilebilir:
 
--   X1’in yeni F1’deki yükü 0’dır; X1’in yeni F2’deki yükü 0,85
-    civarındadır;
+    -   X1’in yeni F1’deki yükü 0’dır; X1’in yeni F2’deki yükü 0,85
+        civarındadır;
 
--   X2’nin yeni F1’deki yükü 0,85 civarındadır; X2’nin yeni F2’deki yükü
-    0’dır.
+    -   X2’nin yeni F1’deki yükü 0,85 civarındadır; X2’nin yeni F2’deki
+        yükü 0’dır.
 
 -   Böylece, yeni örüntü matrisi
 
 |         | $\lambda_1$ | $\lambda_2$ |
 |---------|-------------|-------------|
-| $x_{1}$ | 0         | .85          |
-| $x_{2}$ | .85          | 0        |
-
-
-
+| $x_{1}$ | 0           | .85         |
+| $x_{2}$ | .85         | 0           |
 
 <img src="images/AFA_4.PNG" width="75%" style="display: block; margin: auto;" />
 
@@ -1464,54 +1514,51 @@ $x_2= .6\xi_1 + (-6)\xi_2 + \delta_2$
 
 ## Dik Döndürme
 
+-   AFA modeli aşağıdaki eşitlikle gösterilebilir:
 
-- AFA modeli aşağıdaki eşitlikle gösterilebilir:
+    -   $x= \Lambda\xi + \delta$
 
-  -  $x= \Lambda\xi + \delta$ 
+-   Λ matrisinin bir birim matrisi ile çarpılması eşitliği
+    değiştirmeyecektir:
 
-- Λ matrisinin bir birim matrisi ile çarpılması eşitliği 
-değiştirmeyecektir: 
+    -   $x= \Lambda*I*\xi + \delta$
 
-  - $x= \Lambda*I*\xi + \delta$ 
+-   Bir T matrisi transpozu olan T’ ile çarpılırsa, çarpım bir birim
+    matrisine eşit olacaktır:
 
-- Bir T matrisi transpozu olan T’ ile çarpılırsa,
-çarpım bir birim matrisine eşit olacaktır: 
+    -   $x= \Lambda*(TT')*\xi + \delta$ =\>\
+    -   $x= (\Lambda*T)(T'*\xi) + \delta$
 
-  - $x= \Lambda*(TT')*\xi + \delta$   =>  
-  - $x= (\Lambda*T)(T'*\xi) + \delta$
+-   Bu yeni eşitliğe dayalı model, örüntü matrisindeki ve artık
+    matrisindeki değerler de dahil olmak üzere parametre kestirimlerini
+    değiştirmeyecektir, çünkü:
 
-- Bu yeni eşitliğe dayalı model, örüntü matrisindeki ve artık
-matrisindeki değerler de dahil olmak üzere parametre
-kestirimlerini değiştirmeyecektir, çünkü: 
+    -   $x= (\Lambda*T)(T'*\xi) + \delta$\
+    -   $x= \Lambda*T \phi T'*\Lambda'+ R_{res}$
 
-  - $x= (\Lambda*T)(T'*\xi) + \delta$  
-  - $x= \Lambda*T \phi T'*\Lambda'+ R_{res}$
+-   Burada $\phi$ bir birim matristir. Böylece verilen eşitlik aşağıdaki
+    eşitliğe indirgenebilir:
 
-- Burada $\phi$ bir birim
-matristir. Böylece verilen eşitlik aşağıdaki eşitliğe
-indirgenebilir: 
+    -   $x= \Lambda*TT'TT'*\Lambda' + R_{res}$
 
-  - $x= \Lambda*TT'TT'*\Lambda' + R_{res}$
+-   Burada TT’TT’ iki tane birim matrise eşit olduğundan, verilen
+    eşitlik aşağıdaki eşitliğe indirgenebilir:
 
-- Burada TT’TT’ iki tane birim matrise eşit
-olduğundan, verilen eşitlik aşağıdaki eşitliğe indirgenebilir:
+    -   $x= \Lambda*\Lambda' + R_{res}$
 
-  - $x= \Lambda*\Lambda' + R_{res}$
+    -   $x= (\Lambda*T)(T'*\xi) + \delta$ eşitliğindeki T matrisi
+        transformasyon matrisi olarak adlandırılır ve ΛT matrislerinin
+        çarpımıyla elde edilen matris döndürülen örüntü matrisi olarak
+        adlandırılır.
 
-
-  - $x= (\Lambda*T)(T'*\xi) + \delta$ eşitliğindeki T matrisi  transformasyon matrisi olarak adlandırılır ve ΛT  matrislerinin çarpımıyla elde edilen matris
-döndürülen örüntü matrisi olarak adlandırılır. 
-
-- İki faktör olduğunda, T matrisi aşağıdaki gibidir: 
+-   İki faktör olduğunda, T matrisi aşağıdaki gibidir:
 
 $$\begin{bmatrix}{}
 cos(a)  &   sin(a)\\
 -sin(a)  &  cos(a)
 \end{bmatrix}$$
 
-
-
-Burada $a$ saat yönünde döndürme açısıdır. Verilen örnekte 
+Burada $a$ saat yönünde döndürme açısıdır. Verilen örnekte
 
 $$\begin{bmatrix}{}
 .6 &   .6\\
@@ -1524,21 +1571,15 @@ $$\begin{bmatrix}{}
 0.0848 & 0\\
 \end{bmatrix}$$
 
-**Varimax:** En yaygın olarak kullanılan dik döndürme yöntemidir.
-
--   Her bir faktörde yüksek yüke sahip değişkenlerin sayısını küçültür.
-
--   Sonuç olarak, bu yöntem faktörlerin yorumlanmasını sadeleştirir.
+**Varimax:** En yaygın olarak kullanılan dik döndürme yöntemidir. Her
+bir faktörde yüksek yüke sahip değişkenlerin sayısını küçültür. Sonuç
+olarak, bu yöntem faktörlerin yorumlanmasını sadeleştirir.
 
 **Quartimax:** Her değişkeni açıklamak için gerekli faktör sayısını
-küçültür.
-
--   Sonuç olarak bu yöntem gözlenen değişkenlerin yorumlanmasını
-    kolaylaştırır.
+küçültür. Sonuç olarak bu yöntem gözlenen değişkenlerin yorumlanmasını
+kolaylaştırır.
 
 **Equamax**: Varimax ve Quartimax’ın bileşimidir.
-
-## Dik Döndürme
 
 
 ```r
@@ -1547,7 +1588,7 @@ out_dik <- fa(veri,3,fm="pa",rotate="varimax")
 
 
 ```r
-print(out_dik$loadings[,1:3], digits = 3, cutoff = 0.30)
+print(out_dik$loadings[,1:3], digits = 3, cut = 0.30)
 ```
 
 ```
@@ -1564,8 +1605,6 @@ print(out_dik$loadings[,1:3], digits = 3, cutoff = 0.30)
 ## per10 0.197 0.243 0.6611
 ## per11 0.263 0.223 0.7397
 ```
-
-### Döndürülen Yüklerin Kareleri Toplamı
 
 -   Döndürmeden önce, her bir faktör için yüklerin kareleri toplamı
     örüntü katsayılarının kareleri toplanarak hesaplanır.
@@ -1584,7 +1623,7 @@ sum(out_dik$loadings[,1]^2)
 
 $0.958^2 + 0.777^2 +...+0.263^2$
 
-### Toplam Açıklanan Varyans
+**Toplam Açıklanan Varyans**
 
 -   3 faktör tarafından açıklanan toplam varyans döndürmeden önce ve
     sonra aynıdır (yaklaşık %72,23).
@@ -1611,23 +1650,19 @@ out_dik$Vaccounted[2:3,]
 
 döndürmeden sonraki çözüm için yük grafiği verilir
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-37-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-39-1.png" width="75%" style="display: block; margin: auto;" />
 
 Döndürmeden önceki yük grafiğiyle
 
-<img src="06-AFA_files/figure-html/unnamed-chunk-38-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="06-AFA_files/figure-html/unnamed-chunk-40-1.png" width="75%" style="display: block; margin: auto;" />
 
 karşılaştırınca değişkenler arasındaki **ilişkiler değişmez** ancak
 **faktör uzayındaki faktör eksenleri değişir.**
 
-## Eğik Döndürme (Oblique Rotation)
-
 -   Döndürmeden önceki çözümle karşılaştırınca, **dik döndürmeye dayalı
-    3-faktörlü yapı daha basittir.**
-
--   Ancak halen **yeterince basit değildir:** Bazı değişkenlerin sadece
-    bir faktöre mümkün olduğunca yüklenip diğerlerine yüklenmemesi
-    beklenir.
+    3-faktörlü yapı daha basittir.** Ancak halen **yeterince basit
+    değildir:** Bazı değişkenlerin sadece bir faktöre mümkün olduğunca
+    yüklenip diğerlerine yüklenmemesi beklenir.
 
 -   Örneğin, aşağıdaki 3 yük önemsiz değildir.
 
@@ -1645,18 +1680,16 @@ print(out_dik$loadings[2:3,], digits = 3, cutoff = 0.30)
 -   Eğik döndürme daha basit yapı bulmak için kullanılır. Eğik
     döndürmeden sonra faktörler arasındaki ilişki sıfır olarak kalmaz.
 
-
 -   **Direct oblimin** eğik döndürme yöntemi döndürülen faktörler
     arasındaki korelasyonların derecesini kontrol etmek üzere Delta adı
     verilen bir değere başvurur. Delta -9999 ile 0,8 arasında bir değer
     alır.
 
     -   Default olarak delta değeri sıfıra eşittir. Bu değer daha yüksek
-        korelasyona sahip faktörler sağlar.
+        korelasyona sahip faktörler sağlar. Eksi değerler aralarında
+        korelasyon bulunmayan faktörler üretir.
 
-    -   Eksi değerler aralarında korelasyon bulunmayan faktörler üretir.
-
-Not: Eğik çözümün gerektiği durumlarda, **promax** genellikle dahaiyi
+Not: Eğik çözümün gerektiği durumlarda, **promax** genellikle daha iyi
 bir seçimdir.
 
 -   **Promax** eğik döndürme yöntemi döndürülen faktörler arasındaki
@@ -1670,21 +1703,17 @@ bir seçimdir.
 Not: **Promax** döndürme direct oblimin döndürmeden **daha hızlı**
 hesaplanabildiğinden büyük veri setleri için **kullanışlıdır.**
 
-## Eğik Döndürme
-
 -   Faktörler arasında ilişki olduğundan, Φ korelasyon matrisi artık bir
     birim matris değildir.
 
 -   Bu nedenle, döndürülen çözüm için model eşitliği aşağıdaki şekilde
     gösterilir:
 
-Burada $\Lambda_T$ döndürülen örüntü matrisini simgeler. 
+Burada $\Lambda_T$ döndürülen örüntü matrisini simgeler.
 
+-   $x= \Lambda_T*\Lambda'_T+ R_{res}$
 
- - $x= \Lambda_T*\Lambda'_T+ R_{res}$
-
-Burada $\Lambda_T$  döndürmeden önceki örüntü matrisidir. 
-
+Burada $\Lambda_T$ döndürmeden önceki örüntü matrisidir.
 
 -   Hangi egik döndürme seçeneği seçilirse seçilsin,
 
@@ -1718,28 +1747,28 @@ Burada $\Lambda_T$  döndürmeden önceki örüntü matrisidir.
         katsayısı belli bir değişken ve bir faktör arasındaki **iki
         değişkenli korelasyon** katsayısı ile aynıdır.
 
-    -   Ancak **faktörler dik değilse**, **örüntü katsayısı** belli bir
-        değişken ve bir faktör arasındaki\*\* iki değişkenli korelasyon
-        katsayısı ile aynı değildir.\*\*
+    -   Ancak **faktörler dik değilse, örüntü katsayısı** belli bir
+        değişken ve bir faktör arasındaki iki değişkenli korelasyon
+        katsayısı ile aynı değildir.
 
-## Örüntü Katsayısı ve Yapı Katsayısı
+-   Örüntü matrisi ve yapı matrisi arasındaki ilişki aşağıdaki eşitlikle
+    gösterilebilir: $$\Lambda _T\Phi = S $$
 
+-   Burada,
 
-- Örüntü matrisi ve yapı matrisi arasındaki ilişki aşağıdaki 
-eşitlikle gösterilebilir: 
-$$\Lambda _T\Phi = S $$
-- Burada, 
-- $\Lambda _T$  döndürülen örüntü matrisi
- - $\Phi$ faktörler arasındaki korelasyon matrisi 
- - $S$ yapı matrisi 
- -  $\Phi$ bir birim matris olduğunda
- $\Lambda _T=S$
- - Döndürme olmadığında 
-  $\Lambda=S$
+-   $\Lambda _T$ döndürülen örüntü matrisi
+
+-   $\Phi$ faktörler arasındaki korelasyon matrisi
+
+-   $S$ yapı matrisi
+
+-   $\Phi$ bir birim matris olduğunda $\Lambda _T=S$
+
+-   Döndürme olmadığında $\Lambda=S$
 
 
 ```r
-out_egik <- fa(veri,3,fm="pa",rotate="oblimin")
+out_egik <- fa(veri,3,fm="pa",rotate="promax")
 
 print(out_egik$loadings, digits = 3, cutoff = 0.30)
 ```
@@ -1747,23 +1776,23 @@ print(out_egik$loadings, digits = 3, cutoff = 0.30)
 ```
 ## 
 ## Loadings:
-##       PA2    PA1    PA3   
-## per1          1.058       
-## per2          0.792       
-## per3          0.637       
-## per4          0.712       
-## per5   0.887              
-## per6   0.842              
-## per7   0.847              
-## per8   0.779              
-## per9                 0.847
-## per10                0.698
-## per11                0.781
+##       PA1    PA2    PA3   
+## per1   1.120              
+## per2   0.835              
+## per3   0.669              
+## per4   0.750              
+## per5          0.889       
+## per6          0.850       
+## per7          0.846       
+## per8          0.777       
+## per9                 0.872
+## per10                0.723
+## per11                0.806
 ## 
-##                 PA2   PA1   PA3
-## SS loadings    2.87 2.670 1.906
-## Proportion Var 0.26 0.243 0.173
-## Cumulative Var 0.26 0.503 0.676
+##                 PA1   PA2   PA3
+## SS loadings    2.97 2.872 2.021
+## Proportion Var 0.27 0.261 0.184
+## Cumulative Var 0.27 0.531 0.715
 ```
 
 
@@ -1774,25 +1803,24 @@ print(out_egik$Structure, digits = 3, cutoff = 0.30)
 ```
 ## 
 ## Loadings:
-##       PA2   PA1   PA3  
-## per1  0.467 0.991 0.505
-## per2  0.497 0.860 0.557
-## per3  0.550 0.812 0.628
-## per4  0.528 0.805 0.517
-## per5  0.904 0.467 0.512
-## per6  0.773 0.372 0.302
-## per7  0.890 0.525 0.490
-## per8  0.824 0.461 0.490
-## per9  0.409 0.504 0.847
-## per10 0.440 0.411 0.727
-## per11 0.459 0.488 0.815
+##       PA1   PA2   PA3  
+## per1  0.983 0.474 0.523
+## per2  0.864 0.502 0.573
+## per3  0.824 0.554 0.644
+## per4  0.811 0.533 0.535
+## per5  0.507 0.904 0.542
+## per6  0.402 0.774 0.331
+## per7  0.560 0.890 0.520
+## per8  0.497 0.824 0.517
+## per9  0.537 0.409 0.845
+## per10 0.443 0.440 0.729
+## per11 0.522 0.458 0.816
 ## 
-##                 PA2   PA1   PA3
-## SS loadings    4.50 4.537 3.970
-## Proportion Var 0.41 0.412 0.361
-## Cumulative Var 0.41 0.822 1.183
+##                  PA1   PA2   PA3
+## SS loadings    4.787 4.526 4.155
+## Proportion Var 0.435 0.411 0.378
+## Cumulative Var 0.435 0.847 1.224
 ```
-
 
 
 ```r
@@ -1800,25 +1828,20 @@ out_egik$Phi
 ```
 
 ```
-##       PA2   PA1   PA3
-## PA2 1.000 0.525 0.520
-## PA1 0.525 1.000 0.569
-## PA3 0.520 0.569 1.000
+##       PA1   PA2   PA3
+## PA1 1.000 0.573 0.629
+## PA2 0.573 1.000 0.554
+## PA3 0.629 0.554 1.000
 ```
 
-## Eğik Döndürme
-
 -   Eğik döndürme ile AFA gerçekleştirildiğinde, hangi grup katsayılar
-    rapor edilmelidir: örüntü veya yapı? $\Lambda_T\Phi=S$
-
--   eşitliğinden dolayı, çoğu makale örüntü katsayılarını ve faktörler
-    arasındaki korelasyon katsayılarını rapor eder.
+    rapor edilmelidir: örüntü veya yapı? $\Lambda_T\Phi=S$ eşitliğinden
+    dolayı, çoğu makale örüntü katsayılarını ve faktörler arasındaki
+    korelasyon katsayılarını rapor eder.
 
 -   Bazı makalelerde hem örüntü hem de yapı katsayıları faktör yükleri
-    adı altında rapor edilir.
-
--   Karışıklığı önlemek amacıyla, hangi grup katsayıların rapor edildiği
-    açıkça belirtilmelidir.
+    adı altında rapor edilir. Karışıklığı önlemek amacıyla, hangi grup
+    katsayıların rapor edildiği açıkça belirtilmelidir.
 
 ## Dik ve Eğik Döndürme
 
@@ -1827,68 +1850,38 @@ karşılaştırıldığında, **eğik döndürme** sonucu elde edilen faktör
 yapısının **daha basit ve dahakolay yorumlanabilir** olduğu
 görülmektedir
 
-Dik
-
-
-```
-## 
-## Loadings:
-##       PA1   PA2   PA3  
-## per1  0.957            
-## per2  0.777            
-## per3  0.686       0.384
-## per4  0.713 0.302      
-## per5        0.836      
-## per6        0.756      
-## per7        0.811      
-## per8        0.748      
-## per9              0.784
-## per10             0.661
-## per11             0.740
-## 
-##                  PA1   PA2   PA3
-## SS loadings    2.906 2.894 2.144
-## Proportion Var 0.264 0.263 0.195
-## Cumulative Var 0.264 0.527 0.722
-```
-
-Eğik
-
-
-```
-## 
-## Loadings:
-##       PA2    PA1    PA3   
-## per1          1.058       
-## per2          0.792       
-## per3          0.637       
-## per4          0.712       
-## per5   0.887              
-## per6   0.842              
-## per7   0.847              
-## per8   0.779              
-## per9                 0.847
-## per10                0.698
-## per11                0.781
-## 
-##                 PA2   PA1   PA3
-## SS loadings    2.87 2.670 1.906
-## Proportion Var 0.26 0.243 0.173
-## Cumulative Var 0.26 0.503 0.676
-```
-
-## Dik ve Eğik Döndürme
-
-Dik
-
-<img src="06-AFA_files/figure-html/unnamed-chunk-45-1.png" width="100%" style="display: block; margin: auto;" />
-
-Egik
-
-<img src="06-AFA_files/figure-html/unnamed-chunk-46-1.png" width="100%" style="display: block; margin: auto;" />
-
-İki yük grafiğinin karşılaştırılmasıyla aynı sonuçlara ulaşılır. Dik
-Döndürme: Eğik Döndürme
++----------------------+-------------------------+
+| Dik                  | Eğik                    |
++======================+=========================+
+|                      |                     |
+| Loadings:            | Loadings:               |
+|                      |       PA1    PA2    PA3 |
+|      PA1   PA2   PA3 | per1   1.120            |
+| per1  0.957          | per2   0.835            |
+| per2  0.777          | per3   0.669            |
+| p                    | per4   0.750            |
+| e                    | per5          0.889     |
+| r                    | per6          0.850     |
+| 3  0.686       0.384 | per7          0.846     |
+| per4  0.713 0.302    | per8          0.777     |
+| per5        0.836    | p                       |
+| per6        0.756    | e                       |
+| per7        0.811    | r                       |
+| per8        0.748    | 9                 0.872 |
+| p                    | p                       |
+| e                    | e                       |
+| r                    | r                       |
+| 9              0.784 | 10                0.723 |
+| p                    | p                       |
+| e                    | e                       |
+| r                    | r                       |
+| 10             0.661 | 11                0.806 |
+| p                    | ```                     |
+| e                    |                         |
+| r                    |                         |
+| 11             0.740 |                         |
+| ```                  |                         |
++----------------------+-------------------------+
 
 ## Yorum
 
@@ -1896,17 +1889,19 @@ AFA’dan uygun bir sonuç elde edildikten sonra, çıkarılan faktörlerin
 yorumlanması gerekir.
 
 -   Verilen örnekte aşağıdaki sonuçlar elde edilmiştir:
+
 -   Faktör 1 temel olarak PER1-4 tarafından açıklanır.
+
 -   Faktör 2 temel olarak PER5-8 tarafından açıklanır.
+
 -   Faktör 3 temel olarak PER9-11 tarafından açıklanır.
+
 -   Bu 3 faktör arasındaki korelasyon katsayıları orta-yüksek korelasyon
-    katsayılarıdır.
+    katsayılarıdır. \## Yorum
 
-## Yorum
-
--   Faktörler anlamları bakımından da yorumlanmalıdır.
--   Verilen örnekteki 11 değişkenin kütüphane servis kalitesi algısını
-    ölçmesi hedeflenmiştir.
+-   Faktörler anlamları bakımından da yorumlanmalıdır.Verilen örnekteki
+    11 değişkenin kütüphane servis kalitesi algısını ölçmesi
+    hedeflenmiştir.
 
 
 
@@ -1918,8 +1913,10 @@ yorumlanması gerekir.
 -   Yorumlanabilir döndürülen çözüm bulunduğunda ve çıkarılan faktörlere
     anlam yüklendiğinde, her bir bireyin bu gözlenmeyen boyutlarda
     değerlendirilmesi özellikle istenebilir.
+
 -   Bu faktör puanı kestirimi adı verilen yöntemin amacıdır ve bu
     yöntemle her bir birey için faktörlerin kestirimi elde edilir.
+
 -   Kestirilen faktör puanı daha ileri analizlerde kullanılabilir
     (örneğin, faktörlere göre gruplardaki ortalama farklarının
     karşılaştırılması).
@@ -1937,51 +1934,126 @@ yorumlanması gerekir.
     ilişki yoktur. Bartlett yönteminin kestirilen faktörlerin dikliğini
     sağlaması için modifiye edilmiş halidir.
 
-##Faktör Puanı Kestirimi Örneği
-
 
 ```r
-fa_egik <- fa(veri, nfactors=3, rotate="oblimin", scores="regression")
+fa_egik <- fa(veri, nfactors=3, rotate="promax", scores="regression")
 head(fa_egik$scores)
 ```
 
 ```
-##         MR2     MR1    MR3
-## [1,] -1.686  0.3314 -0.556
-## [2,] -0.567 -1.4117 -1.515
-## [3,] -0.812 -0.7918 -1.355
-## [4,] -1.038 -1.3164 -1.838
-## [5,] -0.652 -1.2621 -1.044
-## [6,]  0.683 -0.0205  0.278
+##          MR1    MR2    MR3
+## [1,]  0.2099 -1.673 -0.607
+## [2,] -1.4363 -0.573 -1.511
+## [3,] -0.8530 -0.811 -1.358
+## [4,] -1.3834 -1.040 -1.844
+## [5,] -1.2752 -0.659 -1.057
+## [6,]  0.0253  0.679  0.299
+```
+
+## EGAnet
+
+-   Boyutsallık ve psikometrik değerlendirme için Keşifsel Grafik
+    Analizi (EGA) çerçevesini uygular. EGA, ağ tahmin yöntemlerini ve
+    topluluk tespit algoritmalarını kullanarak psikolojik verilerdeki
+    boyut sayısını tahmin eder. Boyutların ve maddelerin kararlılığını
+    değerlendirmek için bir bootstrap yöntemi sağlanmıştır. Uyum,
+    Entropi Uyum endeks ailesi kullanılarak değerlendirilir. Benzersiz
+    Değişken Analizi, maddelerin ne ölçüde yerel olarak bağımlı (veya
+    gereksiz) olduğunu değerlendirir.
+
+
+```r
+library(EGAnet); library(psychTools)
+
+# Perform Unique Variable Analysis
+bfi_uva <- UVA(
+  data = veri
+)
+# Print results
+bfi_uva$keep_remove
+```
+
+```
+## $keep
+## [1] "per1" "per5" "per6" "per9"
+## 
+## $remove
+## [1] "per2"  "per3"  "per4"  "per7"  "per7"  "per8"  "per10" "per11"
+```
+
+
+```r
+EGA(veri)
+```
+
+<img src="06-AFA_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;" />
+
+```
+## Model: GLASSO (EBIC with gamma = 0.5)
+## Correlations: auto
+## Lambda: 0.0935127102774255 (n = 100, ratio = 0.1)
+## 
+## Number of nodes: 11
+## Number of edges: 32
+## Edge density: 0.582
+## 
+## Non-zero edge weights: 
+##      M    SD   Min   Max
+##  0.148 0.165 0.001 0.589
+## 
+## ----
+## 
+## Algorithm:  Walktrap
+## 
+## Number of communities:  3
+## 
+##  per1  per2  per3  per4  per5  per6  per7  per8  per9 per10 per11 
+##     1     1     1     1     2     2     2     2     3     3     3 
+## 
+## ----
+## 
+## Unidimensional Method: Louvain
+## Unidimensional: No
+## 
+## ----
+## 
+## TEFI: -5.507
 ```
 
 ## Kaynaklar
 
--   Thompson, B. (2004). *Exploratory and confirmatory factor analysis:    Understanding concepts and applications.* Washington, DC: American    Psychological Association.
+-   Thompson, B. (2004). *Exploratory and confirmatory factor analysis:
+    Understanding concepts and applications.* Washington, DC: American
+    Psychological Association.
 
-- Gorsuch, R. L. (1983). *Factor analysis* (2nd ed.). Hillsdale, NJ:
-Erlbaum
+-   Gorsuch, R. L. (1983). *Factor analysis* (2nd ed.). Hillsdale, NJ:
+    Erlbaum
 
-- Cook, C., &. Thompson, B. (2001). Psychometric properties of
-scores from the Web-based LibQUAL+™ study of perceptions of library
-service quality. *Library Trends, 49,* 585-604. 
+-   Cook, C., &. Thompson, B. (2001). Psychometric properties of scores
+    from the Web-based LibQUAL+™ study of perceptions of library service
+    quality. *Library Trends, 49,* 585-604.
 
+-   Thompson, B. (2004).*Exploratory and confirmatory factor analysis:
+    Understanding concepts and applications.* Washington, DC: American
+    Psychological Association.
 
-- Thompson, B. (2004).*Exploratory and confirmatory factor analysis: Understanding concepts and applications.* Washington, DC: American Psychological Association. 
+-   Thompson, B., Cook, C., & Heath, F. (2001). *How many dimensions
+    does it take to measure users' perceptions of libraries?: A
+    "LibQUAL+™" study,portal:*Libraries and the Academy, 1,* 129-138.
 
-- Thompson, B., Cook, C., & Heath, F. (2001). *How many dimensions does it take to measure users' perceptions of libraries?: A "LibQUAL+™" study,portal: *Libraries and the Academy, 1,* 129-138. 
+-   Thompson, B., Cook, C.,& Thompson, R. L. (2002). Reliability and
+    structure of LibQUAL+™ scores:Measuring perceived library service
+    quality, portal: *Libraries and the Academy, 2,* 3-12.
 
-- Thompson, B., Cook, C.,& Thompson, R. L. (2002). Reliability and structure of LibQUAL+™ scores:Measuring perceived library service quality, portal: *Libraries and the Academy, 2,* 3-12.
-
-- Guadagnoli, E., & Velicer, W. (1988). Relation of sample size
-to the stability of component patterns. *Psychological Bulletin, 103,*
-265—275.
+-   Guadagnoli, E., & Velicer, W. (1988). Relation of sample size to the
+    stability of component patterns. *Psychological Bulletin, 103,*
+    265—275.
 
 -   MacCallum, R. C., Widaman, K. F., Zhang, S., & Hong, S. (1999).
     Sample size in factor analysis. *Psychological Methods, 4,* 84-99.
 
-- Guttman, L. (1954). Some necessary conditions for
-common-factor analysis. *Psychometrika,19,* 149-161.
+-   Guttman, L. (1954). Some necessary conditions for common-factor
+    analysis. *Psychometrika,19,* 149-161.
 
-- Cattell, R. B. (1966). The scree test for the number of factors.
-*Multivariate Behavioral Research, 1,* 245-276.
+-   Cattell, R. B. (1966). The scree test for the number of factors.
+    *Multivariate Behavioral Research, 1,* 245-276.

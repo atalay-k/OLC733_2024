@@ -68,6 +68,8 @@
 <li><a class="" href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></li>
 <li><a class="" href="yol-analizi.html"><span class="header-section-number">5</span> Yol Analizi</a></li>
 <li><a class="" href="afa.html"><span class="header-section-number">6</span> AFA</a></li>
+<li><a class="" href="dfa.html"><span class="header-section-number">7</span> DFA</a></li>
+<li><a class="" href="%C3%B6zet.html"><span class="header-section-number">8</span> Özet</a></li>
 </ul>
 
         <div class="book-extra">
@@ -359,23 +361,23 @@ için inceleyebilirsiniz.</p>
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary">gtsummary</a></span><span class="op">)</span></span>
 <span><span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a></span><span class="op">(</span>statistic <span class="op">=</span> <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/select_helpers.html">all_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span><span class="st">"{min}, {max}"</span><span class="op">)</span>,missing <span class="op">=</span><span class="st">"always"</span><span class="op">)</span></span></code></pre></div>
-<div id="trrdrvxlku" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#trrdrvxlku table {
+<div id="aubqieuuoy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aubqieuuoy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#trrdrvxlku thead, #trrdrvxlku tbody, #trrdrvxlku tfoot, #trrdrvxlku tr, #trrdrvxlku td, #trrdrvxlku th {
+#aubqieuuoy thead, #aubqieuuoy tbody, #aubqieuuoy tfoot, #aubqieuuoy tr, #aubqieuuoy td, #aubqieuuoy th {
   border-style: none;
 }
 
-#trrdrvxlku p {
+#aubqieuuoy p {
   margin: 0;
   padding: 0;
 }
 
-#trrdrvxlku .gt_table {
+#aubqieuuoy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -401,12 +403,12 @@ için inceleyebilirsiniz.</p>
   border-left-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_caption {
+#aubqieuuoy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#trrdrvxlku .gt_title {
+#aubqieuuoy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -418,7 +420,7 @@ için inceleyebilirsiniz.</p>
   border-bottom-width: 0;
 }
 
-#trrdrvxlku .gt_subtitle {
+#aubqieuuoy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -430,7 +432,7 @@ için inceleyebilirsiniz.</p>
   border-top-width: 0;
 }
 
-#trrdrvxlku .gt_heading {
+#aubqieuuoy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -442,13 +444,13 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_bottom_border {
+#aubqieuuoy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_col_headings {
+#aubqieuuoy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -463,7 +465,7 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_col_heading {
+#aubqieuuoy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -483,7 +485,7 @@ için inceleyebilirsiniz.</p>
   overflow-x: hidden;
 }
 
-#trrdrvxlku .gt_column_spanner_outer {
+#aubqieuuoy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -495,15 +497,15 @@ için inceleyebilirsiniz.</p>
   padding-right: 4px;
 }
 
-#trrdrvxlku .gt_column_spanner_outer:first-child {
+#aubqieuuoy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#trrdrvxlku .gt_column_spanner_outer:last-child {
+#aubqieuuoy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#trrdrvxlku .gt_column_spanner {
+#aubqieuuoy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -515,11 +517,11 @@ için inceleyebilirsiniz.</p>
   width: 100%;
 }
 
-#trrdrvxlku .gt_spanner_row {
+#aubqieuuoy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#trrdrvxlku .gt_group_heading {
+#aubqieuuoy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -545,7 +547,7 @@ için inceleyebilirsiniz.</p>
   text-align: left;
 }
 
-#trrdrvxlku .gt_empty_group_heading {
+#aubqieuuoy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -560,15 +562,15 @@ için inceleyebilirsiniz.</p>
   vertical-align: middle;
 }
 
-#trrdrvxlku .gt_from_md > :first-child {
+#aubqieuuoy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#trrdrvxlku .gt_from_md > :last-child {
+#aubqieuuoy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#trrdrvxlku .gt_row {
+#aubqieuuoy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -587,7 +589,7 @@ için inceleyebilirsiniz.</p>
   overflow-x: hidden;
 }
 
-#trrdrvxlku .gt_stub {
+#aubqieuuoy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -600,7 +602,7 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#trrdrvxlku .gt_stub_row_group {
+#aubqieuuoy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -614,15 +616,15 @@ için inceleyebilirsiniz.</p>
   vertical-align: top;
 }
 
-#trrdrvxlku .gt_row_group_first td {
+#aubqieuuoy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#trrdrvxlku .gt_row_group_first th {
+#aubqieuuoy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#trrdrvxlku .gt_summary_row {
+#aubqieuuoy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -632,16 +634,16 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#trrdrvxlku .gt_first_summary_row {
+#aubqieuuoy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_first_summary_row.thick {
+#aubqieuuoy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#trrdrvxlku .gt_last_summary_row {
+#aubqieuuoy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -651,7 +653,7 @@ için inceleyebilirsiniz.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_grand_summary_row {
+#aubqieuuoy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -661,7 +663,7 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#trrdrvxlku .gt_first_grand_summary_row {
+#aubqieuuoy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -671,7 +673,7 @@ için inceleyebilirsiniz.</p>
   border-top-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_last_grand_summary_row_top {
+#aubqieuuoy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -681,11 +683,11 @@ için inceleyebilirsiniz.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_striped {
+#aubqieuuoy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#trrdrvxlku .gt_table_body {
+#aubqieuuoy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -694,7 +696,7 @@ için inceleyebilirsiniz.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_footnotes {
+#aubqieuuoy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -708,7 +710,7 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_footnote {
+#aubqieuuoy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -717,7 +719,7 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#trrdrvxlku .gt_sourcenotes {
+#aubqieuuoy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -731,7 +733,7 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#trrdrvxlku .gt_sourcenote {
+#aubqieuuoy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -739,63 +741,63 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#trrdrvxlku .gt_left {
+#aubqieuuoy .gt_left {
   text-align: left;
 }
 
-#trrdrvxlku .gt_center {
+#aubqieuuoy .gt_center {
   text-align: center;
 }
 
-#trrdrvxlku .gt_right {
+#aubqieuuoy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#trrdrvxlku .gt_font_normal {
+#aubqieuuoy .gt_font_normal {
   font-weight: normal;
 }
 
-#trrdrvxlku .gt_font_bold {
+#aubqieuuoy .gt_font_bold {
   font-weight: bold;
 }
 
-#trrdrvxlku .gt_font_italic {
+#aubqieuuoy .gt_font_italic {
   font-style: italic;
 }
 
-#trrdrvxlku .gt_super {
+#aubqieuuoy .gt_super {
   font-size: 65%;
 }
 
-#trrdrvxlku .gt_footnote_marks {
+#aubqieuuoy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#trrdrvxlku .gt_asterisk {
+#aubqieuuoy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#trrdrvxlku .gt_indent_1 {
+#aubqieuuoy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#trrdrvxlku .gt_indent_2 {
+#aubqieuuoy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#trrdrvxlku .gt_indent_3 {
+#aubqieuuoy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#trrdrvxlku .gt_indent_4 {
+#aubqieuuoy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#trrdrvxlku .gt_indent_5 {
+#aubqieuuoy .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2334,7 +2336,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-03-25.</p>
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-03-30.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
