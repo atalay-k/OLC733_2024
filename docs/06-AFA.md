@@ -934,7 +934,7 @@ out
     
     <img src="06-AFA_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" />
 
--   
+  
 
 **Artık Korelasyon Matrisinin İncelenmesi**
 
@@ -945,8 +945,6 @@ out
 -   Dolayısıyla, kayda değer faktörlerin sayısını belirlemeye yönelik
     diğer bir yaklaşım, ardışık faktörler çıkarılırken **artık matrisin
     incelenmesini** içerir.
-
-<!-- -->
 
 -   Yazılımlar talep üzerine artık matrisi sağlar. Ve bazı paketler
     artık matrisin bir üçgeninde **\|0.05\|'den büyük olan girdilerin
@@ -1058,10 +1056,7 @@ plotnScree(PA, legend=TRUE, ylab="Ozdegerler", main="Faktor Cozumu")
     eğim katsayılarına benzerler).
 
 -   Örüntü katsayıları ölçülen değişkendeki puanları elde etmek için
-    **faktöre uygulanan ağırlıklardır.**
-
--   Her bir faktörün **her bir ölçülen değişkendeki bireysel (unique)
-    katkısını** temsil ederler.
+    **faktöre uygulanan ağırlıklardır.** Her bir faktörün **her bir ölçülen değişkendeki bireysel (unique) katkısını** temsil ederler.
 
 
 ```r
@@ -1107,11 +1102,7 @@ $per11= .67\xi_1 + (-0.14)\xi_2 + 0.44\xi_3 + \delta_3$
     yaklaşık **%64,6’**sının birinci faktör tarafından açıklandığını
     önerir. Benzer şekilde,
 
--   $\lambda^2_{12} = -0.45^2 = .20$
-
--   $\lambda^2_{13} = -0.38^2 = .14$
-
-değeri PER1 değişkenindeki varyansın yaklaşık **%20’inin**
+  -   $\lambda^2_{12} = -0.45^2 = .20$ , $\lambda^2_{13} = -0.38^2 = .14$ değeri PER1 değişkenindeki varyansın yaklaşık **%20’inin**
 ve**%14,4**’ünün ikinci ve üçüncü faktör tarafından açıklandığını
 önerir.
 
@@ -1850,38 +1841,8 @@ karşılaştırıldığında, **eğik döndürme** sonucu elde edilen faktör
 yapısının **daha basit ve dahakolay yorumlanabilir** olduğu
 görülmektedir
 
-+----------------------+-------------------------+
-| Dik                  | Eğik                    |
-+======================+=========================+
-|                      |                     |
-| Loadings:            | Loadings:               |
-|                      |       PA1    PA2    PA3 |
-|      PA1   PA2   PA3 | per1   1.120            |
-| per1  0.957          | per2   0.835            |
-| per2  0.777          | per3   0.669            |
-| p                    | per4   0.750            |
-| e                    | per5          0.889     |
-| r                    | per6          0.850     |
-| 3  0.686       0.384 | per7          0.846     |
-| per4  0.713 0.302    | per8          0.777     |
-| per5        0.836    | p                       |
-| per6        0.756    | e                       |
-| per7        0.811    | r                       |
-| per8        0.748    | 9                 0.872 |
-| p                    | p                       |
-| e                    | e                       |
-| r                    | r                       |
-| 9              0.784 | 10                0.723 |
-| p                    | p                       |
-| e                    | e                       |
-| r                    | r                       |
-| 10             0.661 | 11                0.806 |
-| p                    | ```                     |
-| e                    |                         |
-| r                    |                         |
-| 11             0.740 |                         |
-| ```                  |                         |
-+----------------------+-------------------------+
+
+
 
 ## Yorum
 
@@ -1897,9 +1858,9 @@ yorumlanması gerekir.
 -   Faktör 3 temel olarak PER9-11 tarafından açıklanır.
 
 -   Bu 3 faktör arasındaki korelasyon katsayıları orta-yüksek korelasyon
-    katsayılarıdır. \## Yorum
+    katsayılarıdır. 
 
--   Faktörler anlamları bakımından da yorumlanmalıdır.Verilen örnekteki
+-   Faktörler anlamları bakımından da yorumlanmalıdır. Verilen örnekteki
     11 değişkenin kütüphane servis kalitesi algısını ölçmesi
     hedeflenmiştir.
 
@@ -1953,13 +1914,16 @@ head(fa_egik$scores)
 ## EGAnet
 
 -   Boyutsallık ve psikometrik değerlendirme için Keşifsel Grafik
-    Analizi (EGA) çerçevesini uygular. EGA, ağ tahmin yöntemlerini ve
+    Analizi (EGA) çerçevesini uygular. 
+    
+    - EGA, ağ tahmin yöntemlerini ve
     topluluk tespit algoritmalarını kullanarak psikolojik verilerdeki
-    boyut sayısını tahmin eder. Boyutların ve maddelerin kararlılığını
-    değerlendirmek için bir bootstrap yöntemi sağlanmıştır. Uyum,
-    Entropi Uyum endeks ailesi kullanılarak değerlendirilir. Benzersiz
-    Değişken Analizi, maddelerin ne ölçüde yerel olarak bağımlı (veya
-    gereksiz) olduğunu değerlendirir.
+    boyut sayısını tahmin eder. 
+    
+  - Boyutların ve maddelerin kararlılığını
+    değerlendirmek için bir bootstrap yöntemi sağlanmıştır. 
+    
+    - Uyum,     Entropi Uyum endeks ailesi kullanılarak değerlendirilir. Benzersiz Değişken Analizi, maddelerin ne ölçüde yerel olarak bağımlı (veya    gereksiz) olduğunu değerlendirir.
 
 
 ```r

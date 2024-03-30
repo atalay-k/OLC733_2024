@@ -173,10 +173,10 @@ semplot-paketi
 sempaths-1
 faktorler-arası-korelasyon
 modifikasyon-indeksleri-1
-uc-faktorlu-model
+üç-faktörlü-model
 model-karşılaştırma
 daha-yüksek-dereceli-faktör-modelleri
-daha-yüksek-dereceli-faktör-modelleri-1
-şekil-değişmezlik
+ölçme-değişmezliği
 özet
 uygulama-1
+kaynaklar-5

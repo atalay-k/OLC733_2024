@@ -1187,7 +1187,6 @@ yerleştirilebilir.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/VSS.scree.html">scree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span>, factors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-AFA_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;"></div>
 </li>
-<li>
 </ul>
 <p><strong>Artık Korelasyon Matrisinin İncelenmesi</strong></p>
 <ul>
@@ -1197,12 +1196,9 @@ matris her zaman yalnızca sıfırlardan oluşacaktır.</strong></p></li>
 <li><p>Dolayısıyla, kayda değer faktörlerin sayısını belirlemeye yönelik
 diğer bir yaklaşım, ardışık faktörler çıkarılırken <strong>artık matrisin
 incelenmesini</strong> içerir.</p></li>
-</ul>
-<!-- --><ul>
-<li>Yazılımlar talep üzerine artık matrisi sağlar. Ve bazı paketler
+<li><p>Yazılımlar talep üzerine artık matrisi sağlar. Ve bazı paketler
 artık matrisin bir üçgeninde <strong>|0.05|'den büyük olan girdilerin
-sayısını verir.</strong>
-</li>
+sayısını verir.</strong></p></li>
 </ul>
 <div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">residuals</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">out</span><span class="op">$</span><span class="va">residual</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -1291,9 +1287,7 @@ korunur.</strong></p></li>
 katsayılarıdır.</strong> (DFA’daki faktör yüklerine ve çoklu regresyondaki
 eğim katsayılarına benzerler).</p></li>
 <li><p>Örüntü katsayıları ölçülen değişkendeki puanları elde etmek için
-<strong>faktöre uygulanan ağırlıklardır.</strong></p></li>
-<li><p>Her bir faktörün <strong>her bir ölçülen değişkendeki bireysel (unique)
-katkısını</strong> temsil ederler.</p></li>
+<strong>faktöre uygulanan ağırlıklardır.</strong> Her bir faktörün <strong>her bir ölçülen değişkendeki bireysel (unique) katkısını</strong> temsil ederler.</p></li>
 </ul>
 <div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">veri</span>,<span class="fl">3</span>,fm<span class="op">=</span><span class="st">"pa"</span>,rotate<span class="op">=</span><span class="st">"none"</span><span class="op">)</span></span>
@@ -1327,14 +1321,10 @@ karesi, örneğin,</p></li>
 <li><p><span class="math inline">\(\lambda^2_{11} = .80^2 = .64\)</span> değeri PER1 değişkenindeki varyansın
 yaklaşık <strong>%64,6’</strong>sının birinci faktör tarafından açıklandığını
 önerir. Benzer şekilde,</p></li>
-<li><p><span class="math inline">\(\lambda^2_{12} = -0.45^2 = .20\)</span></p></li>
-<li><p><span class="math inline">\(\lambda^2_{13} = -0.38^2 = .14\)</span></p></li>
-</ul>
-<p>değeri PER1 değişkenindeki varyansın yaklaşık <strong>%20’inin</strong>
+<li><p><span class="math inline">\(\lambda^2_{12} = -0.45^2 = .20\)</span> , <span class="math inline">\(\lambda^2_{13} = -0.38^2 = .14\)</span> değeri PER1 değişkenindeki varyansın yaklaşık <strong>%20’inin</strong>
 ve<strong>%14,4</strong>’ünün ikinci ve üçüncü faktör tarafından açıklandığını
-önerir.</p>
-<ul>
-<li>Diğer örüntü katsayıları için de benzer açıklamalar yapılır.</li>
+önerir.</p></li>
+<li><p>Diğer örüntü katsayıları için de benzer açıklamalar yapılır.</p></li>
 </ul>
 </div>
 <div id="ortak-varyans-katsayıları-communality-coefficients" class="section level2" number="6.14">
@@ -2019,72 +2009,6 @@ katsayıların rapor edildiği açıkça belirtilmelidir.</p></li>
 karşılaştırıldığında, <strong>eğik döndürme</strong> sonucu elde edilen faktör
 yapısının <strong>daha basit ve dahakolay yorumlanabilir</strong> olduğu
 görülmektedir</p>
-<div class="inline-table"><table style="width:68%;" class="table table-sm">
-<colgroup>
-<col width="31%">
-<col width="36%">
-</colgroup>
-<thead><tr class="header">
-<th>Dik</th>
-<th>Eğik</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td>
-<p>Loadings:</p>
-<pre><code> PA1   PA2   PA3</code></pre>
-<p>per1 0.957
-per2 0.777
-p
-e
-r
-3 0.686 0.384
-per4 0.713 0.302
-per5 0.836
-per6 0.756
-per7 0.811
-per8 0.748
-p
-e
-r
-9 0.784
-p
-e
-r
-10 0.661
-p
-e
-r
-11 0.740
-```</p>
-</td>
-<td>
-<pre><code>                |</code></pre>
-<p>Loadings:
-PA1 PA2 PA3
-per1 1.120
-per2 0.835
-per3 0.669
-per4 0.750
-per5 0.889
-per6 0.850
-per7 0.846
-per8 0.777
-p
-e
-r
-9 0.872
-p
-e
-r
-10 0.723
-p
-e
-r
-11 0.806
-```</p>
-</td>
-</tr></tbody>
-</table></div>
 </div>
 <div id="yorum" class="section level2" number="6.24">
 <h2>
@@ -2098,8 +2022,8 @@ yorumlanması gerekir.</p>
 <li><p>Faktör 2 temel olarak PER5-8 tarafından açıklanır.</p></li>
 <li><p>Faktör 3 temel olarak PER9-11 tarafından açıklanır.</p></li>
 <li><p>Bu 3 faktör arasındaki korelasyon katsayıları orta-yüksek korelasyon
-katsayılarıdır. ## Yorum</p></li>
-<li><p>Faktörler anlamları bakımından da yorumlanmalıdır.Verilen örnekteki
+katsayılarıdır.</p></li>
+<li><p>Faktörler anlamları bakımından da yorumlanmalıdır. Verilen örnekteki
 11 değişkenin kütüphane servis kalitesi algısını ölçmesi
 hedeflenmiştir.</p></li>
 <li><p>AFA veri yapısı ile ilgili olarak herhangi bir önsel kuram
@@ -2130,7 +2054,7 @@ ortalaması 0 ve standart sapması 1’dir. Faktör puanları arasında
 ilişki yoktur. Bartlett yönteminin kestirilen faktörlerin dikliğini
 sağlaması için modifiye edilmiş halidir.</p></li>
 </ul>
-<div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb325"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fa_egik</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">veri</span>, nfactors<span class="op">=</span><span class="fl">3</span>, rotate<span class="op">=</span><span class="st">"promax"</span>, scores<span class="op">=</span><span class="st">"regression"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">fa_egik</span><span class="op">$</span><span class="va">scores</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##          MR1    MR2    MR3
@@ -2146,16 +2070,24 @@ sağlaması için modifiye edilmiş halidir.</p></li>
 <span class="header-section-number">6.26</span> EGAnet<a class="anchor" aria-label="anchor" href="#eganet"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
-<li>Boyutsallık ve psikometrik değerlendirme için Keşifsel Grafik
-Analizi (EGA) çerçevesini uygular. EGA, ağ tahmin yöntemlerini ve
+<li>
+<p>Boyutsallık ve psikometrik değerlendirme için Keşifsel Grafik
+Analizi (EGA) çerçevesini uygular.</p>
+<ul>
+<li>EGA, ağ tahmin yöntemlerini ve
 topluluk tespit algoritmalarını kullanarak psikolojik verilerdeki
-boyut sayısını tahmin eder. Boyutların ve maddelerin kararlılığını
-değerlendirmek için bir bootstrap yöntemi sağlanmıştır. Uyum,
-Entropi Uyum endeks ailesi kullanılarak değerlendirilir. Benzersiz
-Değişken Analizi, maddelerin ne ölçüde yerel olarak bağımlı (veya
-gereksiz) olduğunu değerlendirir.</li>
+boyut sayısını tahmin eder.</li>
 </ul>
-<div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
+</li>
+<li>
+<p>Boyutların ve maddelerin kararlılığını
+değerlendirmek için bir bootstrap yöntemi sağlanmıştır.</p>
+<ul>
+<li>Uyum, Entropi Uyum endeks ailesi kullanılarak değerlendirilir. Benzersiz Değişken Analizi, maddelerin ne ölçüde yerel olarak bağımlı (veya gereksiz) olduğunu değerlendirir.</li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-ega.net">EGAnet</a></span><span class="op">)</span>; <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psychTools</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Perform Unique Variable Analysis</span></span>
@@ -2169,7 +2101,7 @@ gereksiz) olduğunu değerlendirir.</li>
 ## 
 ## $remove
 ## [1] "per2"  "per3"  "per4"  "per7"  "per7"  "per8"  "per10" "per11"</code></pre>
-<div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://r-ega.net/reference/EGA.html">EGA</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-AFA_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## Model: GLASSO (EBIC with gamma = 0.5)
@@ -2490,7 +2422,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-03-30.</p>
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-03-31.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
