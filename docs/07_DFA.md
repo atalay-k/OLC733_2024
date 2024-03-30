@@ -23,9 +23,7 @@ editor_options:
 -   YEM analizleri çıktılarında Tsukahara (2022) tarafından geliştirilen
     **semoutput** paketi;
 
--   analizlere ilişkin diyagramların elde edilmesinde ise Epskamp vd.
-
-    (2017) tarafından geliştirilen **semPlot** paketi kullanılacaktır.
+-   analizlere ilişkin diyagramların elde edilmesinde ise Epskamp vd. (2017) tarafından geliştirilen **semPlot** paketi kullanılacaktır.
 
 
 ```r
@@ -95,7 +93,7 @@ library(semPlot)
 
 -   Araştırmacı, DFA’da kuramsal bilgilere dayalı olarak belirlediği
 
-    -   **gözlenen değişkenlerin gizil değişkenlerle** ve\
+    -   **gözlenen değişkenlerin gizil değişkenlerle** ve
     -   **gizil değişkenlerin de kendi aralarında birbiri ile ilişkili**
         olduğunu kanıtlamaya çalışır.
 
@@ -176,7 +174,7 @@ library(semPlot)
 -   DFA’da $\delta_1$ gibi bir hata terimi ölçme hatası olarak
     adlandırılır ancak bu terim **iki bileşenin kombinasyonudur.**
 
--   tesadüfi hataları **güvenilir olmayan değerler**, ölçülen özellik
+  -   tesadüfi hataları **güvenilir olmayan değerler**, ölçülen özellik
     dışında ölçmeye karışan diğer özellikler **güvenilir olan değerler**
 
 | ![](images/DFA_2.PNG){width="300"}  |
@@ -186,7 +184,7 @@ library(semPlot)
 X2 göstergesinin gizil faktördeki   yüküdür.     
 -   $\lambda_3$ , X3 göstergesinin gizilfaktördeki yüküdür.                   
 -   $\lambda_1$ , X1 göstergesinin gizil  
-    faktördeki yüküdür ancak **1\**   değerine sabitlenmiştir.              
+    faktördeki yüküdür ancak **1**   değerine sabitlenmiştir.              
 
 <img src="images/DFA_3.PNG" width="75%" style="display: block; margin: auto;" />
 
@@ -257,11 +255,12 @@ X_{4}\\
 ## DFA Modeli: Kovaryans Matrisi
 
 -   Model için kovaryans matrisi model parametrelerinin bir fonksiyonu
-    olarak temsil edilebilir:
+    $\sum(\theta) = \Lambda\phi\Lambda' + \Psi$  olarak temsil edilebilir:
 
-$\sum(\theta) = \Lambda\phi\Lambda' + \Psi$
 
-::: {style="font-family: Arial; font-size: 8px;"} 
+
+
+::: {style="font-family: Arial; font-size: 8px;"}
 $$\begin{bmatrix}{}
 VAR_{X_1}\\
 COV_{X_1,X_2} & VAR_{X_2}\\
@@ -479,8 +478,8 @@ model tanımlanır.
 
 <img src="images/DFA_9.PNG" width="75%" style="display: block; margin: auto;" />
 
--   X1’in faktör yükü **1**’e sabitlendiğinde, F1’in olcme birimi X1’in
-    olcme birimiyle ayni olur. Bu durumda X1 **isaret veya referans
+-   X1’in faktör yükü **1**’e sabitlendiğinde, F1’in ölçme birimi X1’in
+    ölçme birimiyle aynı olur. Bu durumda X1 **işaret veya referans
     değişken** adını alır.
 
 -   Benzer şekilde, X3 de F2 için **referans değişkendir.**
@@ -488,8 +487,8 @@ model tanımlanır.
 -   Referans değişken birinci gösterge olmak zorunda değildir. Örneğin,
     X2 de F1 için referans değişken olarak seçilebilir.
 
-    -   Referans degisken belirlendiginde, **degiskenin orneklem
-        varyansinin bir kismi gizil degiskene gecer.**
+    -   Referans değişken belirlendiginde, **değişkenin örneklem
+        varyansının bir kısmı gizil değişkene geçer**
 
 <img src="images/DFA_10.PNG" width="75%" style="display: block; margin: auto;" />
 
@@ -513,9 +512,7 @@ model tanımlanır.
 -   Verilen örnekte X2 hem F1 hem de F2’nin göstergesidir.
 
 -   Bazen bazı göstergeler birden fazla faktörü ölçmek için
-    tasarlanmıştır (factor complexity \> 1).
-
--   Böyle bir DFA modeli **artık standart bir DFA modeli** değildir.
+    tasarlanmıştır (factor complexity > 1). Böyle bir DFA modeli **artık standart bir DFA modeli** değildir.
 
 ## Model-Veri Uyumunun Değerlendirilmesi
 
@@ -554,32 +551,6 @@ model tanımlanır.
 
 -   Standardized Root Mean Square Residual **SRMR**
 
--   Uyum indekslerinin değerleri bir modelin sadece ortalama veya genel
-    uyumunu belirtir. Bu nedenle **belli bir indeksin değeri uygun bile
-    görünse, modelin belli kısımları veriye zayıf uyum sağlayabilir.**
-
--   Uyum indeksleri sonuçların **kuramsal olarak anlamlı olup olmadığını
-    belirtmezler.**
-
--   Yeterli uyumu öneren uyum indekslerinin değerleri **yordayıcıların
-    yordama güçlerinin de yüksek olduğunu belirtmezler.**
-
--   Örneğin, **veriye mükemmel uyum sağlayan modellerin bozukluklarının
-    varyansı halen yüksek olabilir.**
-
--   **Tek bir indeks** modelin sadece belli bir yönünü yansıttığından,
-    modelin iyi uyum sağladığını belirtmek için **tek başına yeterli
-    olmaz.** Bu nedenle, model uyumu birden fazla indeksin değerine
-    dayanarak değerlendirilir.
-
--   Uyum hem modelin belli kısımlarında **bölgesel** olarak hem de
-    **genel model ve veri uyuşmasının** ne kadar iyi olduğu yönünde
-    global olarak değerlendirilmelidir.
-
--   Genel olarak YEM analizinde model uyumu değerlendirilirken, odak tek
-    bir istatistiksel anlamlılık testinde değildir. **Çeşitli indeksleri
-    incelerken bütüncül bir yaklaşım kullanılmalıdır.**
-
 -   **Çoklu indekslerin kullanılması** bir modelin uyumu ile ilgili **en
     doğru yaklaşımı verecektir.**
 
@@ -592,8 +563,8 @@ model tanımlanır.
 |     CFI      |    .95 ≤GFI ≤ 1     |   .90 \< GFI \< .95   |
 
 Not: Bu kesme değerlerin kullanılmasıyla ilgili çok sayıda tartışma
-vardır. .xsmall[ Marsh, Hau, & Wen, 2004: The Special Issue in
-Personality and Individual Differences, 2007]
+vardır. 
+
 
 ### Uyum İndekslerini Raporlarken Öneriler
 
@@ -635,9 +606,9 @@ library(FCO)
 
 <!-- - Temel uyum indeksinin doğasına bağlı olarak, ilgili güven aralığının uygun alt (GoF) veya üst (BoF) genişliği, nicelik tarafından tanımlandığı gibi, esnek sınırı türetmek için kullanılır.  -->
 
-.xsmall[Niemand, T., Mai, R. Flexible cutoff values for fit indices in
+Niemand, T., Mai, R. Flexible cutoff values for fit indices in
 the evaluation of structural equation models. J. of the Acad. Mark. Sci.
-46, 1148–1172 (2018)]
+46, 1148–1172 (2018)
 
 ## Model Seçimi
 
@@ -705,7 +676,7 @@ the evaluation of structural equation models. J. of the Acad. Mark. Sci.
 tutarlı kestirimler üretir.** - doğrulayıcı faktör analizi için
 **cfa()**, yapısal modeller için **sem()** fonksiyonu tanımlanmıştır.
 
--   **ML** yöntemi paketin varsayın kestirim yöntemidir. Parametre
+-   **ML** yöntemi paketin varsayılan kestirim yöntemidir. Parametre
     kestirimleri açısından normallik varsayımının ihlaline dayanıklıdır.
 
 -   Normal olmayan veriler için alan yazında yaygın olarak kullanılan
@@ -731,9 +702,9 @@ tutarlı kestirimler üretir.** - doğrulayıcı faktör analizi için
 |                | yer aldığı veri        |                       |
 |                | setidir.               |                       |
 +----------------+------------------------+-----------------------+
-| s              | Örneklem               | Veri çerçevesinde     |
-| a              | ağırlıklandırması      | ağırlıklandırma       |
-| mpling.weights | yapılacağı durumlarda  | bilgisinin yer aldığı |
+|sampling.weights| Örneklem               | Veri çerçevesinde     |
+|                | ağırlıklandırması      | ağırlıklandırma       |
+|                | yapılacağı durumlarda  | bilgisinin yer aldığı |
 |                | tanımlanır.            | değişkenin adıdır.    |
 +----------------+------------------------+-----------------------+
 | group          | Çoklu grup analizlerde | Veri matrisinde grubu |
@@ -972,23 +943,23 @@ sem_sig(model_1_fit)
 ```
 
 ```{=html}
-<div id="cplkorgonc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cplkorgonc table {
+<div id="uwctsjigjh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uwctsjigjh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cplkorgonc thead, #cplkorgonc tbody, #cplkorgonc tfoot, #cplkorgonc tr, #cplkorgonc td, #cplkorgonc th {
+#uwctsjigjh thead, #uwctsjigjh tbody, #uwctsjigjh tfoot, #uwctsjigjh tr, #uwctsjigjh td, #uwctsjigjh th {
   border-style: none;
 }
 
-#cplkorgonc p {
+#uwctsjigjh p {
   margin: 0;
   padding: 0;
 }
 
-#cplkorgonc .gt_table {
+#uwctsjigjh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1014,12 +985,12 @@ sem_sig(model_1_fit)
   border-left-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_caption {
+#uwctsjigjh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cplkorgonc .gt_title {
+#uwctsjigjh .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1031,7 +1002,7 @@ sem_sig(model_1_fit)
   border-bottom-width: 0;
 }
 
-#cplkorgonc .gt_subtitle {
+#uwctsjigjh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1043,7 +1014,7 @@ sem_sig(model_1_fit)
   border-top-width: 0;
 }
 
-#cplkorgonc .gt_heading {
+#uwctsjigjh .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1055,13 +1026,13 @@ sem_sig(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_bottom_border {
+#uwctsjigjh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_col_headings {
+#uwctsjigjh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1076,7 +1047,7 @@ sem_sig(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_col_heading {
+#uwctsjigjh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1096,7 +1067,7 @@ sem_sig(model_1_fit)
   overflow-x: hidden;
 }
 
-#cplkorgonc .gt_column_spanner_outer {
+#uwctsjigjh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1108,15 +1079,15 @@ sem_sig(model_1_fit)
   padding-right: 4px;
 }
 
-#cplkorgonc .gt_column_spanner_outer:first-child {
+#uwctsjigjh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cplkorgonc .gt_column_spanner_outer:last-child {
+#uwctsjigjh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cplkorgonc .gt_column_spanner {
+#uwctsjigjh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1128,11 +1099,11 @@ sem_sig(model_1_fit)
   width: 100%;
 }
 
-#cplkorgonc .gt_spanner_row {
+#uwctsjigjh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cplkorgonc .gt_group_heading {
+#uwctsjigjh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1158,7 +1129,7 @@ sem_sig(model_1_fit)
   text-align: left;
 }
 
-#cplkorgonc .gt_empty_group_heading {
+#uwctsjigjh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1173,15 +1144,15 @@ sem_sig(model_1_fit)
   vertical-align: middle;
 }
 
-#cplkorgonc .gt_from_md > :first-child {
+#uwctsjigjh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cplkorgonc .gt_from_md > :last-child {
+#uwctsjigjh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cplkorgonc .gt_row {
+#uwctsjigjh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1200,7 +1171,7 @@ sem_sig(model_1_fit)
   overflow-x: hidden;
 }
 
-#cplkorgonc .gt_stub {
+#uwctsjigjh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1213,7 +1184,7 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#cplkorgonc .gt_stub_row_group {
+#uwctsjigjh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1227,15 +1198,15 @@ sem_sig(model_1_fit)
   vertical-align: top;
 }
 
-#cplkorgonc .gt_row_group_first td {
+#uwctsjigjh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cplkorgonc .gt_row_group_first th {
+#uwctsjigjh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cplkorgonc .gt_summary_row {
+#uwctsjigjh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1245,16 +1216,16 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#cplkorgonc .gt_first_summary_row {
+#uwctsjigjh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_first_summary_row.thick {
+#uwctsjigjh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cplkorgonc .gt_last_summary_row {
+#uwctsjigjh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1264,7 +1235,7 @@ sem_sig(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_grand_summary_row {
+#uwctsjigjh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1274,7 +1245,7 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#cplkorgonc .gt_first_grand_summary_row {
+#uwctsjigjh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1284,7 +1255,7 @@ sem_sig(model_1_fit)
   border-top-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_last_grand_summary_row_top {
+#uwctsjigjh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1294,11 +1265,11 @@ sem_sig(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_striped {
+#uwctsjigjh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cplkorgonc .gt_table_body {
+#uwctsjigjh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1307,7 +1278,7 @@ sem_sig(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_footnotes {
+#uwctsjigjh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1321,7 +1292,7 @@ sem_sig(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_footnote {
+#uwctsjigjh .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1330,7 +1301,7 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#cplkorgonc .gt_sourcenotes {
+#uwctsjigjh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1344,7 +1315,7 @@ sem_sig(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#cplkorgonc .gt_sourcenote {
+#uwctsjigjh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1352,63 +1323,63 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#cplkorgonc .gt_left {
+#uwctsjigjh .gt_left {
   text-align: left;
 }
 
-#cplkorgonc .gt_center {
+#uwctsjigjh .gt_center {
   text-align: center;
 }
 
-#cplkorgonc .gt_right {
+#uwctsjigjh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cplkorgonc .gt_font_normal {
+#uwctsjigjh .gt_font_normal {
   font-weight: normal;
 }
 
-#cplkorgonc .gt_font_bold {
+#uwctsjigjh .gt_font_bold {
   font-weight: bold;
 }
 
-#cplkorgonc .gt_font_italic {
+#uwctsjigjh .gt_font_italic {
   font-style: italic;
 }
 
-#cplkorgonc .gt_super {
+#uwctsjigjh .gt_super {
   font-size: 65%;
 }
 
-#cplkorgonc .gt_footnote_marks {
+#uwctsjigjh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cplkorgonc .gt_asterisk {
+#uwctsjigjh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cplkorgonc .gt_indent_1 {
+#uwctsjigjh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cplkorgonc .gt_indent_2 {
+#uwctsjigjh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cplkorgonc .gt_indent_3 {
+#uwctsjigjh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cplkorgonc .gt_indent_4 {
+#uwctsjigjh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cplkorgonc .gt_indent_5 {
+#uwctsjigjh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1443,7 +1414,7 @@ sem_sig(model_1_fit)
 
 ```r
 library(semoutput)
-# sem_fitmeasures(model_1_fit)
+ # sem_fitmeasures(model_1_fit)
 ```
 
 -   Model uyum istatistikleri fitmeasures fonkisyonu ile aşağıdaki
@@ -1497,15 +1468,12 @@ recommend(fits.esnek)$cutoffs
 
 </div>
 
--   Model uyum indekslerini takiben **faktör yükleri**, **standart
-    hataları**,\*\* z değerleri ve p değerleri\*\* gelmektedir.
+-   Model uyum indekslerini takiben **faktör yükleri**, **standart hataları,z değerleri ve p değerleri** gelmektedir.
 
 -   **p** değerleri maddelere ilişkin **faktör yüklerinin sıfırdan
     anlamlı düzeyde farklı olup olmadığına** ilişkin bilgi verir.
 
--   Faktör yükleri incelendiğinde, **her bir faktörün ilk maddesinin
-    referans madde olarak tanımlandığı** ve **faktör yüklerinin bire
-    eşitlendiği** görülmektedir.
+-   Faktör yükleri incelendiğinde, **her bir faktörün ilk maddesinin  referans madde olarak tanımlandığı** ve **faktör yüklerinin bire eşitlendiği** görülmektedir.
 
 -   Bu maddelere ilişkin standart hatalar, z ve p değerleri
     hesaplanmamıştır. Faktör yükler tablosunun ardından ise faktörler
@@ -1518,23 +1486,23 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
 ```
 
 ```{=html}
-<div id="gmdxrltdmg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gmdxrltdmg table {
+<div id="jaljdipkhl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jaljdipkhl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gmdxrltdmg thead, #gmdxrltdmg tbody, #gmdxrltdmg tfoot, #gmdxrltdmg tr, #gmdxrltdmg td, #gmdxrltdmg th {
+#jaljdipkhl thead, #jaljdipkhl tbody, #jaljdipkhl tfoot, #jaljdipkhl tr, #jaljdipkhl td, #jaljdipkhl th {
   border-style: none;
 }
 
-#gmdxrltdmg p {
+#jaljdipkhl p {
   margin: 0;
   padding: 0;
 }
 
-#gmdxrltdmg .gt_table {
+#jaljdipkhl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1560,12 +1528,12 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-left-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_caption {
+#jaljdipkhl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gmdxrltdmg .gt_title {
+#jaljdipkhl .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1577,7 +1545,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-bottom-width: 0;
 }
 
-#gmdxrltdmg .gt_subtitle {
+#jaljdipkhl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1589,7 +1557,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-top-width: 0;
 }
 
-#gmdxrltdmg .gt_heading {
+#jaljdipkhl .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1601,13 +1569,13 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-right-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_bottom_border {
+#jaljdipkhl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_col_headings {
+#jaljdipkhl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1622,7 +1590,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-right-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_col_heading {
+#jaljdipkhl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1642,7 +1610,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   overflow-x: hidden;
 }
 
-#gmdxrltdmg .gt_column_spanner_outer {
+#jaljdipkhl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1654,15 +1622,15 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 4px;
 }
 
-#gmdxrltdmg .gt_column_spanner_outer:first-child {
+#jaljdipkhl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gmdxrltdmg .gt_column_spanner_outer:last-child {
+#jaljdipkhl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gmdxrltdmg .gt_column_spanner {
+#jaljdipkhl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1674,11 +1642,11 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   width: 100%;
 }
 
-#gmdxrltdmg .gt_spanner_row {
+#jaljdipkhl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gmdxrltdmg .gt_group_heading {
+#jaljdipkhl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1704,7 +1672,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   text-align: left;
 }
 
-#gmdxrltdmg .gt_empty_group_heading {
+#jaljdipkhl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1719,15 +1687,15 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   vertical-align: middle;
 }
 
-#gmdxrltdmg .gt_from_md > :first-child {
+#jaljdipkhl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gmdxrltdmg .gt_from_md > :last-child {
+#jaljdipkhl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gmdxrltdmg .gt_row {
+#jaljdipkhl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1746,7 +1714,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   overflow-x: hidden;
 }
 
-#gmdxrltdmg .gt_stub {
+#jaljdipkhl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1759,7 +1727,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#gmdxrltdmg .gt_stub_row_group {
+#jaljdipkhl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1773,15 +1741,15 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   vertical-align: top;
 }
 
-#gmdxrltdmg .gt_row_group_first td {
+#jaljdipkhl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gmdxrltdmg .gt_row_group_first th {
+#jaljdipkhl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gmdxrltdmg .gt_summary_row {
+#jaljdipkhl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1791,16 +1759,16 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#gmdxrltdmg .gt_first_summary_row {
+#jaljdipkhl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_first_summary_row.thick {
+#jaljdipkhl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gmdxrltdmg .gt_last_summary_row {
+#jaljdipkhl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1810,7 +1778,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-bottom-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_grand_summary_row {
+#jaljdipkhl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1820,7 +1788,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#gmdxrltdmg .gt_first_grand_summary_row {
+#jaljdipkhl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1830,7 +1798,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-top-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_last_grand_summary_row_top {
+#jaljdipkhl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1840,11 +1808,11 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-bottom-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_striped {
+#jaljdipkhl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gmdxrltdmg .gt_table_body {
+#jaljdipkhl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1853,7 +1821,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-bottom-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_footnotes {
+#jaljdipkhl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1867,7 +1835,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-right-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_footnote {
+#jaljdipkhl .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1876,7 +1844,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#gmdxrltdmg .gt_sourcenotes {
+#jaljdipkhl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1890,7 +1858,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-right-color: #D3D3D3;
 }
 
-#gmdxrltdmg .gt_sourcenote {
+#jaljdipkhl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1898,63 +1866,63 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#gmdxrltdmg .gt_left {
+#jaljdipkhl .gt_left {
   text-align: left;
 }
 
-#gmdxrltdmg .gt_center {
+#jaljdipkhl .gt_center {
   text-align: center;
 }
 
-#gmdxrltdmg .gt_right {
+#jaljdipkhl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gmdxrltdmg .gt_font_normal {
+#jaljdipkhl .gt_font_normal {
   font-weight: normal;
 }
 
-#gmdxrltdmg .gt_font_bold {
+#jaljdipkhl .gt_font_bold {
   font-weight: bold;
 }
 
-#gmdxrltdmg .gt_font_italic {
+#jaljdipkhl .gt_font_italic {
   font-style: italic;
 }
 
-#gmdxrltdmg .gt_super {
+#jaljdipkhl .gt_super {
   font-size: 65%;
 }
 
-#gmdxrltdmg .gt_footnote_marks {
+#jaljdipkhl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gmdxrltdmg .gt_asterisk {
+#jaljdipkhl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gmdxrltdmg .gt_indent_1 {
+#jaljdipkhl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gmdxrltdmg .gt_indent_2 {
+#jaljdipkhl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gmdxrltdmg .gt_indent_3 {
+#jaljdipkhl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gmdxrltdmg .gt_indent_4 {
+#jaljdipkhl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gmdxrltdmg .gt_indent_5 {
+#jaljdipkhl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2157,17 +2125,11 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
 
 -   DFA modelinin testi
 
--   okul2 göstergesinin yükü **1.431** olarak kestirilmiştir.
-
--   Bu değer faktör puanındaki birbirimlik değişikliğin okul2 puanında
-    1.431 birimlik değişikliğe yol açacağı şeklinde yorumlanır.
-
--   Ancak bu değerler kendi başlarına **çok anlamlı olmadığından
-    standartlaştırılmamış yüklerin yorumlanmasında** dikkatli olmak
+-   okul2 göstergesinin yükü **1.431** olarak kestirilmiştir. Bu değer faktör puanındaki birbirimlik değişikliğin okul2 puanında
+    1.431 birimlik değişikliğe yol açacağı şeklinde yorumlanır. Ancak bu değerler kendi başlarına **çok anlamlı olmadığından     standartlaştırılmamış yüklerin yorumlanmasında** dikkatli olmak
     gerekir.
 
--   Ölçülen göstergelerde **faktörün yordayıcı gücünü karşılaştırmak
-    için daha anlamlı bir yaklaşım standartlaştırılmış yüklerin**
+-   Ölçülen göstergelerde **faktörün yordayıcı gücünü karşılaştırmak için daha anlamlı bir yaklaşım standartlaştırılmış yüklerin**
     yorumlanmasıdır.
 
 ## DFA modelinin testi
@@ -2178,23 +2140,23 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
 ```
 
 ```{=html}
-<div id="hgfgtjvvjx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hgfgtjvvjx table {
+<div id="hifelirfkn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hifelirfkn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hgfgtjvvjx thead, #hgfgtjvvjx tbody, #hgfgtjvvjx tfoot, #hgfgtjvvjx tr, #hgfgtjvvjx td, #hgfgtjvvjx th {
+#hifelirfkn thead, #hifelirfkn tbody, #hifelirfkn tfoot, #hifelirfkn tr, #hifelirfkn td, #hifelirfkn th {
   border-style: none;
 }
 
-#hgfgtjvvjx p {
+#hifelirfkn p {
   margin: 0;
   padding: 0;
 }
 
-#hgfgtjvvjx .gt_table {
+#hifelirfkn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2220,12 +2182,12 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-left-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_caption {
+#hifelirfkn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hgfgtjvvjx .gt_title {
+#hifelirfkn .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2237,7 +2199,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-bottom-width: 0;
 }
 
-#hgfgtjvvjx .gt_subtitle {
+#hifelirfkn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2249,7 +2211,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-top-width: 0;
 }
 
-#hgfgtjvvjx .gt_heading {
+#hifelirfkn .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2261,13 +2223,13 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_bottom_border {
+#hifelirfkn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_col_headings {
+#hifelirfkn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2282,7 +2244,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_col_heading {
+#hifelirfkn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2302,7 +2264,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   overflow-x: hidden;
 }
 
-#hgfgtjvvjx .gt_column_spanner_outer {
+#hifelirfkn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2314,15 +2276,15 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 4px;
 }
 
-#hgfgtjvvjx .gt_column_spanner_outer:first-child {
+#hifelirfkn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hgfgtjvvjx .gt_column_spanner_outer:last-child {
+#hifelirfkn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hgfgtjvvjx .gt_column_spanner {
+#hifelirfkn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2334,11 +2296,11 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   width: 100%;
 }
 
-#hgfgtjvvjx .gt_spanner_row {
+#hifelirfkn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hgfgtjvvjx .gt_group_heading {
+#hifelirfkn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2364,7 +2326,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   text-align: left;
 }
 
-#hgfgtjvvjx .gt_empty_group_heading {
+#hifelirfkn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2379,15 +2341,15 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   vertical-align: middle;
 }
 
-#hgfgtjvvjx .gt_from_md > :first-child {
+#hifelirfkn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hgfgtjvvjx .gt_from_md > :last-child {
+#hifelirfkn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hgfgtjvvjx .gt_row {
+#hifelirfkn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2406,7 +2368,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   overflow-x: hidden;
 }
 
-#hgfgtjvvjx .gt_stub {
+#hifelirfkn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2419,7 +2381,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#hgfgtjvvjx .gt_stub_row_group {
+#hifelirfkn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2433,15 +2395,15 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   vertical-align: top;
 }
 
-#hgfgtjvvjx .gt_row_group_first td {
+#hifelirfkn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hgfgtjvvjx .gt_row_group_first th {
+#hifelirfkn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hgfgtjvvjx .gt_summary_row {
+#hifelirfkn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2451,16 +2413,16 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#hgfgtjvvjx .gt_first_summary_row {
+#hifelirfkn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_first_summary_row.thick {
+#hifelirfkn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hgfgtjvvjx .gt_last_summary_row {
+#hifelirfkn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2470,7 +2432,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_grand_summary_row {
+#hifelirfkn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2480,7 +2442,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#hgfgtjvvjx .gt_first_grand_summary_row {
+#hifelirfkn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2490,7 +2452,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-top-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_last_grand_summary_row_top {
+#hifelirfkn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2500,11 +2462,11 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_striped {
+#hifelirfkn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hgfgtjvvjx .gt_table_body {
+#hifelirfkn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2513,7 +2475,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_footnotes {
+#hifelirfkn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2527,7 +2489,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_footnote {
+#hifelirfkn .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -2536,7 +2498,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#hgfgtjvvjx .gt_sourcenotes {
+#hifelirfkn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2550,7 +2512,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#hgfgtjvvjx .gt_sourcenote {
+#hifelirfkn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2558,63 +2520,63 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#hgfgtjvvjx .gt_left {
+#hifelirfkn .gt_left {
   text-align: left;
 }
 
-#hgfgtjvvjx .gt_center {
+#hifelirfkn .gt_center {
   text-align: center;
 }
 
-#hgfgtjvvjx .gt_right {
+#hifelirfkn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hgfgtjvvjx .gt_font_normal {
+#hifelirfkn .gt_font_normal {
   font-weight: normal;
 }
 
-#hgfgtjvvjx .gt_font_bold {
+#hifelirfkn .gt_font_bold {
   font-weight: bold;
 }
 
-#hgfgtjvvjx .gt_font_italic {
+#hifelirfkn .gt_font_italic {
   font-style: italic;
 }
 
-#hgfgtjvvjx .gt_super {
+#hifelirfkn .gt_super {
   font-size: 65%;
 }
 
-#hgfgtjvvjx .gt_footnote_marks {
+#hifelirfkn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hgfgtjvvjx .gt_asterisk {
+#hifelirfkn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hgfgtjvvjx .gt_indent_1 {
+#hifelirfkn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hgfgtjvvjx .gt_indent_2 {
+#hifelirfkn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hgfgtjvvjx .gt_indent_3 {
+#hifelirfkn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hgfgtjvvjx .gt_indent_4 {
+#hifelirfkn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hgfgtjvvjx .gt_indent_5 {
+#hifelirfkn .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2749,15 +2711,23 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
 -   Açıklanan varyans
 
 
-
-
 ```r
-varyanslar
+ # summary(model_1_fit, rsquare=TRUE)
+# R-Square:
+#                    Estimate
+#     okul1             0.176
+#     okul2             0.407
+#     okul3             0.735
+#     kisi1             0.448
+#     kisi2             0.614
+#     arkadas1          0.625
+#     arkadas2          0.282
+#     aile1             0.551
+#     aile2             0.715
+#     aile3             0.260
 ```
 
-```
-## NULL
-```
+
 
 
 ```r
@@ -2765,23 +2735,23 @@ sem_factorvar(model_1_fit)
 ```
 
 ```{=html}
-<div id="tvdedlukvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tvdedlukvn table {
+<div id="grganycklo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#grganycklo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tvdedlukvn thead, #tvdedlukvn tbody, #tvdedlukvn tfoot, #tvdedlukvn tr, #tvdedlukvn td, #tvdedlukvn th {
+#grganycklo thead, #grganycklo tbody, #grganycklo tfoot, #grganycklo tr, #grganycklo td, #grganycklo th {
   border-style: none;
 }
 
-#tvdedlukvn p {
+#grganycklo p {
   margin: 0;
   padding: 0;
 }
 
-#tvdedlukvn .gt_table {
+#grganycklo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2807,12 +2777,12 @@ sem_factorvar(model_1_fit)
   border-left-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_caption {
+#grganycklo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tvdedlukvn .gt_title {
+#grganycklo .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2824,7 +2794,7 @@ sem_factorvar(model_1_fit)
   border-bottom-width: 0;
 }
 
-#tvdedlukvn .gt_subtitle {
+#grganycklo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2836,7 +2806,7 @@ sem_factorvar(model_1_fit)
   border-top-width: 0;
 }
 
-#tvdedlukvn .gt_heading {
+#grganycklo .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2848,13 +2818,13 @@ sem_factorvar(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_bottom_border {
+#grganycklo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_col_headings {
+#grganycklo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2869,7 +2839,7 @@ sem_factorvar(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_col_heading {
+#grganycklo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2889,7 +2859,7 @@ sem_factorvar(model_1_fit)
   overflow-x: hidden;
 }
 
-#tvdedlukvn .gt_column_spanner_outer {
+#grganycklo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2901,15 +2871,15 @@ sem_factorvar(model_1_fit)
   padding-right: 4px;
 }
 
-#tvdedlukvn .gt_column_spanner_outer:first-child {
+#grganycklo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tvdedlukvn .gt_column_spanner_outer:last-child {
+#grganycklo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tvdedlukvn .gt_column_spanner {
+#grganycklo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2921,11 +2891,11 @@ sem_factorvar(model_1_fit)
   width: 100%;
 }
 
-#tvdedlukvn .gt_spanner_row {
+#grganycklo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tvdedlukvn .gt_group_heading {
+#grganycklo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2951,7 +2921,7 @@ sem_factorvar(model_1_fit)
   text-align: left;
 }
 
-#tvdedlukvn .gt_empty_group_heading {
+#grganycklo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2966,15 +2936,15 @@ sem_factorvar(model_1_fit)
   vertical-align: middle;
 }
 
-#tvdedlukvn .gt_from_md > :first-child {
+#grganycklo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tvdedlukvn .gt_from_md > :last-child {
+#grganycklo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tvdedlukvn .gt_row {
+#grganycklo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2993,7 +2963,7 @@ sem_factorvar(model_1_fit)
   overflow-x: hidden;
 }
 
-#tvdedlukvn .gt_stub {
+#grganycklo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3006,7 +2976,7 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#tvdedlukvn .gt_stub_row_group {
+#grganycklo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3020,15 +2990,15 @@ sem_factorvar(model_1_fit)
   vertical-align: top;
 }
 
-#tvdedlukvn .gt_row_group_first td {
+#grganycklo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tvdedlukvn .gt_row_group_first th {
+#grganycklo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tvdedlukvn .gt_summary_row {
+#grganycklo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3038,16 +3008,16 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#tvdedlukvn .gt_first_summary_row {
+#grganycklo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_first_summary_row.thick {
+#grganycklo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tvdedlukvn .gt_last_summary_row {
+#grganycklo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3057,7 +3027,7 @@ sem_factorvar(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_grand_summary_row {
+#grganycklo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3067,7 +3037,7 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#tvdedlukvn .gt_first_grand_summary_row {
+#grganycklo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3077,7 +3047,7 @@ sem_factorvar(model_1_fit)
   border-top-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_last_grand_summary_row_top {
+#grganycklo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3087,11 +3057,11 @@ sem_factorvar(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_striped {
+#grganycklo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tvdedlukvn .gt_table_body {
+#grganycklo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3100,7 +3070,7 @@ sem_factorvar(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_footnotes {
+#grganycklo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3114,7 +3084,7 @@ sem_factorvar(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_footnote {
+#grganycklo .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -3123,7 +3093,7 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#tvdedlukvn .gt_sourcenotes {
+#grganycklo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3137,7 +3107,7 @@ sem_factorvar(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#tvdedlukvn .gt_sourcenote {
+#grganycklo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3145,63 +3115,63 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#tvdedlukvn .gt_left {
+#grganycklo .gt_left {
   text-align: left;
 }
 
-#tvdedlukvn .gt_center {
+#grganycklo .gt_center {
   text-align: center;
 }
 
-#tvdedlukvn .gt_right {
+#grganycklo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tvdedlukvn .gt_font_normal {
+#grganycklo .gt_font_normal {
   font-weight: normal;
 }
 
-#tvdedlukvn .gt_font_bold {
+#grganycklo .gt_font_bold {
   font-weight: bold;
 }
 
-#tvdedlukvn .gt_font_italic {
+#grganycklo .gt_font_italic {
   font-style: italic;
 }
 
-#tvdedlukvn .gt_super {
+#grganycklo .gt_super {
   font-size: 65%;
 }
 
-#tvdedlukvn .gt_footnote_marks {
+#grganycklo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tvdedlukvn .gt_asterisk {
+#grganycklo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tvdedlukvn .gt_indent_1 {
+#grganycklo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tvdedlukvn .gt_indent_2 {
+#grganycklo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tvdedlukvn .gt_indent_3 {
+#grganycklo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tvdedlukvn .gt_indent_4 {
+#grganycklo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tvdedlukvn .gt_indent_5 {
+#grganycklo .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3334,6 +3304,20 @@ var(yasamdoyum$okul2)
 
 -   okul2 değişkenin okul faktörü tarafından açıklanmayan varyans
     miktarı 0.978 olarak kestirilmiştir.
+    
+
+```r
+pars <- parameterEstimates(model_1_fit,standardized = TRUE)
+pars[12,]
+```
+
+<div class="kable-table">
+
+|   |lhs   |op |rhs   |       est|        se|       z| pvalue| ci.lower| ci.upper|    std.lv|   std.all|   std.nox|
+|:--|:-----|:--|:-----|---------:|---------:|-------:|------:|--------:|--------:|---------:|---------:|---------:|
+|12 |okul2 |~~ |okul2 | 0.9780032| 0.1371725| 7.12973|      0|  0.70915| 1.246857| 0.9780032| 0.5933117| 0.5933117|
+
+</div>
 
 -   Bu nedenle, okul2 değişkenin okul faktörü tarafından açıklanan
     varyans miktarı $1.65 -0.978 = 0.672$
@@ -3346,14 +3330,6 @@ var(yasamdoyum$okul2)
 
 -   okul faktörü tarafından açıklanmayan varyans oranı ise:
     $1 - 0.407 = 0.593$
-
-<div class="kable-table">
-
-|   |lhs   |op |rhs   |       est|        se|       z| pvalue| ci.lower| ci.upper|    std.lv|   std.all|   std.nox|
-|:--|:-----|:--|:-----|---------:|---------:|-------:|------:|--------:|--------:|---------:|---------:|---------:|
-|12 |okul2 |~~ |okul2 | 0.9780032| 0.1371725| 7.12973|      0|  0.70915| 1.246857| 0.9780032| 0.5933117| 0.5933117|
-
-</div>
 
 -   Artık varyans ve $R^2$ arasındaki genel ilişki:
 
@@ -3475,7 +3451,7 @@ semPaths(model_1_fit, what="par",
 rotation = 2 )
 ```
 
-<img src="07_DFA_files/figure-html/unnamed-chunk-37-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="07_DFA_files/figure-html/unnamed-chunk-36-1.png" width="75%" style="display: block; margin: auto;" />
 
 -   Standartlaştırılmış Çözümler
 
@@ -3485,7 +3461,7 @@ semPaths(model_1_fit, what="std",
 rotation = 2 )
 ```
 
-<img src="07_DFA_files/figure-html/unnamed-chunk-38-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="07_DFA_files/figure-html/unnamed-chunk-37-1.png" width="75%" style="display: block; margin: auto;" />
 
 ### Faktorler arası korelasyon
 
@@ -3495,23 +3471,23 @@ sem_factorcor(model_1_fit)
 ```
 
 ```{=html}
-<div id="mlbfneabiq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mlbfneabiq table {
+<div id="tqwddzkrkx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tqwddzkrkx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mlbfneabiq thead, #mlbfneabiq tbody, #mlbfneabiq tfoot, #mlbfneabiq tr, #mlbfneabiq td, #mlbfneabiq th {
+#tqwddzkrkx thead, #tqwddzkrkx tbody, #tqwddzkrkx tfoot, #tqwddzkrkx tr, #tqwddzkrkx td, #tqwddzkrkx th {
   border-style: none;
 }
 
-#mlbfneabiq p {
+#tqwddzkrkx p {
   margin: 0;
   padding: 0;
 }
 
-#mlbfneabiq .gt_table {
+#tqwddzkrkx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3537,12 +3513,12 @@ sem_factorcor(model_1_fit)
   border-left-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_caption {
+#tqwddzkrkx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mlbfneabiq .gt_title {
+#tqwddzkrkx .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -3554,7 +3530,7 @@ sem_factorcor(model_1_fit)
   border-bottom-width: 0;
 }
 
-#mlbfneabiq .gt_subtitle {
+#tqwddzkrkx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3566,7 +3542,7 @@ sem_factorcor(model_1_fit)
   border-top-width: 0;
 }
 
-#mlbfneabiq .gt_heading {
+#tqwddzkrkx .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -3578,13 +3554,13 @@ sem_factorcor(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_bottom_border {
+#tqwddzkrkx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_col_headings {
+#tqwddzkrkx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -3599,7 +3575,7 @@ sem_factorcor(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_col_heading {
+#tqwddzkrkx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3619,7 +3595,7 @@ sem_factorcor(model_1_fit)
   overflow-x: hidden;
 }
 
-#mlbfneabiq .gt_column_spanner_outer {
+#tqwddzkrkx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3631,15 +3607,15 @@ sem_factorcor(model_1_fit)
   padding-right: 4px;
 }
 
-#mlbfneabiq .gt_column_spanner_outer:first-child {
+#tqwddzkrkx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mlbfneabiq .gt_column_spanner_outer:last-child {
+#tqwddzkrkx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mlbfneabiq .gt_column_spanner {
+#tqwddzkrkx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3651,11 +3627,11 @@ sem_factorcor(model_1_fit)
   width: 100%;
 }
 
-#mlbfneabiq .gt_spanner_row {
+#tqwddzkrkx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mlbfneabiq .gt_group_heading {
+#tqwddzkrkx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3681,7 +3657,7 @@ sem_factorcor(model_1_fit)
   text-align: left;
 }
 
-#mlbfneabiq .gt_empty_group_heading {
+#tqwddzkrkx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3696,15 +3672,15 @@ sem_factorcor(model_1_fit)
   vertical-align: middle;
 }
 
-#mlbfneabiq .gt_from_md > :first-child {
+#tqwddzkrkx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mlbfneabiq .gt_from_md > :last-child {
+#tqwddzkrkx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mlbfneabiq .gt_row {
+#tqwddzkrkx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3723,7 +3699,7 @@ sem_factorcor(model_1_fit)
   overflow-x: hidden;
 }
 
-#mlbfneabiq .gt_stub {
+#tqwddzkrkx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3736,7 +3712,7 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#mlbfneabiq .gt_stub_row_group {
+#tqwddzkrkx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3750,15 +3726,15 @@ sem_factorcor(model_1_fit)
   vertical-align: top;
 }
 
-#mlbfneabiq .gt_row_group_first td {
+#tqwddzkrkx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mlbfneabiq .gt_row_group_first th {
+#tqwddzkrkx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mlbfneabiq .gt_summary_row {
+#tqwddzkrkx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3768,16 +3744,16 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#mlbfneabiq .gt_first_summary_row {
+#tqwddzkrkx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_first_summary_row.thick {
+#tqwddzkrkx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mlbfneabiq .gt_last_summary_row {
+#tqwddzkrkx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3787,7 +3763,7 @@ sem_factorcor(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_grand_summary_row {
+#tqwddzkrkx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3797,7 +3773,7 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#mlbfneabiq .gt_first_grand_summary_row {
+#tqwddzkrkx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3807,7 +3783,7 @@ sem_factorcor(model_1_fit)
   border-top-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_last_grand_summary_row_top {
+#tqwddzkrkx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3817,11 +3793,11 @@ sem_factorcor(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_striped {
+#tqwddzkrkx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mlbfneabiq .gt_table_body {
+#tqwddzkrkx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3830,7 +3806,7 @@ sem_factorcor(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_footnotes {
+#tqwddzkrkx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3844,7 +3820,7 @@ sem_factorcor(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_footnote {
+#tqwddzkrkx .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -3853,7 +3829,7 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#mlbfneabiq .gt_sourcenotes {
+#tqwddzkrkx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3867,7 +3843,7 @@ sem_factorcor(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#mlbfneabiq .gt_sourcenote {
+#tqwddzkrkx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3875,63 +3851,63 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#mlbfneabiq .gt_left {
+#tqwddzkrkx .gt_left {
   text-align: left;
 }
 
-#mlbfneabiq .gt_center {
+#tqwddzkrkx .gt_center {
   text-align: center;
 }
 
-#mlbfneabiq .gt_right {
+#tqwddzkrkx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mlbfneabiq .gt_font_normal {
+#tqwddzkrkx .gt_font_normal {
   font-weight: normal;
 }
 
-#mlbfneabiq .gt_font_bold {
+#tqwddzkrkx .gt_font_bold {
   font-weight: bold;
 }
 
-#mlbfneabiq .gt_font_italic {
+#tqwddzkrkx .gt_font_italic {
   font-style: italic;
 }
 
-#mlbfneabiq .gt_super {
+#tqwddzkrkx .gt_super {
   font-size: 65%;
 }
 
-#mlbfneabiq .gt_footnote_marks {
+#tqwddzkrkx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mlbfneabiq .gt_asterisk {
+#tqwddzkrkx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mlbfneabiq .gt_indent_1 {
+#tqwddzkrkx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mlbfneabiq .gt_indent_2 {
+#tqwddzkrkx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mlbfneabiq .gt_indent_3 {
+#tqwddzkrkx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mlbfneabiq .gt_indent_4 {
+#tqwddzkrkx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mlbfneabiq .gt_indent_5 {
+#tqwddzkrkx .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4023,19 +3999,14 @@ aile =~ NA*aile1 + aile2 + aile3
  aile ~~ 1*aile
 "
 model_1_v1_fit <- cfa(model_1_v1,yasamdoyum)
-parameterestimates(model_1_v1_fit,standardized = TRUE)[11:14,]
+library(DT)
+datatable(parameterestimates(model_1_v1_fit,standardized = TRUE)) 
 ```
 
-<div class="kable-table">
-
-|   |lhs     |op |rhs     | est| se|  z| pvalue| ci.lower| ci.upper| std.lv| std.all| std.nox|
-|:--|:-------|:--|:-------|---:|--:|--:|------:|--------:|--------:|------:|-------:|-------:|
-|11 |okul    |~~ |okul    |   1|  0| NA|     NA|        1|        1|      1|       1|       1|
-|12 |kisi    |~~ |kisi    |   1|  0| NA|     NA|        1|        1|      1|       1|       1|
-|13 |arkadas |~~ |arkadas |   1|  0| NA|     NA|        1|        1|      1|       1|       1|
-|14 |aile    |~~ |aile    |   1|  0| NA|     NA|        1|        1|      1|       1|       1|
-
-</div>
+```{=html}
+<div class="datatables html-widget html-fill-item" id="htmlwidget-98f8c3aa184706162d50" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-98f8c3aa184706162d50">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],["okul","okul","okul","kisi","kisi","arkadas","arkadas","aile","aile","aile","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","okul","okul","kisi","kisi","arkadas"],["=~","=~","=~","=~","=~","=~","=~","=~","=~","=~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~"],["okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","kisi","arkadas","aile","arkadas","aile","aile"],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.09532638732788422,0.09679463950091463,0.1114940995301336,0.08192681383617136,0.0693460536495419,0.07197014395433951,0.05663837862543462,0.06990032416032131,0.06592851393181307,0.06016110659626348,0,0,0,0,0.1466949769891691,0.13717262255778,0.2088165359333629,0.09983187339180177,0.07625621127154139,0.07938247815344944,0.04686540515928586,0.07865068742183502,0.07668682036724415,0.06076689426218117,0.08265376950626695,0.08372381075339752,0.07655351114307003,0.08025292891308784,0.07990769765679392,0.0808755589827075],[6.002447977351229,8.458789230052396,10.236053318641,8.904427491287867,9.884083785679801,9.188359499551412,7.164142926412977,11.18648248440077,12.5832740873227,7.766299429010165,null,null,null,null,10.41432819359841,7.129737837350606,2.244956589399484,6.574769918377862,3.865441368151518,3.300852358152319,8.94851926688723,6.336377564622604,3.574371731941816,10.23970763434131,2.180920754470804,3.498093538639945,2.866669642133946,7.646312749220807,3.11902615270771,4.248819451717759],[1.943645466795374e-09,0,0,0,0,0,7.827072323607354e-13,0,0,7.993605777301127e-15,null,null,null,null,0,1.005640015705467e-12,0.02477091951616428,4.87283546846129e-11,0.0001108884862559556,0.0009639159197516456,0,2.352298356100846e-10,0.0003510698637092524,0,0.02918927833408991,0.0004685967539221902,0.004148157730689439,2.065014825802791e-14,0.001814498550043009,2.149000295270653e-05],[0.3853553948654901,0.6290514468188102,0.9227351279365279,0.5689377689094138,0.5495064368552341,0.5202286657742696,0.2947562573443124,0.6449366340114656,0.700379048113276,0.3493155656084292,1,1,1,1,1.240212763105869,0.7091514374206618,0.05951116851337179,0.4607047217146316,0.1453044859378197,0.10644304202449,0.3275214747852678,0.3442079365157467,0.1238037969244862,0.5031343068854388,0.01826290993270546,0.128778067701667,0.0694115016620987,0.4563461431869494,0.09261798929936915,0.1851124653386231],[0.7590279667434269,1.008479461455472,1.3597839670721,0.8900849778834411,0.821337972101403,0.8023464459996066,0.5167746218415025,0.9189408697352751,0.9588140738344776,0.5851427700059322,1,1,1,1,1.815246506329276,1.246858237176972,0.8780569481249821,0.8520384744288194,0.4442233413172165,0.417616638393087,0.5112304872514236,0.6525129659279747,0.4244106089418686,0.7413361552978963,0.3422597327702218,0.4569693751518799,0.3694957511231046,0.7709318438339601,0.4058504082890326,0.5021388310099262],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>lhs<\/th>\n      <th>op<\/th>\n      <th>rhs<\/th>\n      <th>est<\/th>\n      <th>se<\/th>\n      <th>z<\/th>\n      <th>pvalue<\/th>\n      <th>ci.lower<\/th>\n      <th>ci.upper<\/th>\n      <th>std.lv<\/th>\n      <th>std.all<\/th>\n      <th>std.nox<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[4,5,6,7,8,9,10,11,12]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"lhs","targets":1},{"name":"op","targets":2},{"name":"rhs","targets":3},{"name":"est","targets":4},{"name":"se","targets":5},{"name":"z","targets":6},{"name":"pvalue","targets":7},{"name":"ci.lower","targets":8},{"name":"ci.upper","targets":9},{"name":"std.lv","targets":10},{"name":"std.all","targets":11},{"name":"std.nox","targets":12}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+```
 
 aynı standartlaştırılmış çözümleri sağlar.
 
@@ -4136,7 +4107,7 @@ modindices(model_1_fit, sort=TRUE, standardized=FALSE)
 
 </div>
 
-### Uc faktorlu model
+### Üç  faktörlü model
 
 
 ```r
@@ -4150,23 +4121,23 @@ sem_sig(model_2_fit)
 ```
 
 ```{=html}
-<div id="fjwhqhnxvn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fjwhqhnxvn table {
+<div id="yydkyhgwnq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yydkyhgwnq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fjwhqhnxvn thead, #fjwhqhnxvn tbody, #fjwhqhnxvn tfoot, #fjwhqhnxvn tr, #fjwhqhnxvn td, #fjwhqhnxvn th {
+#yydkyhgwnq thead, #yydkyhgwnq tbody, #yydkyhgwnq tfoot, #yydkyhgwnq tr, #yydkyhgwnq td, #yydkyhgwnq th {
   border-style: none;
 }
 
-#fjwhqhnxvn p {
+#yydkyhgwnq p {
   margin: 0;
   padding: 0;
 }
 
-#fjwhqhnxvn .gt_table {
+#yydkyhgwnq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4192,12 +4163,12 @@ sem_sig(model_2_fit)
   border-left-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_caption {
+#yydkyhgwnq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fjwhqhnxvn .gt_title {
+#yydkyhgwnq .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -4209,7 +4180,7 @@ sem_sig(model_2_fit)
   border-bottom-width: 0;
 }
 
-#fjwhqhnxvn .gt_subtitle {
+#yydkyhgwnq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4221,7 +4192,7 @@ sem_sig(model_2_fit)
   border-top-width: 0;
 }
 
-#fjwhqhnxvn .gt_heading {
+#yydkyhgwnq .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -4233,13 +4204,13 @@ sem_sig(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_bottom_border {
+#yydkyhgwnq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_col_headings {
+#yydkyhgwnq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -4254,7 +4225,7 @@ sem_sig(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_col_heading {
+#yydkyhgwnq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4274,7 +4245,7 @@ sem_sig(model_2_fit)
   overflow-x: hidden;
 }
 
-#fjwhqhnxvn .gt_column_spanner_outer {
+#yydkyhgwnq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4286,15 +4257,15 @@ sem_sig(model_2_fit)
   padding-right: 4px;
 }
 
-#fjwhqhnxvn .gt_column_spanner_outer:first-child {
+#yydkyhgwnq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fjwhqhnxvn .gt_column_spanner_outer:last-child {
+#yydkyhgwnq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fjwhqhnxvn .gt_column_spanner {
+#yydkyhgwnq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4306,11 +4277,11 @@ sem_sig(model_2_fit)
   width: 100%;
 }
 
-#fjwhqhnxvn .gt_spanner_row {
+#yydkyhgwnq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fjwhqhnxvn .gt_group_heading {
+#yydkyhgwnq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4336,7 +4307,7 @@ sem_sig(model_2_fit)
   text-align: left;
 }
 
-#fjwhqhnxvn .gt_empty_group_heading {
+#yydkyhgwnq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4351,15 +4322,15 @@ sem_sig(model_2_fit)
   vertical-align: middle;
 }
 
-#fjwhqhnxvn .gt_from_md > :first-child {
+#yydkyhgwnq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fjwhqhnxvn .gt_from_md > :last-child {
+#yydkyhgwnq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fjwhqhnxvn .gt_row {
+#yydkyhgwnq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4378,7 +4349,7 @@ sem_sig(model_2_fit)
   overflow-x: hidden;
 }
 
-#fjwhqhnxvn .gt_stub {
+#yydkyhgwnq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4391,7 +4362,7 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#fjwhqhnxvn .gt_stub_row_group {
+#yydkyhgwnq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4405,15 +4376,15 @@ sem_sig(model_2_fit)
   vertical-align: top;
 }
 
-#fjwhqhnxvn .gt_row_group_first td {
+#yydkyhgwnq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fjwhqhnxvn .gt_row_group_first th {
+#yydkyhgwnq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fjwhqhnxvn .gt_summary_row {
+#yydkyhgwnq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4423,16 +4394,16 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#fjwhqhnxvn .gt_first_summary_row {
+#yydkyhgwnq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_first_summary_row.thick {
+#yydkyhgwnq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fjwhqhnxvn .gt_last_summary_row {
+#yydkyhgwnq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4442,7 +4413,7 @@ sem_sig(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_grand_summary_row {
+#yydkyhgwnq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4452,7 +4423,7 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#fjwhqhnxvn .gt_first_grand_summary_row {
+#yydkyhgwnq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4462,7 +4433,7 @@ sem_sig(model_2_fit)
   border-top-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_last_grand_summary_row_top {
+#yydkyhgwnq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4472,11 +4443,11 @@ sem_sig(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_striped {
+#yydkyhgwnq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fjwhqhnxvn .gt_table_body {
+#yydkyhgwnq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4485,7 +4456,7 @@ sem_sig(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_footnotes {
+#yydkyhgwnq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4499,7 +4470,7 @@ sem_sig(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_footnote {
+#yydkyhgwnq .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -4508,7 +4479,7 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#fjwhqhnxvn .gt_sourcenotes {
+#yydkyhgwnq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4522,7 +4493,7 @@ sem_sig(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#fjwhqhnxvn .gt_sourcenote {
+#yydkyhgwnq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4530,63 +4501,63 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#fjwhqhnxvn .gt_left {
+#yydkyhgwnq .gt_left {
   text-align: left;
 }
 
-#fjwhqhnxvn .gt_center {
+#yydkyhgwnq .gt_center {
   text-align: center;
 }
 
-#fjwhqhnxvn .gt_right {
+#yydkyhgwnq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fjwhqhnxvn .gt_font_normal {
+#yydkyhgwnq .gt_font_normal {
   font-weight: normal;
 }
 
-#fjwhqhnxvn .gt_font_bold {
+#yydkyhgwnq .gt_font_bold {
   font-weight: bold;
 }
 
-#fjwhqhnxvn .gt_font_italic {
+#yydkyhgwnq .gt_font_italic {
   font-style: italic;
 }
 
-#fjwhqhnxvn .gt_super {
+#yydkyhgwnq .gt_super {
   font-size: 65%;
 }
 
-#fjwhqhnxvn .gt_footnote_marks {
+#yydkyhgwnq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fjwhqhnxvn .gt_asterisk {
+#yydkyhgwnq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fjwhqhnxvn .gt_indent_1 {
+#yydkyhgwnq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fjwhqhnxvn .gt_indent_2 {
+#yydkyhgwnq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fjwhqhnxvn .gt_indent_3 {
+#yydkyhgwnq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fjwhqhnxvn .gt_indent_4 {
+#yydkyhgwnq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fjwhqhnxvn .gt_indent_5 {
+#yydkyhgwnq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4650,23 +4621,23 @@ sem_factorloadings(model_2_fit)
 ```
 
 ```{=html}
-<div id="bvlwjyuufp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bvlwjyuufp table {
+<div id="abrhrtgswt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#abrhrtgswt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bvlwjyuufp thead, #bvlwjyuufp tbody, #bvlwjyuufp tfoot, #bvlwjyuufp tr, #bvlwjyuufp td, #bvlwjyuufp th {
+#abrhrtgswt thead, #abrhrtgswt tbody, #abrhrtgswt tfoot, #abrhrtgswt tr, #abrhrtgswt td, #abrhrtgswt th {
   border-style: none;
 }
 
-#bvlwjyuufp p {
+#abrhrtgswt p {
   margin: 0;
   padding: 0;
 }
 
-#bvlwjyuufp .gt_table {
+#abrhrtgswt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4692,12 +4663,12 @@ sem_factorloadings(model_2_fit)
   border-left-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_caption {
+#abrhrtgswt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bvlwjyuufp .gt_title {
+#abrhrtgswt .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -4709,7 +4680,7 @@ sem_factorloadings(model_2_fit)
   border-bottom-width: 0;
 }
 
-#bvlwjyuufp .gt_subtitle {
+#abrhrtgswt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4721,7 +4692,7 @@ sem_factorloadings(model_2_fit)
   border-top-width: 0;
 }
 
-#bvlwjyuufp .gt_heading {
+#abrhrtgswt .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -4733,13 +4704,13 @@ sem_factorloadings(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_bottom_border {
+#abrhrtgswt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_col_headings {
+#abrhrtgswt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -4754,7 +4725,7 @@ sem_factorloadings(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_col_heading {
+#abrhrtgswt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4774,7 +4745,7 @@ sem_factorloadings(model_2_fit)
   overflow-x: hidden;
 }
 
-#bvlwjyuufp .gt_column_spanner_outer {
+#abrhrtgswt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4786,15 +4757,15 @@ sem_factorloadings(model_2_fit)
   padding-right: 4px;
 }
 
-#bvlwjyuufp .gt_column_spanner_outer:first-child {
+#abrhrtgswt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bvlwjyuufp .gt_column_spanner_outer:last-child {
+#abrhrtgswt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bvlwjyuufp .gt_column_spanner {
+#abrhrtgswt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4806,11 +4777,11 @@ sem_factorloadings(model_2_fit)
   width: 100%;
 }
 
-#bvlwjyuufp .gt_spanner_row {
+#abrhrtgswt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bvlwjyuufp .gt_group_heading {
+#abrhrtgswt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4836,7 +4807,7 @@ sem_factorloadings(model_2_fit)
   text-align: left;
 }
 
-#bvlwjyuufp .gt_empty_group_heading {
+#abrhrtgswt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4851,15 +4822,15 @@ sem_factorloadings(model_2_fit)
   vertical-align: middle;
 }
 
-#bvlwjyuufp .gt_from_md > :first-child {
+#abrhrtgswt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bvlwjyuufp .gt_from_md > :last-child {
+#abrhrtgswt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bvlwjyuufp .gt_row {
+#abrhrtgswt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4878,7 +4849,7 @@ sem_factorloadings(model_2_fit)
   overflow-x: hidden;
 }
 
-#bvlwjyuufp .gt_stub {
+#abrhrtgswt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4891,7 +4862,7 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#bvlwjyuufp .gt_stub_row_group {
+#abrhrtgswt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4905,15 +4876,15 @@ sem_factorloadings(model_2_fit)
   vertical-align: top;
 }
 
-#bvlwjyuufp .gt_row_group_first td {
+#abrhrtgswt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bvlwjyuufp .gt_row_group_first th {
+#abrhrtgswt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bvlwjyuufp .gt_summary_row {
+#abrhrtgswt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4923,16 +4894,16 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#bvlwjyuufp .gt_first_summary_row {
+#abrhrtgswt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_first_summary_row.thick {
+#abrhrtgswt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bvlwjyuufp .gt_last_summary_row {
+#abrhrtgswt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4942,7 +4913,7 @@ sem_factorloadings(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_grand_summary_row {
+#abrhrtgswt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4952,7 +4923,7 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#bvlwjyuufp .gt_first_grand_summary_row {
+#abrhrtgswt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4962,7 +4933,7 @@ sem_factorloadings(model_2_fit)
   border-top-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_last_grand_summary_row_top {
+#abrhrtgswt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4972,11 +4943,11 @@ sem_factorloadings(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_striped {
+#abrhrtgswt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bvlwjyuufp .gt_table_body {
+#abrhrtgswt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4985,7 +4956,7 @@ sem_factorloadings(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_footnotes {
+#abrhrtgswt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4999,7 +4970,7 @@ sem_factorloadings(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_footnote {
+#abrhrtgswt .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -5008,7 +4979,7 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#bvlwjyuufp .gt_sourcenotes {
+#abrhrtgswt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5022,7 +4993,7 @@ sem_factorloadings(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#bvlwjyuufp .gt_sourcenote {
+#abrhrtgswt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5030,63 +5001,63 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#bvlwjyuufp .gt_left {
+#abrhrtgswt .gt_left {
   text-align: left;
 }
 
-#bvlwjyuufp .gt_center {
+#abrhrtgswt .gt_center {
   text-align: center;
 }
 
-#bvlwjyuufp .gt_right {
+#abrhrtgswt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bvlwjyuufp .gt_font_normal {
+#abrhrtgswt .gt_font_normal {
   font-weight: normal;
 }
 
-#bvlwjyuufp .gt_font_bold {
+#abrhrtgswt .gt_font_bold {
   font-weight: bold;
 }
 
-#bvlwjyuufp .gt_font_italic {
+#abrhrtgswt .gt_font_italic {
   font-style: italic;
 }
 
-#bvlwjyuufp .gt_super {
+#abrhrtgswt .gt_super {
   font-size: 65%;
 }
 
-#bvlwjyuufp .gt_footnote_marks {
+#abrhrtgswt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bvlwjyuufp .gt_asterisk {
+#abrhrtgswt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bvlwjyuufp .gt_indent_1 {
+#abrhrtgswt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bvlwjyuufp .gt_indent_2 {
+#abrhrtgswt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bvlwjyuufp .gt_indent_3 {
+#abrhrtgswt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bvlwjyuufp .gt_indent_4 {
+#abrhrtgswt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bvlwjyuufp .gt_indent_5 {
+#abrhrtgswt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5210,7 +5181,7 @@ sem_factorloadings(model_2_fit)
     ölçüde uyum sağlıyorsa, iki modelin veriye uyumunu karşılaştırmak
     için ki-kare fark test uygulanabilir.
 
--UC faktörlü model iyi uyum göstermediği için sadece örnek amaçlı:
+- üç faktörlü model iyi uyum göstermediği için sadece örnek amaçlı:
 
 
 ```r
@@ -5226,10 +5197,10 @@ anova(model_1_fit,model_2_fit )
 
 </div>
 
--   Verilen örneklerde, uc faktörlü model dort faktörlü modelin içinde
+-   Verilen örneklerde, üç faktörlü model dört faktörlü modelin içinde
     kümelenmiştir.
 
--   Üç faktörlü model veriye iyi uyum sağlamamıştır, dört faktörlü model
+-   Üç faktörlü model veriye iyi uyum **sağlamamıştır,** dört faktörlü model
     çeşitli uyum indekslerinin de gösterdiği üzere çok daha iyi uyum
     sağlamıştır. Bu nedenle, dört faktörlü modelin seçimini desteklemek
     için ki-kare fark testi uygulamaya gerek yoktur
@@ -5311,19 +5282,17 @@ faktörün bir artığı vardır (örneğin, F2 faktörü için ζ2)
 
 Rindskopf ve Rose (1988) daha yüksek dereceli bir modelin
 değerlendirilmesinin diğer üç modelle karşılaştırılmasını içermesi
-gerektiğini önermişlerdir. Adımsal modelleme yöntemi önermişlerdir: -
-Adım 1: Genel, tek faktörlü modelin uyumu - Adım 2: İkinci dereceli
-faktör modeliyle karşılaştırma - Adım 3: Korelasyonlu grup faktör
-modeliyle karşılaştırma - Adım 4: İkili faktörlü (bi-factor) modelle
-karşılaştırma
+gerektiğini önermişlerdir. Adımsal modelleme yöntemi önermişlerdir: 
 
-.xsmall[Rindskopf, D. & Rose, T. (1988. Some theory and applications of
-confirmatory second-order factor analysis. Multivariate Behavioral
-Research, 23(1), 51-67]
+- Adım 1: Genel, tek faktörlü modelin uyumu 
+- Adım 2: İkinci dereceli faktör modeliyle karşılaştırma 
+- Adım 3: Korelasyonlu grup faktör modeliyle karşılaştırma 
+- Adım 4: İkili faktörlü (bi-factor) modelle karşılaştırma
+
 
 <img src="images/DFA_18.PNG" width="60%" style="display: block; margin: auto;" />
 
-\*Şemalar Rindskopf ve Rose (1988)’dan alınmıştır.
+-- Şemalar Rindskopf ve Rose (1988)’dan alınmıştır.
 
 
 ```r
@@ -5443,7 +5412,6 @@ summary(fit_model_2order, fit.measures = TRUE, standardized = TRUE)
 # sem_fitmeasures(fit_model_2order)
 ```
 
-## Daha Yüksek Dereceli Faktör Modelleri
 
 
 ```r
@@ -5451,23 +5419,23 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
 ```
 
 ```{=html}
-<div id="vsgrcvcfpp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vsgrcvcfpp table {
+<div id="wnnqagaact" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wnnqagaact table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vsgrcvcfpp thead, #vsgrcvcfpp tbody, #vsgrcvcfpp tfoot, #vsgrcvcfpp tr, #vsgrcvcfpp td, #vsgrcvcfpp th {
+#wnnqagaact thead, #wnnqagaact tbody, #wnnqagaact tfoot, #wnnqagaact tr, #wnnqagaact td, #wnnqagaact th {
   border-style: none;
 }
 
-#vsgrcvcfpp p {
+#wnnqagaact p {
   margin: 0;
   padding: 0;
 }
 
-#vsgrcvcfpp .gt_table {
+#wnnqagaact .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5493,12 +5461,12 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-left-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_caption {
+#wnnqagaact .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vsgrcvcfpp .gt_title {
+#wnnqagaact .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -5510,7 +5478,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-bottom-width: 0;
 }
 
-#vsgrcvcfpp .gt_subtitle {
+#wnnqagaact .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5522,7 +5490,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-top-width: 0;
 }
 
-#vsgrcvcfpp .gt_heading {
+#wnnqagaact .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -5534,13 +5502,13 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_bottom_border {
+#wnnqagaact .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_col_headings {
+#wnnqagaact .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -5555,7 +5523,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_col_heading {
+#wnnqagaact .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5575,7 +5543,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   overflow-x: hidden;
 }
 
-#vsgrcvcfpp .gt_column_spanner_outer {
+#wnnqagaact .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5587,15 +5555,15 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 4px;
 }
 
-#vsgrcvcfpp .gt_column_spanner_outer:first-child {
+#wnnqagaact .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vsgrcvcfpp .gt_column_spanner_outer:last-child {
+#wnnqagaact .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vsgrcvcfpp .gt_column_spanner {
+#wnnqagaact .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5607,11 +5575,11 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   width: 100%;
 }
 
-#vsgrcvcfpp .gt_spanner_row {
+#wnnqagaact .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vsgrcvcfpp .gt_group_heading {
+#wnnqagaact .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5637,7 +5605,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   text-align: left;
 }
 
-#vsgrcvcfpp .gt_empty_group_heading {
+#wnnqagaact .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5652,15 +5620,15 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   vertical-align: middle;
 }
 
-#vsgrcvcfpp .gt_from_md > :first-child {
+#wnnqagaact .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vsgrcvcfpp .gt_from_md > :last-child {
+#wnnqagaact .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vsgrcvcfpp .gt_row {
+#wnnqagaact .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5679,7 +5647,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   overflow-x: hidden;
 }
 
-#vsgrcvcfpp .gt_stub {
+#wnnqagaact .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5692,7 +5660,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#vsgrcvcfpp .gt_stub_row_group {
+#wnnqagaact .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5706,15 +5674,15 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   vertical-align: top;
 }
 
-#vsgrcvcfpp .gt_row_group_first td {
+#wnnqagaact .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vsgrcvcfpp .gt_row_group_first th {
+#wnnqagaact .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vsgrcvcfpp .gt_summary_row {
+#wnnqagaact .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5724,16 +5692,16 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#vsgrcvcfpp .gt_first_summary_row {
+#wnnqagaact .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_first_summary_row.thick {
+#wnnqagaact .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vsgrcvcfpp .gt_last_summary_row {
+#wnnqagaact .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5743,7 +5711,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_grand_summary_row {
+#wnnqagaact .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5753,7 +5721,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#vsgrcvcfpp .gt_first_grand_summary_row {
+#wnnqagaact .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5763,7 +5731,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-top-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_last_grand_summary_row_top {
+#wnnqagaact .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5773,11 +5741,11 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_striped {
+#wnnqagaact .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vsgrcvcfpp .gt_table_body {
+#wnnqagaact .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5786,7 +5754,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_footnotes {
+#wnnqagaact .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5800,7 +5768,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_footnote {
+#wnnqagaact .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -5809,7 +5777,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#vsgrcvcfpp .gt_sourcenotes {
+#wnnqagaact .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5823,7 +5791,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#vsgrcvcfpp .gt_sourcenote {
+#wnnqagaact .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5831,63 +5799,63 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#vsgrcvcfpp .gt_left {
+#wnnqagaact .gt_left {
   text-align: left;
 }
 
-#vsgrcvcfpp .gt_center {
+#wnnqagaact .gt_center {
   text-align: center;
 }
 
-#vsgrcvcfpp .gt_right {
+#wnnqagaact .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vsgrcvcfpp .gt_font_normal {
+#wnnqagaact .gt_font_normal {
   font-weight: normal;
 }
 
-#vsgrcvcfpp .gt_font_bold {
+#wnnqagaact .gt_font_bold {
   font-weight: bold;
 }
 
-#vsgrcvcfpp .gt_font_italic {
+#wnnqagaact .gt_font_italic {
   font-style: italic;
 }
 
-#vsgrcvcfpp .gt_super {
+#wnnqagaact .gt_super {
   font-size: 65%;
 }
 
-#vsgrcvcfpp .gt_footnote_marks {
+#wnnqagaact .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vsgrcvcfpp .gt_asterisk {
+#wnnqagaact .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vsgrcvcfpp .gt_indent_1 {
+#wnnqagaact .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vsgrcvcfpp .gt_indent_2 {
+#wnnqagaact .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vsgrcvcfpp .gt_indent_3 {
+#wnnqagaact .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vsgrcvcfpp .gt_indent_4 {
+#wnnqagaact .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vsgrcvcfpp .gt_indent_5 {
+#wnnqagaact .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -6058,7 +6026,11 @@ semPaths(fit_model_2order, "std", weighted = FALSE, nCharNodes = 7,
          shapeMan = "rectangle", sizeMan = 8, sizeMan2 = 5)
 ```
 
-<img src="07_DFA_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="07_DFA_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" />
+
+
+##Ölçme Değişmezliği 
+
 
 -   Belirli bir özelliğin **gruplar arasında karşılaştırılması
     yapılırken**, söz konusu özelliği ölçmek üzere geliştirilen ölçme
@@ -6098,39 +6070,15 @@ semPaths(fit_model_2order, "std", weighted = FALSE, nCharNodes = 7,
 
 ## Şekil Değişmezlik
 
-+-------------------------+---------------+-----------------------+
 | Grup 1                  |               | Grup 2                |
-+=========================+===============+=======================+
-| $y_{11s} = \mu_{11} + \ |               | \$ y\_{12s} =         |
-| lam bd                  |               | \mu\*{12} +\* \lam    |
-| a_{11}F_{1s} + e_{11s}$ |               | bda{12}F\_{1s} +      |
-|                         |               | e\_{12s}\$            |
-+-------------------------+---------------+-----------------------+
-| $y_{21s} = \mu_{21} + \ |               | \$ y\_{22s} =         |
-| lam bd                  |               | \mu\*{22} +\* \lam    |
-| a_{21}F_{1s} + e_{21s}$ |               | bda{22}F\_{1s} +      |
-|                         |               | e\_{22s}\$            |
-+-------------------------+---------------+-----------------------+
-| $y_{31s} = \mu_{31} + \ |               | \$ y\_{32s} =         |
-| lam bd                  |               | \mu\*{32} +\* \lam    |
-| a_{31}F_{1s} + e_{31s}$ |               | bda{32}F\_{1s} +      |
-|                         |               | e\_{32s}\$            |
-+-------------------------+---------------+-----------------------+
-| $y_{41s} = \mu_{41} + \ |               | \$ y\_{42s} =         |
-| lam bd                  |               | \mu\*{42} +\* \lam    |
-| a_{41}F_{2s} + e_{41s}$ |               | bda{42}F\_{2s} +      |
-|                         |               | e\_{42s}\$            |
-+-------------------------+---------------+-----------------------+
-| $y_{51s} = \mu_{51} + \ |               | \$ y\_{52s} =         |
-| lam bd                  |               | \mu\*{52} +\* \lam    |
-| a_{51}F_{2s} + e_{51s}$ |               | bda{52}F\_{2s} +      |
-|                         |               | e\_{52s}\$            |
-+-------------------------+---------------+-----------------------+
-| $y_{61s} = \mu_{61} + \ |               | \$ y\_{62s} =         |
-| lam bd                  |               | \mu\*{62} +\* \lam    |
-| a_{61}F_{6s} + e_{61s}$ |               | bda{62}F\_{2s} +      |
-|                         |               | e\_{62s}\$            |
-+-------------------------+---------------+-----------------------+
+|---|---|---|
+|  $y_{11s} = \mu_{11} + \lambda_{11}F_{1s} + e_{11s}$ | | $y_{12s} = \mu_{12} + \lambda_{12}F_{1s} + e_{12s}$|
+|  $y_{21s} = \mu_{21} + \lambda_{21}F_{1s} + e_{21s}$ |  | $y_{22s} = \mu_{22} + \lambda_{22}F_{1s} + e_{22s}$|
+|  $y_{31s} = \mu_{31} + \lambda_{31}F_{1s} + e_{31s}$ | |  $y_{32s} = \mu_{32} + \lambda_{32}F_{1s} + e_{32s}$|
+|  $y_{41s} = \mu_{41} + \lambda_{41}F_{2s} + e_{41s}$ | |  $y_{42s} = \mu_{42} + \lambda_{42}F_{2s} + e_{42s}$|
+|  $y_{51s} = \mu_{51} + \lambda_{51}F_{2s} + e_{51s}$ | |  $y_{52s} = \mu_{52} + \lambda_{52}F_{2s} + e_{52s}$|
+|  $y_{61s} = \mu_{61} + \lambda_{61}F_{2s} + e_{61s}$ | |  $y_{62s} = \mu_{62} + \lambda_{62}F_{2s} + e_{62s}$|
+
 
 -   Alt indislerin ilki madde, ikincisi grup için kullanılmıştır.
 
@@ -6227,23 +6175,23 @@ sem_modelcomp(weak, configural)
 ```
 
 ```{=html}
-<div id="bywjnoxhuw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bywjnoxhuw table {
+<div id="dtdfvenpdj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dtdfvenpdj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bywjnoxhuw thead, #bywjnoxhuw tbody, #bywjnoxhuw tfoot, #bywjnoxhuw tr, #bywjnoxhuw td, #bywjnoxhuw th {
+#dtdfvenpdj thead, #dtdfvenpdj tbody, #dtdfvenpdj tfoot, #dtdfvenpdj tr, #dtdfvenpdj td, #dtdfvenpdj th {
   border-style: none;
 }
 
-#bywjnoxhuw p {
+#dtdfvenpdj p {
   margin: 0;
   padding: 0;
 }
 
-#bywjnoxhuw .gt_table {
+#dtdfvenpdj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6269,12 +6217,12 @@ sem_modelcomp(weak, configural)
   border-left-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_caption {
+#dtdfvenpdj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bywjnoxhuw .gt_title {
+#dtdfvenpdj .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -6286,7 +6234,7 @@ sem_modelcomp(weak, configural)
   border-bottom-width: 0;
 }
 
-#bywjnoxhuw .gt_subtitle {
+#dtdfvenpdj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6298,7 +6246,7 @@ sem_modelcomp(weak, configural)
   border-top-width: 0;
 }
 
-#bywjnoxhuw .gt_heading {
+#dtdfvenpdj .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -6310,13 +6258,13 @@ sem_modelcomp(weak, configural)
   border-right-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_bottom_border {
+#dtdfvenpdj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_col_headings {
+#dtdfvenpdj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -6331,7 +6279,7 @@ sem_modelcomp(weak, configural)
   border-right-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_col_heading {
+#dtdfvenpdj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6351,7 +6299,7 @@ sem_modelcomp(weak, configural)
   overflow-x: hidden;
 }
 
-#bywjnoxhuw .gt_column_spanner_outer {
+#dtdfvenpdj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6363,15 +6311,15 @@ sem_modelcomp(weak, configural)
   padding-right: 4px;
 }
 
-#bywjnoxhuw .gt_column_spanner_outer:first-child {
+#dtdfvenpdj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bywjnoxhuw .gt_column_spanner_outer:last-child {
+#dtdfvenpdj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bywjnoxhuw .gt_column_spanner {
+#dtdfvenpdj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6383,11 +6331,11 @@ sem_modelcomp(weak, configural)
   width: 100%;
 }
 
-#bywjnoxhuw .gt_spanner_row {
+#dtdfvenpdj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bywjnoxhuw .gt_group_heading {
+#dtdfvenpdj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -6413,7 +6361,7 @@ sem_modelcomp(weak, configural)
   text-align: left;
 }
 
-#bywjnoxhuw .gt_empty_group_heading {
+#dtdfvenpdj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6428,15 +6376,15 @@ sem_modelcomp(weak, configural)
   vertical-align: middle;
 }
 
-#bywjnoxhuw .gt_from_md > :first-child {
+#dtdfvenpdj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bywjnoxhuw .gt_from_md > :last-child {
+#dtdfvenpdj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bywjnoxhuw .gt_row {
+#dtdfvenpdj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -6455,7 +6403,7 @@ sem_modelcomp(weak, configural)
   overflow-x: hidden;
 }
 
-#bywjnoxhuw .gt_stub {
+#dtdfvenpdj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6468,7 +6416,7 @@ sem_modelcomp(weak, configural)
   padding-right: 15px;
 }
 
-#bywjnoxhuw .gt_stub_row_group {
+#dtdfvenpdj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6482,15 +6430,15 @@ sem_modelcomp(weak, configural)
   vertical-align: top;
 }
 
-#bywjnoxhuw .gt_row_group_first td {
+#dtdfvenpdj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bywjnoxhuw .gt_row_group_first th {
+#dtdfvenpdj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bywjnoxhuw .gt_summary_row {
+#dtdfvenpdj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6500,16 +6448,16 @@ sem_modelcomp(weak, configural)
   padding-right: 15px;
 }
 
-#bywjnoxhuw .gt_first_summary_row {
+#dtdfvenpdj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_first_summary_row.thick {
+#dtdfvenpdj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bywjnoxhuw .gt_last_summary_row {
+#dtdfvenpdj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -6519,7 +6467,7 @@ sem_modelcomp(weak, configural)
   border-bottom-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_grand_summary_row {
+#dtdfvenpdj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6529,7 +6477,7 @@ sem_modelcomp(weak, configural)
   padding-right: 15px;
 }
 
-#bywjnoxhuw .gt_first_grand_summary_row {
+#dtdfvenpdj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -6539,7 +6487,7 @@ sem_modelcomp(weak, configural)
   border-top-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_last_grand_summary_row_top {
+#dtdfvenpdj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -6549,11 +6497,11 @@ sem_modelcomp(weak, configural)
   border-bottom-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_striped {
+#dtdfvenpdj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bywjnoxhuw .gt_table_body {
+#dtdfvenpdj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6562,7 +6510,7 @@ sem_modelcomp(weak, configural)
   border-bottom-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_footnotes {
+#dtdfvenpdj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6576,7 +6524,7 @@ sem_modelcomp(weak, configural)
   border-right-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_footnote {
+#dtdfvenpdj .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -6585,7 +6533,7 @@ sem_modelcomp(weak, configural)
   padding-right: 15px;
 }
 
-#bywjnoxhuw .gt_sourcenotes {
+#dtdfvenpdj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6599,7 +6547,7 @@ sem_modelcomp(weak, configural)
   border-right-color: #D3D3D3;
 }
 
-#bywjnoxhuw .gt_sourcenote {
+#dtdfvenpdj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6607,63 +6555,63 @@ sem_modelcomp(weak, configural)
   padding-right: 15px;
 }
 
-#bywjnoxhuw .gt_left {
+#dtdfvenpdj .gt_left {
   text-align: left;
 }
 
-#bywjnoxhuw .gt_center {
+#dtdfvenpdj .gt_center {
   text-align: center;
 }
 
-#bywjnoxhuw .gt_right {
+#dtdfvenpdj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bywjnoxhuw .gt_font_normal {
+#dtdfvenpdj .gt_font_normal {
   font-weight: normal;
 }
 
-#bywjnoxhuw .gt_font_bold {
+#dtdfvenpdj .gt_font_bold {
   font-weight: bold;
 }
 
-#bywjnoxhuw .gt_font_italic {
+#dtdfvenpdj .gt_font_italic {
   font-style: italic;
 }
 
-#bywjnoxhuw .gt_super {
+#dtdfvenpdj .gt_super {
   font-size: 65%;
 }
 
-#bywjnoxhuw .gt_footnote_marks {
+#dtdfvenpdj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bywjnoxhuw .gt_asterisk {
+#dtdfvenpdj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bywjnoxhuw .gt_indent_1 {
+#dtdfvenpdj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bywjnoxhuw .gt_indent_2 {
+#dtdfvenpdj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bywjnoxhuw .gt_indent_3 {
+#dtdfvenpdj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bywjnoxhuw .gt_indent_4 {
+#dtdfvenpdj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bywjnoxhuw .gt_indent_5 {
+#dtdfvenpdj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -6744,23 +6692,23 @@ sem_modelcomp(strong, weak)
 ```
 
 ```{=html}
-<div id="yvhylmutch" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yvhylmutch table {
+<div id="waysnnbswn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#waysnnbswn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yvhylmutch thead, #yvhylmutch tbody, #yvhylmutch tfoot, #yvhylmutch tr, #yvhylmutch td, #yvhylmutch th {
+#waysnnbswn thead, #waysnnbswn tbody, #waysnnbswn tfoot, #waysnnbswn tr, #waysnnbswn td, #waysnnbswn th {
   border-style: none;
 }
 
-#yvhylmutch p {
+#waysnnbswn p {
   margin: 0;
   padding: 0;
 }
 
-#yvhylmutch .gt_table {
+#waysnnbswn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -6786,12 +6734,12 @@ sem_modelcomp(strong, weak)
   border-left-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_caption {
+#waysnnbswn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yvhylmutch .gt_title {
+#waysnnbswn .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -6803,7 +6751,7 @@ sem_modelcomp(strong, weak)
   border-bottom-width: 0;
 }
 
-#yvhylmutch .gt_subtitle {
+#waysnnbswn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -6815,7 +6763,7 @@ sem_modelcomp(strong, weak)
   border-top-width: 0;
 }
 
-#yvhylmutch .gt_heading {
+#waysnnbswn .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -6827,13 +6775,13 @@ sem_modelcomp(strong, weak)
   border-right-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_bottom_border {
+#waysnnbswn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_col_headings {
+#waysnnbswn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -6848,7 +6796,7 @@ sem_modelcomp(strong, weak)
   border-right-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_col_heading {
+#waysnnbswn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6868,7 +6816,7 @@ sem_modelcomp(strong, weak)
   overflow-x: hidden;
 }
 
-#yvhylmutch .gt_column_spanner_outer {
+#waysnnbswn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6880,15 +6828,15 @@ sem_modelcomp(strong, weak)
   padding-right: 4px;
 }
 
-#yvhylmutch .gt_column_spanner_outer:first-child {
+#waysnnbswn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yvhylmutch .gt_column_spanner_outer:last-child {
+#waysnnbswn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yvhylmutch .gt_column_spanner {
+#waysnnbswn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6900,11 +6848,11 @@ sem_modelcomp(strong, weak)
   width: 100%;
 }
 
-#yvhylmutch .gt_spanner_row {
+#waysnnbswn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yvhylmutch .gt_group_heading {
+#waysnnbswn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -6930,7 +6878,7 @@ sem_modelcomp(strong, weak)
   text-align: left;
 }
 
-#yvhylmutch .gt_empty_group_heading {
+#waysnnbswn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6945,15 +6893,15 @@ sem_modelcomp(strong, weak)
   vertical-align: middle;
 }
 
-#yvhylmutch .gt_from_md > :first-child {
+#waysnnbswn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yvhylmutch .gt_from_md > :last-child {
+#waysnnbswn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yvhylmutch .gt_row {
+#waysnnbswn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -6972,7 +6920,7 @@ sem_modelcomp(strong, weak)
   overflow-x: hidden;
 }
 
-#yvhylmutch .gt_stub {
+#waysnnbswn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6985,7 +6933,7 @@ sem_modelcomp(strong, weak)
   padding-right: 15px;
 }
 
-#yvhylmutch .gt_stub_row_group {
+#waysnnbswn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6999,15 +6947,15 @@ sem_modelcomp(strong, weak)
   vertical-align: top;
 }
 
-#yvhylmutch .gt_row_group_first td {
+#waysnnbswn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yvhylmutch .gt_row_group_first th {
+#waysnnbswn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yvhylmutch .gt_summary_row {
+#waysnnbswn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7017,16 +6965,16 @@ sem_modelcomp(strong, weak)
   padding-right: 15px;
 }
 
-#yvhylmutch .gt_first_summary_row {
+#waysnnbswn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_first_summary_row.thick {
+#waysnnbswn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yvhylmutch .gt_last_summary_row {
+#waysnnbswn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -7036,7 +6984,7 @@ sem_modelcomp(strong, weak)
   border-bottom-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_grand_summary_row {
+#waysnnbswn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -7046,7 +6994,7 @@ sem_modelcomp(strong, weak)
   padding-right: 15px;
 }
 
-#yvhylmutch .gt_first_grand_summary_row {
+#waysnnbswn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -7056,7 +7004,7 @@ sem_modelcomp(strong, weak)
   border-top-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_last_grand_summary_row_top {
+#waysnnbswn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -7066,11 +7014,11 @@ sem_modelcomp(strong, weak)
   border-bottom-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_striped {
+#waysnnbswn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yvhylmutch .gt_table_body {
+#waysnnbswn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -7079,7 +7027,7 @@ sem_modelcomp(strong, weak)
   border-bottom-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_footnotes {
+#waysnnbswn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7093,7 +7041,7 @@ sem_modelcomp(strong, weak)
   border-right-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_footnote {
+#waysnnbswn .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -7102,7 +7050,7 @@ sem_modelcomp(strong, weak)
   padding-right: 15px;
 }
 
-#yvhylmutch .gt_sourcenotes {
+#waysnnbswn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -7116,7 +7064,7 @@ sem_modelcomp(strong, weak)
   border-right-color: #D3D3D3;
 }
 
-#yvhylmutch .gt_sourcenote {
+#waysnnbswn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -7124,63 +7072,63 @@ sem_modelcomp(strong, weak)
   padding-right: 15px;
 }
 
-#yvhylmutch .gt_left {
+#waysnnbswn .gt_left {
   text-align: left;
 }
 
-#yvhylmutch .gt_center {
+#waysnnbswn .gt_center {
   text-align: center;
 }
 
-#yvhylmutch .gt_right {
+#waysnnbswn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yvhylmutch .gt_font_normal {
+#waysnnbswn .gt_font_normal {
   font-weight: normal;
 }
 
-#yvhylmutch .gt_font_bold {
+#waysnnbswn .gt_font_bold {
   font-weight: bold;
 }
 
-#yvhylmutch .gt_font_italic {
+#waysnnbswn .gt_font_italic {
   font-style: italic;
 }
 
-#yvhylmutch .gt_super {
+#waysnnbswn .gt_super {
   font-size: 65%;
 }
 
-#yvhylmutch .gt_footnote_marks {
+#waysnnbswn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yvhylmutch .gt_asterisk {
+#waysnnbswn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yvhylmutch .gt_indent_1 {
+#waysnnbswn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yvhylmutch .gt_indent_2 {
+#waysnnbswn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yvhylmutch .gt_indent_3 {
+#waysnnbswn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yvhylmutch .gt_indent_4 {
+#waysnnbswn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yvhylmutch .gt_indent_5 {
+#waysnnbswn .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -7548,11 +7496,17 @@ measurementInvariance(model = model_1_v1,
 
 <!-- https://stats.oarc.ucla.edu/r/seminars/rcfa/ -->
 
-.xsmall[Bentler, P. M. & Hu, L. (1999). Cutoff criteria fpr fit indexes
-in covariance structure analysis: Conventional criteri versus new
-alternatives. Structural Equation Modeling, 6(1), 1-55.]
+## Kaynaklar 
+- Rindskopf, D. & Rose, T. (1988. Some theory and applications of
+confirmatory second-order factor analysis. Multivariate Behavioral
+Research, 23(1), 51-67
 
-.xsmall[ - Bentler, P. M. (1990). Comparative fit indexes in structural
+
+- Bentler, P. M. & Hu, L. (1999). Cutoff criteria fpr fit indexes
+in covariance structure analysis: Conventional criteri versus new
+alternatives. Structural Equation Modeling, 6(1), 1-55.
+
+- Bentler, P. M. (1990). Comparative fit indexes in structural
 models. Psychological Bulletin, 107, 238-246. - Steiger, J. H. (1990).
 Structural model evaluation and modification: An interval estimation
-approach. Multivariate Behavioral Research, 25, 173-80.]
+approach. Multivariate Behavioral Research, 25, 173-80.

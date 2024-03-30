@@ -1953,13 +1953,15 @@ head(fa_egik$scores)
 ## EGAnet
 
 -   Boyutsallık ve psikometrik değerlendirme için Keşifsel Grafik
-    Analizi (EGA) çerçevesini uygular. EGA, ağ tahmin yöntemlerini ve
+    Analizi (EGA) çerçevesini uygular. 
+    
+    - EGA, ağ tahmin yöntemlerini ve
     topluluk tespit algoritmalarını kullanarak psikolojik verilerdeki
-    boyut sayısını tahmin eder. Boyutların ve maddelerin kararlılığını
-    değerlendirmek için bir bootstrap yöntemi sağlanmıştır. Uyum,
-    Entropi Uyum endeks ailesi kullanılarak değerlendirilir. Benzersiz
-    Değişken Analizi, maddelerin ne ölçüde yerel olarak bağımlı (veya
-    gereksiz) olduğunu değerlendirir.
+    boyut sayısını tahmin eder. 
+  - Boyutların ve maddelerin kararlılığını
+    değerlendirmek için bir bootstrap yöntemi sağlanmıştır. 
+    - Uyum,     Entropi Uyum endeks ailesi kullanılarak değerlendirilir. Benzersiz
+   -  Değişken Analizi, maddelerin ne ölçüde yerel olarak bağımlı (veya    gereksiz) olduğunu değerlendirir.
 
 
 ```r
