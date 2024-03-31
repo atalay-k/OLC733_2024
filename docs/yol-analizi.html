@@ -125,21 +125,21 @@ tanımlanmasına</strong> ve test edilmesine izin verir</p></li>
 <p><span class="math inline">\(\text{stres}_i = \beta_0 + \beta_{\text{eegzersiz}_i} + \beta_{\text{dayanıklılık}_i} + e_{fi}\)</span></p>
 <p><span class="math inline">\(\text{hastalık}_i = \beta_0 + \beta_{\text{eegzersiz}_i} + \beta_{\text{dayanıklılık}_i} + \beta_{\text{form}_i} + \beta_{\text{stres}_i} + e_{fi}\)</span></p>
 <p>Bu modeller R'da <strong>lavaan paketi</strong> ile model denklemi oluşturularak kullanılmalıdır.</p>
-<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
 <span><span class="st">               form      ~ egzersiz + dayaniklilik'</span></span></code></pre></div>
 <ul>
 <li>Veri setini okuma</li>
 </ul>
-<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb222"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
 <span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_table.html">read_table</a></span><span class="op">(</span><span class="st">"import/illness.dat"</span>, col_names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"form"</span>, <span class="st">"stres"</span>, <span class="st">"hastalik"</span>, <span class="st">"egzersiz"</span>, <span class="st">"dayaniklilik"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Yol modelini kurma</li>
 </ul>
-<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span>
 <span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -336,7 +336,7 @@ olacaktır.</p></li>
 <h3>
 <span class="header-section-number">5.6.1</span> Hastalık Faktörleri (Yol Şeması)<a class="anchor" aria-label="anchor" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-%C5%9Femas%C4%B1"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span>
 <span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -692,7 +692,7 @@ model ki-kare aslında bir <strong>kötülük uyum</strong> indeksidir.</p></li>
 <strong>reddedilmemesi</strong> tercih edilir. <strong>Sıfır hipotezinin reddedilmemesi modelin veriye uyduğunu önerir.</strong></p></li>
 <li><p>Diğer yandan sıfır hipotezinin reddedilmesi <strong>model-veri uyumunun iyi olmadığını önerir. </strong></p></li>
 </ul>
-<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> , <span class="st">"pvalue"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  chisq     df pvalue 
 ##   12.3    1.0    0.0</code></pre>
@@ -765,7 +765,7 @@ hipotezi <span class="math inline">\(H_{0}:\epsilon_{0} ≤ 0.05\)</span> redded
 <li><p>Çıktıda kestirilen RMSEA değeri ve
 ilgili %90 güven aralığı (90% C. I.) verilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="co"># summary(yol_fit, fit.measures = TRUE)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rmsea"</span>,<span class="st">"rmsea.ci.lower"</span>,</span>
 <span>                       <span class="st">"rmsea.ci.upper"</span>,<span class="st">"rmsea.pvalue"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -789,7 +789,7 @@ artıklar kullanılır.</p>
 <ul>
 <li>0.08’den küçük değerler uygun olarak düşünülür (Hu &amp; Bentler, 1999).</li>
 </ul>
-<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>, <span class="st">"srmr"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  srmr 
 ## 0.043</code></pre>
@@ -878,7 +878,7 @@ büyüklükteki verilerin kullanıldığı çalışmalarda kararlı
 değildir.</strong></p></li>
 <li><p>sıfır modeli için ki-kare testine ait değerleri ve CFI ve TLI değerlerini verir:</p></li>
 </ul>
-<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"nnfi"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   cfi   tli  nnfi 
 ## 0.948 0.485 0.485</code></pre>
@@ -940,7 +940,7 @@ tartışma vardır.</p>
 <li>Önerilen uyum indeksleri göz önüne alınınca model-veri
 uyumu ile ilgili ne söylenebilir?</li>
 </ul>
-<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> ,<span class="st">"pvalue"</span>,</span>
 <span>                                     <span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"rmsea"</span>,    </span>
 <span>                                     <span class="st">"rmsea.ci.lower"</span>,<span class="st">"rmsea.ci.upper"</span></span>
@@ -988,7 +988,7 @@ ortalaması tipik bir artığı temsil eden bir indeks sağlar.</li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># lavResiduals(yol_fit)</span></span>
 <span><span class="co"># resid(yol_fit)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">yol_fit</span>, type<span class="op">=</span><span class="st">'normalized'</span><span class="op">)</span></span></code></pre></div>
@@ -1014,7 +1014,7 @@ ortalaması tipik bir artığı temsil eden bir indeks sağlar.</li>
 <li><p><strong>modindices</strong> fonksiyonu ile modifikasyon indeksleri istenebilir.</p></li>
 <li><p><strong>mi</strong> sütunu yapılacak modifikasyon sonucunda ki-karedeki düşüsü göstermektedir.</p></li>
 </ul>
-<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/modificationIndices.html">modindices</a></span><span class="op">(</span><span class="va">yol_fit</span>, sort <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">## modindices(yol_fit, sort = TRUE, maximum.number = 5)</span></span></code></pre></div>
 <div class="kable-table">
@@ -1099,7 +1099,7 @@ veriye mükemmel uyum sağlayacaktır</p></li>
 <li>stres ~ form
 yolu eklenir.</li>
 </ul>
-<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model_v1</span> <span class="op">&lt;-</span> </span>
 <span><span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -1107,7 +1107,7 @@ yolu eklenir.</li>
 <span><span class="st">stres     ~ form</span></span>
 <span><span class="st">egzersiz ~~ dayaniklilik'</span> </span>
 <span><span class="va">yol_fit_v1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/sem.html">sem</a></span><span class="op">(</span><span class="va">yol_model_v1</span>, <span class="va">veri</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>,rotation<span class="op">=</span><span class="fl">2</span>, curvePivot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>sizeMan <span class="op">=</span> <span class="fl">12</span>, sizeInt <span class="op">=</span> <span class="fl">1</span>, </span>
 <span>sizeLat <span class="op">=</span> <span class="fl">4</span>,</span>
@@ -1121,11 +1121,11 @@ beklendiği gibidir.</p></li>
 <li><p>Kikare = 0 ve sd = 0 olduğunda, p değerini 0,0000 olarak
 yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p></li>
 </ul>
-<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>,fit.measures<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span>,<span class="st">"p"</span>,<span class="st">"df"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## chisq    df 
 ##     0     0</code></pre>
-<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p_pa</span> <span class="op">&lt;-</span> </span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>, whatLabels <span class="op">=</span> <span class="st">"est"</span>,</span>
 <span>sizeMan <span class="op">=</span> <span class="fl">10</span>,</span>
@@ -1145,7 +1145,7 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <ul>
 <li>anlamlı olmayan yol katsayıları kaldırıldır</li>
 </ul>
-<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model_v1</span> <span class="op">&lt;-</span> </span>
 <span><span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -1164,11 +1164,11 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <ul>
 <li>anlamlı olmayan yol katsayıları kaldırıldır</li>
 </ul>
-<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rmsea"</span>,<span class="st">"cfi"</span>,<span class="st">"srmr"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## rmsea   cfi  srmr 
 ## 0.000 1.000 0.011</code></pre>
-<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">"form"</span>,  <span class="cn">NA</span>,   <span class="cn">NA</span>,</span>
 <span>              <span class="st">"egzersiz"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>,  <span class="cn">NA</span>,   <span class="cn">NA</span>,</span>
 <span>                <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>,  <span class="cn">NA</span>, <span class="st">"hastalik"</span>,</span>
@@ -1184,11 +1184,11 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <span>           nCharNodes <span class="op">=</span> <span class="fl">0</span>, nCharEdges <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>           layout<span class="op">=</span><span class="va">m</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-1.png" width="45%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p_pa_2</span> <span class="op">&lt;-</span> <span class="fu">semptools</span><span class="fu">::</span><span class="fu"><a href="https://sfcheung.github.io/semptools/reference/mark_sig.html">mark_sig</a></span><span class="op">(</span><span class="va">p_pa</span>, <span class="va">yol_fit_v2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">p_pa_2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-2.png" width="45%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> , <span class="st">"pvalue"</span>,</span>
 <span>                                        <span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"rmsea"</span>,</span>
 <span>                                        <span class="st">"rmsea.ci.lower"</span>,   <span class="st">"rmsea.ci.upper"</span></span>
@@ -1300,12 +1300,12 @@ hiyerarşik olmayan modellerin arasından seçim yapmak
 için kullanılır. Bağıl olarak daha küçük değerler uygundur</p></li>
 </ul>
 <p>model1</p>
-<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"AIC"</span>,<span class="st">"BIC"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   aic   bic 
 ## 21423 21483</code></pre>
 <p>model2</p>
-<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"AIC"</span>,<span class="st">"BIC"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   aic   bic 
 ## 21418 21466</code></pre>
@@ -1427,7 +1427,7 @@ ardı edilir.</p></li>
 <li><p>Ortalamalar/kesişimler çıkarılınca, kestirilen
 <strong>parametre sayısı 14</strong> olmalıdır.</p></li>
 </ul>
-<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## lavaan 0.6.17 ended normally after 8 iterations
 ## 
@@ -1489,7 +1489,7 @@ bölünmesiyle t istatistiği elde edilir:
 <strong>anlamlı olarak 0’dan farklı
 olduğunu önerir.</strong></p></li>
 </ul>
-<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/standardizedSolution.html">standardizedsolution</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1717,7 +1717,7 @@ için toplam varyansın yaklaşık
 <ul>
 <li>Standartlaştırılmamış sonuçlar</li>
 </ul>
-<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">yol_fit</span>,standardized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -1961,7 +1961,7 @@ yordayıcılar tarafından açıklandığını önerir.</p></li>
 <p>Not: Her bir içsel değişken için <span class="math inline">\(R^2\)</span> değeri ve standartlaştırılmış
 artık varyansının toplamı “1”e eşit olmalıdır:
 0.164 + 0.836 = 1</p>
-<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">yol_fit</span>, rsquare<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">out</span><span class="op">$</span><span class="va">PE</span><span class="op">[</span><span class="fl">15</span><span class="op">:</span><span class="fl">17</span>,<span class="op">]</span></span></code></pre></div>
 <ul>
@@ -1976,7 +1976,7 @@ artık varyansının toplamı “1”e eşit olmalıdır:
 <h2>
 <span class="header-section-number">5.18</span> Model Sonuçlarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/standardizedSolution.html">standardizedsolution</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">op</span> <span class="op">==</span> <span class="st">"~"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -2062,7 +2062,7 @@ artık varyansının toplamı “1”e eşit olmalıdır:
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dr-JT/semoutput">semoutput</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_anova.html">sem_anova</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="va">yol_fit_v1</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table data-quarto-disable-processing="true" class="table" style="width: auto !important; ">
@@ -2164,42 +2164,25 @@ NA
 <h2>
 <span class="header-section-number">5.19</span> Model Karşılaştırmalarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmalar%C4%B1n%C4%B1n-rapor-edilmesi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_modelcomp.html">sem_modelcomp</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="va">yol_fit_v1</span><span class="op">)</span></span></code></pre></div>
-<<<<<<< HEAD
-<div id="zuarvehkwz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zuarvehkwz table {
-=======
-<div id="orxiklxhfz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#orxiklxhfz table {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+<div id="yzlbeevvbr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yzlbeevvbr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz thead, #zuarvehkwz tbody, #zuarvehkwz tfoot, #zuarvehkwz tr, #zuarvehkwz td, #zuarvehkwz th {
+#yzlbeevvbr thead, #yzlbeevvbr tbody, #yzlbeevvbr tfoot, #yzlbeevvbr tr, #yzlbeevvbr td, #yzlbeevvbr th {
   border-style: none;
 }
 
-#zuarvehkwz p {
-=======
-#orxiklxhfz thead, #orxiklxhfz tbody, #orxiklxhfz tfoot, #orxiklxhfz tr, #orxiklxhfz td, #orxiklxhfz th {
-  border-style: none;
-}
-
-#orxiklxhfz p {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr p {
   margin: 0;
   padding: 0;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_table {
-=======
-#orxiklxhfz .gt_table {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2225,20 +2208,12 @@ NA
   border-left-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_caption {
-=======
-#orxiklxhfz .gt_caption {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_title {
-=======
-#orxiklxhfz .gt_title {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2250,11 +2225,7 @@ NA
   border-bottom-width: 0;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_subtitle {
-=======
-#orxiklxhfz .gt_subtitle {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2266,11 +2237,7 @@ NA
   border-top-width: 0;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_heading {
-=======
-#orxiklxhfz .gt_heading {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2282,21 +2249,13 @@ NA
   border-right-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_bottom_border {
-=======
-#orxiklxhfz .gt_bottom_border {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_col_headings {
-=======
-#orxiklxhfz .gt_col_headings {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2311,11 +2270,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_col_heading {
-=======
-#orxiklxhfz .gt_col_heading {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2335,11 +2290,7 @@ NA
   overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_column_spanner_outer {
-=======
-#orxiklxhfz .gt_column_spanner_outer {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2351,27 +2302,15 @@ NA
   padding-right: 4px;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_column_spanner_outer:first-child {
+#yzlbeevvbr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zuarvehkwz .gt_column_spanner_outer:last-child {
+#yzlbeevvbr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zuarvehkwz .gt_column_spanner {
-=======
-#orxiklxhfz .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#orxiklxhfz .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#orxiklxhfz .gt_column_spanner {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2383,19 +2322,11 @@ NA
   width: 100%;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_spanner_row {
+#yzlbeevvbr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zuarvehkwz .gt_group_heading {
-=======
-#orxiklxhfz .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#orxiklxhfz .gt_group_heading {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2421,11 +2352,7 @@ NA
   text-align: left;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_empty_group_heading {
-=======
-#orxiklxhfz .gt_empty_group_heading {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2440,27 +2367,15 @@ NA
   vertical-align: middle;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_from_md > :first-child {
+#yzlbeevvbr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zuarvehkwz .gt_from_md > :last-child {
+#yzlbeevvbr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zuarvehkwz .gt_row {
-=======
-#orxiklxhfz .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#orxiklxhfz .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#orxiklxhfz .gt_row {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2479,11 +2394,7 @@ NA
   overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_stub {
-=======
-#orxiklxhfz .gt_stub {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2496,11 +2407,7 @@ NA
   padding-right: 15px;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_stub_row_group {
-=======
-#orxiklxhfz .gt_stub_row_group {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2514,27 +2421,15 @@ NA
   vertical-align: top;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_row_group_first td {
+#yzlbeevvbr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zuarvehkwz .gt_row_group_first th {
+#yzlbeevvbr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zuarvehkwz .gt_summary_row {
-=======
-#orxiklxhfz .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#orxiklxhfz .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#orxiklxhfz .gt_summary_row {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2544,28 +2439,16 @@ NA
   padding-right: 15px;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_first_summary_row {
-=======
-#orxiklxhfz .gt_first_summary_row {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_first_summary_row.thick {
+#yzlbeevvbr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zuarvehkwz .gt_last_summary_row {
-=======
-#orxiklxhfz .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#orxiklxhfz .gt_last_summary_row {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2575,11 +2458,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_grand_summary_row {
-=======
-#orxiklxhfz .gt_grand_summary_row {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2589,11 +2468,7 @@ NA
   padding-right: 15px;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_first_grand_summary_row {
-=======
-#orxiklxhfz .gt_first_grand_summary_row {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2603,11 +2478,7 @@ NA
   border-top-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_last_grand_summary_row_top {
-=======
-#orxiklxhfz .gt_last_grand_summary_row_top {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2617,19 +2488,11 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_striped {
+#yzlbeevvbr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zuarvehkwz .gt_table_body {
-=======
-#orxiklxhfz .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#orxiklxhfz .gt_table_body {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2638,11 +2501,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_footnotes {
-=======
-#orxiklxhfz .gt_footnotes {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2656,11 +2515,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_footnote {
-=======
-#orxiklxhfz .gt_footnote {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -2669,11 +2524,7 @@ NA
   padding-right: 15px;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_sourcenotes {
-=======
-#orxiklxhfz .gt_sourcenotes {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2687,11 +2538,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_sourcenote {
-=======
-#orxiklxhfz .gt_sourcenote {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2699,119 +2546,63 @@ NA
   padding-right: 15px;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_left {
+#yzlbeevvbr .gt_left {
   text-align: left;
 }
 
-#zuarvehkwz .gt_center {
+#yzlbeevvbr .gt_center {
   text-align: center;
 }
 
-#zuarvehkwz .gt_right {
-=======
-#orxiklxhfz .gt_left {
-  text-align: left;
-}
-
-#orxiklxhfz .gt_center {
-  text-align: center;
-}
-
-#orxiklxhfz .gt_right {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_font_normal {
+#yzlbeevvbr .gt_font_normal {
   font-weight: normal;
 }
 
-#zuarvehkwz .gt_font_bold {
+#yzlbeevvbr .gt_font_bold {
   font-weight: bold;
 }
 
-#zuarvehkwz .gt_font_italic {
+#yzlbeevvbr .gt_font_italic {
   font-style: italic;
 }
 
-#zuarvehkwz .gt_super {
+#yzlbeevvbr .gt_super {
   font-size: 65%;
 }
 
-#zuarvehkwz .gt_footnote_marks {
-=======
-#orxiklxhfz .gt_font_normal {
-  font-weight: normal;
-}
-
-#orxiklxhfz .gt_font_bold {
-  font-weight: bold;
-}
-
-#orxiklxhfz .gt_font_italic {
-  font-style: italic;
-}
-
-#orxiklxhfz .gt_super {
-  font-size: 65%;
-}
-
-#orxiklxhfz .gt_footnote_marks {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_asterisk {
-=======
-#orxiklxhfz .gt_asterisk {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-<<<<<<< HEAD
-#zuarvehkwz .gt_indent_1 {
+#yzlbeevvbr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zuarvehkwz .gt_indent_2 {
+#yzlbeevvbr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zuarvehkwz .gt_indent_3 {
+#yzlbeevvbr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zuarvehkwz .gt_indent_4 {
+#yzlbeevvbr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zuarvehkwz .gt_indent_5 {
-=======
-#orxiklxhfz .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#orxiklxhfz .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#orxiklxhfz .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#orxiklxhfz .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#orxiklxhfz .gt_indent_5 {
->>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
+#yzlbeevvbr .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2916,7 +2707,7 @@ standartlaştırılmış yol katsayılarının çarpılması sonucu elde edilir:
 <p>egzersiz → stres → hastalık</p>
 <p>dayanıklılık → form → hastalık</p>
 <p>dayanıklılık → stres → hastalık</p>
-<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ s_e*egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ h_e*egzersiz + dayaniklilik + h_f*form + h_s*stres</span></span>
 <span><span class="st">               form      ~ f_e*egzersiz + dayaniklilik</span></span>
@@ -2936,7 +2727,7 @@ standartlaştırılmış yol katsayılarının çarpılması sonucu elde edilir:
 <span><span class="st">               tot:=tot_ind + h_e'</span></span>
 <span></span>
 <span><span class="va">fsem1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/sem.html">sem</a></span><span class="op">(</span><span class="va">yol_model</span>,<span class="va">veri</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/standardizedSolution.html">standardizedsolution</a></span><span class="op">(</span><span class="va">fsem1</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
