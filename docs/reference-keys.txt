@@ -176,7 +176,11 @@ modifikasyon-indeksleri-1
 üç-faktörlü-model
 model-karşılaştırma
 daha-yüksek-dereceli-faktör-modelleri
+<<<<<<< HEAD
 ölçme-değişmezliği
+=======
+şekil-değişmezlik
+>>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
 özet
 uygulama-1
 kaynaklar-5

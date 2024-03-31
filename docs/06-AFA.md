@@ -1919,11 +1919,18 @@ head(fa_egik$scores)
     - EGA, ağ tahmin yöntemlerini ve
     topluluk tespit algoritmalarını kullanarak psikolojik verilerdeki
     boyut sayısını tahmin eder. 
+<<<<<<< HEAD
     
   - Boyutların ve maddelerin kararlılığını
     değerlendirmek için bir bootstrap yöntemi sağlanmıştır. 
     
     - Uyum,     Entropi Uyum endeks ailesi kullanılarak değerlendirilir. Benzersiz Değişken Analizi, maddelerin ne ölçüde yerel olarak bağımlı (veya    gereksiz) olduğunu değerlendirir.
+=======
+  - Boyutların ve maddelerin kararlılığını
+    değerlendirmek için bir bootstrap yöntemi sağlanmıştır. 
+    - Uyum,     Entropi Uyum endeks ailesi kullanılarak değerlendirilir. Benzersiz
+   -  Değişken Analizi, maddelerin ne ölçüde yerel olarak bağımlı (veya    gereksiz) olduğunu değerlendirir.
+>>>>>>> 53c884e75bb49cdc5a643746d5327332034c94fe
 
 
 ```r
