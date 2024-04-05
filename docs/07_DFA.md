@@ -1,27 +1,14 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # **DFA**
 
--   Hipotez edilen **modelin veri ile uyumunun incelendiği YEM
-    analizlerinde**, model ile veri uyumu sağlandığında, veri **hipotez
-    edilen modeli destekler** ancak **alternatif hipotezleri/modelleri
-    reddetmez.**
+-   Hipotez edilen **modelin veri ile uyumunun incelendiği YEM analizlerinde**, model ile veri uyumu sağlandığında, veri **hipotez edilen modeli destekler** ancak **alternatif hipotezleri/modelleri reddetmez.**
 
--   Diğer bir ifadeyle **farklı modeller de veriye uyum sağlayabilir.**
-    Dolayısıyla araştırmacı birden fazla modelin veri ile uyumunu
-    inceleyebilir ve
+-   Diğer bir ifadeyle **farklı modeller de veriye uyum sağlayabilir.** Dolayısıyla araştırmacı birden fazla modelin veri ile uyumunu inceleyebilir ve
 
     -   **en iyi uyum gösteren modeli belirleyebilir.**
 
--   YEM analizlerinde Rosseel vd. (2018) tarafından geliştirilen
-    **lavaan** paketi;
+-   YEM analizlerinde Rosseel vd. (2018) tarafından geliştirilen **lavaan** paketi;
 
--   YEM analizleri çıktılarında Tsukahara (2022) tarafından geliştirilen
-    **semoutput** paketi;
+-   YEM analizleri çıktılarında Tsukahara (2022) tarafından geliştirilen **semoutput** paketi;
 
 -   analizlere ilişkin diyagramların elde edilmesinde ise Epskamp vd. (2017) tarafından geliştirilen **semPlot** paketi kullanılacaktır.
 
@@ -41,79 +28,51 @@ library(semoutput)
 library(semPlot)
 ```
 
--   Veri modellemenin amacı, **verinin yapısını daha anlaşılabilecek ve
-    kolay yorumlanabilecek şekilde tanımlamaktır.**
+-   Veri modellemenin amacı, **verinin yapısını daha anlaşılabilecek ve kolay yorumlanabilecek şekilde tanımlamaktır.**
 
--   Yapısal eşitlik modelleri (YEM) farklı modellerin test edilebilmesi
-    için **esnek bir çerçeve sağlar.**
+-   Yapısal eşitlik modelleri (YEM) farklı modellerin test edilebilmesi için **esnek bir çerçeve sağlar.**
 
--   Temelde gözlenenen değişkenlerin **varyanslarına** ve gözlenen
-    değişkenler arasındaki **kovaryanslara** dayalı olan YEM
-    analizlerinin amacı bir grup gözlenen değişken arasındaki kovaryans
-    örüntüsünü anlamak ve **araştırma modeli ile gözlenen değişkenlerin
-    varyanslarını açıklamaktır.**
+-   Temelde gözlenenen değişkenlerin **varyanslarına** ve gözlenen değişkenler arasındaki **kovaryanslara** dayalı olan YEM analizlerinin amacı bir grup gözlenen değişken arasındaki kovaryans örüntüsünü anlamak ve **araştırma modeli ile gözlenen değişkenlerin varyanslarını açıklamaktır.**
 
 <img src="images/PA_7.PNG" width="75%" style="display: block; margin: auto;" />
 
 **Gözlenen Değişken**
 
--   **Gözlenen değişkenler** YEM dilinde göstergeler (indicators) olarak
-    ifade edilir ve bunlar araştırmacının **doğrudan ölçtüğü ya da
-    gözlediği değişkenleri ifade eder.**
+-   **Gözlenen değişkenler** YEM dilinde göstergeler (indicators) olarak ifade edilir ve bunlar araştırmacının **doğrudan ölçtüğü ya da gözlediği değişkenleri ifade eder.**
 
-    -   YEM terminolojisinde gözlenen değişkenler, gizil değişkenleri
-        yordamaz; aksine **gizil değişkenler kendi gözlenen
-        değişkenlerini yordar.**
+    -   YEM terminolojisinde gözlenen değişkenler, gizil değişkenleri yordamaz; aksine **gizil değişkenler kendi gözlenen değişkenlerini yordar.**
 
 **Gizil Değişken**
 
--   **Gizil değişkenler** YEM’in en önemli kavramlarından biridir ve
-    araştırmacıların ilgilendikleri **zeka, güdü, duygu, tutum gibi
-    soyut kavramlar ya da psikolojik yapılara** karşılık gelir.
+-   **Gizil değişkenler** YEM’in en önemli kavramlarından biridir ve araştırmacıların ilgilendikleri **zeka, güdü, duygu, tutum gibi soyut kavramlar ya da psikolojik yapılara** karşılık gelir.
 
-    -   Bu yapıları ancak **dolaylı olarak, belirli davranışlar ya da
-        göstergeler temelinde ölçülen değişkenler yardımıyla
-        gözlenebilir .**
+    -   Bu yapıları ancak **dolaylı olarak, belirli davranışlar ya da göstergeler temelinde ölçülen değişkenler yardımıyla gözlenebilir .**
 
-    -   Diğer bir ifade ile **gizil değişkenler doğrudan
-        gözlenemedikleri** için bağlantılı oldukları **gözlenebilen
-        başka değişkenler aracılığıyla** kestirilmeye çalışılır.
+    -   Diğer bir ifade ile **gizil değişkenler doğrudan gözlenemedikleri** için bağlantılı oldukları **gözlenebilen başka değişkenler aracılığıyla** kestirilmeye çalışılır.
 
 ## DFA
 
--   **DFA**, daha önceden tanımlanmış ve sınırlandırılmış bir yapının,
-    bir model olarak **doğrulanıp doğrulanmadığının** test edildiği bir
-    analizdir.
+-   **DFA**, daha önceden tanımlanmış ve sınırlandırılmış bir yapının, bir model olarak **doğrulanıp doğrulanmadığının** test edildiği bir analizdir.
 
--   **DFA**, psikoloji alan yazınında daha çok **ölçek geliştirmede ve
-    geçerlik analizlerinde** kullanılmaktadır.
+-   **DFA**, psikoloji alan yazınında daha çok **ölçek geliştirmede ve geçerlik analizlerinde** kullanılmaktadır.
 
-    -   Bu analizlerde, önceden belirlenmiş ya da kurgulanmış **bir
-        yapının doğrulanması amaçlanmaktadır.**
+    -   Bu analizlerde, önceden belirlenmiş ya da kurgulanmış **bir yapının doğrulanması amaçlanmaktadır.**
 
 -   Araştırmacı, DFA’da kuramsal bilgilere dayalı olarak belirlediği
 
     -   **gözlenen değişkenlerin gizil değişkenlerle** ve
-    -   **gizil değişkenlerin de kendi aralarında birbiri ile ilişkili**
-        olduğunu kanıtlamaya çalışır.
+    -   **gizil değişkenlerin de kendi aralarında birbiri ile ilişkili** olduğunu kanıtlamaya çalışır.
 
 -   Araştırmacı, kurama dayalı olarak
 
     -   **geliştirdiği modelin doğrulanıp doğrulanmadığını** ya da
-    -   **beklenen modelle gözlenen modelin ne ölçüde uyum
-        gösterdiğini** belirlemeye çalışır.
+    -   **beklenen modelle gözlenen modelin ne ölçüde uyum gösterdiğini** belirlemeye çalışır.
 
--   DFA, **gizil değişkenler arasındaki ilişkileri betimleyen (önerilen)
-    model ile elde edilen (gözlenen) verinin ne oranda uyuştuğuna**
-    ilişkin ayrıntılı istatistikler sunar.
+-   DFA, **gizil değişkenler arasındaki ilişkileri betimleyen (önerilen) model ile elde edilen (gözlenen) verinin ne oranda uyuştuğuna** ilişkin ayrıntılı istatistikler sunar.
 
--   Geleneksel testlerin aksine, **tek bir anlamlılık değeri vermez.**
-    Bu doğrultuda bulgular, verinin uygunluğuna göre ve ölçülen
-    parametrelere ilişkin **çok sayıda istatistiksel ölçüt**
-    kullanılarak değerlendirilir.
+-   Geleneksel testlerin aksine, **tek bir anlamlılık değeri vermez.** Bu doğrultuda bulgular, verinin uygunluğuna göre ve ölçülen parametrelere ilişkin **çok sayıda istatistiksel ölçüt** kullanılarak değerlendirilir.
 
--   DFA’da süreç, **korelasyon ya da kovaryans matrisi** oluşturarak
-    başlar.
+-   DFA’da süreç, **korelasyon ya da kovaryans matrisi** oluşturarak başlar.
 
 -   Bir ölçme modelinin DFA sonuçlarında
 
@@ -123,46 +82,31 @@ library(semPlot)
 
     -   **her bir gösterge için ölçme hatalarının** miktarını verir.
 
--   Eğer araştırmacının başlangıçtaki ölçme modeli mantıklı bir biçimde
-    doğrulanıyor ise dikkat edilmesi gereken durumlar şunlardır:
+-   Eğer araştırmacının başlangıçtaki ölçme modeli mantıklı bir biçimde doğrulanıyor ise dikkat edilmesi gereken durumlar şunlardır:
 
--   Ortak bir faktör altında ölçme yapmak için belirlenen göstergelerin
-    tümünün, **o faktörde oldukça yüksek yüklere sahip olması** -
-    **yakınsak geçerlik**
+-   Ortak bir faktör altında ölçme yapmak için belirlenen göstergelerin tümünün, **o faktörde oldukça yüksek yüklere sahip olması** - **yakınsak (convergent) geçerlik**
 
--   **Faktörler arasındaki korelasyon kestirimlerinin aşırı yüksek
-    olmaması** (örneğin \>0,85) - **ayırt edici geçerlik**
+-   **Faktörler arasındaki korelasyon kestirimlerinin aşırı yüksek olmaması** (örneğin \>0,85) - **ayırt edici geçerlik**
 
 ## DFA vs AFA
 
--   **Açımlayıcı analizlerde temel amaç**, yapısal bir modele ulaşmak ya
-    da kuram üretmek olmasına karşın, **kurama ilişkin ilk ya da temel
-    bilgilere ulaşılabilir.**
+-   **Açımlayıcı analizlerde temel amaç**, yapısal bir modele ulaşmak ya da kuram üretmek olmasına karşın, **kurama ilişkin ilk ya da temel bilgilere ulaşılabilir.**
 
--   Diğer taraftan **doğrulayıcı analizlerde**, daha önceki kapsamlı
-    araştırmalardan elde edilen bilgi ya da tecrübeye dayanan
-    durumlardan ve gözlemler çerçevesinde varsayımlar için model
-    oluşturulur.
+-   Diğer taraftan **doğrulayıcı analizlerde**, daha önceki kapsamlı araştırmalardan elde edilen bilgi ya da tecrübeye dayanan durumlardan ve gözlemler çerçevesinde varsayımlar için model oluşturulur.
 
-    -   Bu varsayımlar temelinde **önceden kurulan modelin, bazı
-        parametreler açısından doğruluğu test edilir.**
+    -   Bu varsayımlar temelinde **önceden kurulan modelin, bazı parametreler açısından doğruluğu test edilir.**
 
 **Tek Faktörlü DFA Modeli Örneği**
 
--   **X1, X2 ve X3** gizil faktörün göstergeleridir. Gizil faktör bu üç
-    göstergenin altında yatan tek ortak yapıdır.
+-   **X1, X2 ve X3** gizil faktörün göstergeleridir. Gizil faktör bu üç göstergenin altında yatan tek ortak yapıdır.
 
--   Diğer bir ifadeyle, **göstergeler arasındaki kovaryansı üretecek
-    gizil faktörden başka kaynaklar yoktur.**
+-   Diğer bir ifadeyle, **göstergeler arasındaki kovaryansı üretecek gizil faktörden başka kaynaklar yoktur.**
 
-+-------------------------------------+-------------------------------------------------------------+
-|                                     | -   Her bir gözlenen puan iki bileşene sahiptir: **faktörün |
-| ![](images/DFA_1.PNG){width="300"}  |     neden olduğu puan ve faktörün neden olmadığı puan.**    |
-|                                     |                                                             |
-|                                     | -   Faktörün neden olmadığı kısım bir hata terimi ile       |
-|                                     |     gösterilir. Bu hata terimleri şemada $\delta_1$,        |
-|                                     |     $\delta_2$ ve $\delta_3$ ile temsil edilmektedir.       |
-+-------------------------------------+-------------------------------------------------------------+
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ![](images/DFA_1.PNG){width="300"} | -   Her bir gözlenen puan iki bileşene sahiptir: **faktörün neden olduğu puan ve faktörün neden olmadığı puan.**                                         |
+|                                    |                                                                                                                                                          |
+|                                    | -   Faktörün neden olmadığı kısım bir hata terimi ile gösterilir. Bu hata terimleri şemada $\delta_1$, $\delta_2$ ve $\delta_3$ ile temsil edilmektedir. |
++------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 -   $\delta_1$ gibi bir hata terimi iki bileşenden oluşur:
 
@@ -171,54 +115,37 @@ library(semPlot)
 
 -   **Kuramsal olarak bu iki bileşen ayırt edilemez.**
 
--   DFA’da $\delta_1$ gibi bir hata terimi ölçme hatası olarak
-    adlandırılır ancak bu terim **iki bileşenin kombinasyonudur.**
+-   DFA’da $\delta_1$ gibi bir hata terimi ölçme hatası olarak adlandırılır ancak bu terim **iki bileşenin kombinasyonudur.**
 
-  -   tesadüfi hataları **güvenilir olmayan değerler**, ölçülen özellik
-    dışında ölçmeye karışan diğer özellikler **güvenilir olan değerler**
+-   tesadüfi hataları **güvenilir olmayan değerler**, ölçülen özellik dışında ölçmeye karışan diğer özellikler **güvenilir olan değerler**
 
-| ![](images/DFA_2.PNG){width="300"}  |
+| ![](images/DFA_2.PNG){width="300"} \|
 
--   Faktör ve göstergeyi bağlayan yola  faktör yükü adı verilir.  
+-   Faktör ve göstergeyi bağlayan yola faktör yükü adı verilir.
 
--   Faktör yükü $\lambda$ simgesi ile gösterilir. $\lambda_2$ ,  X2 göstergesinin gizil faktördeki   yüküdür. $\lambda_3$ , X3 göstergesinin gizil faktördeki yüküdür.       
+-   Faktör yükü $\lambda$ simgesi ile gösterilir. $\lambda_2$ , X2 göstergesinin gizil faktördeki yüküdür. $\lambda_3$ , X3 göstergesinin gizil faktördeki yüküdür.
 
--   $\lambda_1$ , X1 göstergesinin gizil  faktördeki yüküdür ancak **1**   değerine sabitlenmiştir.              
+-   $\lambda_1$ , X1 göstergesinin gizil faktördeki yüküdür ancak **1** değerine sabitlenmiştir.
 
 <img src="images/DFA_3.PNG" width="75%" style="display: block; margin: auto;" />
 
--   Gizil değişken **F**, gizil olduğundan sabit bir ölçeğe sahip
-    değildir. Bu nedenle, faktör yüklerinin ölçekleri belirlenemez. İki
-    olası çözüm aşağıdaki gibidir:
-    -   **Faktör yüklerin ölçeği sabitlenir ve gizil değişkenin ölçeği
-        serbestçe kestirilir.**
-    -   Gizil değişkenin ölçeği sabitlenir ve faktör yüklerinin
-        ölçekleri serbestçe kestirilir.
+-   Gizil değişken **F**, gizil olduğundan sabit bir ölçeğe sahip değildir. Bu nedenle, faktör yüklerinin ölçekleri belirlenemez. İki olası çözüm aşağıdaki gibidir:
+    -   **Faktör yüklerin ölçeği sabitlenir ve gizil değişkenin ölçeği serbestçe kestirilir.**
+    -   Gizil değişkenin ölçeği sabitlenir ve faktör yüklerinin ölçekleri serbestçe kestirilir.
 
-+----------------------------------+----------------------------------+
-| İki Faktörlü DFA Modeli Örneği   |                                  |
-+==================================+==================================+
-| ![](images/DFA_4.PNG)            | -   X1 ve X2 F1’in               |
-|                                  |     göstergeleridir.             |
-|                                  |                                  |
-|                                  | -   X3 ve X4 F2’nin              |
-|                                  |     göstergeleridir.             |
-|                                  |                                  |
-|                                  | -   F1 ve F2 arasında bir        |
-|                                  |     korelasyon vardır.           |
-|                                  |                                  |
-|                                  | -   X1, X2, X3 ve X4             |
-|                                  |     göstergeleri etki            |
-|                                  |     göstergeleri (effect         |
-|                                  |     indicators) veya yansıtıcı   |
-|                                  |     göstergeler (reflective      |
-|                                  |     indicators) olarak           |
-|                                  |     adlandırılırlar.             |
-+----------------------------------+----------------------------------+
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| İki Faktörlü DFA Modeli Örneği |                                                                                                                                                    |
++================================+====================================================================================================================================================+
+| ![](images/DFA_4.PNG)          | -   X1 ve X2 F1’in göstergeleridir.                                                                                                                |
+|                                |                                                                                                                                                    |
+|                                | -   X3 ve X4 F2’nin göstergeleridir.                                                                                                               |
+|                                |                                                                                                                                                    |
+|                                | -   F1 ve F2 arasında bir korelasyon vardır.                                                                                                       |
+|                                |                                                                                                                                                    |
+|                                | -   X1, X2, X3 ve X4 göstergeleri etki göstergeleri (effect indicators) veya yansıtıcı göstergeler (reflective indicators) olarak adlandırılırlar. |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
--   X1, X2, X3 ve X4 göstergeleri etki göstergeleri (effect indicators)
-    veya yansıtıcı göstergeler (reflective indicators) olarak
-    adlandırılırlar.
+-   X1, X2, X3 ve X4 göstergeleri etki göstergeleri (effect indicators) veya yansıtıcı göstergeler (reflective indicators) olarak adlandırılırlar.
 
 $$X=\Lambda\xi +\delta$$
 
@@ -253,12 +180,7 @@ X_{4}\\
 
 ## DFA Modeli: Kovaryans Matrisi
 
--   Model için kovaryans matrisi model parametrelerinin bir fonksiyonu
-    $\sum(\theta) = \Lambda\phi\Lambda' + \Psi$  olarak temsil edilebilir:
-
-
-
-
+-   Model için kovaryans matrisi model parametrelerinin bir fonksiyonu $\sum(\theta) = \Lambda\phi\Lambda' + \Psi$ olarak temsil edilebilir:
 
 $$\begin{bmatrix}{}
 VAR_{X_1}\\
@@ -285,13 +207,11 @@ $$= \begin{bmatrix}{}1 & 0 \\
 0 & 0 & 0 & \Psi_{44}\\
 \end{bmatrix}$$
 
-$\sum(\theta)$, $\phi$, $\psi$ matrisleri simetrik matrislerdir ancak
-eşitlikte sadece alt üçgen sunulur.
+$\sum(\theta)$, $\phi$, $\psi$ matrisleri simetrik matrislerdir ancak eşitlikte sadece alt üçgen sunulur.
 
 <img src="images/DFA_14.PNG" width="100%" style="display: block; margin: auto;" />
 
-Kovaryans matrislerinden model için serbestçe kestirilecek parametreler
-sayılabilir:
+Kovaryans matrislerinden model için serbestçe kestirilecek parametreler sayılabilir:
 
 |                      |                                           |
 |----------------------|-------------------------------------------|
@@ -299,7 +219,6 @@ sayılabilir:
 | Faktör kovaryansları | $\phi_{21}$                               |
 | Hata varyansları     | $\Psi_{11} \Psi_{22} \Psi_{33} \Psi_{44}$ |
 | Faktör yükleri       | $\lambda_{21} \lambda_{42}$               |
-
 
 
 
@@ -311,8 +230,7 @@ Bu nedenle,
 
 -   $\lambda_{42}$ X4’ün Faktör 2’deki yüküdür.
 
--   $\lambda_{11}$ ve $\lambda_{32}$ şemada değerleri 1’e sabitlenmiş
-    olarak gösterilmektedir
+-   $\lambda_{11}$ ve $\lambda_{32}$ şemada değerleri 1’e sabitlenmiş olarak gösterilmektedir
 
 ## Standart DFA Modelleri
 
@@ -320,8 +238,7 @@ Bu nedenle,
 
 -   **Standart DFA** modelleri aşağıdaki özelliklere sahiptir:
 
--   Her bir gösterge sürekli bir değişkendir ve tek bir faktörün (factor
-    complexity = 1) ve ölçme hatasının bir fonksiyonudur.
+-   Her bir gösterge sürekli bir değişkendir ve tek bir faktörün (factor complexity = 1) ve ölçme hatasının bir fonksiyonudur.
 
 -   Ölçme hataları birbirlerinden ve faktörlerden bağımsızdır.
 
@@ -335,8 +252,7 @@ Bu nedenle,
 
 -   Dışsal değişkenlerin **varyansları ve kovaryanslarıdır.**
 
--   Faktörlerin göstergeler üzerindeki **doğrudan etkileridir.**
-    (örneğin, faktör yükleri)
+-   Faktörlerin göstergeler üzerindeki **doğrudan etkileridir.** (örneğin, faktör yükleri)
 
 <img src="images/DFA_7.PNG" width="75%" style="display: block; margin: auto;" />
 
@@ -352,8 +268,7 @@ Bu nedenle,
 
 <img src="images/DFA_8.PNG" width="75%" style="display: block; margin: auto;" />
 
--   DFA literatüründe bir gizil faktörü temsil etmek üzere genellikle F
-    yerine $\xi$ kullanılır.
+-   DFA literatüründe bir gizil faktörü temsil etmek üzere genellikle F yerine $\xi$ kullanılır.
 
 -   Faktor yukleri 1'e
 
@@ -363,13 +278,11 @@ Bu nedenle,
 
 <img src="images/DFA_17.PNG" width="75%" style="display: block; margin: auto;" />
 
--   Her ikisinde de 9 tane serbestce kestirilecek parametre
-    bulunmaktadır.
+-   Her ikisinde de 9 tane serbestce kestirilecek parametre bulunmaktadır.
 
 ### Modelin Tanımlanması
 
--   DFA modelinde gözlemlerin sayısı yol analizi modelindeki gibi
-    hesaplanır:
+-   DFA modelinde gözlemlerin sayısı yol analizi modelindeki gibi hesaplanır:
 
     -   $v (v + 1) / 2$
 
@@ -377,10 +290,7 @@ Bu nedenle,
 
 -   $4 (4 + 1) / 2 = 10$ (v = 4, gözlenen değişken sayısı)
 
--   Yönlü ilişkili (recursive) yol modellerinde , eğer gözlemlerin
-    sayısı model parametrelerinin sayısına eşit veya daha büyükse **sd ≥
-    0** model tanımlanır. Ancak DFA’da, **sd ≥ 0** koşulunun sağlanması
-    zorunlu fakat yeterli değildir.
+-   Yönlü ilişkili (recursive) yol modellerinde , eğer gözlemlerin sayısı model parametrelerinin sayısına eşit veya daha büyükse **sd ≥ 0** model tanımlanır. Ancak DFA’da, **sd ≥ 0** koşulunun sağlanması zorunlu fakat yeterli değildir.
 
 -   dört gözlenen değişkenli DFA modeli örneğinde gözlemlerin sayısı:
 
@@ -395,82 +305,55 @@ COV_{X_1,X_4} & COV_{X_2,X_4} & COV_{X_3,X_4} & VAR_{X_4}\\
 
 <img src="images/DFA_12.PNG" width="75%" style="display: block; margin: auto;" />
 
--   DFA modelleri hatalar arasında korelasyonun tanımlanmasına izin
-    verir.
+-   DFA modelleri hatalar arasında korelasyonun tanımlanmasına izin verir.
 
--   Araştırmacılar bir ölçüm için hataların arasında korelasyon olmaması
-    sayıltısının olağan olarak ihlal edildiğini tartışırlar (Schmidt &
-    Hunter, 1996).
+-   Araştırmacılar bir ölçüm için hataların arasında korelasyon olmaması sayıltısının olağan olarak ihlal edildiğini tartışırlar (Schmidt & Hunter, 1996).
 
--   Ancak hatalar arasındaki korelasyonun modele eklenmesi **tanımlama
-    problemlerine neden olabilir.**
+-   Ancak hatalar arasındaki korelasyonun modele eklenmesi **tanımlama problemlerine neden olabilir.**
 
 ## Yeterli Gereklilikler
 
--   Zorunlu gerekliliklerin karşılanması DFA modelinin tanımlanmasını
-    garantilemez. Yeterli gereklilikler.
+-   Zorunlu gerekliliklerin karşılanması DFA modelinin tanımlanmasını garantilemez. Yeterli gereklilikler.
 
 -   Eğer
 
-    -   **standart bir tek faktörlü DFA modeli en az üç göstergeye**
-        sahipse,
+    -   **standart bir tek faktörlü DFA modeli en az üç göstergeye** sahipse,
 
-    -   **standart bir iki veya daha fazla faktörlü** DFA modelinde her
-        bir faktör için **en az iki göstergeye** varsa,
+    -   **standart bir iki veya daha fazla faktörlü** DFA modelinde her bir faktör için **en az iki göstergeye** varsa,
 
 model tanımlanır.
 
--   **Çapraz yüklü veya hatalar arasında korelasyona** sahip bir DFA
-    modeli için ise kolayca uygulanan yeterli koşul yoktur.
+-   **Çapraz yüklü veya hatalar arasında korelasyona** sahip bir DFA modeli için ise kolayca uygulanan yeterli koşul yoktur.
 
--   Model parametresi araştırmacının tanımlamasına bağlı olarak
-    **serbest** (free), **sabit** (fixed) veya **sınırlandırılmış**
-    (constrained) olabilir.
+-   Model parametresi araştırmacının tanımlamasına bağlı olarak **serbest** (free), **sabit** (fixed) veya **sınırlandırılmış** (constrained) olabilir.
 
-    -   **Serbest parametre** (free parameter) örneklem verisinden
-        bilgisayar yazılımı tarafından kestirilen parametredir.
+    -   **Serbest parametre** (free parameter) örneklem verisinden bilgisayar yazılımı tarafından kestirilen parametredir.
 
-    -   **Sabit** parametre (fixed parameter) bir sabite eşit olarak
-        belirlenen parametredir; yazılım bu sabiti veriye bağlı
-        olmaksızın parametrenin kestirimi olarak kabul eder.
+    -   **Sabit** parametre (fixed parameter) bir sabite eşit olarak belirlenen parametredir; yazılım bu sabiti veriye bağlı olmaksızın parametrenin kestirimi olarak kabul eder.
 
-    -   **Sınırlandırılmış** parametre (constrained parameter) yazılım
-        tarafından belli sınırlılıklar içerisinde kestirilir ancak bir
-        sabite eşit olmak üzere sabitlenmez.
+    -   **Sınırlandırılmış** parametre (constrained parameter) yazılım tarafından belli sınırlılıklar içerisinde kestirilir ancak bir sabite eşit olmak üzere sabitlenmez.
 
-
--   Bir modelinin tanımlanabilmesi için **kestirilecek olan model
-    parametre sayısının gözlenen parametre sayısına eşit** veya
-    **gözlenen parametre sayısından küçük olması** gerekir.
+-   Bir modelinin tanımlanabilmesi için **kestirilecek olan model parametre sayısının gözlenen parametre sayısına eşit** veya **gözlenen parametre sayısından küçük olması** gerekir.
 
     -   **sd\<0** olduğunda model tanımlanamaz.
 
-    -   **sd=0**, model ancak tanımlanır (just identification) ve
-        kuramsal olarak her parametrenin tek bir çözümü vardır. Ancak
-        tanımlanan modellerde model veriye mükemmel uyum gösterir.
+    -   **sd=0**, model ancak tanımlanır (just identification) ve kuramsal olarak her parametrenin tek bir çözümü vardır. Ancak tanımlanan modellerde model veriye mükemmel uyum gösterir.
 
-    -   **sd\>0**, model aşırı tanımlanmış (over identification) olur.
-        Aşırı tanımlanan modellerde kuramsal olarak her bir parametrenin
-        birden fazla çözümü vardır.
+    -   **sd\>0**, model aşırı tanımlanmış (over identification) olur. Aşırı tanımlanan modellerde kuramsal olarak her bir parametrenin birden fazla çözümü vardır.
 
 <img src="images/DFA_9.PNG" width="75%" style="display: block; margin: auto;" />
 
--   X1’in faktör yükü **1**’e sabitlendiğinde, F1’in ölçme birimi X1’in
-    ölçme birimiyle aynı olur. Bu durumda X1 **işaret veya referans
-    değişken** adını alır.
+-   X1’in faktör yükü **1**’e sabitlendiğinde, F1’in ölçme birimi X1’in ölçme birimiyle aynı olur. Bu durumda X1 **işaret veya referans değişken** adını alır.
 
 -   Benzer şekilde, X3 de F2 için **referans değişkendir.**
 
--   Referans değişken birinci gösterge olmak zorunda değildir. Örneğin,
-    X2 de F1 için referans değişken olarak seçilebilir.
+-   Referans değişken birinci gösterge olmak zorunda değildir. Örneğin, X2 de F1 için referans değişken olarak seçilebilir.
 
-    -   Referans değişken belirlendiginde, **değişkenin örneklem
-        varyansının bir kısmı gizil değişkene geçer**
+    -   Referans değişken belirlendiginde, **değişkenin örneklem varyansının bir kısmı gizil değişkene geçer**
 
 <img src="images/DFA_10.PNG" width="75%" style="display: block; margin: auto;" />
 
--   hem F1 hem de F2 puanları **ortalaması 0 ve standart sapması 1**
-    olan bir ölçeğe sahip olurlar.
+-   hem F1 hem de F2 puanları **ortalaması 0 ve standart sapması 1** olan bir ölçeğe sahip olurlar.
 
 -   bütün faktör yükleri serbestçe kestirilir.
 
@@ -488,48 +371,35 @@ model tanımlanır.
 
 -   Verilen örnekte X2 hem F1 hem de F2’nin göstergesidir.
 
--   Bazen bazı göstergeler birden fazla faktörü ölçmek için
-    tasarlanmıştır (factor complexity > 1). Böyle bir DFA modeli **artık standart bir DFA modeli** değildir.
+-   Bazen bazı göstergeler birden fazla faktörü ölçmek için tasarlanmıştır (factor complexity \> 1). Böyle bir DFA modeli **artık standart bir DFA modeli** değildir.
 
 ## Model-Veri Uyumunun Değerlendirilmesi
 
--   Kestirilen parametre sayısından daha fazla sayıda gözleme sahip olan
-    **aşırı tanımlanan** (overidentified) modeller **genellikle veriye
-    mükemmel uyum sağlamaz.**
+-   Kestirilen parametre sayısından daha fazla sayıda gözleme sahip olan **aşırı tanımlanan** (overidentified) modeller **genellikle veriye mükemmel uyum sağlamaz.**
 
--   Bu durumda böyle **modellerin veriyle ne derece uyumlu** olduğunu
-    ölçmeye ihtiyaç vardır.
+-   Bu durumda böyle **modellerin veriyle ne derece uyumlu** olduğunu ölçmeye ihtiyaç vardır.
 
--   YEM literatüründe tanımlanan **çok sayıda model uyum indeksi
-    vardır** ve sürekli olarak yeni indeksler geliştirilmektedir.
+-   YEM literatüründe tanımlanan **çok sayıda model uyum indeksi vardır** ve sürekli olarak yeni indeksler geliştirilmektedir.
 
--   Çok sayıda farklı uyum indeksinin olması bazı problemleri de
-    beraberinde getirir:
+-   Çok sayıda farklı uyum indeksinin olması bazı problemleri de beraberinde getirir:
 
     -   Farklı makalelerde **farklı uyum indeksleri** rapor edilir.
 
-    -   Aynı makale için farklı hakemler kendi bildikleri veya tercih
-        ettikleri farklı indekslerin rapor edilmesini isteyebilirler.
+    -   Aynı makale için farklı hakemler kendi bildikleri veya tercih ettikleri farklı indekslerin rapor edilmesini isteyebilirler.
 
-    -   Uyum indekslerinin değerlerini rapor ederken seçici davranma
-        olasılığı vardır (örneğin, sadece iyi uyum öneren uyum
-        indekslerinin rapor edilmesi gibi).
+    -   Uyum indekslerinin değerlerini rapor ederken seçici davranma olasılığı vardır (örneğin, sadece iyi uyum öneren uyum indekslerinin rapor edilmesi gibi).
 
--   YEM uygulamalarına ve simülasyon çalışmalarına göre YEM analizinin
-    sonuçlarını rapor ederken sunulacak ve yorumlanacak uyum indeksleri
-    aşağıdaki gibidir:
+-   YEM uygulamalarına ve simülasyon çalışmalarına göre YEM analizinin sonuçlarını rapor ederken sunulacak ve yorumlanacak uyum indeksleri aşağıdaki gibidir:
 
 -   Model **Ki-Kare** Değeri
 
--   Steiger-Lind Root Mean Square Error of Approximation **RMSEA**
-    (Steiger, 1990) (%90 güven aralığı ile birlikte)
+-   Steiger-Lind Root Mean Square Error of Approximation **RMSEA** (Steiger, 1990) (%90 güven aralığı ile birlikte)
 
 -   Bentler Comparative Fit Index **CFI** (Bentler, 1990)
 
 -   Standardized Root Mean Square Residual **SRMR**
 
--   **Çoklu indekslerin kullanılması** bir modelin uyumu ile ilgili **en
-    doğru yaklaşımı verecektir.**
+-   **Çoklu indekslerin kullanılması** bir modelin uyumu ile ilgili **en doğru yaklaşımı verecektir.**
 
 | Uyum indeksi |      İyi uyum       | Kabul Edilebilir Uyum |
 |:------------:|:-------------------:|:---------------------:|
@@ -539,26 +409,17 @@ model tanımlanır.
 |    RMSEA     |   0 ≤RMSEA ≤ .05    |  .05 \< RMSEA \< .08  |
 |     CFI      |    .95 ≤GFI ≤ 1     |   .90 \< GFI \< .95   |
 
-Not: Bu kesme değerlerin kullanılmasıyla ilgili çok sayıda tartışma
-vardır. 
-
+Not: Bu kesme değerlerin kullanılmasıyla ilgili çok sayıda tartışma vardır.
 
 ### Uyum İndekslerini Raporlarken Öneriler
 
 -   örneğin, CFI, örneklem büyüklüğüne duyarlıdır.
 
--   Oldukça küçük bir örneklem (örneğin, N = 200) hemen hemen her zaman
-    oldukça büyük bir örneklemden (örneğin, N = 1000) daha küçük
-    **CFI**'ler üretecektir.
+-   Oldukça küçük bir örneklem (örneğin, N = 200) hemen hemen her zaman oldukça büyük bir örneklemden (örneğin, N = 1000) daha küçük **CFI**'ler üretecektir.
 
--   Bu nedenle, .95 gibi CFI için sabit eşikler, küçük örneklem
-    boyutları için daha doğru modelleri uyumlu göstermeyecek ve daha
-    büyük örneklem boyutları için ise muhtemelen daha az uyumlu
-    modelleri kabul edecektir.
+-   Bu nedenle, .95 gibi CFI için sabit eşikler, küçük örneklem boyutları için daha doğru modelleri uyumlu göstermeyecek ve daha büyük örneklem boyutları için ise muhtemelen daha az uyumlu modelleri kabul edecektir.
 
--   Esnek kesim noktaları belirli bir model ve örneklem özelliklerine
-    uygun alternatif eşik değerleri sağlar. Bu amaçla *FCO* paketi
-    kullanılabilir.
+-   Esnek kesim noktaları belirli bir model ve örneklem özelliklerine uygun alternatif eşik değerleri sağlar. Bu amaçla *FCO* paketi kullanılabilir.
 
 
 ```r
@@ -567,138 +428,80 @@ library(FCO)
 
 ## Esnek Kesim Noktaları
 
--   Esnek kesim noktaları, gizli değişken sayısı (veya faktörler), gizil
-    değişken başına gösterge sayısı, örneklem boyutları, faktör yükleri
-    ve normal ve normal olmayan veriler için doğru şekilde belirlenmiş
-    Doğrulayıcı Faktör Analizi (DFA) modellerinin simüle edilmiş
-    dağılımlarından türetilir.
+-   Esnek kesim noktaları, gizli değişken sayısı (veya faktörler), gizil değişken başına gösterge sayısı, örneklem boyutları, faktör yükleri ve normal ve normal olmayan veriler için doğru şekilde belirlenmiş Doğrulayıcı Faktör Analizi (DFA) modellerinin simüle edilmiş dağılımlarından türetilir.
 
--   Esnek kesim noktaları, önceden tanımlanmış bir belirsizlik için
-    belirli bir değerin ampirik niceliği olarak anlaşılabilir.
+-   Esnek kesim noktaları, önceden tanımlanmış bir belirsizlik için belirli bir değerin ampirik niceliği olarak anlaşılabilir.
 
--   Öncelikli olarak yüzde 5'lik (veya .05) bir belirsizlik kabul
-    edilirse, verilen model ve örneklem özellikleriyle doğru şekilde
-    belirlenmiş DFA modelleri için simüle edilmiş dağılımın yüzde 5'lik
-    niceliği esnek sınırı belirleyecektir.
+-   Öncelikli olarak yüzde 5'lik (veya .05) bir belirsizlik kabul edilirse, verilen model ve örneklem özellikleriyle doğru şekilde belirlenmiş DFA modelleri için simüle edilmiş dağılımın yüzde 5'lik niceliği esnek sınırı belirleyecektir.
 
 <!-- - Temel uyum indeksinin doğasına bağlı olarak, ilgili güven aralığının uygun alt (GoF) veya üst (BoF) genişliği, nicelik tarafından tanımlandığı gibi, esnek sınırı türetmek için kullanılır.  -->
 
-Niemand, T., Mai, R. Flexible cutoff values for fit indices in
-the evaluation of structural equation models. J. of the Acad. Mark. Sci.
-46, 1148–1172 (2018)
+Niemand, T., Mai, R. Flexible cutoff values for fit indices in the evaluation of structural equation models. J. of the Acad. Mark. Sci. 46, 1148–1172 (2018)
 
 ## Model Seçimi
 
 -   analizlerinde **birden fazla model veriye uyum sağlayabilir.**
 
--   Bu durumda veriye daha iyi uyum sağlayan modelin belirlenmesi için
-    **model uyumları karşılaştırılır.**
+-   Bu durumda veriye daha iyi uyum sağlayan modelin belirlenmesi için **model uyumları karşılaştırılır.**
 
--   **Modellerden biri diğerinin alt kümesi** olduğunda modeller
-    yuvalanmıştır. Örneğin, araştırmacılar farklı amaçlarla model içinde
-    bazı parametreleri sınırlandırabilir. Bu durumda sınırlandırılmış
-    olan model sınırlandırılmamış olan serbest model içinde yuvalanmış
-    olur.
+-   **Modellerden biri diğerinin alt kümesi** olduğunda modeller yuvalanmıştır. Örneğin, araştırmacılar farklı amaçlarla model içinde bazı parametreleri sınırlandırabilir. Bu durumda sınırlandırılmış olan model sınırlandırılmamış olan serbest model içinde yuvalanmış olur.
 
--   Yuvalanmış modeller karşılaştırılırken, **modellerin ki-kare
-    değerleri arasındaki farkın anlamlılığı incelenir.**
+-   Yuvalanmış modeller karşılaştırılırken, **modellerin ki-kare değerleri arasındaki farkın anlamlılığı incelenir.**
 
--   Eğer iki model hiyerarşikse ve her ikisi de veriye kabul edilebilir
-    ölçüde uyum sağlıyorsa, iki modelin veriye uyumunu karşılaştırmak
-    için ki-kare fark test uygulanabilir.
+-   Eğer iki model hiyerarşikse ve her ikisi de veriye kabul edilebilir ölçüde uyum sağlıyorsa, iki modelin veriye uyumunu karşılaştırmak için ki-kare fark test uygulanabilir.
 
--   Yuvalanmamış modellerin karşılaştırılmasında kullanılacak en uygun
-    yaklaşım bilgi kriter değerleridir. Yaygın olarak kullanılan bilgi
-    kriterleri **Akaike bilgi kriteri (AIC) ve Bayes bilgi kriteridir
-    (BIC).**
+-   Yuvalanmamış modellerin karşılaştırılmasında kullanılacak en uygun yaklaşım bilgi kriter değerleridir. Yaygın olarak kullanılan bilgi kriterleri **Akaike bilgi kriteri (AIC) ve Bayes bilgi kriteridir (BIC).**
 
--   Model seçimi yapılırken **bilgi kriteri değeri daha küçük olan model
-    tercih edilir.** Bilgi kriterleri hem yuvalanmış hem de yuvalanmamış
-    modellerin karşılaştırılmasında kullanılabilir.
+-   Model seçimi yapılırken **bilgi kriteri değeri daha küçük olan model tercih edilir.** Bilgi kriterleri hem yuvalanmış hem de yuvalanmamış modellerin karşılaştırılmasında kullanılabilir.
 
 ## Varsayımlar
 
 -   YEM analizleri genellikle **büyük örneklemler gerektirir.**
 
--   Örneklem büyüklüğü model karmaşıklığı ile oldukça ilişkidir ve daha
-    karmaşık modeller daha büyük örneklemler gerektirir.
+-   Örneklem büyüklüğü model karmaşıklığı ile oldukça ilişkidir ve daha karmaşık modeller daha büyük örneklemler gerektirir.
 
--   YEM analizlerine ilişkin varsayımlar ise kestirim yöntemine bağlı
-    olarak değişmektedir.
+-   YEM analizlerine ilişkin varsayımlar ise kestirim yöntemine bağlı olarak değişmektedir.
 
--   Kullanılan kestirim yönteminin varsayımlarının sağlanmaması model
-    veri uyumu, parametre ve parametrelere ilişkin hata kestirimlerinde
-    yanlılığa neden olabilir. Dolayısıyla, test edilen kuram hakkında
-    hatalı sonuçlar alınmasına yol açabilir.
+-   Kullanılan kestirim yönteminin varsayımlarının sağlanmaması model veri uyumu, parametre ve parametrelere ilişkin hata kestirimlerinde yanlılığa neden olabilir. Dolayısıyla, test edilen kuram hakkında hatalı sonuçlar alınmasına yol açabilir.
 
--   Bu nedenle veri yapısına ve çalışma desenine uygun bir kestirim
-    yöntemi seçilmesi oldukça önemlidir.
+-   Bu nedenle veri yapısına ve çalışma desenine uygun bir kestirim yöntemi seçilmesi oldukça önemlidir.
 
--   YEM analizlerinde yaygın olarak maksimum olabilirlik **ML** kestirim
-    yöntemi kullanılmaktadır.
+-   YEM analizlerinde yaygın olarak maksimum olabilirlik **ML** kestirim yöntemi kullanılmaktadır.
 
--   Benzer şekilde en küçük kareler **GLS** kestirim yöntemi de
-    normallik varsayımı gerektirir.
+-   Benzer şekilde en küçük kareler **GLS** kestirim yöntemi de normallik varsayımı gerektirir.
 
 -   Bu yöntemler normal teori yöntemleri olarak da adlandırılır.
 
--   Normal teori yöntemleri altında yatan beş varsayımdan
-    bahsedilebilir. Bunlar
+-   Normal teori yöntemleri altında yatan beş varsayımdan bahsedilebilir. Bunlar
 
     -   gözlemlerin bağımsızlığı,
     -   büyük örneklem, doğru tanımlanmış model,
     -   çok değişkenli normallik ve verilerin sürekliliğidir.
 
-**Normal teori yöntemleri varsayımları sağlandığında yansız, yeterli ve
-tutarlı kestirimler üretir.** - doğrulayıcı faktör analizi için
-**cfa()**, yapısal modeller için **sem()** fonksiyonu tanımlanmıştır.
+**Normal teori yöntemleri varsayımları sağlandığında yansız, yeterli ve tutarlı kestirimler üretir.** - doğrulayıcı faktör analizi için **cfa()**, yapısal modeller için **sem()** fonksiyonu tanımlanmıştır.
 
--   **ML** yöntemi paketin varsayılan kestirim yöntemidir. Parametre
-    kestirimleri açısından normallik varsayımının ihlaline dayanıklıdır.
+-   **ML** yöntemi paketin varsayılan kestirim yöntemidir. Parametre kestirimleri açısından normallik varsayımının ihlaline dayanıklıdır.
 
--   Normal olmayan veriler için alan yazında yaygın olarak kullanılan
-    kestirim yöntemi
+-   Normal olmayan veriler için alan yazında yaygın olarak kullanılan kestirim yöntemi
 
     -   ağırlıklandırılmış en küçük kareler yöntemidir **WLS**
     -   Ayrıca ağırlıklandırılmamış en küçük kareler **ULS**,
     -   diyagonal olarak ağırlıklandırılmış en küçük kareler **DWLS**,
-    -   kestirim yöntemleri de normal dağılmayan verilerde
-        kullanılabilir.
+    -   kestirim yöntemleri de normal dağılmayan verilerde kullanılabilir.
 
--   Kestirim yöntemlerinin kısaltmaları programlar arasında farklılık
-    gösterebilir.
+-   Kestirim yöntemlerinin kısaltmaları programlar arasında farklılık gösterebilir.
 
 ## cfa fonksiyonu
 
-+----------------+------------------------+-----------------------+
-| Argüman        | Açıklama               | Değerleri             |
-+================+========================+=======================+
-| Model          | YEM modeli tanımlanır. |                       |
-+----------------+------------------------+-----------------------+
-| Data           | Gözlenen değişkenlerin |                       |
-|                | yer aldığı veri        |                       |
-|                | setidir.               |                       |
-+----------------+------------------------+-----------------------+
-|sampling.weights| Örneklem               | Veri çerçevesinde     |
-|                | ağırlıklandırması      | ağırlıklandırma       |
-|                | yapılacağı durumlarda  | bilgisinin yer aldığı |
-|                | tanımlanır.            | değişkenin adıdır.    |
-+----------------+------------------------+-----------------------+
-| group          | Çoklu grup analizlerde | Veri matrisinde grubu |
-|                | grup değişkeni         | tanımlayan değişkenin |
-|                | tanımlanır.            | adıdır.               |
-+----------------+------------------------+-----------------------+
-| cluster        | Çok düzeyli            | Veri matrisinde       |
-|                | analizlerde düzey      | düzeyi tanımlayan     |
-|                | değişkeni tanımlanır.  | değişkenin adıdır.    |
-+----------------+------------------------+-----------------------+
-| constraints    | Modele eklenecek diğer |                       |
-|                | sınırlandırmalar       |                       |
-|                | tanımlanır.            |                       |
-+----------------+------------------------+-----------------------+
-| estimator      | Kestirim yöntemidir.   | “ML”, “GLS”, “WLS”,   |
-|                |                        | ”ULS”, ”DWLS” gibi    |
-+----------------+------------------------+-----------------------+
+| Argüman          | Açıklama                                                     | Değerleri                                                                  |
+|------------------|--------------------------------------------------------------|----------------------------------------------------------------------------|
+| Model            | YEM modeli tanımlanır.                                       |                                                                            |
+| Data             | Gözlenen değişkenlerin yer aldığı veri setidir.              |                                                                            |
+| sampling.weights | Örneklem ağırlıklandırması yapılacağı durumlarda tanımlanır. | Veri çerçevesinde ağırlıklandırma bilgisinin yer aldığı değişkenin adıdır. |
+| group            | Çoklu grup analizlerde grup değişkeni tanımlanır.            | Veri matrisinde grubu tanımlayan değişkenin adıdır.                        |
+| cluster          | Çok düzeyli analizlerde düzey değişkeni tanımlanır.          | Veri matrisinde düzeyi tanımlayan değişkenin adıdır.                       |
+| constraints      | Modele eklenecek diğer sınırlandırmalar tanımlanır.          |                                                                            |
+| estimator        | Kestirim yöntemidir.                                         | “ML”, “GLS”, “WLS”, ”ULS”, ”DWLS” gibi                                     |
 
 -   **cfa()** fonksiyonunun kullanımı aşağıdaki gibidir:
 
@@ -712,26 +515,17 @@ cfa(model = NULL,
     constraints = "", WLS.V = NULL, NACOV = NULL, ...)
 ```
 
--   **cfa()** fonksiyonu hem ham veriyle hem de gözlenen değişkenlere
-    ilişkin varyans-kovaryans matrisiyle çalışabilir.
+-   **cfa()** fonksiyonu hem ham veriyle hem de gözlenen değişkenlere ilişkin varyans-kovaryans matrisiyle çalışabilir.
 
--   Girdi olarak **varyans-kovaryans matrisi kullanıldığında,** matriste
-    madde adlarına karşılık gelecek şekilde satır ve sütun adları
-    mutlaka bulunmalıdır. Ayrıca **örneklem ortalamasının (sample.mean)
-    ve gözlem sayısının tanımlanması** (sample.nobs) gerekir.
+-   Girdi olarak **varyans-kovaryans matrisi kullanıldığında,** matriste madde adlarına karşılık gelecek şekilde satır ve sütun adları mutlaka bulunmalıdır. Ayrıca **örneklem ortalamasının (sample.mean) ve gözlem sayısının tanımlanması** (sample.nobs) gerekir.
 
--   Girdi olarak doğrudan **verinin kendisi girildiğindeyse**, örneklem
-    ortalaması ve gözlem sayısının tanımlanmasına gerek yoktur.
+-   Girdi olarak doğrudan **verinin kendisi girildiğindeyse**, örneklem ortalaması ve gözlem sayısının tanımlanmasına gerek yoktur.
 
--   Tüm YEM fonksiyonlarında olduğu gibi **cfa()** fonksiyonu için de
-    **ilk olarak DFA modelinin tanımlanması gerekir.**
+-   Tüm YEM fonksiyonlarında olduğu gibi **cfa()** fonksiyonu için de **ilk olarak DFA modelinin tanımlanması gerekir.**
 
--   DFA modeli tırnak işareti içinde tanımlanır ve faktörler maddeler
-    ile **'=\~'** işaretiyle ilişkilendirilir.
+-   DFA modeli tırnak işareti içinde tanımlanır ve faktörler maddeler ile **'=\~'** işaretiyle ilişkilendirilir.
 
--   İşaretin sol tarafında faktörler sağ tarafında maddeler yer alır.
-    Her bir faktörde yer alan maddelerin adları sırasıyla **+**
-    operatörüyle eklenir.
+-   İşaretin sol tarafında faktörler sağ tarafında maddeler yer alır. Her bir faktörde yer alan maddelerin adları sırasıyla **+** operatörüyle eklenir.
 
 
 ```r
@@ -740,8 +534,7 @@ cfa(model = NULL,
 
 ## Uygulama
 
--   Yaşam doyumu verileri, yaşam doyumunun farklı yönlerine/alanlarına
-    ilişkin 10 maddeden oluşmaktadır. Ne kadar mennunsun:
+-   Yaşam doyumu verileri, yaşam doyumunun farklı yönlerine/alanlarına ilişkin 10 maddeden oluşmaktadır. Ne kadar mennunsun:
 
 |     |                                     |
 |-----|-------------------------------------|
@@ -756,8 +549,7 @@ cfa(model = NULL,
 | m9  | senin aile hayatın                  |
 | m10 | sosyo-ekonomik durumunuz            |
 
-1 = “hiç memnun değilim” ile 7 = “çok memnunum” arasında 7 puanlık bir
-ölçekle alınmış sonuçlar.
+1 = “hiç memnun değilim” ile 7 = “çok memnunum” arasında 7 puanlık bir ölçekle alınmış sonuçlar.
 
 -   Verinin okunması
 
@@ -902,15 +694,11 @@ summary(model_1_fit, fit.measures = TRUE, standardized = TRUE)
 ##     aile              0.611    0.109    5.593    0.000    1.000    1.000
 ```
 
--   Analizin çıktıları incelendiğinde, ilk olarak iterasyon sayısı,
-    modelde kestirilen parametre sayısı, gözlem sayısı ve kullanılan
-    kestirim yöntemi bilgileri yer almaktadır.
+-   Analizin çıktıları incelendiğinde, ilk olarak iterasyon sayısı, modelde kestirilen parametre sayısı, gözlem sayısı ve kullanılan kestirim yöntemi bilgileri yer almaktadır.
 
--   Sonrasında ki-kare istatistikleri ve model uyum indeksleri
-    raporlanmıştır.
+-   Sonrasında ki-kare istatistikleri ve model uyum indeksleri raporlanmıştır.
 
--   Bu çıktıları daha düzgün elde etmek içi **semoutput** paketi
-    kullanılabilir.
+-   Bu çıktıları daha düzgün elde etmek içi **semoutput** paketi kullanılabilir.
 
 
 ```r
@@ -920,23 +708,23 @@ sem_sig(model_1_fit)
 ```
 
 ```{=html}
-<div id="pkwozbyosv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pkwozbyosv table {
+<div id="hmuhwbkuhe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hmuhwbkuhe table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pkwozbyosv thead, #pkwozbyosv tbody, #pkwozbyosv tfoot, #pkwozbyosv tr, #pkwozbyosv td, #pkwozbyosv th {
+#hmuhwbkuhe thead, #hmuhwbkuhe tbody, #hmuhwbkuhe tfoot, #hmuhwbkuhe tr, #hmuhwbkuhe td, #hmuhwbkuhe th {
   border-style: none;
 }
 
-#pkwozbyosv p {
+#hmuhwbkuhe p {
   margin: 0;
   padding: 0;
 }
 
-#pkwozbyosv .gt_table {
+#hmuhwbkuhe .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -962,12 +750,12 @@ sem_sig(model_1_fit)
   border-left-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_caption {
+#hmuhwbkuhe .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pkwozbyosv .gt_title {
+#hmuhwbkuhe .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -979,7 +767,7 @@ sem_sig(model_1_fit)
   border-bottom-width: 0;
 }
 
-#pkwozbyosv .gt_subtitle {
+#hmuhwbkuhe .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -991,7 +779,7 @@ sem_sig(model_1_fit)
   border-top-width: 0;
 }
 
-#pkwozbyosv .gt_heading {
+#hmuhwbkuhe .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1003,13 +791,13 @@ sem_sig(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_bottom_border {
+#hmuhwbkuhe .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_col_headings {
+#hmuhwbkuhe .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1024,7 +812,7 @@ sem_sig(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_col_heading {
+#hmuhwbkuhe .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1044,7 +832,7 @@ sem_sig(model_1_fit)
   overflow-x: hidden;
 }
 
-#pkwozbyosv .gt_column_spanner_outer {
+#hmuhwbkuhe .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1056,15 +844,15 @@ sem_sig(model_1_fit)
   padding-right: 4px;
 }
 
-#pkwozbyosv .gt_column_spanner_outer:first-child {
+#hmuhwbkuhe .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pkwozbyosv .gt_column_spanner_outer:last-child {
+#hmuhwbkuhe .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pkwozbyosv .gt_column_spanner {
+#hmuhwbkuhe .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1076,11 +864,11 @@ sem_sig(model_1_fit)
   width: 100%;
 }
 
-#pkwozbyosv .gt_spanner_row {
+#hmuhwbkuhe .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pkwozbyosv .gt_group_heading {
+#hmuhwbkuhe .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1106,7 +894,7 @@ sem_sig(model_1_fit)
   text-align: left;
 }
 
-#pkwozbyosv .gt_empty_group_heading {
+#hmuhwbkuhe .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1121,15 +909,15 @@ sem_sig(model_1_fit)
   vertical-align: middle;
 }
 
-#pkwozbyosv .gt_from_md > :first-child {
+#hmuhwbkuhe .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pkwozbyosv .gt_from_md > :last-child {
+#hmuhwbkuhe .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pkwozbyosv .gt_row {
+#hmuhwbkuhe .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1148,7 +936,7 @@ sem_sig(model_1_fit)
   overflow-x: hidden;
 }
 
-#pkwozbyosv .gt_stub {
+#hmuhwbkuhe .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1161,7 +949,7 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#pkwozbyosv .gt_stub_row_group {
+#hmuhwbkuhe .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1175,15 +963,15 @@ sem_sig(model_1_fit)
   vertical-align: top;
 }
 
-#pkwozbyosv .gt_row_group_first td {
+#hmuhwbkuhe .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pkwozbyosv .gt_row_group_first th {
+#hmuhwbkuhe .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pkwozbyosv .gt_summary_row {
+#hmuhwbkuhe .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1193,16 +981,16 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#pkwozbyosv .gt_first_summary_row {
+#hmuhwbkuhe .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_first_summary_row.thick {
+#hmuhwbkuhe .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pkwozbyosv .gt_last_summary_row {
+#hmuhwbkuhe .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1212,7 +1000,7 @@ sem_sig(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_grand_summary_row {
+#hmuhwbkuhe .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1222,7 +1010,7 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#pkwozbyosv .gt_first_grand_summary_row {
+#hmuhwbkuhe .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1232,7 +1020,7 @@ sem_sig(model_1_fit)
   border-top-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_last_grand_summary_row_top {
+#hmuhwbkuhe .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1242,11 +1030,11 @@ sem_sig(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_striped {
+#hmuhwbkuhe .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pkwozbyosv .gt_table_body {
+#hmuhwbkuhe .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1255,7 +1043,7 @@ sem_sig(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_footnotes {
+#hmuhwbkuhe .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1269,7 +1057,7 @@ sem_sig(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_footnote {
+#hmuhwbkuhe .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1278,7 +1066,7 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#pkwozbyosv .gt_sourcenotes {
+#hmuhwbkuhe .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1292,7 +1080,7 @@ sem_sig(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#pkwozbyosv .gt_sourcenote {
+#hmuhwbkuhe .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1300,63 +1088,63 @@ sem_sig(model_1_fit)
   padding-right: 15px;
 }
 
-#pkwozbyosv .gt_left {
+#hmuhwbkuhe .gt_left {
   text-align: left;
 }
 
-#pkwozbyosv .gt_center {
+#hmuhwbkuhe .gt_center {
   text-align: center;
 }
 
-#pkwozbyosv .gt_right {
+#hmuhwbkuhe .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pkwozbyosv .gt_font_normal {
+#hmuhwbkuhe .gt_font_normal {
   font-weight: normal;
 }
 
-#pkwozbyosv .gt_font_bold {
+#hmuhwbkuhe .gt_font_bold {
   font-weight: bold;
 }
 
-#pkwozbyosv .gt_font_italic {
+#hmuhwbkuhe .gt_font_italic {
   font-style: italic;
 }
 
-#pkwozbyosv .gt_super {
+#hmuhwbkuhe .gt_super {
   font-size: 65%;
 }
 
-#pkwozbyosv .gt_footnote_marks {
+#hmuhwbkuhe .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pkwozbyosv .gt_asterisk {
+#hmuhwbkuhe .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pkwozbyosv .gt_indent_1 {
+#hmuhwbkuhe .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pkwozbyosv .gt_indent_2 {
+#hmuhwbkuhe .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pkwozbyosv .gt_indent_3 {
+#hmuhwbkuhe .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pkwozbyosv .gt_indent_4 {
+#hmuhwbkuhe .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pkwozbyosv .gt_indent_5 {
+#hmuhwbkuhe .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1385,8 +1173,7 @@ sem_sig(model_1_fit)
 </div>
 ```
 
--   Model uyum istatistikleri semoutputtan aşağıdaki şekilde elde
-    edilebilir.
+-   Model uyum istatistikleri semoutputtan aşağıdaki şekilde elde edilebilir.
 
 
 ```r
@@ -1394,8 +1181,7 @@ library(semoutput)
  # sem_fitmeasures(model_1_fit)
 ```
 
--   Model uyum istatistikleri fitmeasures fonkisyonu ile aşağıdaki
-    şekilde elde edilebilir.
+-   Model uyum istatistikleri fitmeasures fonkisyonu ile aşağıdaki şekilde elde edilebilir.
 
 
 ```r
@@ -1447,15 +1233,11 @@ recommend(fits.esnek)$cutoffs
 
 -   Model uyum indekslerini takiben **faktör yükleri**, **standart hataları,z değerleri ve p değerleri** gelmektedir.
 
--   **p** değerleri maddelere ilişkin **faktör yüklerinin sıfırdan
-    anlamlı düzeyde farklı olup olmadığına** ilişkin bilgi verir.
+-   **p** değerleri maddelere ilişkin **faktör yüklerinin sıfırdan anlamlı düzeyde farklı olup olmadığına** ilişkin bilgi verir.
 
--   Faktör yükleri incelendiğinde, **her bir faktörün ilk maddesinin  referans madde olarak tanımlandığı** ve **faktör yüklerinin bire eşitlendiği** görülmektedir.
+-   Faktör yükleri incelendiğinde, **her bir faktörün ilk maddesinin referans madde olarak tanımlandığı** ve **faktör yüklerinin bire eşitlendiği** görülmektedir.
 
--   Bu maddelere ilişkin standart hatalar, z ve p değerleri
-    hesaplanmamıştır. Faktör yükler tablosunun ardından ise faktörler
-    arası kovaryans, madde ve faktör varyans kestirimleri, standart
-    hataları, z ve p değerleri yer almaktadır.
+-   Bu maddelere ilişkin standart hatalar, z ve p değerleri hesaplanmamıştır. Faktör yükler tablosunun ardından ise faktörler arası kovaryans, madde ve faktör varyans kestirimleri, standart hataları, z ve p değerleri yer almaktadır.
 
 
 ```r
@@ -1463,23 +1245,23 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
 ```
 
 ```{=html}
-<div id="pbgglpmfht" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pbgglpmfht table {
+<div id="mlrowsnzzt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mlrowsnzzt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pbgglpmfht thead, #pbgglpmfht tbody, #pbgglpmfht tfoot, #pbgglpmfht tr, #pbgglpmfht td, #pbgglpmfht th {
+#mlrowsnzzt thead, #mlrowsnzzt tbody, #mlrowsnzzt tfoot, #mlrowsnzzt tr, #mlrowsnzzt td, #mlrowsnzzt th {
   border-style: none;
 }
 
-#pbgglpmfht p {
+#mlrowsnzzt p {
   margin: 0;
   padding: 0;
 }
 
-#pbgglpmfht .gt_table {
+#mlrowsnzzt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1505,12 +1287,12 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-left-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_caption {
+#mlrowsnzzt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pbgglpmfht .gt_title {
+#mlrowsnzzt .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1522,7 +1304,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-bottom-width: 0;
 }
 
-#pbgglpmfht .gt_subtitle {
+#mlrowsnzzt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1534,7 +1316,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-top-width: 0;
 }
 
-#pbgglpmfht .gt_heading {
+#mlrowsnzzt .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1546,13 +1328,13 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-right-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_bottom_border {
+#mlrowsnzzt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_col_headings {
+#mlrowsnzzt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1567,7 +1349,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-right-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_col_heading {
+#mlrowsnzzt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1587,7 +1369,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   overflow-x: hidden;
 }
 
-#pbgglpmfht .gt_column_spanner_outer {
+#mlrowsnzzt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1599,15 +1381,15 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 4px;
 }
 
-#pbgglpmfht .gt_column_spanner_outer:first-child {
+#mlrowsnzzt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pbgglpmfht .gt_column_spanner_outer:last-child {
+#mlrowsnzzt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pbgglpmfht .gt_column_spanner {
+#mlrowsnzzt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1619,11 +1401,11 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   width: 100%;
 }
 
-#pbgglpmfht .gt_spanner_row {
+#mlrowsnzzt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pbgglpmfht .gt_group_heading {
+#mlrowsnzzt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1649,7 +1431,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   text-align: left;
 }
 
-#pbgglpmfht .gt_empty_group_heading {
+#mlrowsnzzt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1664,15 +1446,15 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   vertical-align: middle;
 }
 
-#pbgglpmfht .gt_from_md > :first-child {
+#mlrowsnzzt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pbgglpmfht .gt_from_md > :last-child {
+#mlrowsnzzt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pbgglpmfht .gt_row {
+#mlrowsnzzt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1691,7 +1473,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   overflow-x: hidden;
 }
 
-#pbgglpmfht .gt_stub {
+#mlrowsnzzt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1704,7 +1486,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#pbgglpmfht .gt_stub_row_group {
+#mlrowsnzzt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1718,15 +1500,15 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   vertical-align: top;
 }
 
-#pbgglpmfht .gt_row_group_first td {
+#mlrowsnzzt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pbgglpmfht .gt_row_group_first th {
+#mlrowsnzzt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pbgglpmfht .gt_summary_row {
+#mlrowsnzzt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1736,16 +1518,16 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#pbgglpmfht .gt_first_summary_row {
+#mlrowsnzzt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_first_summary_row.thick {
+#mlrowsnzzt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pbgglpmfht .gt_last_summary_row {
+#mlrowsnzzt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1755,7 +1537,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-bottom-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_grand_summary_row {
+#mlrowsnzzt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1765,7 +1547,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#pbgglpmfht .gt_first_grand_summary_row {
+#mlrowsnzzt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1775,7 +1557,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-top-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_last_grand_summary_row_top {
+#mlrowsnzzt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1785,11 +1567,11 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-bottom-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_striped {
+#mlrowsnzzt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pbgglpmfht .gt_table_body {
+#mlrowsnzzt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1798,7 +1580,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-bottom-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_footnotes {
+#mlrowsnzzt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1812,7 +1594,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-right-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_footnote {
+#mlrowsnzzt .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1821,7 +1603,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#pbgglpmfht .gt_sourcenotes {
+#mlrowsnzzt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1835,7 +1617,7 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   border-right-color: #D3D3D3;
 }
 
-#pbgglpmfht .gt_sourcenote {
+#mlrowsnzzt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1843,63 +1625,63 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
   padding-right: 15px;
 }
 
-#pbgglpmfht .gt_left {
+#mlrowsnzzt .gt_left {
   text-align: left;
 }
 
-#pbgglpmfht .gt_center {
+#mlrowsnzzt .gt_center {
   text-align: center;
 }
 
-#pbgglpmfht .gt_right {
+#mlrowsnzzt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pbgglpmfht .gt_font_normal {
+#mlrowsnzzt .gt_font_normal {
   font-weight: normal;
 }
 
-#pbgglpmfht .gt_font_bold {
+#mlrowsnzzt .gt_font_bold {
   font-weight: bold;
 }
 
-#pbgglpmfht .gt_font_italic {
+#mlrowsnzzt .gt_font_italic {
   font-style: italic;
 }
 
-#pbgglpmfht .gt_super {
+#mlrowsnzzt .gt_super {
   font-size: 65%;
 }
 
-#pbgglpmfht .gt_footnote_marks {
+#mlrowsnzzt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pbgglpmfht .gt_asterisk {
+#mlrowsnzzt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pbgglpmfht .gt_indent_1 {
+#mlrowsnzzt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pbgglpmfht .gt_indent_2 {
+#mlrowsnzzt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pbgglpmfht .gt_indent_3 {
+#mlrowsnzzt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pbgglpmfht .gt_indent_4 {
+#mlrowsnzzt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pbgglpmfht .gt_indent_5 {
+#mlrowsnzzt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2102,12 +1884,9 @@ sem_factorloadings(model_1_fit,standardized = FALSE)
 
 -   DFA modelinin testi
 
--   okul2 göstergesinin yükü **1.431** olarak kestirilmiştir. Bu değer faktör puanındaki birbirimlik değişikliğin okul2 puanında
-    1.431 birimlik değişikliğe yol açacağı şeklinde yorumlanır. Ancak bu değerler kendi başlarına **çok anlamlı olmadığından     standartlaştırılmamış yüklerin yorumlanmasında** dikkatli olmak
-    gerekir.
+-   okul2 göstergesinin yükü **1.431** olarak kestirilmiştir. Bu değer faktör puanındaki birbirimlik değişikliğin okul2 puanında 1.431 birimlik değişikliğe yol açacağı şeklinde yorumlanır. Ancak bu değerler kendi başlarına **çok anlamlı olmadığından standartlaştırılmamış yüklerin yorumlanmasında** dikkatli olmak gerekir.
 
--   Ölçülen göstergelerde **faktörün yordayıcı gücünü karşılaştırmak için daha anlamlı bir yaklaşım standartlaştırılmış yüklerin**
-    yorumlanmasıdır.
+-   Ölçülen göstergelerde **faktörün yordayıcı gücünü karşılaştırmak için daha anlamlı bir yaklaşım standartlaştırılmış yüklerin** yorumlanmasıdır.
 
 ## DFA modelinin testi
 
@@ -2117,23 +1896,23 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
 ```
 
 ```{=html}
-<div id="cgznxwlgnl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cgznxwlgnl table {
+<div id="ojjvwyhuch" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ojjvwyhuch table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cgznxwlgnl thead, #cgznxwlgnl tbody, #cgznxwlgnl tfoot, #cgznxwlgnl tr, #cgznxwlgnl td, #cgznxwlgnl th {
+#ojjvwyhuch thead, #ojjvwyhuch tbody, #ojjvwyhuch tfoot, #ojjvwyhuch tr, #ojjvwyhuch td, #ojjvwyhuch th {
   border-style: none;
 }
 
-#cgznxwlgnl p {
+#ojjvwyhuch p {
   margin: 0;
   padding: 0;
 }
 
-#cgznxwlgnl .gt_table {
+#ojjvwyhuch .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2159,12 +1938,12 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-left-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_caption {
+#ojjvwyhuch .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cgznxwlgnl .gt_title {
+#ojjvwyhuch .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2176,7 +1955,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-bottom-width: 0;
 }
 
-#cgznxwlgnl .gt_subtitle {
+#ojjvwyhuch .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2188,7 +1967,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-top-width: 0;
 }
 
-#cgznxwlgnl .gt_heading {
+#ojjvwyhuch .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2200,13 +1979,13 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_bottom_border {
+#ojjvwyhuch .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_col_headings {
+#ojjvwyhuch .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2221,7 +2000,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_col_heading {
+#ojjvwyhuch .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2241,7 +2020,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   overflow-x: hidden;
 }
 
-#cgznxwlgnl .gt_column_spanner_outer {
+#ojjvwyhuch .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2253,15 +2032,15 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 4px;
 }
 
-#cgznxwlgnl .gt_column_spanner_outer:first-child {
+#ojjvwyhuch .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cgznxwlgnl .gt_column_spanner_outer:last-child {
+#ojjvwyhuch .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cgznxwlgnl .gt_column_spanner {
+#ojjvwyhuch .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2273,11 +2052,11 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   width: 100%;
 }
 
-#cgznxwlgnl .gt_spanner_row {
+#ojjvwyhuch .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cgznxwlgnl .gt_group_heading {
+#ojjvwyhuch .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2303,7 +2082,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   text-align: left;
 }
 
-#cgznxwlgnl .gt_empty_group_heading {
+#ojjvwyhuch .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2318,15 +2097,15 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   vertical-align: middle;
 }
 
-#cgznxwlgnl .gt_from_md > :first-child {
+#ojjvwyhuch .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cgznxwlgnl .gt_from_md > :last-child {
+#ojjvwyhuch .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cgznxwlgnl .gt_row {
+#ojjvwyhuch .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2345,7 +2124,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   overflow-x: hidden;
 }
 
-#cgznxwlgnl .gt_stub {
+#ojjvwyhuch .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2358,7 +2137,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#cgznxwlgnl .gt_stub_row_group {
+#ojjvwyhuch .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2372,15 +2151,15 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   vertical-align: top;
 }
 
-#cgznxwlgnl .gt_row_group_first td {
+#ojjvwyhuch .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cgznxwlgnl .gt_row_group_first th {
+#ojjvwyhuch .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cgznxwlgnl .gt_summary_row {
+#ojjvwyhuch .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2390,16 +2169,16 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#cgznxwlgnl .gt_first_summary_row {
+#ojjvwyhuch .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_first_summary_row.thick {
+#ojjvwyhuch .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cgznxwlgnl .gt_last_summary_row {
+#ojjvwyhuch .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2409,7 +2188,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_grand_summary_row {
+#ojjvwyhuch .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2419,7 +2198,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#cgznxwlgnl .gt_first_grand_summary_row {
+#ojjvwyhuch .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2429,7 +2208,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-top-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_last_grand_summary_row_top {
+#ojjvwyhuch .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2439,11 +2218,11 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_striped {
+#ojjvwyhuch .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cgznxwlgnl .gt_table_body {
+#ojjvwyhuch .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2452,7 +2231,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_footnotes {
+#ojjvwyhuch .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2466,7 +2245,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_footnote {
+#ojjvwyhuch .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -2475,7 +2254,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#cgznxwlgnl .gt_sourcenotes {
+#ojjvwyhuch .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2489,7 +2268,7 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#cgznxwlgnl .gt_sourcenote {
+#ojjvwyhuch .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2497,63 +2276,63 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
   padding-right: 15px;
 }
 
-#cgznxwlgnl .gt_left {
+#ojjvwyhuch .gt_left {
   text-align: left;
 }
 
-#cgznxwlgnl .gt_center {
+#ojjvwyhuch .gt_center {
   text-align: center;
 }
 
-#cgznxwlgnl .gt_right {
+#ojjvwyhuch .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cgznxwlgnl .gt_font_normal {
+#ojjvwyhuch .gt_font_normal {
   font-weight: normal;
 }
 
-#cgznxwlgnl .gt_font_bold {
+#ojjvwyhuch .gt_font_bold {
   font-weight: bold;
 }
 
-#cgznxwlgnl .gt_font_italic {
+#ojjvwyhuch .gt_font_italic {
   font-style: italic;
 }
 
-#cgznxwlgnl .gt_super {
+#ojjvwyhuch .gt_super {
   font-size: 65%;
 }
 
-#cgznxwlgnl .gt_footnote_marks {
+#ojjvwyhuch .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cgznxwlgnl .gt_asterisk {
+#ojjvwyhuch .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cgznxwlgnl .gt_indent_1 {
+#ojjvwyhuch .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cgznxwlgnl .gt_indent_2 {
+#ojjvwyhuch .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cgznxwlgnl .gt_indent_3 {
+#ojjvwyhuch .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cgznxwlgnl .gt_indent_4 {
+#ojjvwyhuch .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cgznxwlgnl .gt_indent_5 {
+#ojjvwyhuch .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2673,17 +2452,11 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
 
 ### Kestitimler
 
--   parametre kestirimleri ise **coef()**, **parameterEstimates()**
-    fonksiyonlarıyla elde edilebilir.
+-   parametre kestirimleri ise **coef()**, **parameterEstimates()** fonksiyonlarıyla elde edilebilir.
 
--   **coef()** fonksiyonu faktör yükleri, madde varyansları, faktör
-    varyansları ve kovaryanslarının sadece parametre kestirimlerini
-    verirken,
+-   **coef()** fonksiyonu faktör yükleri, madde varyansları, faktör varyansları ve kovaryanslarının sadece parametre kestirimlerini verirken,
 
--   **parameterEstimates()** fonksiyonu parametre kestirimlerinin yanı
-    sıra kestirimlerin standart hatalarını, güven aralıklarını,
-    istenmesi durumunda standartlaştırılmış değerlerini ve $R^2$
-    değerlerini verir.
+-   **parameterEstimates()** fonksiyonu parametre kestirimlerinin yanı sıra kestirimlerin standart hatalarını, güven aralıklarını, istenmesi durumunda standartlaştırılmış değerlerini ve $R^2$ değerlerini verir.
 
 -   Açıklanan varyans
 
@@ -2705,30 +2478,28 @@ sem_factorloadings(model_1_fit,standardized = TRUE)
 ```
 
 
-
-
 ```r
 sem_factorvar(model_1_fit)
 ```
 
 ```{=html}
-<div id="vndwopugls" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vndwopugls table {
+<div id="erlqwjezwj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#erlqwjezwj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vndwopugls thead, #vndwopugls tbody, #vndwopugls tfoot, #vndwopugls tr, #vndwopugls td, #vndwopugls th {
+#erlqwjezwj thead, #erlqwjezwj tbody, #erlqwjezwj tfoot, #erlqwjezwj tr, #erlqwjezwj td, #erlqwjezwj th {
   border-style: none;
 }
 
-#vndwopugls p {
+#erlqwjezwj p {
   margin: 0;
   padding: 0;
 }
 
-#vndwopugls .gt_table {
+#erlqwjezwj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2754,12 +2525,12 @@ sem_factorvar(model_1_fit)
   border-left-color: #D3D3D3;
 }
 
-#vndwopugls .gt_caption {
+#erlqwjezwj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vndwopugls .gt_title {
+#erlqwjezwj .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2771,7 +2542,7 @@ sem_factorvar(model_1_fit)
   border-bottom-width: 0;
 }
 
-#vndwopugls .gt_subtitle {
+#erlqwjezwj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2783,7 +2554,7 @@ sem_factorvar(model_1_fit)
   border-top-width: 0;
 }
 
-#vndwopugls .gt_heading {
+#erlqwjezwj .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2795,13 +2566,13 @@ sem_factorvar(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#vndwopugls .gt_bottom_border {
+#erlqwjezwj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#vndwopugls .gt_col_headings {
+#erlqwjezwj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2816,7 +2587,7 @@ sem_factorvar(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#vndwopugls .gt_col_heading {
+#erlqwjezwj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2836,7 +2607,7 @@ sem_factorvar(model_1_fit)
   overflow-x: hidden;
 }
 
-#vndwopugls .gt_column_spanner_outer {
+#erlqwjezwj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2848,15 +2619,15 @@ sem_factorvar(model_1_fit)
   padding-right: 4px;
 }
 
-#vndwopugls .gt_column_spanner_outer:first-child {
+#erlqwjezwj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vndwopugls .gt_column_spanner_outer:last-child {
+#erlqwjezwj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vndwopugls .gt_column_spanner {
+#erlqwjezwj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2868,11 +2639,11 @@ sem_factorvar(model_1_fit)
   width: 100%;
 }
 
-#vndwopugls .gt_spanner_row {
+#erlqwjezwj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vndwopugls .gt_group_heading {
+#erlqwjezwj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2898,7 +2669,7 @@ sem_factorvar(model_1_fit)
   text-align: left;
 }
 
-#vndwopugls .gt_empty_group_heading {
+#erlqwjezwj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2913,15 +2684,15 @@ sem_factorvar(model_1_fit)
   vertical-align: middle;
 }
 
-#vndwopugls .gt_from_md > :first-child {
+#erlqwjezwj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vndwopugls .gt_from_md > :last-child {
+#erlqwjezwj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vndwopugls .gt_row {
+#erlqwjezwj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2940,7 +2711,7 @@ sem_factorvar(model_1_fit)
   overflow-x: hidden;
 }
 
-#vndwopugls .gt_stub {
+#erlqwjezwj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2953,7 +2724,7 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#vndwopugls .gt_stub_row_group {
+#erlqwjezwj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2967,15 +2738,15 @@ sem_factorvar(model_1_fit)
   vertical-align: top;
 }
 
-#vndwopugls .gt_row_group_first td {
+#erlqwjezwj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vndwopugls .gt_row_group_first th {
+#erlqwjezwj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vndwopugls .gt_summary_row {
+#erlqwjezwj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2985,16 +2756,16 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#vndwopugls .gt_first_summary_row {
+#erlqwjezwj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vndwopugls .gt_first_summary_row.thick {
+#erlqwjezwj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vndwopugls .gt_last_summary_row {
+#erlqwjezwj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3004,7 +2775,7 @@ sem_factorvar(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#vndwopugls .gt_grand_summary_row {
+#erlqwjezwj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3014,7 +2785,7 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#vndwopugls .gt_first_grand_summary_row {
+#erlqwjezwj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3024,7 +2795,7 @@ sem_factorvar(model_1_fit)
   border-top-color: #D3D3D3;
 }
 
-#vndwopugls .gt_last_grand_summary_row_top {
+#erlqwjezwj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3034,11 +2805,11 @@ sem_factorvar(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#vndwopugls .gt_striped {
+#erlqwjezwj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vndwopugls .gt_table_body {
+#erlqwjezwj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3047,7 +2818,7 @@ sem_factorvar(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#vndwopugls .gt_footnotes {
+#erlqwjezwj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3061,7 +2832,7 @@ sem_factorvar(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#vndwopugls .gt_footnote {
+#erlqwjezwj .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -3070,7 +2841,7 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#vndwopugls .gt_sourcenotes {
+#erlqwjezwj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3084,7 +2855,7 @@ sem_factorvar(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#vndwopugls .gt_sourcenote {
+#erlqwjezwj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3092,63 +2863,63 @@ sem_factorvar(model_1_fit)
   padding-right: 15px;
 }
 
-#vndwopugls .gt_left {
+#erlqwjezwj .gt_left {
   text-align: left;
 }
 
-#vndwopugls .gt_center {
+#erlqwjezwj .gt_center {
   text-align: center;
 }
 
-#vndwopugls .gt_right {
+#erlqwjezwj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vndwopugls .gt_font_normal {
+#erlqwjezwj .gt_font_normal {
   font-weight: normal;
 }
 
-#vndwopugls .gt_font_bold {
+#erlqwjezwj .gt_font_bold {
   font-weight: bold;
 }
 
-#vndwopugls .gt_font_italic {
+#erlqwjezwj .gt_font_italic {
   font-style: italic;
 }
 
-#vndwopugls .gt_super {
+#erlqwjezwj .gt_super {
   font-size: 65%;
 }
 
-#vndwopugls .gt_footnote_marks {
+#erlqwjezwj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vndwopugls .gt_asterisk {
+#erlqwjezwj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vndwopugls .gt_indent_1 {
+#erlqwjezwj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vndwopugls .gt_indent_2 {
+#erlqwjezwj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vndwopugls .gt_indent_3 {
+#erlqwjezwj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vndwopugls .gt_indent_4 {
+#erlqwjezwj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vndwopugls .gt_indent_5 {
+#erlqwjezwj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3200,12 +2971,9 @@ Genel olarak $R^2$ değeri aşağıdaki formülle elde edilir:
 
 $R^2_{X_i}=\frac{\lambda^2_{i}\sigma^2_{\xi}}{\sigma^2_{X_i}}$
 
--   Örneğin okul2 değişkenin açıkladığı varyans 0.407 olarak
-    kestirilmiştir.
+-   Örneğin okul2 değişkenin açıkladığı varyans 0.407 olarak kestirilmiştir.
 
--   Bu kestirim okul2 değişkenin **faktör yükünün karesinin**, okul
-    **gizil değişkeninin açıkladığı varyans** ile çarpımının, **okul2
-    değişkeninin varyansına bölümü** ile hesaplanır.
+-   Bu kestirim okul2 değişkenin **faktör yükünün karesinin**, okul **gizil değişkeninin açıkladığı varyans** ile çarpımının, **okul2 değişkeninin varyansına bölümü** ile hesaplanır.
 
 
 ```r
@@ -3216,22 +2984,19 @@ $R^2_{X_i}=\frac{\lambda^2_{i}\sigma^2_{\xi}}{\sigma^2_{X_i}}$
 ## [1] 0.4046344
 ```
 
--   Bu değer okul2’deki varyansın yaklaşık **%41**inin faktör tarafından
-    açıklandığı şeklinde yorumlanır.
+-   Bu değer okul2’deki varyansın yaklaşık **%41**inin faktör tarafından açıklandığı şeklinde yorumlanır.
 
--   $R^2$ değerinin kare kökü, faktör ve ilgili gösterge arasındaki
-    korelasyon katsayısıdır.
+-   $R^2$ değerinin kare kökü, faktör ve ilgili gösterge arasındaki korelasyon katsayısıdır.
 
--   okul2 göstergesi için $R^2$ değeri **0.407**’tür. Bu değerin
-    karekökü **0.638** değerine eşit olup okul2 göstergesinin
-    standartlaştırılmış faktör yüküdür.
+-   okul2 göstergesi için $R^2$ değeri **0.407**’tür. Bu değerin karekökü **0.638** değerine eşit olup okul2 göstergesinin standartlaştırılmış faktör yüküdür.
 
--   okul3 göstergesi için $R^2$ değeri **0.735**’dur. Bu değerin
-    karekökü **0.857** değerine eşit olup okul3 göstergesinin
-    **standartlaştırılmış** faktör yüküdür.
+-   okul2 göstergesi standartlaştırılmış faktör yükü **0.638**; okul2 göstergesin standartlaştırılmış hata varyansı **1 -0.638\^2=0.593**
 
-Ayrıca maddelere ilişkin kovaryans matrisi **fitted()** fonksiyonuyla;
-atıklar **resid()** fonksiyonuyla elde edilebilir.
+-   okul3 göstergesi için $R^2$ değeri **0.735**’dur. Bu değerin karekökü **0.857** değerine eşit olup okul3 göstergesinin **standartlaştırılmış** faktör yüküdür.
+
+-   okul3 göstergesi standartlaştırılmış faktör yükü **0.857**; okul2 göstergesin standartlaştırılmış hata varyansı **1 -0.857\^2=0.265**
+
+Ayrıca maddelere ilişkin kovaryans matrisi **fitted()** fonksiyonuyla; atıklar **resid()** fonksiyonuyla elde edilebilir.
 
 
 ```r
@@ -3265,8 +3030,7 @@ resid(model_1_fit, type = "normalized")
 
 ### Artık Varyanslar ve R²
 
--   **Artık varyans** her bir ölçülen değişkenin faktör tarafından
-    **açıklanmayan varyans** miktarıdır.
+-   **Artık varyans** her bir ölçülen değişkenin faktör tarafından **açıklanmayan varyans** miktarıdır.
 
 -   Örneğin, okul2 değişkenin varyansı 1.65 olarak kestirilmiştir.
 
@@ -3279,9 +3043,8 @@ var(yasamdoyum$okul2)
 ## [1] 1.654871
 ```
 
--   okul2 değişkenin okul faktörü tarafından açıklanmayan varyans
-    miktarı 0.978 olarak kestirilmiştir.
-    
+-   okul2 değişkenin okul faktörü tarafından açıklanmayan varyans miktarı 0.978 olarak kestirilmiştir.
+
 
 ```r
 pars <- parameterEstimates(model_1_fit,standardized = TRUE)
@@ -3296,17 +3059,13 @@ pars[12,]
 
 </div>
 
--   Bu nedenle, okul2 değişkenin okul faktörü tarafından açıklanan
-    varyans miktarı $1.65 -0.978 = 0.672$
+-   Bu nedenle, okul2 değişkenin okul faktörü tarafından açıklanan varyans miktarı $1.65 -0.978 = 0.672$
 
--   $R^2$ okul faktörü tarafından açıklanan açıklanan varyans oranıdır:
-    $R^2 = 0.672/1.65 = 0.407$
+-   $R^2$ okul faktörü tarafından açıklanan açıklanan varyans oranıdır: $R^2 = 0.672/1.65 = 0.407$
 
--   okul faktörü faktörü tarafından açıklanmayan varyans oranı ise:
-    $1 - 0.407= 0.593$
+-   okul faktörü faktörü tarafından açıklanmayan varyans oranı ise: $1 - 0.407= 0.593$
 
--   okul faktörü tarafından açıklanmayan varyans oranı ise:
-    $1 - 0.407 = 0.593$
+-   okul faktörü tarafından açıklanmayan varyans oranı ise: $1 - 0.407 = 0.593$
 
 -   Artık varyans ve $R^2$ arasındaki genel ilişki:
 
@@ -3319,105 +3078,55 @@ pars[12,]
     -   $(1-R^2)$
     -   $(1-\lambda_i^2)$
 
--   Bu iki formül standartlaştırılmış artık ve $R^2$ arasındaki ilişki
-    ve standartlaştırılmış artık ve standartlaştırılmış yük arasındaki
-    ilişki hakkında bilgi verir.
+-   Bu iki formül standartlaştırılmış artık ve $R^2$ arasındaki ilişki ve standartlaştırılmış artık ve standartlaştırılmış yük arasındaki ilişki hakkında bilgi verir.
+
+## Faktör Yüklerinden Geçerlik ve Güvenirlik
+
+-   Yakınsak geçerlik için ortalama varyans (Average variance Extracted-AVE) değeri incelenebilir. Bu katsayının 0.50'den büyük olması istenir. Faktörler ile maddelerin arasındaki varyansın en az %50'si açıklanması anlamına gelir.
+
+-   Bunun yanı sırasına iç tutarlılık bakılabilir.
+
+
+```r
+semTools::reliability(model_1_fit)
+```
+
+```
+##             okul      kisi   arkadas      aile
+## alpha  0.6521208 0.6772692 0.5897284 0.7284332
+## omega  0.6831115 0.6779276 0.6256012 0.7559986
+## omega2 0.6831115 0.6779276 0.6256012 0.7559986
+## omega3 0.6871330 0.6779277 0.6256008 0.7631365
+## avevar 0.4360858 0.5130189 0.4690402 0.5211590
+```
+
+-   semTools paketinin reliability fonkisyonu AVE, alpha ve omega değerlerini vermektedir. omega1 ve omega2 model kovaryans modelini dikkate alır. Modifikasyon yapılmadığı durumda aynı çıkar. omega2 ilişkilendirilmiş hataları hesaba katar. omega3 ise hiyerarşik omega olarak bilinir ve gözlenenkovarynas matrisini kullanır.
 
 ## semPlot Paketi
 
--   **semPlot** paketi YEM analizlerine ilişkin diyagramların
-    çizilmesine olanak sağlayan fonksiyonları içerir.
+-   **semPlot** paketi YEM analizlerine ilişkin diyagramların çizilmesine olanak sağlayan fonksiyonları içerir.
 
--   Paket içinde yer alan **semPaths()** fonksiyonu **lavaan**
-    fonksiyonlarının çıktılarıyla doğrudan çalıştırılabildiğinden, YEM
-    analizlerine ilişkin diyagramların çizilmesinde oldukça
-    kullanışlıdır.
+-   Paket içinde yer alan **semPaths()** fonksiyonu **lavaan** fonksiyonlarının çıktılarıyla doğrudan çalıştırılabildiğinden, YEM analizlerine ilişkin diyagramların çizilmesinde oldukça kullanışlıdır.
 
--   **semPaths()** fonksiyonunun diyagramların özelleştirilmesine
-    ilişkin çok sayıda argümanı bulunmaktadır.
+-   **semPaths()** fonksiyonunun diyagramların özelleştirilmesine ilişkin çok sayıda argümanı bulunmaktadır.
 
 ## semPaths
 
-+----------------+------------------------+------------------------+
-| Argüman        | Açıklama               | Değerleri              |
-+================+========================+========================+
-| Object         | YEM modeli analiz      |                        |
-|                | çıktısını içeren       |                        |
-|                | nesnedir.              |                        |
-+----------------+------------------------+------------------------+
-| What           | Diyagramda hangi       | “path”, “diagram” ve   |
-|                | değerlerin             | “mod”: yalnızca        |
-|                | gösterileceği          | diyagramı “est” ve     |
-|                | tanımlanır.            | “par” kestirilen;      |
-|                |                        | “stand” ve “std”       |
-|                |                        | standartlaştırılmış    |
-|                |                        | parametreler “eq” ve   |
-|                |                        | “cons” eşitlenen       |
-|                |                        | parametreler aynı      |
-|                |                        | renkle gösterilir.     |
-+----------------+------------------------+------------------------+
-| whatLabels     | Yol çizgilerinde hangi | what argümanıyla aynı  |
-|                | değerlerin             | değerleri alır.        |
-|                | gösterileceği          |                        |
-|                | tanımlanır.            |                        |
-+----------------+------------------------+------------------------+
-
-
-+-------------------+-----------------------+-----------------------+
-| Argüman           | Açıklama              | Değerleri             |
-+===================+=======================+=======================+
-| Style             | Diyagramın biçimi     |                       |
-|                   | tanımlanır. “ram”,    |                       |
-|                   | “mx”, “OpenMx”,       |                       |
-|                   | “lisrel”              |                       |
-+-------------------+-----------------------+-----------------------+
-| layout            | Diyagramın tasarımı   | “tree”, “tree2”,      |
-|                   | tanımlanır.           | “circle”, “circle2”,  |
-|                   |                       | “spring”              |
-+-------------------+-----------------------+-----------------------+
-| title             | Çoklu grup            |                       |
-|                   | analizlerde grup      |                       |
-|                   | adlarının diyagram    |                       |
-|                   | başlığı olarak        |                       |
-|                   | tanımlanması          |                       |
-|                   | sağlanır.             |                       |
-+-------------------+-----------------------+-----------------------+
-| Reorder           | Faktör yüklerine göre | TRUE, FALSE           |
-|                   | sıralama yapılır.     |                       |
-+-------------------+-----------------------+-----------------------+
-| edge.label.cex    | Yol çizgilerinde yer  | Sayısal değer         |
-|                   | alan parametre        |                       |
-|                   | kestirim değerlerinin |                       |
-|                   | font büyüklüğüdür.    |                       |
-+-------------------+-----------------------+-----------------------+
-
-
-+-------------------+-----------------------+-----------------------+
-| Argüman           | Açıklama              | Değerleri             |
-+===================+=======================+=======================+
-| color             | Diyagramdaki          | Liste: list(man=””,   |
-|                   | şekillerin renkleri   | lat= “”, int=””) man: |
-|                   | tanımlanır.           | gözlenen, lat: gizil  |
-|                   |                       | değişken, int:        |
-|                   |                       | kesişim               |
-+-------------------+-----------------------+-----------------------+
-| rotation          | Diyagramın yönü       | 1, 2, 3, 4            |
-|                   | belirlenir.           |                       |
-+-------------------+-----------------------+-----------------------+
-| NCharNodes        | Değişken adlarının    | Sayısal değer         |
-|                   | maksimum kaç karakter |                       |
-|                   | olacağı tanımlanır.   |                       |
-+-------------------+-----------------------+-----------------------+
-| SizeMan           | Gözlenen değişkene    | Sayısal değer         |
-|                   | ilişkin dörtgen       |                       |
-|                   | şeklinin büyüklüğü    |                       |
-|                   | tanımlanır.           |                       |
-+-------------------+-----------------------+-----------------------+
-| sizeLat           | Gizil değişkene       | Sayısal değer         |
-|                   | ilişkin daire         |                       |
-|                   | şeklinin büyüklüğü    |                       |
-|                   | tanımlanır.           |                       |
-+-------------------+-----------------------+-----------------------+
+| Argüman        | Açıklama                                                                             | Değerleri                                                                                                                                                                                 |     |
+|----------------|--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|
+| Object         | YEM modeli analiz çıktısını içeren nesnedir.                                         |                                                                                                                                                                                           |     |
+| What           | Diyagramda hangi değerlerin gösterileceği tanımlanır.                                | “path”, “diagram” ve “mod”: yalnızca diyagramı “est” ve “par” kestirilen; “stand” ve “std” standartlaştırılmış parametreler “eq” ve “cons” eşitlenen parametreler aynı renkle gösterilir. |     |
+| whatLabels     | Yol çizgilerinde hangi değerlerin gösterileceği tanımlanır.                          | what argümanıyla aynı değerleri alır.                                                                                                                                                     |     |
+| Style          | Diyagramın biçimi tanımlanır.                                                        | “ram”, “mx”, “OpenMx”, “lisrel”                                                                                                                                                           |     |
+| layout         | Diyagramın tasarımı tanımlanır.                                                      | “tree”, “tree2”, . “circle”, “circle2”, \|“spring”                                                                                                                                        |     |
+| title          | Çoklu grup analizlerde grup adlarının diyagram başlığı olarak tanımlanması sağlanır. |                                                                                                                                                                                           |     |
+| Reorder        | Faktör yüklerine göre sıralama yapılır.                                              | TRUE, FALSE                                                                                                                                                                               |     |
+| edge.label.cex | Yol çizgilerinde yer alan parametre kestirim değerlerinin font büyüklüğüdür.         | Sayısal değer                                                                                                                                                                             |     |
+| color          | Diyagramdaki şekillerin renkleri tanımlanır.                                         | Liste: list(man=””, lat= “”, int=””) man: gözlenen, lat: gizil değişken, int: kesişim                                                                                                     |     |
+| rotation       | Diyagramın yönü belirlenir.                                                          | 1, 2, 3, 4                                                                                                                                                                                |     |
+| NCharNodes     | Değişken adlarının maksimum kaç karakter olacağı tanımlanır.                         | Sayısal değer                                                                                                                                                                             |     |
+| SizeMan        | Gözlenen değişkene ilişkin dörtgen şeklinin büyüklüğü tanımlanır.                    | Sayısal değer                                                                                                                                                                             |     |
+| sizeLat        | Gizil değişkene ilişkin daire şeklinin büyüklüğü tanımlanır.                         | Sayısal değer                                                                                                                                                                             |     |
 
 -   Standartlaştırılmamış Çözümler
 
@@ -3425,20 +3134,20 @@ pars[12,]
 ```r
 library(semPlot)
 semPaths(model_1_fit, what="par",
-rotation = 2 )
+style="lisrel",layout="tree",residuals = TRUE,rotation = 2 )
 ```
 
-<img src="07_DFA_files/figure-html/unnamed-chunk-36-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="07_DFA_files/figure-html/unnamed-chunk-37-1.png" width="75%" style="display: block; margin: auto;" />
 
 -   Standartlaştırılmış Çözümler
 
 
 ```r
 semPaths(model_1_fit, what="std",
-rotation = 2 )
+style="lisrel",layout="tree",residuals = TRUE,rotation = 2)
 ```
 
-<img src="07_DFA_files/figure-html/unnamed-chunk-37-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="07_DFA_files/figure-html/unnamed-chunk-38-1.png" width="75%" style="display: block; margin: auto;" />
 
 ### Faktorler arası korelasyon
 
@@ -3448,23 +3157,23 @@ sem_factorcor(model_1_fit)
 ```
 
 ```{=html}
-<div id="eumczeigfn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#eumczeigfn table {
+<div id="jetrxajklc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jetrxajklc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eumczeigfn thead, #eumczeigfn tbody, #eumczeigfn tfoot, #eumczeigfn tr, #eumczeigfn td, #eumczeigfn th {
+#jetrxajklc thead, #jetrxajklc tbody, #jetrxajklc tfoot, #jetrxajklc tr, #jetrxajklc td, #jetrxajklc th {
   border-style: none;
 }
 
-#eumczeigfn p {
+#jetrxajklc p {
   margin: 0;
   padding: 0;
 }
 
-#eumczeigfn .gt_table {
+#jetrxajklc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3490,12 +3199,12 @@ sem_factorcor(model_1_fit)
   border-left-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_caption {
+#jetrxajklc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eumczeigfn .gt_title {
+#jetrxajklc .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -3507,7 +3216,7 @@ sem_factorcor(model_1_fit)
   border-bottom-width: 0;
 }
 
-#eumczeigfn .gt_subtitle {
+#jetrxajklc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3519,7 +3228,7 @@ sem_factorcor(model_1_fit)
   border-top-width: 0;
 }
 
-#eumczeigfn .gt_heading {
+#jetrxajklc .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -3531,13 +3240,13 @@ sem_factorcor(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_bottom_border {
+#jetrxajklc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_col_headings {
+#jetrxajklc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -3552,7 +3261,7 @@ sem_factorcor(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_col_heading {
+#jetrxajklc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3572,7 +3281,7 @@ sem_factorcor(model_1_fit)
   overflow-x: hidden;
 }
 
-#eumczeigfn .gt_column_spanner_outer {
+#jetrxajklc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3584,15 +3293,15 @@ sem_factorcor(model_1_fit)
   padding-right: 4px;
 }
 
-#eumczeigfn .gt_column_spanner_outer:first-child {
+#jetrxajklc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eumczeigfn .gt_column_spanner_outer:last-child {
+#jetrxajklc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eumczeigfn .gt_column_spanner {
+#jetrxajklc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3604,11 +3313,11 @@ sem_factorcor(model_1_fit)
   width: 100%;
 }
 
-#eumczeigfn .gt_spanner_row {
+#jetrxajklc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eumczeigfn .gt_group_heading {
+#jetrxajklc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3634,7 +3343,7 @@ sem_factorcor(model_1_fit)
   text-align: left;
 }
 
-#eumczeigfn .gt_empty_group_heading {
+#jetrxajklc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3649,15 +3358,15 @@ sem_factorcor(model_1_fit)
   vertical-align: middle;
 }
 
-#eumczeigfn .gt_from_md > :first-child {
+#jetrxajklc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eumczeigfn .gt_from_md > :last-child {
+#jetrxajklc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eumczeigfn .gt_row {
+#jetrxajklc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3676,7 +3385,7 @@ sem_factorcor(model_1_fit)
   overflow-x: hidden;
 }
 
-#eumczeigfn .gt_stub {
+#jetrxajklc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3689,7 +3398,7 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#eumczeigfn .gt_stub_row_group {
+#jetrxajklc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3703,15 +3412,15 @@ sem_factorcor(model_1_fit)
   vertical-align: top;
 }
 
-#eumczeigfn .gt_row_group_first td {
+#jetrxajklc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eumczeigfn .gt_row_group_first th {
+#jetrxajklc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eumczeigfn .gt_summary_row {
+#jetrxajklc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3721,16 +3430,16 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#eumczeigfn .gt_first_summary_row {
+#jetrxajklc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_first_summary_row.thick {
+#jetrxajklc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eumczeigfn .gt_last_summary_row {
+#jetrxajklc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3740,7 +3449,7 @@ sem_factorcor(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_grand_summary_row {
+#jetrxajklc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3750,7 +3459,7 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#eumczeigfn .gt_first_grand_summary_row {
+#jetrxajklc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3760,7 +3469,7 @@ sem_factorcor(model_1_fit)
   border-top-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_last_grand_summary_row_top {
+#jetrxajklc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3770,11 +3479,11 @@ sem_factorcor(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_striped {
+#jetrxajklc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eumczeigfn .gt_table_body {
+#jetrxajklc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3783,7 +3492,7 @@ sem_factorcor(model_1_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_footnotes {
+#jetrxajklc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3797,7 +3506,7 @@ sem_factorcor(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_footnote {
+#jetrxajklc .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -3806,7 +3515,7 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#eumczeigfn .gt_sourcenotes {
+#jetrxajklc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3820,7 +3529,7 @@ sem_factorcor(model_1_fit)
   border-right-color: #D3D3D3;
 }
 
-#eumczeigfn .gt_sourcenote {
+#jetrxajklc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3828,63 +3537,63 @@ sem_factorcor(model_1_fit)
   padding-right: 15px;
 }
 
-#eumczeigfn .gt_left {
+#jetrxajklc .gt_left {
   text-align: left;
 }
 
-#eumczeigfn .gt_center {
+#jetrxajklc .gt_center {
   text-align: center;
 }
 
-#eumczeigfn .gt_right {
+#jetrxajklc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eumczeigfn .gt_font_normal {
+#jetrxajklc .gt_font_normal {
   font-weight: normal;
 }
 
-#eumczeigfn .gt_font_bold {
+#jetrxajklc .gt_font_bold {
   font-weight: bold;
 }
 
-#eumczeigfn .gt_font_italic {
+#jetrxajklc .gt_font_italic {
   font-style: italic;
 }
 
-#eumczeigfn .gt_super {
+#jetrxajklc .gt_super {
   font-size: 65%;
 }
 
-#eumczeigfn .gt_footnote_marks {
+#jetrxajklc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eumczeigfn .gt_asterisk {
+#jetrxajklc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eumczeigfn .gt_indent_1 {
+#jetrxajklc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eumczeigfn .gt_indent_2 {
+#jetrxajklc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eumczeigfn .gt_indent_3 {
+#jetrxajklc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eumczeigfn .gt_indent_4 {
+#jetrxajklc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eumczeigfn .gt_indent_5 {
+#jetrxajklc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3983,23 +3692,15 @@ datatable(parameterestimates(model_1_v1_fit,standardized = TRUE)) %>%
 ```
 
 ```{=html}
-<div class="datatables html-widget html-fill-item" id="htmlwidget-bc8a350ce517d62ed2fa" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-bc8a350ce517d62ed2fa">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],["okul","okul","okul","kisi","kisi","arkadas","arkadas","aile","aile","aile","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","okul","okul","kisi","kisi","arkadas"],["=~","=~","=~","=~","=~","=~","=~","=~","=~","=~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~"],["okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","kisi","arkadas","aile","arkadas","aile","aile"],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.09532638732788422,0.09679463950091463,0.1114940995301336,0.08192681383617136,0.0693460536495419,0.07197014395433951,0.05663837862543462,0.06990032416032131,0.06592851393181307,0.06016110659626348,0,0,0,0,0.1466949769891691,0.13717262255778,0.2088165359333629,0.09983187339180177,0.07625621127154139,0.07938247815344944,0.04686540515928586,0.07865068742183502,0.07668682036724415,0.06076689426218117,0.08265376950626695,0.08372381075339752,0.07655351114307003,0.08025292891308784,0.07990769765679392,0.0808755589827075],[6.002447977351229,8.458789230052396,10.236053318641,8.904427491287867,9.884083785679801,9.188359499551412,7.164142926412977,11.18648248440077,12.5832740873227,7.766299429010165,null,null,null,null,10.41432819359841,7.129737837350606,2.244956589399484,6.574769918377862,3.865441368151518,3.300852358152319,8.94851926688723,6.336377564622604,3.574371731941816,10.23970763434131,2.180920754470804,3.498093538639945,2.866669642133946,7.646312749220807,3.11902615270771,4.248819451717759],[1.943645466795374e-09,0,0,0,0,0,7.827072323607354e-13,0,0,7.993605777301127e-15,null,null,null,null,0,1.005640015705467e-12,0.02477091951616428,4.87283546846129e-11,0.0001108884862559556,0.0009639159197516456,0,2.352298356100846e-10,0.0003510698637092524,0,0.02918927833408991,0.0004685967539221902,0.004148157730689439,2.065014825802791e-14,0.001814498550043009,2.149000295270653e-05],[0.3853553948654901,0.6290514468188102,0.9227351279365279,0.5689377689094138,0.5495064368552341,0.5202286657742696,0.2947562573443124,0.6449366340114656,0.700379048113276,0.3493155656084292,1,1,1,1,1.240212763105869,0.7091514374206618,0.05951116851337179,0.4607047217146316,0.1453044859378197,0.10644304202449,0.3275214747852678,0.3442079365157467,0.1238037969244862,0.5031343068854388,0.01826290993270546,0.128778067701667,0.0694115016620987,0.4563461431869494,0.09261798929936915,0.1851124653386231],[0.7590279667434269,1.008479461455472,1.3597839670721,0.8900849778834411,0.821337972101403,0.8023464459996066,0.5167746218415025,0.9189408697352751,0.9588140738344776,0.5851427700059322,1,1,1,1,1.815246506329276,1.246858237176972,0.8780569481249821,0.8520384744288194,0.4442233413172165,0.417616638393087,0.5112304872514236,0.6525129659279747,0.4244106089418686,0.7413361552978963,0.3422597327702218,0.4569693751518799,0.3694957511231046,0.7709318438339601,0.4058504082890326,0.5021388310099262],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>lhs<\/th>\n      <th>op<\/th>\n      <th>rhs<\/th>\n      <th>est<\/th>\n      <th>se<\/th>\n      <th>z<\/th>\n      <th>pvalue<\/th>\n      <th>ci.lower<\/th>\n      <th>ci.upper<\/th>\n      <th>std.lv<\/th>\n      <th>std.all<\/th>\n      <th>std.nox<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[4,5,6,7,8,9,10,11,12]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"lhs","targets":1},{"name":"op","targets":2},{"name":"rhs","targets":3},{"name":"est","targets":4},{"name":"se","targets":5},{"name":"z","targets":6},{"name":"pvalue","targets":7},{"name":"ci.lower","targets":8},{"name":"ci.upper","targets":9},{"name":"std.lv","targets":10},{"name":"std.all","targets":11},{"name":"std.nox","targets":12}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-65c9bf71af519697b968" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-65c9bf71af519697b968">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],["okul","okul","okul","kisi","kisi","arkadas","arkadas","aile","aile","aile","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","okul","okul","kisi","kisi","arkadas"],["=~","=~","=~","=~","=~","=~","=~","=~","=~","=~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~"],["okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","kisi","arkadas","aile","arkadas","aile","aile"],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.09532638732788422,0.09679463950091463,0.1114940995301336,0.08192681383617136,0.0693460536495419,0.07197014395433951,0.05663837862543462,0.06990032416032131,0.06592851393181307,0.06016110659626348,0,0,0,0,0.1466949769891691,0.13717262255778,0.2088165359333629,0.09983187339180177,0.07625621127154139,0.07938247815344944,0.04686540515928586,0.07865068742183502,0.07668682036724415,0.06076689426218117,0.08265376950626695,0.08372381075339752,0.07655351114307003,0.08025292891308784,0.07990769765679392,0.0808755589827075],[6.002447977351229,8.458789230052396,10.236053318641,8.904427491287867,9.884083785679801,9.188359499551412,7.164142926412977,11.18648248440077,12.5832740873227,7.766299429010165,null,null,null,null,10.41432819359841,7.129737837350606,2.244956589399484,6.574769918377862,3.865441368151518,3.300852358152319,8.94851926688723,6.336377564622604,3.574371731941816,10.23970763434131,2.180920754470804,3.498093538639945,2.866669642133946,7.646312749220807,3.11902615270771,4.248819451717759],[1.943645466795374e-09,0,0,0,0,0,7.827072323607354e-13,0,0,7.993605777301127e-15,null,null,null,null,0,1.005640015705467e-12,0.02477091951616428,4.87283546846129e-11,0.0001108884862559556,0.0009639159197516456,0,2.352298356100846e-10,0.0003510698637092524,0,0.02918927833408991,0.0004685967539221902,0.004148157730689439,2.065014825802791e-14,0.001814498550043009,2.149000295270653e-05],[0.3853553948654901,0.6290514468188102,0.9227351279365279,0.5689377689094138,0.5495064368552341,0.5202286657742696,0.2947562573443124,0.6449366340114656,0.700379048113276,0.3493155656084292,1,1,1,1,1.240212763105869,0.7091514374206618,0.05951116851337179,0.4607047217146316,0.1453044859378197,0.10644304202449,0.3275214747852678,0.3442079365157467,0.1238037969244862,0.5031343068854388,0.01826290993270546,0.128778067701667,0.0694115016620987,0.4563461431869494,0.09261798929936915,0.1851124653386231],[0.7590279667434269,1.008479461455472,1.3597839670721,0.8900849778834411,0.821337972101403,0.8023464459996066,0.5167746218415025,0.9189408697352751,0.9588140738344776,0.5851427700059322,1,1,1,1,1.815246506329276,1.246858237176972,0.8780569481249821,0.8520384744288194,0.4442233413172165,0.417616638393087,0.5112304872514236,0.6525129659279747,0.4244106089418686,0.7413361552978963,0.3422597327702218,0.4569693751518799,0.3694957511231046,0.7709318438339601,0.4058504082890326,0.5021388310099262],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>lhs<\/th>\n      <th>op<\/th>\n      <th>rhs<\/th>\n      <th>est<\/th>\n      <th>se<\/th>\n      <th>z<\/th>\n      <th>pvalue<\/th>\n      <th>ci.lower<\/th>\n      <th>ci.upper<\/th>\n      <th>std.lv<\/th>\n      <th>std.all<\/th>\n      <th>std.nox<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[4,5,6,7,8,9,10,11,12]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"lhs","targets":1},{"name":"op","targets":2},{"name":"rhs","targets":3},{"name":"est","targets":4},{"name":"se","targets":5},{"name":"z","targets":6},{"name":"pvalue","targets":7},{"name":"ci.lower","targets":8},{"name":"ci.upper","targets":9},{"name":"std.lv","targets":10},{"name":"std.all","targets":11},{"name":"std.nox","targets":12}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render"],"jsHooks":[]}</script>
 ```
 
 aynı standartlaştırılmış çözümleri sağlar.
 
 ### Modifikasyon indeksleri
 
--   **modindices()** fonksiyonu doğrudan **cfa()** fonksiyonun
-    çıktılarının atandığı ile çalıştırıldığında tüm modifikasyonları,
-
--   modifikasyon yapıldığında ki-karedeki değişimi (mi değeri),
-
--   parametrelerdeki beklenen değişimi (epc) ve
-
--   istenmesi durumunda epc değerinin standartlaştırılmış değerlerini
-    verir.
+-   **modindices()** fonksiyonu doğrudan **cfa()** fonksiyonun çıktılarının atandığı ile çalıştırıldığında tüm modifikasyonları, modifikasyon yapıldığında ki-karedeki değişimi (mi değeri), parametrelerdeki beklenen değişimi (epc) ve istenmesi durumunda epc değerinin standartlaştırılmış değerlerini verir.
 
 
 ```r
@@ -4019,7 +3720,9 @@ modindices(model_1_fit, sort=TRUE, standardized=FALSE) %>%  head(6)
 
 </div>
 
-### Üç  faktörlü model
+-   Aynı faktör altında ve benzer ifadelere sahip olan iki madddeye ait hata varyanslarının ilişkilendirilmesi, kabul edilebilir bir gerekçe olarak değerlendirilebilir.
+
+### Üç faktörlü model
 
 
 ```r
@@ -4033,23 +3736,23 @@ sem_sig(model_2_fit)
 ```
 
 ```{=html}
-<div id="kvmfxwoslu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kvmfxwoslu table {
+<div id="fjrprwxzid" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fjrprwxzid table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kvmfxwoslu thead, #kvmfxwoslu tbody, #kvmfxwoslu tfoot, #kvmfxwoslu tr, #kvmfxwoslu td, #kvmfxwoslu th {
+#fjrprwxzid thead, #fjrprwxzid tbody, #fjrprwxzid tfoot, #fjrprwxzid tr, #fjrprwxzid td, #fjrprwxzid th {
   border-style: none;
 }
 
-#kvmfxwoslu p {
+#fjrprwxzid p {
   margin: 0;
   padding: 0;
 }
 
-#kvmfxwoslu .gt_table {
+#fjrprwxzid .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4075,12 +3778,12 @@ sem_sig(model_2_fit)
   border-left-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_caption {
+#fjrprwxzid .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kvmfxwoslu .gt_title {
+#fjrprwxzid .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -4092,7 +3795,7 @@ sem_sig(model_2_fit)
   border-bottom-width: 0;
 }
 
-#kvmfxwoslu .gt_subtitle {
+#fjrprwxzid .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4104,7 +3807,7 @@ sem_sig(model_2_fit)
   border-top-width: 0;
 }
 
-#kvmfxwoslu .gt_heading {
+#fjrprwxzid .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -4116,13 +3819,13 @@ sem_sig(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_bottom_border {
+#fjrprwxzid .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_col_headings {
+#fjrprwxzid .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -4137,7 +3840,7 @@ sem_sig(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_col_heading {
+#fjrprwxzid .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4157,7 +3860,7 @@ sem_sig(model_2_fit)
   overflow-x: hidden;
 }
 
-#kvmfxwoslu .gt_column_spanner_outer {
+#fjrprwxzid .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4169,15 +3872,15 @@ sem_sig(model_2_fit)
   padding-right: 4px;
 }
 
-#kvmfxwoslu .gt_column_spanner_outer:first-child {
+#fjrprwxzid .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kvmfxwoslu .gt_column_spanner_outer:last-child {
+#fjrprwxzid .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kvmfxwoslu .gt_column_spanner {
+#fjrprwxzid .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4189,11 +3892,11 @@ sem_sig(model_2_fit)
   width: 100%;
 }
 
-#kvmfxwoslu .gt_spanner_row {
+#fjrprwxzid .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kvmfxwoslu .gt_group_heading {
+#fjrprwxzid .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4219,7 +3922,7 @@ sem_sig(model_2_fit)
   text-align: left;
 }
 
-#kvmfxwoslu .gt_empty_group_heading {
+#fjrprwxzid .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4234,15 +3937,15 @@ sem_sig(model_2_fit)
   vertical-align: middle;
 }
 
-#kvmfxwoslu .gt_from_md > :first-child {
+#fjrprwxzid .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kvmfxwoslu .gt_from_md > :last-child {
+#fjrprwxzid .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kvmfxwoslu .gt_row {
+#fjrprwxzid .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4261,7 +3964,7 @@ sem_sig(model_2_fit)
   overflow-x: hidden;
 }
 
-#kvmfxwoslu .gt_stub {
+#fjrprwxzid .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4274,7 +3977,7 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#kvmfxwoslu .gt_stub_row_group {
+#fjrprwxzid .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4288,15 +3991,15 @@ sem_sig(model_2_fit)
   vertical-align: top;
 }
 
-#kvmfxwoslu .gt_row_group_first td {
+#fjrprwxzid .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kvmfxwoslu .gt_row_group_first th {
+#fjrprwxzid .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kvmfxwoslu .gt_summary_row {
+#fjrprwxzid .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4306,16 +4009,16 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#kvmfxwoslu .gt_first_summary_row {
+#fjrprwxzid .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_first_summary_row.thick {
+#fjrprwxzid .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kvmfxwoslu .gt_last_summary_row {
+#fjrprwxzid .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4325,7 +4028,7 @@ sem_sig(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_grand_summary_row {
+#fjrprwxzid .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4335,7 +4038,7 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#kvmfxwoslu .gt_first_grand_summary_row {
+#fjrprwxzid .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4345,7 +4048,7 @@ sem_sig(model_2_fit)
   border-top-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_last_grand_summary_row_top {
+#fjrprwxzid .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4355,11 +4058,11 @@ sem_sig(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_striped {
+#fjrprwxzid .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kvmfxwoslu .gt_table_body {
+#fjrprwxzid .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4368,7 +4071,7 @@ sem_sig(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_footnotes {
+#fjrprwxzid .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4382,7 +4085,7 @@ sem_sig(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_footnote {
+#fjrprwxzid .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -4391,7 +4094,7 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#kvmfxwoslu .gt_sourcenotes {
+#fjrprwxzid .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4405,7 +4108,7 @@ sem_sig(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#kvmfxwoslu .gt_sourcenote {
+#fjrprwxzid .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4413,63 +4116,63 @@ sem_sig(model_2_fit)
   padding-right: 15px;
 }
 
-#kvmfxwoslu .gt_left {
+#fjrprwxzid .gt_left {
   text-align: left;
 }
 
-#kvmfxwoslu .gt_center {
+#fjrprwxzid .gt_center {
   text-align: center;
 }
 
-#kvmfxwoslu .gt_right {
+#fjrprwxzid .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kvmfxwoslu .gt_font_normal {
+#fjrprwxzid .gt_font_normal {
   font-weight: normal;
 }
 
-#kvmfxwoslu .gt_font_bold {
+#fjrprwxzid .gt_font_bold {
   font-weight: bold;
 }
 
-#kvmfxwoslu .gt_font_italic {
+#fjrprwxzid .gt_font_italic {
   font-style: italic;
 }
 
-#kvmfxwoslu .gt_super {
+#fjrprwxzid .gt_super {
   font-size: 65%;
 }
 
-#kvmfxwoslu .gt_footnote_marks {
+#fjrprwxzid .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kvmfxwoslu .gt_asterisk {
+#fjrprwxzid .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kvmfxwoslu .gt_indent_1 {
+#fjrprwxzid .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kvmfxwoslu .gt_indent_2 {
+#fjrprwxzid .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kvmfxwoslu .gt_indent_3 {
+#fjrprwxzid .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kvmfxwoslu .gt_indent_4 {
+#fjrprwxzid .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kvmfxwoslu .gt_indent_5 {
+#fjrprwxzid .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4533,23 +4236,23 @@ sem_factorloadings(model_2_fit)
 ```
 
 ```{=html}
-<div id="njbcesevqg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#njbcesevqg table {
+<div id="sinesstmfx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sinesstmfx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#njbcesevqg thead, #njbcesevqg tbody, #njbcesevqg tfoot, #njbcesevqg tr, #njbcesevqg td, #njbcesevqg th {
+#sinesstmfx thead, #sinesstmfx tbody, #sinesstmfx tfoot, #sinesstmfx tr, #sinesstmfx td, #sinesstmfx th {
   border-style: none;
 }
 
-#njbcesevqg p {
+#sinesstmfx p {
   margin: 0;
   padding: 0;
 }
 
-#njbcesevqg .gt_table {
+#sinesstmfx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4575,12 +4278,12 @@ sem_factorloadings(model_2_fit)
   border-left-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_caption {
+#sinesstmfx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#njbcesevqg .gt_title {
+#sinesstmfx .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -4592,7 +4295,7 @@ sem_factorloadings(model_2_fit)
   border-bottom-width: 0;
 }
 
-#njbcesevqg .gt_subtitle {
+#sinesstmfx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4604,7 +4307,7 @@ sem_factorloadings(model_2_fit)
   border-top-width: 0;
 }
 
-#njbcesevqg .gt_heading {
+#sinesstmfx .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -4616,13 +4319,13 @@ sem_factorloadings(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_bottom_border {
+#sinesstmfx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_col_headings {
+#sinesstmfx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -4637,7 +4340,7 @@ sem_factorloadings(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_col_heading {
+#sinesstmfx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4657,7 +4360,7 @@ sem_factorloadings(model_2_fit)
   overflow-x: hidden;
 }
 
-#njbcesevqg .gt_column_spanner_outer {
+#sinesstmfx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4669,15 +4372,15 @@ sem_factorloadings(model_2_fit)
   padding-right: 4px;
 }
 
-#njbcesevqg .gt_column_spanner_outer:first-child {
+#sinesstmfx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#njbcesevqg .gt_column_spanner_outer:last-child {
+#sinesstmfx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#njbcesevqg .gt_column_spanner {
+#sinesstmfx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4689,11 +4392,11 @@ sem_factorloadings(model_2_fit)
   width: 100%;
 }
 
-#njbcesevqg .gt_spanner_row {
+#sinesstmfx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#njbcesevqg .gt_group_heading {
+#sinesstmfx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4719,7 +4422,7 @@ sem_factorloadings(model_2_fit)
   text-align: left;
 }
 
-#njbcesevqg .gt_empty_group_heading {
+#sinesstmfx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4734,15 +4437,15 @@ sem_factorloadings(model_2_fit)
   vertical-align: middle;
 }
 
-#njbcesevqg .gt_from_md > :first-child {
+#sinesstmfx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#njbcesevqg .gt_from_md > :last-child {
+#sinesstmfx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#njbcesevqg .gt_row {
+#sinesstmfx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4761,7 +4464,7 @@ sem_factorloadings(model_2_fit)
   overflow-x: hidden;
 }
 
-#njbcesevqg .gt_stub {
+#sinesstmfx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4774,7 +4477,7 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#njbcesevqg .gt_stub_row_group {
+#sinesstmfx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4788,15 +4491,15 @@ sem_factorloadings(model_2_fit)
   vertical-align: top;
 }
 
-#njbcesevqg .gt_row_group_first td {
+#sinesstmfx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#njbcesevqg .gt_row_group_first th {
+#sinesstmfx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#njbcesevqg .gt_summary_row {
+#sinesstmfx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4806,16 +4509,16 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#njbcesevqg .gt_first_summary_row {
+#sinesstmfx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_first_summary_row.thick {
+#sinesstmfx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#njbcesevqg .gt_last_summary_row {
+#sinesstmfx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4825,7 +4528,7 @@ sem_factorloadings(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_grand_summary_row {
+#sinesstmfx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4835,7 +4538,7 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#njbcesevqg .gt_first_grand_summary_row {
+#sinesstmfx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4845,7 +4548,7 @@ sem_factorloadings(model_2_fit)
   border-top-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_last_grand_summary_row_top {
+#sinesstmfx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4855,11 +4558,11 @@ sem_factorloadings(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_striped {
+#sinesstmfx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#njbcesevqg .gt_table_body {
+#sinesstmfx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4868,7 +4571,7 @@ sem_factorloadings(model_2_fit)
   border-bottom-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_footnotes {
+#sinesstmfx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4882,7 +4585,7 @@ sem_factorloadings(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_footnote {
+#sinesstmfx .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -4891,7 +4594,7 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#njbcesevqg .gt_sourcenotes {
+#sinesstmfx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4905,7 +4608,7 @@ sem_factorloadings(model_2_fit)
   border-right-color: #D3D3D3;
 }
 
-#njbcesevqg .gt_sourcenote {
+#sinesstmfx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4913,63 +4616,63 @@ sem_factorloadings(model_2_fit)
   padding-right: 15px;
 }
 
-#njbcesevqg .gt_left {
+#sinesstmfx .gt_left {
   text-align: left;
 }
 
-#njbcesevqg .gt_center {
+#sinesstmfx .gt_center {
   text-align: center;
 }
 
-#njbcesevqg .gt_right {
+#sinesstmfx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#njbcesevqg .gt_font_normal {
+#sinesstmfx .gt_font_normal {
   font-weight: normal;
 }
 
-#njbcesevqg .gt_font_bold {
+#sinesstmfx .gt_font_bold {
   font-weight: bold;
 }
 
-#njbcesevqg .gt_font_italic {
+#sinesstmfx .gt_font_italic {
   font-style: italic;
 }
 
-#njbcesevqg .gt_super {
+#sinesstmfx .gt_super {
   font-size: 65%;
 }
 
-#njbcesevqg .gt_footnote_marks {
+#sinesstmfx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#njbcesevqg .gt_asterisk {
+#sinesstmfx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#njbcesevqg .gt_indent_1 {
+#sinesstmfx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#njbcesevqg .gt_indent_2 {
+#sinesstmfx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#njbcesevqg .gt_indent_3 {
+#sinesstmfx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#njbcesevqg .gt_indent_4 {
+#sinesstmfx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#njbcesevqg .gt_indent_5 {
+#sinesstmfx .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5089,11 +4792,9 @@ sem_factorloadings(model_2_fit)
 
 ### Model karşılaştırma
 
--   Eğer iki model hiyerarşikse ve her ikisi de veriye kabul edilebilir
-    ölçüde uyum sağlıyorsa, iki modelin veriye uyumunu karşılaştırmak
-    için ki-kare fark test uygulanabilir.
+-   Eğer iki model hiyerarşikse ve her ikisi de veriye kabul edilebilir ölçüde uyum sağlıyorsa, iki modelin veriye uyumunu karşılaştırmak için ki-kare fark test uygulanabilir.
 
-- üç faktörlü model iyi uyum göstermediği için sadece örnek amaçlı:
+-   üç faktörlü model iyi uyum göstermediği için sadece örnek amaçlı:
 
 
 ```r
@@ -5109,98 +4810,60 @@ anova(model_1_fit,model_2_fit )
 
 </div>
 
--   Verilen örneklerde, üç faktörlü model dört faktörlü modelin içinde
-    kümelenmiştir.
+-   Verilen örneklerde, üç faktörlü model dört faktörlü modelin içinde kümelenmiştir.
 
--   Üç faktörlü model veriye iyi uyum **sağlamamıştır,** dört faktörlü model
-    çeşitli uyum indekslerinin de gösterdiği üzere çok daha iyi uyum
-    sağlamıştır. Bu nedenle, dört faktörlü modelin seçimini desteklemek
-    için ki-kare fark testi uygulamaya gerek yoktur
+-   Üç faktörlü model veriye iyi uyum **sağlamamıştır,** dört faktörlü model çeşitli uyum indekslerinin de gösterdiği üzere çok daha iyi uyum sağlamıştır. Bu nedenle, dört faktörlü modelin seçimini desteklemek için ki-kare fark testi uygulamaya gerek yoktur
 
--   Ki-kare fark testi dört faktörlü modelin üç faktörlü modelden
-    anlamlı olarak daha iyi uyum sağladığını önerir. Bu nedenle dört
-    faktörlü model tercih edilir.
+-   Ki-kare fark testi dört faktörlü modelin üç faktörlü modelden anlamlı olarak daha iyi uyum sağladığını önerir. Bu nedenle dört faktörlü model tercih edilir.
 
 ## Daha Yüksek Dereceli Faktör Modelleri
 
--   Bazı durumlarda sadece ölçümler arasındaki kovaryansları değil,
-    **faktörler arasındaki kovaryansları açılayacak faktörlerin**
-    hipotez edildiği daha yüksek dereceli faktör modelleri
-    geliştirilebilir.
+-   Bazı durumlarda sadece ölçümler arasındaki kovaryansları değil, **faktörler arasındaki kovaryansları açılayacak faktörlerin** hipotez edildiği daha yüksek dereceli faktör modelleri geliştirilebilir.
 
-    -   Birinci dereceli faktörler (First-order factors): Bir grup
-        göstergenin altında yatan faktörler.
+    -   Birinci dereceli faktörler (First-order factors): Bir grup göstergenin altında yatan faktörler.
 
-    -   İkinci dereceli faktörler (Second-order factors): Birinci
-        dereceli faktörlerin altında yatan faktörler.
+    -   İkinci dereceli faktörler (Second-order factors): Birinci dereceli faktörlerin altında yatan faktörler.
 
-    -   Daha yüksek dereceli faktörler (Higher-order factors):
-        Potensiyel olarak eğer aralarında korelasyon bulunan bir grup
-        ikinci dereceli faktör varsa, bu faktörlerin altında yatan daha
-        yüksek dereceli faktörler önerilebilir.
+    -   Daha yüksek dereceli faktörler (Higher-order factors): Potensiyel olarak eğer aralarında korelasyon bulunan bir grup ikinci dereceli faktör varsa, bu faktörlerin altında yatan daha yüksek dereceli faktörler önerilebilir.
 
 Bir Örnek: Zeka
 
--   Bazı zeka araştırmacıları zeka ölçümlerinin hiyerarşik faktör
-    yapılarıyla daha doğru bir şekilde modellenebileceğini
-    belirtmişlerdir:
+-   Bazı zeka araştırmacıları zeka ölçümlerinin hiyerarşik faktör yapılarıyla daha doğru bir şekilde modellenebileceğini belirtmişlerdir:
 
-    -   Birinci dereceli faktörler (First-order factors): sözel,
-        sayısal, mekanik bilgi, uzamsal ve psikomotor beceriler
+    -   Birinci dereceli faktörler (First-order factors): sözel, sayısal, mekanik bilgi, uzamsal ve psikomotor beceriler
     -   İkinci dereceli faktörler (Second-order factors):
-        -   Sözel/eğitimsel faktör: Birinci-dereceli faktörlerden sözel
-            ve sayısal faktörleri kontrol edebilir.
-        -   Beceri/pratik faktör: Birinci-dereceli faktörlerden mekanik
-            bilgi, uzamsal ve psikomotor beceriler faktörlerini kontrol
-            edebilir.
+        -   Sözel/eğitimsel faktör: Birinci-dereceli faktörlerden sözel ve sayısal faktörleri kontrol edebilir.
+        -   Beceri/pratik faktör: Birinci-dereceli faktörlerden mekanik bilgi, uzamsal ve psikomotor beceriler faktörlerini kontrol edebilir.
         -   Üçüncü dereceli faktör (Third-order factor): genel zeka
 
 <img src="images/DFA_13.PNG" width="60%" style="display: block; margin: auto;" />
 
-F1, F2 ve F3 faktörleri arasındaki kovaryanslar daha yüksek dereceli bir
-faktör tarafından açıklanır: F4
+F1, F2 ve F3 faktörleri arasındaki kovaryanslar daha yüksek dereceli bir faktör tarafından açıklanır: F4
 
-Standart bir DFA modelinde faktörler - dışsaldır ve - içsel olan ölçülen
-değişkenleri etkilerler. Bu nedenle, hem ULI hem de UVI faktörlere ölçek
-atanmasında uygundur.
+Standart bir DFA modelinde faktörler - dışsaldır ve - içsel olan ölçülen değişkenleri etkilerler. Bu nedenle, hem ULI hem de UVI faktörlere ölçek atanmasında uygundur.
 
--   Daha yüksek dereceli faktör modellerinde, daha yüksek dereceli
-    faktörler
+-   Daha yüksek dereceli faktör modellerinde, daha yüksek dereceli faktörler dışsaldır ve
 
-    -   dışsaldır ve
-    -   içsel olan ölçülen değişkenleri daha düşük faktörler
-        aracılığıyla dolaylı olarak etkilerler.
+    -   içsel olan ölçülen değişkenleri daha düşük faktörler aracılığıyla dolaylı olarak etkilerler.
 
--   Bu nedenle, hem ULI hem de UVI daha yüksek dereceli faktörlere ölçek
-    atanmasında uygundur.
+-   Bu nedenle, hem ULI hem de UVI daha yüksek dereceli faktörlere ölçek atanmasında uygundur.
 
--   Ancak yüksek dereceli bir faktör modelinde, bütün daha düşük
-    dereceli faktörler artık dışsal değildir (örneğin, F1, F2 ve F3
-    faktörleri F4 faktöründen etkilenir. Bu nedenle F1, F2 ve F3
-    faktörleri içseldir).
+-   Ancak yüksek dereceli bir faktör modelinde, bütün daha düşük dereceli faktörler artık dışsal değildir (örneğin, F1, F2 ve F3 faktörleri F4 faktöründen etkilenir. Bu nedenle F1, F2 ve F3 faktörleri içseldir).
 
-$F_2= \beta_2*F_4 + \zeta_2$ - Sonuç olarak, her bir daha düşük dereceli
-faktörün bir artığı vardır (örneğin, F2 faktörü için ζ2)
+$F_2= \beta_2*F_4 + \zeta_2$ - Sonuç olarak, her bir daha düşük dereceli faktörün bir artığı vardır (örneğin, F2 faktörü için ζ2)
 
--   $\zeta_2$’nin varyansı F4 faktörü tarafından açıklanmayan F2
-    faktörünün varyansının bir parçası olarak açıklanabilir.
+-   $\zeta_2$’nin varyansı F4 faktörü tarafından açıklanmayan F2 faktörünün varyansının bir parçası olarak açıklanabilir.
 
--   Bu nedenle daha düşük dereceli faktörlerin varyansları 1’e
-    eşitlenemez, diğer bir ifadeyle UVI uygun olmayacaktır.
+-   Bu nedenle daha düşük dereceli faktörlerin varyansları 1’e eşitlenemez, diğer bir ifadeyle UVI uygun olmayacaktır.
 
--   Bunun yerine her bir daha düşük dereceli faktör için ölçekleme
-    yüklerinden birinin 1’e sabitlenmesiyle tanımlanabilir, diğer bir
-    ifadeyle ULI uygun olacaktır.
+-   Bunun yerine her bir daha düşük dereceli faktör için ölçekleme yüklerinden birinin 1’e sabitlenmesiyle tanımlanabilir, diğer bir ifadeyle ULI uygun olacaktır.
 
-Rindskopf ve Rose (1988) daha yüksek dereceli bir modelin
-değerlendirilmesinin diğer üç modelle karşılaştırılmasını içermesi
-gerektiğini önermişlerdir. Adımsal modelleme yöntemi önermişlerdir: 
+Rindskopf ve Rose (1988) daha yüksek dereceli bir modelin değerlendirilmesinin diğer üç modelle karşılaştırılmasını içermesi gerektiğini önermişlerdir. Adımsal modelleme yöntemi önermişlerdir:
 
-- Adım 1: Genel, tek faktörlü modelin uyumu 
-- Adım 2: İkinci dereceli faktör modeliyle karşılaştırma 
-- Adım 3: Korelasyonlu grup faktör modeliyle karşılaştırma 
-- Adım 4: İkili faktörlü (bi-factor) modelle karşılaştırma
-
+-   Adım 1: Genel, tek faktörlü modelin uyumu
+-   Adım 2: İkinci dereceli faktör modeliyle karşılaştırma
+-   Adım 3: Korelasyonlu grup faktör modeliyle karşılaştırma
+-   Adım 4: İkili faktörlü (bi-factor) modelle karşılaştırma
 
 <img src="images/DFA_18.PNG" width="60%" style="display: block; margin: auto;" />
 
@@ -5325,29 +4988,28 @@ summary(fit_model_2order, fit.measures = TRUE, standardized = TRUE)
 ```
 
 
-
 ```r
 sem_factorloadings(fit_model_2order,standardized = TRUE)
 ```
 
 ```{=html}
-<div id="bkpnizgufw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bkpnizgufw table {
+<div id="afcelxnlmw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#afcelxnlmw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bkpnizgufw thead, #bkpnizgufw tbody, #bkpnizgufw tfoot, #bkpnizgufw tr, #bkpnizgufw td, #bkpnizgufw th {
+#afcelxnlmw thead, #afcelxnlmw tbody, #afcelxnlmw tfoot, #afcelxnlmw tr, #afcelxnlmw td, #afcelxnlmw th {
   border-style: none;
 }
 
-#bkpnizgufw p {
+#afcelxnlmw p {
   margin: 0;
   padding: 0;
 }
 
-#bkpnizgufw .gt_table {
+#afcelxnlmw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5373,12 +5035,12 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-left-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_caption {
+#afcelxnlmw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bkpnizgufw .gt_title {
+#afcelxnlmw .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -5390,7 +5052,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-bottom-width: 0;
 }
 
-#bkpnizgufw .gt_subtitle {
+#afcelxnlmw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5402,7 +5064,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-top-width: 0;
 }
 
-#bkpnizgufw .gt_heading {
+#afcelxnlmw .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -5414,13 +5076,13 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_bottom_border {
+#afcelxnlmw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_col_headings {
+#afcelxnlmw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -5435,7 +5097,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_col_heading {
+#afcelxnlmw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5455,7 +5117,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   overflow-x: hidden;
 }
 
-#bkpnizgufw .gt_column_spanner_outer {
+#afcelxnlmw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5467,15 +5129,15 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 4px;
 }
 
-#bkpnizgufw .gt_column_spanner_outer:first-child {
+#afcelxnlmw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bkpnizgufw .gt_column_spanner_outer:last-child {
+#afcelxnlmw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bkpnizgufw .gt_column_spanner {
+#afcelxnlmw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5487,11 +5149,11 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   width: 100%;
 }
 
-#bkpnizgufw .gt_spanner_row {
+#afcelxnlmw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bkpnizgufw .gt_group_heading {
+#afcelxnlmw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5517,7 +5179,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   text-align: left;
 }
 
-#bkpnizgufw .gt_empty_group_heading {
+#afcelxnlmw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5532,15 +5194,15 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   vertical-align: middle;
 }
 
-#bkpnizgufw .gt_from_md > :first-child {
+#afcelxnlmw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bkpnizgufw .gt_from_md > :last-child {
+#afcelxnlmw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bkpnizgufw .gt_row {
+#afcelxnlmw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5559,7 +5221,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   overflow-x: hidden;
 }
 
-#bkpnizgufw .gt_stub {
+#afcelxnlmw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5572,7 +5234,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#bkpnizgufw .gt_stub_row_group {
+#afcelxnlmw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5586,15 +5248,15 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   vertical-align: top;
 }
 
-#bkpnizgufw .gt_row_group_first td {
+#afcelxnlmw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bkpnizgufw .gt_row_group_first th {
+#afcelxnlmw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bkpnizgufw .gt_summary_row {
+#afcelxnlmw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5604,16 +5266,16 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#bkpnizgufw .gt_first_summary_row {
+#afcelxnlmw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_first_summary_row.thick {
+#afcelxnlmw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bkpnizgufw .gt_last_summary_row {
+#afcelxnlmw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5623,7 +5285,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_grand_summary_row {
+#afcelxnlmw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5633,7 +5295,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#bkpnizgufw .gt_first_grand_summary_row {
+#afcelxnlmw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5643,7 +5305,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-top-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_last_grand_summary_row_top {
+#afcelxnlmw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5653,11 +5315,11 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_striped {
+#afcelxnlmw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bkpnizgufw .gt_table_body {
+#afcelxnlmw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5666,7 +5328,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-bottom-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_footnotes {
+#afcelxnlmw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5680,7 +5342,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_footnote {
+#afcelxnlmw .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -5689,7 +5351,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#bkpnizgufw .gt_sourcenotes {
+#afcelxnlmw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5703,7 +5365,7 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   border-right-color: #D3D3D3;
 }
 
-#bkpnizgufw .gt_sourcenote {
+#afcelxnlmw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5711,63 +5373,63 @@ sem_factorloadings(fit_model_2order,standardized = TRUE)
   padding-right: 15px;
 }
 
-#bkpnizgufw .gt_left {
+#afcelxnlmw .gt_left {
   text-align: left;
 }
 
-#bkpnizgufw .gt_center {
+#afcelxnlmw .gt_center {
   text-align: center;
 }
 
-#bkpnizgufw .gt_right {
+#afcelxnlmw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bkpnizgufw .gt_font_normal {
+#afcelxnlmw .gt_font_normal {
   font-weight: normal;
 }
 
-#bkpnizgufw .gt_font_bold {
+#afcelxnlmw .gt_font_bold {
   font-weight: bold;
 }
 
-#bkpnizgufw .gt_font_italic {
+#afcelxnlmw .gt_font_italic {
   font-style: italic;
 }
 
-#bkpnizgufw .gt_super {
+#afcelxnlmw .gt_super {
   font-size: 65%;
 }
 
-#bkpnizgufw .gt_footnote_marks {
+#afcelxnlmw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bkpnizgufw .gt_asterisk {
+#afcelxnlmw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bkpnizgufw .gt_indent_1 {
+#afcelxnlmw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bkpnizgufw .gt_indent_2 {
+#afcelxnlmw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bkpnizgufw .gt_indent_3 {
+#afcelxnlmw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bkpnizgufw .gt_indent_4 {
+#afcelxnlmw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bkpnizgufw .gt_indent_5 {
+#afcelxnlmw .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5938,1997 +5600,40 @@ semPaths(fit_model_2order, "std", weighted = FALSE, nCharNodes = 7,
          shapeMan = "rectangle", sizeMan = 8, sizeMan2 = 5)
 ```
 
-<img src="07_DFA_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" />
-
-
-## Ölçme Değişmezliği 
-
-
--   Belirli bir özelliğin **gruplar arasında karşılaştırılması
-    yapılırken**, söz konusu özelliği ölçmek üzere geliştirilen ölçme
-    araçlarından alınan puanların **karşılaştırılabilir olması** için
-    öncelikle **ölçme aracının gruplar arasında ölçme değişmezliğini**
-    (measurement invariance) sağlanması gerekir.
-
--   Ölçme değişmezliği, **gizil değişkenler ve gözlenen değişkenler
-    arasındaki ilişkinin gruplar arasında aynı olmasıdır.**
-
--   Ölçme değişmezliği, **çoklu grup doğrulayıcı faktör analizi
-    (ÇG-DFA)** ile incelenebilir. Çoklu grup doğrulayıcı faktör
-    analizinin temel amacı bir grup göstergenin farklı gruplarda aynı
-    yapıyı ölçüp ölçmediğinin değerlendirilmesidir.
-
--   Bir ölçme aracı bir grupta diğer gruba göre faklı bir özelliği
-    ölçüyorsa, **ölçme aracının yapı yanlılığına (construct bias) sahip
-    olduğu söylenebilir.**
-
--   Yapı yanlılığı söz konusuysa, **grup üyeliği DFA modelindeki
-    göstergeler ve faktörler arasındaki ilişkilere etki eder.**
-
-1.  Şekil değişmezliği (configural invariance) modeli
-
-2.  Zayıf değişmezlik (weak invariance) modeli
-
-3.  Güçlü değişmezlik (strong invariance) modeli
-
-4.  Katı değişmezlik (strict invariance) modeli
-
--   **Şekil değişmezliği (configural /pattern invariance)**
-
-    -   Gruplar aynı genel faktör yapısına sahip mi?
-        -   en az kısıtlayıcı model
-        -   model veri ile uyumlu değilse, hiç bir temel düzeyde geçerli
-            olmaz.
-
-- Şekil Değişmezlik
-
-| Grup 1                  |               | Grup 2                |
-|---|---|---|
-|  $y_{11s} = \mu_{11} + \lambda_{11}F_{1s} + e_{11s}$ | | $y_{12s} = \mu_{12} + \lambda_{12}F_{1s} + e_{12s}$|
-|  $y_{21s} = \mu_{21} + \lambda_{21}F_{1s} + e_{21s}$ |  | $y_{22s} = \mu_{22} + \lambda_{22}F_{1s} + e_{22s}$|
-|  $y_{31s} = \mu_{31} + \lambda_{31}F_{1s} + e_{31s}$ | |  $y_{32s} = \mu_{32} + \lambda_{32}F_{1s} + e_{32s}$|
-|  $y_{41s} = \mu_{41} + \lambda_{41}F_{2s} + e_{41s}$ | |  $y_{42s} = \mu_{42} + \lambda_{42}F_{2s} + e_{42s}$|
-|  $y_{51s} = \mu_{51} + \lambda_{51}F_{2s} + e_{51s}$ | |  $y_{52s} = \mu_{52} + \lambda_{52}F_{2s} + e_{52s}$|
-|  $y_{61s} = \mu_{61} + \lambda_{61}F_{2s} + e_{61s}$ | |  $y_{62s} = \mu_{62} + \lambda_{62}F_{2s} + e_{62s}$|
-
-
--   Alt indislerin ilki madde, ikincisi grup için kullanılmıştır.
-
-    $$sd = 54 - (12\mu - 12\sigma^2_{e} - 12\lambda + 0\sigma^2_{F} + 2\sigma_{F_{12}} + 0K_{F}) = 16$$
-
-```{=tex}
-{factor kovaryansı hesaplanıyor ancak faktor ortalaması 0, 
-factor varyansı 1 olarak sabitlenmiştir.
-}
-```
--   **Zayıf Değişmezlik (Metric/Weak factorial invariance)**
-
-    -   Gruplar aynı faktör yüklerine sahip mi?
-
-        -   her bir göstergenin yükü (standartlaştırılmış katsayısı
-            üzerinde gruplarda eşitlik kısıtı getirilir.
-
-
-| Grup 1                  |               | Grup 2                |
-|---|---|---|
-|  $y_{11s} = \mu_{11} + \lambda_{1}F_{1s} + e_{11s}$ | | $y_{12s} = \mu_{12} + \lambda_{1}F_{1s} + e_{12s}$|
-|  $y_{21s} = \mu_{21} + \lambda_{2}F_{1s} + e_{21s}$ |  | $y_{22s} = \mu_{22} + \lambda_{2}F_{1s} + e_{22s}$|
-|  $y_{31s} = \mu_{31} + \lambda_{3}F_{1s} + e_{31s}$ | |  $y_{32s} = \mu_{32} + \lambda_{3}F_{1s} + e_{32s}$|
-|  $y_{41s} = \mu_{41} + \lambda_{4}F_{2s} + e_{41s}$ | |  $y_{42s} = \mu_{42} + \lambda_{4}F_{2s} + e_{42s}$|
-|  $y_{51s} = \mu_{51} + \lambda_{5}F_{2s} + e_{51s}$ | |  $y_{52s} = \mu_{52} + \lambda_{5}F_{2s} + e_{52s}$|
-|  $y_{61s} = \mu_{61} + \lambda_{6}F_{2s} + e_{61s}$ | |  $y_{62s} = \mu_{62} + \lambda_{6}F_{2s} + e_{62s}$|
-
-
--   **Güçlü Değişmezlik (Strong/Scalar invariance)**
-
-    -   Gruplar aynı gösterge sabitlerine sahip mi?
-        -   eşit standartlaştırılmış kesen değere sahip mi?
-
-| Grup 1                  |               | Grup 2                |
-|---|---|---|
-|  $y_{1s} = \mu_{11} + \lambda_{1}F_{1s} + e_{11s}$ | | $y_{1s} = \mu_{12} + \lambda_{1}F_{1s} + e_{12s}$|
-|  $y_{2s} = \mu_{21} + \lambda_{2}F_{1s} + e_{21s}$ |  | $y_{2s} = \mu_{22} + \lambda_{2}F_{1s} + e_{22s}$|
-|  $y_{3s} = \mu_{31} + \lambda_{3}F_{1s} + e_{31s}$ | |  $y_{3s} = \mu_{32} + \lambda_{3}F_{1s} + e_{32s}$|
-|  $y_{4s} = \mu_{41} + \lambda_{4}F_{2s} + e_{41s}$ | |  $y_{4s} = \mu_{42} + \lambda_{4}F_{2s} + e_{42s}$|
-|  $y_{5s} = \mu_{51} + \lambda_{5}F_{2s} + e_{51s}$ | |  $y_{5s} = \mu_{52} + \lambda_{5}F_{2s} + e_{52s}$|
-|  $y_{6s} = \mu_{61} + \lambda_{6}F_{2s} + e_{61s}$ | |  $y_{6s} = \mu_{62} + \lambda_{6}F_{2s} + e_{62s}$|
-
--   **Katı Değişmezlik**
-
-    -   Gruplar aynı artık varyanslara sahip mi?
-
-
-| Grup 1                  |               | Grup 2                |
-|---|---|---|
-|  $y_{1s} = \mu_{11} + \lambda_{1}F_{1s} + e_{1s}$ | | $y_{1s} = \mu_{12} + \lambda_{1}F_{1s} + e_{1s}$|
-|  $y_{2s} = \mu_{21} + \lambda_{2}F_{1s} + e_{2s}$ |  | $y_{2s} = \mu_{22} + \lambda_{2}F_{1s} + e_{2s}$|
-|  $y_{3s} = \mu_{31} + \lambda_{3}F_{1s} + e_{3s}$ | |  $y_{3s} = \mu_{32} + \lambda_{3}F_{1s} + e_{3s}$|
-|  $y_{4s} = \mu_{41} + \lambda_{4}F_{2s} + e_{4s}$ | |  $y_{4s} = \mu_{42} + \lambda_{4}F_{2s} + e_{4s}$|
-|  $y_{5s} = \mu_{51} + \lambda_{5}F_{2s} + e_{5s}$ | |  $y_{5s} = \mu_{52} + \lambda_{5}F_{2s} + e_{5s}$|
-|  $y_{6s} = \mu_{61} + \lambda_{6}F_{2s} + e_{6s}$ | |  $y_{6s} = \mu_{62} + \lambda_{6}F_{2s} + e_{6s}$|
-
-## Özet
-
-Ölçme Değişmezliği Hiyerarşik Modellerinde Serbest Tahminlenen ve
-Sabitlenen Parametreler [Gregorich, 2006]
-
-+----------------+-----------------+--------------------------------+
-| Model          | Değişmzelik     | Kısıtlanan Parametre           |
-|                | Testi           |                                |
-+================+=================+================================+
-| Sekil          | Madde/Faktor    |                                |
-|                | grupları        |                                |
-+----------------+-----------------+--------------------------------+
-| Zayıf          | +Faktor yukleri | Faktör varyans ve              |
-|                |                 | kovaryansları                  |
-+----------------+-----------------+--------------------------------+
-| Guclu          | +Madde          | Faktör ve gözlenen degisken    |
-|                | Sabitleri       | ortalamaları                   |
-+----------------+-----------------+--------------------------------+
-| Katı           | +Madde artık    | Gozlenen varyans ve            |
-|                | varyansları     | kovaryanslar                   |
-+----------------+-----------------+--------------------------------+
-
-## Uygulama
-
-Özdeş faktör yapısını eş zamanlı test ediniz.
+<img src="07_DFA_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ```r
-configural <- cfa(model_1_v1, data=yasamdoyum, group = "cinsiyet")
-
-fit <- c("chisq", "df", "pvalue","rmsea", "srmr","cfi")
-
-# bicimsel degimezlik
-fitmeasures(configural, fit.measures = fit)
+semTools::reliability(fit_model_2order)
 ```
 
 ```
- chisq     df pvalue  rmsea   srmr    cfi 
-94.063 58.000  0.002  0.070  0.061  0.934 
+##             okul      kisi   arkadas      aile
+## alpha  0.6521208 0.6772692 0.5897284 0.7284332
+## omega  0.6844920 0.6783398 0.6260070 0.7559295
+## omega2 0.6844920 0.6783398 0.6260070 0.7559295
+## omega3 0.6853071 0.6783398 0.6260070 0.7624866
+## avevar 0.4411637 0.5136422 0.4696157 0.5213877
 ```
-
-Faktör yüklerinin eşitliğini test ediniz.
 
 
 ```r
-weak <- cfa(model_1_v1, data=yasamdoyum, group = "cinsiyet",
-group.equal=c("loadings"))
-
-# bicimsel degimezlik
-fitmeasures(configural, fit.measures = fit)
-
-# zayıf degimezlik
-fitmeasures(weak, fit.measures = fit)
+semTools::reliability(model_2_fit)
 ```
 
 ```
-##  chisq     df pvalue  rmsea   srmr    cfi 
-## 94.063 58.000  0.002  0.070  0.061  0.934 
-##   chisq      df  pvalue   rmsea    srmr     cfi 
-## 111.214  68.000   0.001   0.071   0.086   0.921
+##             okul kisi_arkadas      aile
+## alpha  0.6521208    0.6802465 0.7284332
+## omega  0.6823834    0.6958670 0.7559432
+## omega2 0.6823834    0.6958670 0.7559432
+## omega3 0.6872796    0.6984813 0.7633658
+## avevar 0.4340664    0.3767532 0.5208713
 ```
 
-**Modeller arası uyumu degerlendirme**
+## Kaynaklar
 
+-   Rindskopf, D. & Rose, T. (1988. Some theory and applications of confirmatory second-order factor analysis. Multivariate Behavioral Research, 23(1), 51-67
 
-```r
-sem_modelcomp(weak, configural)
-```
+-   Bentler, P. M. & Hu, L. (1999). Cutoff criteria fpr fit indexes in covariance structure analysis: Conventional criteri versus new alternatives. Structural Equation Modeling, 6(1), 1-55.
 
-```{=html}
-<div id="xxagyawhmi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xxagyawhmi table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#xxagyawhmi thead, #xxagyawhmi tbody, #xxagyawhmi tfoot, #xxagyawhmi tr, #xxagyawhmi td, #xxagyawhmi th {
-  border-style: none;
-}
-
-#xxagyawhmi p {
-  margin: 0;
-  padding: 0;
-}
-
-#xxagyawhmi .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: 0;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 0px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 0px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#xxagyawhmi .gt_title {
-  color: #333333;
-  font-size: 18px;
-  font-weight: bolder;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#xxagyawhmi .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 9px;
-  padding-bottom: 11px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#xxagyawhmi .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 0px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 0px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 6px;
-  padding-bottom: 7px;
-  padding-left: 15px;
-  padding-right: 15px;
-  overflow-x: hidden;
-}
-
-#xxagyawhmi .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#xxagyawhmi .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#xxagyawhmi .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#xxagyawhmi .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#xxagyawhmi .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#xxagyawhmi .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#xxagyawhmi .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#xxagyawhmi .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#xxagyawhmi .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#xxagyawhmi .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#xxagyawhmi .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#xxagyawhmi .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 15px;
-  padding-right: 15px;
-  vertical-align: top;
-}
-
-#xxagyawhmi .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#xxagyawhmi .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#xxagyawhmi .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#xxagyawhmi .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#xxagyawhmi .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#xxagyawhmi .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#xxagyawhmi .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_footnote {
-  margin: 0px;
-  font-size: 14px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#xxagyawhmi .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#xxagyawhmi .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#xxagyawhmi .gt_left {
-  text-align: left;
-}
-
-#xxagyawhmi .gt_center {
-  text-align: center;
-}
-
-#xxagyawhmi .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#xxagyawhmi .gt_font_normal {
-  font-weight: normal;
-}
-
-#xxagyawhmi .gt_font_bold {
-  font-weight: bold;
-}
-
-#xxagyawhmi .gt_font_italic {
-  font-style: italic;
-}
-
-#xxagyawhmi .gt_super {
-  font-size: 65%;
-}
-
-#xxagyawhmi .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#xxagyawhmi .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#xxagyawhmi .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#xxagyawhmi .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#xxagyawhmi .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#xxagyawhmi .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#xxagyawhmi .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="10" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Model Comparison</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="Model">Model</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="df">df</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="AIC">AIC</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="BIC">BIC</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="BF">BF</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="P(Model|Data)">P(Model|Data)</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;chi;&lt;sup&gt;2&lt;/sup&gt;">&chi;<sup>2</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;Delta;&amp;chi;&lt;sup&gt;2&lt;/sup&gt;">&Delta;&chi;<sup>2</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;Delta;df">&Delta;df</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="p">p</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Model" class="gt_row gt_left">weak</td>
-<td headers="df" class="gt_row gt_right">68 </td>
-<td headers="AIC" class="gt_row gt_right">6930.928</td>
-<td headers="BIC" class="gt_row gt_right">7150.486</td>
-<td headers="BF" class="gt_row gt_right">203429496.728</td>
-<td headers="P(Model|Data)" class="gt_row gt_right">1.000</td>
-<td headers="Chi_Square" class="gt_row gt_right">111.214</td>
-<td headers="Chi_Square_diff" class="gt_row gt_right"><br /></td>
-<td headers="df_diff" class="gt_row gt_right"><br /></td>
-<td headers="p" class="gt_row gt_right"><br /></td></tr>
-    <tr><td headers="Model" class="gt_row gt_left">configural</td>
-<td headers="df" class="gt_row gt_right">58 </td>
-<td headers="AIC" class="gt_row gt_right">6933.777</td>
-<td headers="BIC" class="gt_row gt_right">7188.748</td>
-<td headers="BF" class="gt_row gt_right">        0.000</td>
-<td headers="P(Model|Data)" class="gt_row gt_right">0.000</td>
-<td headers="Chi_Square" class="gt_row gt_right"> 94.063</td>
-<td headers="Chi_Square_diff" class="gt_row gt_right">17.151</td>
-<td headers="df_diff" class="gt_row gt_right">10.000</td>
-<td headers="p" class="gt_row gt_right">0.071</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-```
-
-**Gösterge sabitlerinin eşitliğini test ediniz.**
-
-
-```r
-strong <-  cfa(model_1_v1, data=yasamdoyum,
-               group = "cinsiyet", 
-               group.equal=c("loadings","intercepts"))
-
-# zayıf degimezlik
-fitmeasures(weak,fit.measures = fit)
-
-# guclu degimezlik
-fitmeasures(strong,fit.measures = fit)
-```
-
-```
-  chisq      df  pvalue   rmsea    srmr     cfi 
-111.214  68.000   0.001   0.071   0.086   0.921 
-  chisq      df  pvalue   rmsea    srmr     cfi 
-117.072  74.000   0.001   0.068   0.087   0.922 
-```
-
-**Modeller arası uyumu degerlendirme**
-
-
-```r
-sem_modelcomp(strong, weak)
-```
-
-```{=html}
-<div id="pwwewqyoki" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pwwewqyoki table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#pwwewqyoki thead, #pwwewqyoki tbody, #pwwewqyoki tfoot, #pwwewqyoki tr, #pwwewqyoki td, #pwwewqyoki th {
-  border-style: none;
-}
-
-#pwwewqyoki p {
-  margin: 0;
-  padding: 0;
-}
-
-#pwwewqyoki .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: 0;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 0px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 0px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#pwwewqyoki .gt_title {
-  color: #333333;
-  font-size: 18px;
-  font-weight: bolder;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#pwwewqyoki .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 9px;
-  padding-bottom: 11px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#pwwewqyoki .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 0px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 0px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 6px;
-  padding-bottom: 7px;
-  padding-left: 15px;
-  padding-right: 15px;
-  overflow-x: hidden;
-}
-
-#pwwewqyoki .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#pwwewqyoki .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#pwwewqyoki .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#pwwewqyoki .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#pwwewqyoki .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#pwwewqyoki .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#pwwewqyoki .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#pwwewqyoki .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#pwwewqyoki .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#pwwewqyoki .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#pwwewqyoki .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#pwwewqyoki .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 15px;
-  padding-right: 15px;
-  vertical-align: top;
-}
-
-#pwwewqyoki .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#pwwewqyoki .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#pwwewqyoki .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#pwwewqyoki .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#pwwewqyoki .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#pwwewqyoki .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#pwwewqyoki .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_footnote {
-  margin: 0px;
-  font-size: 14px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#pwwewqyoki .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#pwwewqyoki .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#pwwewqyoki .gt_left {
-  text-align: left;
-}
-
-#pwwewqyoki .gt_center {
-  text-align: center;
-}
-
-#pwwewqyoki .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#pwwewqyoki .gt_font_normal {
-  font-weight: normal;
-}
-
-#pwwewqyoki .gt_font_bold {
-  font-weight: bold;
-}
-
-#pwwewqyoki .gt_font_italic {
-  font-style: italic;
-}
-
-#pwwewqyoki .gt_super {
-  font-size: 65%;
-}
-
-#pwwewqyoki .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#pwwewqyoki .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#pwwewqyoki .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#pwwewqyoki .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#pwwewqyoki .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#pwwewqyoki .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#pwwewqyoki .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="10" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Model Comparison</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="Model">Model</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="df">df</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="AIC">AIC</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="BIC">BIC</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="BF">BF</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="P(Model|Data)">P(Model|Data)</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;chi;&lt;sup&gt;2&lt;/sup&gt;">&chi;<sup>2</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;Delta;&amp;chi;&lt;sup&gt;2&lt;/sup&gt;">&Delta;&chi;<sup>2</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;Delta;df">&Delta;df</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="p">p</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Model" class="gt_row gt_left">strong</td>
-<td headers="df" class="gt_row gt_right">74 </td>
-<td headers="AIC" class="gt_row gt_right">6924.786</td>
-<td headers="BIC" class="gt_row gt_right">7123.097</td>
-<td headers="BF" class="gt_row gt_right">886331.558</td>
-<td headers="P(Model|Data)" class="gt_row gt_right">1.000</td>
-<td headers="Chi_Square" class="gt_row gt_right">117.072</td>
-<td headers="Chi_Square_diff" class="gt_row gt_right"><br /></td>
-<td headers="df_diff" class="gt_row gt_right"><br /></td>
-<td headers="p" class="gt_row gt_right"><br /></td></tr>
-    <tr><td headers="Model" class="gt_row gt_left">weak</td>
-<td headers="df" class="gt_row gt_right">68 </td>
-<td headers="AIC" class="gt_row gt_right">6930.928</td>
-<td headers="BIC" class="gt_row gt_right">7150.486</td>
-<td headers="BF" class="gt_row gt_right">     0.000</td>
-<td headers="P(Model|Data)" class="gt_row gt_right">0.000</td>
-<td headers="Chi_Square" class="gt_row gt_right">111.214</td>
-<td headers="Chi_Square_diff" class="gt_row gt_right">5.858</td>
-<td headers="df_diff" class="gt_row gt_right">6.000</td>
-<td headers="p" class="gt_row gt_right">0.439</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-```
-
-
-**hata eşitliğini test ediniz.**
-
-
-```r
-strict <-  cfa(model_1_v1, data=yasamdoyum,
-               group = "cinsiyet", 
-               group.equal=c("loadings","intercepts","residuals"))
-
-
-
-# guclu degimezlik
-fitmeasures(strong,fit.measures = fit)
-# katı degimezlik
-fitmeasures(strict,fit.measures = fit)
-```
-
-```
-  chisq      df  pvalue   rmsea    srmr     cfi 
-117.072  74.000   0.001   0.068   0.087   0.922 
-  chisq      df  pvalue   rmsea    srmr     cfi 
-130.757  84.000   0.001   0.066   0.099   0.915 
-```
-
-```r
-sem_modelcomp(strict,strong)
-```
-
-```{=html}
-<div id="ehldqfwugk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ehldqfwugk table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#ehldqfwugk thead, #ehldqfwugk tbody, #ehldqfwugk tfoot, #ehldqfwugk tr, #ehldqfwugk td, #ehldqfwugk th {
-  border-style: none;
-}
-
-#ehldqfwugk p {
-  margin: 0;
-  padding: 0;
-}
-
-#ehldqfwugk .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: 0;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 0px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 0px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#ehldqfwugk .gt_title {
-  color: #333333;
-  font-size: 18px;
-  font-weight: bolder;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#ehldqfwugk .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 9px;
-  padding-bottom: 11px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#ehldqfwugk .gt_heading {
-  background-color: #FFFFFF;
-  text-align: left;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 0px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 0px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 6px;
-  padding-bottom: 7px;
-  padding-left: 15px;
-  padding-right: 15px;
-  overflow-x: hidden;
-}
-
-#ehldqfwugk .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: bold;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#ehldqfwugk .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#ehldqfwugk .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#ehldqfwugk .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#ehldqfwugk .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#ehldqfwugk .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#ehldqfwugk .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#ehldqfwugk .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#ehldqfwugk .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#ehldqfwugk .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#ehldqfwugk .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#ehldqfwugk .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 15px;
-  padding-right: 15px;
-  vertical-align: top;
-}
-
-#ehldqfwugk .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#ehldqfwugk .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#ehldqfwugk .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#ehldqfwugk .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#ehldqfwugk .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#ehldqfwugk .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#ehldqfwugk .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_footnote {
-  margin: 0px;
-  font-size: 14px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#ehldqfwugk .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ehldqfwugk .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-#ehldqfwugk .gt_left {
-  text-align: left;
-}
-
-#ehldqfwugk .gt_center {
-  text-align: center;
-}
-
-#ehldqfwugk .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#ehldqfwugk .gt_font_normal {
-  font-weight: normal;
-}
-
-#ehldqfwugk .gt_font_bold {
-  font-weight: bold;
-}
-
-#ehldqfwugk .gt_font_italic {
-  font-style: italic;
-}
-
-#ehldqfwugk .gt_super {
-  font-size: 65%;
-}
-
-#ehldqfwugk .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#ehldqfwugk .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#ehldqfwugk .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#ehldqfwugk .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#ehldqfwugk .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#ehldqfwugk .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#ehldqfwugk .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="true" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="10" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Model Comparison</td>
-    </tr>
-    
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="Model">Model</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="df">df</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="AIC">AIC</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="BIC">BIC</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="BF">BF</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="P(Model|Data)">P(Model|Data)</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;chi;&lt;sup&gt;2&lt;/sup&gt;">&chi;<sup>2</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;Delta;&amp;chi;&lt;sup&gt;2&lt;/sup&gt;">&Delta;&chi;<sup>2</sup></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="&amp;Delta;df">&Delta;df</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="text-align: center;" scope="col" id="p">p</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="Model" class="gt_row gt_left">strict</td>
-<td headers="df" class="gt_row gt_right">84 </td>
-<td headers="AIC" class="gt_row gt_right">6918.470</td>
-<td headers="BIC" class="gt_row gt_right">7081.368</td>
-<td headers="BF" class="gt_row gt_right">1151155744.972</td>
-<td headers="P(Model|Data)" class="gt_row gt_right">1.000</td>
-<td headers="Chi_Square" class="gt_row gt_right">130.757</td>
-<td headers="Chi_Square_diff" class="gt_row gt_right"><br /></td>
-<td headers="df_diff" class="gt_row gt_right"><br /></td>
-<td headers="p" class="gt_row gt_right"><br /></td></tr>
-    <tr><td headers="Model" class="gt_row gt_left">strong</td>
-<td headers="df" class="gt_row gt_right">74 </td>
-<td headers="AIC" class="gt_row gt_right">6924.786</td>
-<td headers="BIC" class="gt_row gt_right">7123.097</td>
-<td headers="BF" class="gt_row gt_right">         0.000</td>
-<td headers="P(Model|Data)" class="gt_row gt_right">0.000</td>
-<td headers="Chi_Square" class="gt_row gt_right">117.072</td>
-<td headers="Chi_Square_diff" class="gt_row gt_right">13.685</td>
-<td headers="df_diff" class="gt_row gt_right">10.000</td>
-<td headers="p" class="gt_row gt_right">0.188</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-```
-
-
-
-
-```r
-library(semTools)
-measurementInvariance(model = model_1_v1, 
-                      data = yasamdoyum, 
-                      group = "cinsiyet",strict = TRUE)
-
-
-# measurementInvariance(..., std.lv = FALSE, strict = FALSE, quiet = FALSE,
-# fit.measures = "default", method = "satorra.bentler.2001")
-```
-
-```
-## 
-## Measurement invariance models:
-## 
-## Model 1 : fit.configural
-## Model 2 : fit.loadings
-## Model 3 : fit.intercepts
-## Model 4 : fit.residuals
-## Model 5 : fit.means
-## 
-## 
-## Chi-Squared Difference Test
-## 
-##                Df    AIC    BIC   Chisq Chisq diff    RMSEA Df diff Pr(>Chisq)
-## fit.configural 58 6933.8 7188.7  94.063                                       
-## fit.loadings   68 6930.9 7150.5 111.214    17.1510 0.074891      10  0.0710893
-## fit.intercepts 74 6924.8 7123.1 117.072     5.8579 0.000000       6  0.4392965
-## fit.residuals  84 6918.5 7081.4 130.757    13.6846 0.053757      10  0.1878715
-## fit.means      88 6930.3 7079.1 150.624    19.8670 0.176385       4  0.0005305
-##                   
-## fit.configural    
-## fit.loadings   .  
-## fit.intercepts    
-## fit.residuals     
-## fit.means      ***
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-## 
-## Fit measures:
-## 
-##                  cfi rmsea cfi.delta rmsea.delta
-## fit.configural 0.934 0.070        NA          NA
-## fit.loadings   0.921 0.071     0.013       0.001
-## fit.intercepts 0.922 0.068     0.000       0.003
-## fit.residuals  0.915 0.066     0.007       0.001
-## fit.means      0.886 0.075     0.029       0.009
-```
-
-<!-- ```{r} -->
-
-<!-- library(readr) -->
-
-<!--  ian <- read_table2("ian.txt", col_names = FALSE)[,-7] -->
-
-<!--  summary(ian) -->
-
-<!--  colnames(ian) <- paste("Madde",1:6,sep="") -->
-
-<!--  library(lavaan) -->
-
-<!--  model_1 <- 'ian =~ Madde1 + Madde2 + Madde3 + Madde4 + Madde5 + Madde6' -->
-
-<!--  cfa_1 <- cfa(model_1,data= ian) -->
-
-<!--  library(semoutput) -->
-
-<!--  sem_descriptives(ian) -->
-
-<!-- sem_sig(cfa_1) -->
-
-<!-- sem_fitmeasures(cfa_1) -->
-
-<!-- summary(cfa_1) -->
-
-<!-- fitmeasures(cfa_1,c("srmr","tli")) -->
-
-<!-- fitmeasures(cfa_1) -->
-
-<!-- sem_factorloadings(cfa_1) -->
-
-<!-- sem_factorloadings(cfa_1, -->
-
-<!--   standardized = TRUE, -->
-
-<!--   ci = "standardized", -->
-
-<!--   ci.level = 0.95, -->
-
-<!--   digits = 3, -->
-
-<!--   print = TRUE -->
-
-<!-- ) -->
-
-<!-- library(semPlot) -->
-
-<!-- semPaths(cfa_1,what="std",style="ram",layout="tree",rotation =2) -->
-
-<!-- modindices(cfa_1, sort = TRUE) -->
-
-<!-- resid(cfa_1, type='normalized') -->
-
-<!-- summary(cfa_1, rsquare=TRUE) -->
-
-<!-- ``` -->
-
-<!-- ```{r} -->
-
-<!-- library(readr) -->
-
-<!--  ian <- read_table2("ian.txt", col_names = FALSE)[,-7] -->
-
-<!--  summary(ian) -->
-
-<!--  colnames(ian) <- paste("Madde",1:6,sep="") -->
-
-<!--  library(lavaan) -->
-
-<!--  model_2 <- 'ian =~ NA*Madde1 + Madde2 + Madde3 + Madde4 + Madde5 + Madde6 -->
-
-<!--  ian ~~ 1*ian' -->
-
-<!--  cfa_2 <- cfa(model_2,data= ian) -->
-
-<!-- sem_sig(cfa_2) -->
-
-<!-- sem_fitmeasures(cfa_2) -->
-
-<!-- semPaths(cfa_2,what="std",style="ram",layout="tree",rotation =2) -->
-
-<!-- ``` -->
-
-<!-- ```{r} -->
-
-<!-- library(readr) -->
-
-<!-- hafiza <- read_table2("hafiza.dat", col_names = FALSE) -->
-
-<!-- colnames(hafiza) <- paste("Madde",1:6,sep="") -->
-
-<!--  library(lavaan) -->
-
-<!--  model_3 <- 'gorsel =~ Madde1 + Madde2 + Madde3  -->
-
-<!--              metinsel =~         Madde4 + Madde5 + Madde6' -->
-
-<!--  cor(hafiza) -->
-
-<!-- cfa_3 <- cfa(model_3,data= hafiza) -->
-
-<!-- sem_sig(cfa_3) -->
-
-<!-- sem_fitmeasures(cfa_3) -->
-
-<!-- semPaths(cfa_3,what="std",style="ram",layout="tree",rotation =2) -->
-
-<!-- sem_factorloadings(cfa_3,standardized = FALSE) -->
-
-<!-- sem_factorloadings(cfa_3,standardized = TRUE) -->
-
-<!-- modindices(cfa_3, sort = TRUE) -->
-
-<!-- resid(cfa_3, type='normalized') -->
-
-<!-- summary(cfa_3, rsquare=TRUE) -->
-
-<!-- ``` -->
-
-<!-- ```{r} -->
-
-<!-- library(readr) -->
-
-<!-- hafiza <- read_table2("hafiza.dat", col_names = FALSE) -->
-
-<!-- colnames(hafiza) <- paste("Madde",1:6,sep="") -->
-
-<!--  library(lavaan) -->
-
-<!--  model_4 <- 'gorsel =~ Madde1 + Madde2 + Madde3  -->
-
-<!--              metinsel =~ Madde4 + Madde5 + Madde6    -->
-
-<!--              Madde2 ~~ Madde3' -->
-
-<!-- cfa_4 <- cfa(model_4,data= hafiza) -->
-
-<!-- sem_sig(cfa_4) -->
-
-<!-- sem_fitmeasures(cfa_4) -->
-
-<!-- semPaths(cfa_4,what="std",style="lisrel",layout="tree",rotation =2) -->
-
-<!-- sem_factorloadings(cfa_4,standardized = FALSE) -->
-
-<!-- sem_factorloadings(cfa_4,standardized = TRUE) -->
-
-<!-- modindices(cfa_4, sort = TRUE) -->
-
-<!-- resid(cfa_4, type='normalized') -->
-
-<!-- summary(cfa_3, rsquare=TRUE) -->
-
-<!-- ``` -->
-
-<!-- ```{r} -->
-
-<!-- library(readr) -->
-
-<!-- hafiza <- read_table2("hafiza.dat", col_names = FALSE) -->
-
-<!-- colnames(hafiza) <- paste("Madde",1:6,sep="") -->
-
-<!--  library(lavaan) -->
-
-<!--  model_5 <- 'gorsel =~ Madde1 + Madde2 + Madde3  -->
-
-<!--              metinsel =~ Madde4 + Madde5 + Madde6    -->
-
-<!--              Madde2 ~~ Madde3 -->
-
-<!--              gorsel ~~ Madde5' -->
-
-<!--  cfa_5 <- cfa(model_5,data= hafiza) -->
-
-<!-- semPaths(cfa_5,what="std",style="lisrel",layout="tree",rotation =2) -->
-
-<!-- ``` -->
-
-<!-- ```{r} -->
-
-<!-- # max_col <- max( count.fields("dissosiyatif.dat", sep = " ") )  -->
-
-<!-- # # Insert \t if tab-separated  -->
-
-<!-- #  -->
-
-<!-- # library(MCMCpack) -->
-
-<!-- # A <- read.table("dissosiyatif.dat", sep=" ", fill=TRUE, col.names=1:max_col) -->
-
-<!-- # corr <- xpnd( A[lower.tri(A, diag=T)] , max_col) -->
-
-<!-- # corr <- data.frame(corr) -->
-
-<!-- # colnames(corr) <- paste("D",1:28,sep="") -->
-
-<!-- # library(sem) -->
-
-<!-- #  -->
-
-<!-- #  library(lavaan) -->
-
-<!-- #  model_6 <- 'absorb =~ D1 + D2 + D10 + D15 + D16 + D17 + D18 + D19 + D20 + D21 + D22 + D23 + D24 + D25 + D26 -->
-
-<!-- #              amnezya =~ D3 + D4 + D5 + D6 + D8 + D9 -->
-
-<!-- #              depresyon =~ D7 + D11 + D12 + D13 + D27 + D28' -->
-
-<!-- #  cfa_6 <- cfa(model_6,sample.nobs = 971) -->
-
-<!-- #  sem_fitmeasures(cfa_6) -->
-
-<!-- # sem_sig(cfa_6) -->
-
-<!-- #  -->
-
-<!-- # semPaths(cfa_6,what="std",style="lisrel",layout="tree",rotation =2) -->
-
-<!-- ``` -->
-
-
-
-<!-- https://methodenlehre.github.io/SGSCLM-R-course/cfa-and-sem-with-lavaan.html#confirmatory-factor-analysis-cfa -->
-
-<!-- https://stats.oarc.ucla.edu/r/seminars/rcfa/ -->
-
-## Kaynaklar 
-- Rindskopf, D. & Rose, T. (1988. Some theory and applications of
-confirmatory second-order factor analysis. Multivariate Behavioral
-Research, 23(1), 51-67
-
-
-- Bentler, P. M. & Hu, L. (1999). Cutoff criteria fpr fit indexes
-in covariance structure analysis: Conventional criteri versus new
-alternatives. Structural Equation Modeling, 6(1), 1-55.
-
-- Bentler, P. M. (1990). Comparative fit indexes in structural
-models. Psychological Bulletin, 107, 238-246. - Steiger, J. H. (1990).
-Structural model evaluation and modification: An interval estimation
-approach. Multivariate Behavioral Research, 25, 173-80.
+-   Bentler, P. M. (1990). Comparative fit indexes in structural models. Psychological Bulletin, 107, 238-246. - Steiger, J. H. (1990). Structural model evaluation and modification: An interval estimation approach. Multivariate Behavioral Research, 25, 173-80.

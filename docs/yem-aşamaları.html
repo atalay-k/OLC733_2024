@@ -4,20 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Bölüm 10 Özet | OLC733</title>
+  <title>Bölüm 9 YEM-Aşamaları | OLC733</title>
 
     <meta name="author" content="Kubra Atalay Kabasakal" />
   
    <meta name="description" content="Bu notlar OLC733 dersi için hazırlanmıştır." />
    <meta name="generator" content="placeholder" />
-  <meta property="og:title" content="Bölüm 10 Özet | OLC733" />
+  <meta property="og:title" content="Bölüm 9 YEM-Aşamaları | OLC733" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/atalay-k/OLC733" />
   
   <meta property="og:description" content="Bu notlar OLC733 dersi için hazırlanmıştır." />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bölüm 10 Özet | OLC733" />
+  <meta name="twitter:title" content="Bölüm 9 YEM-Aşamaları | OLC733" />
   
   <meta name="twitter:description" content="Bu notlar OLC733 dersi için hazırlanmıştır." />
   
@@ -127,58 +127,301 @@
   </header>
 
   <main class="col-sm-12 col-md-9 col-lg-7" id="content">
-<div id="özet" class="section level1" number="10">
-<h1><span class="header-section-number">Bölüm 10</span> Özet</h1>
-<p>Ölçme Değişmezliği Hiyerarşik Modellerinde Serbest Tahminlenen ve Sabitlenen Parametreler [Gregorich, 2006]</p>
+<div id="yem-aşamaları" class="section level1" number="9">
+<h1><span class="header-section-number">Bölüm 9</span> YEM-Aşamaları</h1>
+<p><strong>Model Uyumu</strong></p>
 <table style="width:99%;">
+<caption>Model Uyum İndeksleri</caption>
 <colgroup>
-<col width="13%" />
-<col width="32%" />
-<col width="53%" />
+<col width="14%" />
+<col width="31%" />
+<col width="52%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Model</th>
-<th>Serbest Parametre</th>
-<th>Sabitlenen Parametre</th>
+<th>Uyum İndisi</th>
+<th>İyi Uyum</th>
+<th>Kabul Edilebilir Uyum</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Sekil</td>
-<td>Madde/Faktor grupları</td>
-<td>-</td>
+<td><span class="math display">\[
+  X^2          |
+  \]</span></td>
+<td><span class="math display">\[
+p&gt;0.05
+\]</span></td>
+<td></td>
 </tr>
 <tr class="even">
-<td>Zayıf</td>
-<td>+Faktor yukleri</td>
-<td>Faktör varyans ve kovaryansları</td>
+<td><span class="math display">\[
+  X^2/df
+  \]</span></td>
+<td><span class="math display">\[
+                     0\le X^2/df \le 2
+                    \]</span></td>
+<td><span class="math display">\[
+                                               2 &lt; X^2/df \le 5
+                                              \]</span></td>
 </tr>
 <tr class="odd">
-<td>Guclu</td>
-<td>+Madde Sabitleri</td>
-<td>+Faktör ve gözlenen degisken ortalamaları</td>
+<td><span class="math display">\[
+  SRMR
+  \]</span></td>
+<td><span class="math display">\[
+                    0\le SRMR\le .05
+                    \]</span></td>
+<td><span class="math display">\[
+                                              .05  &lt; SRMR\le .08
+                                              \]</span></td>
 </tr>
 <tr class="even">
-<td>Katı</td>
-<td>+Madde artık varyansları</td>
-<td>+Gozlenen varyans ve kovaryanslar</td>
+<td><span class="math display">\[
+  RMSEA
+  \]</span></td>
+<td><span class="math display">\[
+                    0\le RMSEA\le .05
+                    \]</span></td>
+<td><span class="math display">\[
+                                              .05  &lt; RMSEA\le .08
+                                              \]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[
+  CFI
+  \]</span></td>
+<td><span class="math display">\[
+                    .95\le CFI\le .1
+                    \]</span></td>
+<td><span class="math display">\[
+                                              .90\le CFI &lt; .95
+                                              \]</span></td>
 </tr>
 </tbody>
 </table>
-<div id="özet-1" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Özet</h2>
+<div id="ölçme-değişmezliği-modelleri" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Ölçme Değişmezliği Modelleri</h2>
 <ol style="list-style-type: decimal">
-<li><p>DFA modelini her grupta ayrı ayrı test ediniz.</p></li>
-<li><p>Özdeş faktör yapısını eş zamanlı test ediniz.</p></li>
-<li><p>Faktör yüklerinin eşitliğini test ediniz.</p></li>
-<li><p>Gösterge sabitlerinin eşitliğini test ediniz.</p></li>
-<li><p>Gösterge artık varyanslarının eşitliğini test ediniz.</p></li>
-<li><p>Faktör varyanslarının eşitliğini test ediniz.</p></li>
-<li><p>Faktör kovaryanslarının eşitliğini test ediniz.</p></li>
-<li><p>Faktör ortalamalarını test ediniz.</p>
-<p>(Brown, 2015; Şen, 2020)</p></li>
+<li><p>Şekil değişmezliği (configural invariance) modeli</p></li>
+<li><p>Zayıf değişmezlik (weak invariance) modeli</p></li>
+<li><p>Güçlü değişmezlik (strong invariance) modeli</p></li>
+<li><p>Katı değişmezlik (strict invariance) modeli</p></li>
 </ol>
+</div>
+<div id="ölçme-değişmezliği-1" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> Ölçme Değişmezliği</h2>
+<p>2 faktör 6 gösterge de toplam hesaplanabilen parametre sayısı</p>
+<p><img src="images/CFAmodel.JPG" /></p>
+</div>
+<div id="ölçme-değişmezliği-2" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> Ölçme Değişmezliği</h2>
+<ul>
+<li><p>Serbest model ve sınırlandırılmış model yuvalanmış modeller olup sınırlandırılmış model serbest modelin içinde yuvalanmıştır.</p></li>
+<li><p>Bu nedenle sınırlandırılmış modelin veriye serbest modele göre anlamlı olarak daha kötü uyum sağlayıp sağlamadığını belirlemek için ki-kare fark testi kullanılabilir.</p>
+<p><span class="math display">\[
+X^2_{dif} = X^2_{sinir} -  X^2_{serbest}
+\]</span></p></li>
+</ul>
+<p><span class="math display">\[
+df_{dif} =  df_{sinir} - df_{serbest}
+\]</span></p>
+</div>
+<div id="şekil-değişmezligi" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Şekil Değişmezligi</h2>
+<p><strong>Şekil değişmezliği (configural /pattern invariance)</strong></p>
+<p>Gruplar aynı genel faktör yapısına sahip mi?</p>
+<ul>
+<li><p>en az kısıtlayıcı model</p></li>
+<li><p>model veri ile uyumlu değilse, hiç bir temel düzeyde geçerli olmaz.</p></li>
+</ul>
+</div>
+<div id="şekil-değişmezlik" class="section level2" number="9.5">
+<h2><span class="header-section-number">9.5</span> Şekil Değişmezlik</h2>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grup 1</th>
+<th>Grup 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[ y_{11s} = \mu_{11} + \lambda_{11}F_{1s} + e_{11s}\]</span></td>
+<td><span class="math display">\[ y_{12s} = \mu_{12} + \lambda_{12}F_{1s} + e_{12s}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{21s} = \mu_{21} + \lambda_{21}F_{1s} + e_{21s}\]</span></td>
+<td><span class="math display">\[ y_{22s} = \mu_{22} + \lambda_{22}F_{1s} + e_{22s}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ y_{31s} = \mu_{31} + \lambda_{31}F_{1s} + e_{31s}\]</span></td>
+<td><span class="math display">\[ y_{32s} = \mu_{32} + \lambda_{32}F_{1s} + e_{32s}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{41s} = \mu_{41} + \lambda_{41}F_{2s} + e_{41s}\]</span></td>
+<td><span class="math display">\[ y_{42s} = \mu_{42} + \lambda_{42}F_{2s} + e_{42s}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ y_{51s} = \mu_{51} + \lambda_{51}F_{2s} + e_{51s}\]</span></td>
+<td><span class="math display">\[ y_{52s} = \mu_{52} + \lambda_{52}F_{2s} + e_{52s}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{61s} = \mu_{61} + \lambda_{61}F_{6s} + e_{61s}\]</span></td>
+<td><span class="math display">\[ y_{62s} = \mu_{62} + \lambda_{62}F_{2s} + e_{62s}\]</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Alt indislerin ilki madde, ikincisi grup için kullanılmıştır.</p>
+<p><span class="math display">\[ sd = 54 - (12\mu - 12\sigma^2_{e} - 12\lambda + 0\sigma^2_{F} + 2\sigma_{F_{12}} + 0K_{F}) = 16\]</span></p></li>
+</ul>
+</div>
+<div id="zayıf-değişmezlik" class="section level2" number="9.6">
+<h2><span class="header-section-number">9.6</span> Zayıf Değişmezlik</h2>
+<p><strong>Zayıf Değişmezlik (Metric/Weak factorial invariance)</strong></p>
+<p>Gruplar aynı faktör yüklerine sahip mi?</p>
+<p>her bir göstergenin yükü (standartlaştırılmış katsayısı üzerinde gruplarda eşitlik kısıtı getirilir.</p>
+</div>
+<div id="zayıf-değişmezlik-1" class="section level2" number="9.7">
+<h2><span class="header-section-number">9.7</span> Zayıf Değişmezlik</h2>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grup 1</th>
+<th>Grup 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[ y_{11s} = \mu_{11} + \boldsymbol{\lambda_{1}F_{1s}}+ e_{11s}\]</span></td>
+<td><span class="math display">\[ y_{12s} = \mu_{12} + \boldsymbol{\lambda_{11}F_{1s}}+ e_{12s}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{21s} = \mu_{21} + \boldsymbol{\lambda_{2}F_{1s}} + e_{21s}\]</span></td>
+<td><span class="math display">\[ y_{22s} = \mu_{22} + \boldsymbol{\lambda_{2}F_{1s}} + e_{22s}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ y_{31s} = \mu_{31} + \boldsymbol{\lambda_{3}F_{1s}} + e_{31s}\]</span></td>
+<td><span class="math display">\[ y_{32s} = \mu_{32} + \boldsymbol{\lambda_{3}F_{1s}} + e_{32s}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{41s} = \mu_{41} + \boldsymbol{\lambda_{4}F_{2s}} + e_{41s}\]</span></td>
+<td><span class="math display">\[ y_{42s} = \mu_{42} + \boldsymbol{\lambda_{4}F_{2s}} + e_{42s}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ y_{51s} = \mu_{51} + \boldsymbol{\lambda_{5}F_{2s}} + e_{51s}\]</span></td>
+<td><span class="math display">\[ y_{52s} = \mu_{52} + \boldsymbol{\lambda_{5}F_{2s}} + e_{52s}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{61s} = \mu_{61} + \boldsymbol{\lambda_{6}F_{2s}} + e_{61s}\]</span></td>
+<td><span class="math display">\[ y_{62s} = \mu_{62} + \boldsymbol{\lambda_{6}F_{2s}} + e_{62s}\]</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[ sd = 54 - (12\mu - 12\sigma^2_{e} - \boldsymbol{6\lambda} + \boldsymbol{2\sigma^2_{F}} + 2\sigma_{F_{12}} + 0K_{F}) = 20\]</span></p>
+</div>
+<div id="güçlü-değişmezlik" class="section level2" number="9.8">
+<h2><span class="header-section-number">9.8</span> Güçlü Değişmezlik</h2>
+<p><strong>Güçlü Değişmezlik (Strong/Scalar invariance)</strong></p>
+<p>Gruplar aynı gösterge sabitlerine sahip mi?</p>
+<p>eşit standartlaştırılmış kesen değere sahip mi?</p>
+</div>
+<div id="güçlü-değişmezlik-1" class="section level2" number="9.9">
+<h2><span class="header-section-number">9.9</span> Güçlü Değişmezlik</h2>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grup 1</th>
+<th>Grup 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[ y_{11s} = \boldsymbol{\mu_{1}} + \boldsymbol{\lambda_{1}F_{1s}}+ e_{11s}\]</span></td>
+<td><span class="math display">\[ y_{12s} = \boldsymbol{\mu_{1}} + \boldsymbol{\lambda_{11}F_{1s}}+ e_{12s}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{21s} = \boldsymbol{\mu_{2}} + \boldsymbol{\lambda_{2}F_{1s}} + e_{21s}\]</span></td>
+<td><span class="math display">\[ y_{22s} = \boldsymbol{\mu_{2}} + \boldsymbol{\lambda_{2}F_{1s}} + e_{22s}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ y_{31s} = \boldsymbol{\mu_{3}}+ \boldsymbol{\lambda_{3}F_{1s}} + e_{31s}\]</span></td>
+<td><span class="math display">\[ y_{32s} = \boldsymbol{\mu_{3}} + \boldsymbol{\lambda_{3}F_{1s}} + e_{32s}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{41s} = \boldsymbol{\mu_{4}} + \boldsymbol{\lambda_{4}F_{2s}} + e_{41s}\]</span></td>
+<td><span class="math display">\[ y_{42s} = \boldsymbol{\mu_{4}} + \boldsymbol{\lambda_{4}F_{2s}} + e_{42s}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ y_{51s} = \boldsymbol{\mu_{5}}+ \boldsymbol{\lambda_{5}F_{2s}} + e_{51s}\]</span></td>
+<td><span class="math display">\[ y_{52s} = \boldsymbol{\mu_{5}} + \boldsymbol{\lambda_{5}F_{2s}} + e_{52s}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{61s} = \boldsymbol{\mu_{6}} + \boldsymbol{\lambda_{6}F_{2s}} + e_{61s}\]</span></td>
+<td><span class="math display">\[ y_{62s} = \boldsymbol{\mu_{6}} + \boldsymbol{\lambda_{6}F_{2s}} + e_{62s}\]</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[ sd = 54 - (6\boldsymbol{\mu} - \boldsymbol{12\sigma^2_{e}} - 6\lambda + 2\sigma^2_{F} + 2\sigma_{F_{12}} + 2\boldsymbol{K_{F}}) = 24\]</span></p>
+</div>
+<div id="katı-değişmezlik" class="section level2" number="9.10">
+<h2><span class="header-section-number">9.10</span> Katı Değişmezlik</h2>
+<p>Gruplar aynı artık varyanslara sahip mi?</p>
+</div>
+<div id="katı-değişmezlik-1" class="section level2" number="9.11">
+<h2><span class="header-section-number">9.11</span> Katı Değişmezlik</h2>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Grup 1</th>
+<th>Grup 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[ y_{11s} = \boldsymbol{\mu_{1}} + \boldsymbol{\lambda_{1}F_{1s}}+ \boldsymbol{e_{1s}}\]</span></td>
+<td><span class="math display">\[ y_{12s} = \boldsymbol{\mu_{1}} + \boldsymbol{\lambda_{11}F_{1s}}+ \boldsymbol{e_{1s}}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{21s} = \boldsymbol{\mu_{2}} + \boldsymbol{\lambda_{2}F_{1s}} + \boldsymbol{e_{2s}}\]</span></td>
+<td><span class="math display">\[ y_{22s} = \boldsymbol{\mu_{2}} + \boldsymbol{\lambda_{2}F_{1s}} + \boldsymbol{e_{2s}}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ y_{31s} = \boldsymbol{\mu_{3}}+ \boldsymbol{\lambda_{3}F_{1s}} + \boldsymbol{e_{3s}}\]</span></td>
+<td><span class="math display">\[ y_{32s} = \boldsymbol{\mu_{3}} + \boldsymbol{\lambda_{3}F_{1s}} + \boldsymbol{e_{3s}}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{41s} = \boldsymbol{\mu_{4}} + \boldsymbol{\lambda_{4}F_{2s}} + \boldsymbol{e_{4s}}\]</span></td>
+<td><span class="math display">\[ y_{42s} = \boldsymbol{\mu_{4}} + \boldsymbol{\lambda_{4}F_{2s}} + \boldsymbol{e_{2s}}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[ y_{51s} = \boldsymbol{\mu_{5}}+ \boldsymbol{\lambda_{5}F_{2s}} + \boldsymbol{e_{5s}}\]</span></td>
+<td><span class="math display">\[ y_{52s} = \boldsymbol{\mu_{5}} + \boldsymbol{\lambda_{5}F_{2s}} + \boldsymbol{e_{5s}}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[ y_{61s} = \boldsymbol{\mu_{6}} + \boldsymbol{\lambda_{6}F_{2s}} + \boldsymbol{e_{6s}}\]</span></td>
+<td><span class="math display">\[ y_{62s} = \boldsymbol{\mu_{6}} + \boldsymbol{\lambda_{6}F_{2s}} + \boldsymbol{e_{6s}}\]</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[ sd = 54 - (6\mu - \boldsymbol{6\sigma^2_{e}} - 6\lambda + 2\sigma^2_{F} + 2\sigma_{F_{12}} + 2K_{F}) = 30\]</span></p>
 </div>
 </div>
 <script>

@@ -5,6 +5,8 @@ tab:unnamed-chunk-18
 tab:unnamed-chunk-3
 tab:unnamed-chunk-40
 tab:unnamed-chunk-41
+tab:cfa7
+tab:cfa8
 varsayımlar-i
 veri-inceleme
 kayıp-değerler
@@ -169,6 +171,7 @@ uygulama
 dfa-modelinin-testi
 kestitimler
 artık-varyanslar-ve-r²
+faktör-yüklerinden-geçerlik-ve-güvenirlik
 semplot-paketi
 sempaths-1
 faktorler-arası-korelasyon
@@ -176,7 +179,12 @@ modifikasyon-indeksleri-1
 üç-faktörlü-model
 model-karşılaştırma
 daha-yüksek-dereceli-faktör-modelleri
-ölçme-değişmezliği
-özet
-uygulama-1
 kaynaklar-5
+ölçme-değişmezliği
+ölçme-değişmezliği-aşamları
+yem-aşamaları
+ölçme-değişmezliği-modelleri
+özet
+özet-1
+uygulama-1
+kaynakca

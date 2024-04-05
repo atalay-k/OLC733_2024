@@ -1322,12 +1322,12 @@ diag(rep_matrix)==out$communality
 ## Faktörleştirme yöntemi
 
 -   **psych** paketinde kullanılan faktörleştirme yöntemlerinden
-    bazıları:
+    bazıları: uls, ols, minres, wls, pa, ml...
+    
+-   pa (principial axis factoring) ve ml (maksimumum olabilirlik) en çok kullanılan yöntemlerdir.
 
--   verilerin çok değişkenli normallik varsayımını karşılayıp karşılası
-    durumda **ml** yöntemi, sağlamaması durumunda ise en küçük kareler
-    **uls** veya ağırlıklandırılmış en küçük kareler **wls** tercih
-    edilebilir.
+-  ml çok değişkenli normalliği gerektirir. pa faktör yüklerinin nispetene küçük olduğu ve küçük örneklemlerde kararlı kestirimler yapar.
+
 
 ## Faktörlerin Yorumlanması
 
