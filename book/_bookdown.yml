@@ -13,7 +13,7 @@ language:
   label:
     fig: 'Şekil '
     tab: 'Tablo '
-    eq: 'Deklem '
+    eq: 'Denklem '
     thm: 'Theorem '
     lem: 'Lemma '
     cor: 'Corollary '
