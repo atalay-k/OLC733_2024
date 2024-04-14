@@ -26,13 +26,7 @@
 <script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="libs/plotly-binding-4.10.4/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
 <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script><link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet">
 <script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script><script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script><script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script><script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script><script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script><script src="libs/rglwidgetClass-1.2.8/init.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script><script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script><script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script><script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script><script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script><script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script><script src="libs/viz-1.8.2/viz.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-<script src="libs/grViz-binding-1.0.11/grViz.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-6NP3MF25W3');
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -142,13 +136,10 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td><span class="math display">\[
-  X^2          |
-  \]</span></td>
-<td><span class="math display">\[
-p&gt;0.05
-\]</span></td>
-<td></td>
+<td colspan="3">
+<span class="math display">\[               | \]</span> |
+X^2 | p&gt;0.05 |
+<span class="math display">\[             | \]</span> |</td>
 </tr>
 <tr class="even">
 <td><span class="math display">\[
@@ -261,7 +252,7 @@ p&gt;0.05
 <ul>
 <li>
 <p>Alt indislerin ilki madde, ikincisi grup için kullanılmıştır.</p>
-<p><span class="math display">\[ sd = 54 - (12\mu - 12\sigma^2_{e} - 12\lambda + 0\sigma^2_{F} + 2\sigma_{F_{12}} + 0K_{F}) = 16\]</span></p>
+<!-- $$ sd = 54 - (12\mu - 12\sigma^2_{e} - 12\lambda + 0\sigma^2_{F} + 2\sigma_{F_{12}} + 0K_{F}) = 16$$ -->
 </li>
 </ul>
 <p><strong>Zayıf Değişmezlik (Metric/Weak factorial invariance)</strong></p>
@@ -303,8 +294,7 @@ p&gt;0.05
 </tr>
 </tbody>
 </table></div>
-<p><span class="math display">\[ sd = 54 - (12\mu - 12\sigma^2_{e} - \boldsymbol{6\lambda} + \boldsymbol{2\sigma^2_{F}} + 2\sigma_{F_{12}} + 0K_{F}) = 20\]</span></p>
-<p><strong>Güçlü Değişmezlik (Strong/Scalar invariance)</strong></p>
+<!-- $$ sd = 54 - (12\mu - 12\sigma^2_{e} - \boldsymbol{6\lambda} + \boldsymbol{2\sigma^2_{F}} + 2\sigma_{F_{12}} + 0K_{F}) = 20$$ --><p><strong>Güçlü Değişmezlik (Strong/Scalar invariance)</strong></p>
 <p>Gruplar aynı gösterge sabitlerine sahip mi?</p>
 <p>eşit standartlaştırılmış kesen değere sahip mi?</p>
 <div class="inline-table"><table class="table table-sm">
@@ -343,8 +333,7 @@ p&gt;0.05
 </tr>
 </tbody>
 </table></div>
-<p><span class="math display">\[ sd = 54 - (6\boldsymbol{\mu} - \boldsymbol{12\sigma^2_{e}} - 6\lambda + 2\sigma^2_{F} + 2\sigma_{F_{12}} + 2\boldsymbol{K_{F}}) = 24\]</span></p>
-<p><strong>Gruplar aynı artık varyanslara sahip mi?</strong></p>
+<!-- $$ sd = 54 - (6\boldsymbol{\mu} - \boldsymbol{12\sigma^2_{e}} - 6\lambda + 2\sigma^2_{F} + 2\sigma_{F_{12}} + 2\boldsymbol{K_{F}}) = 24$$ --><p><strong>Gruplar aynı artık varyanslara sahip mi?</strong></p>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
 <col width="50%">
@@ -381,7 +370,7 @@ p&gt;0.05
 </tr>
 </tbody>
 </table></div>
-<p><span class="math display">\[ sd = 54 - (6\mu - \boldsymbol{6\sigma^2_{e}} - 6\lambda + 2\sigma^2_{F} + 2\sigma_{F_{12}} + 2K_{F}) = 30\]</span></p>
+<!-- $$ sd = 54 - (6\mu - \boldsymbol{6\sigma^2_{e}} - 6\lambda + 2\sigma^2_{F} + 2\sigma_{F_{12}} + 2K_{F}) = 30$$ -->
 </div>
 </div>
 <div id="özet" class="section level2" number="8.3">
@@ -504,95 +493,52 @@ p&gt;0.05
 <div class="sourceCode" id="cb396"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># anova(weak, configural)</span></span>
 <span></span>
-<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">weak</span>, <span class="va">configural</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>   </span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_styling.html">kable_styling</a></span><span class="op">(</span>font_size <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="table" style="font-size: 6px; margin-left: auto; margin-right: auto;">
-<thead><tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-Df
-</th>
-<th style="text-align:right;">
-AIC
-</th>
-<th style="text-align:right;">
-BIC
-</th>
-<th style="text-align:right;">
-Chisq
-</th>
-<th style="text-align:right;">
-Chisq diff
-</th>
-<th style="text-align:right;">
-RMSEA
-</th>
-<th style="text-align:right;">
-Df diff
-</th>
-<th style="text-align:right;">
-Pr(&gt;Chisq)
-</th>
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">weak</span>, <span class="va">configural</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="13%">
+<col width="3%">
+<col width="11%">
+<col width="11%">
+<col width="11%">
+<col width="13%">
+<col width="12%">
+<col width="9%">
+<col width="13%">
+</colgroup>
+<thead><tr class="header">
+<th align="left"></th>
+<th align="right">Df</th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+<th align="right">Chisq</th>
+<th align="right">Chisq diff</th>
+<th align="right">RMSEA</th>
+<th align="right">Df diff</th>
+<th align="right">Pr(&gt;Chisq)</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-configural
-</td>
-<td style="text-align:right;">
-48
-</td>
-<td style="text-align:right;">
-7484.395
-</td>
-<td style="text-align:right;">
-7706.822
-</td>
-<td style="text-align:right;">
-115.8513
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
+<tr class="odd">
+<td align="left">configural</td>
+<td align="right">48</td>
+<td align="right">7484.395</td>
+<td align="right">7706.822</td>
+<td align="right">115.8513</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-weak
-</td>
-<td style="text-align:right;">
-54
-</td>
-<td style="text-align:right;">
-7480.587
-</td>
-<td style="text-align:right;">
-7680.771
-</td>
-<td style="text-align:right;">
-124.0435
-</td>
-<td style="text-align:right;">
-8.1922
-</td>
-<td style="text-align:right;">
-0.0492716
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-0.2243577
-</td>
+<tr class="even">
+<td align="left">weak</td>
+<td align="right">54</td>
+<td align="right">7480.587</td>
+<td align="right">7680.771</td>
+<td align="right">124.0435</td>
+<td align="right">8.1922</td>
+<td align="right">0.0492716</td>
+<td align="right">6</td>
+<td align="right">0.2243577</td>
 </tr>
 </tbody>
 </table></div>
@@ -740,95 +686,52 @@ weak
 <div class="sourceCode" id="cb400"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># anova(strong, weak)</span></span>
 <span></span>
-<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">strong</span>, <span class="va">weak</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>   </span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_styling.html">kable_styling</a></span><span class="op">(</span>font_size <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="table" style="font-size: 6px; margin-left: auto; margin-right: auto;">
-<thead><tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-Df
-</th>
-<th style="text-align:right;">
-AIC
-</th>
-<th style="text-align:right;">
-BIC
-</th>
-<th style="text-align:right;">
-Chisq
-</th>
-<th style="text-align:right;">
-Chisq diff
-</th>
-<th style="text-align:right;">
-RMSEA
-</th>
-<th style="text-align:right;">
-Df diff
-</th>
-<th style="text-align:right;">
-Pr(&gt;Chisq)
-</th>
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">strong</span>, <span class="va">weak</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="9%">
+<col width="3%">
+<col width="11%">
+<col width="11%">
+<col width="11%">
+<col width="14%">
+<col width="11%">
+<col width="10%">
+<col width="14%">
+</colgroup>
+<thead><tr class="header">
+<th align="left"></th>
+<th align="right">Df</th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+<th align="right">Chisq</th>
+<th align="right">Chisq diff</th>
+<th align="right">RMSEA</th>
+<th align="right">Df diff</th>
+<th align="right">Pr(&gt;Chisq)</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-weak
-</td>
-<td style="text-align:right;">
-54
-</td>
-<td style="text-align:right;">
-7480.587
-</td>
-<td style="text-align:right;">
-7680.771
-</td>
-<td style="text-align:right;">
-124.0435
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
-<td style="text-align:right;">
-NA
-</td>
+<tr class="odd">
+<td align="left">weak</td>
+<td align="right">54</td>
+<td align="right">7480.587</td>
+<td align="right">7680.771</td>
+<td align="right">124.0435</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-strong
-</td>
-<td style="text-align:right;">
-60
-</td>
-<td style="text-align:right;">
-7508.647
-</td>
-<td style="text-align:right;">
-7686.588
-</td>
-<td style="text-align:right;">
-164.1028
-</td>
-<td style="text-align:right;">
-40.05929
-</td>
-<td style="text-align:right;">
-0.194211
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-4e-07
-</td>
+<tr class="even">
+<td align="left">strong</td>
+<td align="right">60</td>
+<td align="right">7508.647</td>
+<td align="right">7686.588</td>
+<td align="right">164.1028</td>
+<td align="right">40.05929</td>
+<td align="right">0.194211</td>
+<td align="right">6</td>
+<td align="right">4e-07</td>
 </tr>
 </tbody>
 </table></div>
@@ -1155,7 +1058,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-05.</p>
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-14.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

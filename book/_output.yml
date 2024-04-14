@@ -6,7 +6,6 @@ bookdown::bs4_book:
     branch: master
     subdir: book
   includes:
-    in_header: include/google-analytics.html
     after_body:
     - include/webex.js
     - include/script.js
@@ -27,4 +26,4 @@ bookdown::epub_book:
   - include/webex.css
   - include/epub.css
   toc: yes
-  toc_depth: 2
+  toc_depth: 3

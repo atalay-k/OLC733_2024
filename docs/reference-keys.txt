@@ -152,11 +152,8 @@ faktör-puanı-kestirimi
 eganet
 kaynaklar-4
 dfa
-dfa-1
 dfa-vs-afa
 dfa-modeli-kovaryans-matrisi
-standart-dfa-modelleri
-dfa-modellerinin-parametreleri
 modelin-tanımlanması
 modifikasyon
 yeterli-gereklilikler

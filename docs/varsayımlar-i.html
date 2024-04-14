@@ -26,13 +26,7 @@
 <script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="libs/plotly-binding-4.10.4/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
 <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script><link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet">
 <script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script><script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script><script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script><script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script><script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script><script src="libs/rglwidgetClass-1.2.8/init.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script><script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script><script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script><script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script><script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script><script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script><script src="libs/viz-1.8.2/viz.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-<script src="libs/grViz-binding-1.0.11/grViz.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-6NP3MF25W3');
-    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
@@ -359,27 +353,27 @@ için inceleyebilirsiniz.</p>
 </ul>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary">gtsummary</a></span><span class="op">)</span></span></code></pre></div>
-<pre><code>## #BlackLivesMatter</code></pre>
+<pre><code>## #Uighur</code></pre>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a></span><span class="op">(</span>statistic <span class="op">=</span> <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/select_helpers.html">all_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span><span class="st">"{min}, {max}"</span><span class="op">)</span>,missing <span class="op">=</span><span class="st">"always"</span><span class="op">)</span></span></code></pre></div>
-<div id="abpdfgajjq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#abpdfgajjq table {
+<div id="olfsadbyao" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#olfsadbyao table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#abpdfgajjq thead, #abpdfgajjq tbody, #abpdfgajjq tfoot, #abpdfgajjq tr, #abpdfgajjq td, #abpdfgajjq th {
+#olfsadbyao thead, #olfsadbyao tbody, #olfsadbyao tfoot, #olfsadbyao tr, #olfsadbyao td, #olfsadbyao th {
   border-style: none;
 }
 
-#abpdfgajjq p {
+#olfsadbyao p {
   margin: 0;
   padding: 0;
 }
 
-#abpdfgajjq .gt_table {
+#olfsadbyao .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -405,12 +399,12 @@ için inceleyebilirsiniz.</p>
   border-left-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_caption {
+#olfsadbyao .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#abpdfgajjq .gt_title {
+#olfsadbyao .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -422,7 +416,7 @@ için inceleyebilirsiniz.</p>
   border-bottom-width: 0;
 }
 
-#abpdfgajjq .gt_subtitle {
+#olfsadbyao .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -434,7 +428,7 @@ için inceleyebilirsiniz.</p>
   border-top-width: 0;
 }
 
-#abpdfgajjq .gt_heading {
+#olfsadbyao .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -446,13 +440,13 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_bottom_border {
+#olfsadbyao .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_col_headings {
+#olfsadbyao .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -467,7 +461,7 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_col_heading {
+#olfsadbyao .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -487,7 +481,7 @@ için inceleyebilirsiniz.</p>
   overflow-x: hidden;
 }
 
-#abpdfgajjq .gt_column_spanner_outer {
+#olfsadbyao .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -499,15 +493,15 @@ için inceleyebilirsiniz.</p>
   padding-right: 4px;
 }
 
-#abpdfgajjq .gt_column_spanner_outer:first-child {
+#olfsadbyao .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#abpdfgajjq .gt_column_spanner_outer:last-child {
+#olfsadbyao .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#abpdfgajjq .gt_column_spanner {
+#olfsadbyao .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -519,11 +513,11 @@ için inceleyebilirsiniz.</p>
   width: 100%;
 }
 
-#abpdfgajjq .gt_spanner_row {
+#olfsadbyao .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#abpdfgajjq .gt_group_heading {
+#olfsadbyao .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -549,7 +543,7 @@ için inceleyebilirsiniz.</p>
   text-align: left;
 }
 
-#abpdfgajjq .gt_empty_group_heading {
+#olfsadbyao .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -564,15 +558,15 @@ için inceleyebilirsiniz.</p>
   vertical-align: middle;
 }
 
-#abpdfgajjq .gt_from_md > :first-child {
+#olfsadbyao .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#abpdfgajjq .gt_from_md > :last-child {
+#olfsadbyao .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#abpdfgajjq .gt_row {
+#olfsadbyao .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -591,7 +585,7 @@ için inceleyebilirsiniz.</p>
   overflow-x: hidden;
 }
 
-#abpdfgajjq .gt_stub {
+#olfsadbyao .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -604,7 +598,7 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#abpdfgajjq .gt_stub_row_group {
+#olfsadbyao .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -618,15 +612,15 @@ için inceleyebilirsiniz.</p>
   vertical-align: top;
 }
 
-#abpdfgajjq .gt_row_group_first td {
+#olfsadbyao .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#abpdfgajjq .gt_row_group_first th {
+#olfsadbyao .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#abpdfgajjq .gt_summary_row {
+#olfsadbyao .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -636,16 +630,16 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#abpdfgajjq .gt_first_summary_row {
+#olfsadbyao .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_first_summary_row.thick {
+#olfsadbyao .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#abpdfgajjq .gt_last_summary_row {
+#olfsadbyao .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -655,7 +649,7 @@ için inceleyebilirsiniz.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_grand_summary_row {
+#olfsadbyao .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -665,7 +659,7 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#abpdfgajjq .gt_first_grand_summary_row {
+#olfsadbyao .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -675,7 +669,7 @@ için inceleyebilirsiniz.</p>
   border-top-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_last_grand_summary_row_top {
+#olfsadbyao .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -685,11 +679,11 @@ için inceleyebilirsiniz.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_striped {
+#olfsadbyao .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#abpdfgajjq .gt_table_body {
+#olfsadbyao .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -698,7 +692,7 @@ için inceleyebilirsiniz.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_footnotes {
+#olfsadbyao .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -712,7 +706,7 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_footnote {
+#olfsadbyao .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -721,7 +715,7 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#abpdfgajjq .gt_sourcenotes {
+#olfsadbyao .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -735,7 +729,7 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#abpdfgajjq .gt_sourcenote {
+#olfsadbyao .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -743,63 +737,63 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#abpdfgajjq .gt_left {
+#olfsadbyao .gt_left {
   text-align: left;
 }
 
-#abpdfgajjq .gt_center {
+#olfsadbyao .gt_center {
   text-align: center;
 }
 
-#abpdfgajjq .gt_right {
+#olfsadbyao .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#abpdfgajjq .gt_font_normal {
+#olfsadbyao .gt_font_normal {
   font-weight: normal;
 }
 
-#abpdfgajjq .gt_font_bold {
+#olfsadbyao .gt_font_bold {
   font-weight: bold;
 }
 
-#abpdfgajjq .gt_font_italic {
+#olfsadbyao .gt_font_italic {
   font-style: italic;
 }
 
-#abpdfgajjq .gt_super {
+#olfsadbyao .gt_super {
   font-size: 65%;
 }
 
-#abpdfgajjq .gt_footnote_marks {
+#olfsadbyao .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#abpdfgajjq .gt_asterisk {
+#olfsadbyao .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#abpdfgajjq .gt_indent_1 {
+#olfsadbyao .gt_indent_1 {
   text-indent: 5px;
 }
 
-#abpdfgajjq .gt_indent_2 {
+#olfsadbyao .gt_indent_2 {
   text-indent: 10px;
 }
 
-#abpdfgajjq .gt_indent_3 {
+#olfsadbyao .gt_indent_3 {
   text-indent: 15px;
 }
 
-#abpdfgajjq .gt_indent_4 {
+#olfsadbyao .gt_indent_4 {
   text-indent: 20px;
 }
 
-#abpdfgajjq .gt_indent_5 {
+#olfsadbyao .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2338,7 +2332,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-05.</p>
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-14.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
