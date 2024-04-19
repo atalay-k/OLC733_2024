@@ -360,28 +360,26 @@ için inceleyebilirsiniz.</p>
 <code>gtsummary</code> paketi ile inceleme</li>
 </ul>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary">gtsummary</a></span><span class="op">)</span></span></code></pre></div>
-<pre><code>## #StandWithUkraine</code></pre>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a></span><span class="op">(</span>statistic <span class="op">=</span> <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/select_helpers.html">all_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ddsjoberg/gtsummary">gtsummary</a></span><span class="op">)</span></span>
+<span><span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span><span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/tbl_summary.html">tbl_summary</a></span><span class="op">(</span>statistic <span class="op">=</span> <span class="fu"><a href="https://www.danieldsjoberg.com/gtsummary/reference/select_helpers.html">all_continuous</a></span><span class="op">(</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span><span class="st">"{min}, {max}"</span><span class="op">)</span>,missing <span class="op">=</span><span class="st">"always"</span><span class="op">)</span></span></code></pre></div>
-<div id="wxkkqbnioi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wxkkqbnioi table {
+<div id="ojcwhqnjoh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ojcwhqnjoh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wxkkqbnioi thead, #wxkkqbnioi tbody, #wxkkqbnioi tfoot, #wxkkqbnioi tr, #wxkkqbnioi td, #wxkkqbnioi th {
+#ojcwhqnjoh thead, #ojcwhqnjoh tbody, #ojcwhqnjoh tfoot, #ojcwhqnjoh tr, #ojcwhqnjoh td, #ojcwhqnjoh th {
   border-style: none;
 }
 
-#wxkkqbnioi p {
+#ojcwhqnjoh p {
   margin: 0;
   padding: 0;
 }
 
-#wxkkqbnioi .gt_table {
+#ojcwhqnjoh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -407,12 +405,12 @@ için inceleyebilirsiniz.</p>
   border-left-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_caption {
+#ojcwhqnjoh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wxkkqbnioi .gt_title {
+#ojcwhqnjoh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -424,7 +422,7 @@ için inceleyebilirsiniz.</p>
   border-bottom-width: 0;
 }
 
-#wxkkqbnioi .gt_subtitle {
+#ojcwhqnjoh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -436,7 +434,7 @@ için inceleyebilirsiniz.</p>
   border-top-width: 0;
 }
 
-#wxkkqbnioi .gt_heading {
+#ojcwhqnjoh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -448,13 +446,13 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_bottom_border {
+#ojcwhqnjoh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_col_headings {
+#ojcwhqnjoh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -469,7 +467,7 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_col_heading {
+#ojcwhqnjoh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -489,7 +487,7 @@ için inceleyebilirsiniz.</p>
   overflow-x: hidden;
 }
 
-#wxkkqbnioi .gt_column_spanner_outer {
+#ojcwhqnjoh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -501,15 +499,15 @@ için inceleyebilirsiniz.</p>
   padding-right: 4px;
 }
 
-#wxkkqbnioi .gt_column_spanner_outer:first-child {
+#ojcwhqnjoh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wxkkqbnioi .gt_column_spanner_outer:last-child {
+#ojcwhqnjoh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wxkkqbnioi .gt_column_spanner {
+#ojcwhqnjoh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -521,11 +519,11 @@ için inceleyebilirsiniz.</p>
   width: 100%;
 }
 
-#wxkkqbnioi .gt_spanner_row {
+#ojcwhqnjoh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wxkkqbnioi .gt_group_heading {
+#ojcwhqnjoh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -551,7 +549,7 @@ için inceleyebilirsiniz.</p>
   text-align: left;
 }
 
-#wxkkqbnioi .gt_empty_group_heading {
+#ojcwhqnjoh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -566,15 +564,15 @@ için inceleyebilirsiniz.</p>
   vertical-align: middle;
 }
 
-#wxkkqbnioi .gt_from_md > :first-child {
+#ojcwhqnjoh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wxkkqbnioi .gt_from_md > :last-child {
+#ojcwhqnjoh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wxkkqbnioi .gt_row {
+#ojcwhqnjoh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -593,7 +591,7 @@ için inceleyebilirsiniz.</p>
   overflow-x: hidden;
 }
 
-#wxkkqbnioi .gt_stub {
+#ojcwhqnjoh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -606,7 +604,7 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#wxkkqbnioi .gt_stub_row_group {
+#ojcwhqnjoh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -620,15 +618,15 @@ için inceleyebilirsiniz.</p>
   vertical-align: top;
 }
 
-#wxkkqbnioi .gt_row_group_first td {
+#ojcwhqnjoh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wxkkqbnioi .gt_row_group_first th {
+#ojcwhqnjoh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wxkkqbnioi .gt_summary_row {
+#ojcwhqnjoh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -638,16 +636,16 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#wxkkqbnioi .gt_first_summary_row {
+#ojcwhqnjoh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_first_summary_row.thick {
+#ojcwhqnjoh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wxkkqbnioi .gt_last_summary_row {
+#ojcwhqnjoh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -657,7 +655,7 @@ için inceleyebilirsiniz.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_grand_summary_row {
+#ojcwhqnjoh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -667,7 +665,7 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#wxkkqbnioi .gt_first_grand_summary_row {
+#ojcwhqnjoh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -677,7 +675,7 @@ için inceleyebilirsiniz.</p>
   border-top-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_last_grand_summary_row_top {
+#ojcwhqnjoh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -687,11 +685,11 @@ için inceleyebilirsiniz.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_striped {
+#ojcwhqnjoh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wxkkqbnioi .gt_table_body {
+#ojcwhqnjoh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -700,7 +698,7 @@ için inceleyebilirsiniz.</p>
   border-bottom-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_footnotes {
+#ojcwhqnjoh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -714,7 +712,7 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_footnote {
+#ojcwhqnjoh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -723,7 +721,7 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#wxkkqbnioi .gt_sourcenotes {
+#ojcwhqnjoh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -737,7 +735,7 @@ için inceleyebilirsiniz.</p>
   border-right-color: #D3D3D3;
 }
 
-#wxkkqbnioi .gt_sourcenote {
+#ojcwhqnjoh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -745,63 +743,63 @@ için inceleyebilirsiniz.</p>
   padding-right: 5px;
 }
 
-#wxkkqbnioi .gt_left {
+#ojcwhqnjoh .gt_left {
   text-align: left;
 }
 
-#wxkkqbnioi .gt_center {
+#ojcwhqnjoh .gt_center {
   text-align: center;
 }
 
-#wxkkqbnioi .gt_right {
+#ojcwhqnjoh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wxkkqbnioi .gt_font_normal {
+#ojcwhqnjoh .gt_font_normal {
   font-weight: normal;
 }
 
-#wxkkqbnioi .gt_font_bold {
+#ojcwhqnjoh .gt_font_bold {
   font-weight: bold;
 }
 
-#wxkkqbnioi .gt_font_italic {
+#ojcwhqnjoh .gt_font_italic {
   font-style: italic;
 }
 
-#wxkkqbnioi .gt_super {
+#ojcwhqnjoh .gt_super {
   font-size: 65%;
 }
 
-#wxkkqbnioi .gt_footnote_marks {
+#ojcwhqnjoh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wxkkqbnioi .gt_asterisk {
+#ojcwhqnjoh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wxkkqbnioi .gt_indent_1 {
+#ojcwhqnjoh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wxkkqbnioi .gt_indent_2 {
+#ojcwhqnjoh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wxkkqbnioi .gt_indent_3 {
+#ojcwhqnjoh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wxkkqbnioi .gt_indent_4 {
+#ojcwhqnjoh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wxkkqbnioi .gt_indent_5 {
+#ojcwhqnjoh .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -897,7 +895,7 @@ için inceleyebilirsiniz.</p>
 gtsummary(<a href="https://education.rstudio.com/blog/2020/07/gtsummary" class="uri">https://education.rstudio.com/blog/2020/07/gtsummary</a>)</p></li>
 <li><p><code>vtable</code> paketi ile inceleme</p></li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://nickch-k.github.io/vtable/">vtable</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://nickch-k.github.io/vtable/reference/sumtable.html">sumtable</a></span><span class="op">(</span><span class="va">screen</span>, summ<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'notNA(x)'</span>,<span class="st">'min(x)'</span>,<span class="st">'max(x)'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
@@ -1024,7 +1022,7 @@ race
 örnekler</a></p></li>
 <li><p>sütun isimleri aşağıdaki gibi değiştirilebilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://nickch-k.github.io/vtable/reference/sumtable.html">sumtable</a></span><span class="op">(</span><span class="va">screen</span>, summ <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'notNA(x)'</span>,<span class="st">'min(x)'</span>,<span class="st">'max(x)'</span><span class="op">)</span>,</span>
 <span>         summ.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'Frekans'</span></span>
 <span>,<span class="st">'Minimum'</span>,<span class="st">'Maksimum'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -1151,7 +1149,7 @@ race
 <li>
 <code>kable</code> paketi ile <code>psych</code> paketi çıktılarını düzenleme</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ozet</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.html">describe</a></span><span class="op">(</span><span class="va">screen</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">ozet</span>,format<span class="op">=</span><span class="st">'markdown'</span>,</span>
 <span>      caption<span class="op">=</span><span class="st">"Betimsel İstatistikler"</span>,digits<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
@@ -1648,7 +1646,7 @@ fazla paket mevcuttur. Bu paketler arasında
 <ul>
 <li><strong>herhangi bir eksik veri olup olmadığının kontrolü</strong></li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/njtierney/naniar">naniar</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/any-na.html">any_na</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
@@ -1656,26 +1654,26 @@ fazla paket mevcuttur. Bu paketler arasında
 <ul>
 <li><strong>toplam kaç eksik veri var</strong></li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/n_miss.html">n_miss</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 27</code></pre>
 <ul>
 <li><strong>eksik veri oranı ne?</strong></li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/prop_miss.html">prop_miss</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0.008294931</code></pre>
 <ul>
 <li><strong>eksik veriler hangi sütunlarda</strong></li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##    subno  timedrs  attdrug atthouse   income  mstatus     race 
 ##        0        0        0        1       26        0        0</code></pre>
 <ul>
 <li><strong>eksik veri tablosu, frekans ve oran</strong></li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/miss_var_summary.html">miss_var_summary</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1726,7 +1724,7 @@ fazla paket mevcuttur. Bu paketler arasında
 <ul>
 <li><strong>değişkenlere göre eksik veri tablosu</strong></li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/miss_var_table.html">miss_var_table</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1757,7 +1755,7 @@ fazla paket mevcuttur. Bu paketler arasında
 <ul>
 <li><strong>Hangi bireylerde/satırlarda eksik veri var</strong></li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/miss_case_summary.html">miss_case_summary</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1803,7 +1801,7 @@ fazla paket mevcuttur. Bu paketler arasında
 <ul>
 <li><strong>tam ve eksik veri tablosu</strong></li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/miss_case_table.html">miss_case_table</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1829,17 +1827,17 @@ fazla paket mevcuttur. Bu paketler arasında
 <ul>
 <li><strong>Eksik verinin görselleştirilmesi</strong></li>
 </ul>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/gg_miss_var.html">gg_miss_var</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="01-Varsayimlar_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li><strong>Eksik verinin görselleştirilmesi</strong></li>
 </ul>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://docs.ropensci.org/visdat/reference/vis_miss.html">vis_miss</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle<span class="op">=</span><span class="fl">80</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="01-Varsayimlar_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/gg_miss_upset.html">gg_miss_upset</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## `geom_line()`: Each group consists of only one observation.
 ## ℹ Do you need to adjust the group aesthetic?</code></pre>
@@ -1854,7 +1852,7 @@ fazla paket mevcuttur. Bu paketler arasında
 <ul>
 <li>income değişleninde eksik veriler diğer değişkenlerle ilişkili mi?</li>
 </ul>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># değişkeni kopyala</span></span>
 <span><span class="va">screen2</span> <span class="op">&lt;-</span> <span class="va">screen</span></span>
 <span><span class="va">screen2</span><span class="op">$</span><span class="va">income_m</span> <span class="op">&lt;-</span> <span class="va">screen2</span><span class="op">$</span><span class="va">income</span></span>
@@ -1912,7 +1910,7 @@ fazla paket mevcuttur. Bu paketler arasında
 <h4>
 <span class="header-section-number">1.4.5.1</span> Bir değişkenin kategorilerinde inceleme<a class="anchor" aria-label="anchor" href="#bir-de%C4%9Fi%C5%9Fkenin-kategorilerinde-inceleme"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="va">miss_test</span> <span class="op">&lt;-</span> <span class="va">screen2</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>miss_income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span><span class="op">)</span></span>
 <span>  </span>
@@ -1936,7 +1934,7 @@ fazla paket mevcuttur. Bu paketler arasında
 ## sample estimates:
 ##  mean of x  mean of y 
 ## 0.03883495 0.06077348</code></pre>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/gg_miss_fct.html">gg_miss_fct</a></span><span class="op">(</span><span class="va">screen</span>, fct <span class="op">=</span> <span class="va">mstatus</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="01-Varsayimlar_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
@@ -1945,7 +1943,7 @@ fazla paket mevcuttur. Bu paketler arasında
 <h3>
 <span class="header-section-number">1.4.6</span> MCAR test<a class="anchor" aria-label="anchor" href="#mcar-test"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/njtierney/naniar">naniar</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/naniar/man/mcar_test.html">mcar_test</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">screen</span><span class="op">[</span>,<span class="fl">2</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -1978,24 +1976,24 @@ varılabilir.</li>
 <li>Liste bazında silme işlemi <strong>na.omit</strong> ve <strong>complete.cases</strong>
 fonkisyonları ile sağlanabilir.</li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html">na.omit</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span> </span>
 <span><span class="va">screen</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/stats/complete.cases.html">complete.cases</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span>,<span class="op">]</span></span>
 <span><span class="va">screen</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/stats/complete.cases.html">complete.cases</a></span><span class="op">(</span><span class="va">screen</span><span class="op">)</span>,<span class="op">]</span></span></code></pre></div>
 <ul>
 <li>Ortalama atama işlemi yapılabir. Tek bir değişkene ortalama atama</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,<span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="cn">NA</span>,<span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">df</span><span class="op">$</span><span class="va">y</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">y</span><span class="op">)</span><span class="op">]</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">y</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">screen2</span> <span class="op">&lt;-</span> <span class="va">screen</span></span>
 <span><span class="va">screen2</span><span class="op">$</span><span class="va">income</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">screen2</span><span class="op">$</span><span class="va">income</span><span class="op">)</span><span class="op">]</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">screen2</span><span class="op">$</span><span class="va">income</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>
 <strong>if_else()</strong> ile ortalama atama işlemi yapılabir.</li>
 </ul>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">screen3</span> <span class="op">&lt;-</span> <span class="va">screen</span></span>
 <span></span>
 <span><span class="va">screen3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/transform.html">transform</a></span><span class="op">(</span><span class="va">screen3</span>, income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, </span>
@@ -2007,7 +2005,7 @@ fonkisyonları ile sağlanabilir.</li>
 <li>
 <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> ile ortalama atama işlemi yapılabilir</li>
 </ul>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  </span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">income</span>, na.rm <span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>, <span class="va">income</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -2028,7 +2026,7 @@ edilmesi yöntemlerinden ortalamanın yerleştirilmesi kullanılarak
 kayıp değer yerine değişkenin ortalama değeri (4.21 değeri)
 yerleştirilmiştir.</p></li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">screen</span> <span class="op">&lt;-</span> <span class="va">screen</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">income</span>, na.rm <span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>                       <span class="va">income</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html">na.omit</a></span><span class="op">(</span><span class="op">)</span></span>

@@ -6,7 +6,7 @@ R'deki kontrol yapıları, bir dizi R ifadesinin yürütme akışını kontrol e
 
 Kontrol yapıları, girdilere veya verilerin özelliklerine yanıt vermenize ve buna göre farklı R ifadeleri yürütmenize olanak tanır.
 
-Yaygın olarak kullanılan kontrol yapıları şunlardır
+Yaygın olarak kullanılan kontrol yapıları:
 
 -   `if` ve `else`: bir koşulu test etmek ve ona göre hareket etmek
 
@@ -20,13 +20,28 @@ Yaygın olarak kullanılan kontrol yapıları şunlardır
 
 -   `next`: bir döngü arasını atlama
 
-Çoğu kontrol yapısı etkileşimli oturumlarda değil, daha ziyade fonksiyonlar veya daha uzun ifadeler yazarken kullanılır. Ancak, bu yapılar fonksiyonlarda kullanılmak zorunda değildir ve fonksiyonlara girmeden önce bu yapılara aşina olmak iyi bir fikirdir.
+Çoğu kontrol yapısı etkileşimli oturumlarda değil, daha ziyade fonksiyonlar veya daha uzun ifadeler yazarken kullanılır. Ancak, bu yapılar fonksiyonlarda kullanılmak zorunda değildir ve progralama öğrenmek için bu yapılara aşina olmak gereklidir.
+
+-   Döngüler diğer bütün programa dillerinde sıklıkla kullanılan **akış kontrolü (flow control)** mekanizmasının bir parçasıdır.
+
+-   Her ne kadar R vektörel elementler üzerine kurulmuş olsa da bazı durumlarda döngülerin kullanılması gerekebilir.
+
+-   Örneğin, simulasyon çalışmaları genellikle iterasyonel ve tekrar eden süreçleri içermektedir.
+
+-   Döngüler sonuç elde etmek yerine süreçteki işlemleri dikkate aldığından, simulasyon çalışmalarında kullanılır.
+
+
+-   **for()** döngüsü ile belirlenen sayıda işlem tekrarı yapılırken **while()** ya da **repeat()** döngülerinde bir sayaç ya da bir dizin ile kontrol sağlanarak işlemlerin tekrarlı yapılmasını sağlar.
+
+-   **for()** bir vektör, liste ya da matris içindeki her bir elemanın bir değişken yardımıyla belirlenen komutu veya kodu sırasıyla yapması için oluşturulan bir döngüdür.
+
+-   **for()** döngüsünün genel kullanımı aşağıdaki gibidir.
 
 ## `if`-`else`
 
 `if`-`else` kombinasyonu muhtemelen R'de (veya belki de herhangi bir dilde) en sık kullanılan kontrol yapısıdır. Bu yapı, bir koşulu test etmenize ve doğru ya da yanlış olmasına bağlı olarak ona göre hareket etmenize olanak tanır.
 
-Yeni başlayanlar için sadece `if` deyimini kullanabilirsiniz.
+Öncelilke `if` koşullu ifadesinin kullanımını gösterelim:
 
 ```r
 if(<koşul>) {
@@ -45,7 +60,7 @@ else {
 }
 ```
 
-İlk `if`i herhangi bir `if` ile takip ederek bir dizi test yapabilirsiniz. `else if`lerin sayısı.
+`if`i herhangi bir `if` ile takip ederek bir dizi test yapabilirsiniz. `else if` kullanabilirsiniz.
 
 ```r
 if(<kosul1>) {
@@ -61,13 +76,16 @@ if(<kosul1>) {
 
 
 ```r
-## tekdüze bir rastgele sayı oluşturun
-x <- runif(1, 0, 10)  
+##  bir rastgele sayı oluşturun
+x <- runif(1, 0, 10)
 if(x > 3) {
         y <- 10
 } else {
         y <- 0
 }
+x;y
+[1] 8.191857
+[1] 10
 ```
 
 `y` değeri `x > 3` olup olmamasına bağlı olarak ayarlanır. Bu ifade eşdeğer bir şekilde de yazılabilir.
@@ -79,9 +97,11 @@ y <- if(x > 3) {
 } else { 
         0
 }
+y
+[1] 10
 ```
 
-Bu ifadeyi yazmanın hiçbir yolu diğerinden daha doğru değildir. Hangisini kullanacağınız sizin  tercihlerinize bağlı olacaktır.
+Bu ifadeyi yazmanın hiçbir yolu diğerinden daha doğru değildir. Hangisini kullanacağınız sizin  tercihlerinize bağlıdır
 
 Elbette `else` cümlesi gerekli değildir. Kendi koşulları doğruysa her zaman çalıştırılan bir dizi if cümlesine sahip olabilirsiniz.
 
@@ -97,9 +117,9 @@ if(<kosul2>) {
 ### Örnekler
 
 
-Ölçme açısından bakılacak olursa koşul bir ölçütü , durum
+Ölçme açısından bakılacak olursa koşul bir ölçütü, durum
 cümlesi ise değerlendirmeyi gösterilebilir.
-Örneğin, yapılan bir sınavda geçme notu 60 olarak belirlendiğinde, 75 alan biröğrencinin durumu aşağıdaki if() durum cümlesiyle belirlenebilmektedir.
+Örneğin, yapılan bir sınavda geçme notu 60 olarak belirlendiğinde, 75 alan bir öğrencinin durumu aşağıdaki `if()` durum cümlesiyle belirlenebilmektedir.
 
 
 ```r
@@ -111,7 +131,7 @@ cümlesi ise değerlendirmeyi gösterilebilir.
 ```
 
 Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir. 
- - kod cikti vermeyecektir
+ - Aşağıdaki kod çıktı vermeyecektir
 
 ```r
 > x <-60
@@ -120,21 +140,21 @@ Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir.
 + }
 ```
 
-- else kullanımı
+- else kullanımı ile çıktı alabiliriz
 
 ```r
-> x <-75
+> x <-60
 > # Başarılı Durum
 > if(x>=65){
 + print("Başarılı")
 + }else{
 + print("Başarısız")
 + }
-[1] "Başarılı"
+[1] "Başarısız"
 ```
 
 Koşul her zaman iki kategori ile tanımlanamayabilir. Bu durumda kullanımı
-else if() ile destekleyebiliriz
+`else if()` ile destekleyebiliriz
 
 
 ```r
@@ -160,51 +180,109 @@ else if() ile destekleyebiliriz
 ```
 ### Sıra sizde
 
-a sayinin carpmaya gore tersi 1/a'dir. Ancak bu durum 0 icin tanımsızdır.
-if() durum cümlesi kullanarak bu durumu kodlayınız.
-x <- 5ve x<-0 için 
+1. a sayısının çarpmaya göre tersi 1/a'dir. Ancak bu durum 0 için tanımsızdır.
+`if()` durum cümlesi kullanarak bu durumu kodlayınız. x <- 5ve x<-0 için 
 için test ediniz.
 
-```r
-> x <- 5
-> ## [1] "5'in carpmaya gore tersi 1/5"
-> x <- 0
-> ## [1] "1/0 tanımsızdır."
-> 
+
+```
+[1] "5'in carpmaya gore tersi 1/5"
 ```
 
+`x <- 0`için test ediniz.
 
-## `if()` & `any()`
 
-Bir vektorde icinde yer alan her hangi bir elemana dair test ise
-if() fonksiyonuiçinde any() fonksiyonu ile sağlanabilir.
+```
+[1] "1/0 tanımsızdır."
+```
+
+2. -2 ile 2 arasinda sayilar üretip, bunu x değişkenine atayalım.
+
+
+```r
+> x <- rnorm(1)
+> x
+[1] -0.6841717
+```
+
+Random olarak üretilen sayının 1'den büyük olması durumunda çıktı "1'den büyük" -1 ile 1 arasında olması durumunda "-1 ile +1 arasında" -1'den küçük olması durumunda ise "-1'den küçük" çıktısı versin.
+
+
+```
+[1] -0.86147
+[1] "sayi -1 ile +1 arasında"
+```
+
+## if() & all()
+
+Her ne kadar `if()` önermesi bir elemanlı vektorlerde çıktı verirken `if()` önermesi içinde kullanılabilen `all` fonkisyonu ile vektorun tüm elemanları icin kosul test edilebilir.
+
+
+```r
+> x <- c(1,2,-3,4)
+> if(all(x>0)){
++   
++   print("tum sayilar 0'dan buyuktur")
++   
++ } else{
++   
++   print("tum sayilar 0'dan buyuk degildir")
++ }
+[1] "tum sayilar 0'dan buyuk degildir"
+```
+
+## if() & any()
+
+Bir vektorde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiyonu içinde `any()` fonksiyonu ile sağlanabilir.
 
 
 ```r
 > x <- c(1,2,-3,4)
 > if(any(x<0)){
-+ print(
-+ "nesne en az bir negatif sayi icerir"
-+ )
-+ }else{
-+ print("nesne negatif sayi icermez")
++   
++   print("nesne en az bir negatif sayi icerir")
++   
++ } else{
++   
++   print("nesne negatif sayi icermez")
 + }
-> 
-> 
 [1] "nesne en az bir negatif sayi icerir"
 ```
-### Sıra sizde
 
-a sayinin carpmaya gore tersi 1/a'dir. ancak bu durum 0 icin tanimsizdir.
-if() durum cümlesi kullanarak bu durumu x <- c(1,2,3,0,-4) için deneyiniz.
+## if() coklu islem
+
+
+```r
+> x <- 2
+> if(x == 2) {
++   
++   goster3 <- "Dogru"  
++   goster3b <- c(1,2,3)
++   goster3c <- sample(1:1000,4)
++ } else  {
++   
++   goster3 <- "Yanlis"  
++   goster3b <- c(3,2,1)
++   goster3c <- 10000 + sample(1:1000,4)
++   
++ }
+> 
+> goster3
+> goster3b
+> goster3c
+[1] "Dogru"
+[1] 1 2 3
+[1] 242 876  73 726
+```
 
 
 ## ifelse()
 
-ifelse() durum cümlesi, if() durum cümlelerinde vektörlerinkullanımından kaynaklı sıkıntılara çözüm sunar. Bu bakımdan ifelse() , if() durum cümlelerinin vektörler için kullanılabilir halidir.
-ifelse() durum cümlesinin genel kullanımı aşağıdaki gibidir. 
+`ifelse()` durum cümlesi, `if()` durum cümlelerinde vektörlerin kullanımından kaynaklı sıkıntılara çözüm sunar. Bu bakımdan `ifelse()`, `if()` durum cümlelerinin vektörler için kullanılabilir halidir.
 
-ifelse(koşul, Doğru İfade, Yanlış İfade)
+`ifelse()` durum cümlesinin genel kullanımı aşağıdaki gibidir.
+
+**`ifelse(koşul, Doğru İfade, Yanlış İfade)`**
 
 
 ```r
@@ -268,6 +346,17 @@ Elimizdeki bir nesnede yer alan sayıların 0, pozitif ya negatif oldugu belirle
 [15] "Negatif" "Pozitif" "Pozitif" "Negatif" "Negatif" "Pozitif" "Negatif"
 [22] "Sıfır"   "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif"
 ```
+
+
+finalden 50 ve uzeri alan ve en az 11 derse devam edem ogrencilerin gecme notlari finalin %60 ve vizenin %40 alinarak hesaplansin, 11'den az derse devam eden ogrencilerin gecme notu final notunun %60' olarak alinsin
+
+
+```r
+> vize <- c(60,70,80,90,55)
+> final <- c(45,65,70,50,80)
+> devam <- c(14,10,13,12,11)
+```
+
 
 ## `for` Döngüsü
 
@@ -349,168 +438,6 @@ Bir satırlık döngüler için, küme parantezleri kesinlikle gerekli değildir
 ```
 
 Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullanmayı seviyorum, çünkü bu şekilde döngüyü birden fazla satıra genişletmeye karar verirseniz, küme parantezleri eklemeyi unuttuğunuz için yanmayacaksınız (ve bundan *yanacaksınız*).
-
-## İçiçe `for` döngüleri
-
-`for` döngüler birbirinin içinde yuvalanabilir.
-
-``` r
-x <- matrix(1:6, 2, 3)
-
-for(i in seq_len(nrow(x))) {
-        for(j in seq_len(ncol(x))) {
-                print(x[i, j])
-        }   
-}
-```
-
-İç içe döngüler genellikle çok boyutlu veya hiyerarşik veri yapıları (örn. matrisler, listeler) için gereklidir. Yine de iç içe geçme konusunda dikkatli olun. 2-3 seviyeden fazla iç içe geçme genellikle kodun okunmasını/anlaşılmasını zorlaştırır. Çok sayıda iç içe döngüye ihtiyaç duyuyorsanız, fonksiyonları kullanarak döngüleri parçalamak isteyebilirsiniz (daha sonra tartışılacaktır).
-
-- sıra sizde
-
-Aşağıdaki çıktıyı sağlayacak kodu yazınız.
-1 + 1 = 2
-2 + 2 = 4
-3 + 3 = 6
-4 + 4 = 8
-5 + 5 = 10
-6 + 6 = 12
-7 + 7 = 14
-8 + 8 = 16
-9 + 9 = 18
-10 + 10 = 20
-
-
-## `while` döngüsü
-
-While döngüleri bir koşulu test ederek başlar. Koşul doğruysa, döngü gövdesini çalıştırır. Döngü gövdesi yürütüldükten sonra, koşul tekrar test edilir ve koşul yanlış olana kadar bu şekilde devam eder, ardından döngüden çıkılır.
-
-
-```r
-> count <- 0
-> while(count < 10) {
-+         print(count)
-+         count <- count + 1
-+ }
-[1] 0
-[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
-[1] 6
-[1] 7
-[1] 8
-[1] 9
-```
-
-While döngüleri düzgün yazılmazsa sonsuz döngülere neden olabilir. Dikkatli kullanın!
-
-Bazen testte birden fazla koşul olabilir.
-
-
-```r
-> z <- 5
-> set.seed(1)
-> 
-> while(z >= 3 && z <= 10) {
-+         coin <- rbinom(1, 1, 0.5)
-+         
-+         if(coin == 1) {  ## rastgele çalışır
-+                 z <- z + 1
-+         } else {
-+                 z <- z - 1
-+         } 
-+ }
-> print(z)
-[1] 2
-```
-
-Koşullar her zaman soldan sağa doğru değerlendirilir. Örneğin, yukarıdaki kodda `z` 3'ten küçük olsaydı, ikinci test değerlendirilmezdi.
-
-## `repeat` Döngüler
-
-
-`repeat` başlangıçtan itibaren sonsuz bir döngü başlatır. Bunlar istatistiksel veya veri analizi uygulamalarında yaygın olarak kullanılmaz, ancak kullanım alanları vardır. Bir `repeat` döngüsünden çıkmanın tek yolu `break` çağrısı yapmaktır.
-
-Olası bir paradigma, bir çözüm arıyor olabileceğiniz ve çözüme ulaşana kadar durmak istemediğiniz yinelemeli bir algoritmada olabilir.
-
-
-```r
-x0 <- 1
-tol <- 1e-8
-
-repeat {
-        x1 <- computeEstimate()
-        
-        if(abs(x1 - x0) < tol) {  ## Yeterince yakın mı?
-                break
-        } else {
-                x0 <- x1
-        } 
-}
-```
-
-Yukarıdaki kodun `computeEstimate()` fonksiyonu tanımlanmamışsa çalışmayacağını unutmayın (bunu sadece bu gösterimin amaçları için uydurdum).
-
-Yukarıdaki döngü biraz tehlikelidir çünkü duracağının garantisi yoktur. x0`ve`x1`değerlerinin ileri geri salındığı ve asla yakınsamadığı bir duruma girebilirsiniz. Bir`for` döngüsü kullanarak iterasyon sayısına sabit bir sınır koymak ve ardından yakınsamanın sağlanıp sağlanmadığını rapor etmek daha iyidir.
-
-## `next`, `break`
-
-`next` bir döngünün bir yinelemesini atlamak için kullanılır.
-
-
-```r
-for(i in 1:100) {
-        if(i <= 20) {
-                ## İlk 20 tekrarı atlayın
-                next                 
-        }
-        ## burada işlem yapılabilir
-}
-```
-
-`break` döngünün hangi yinelemede olduğuna bakılmaksızın bir döngüden hemen çıkmak için kullanılır.
-
-
-```r
-for(i in 1:100) {
-      print(i)
-
-      if(i > 20) {
-              ## 20 iterasyondan sonra döngüyü durdur
-              break  
-      }		
-}
-```
-
-## Özet
-
--   if`,`while`ve`for` gibi kontrol yapıları bir R programının akışını kontrol etmenizi sağlar
-
--   Sonsuz döngülerden, teorik olarak doğru olduklarına inansanız bile, genellikle kaçınılmalıdır.
-
--   Burada bahsedilen kontrol yapıları öncelikle program yazmak için kullanışlıdır; komut satırı etkileşimli çalışmalar için "apply" fonksiyonları daha kullanışlıdır.
-
-
-
-# Uygulama
-
-
--   Döngüler diğer bütün programa dillerinde sıklıkla kullanılan **akış kontrolü (flow control)** mekanizmasının bir parçasıdır.
-
--   Her ne kadar R vektörel elementler üzerine kurulmuş olsa da bazı durumlarda döngülerin kullanılması gerekebilir.
-
--   Örneğin, simulasyon çalışmaları genellikle iterasyonel ve tekrar eden süreçleri içermektedir.
-
--   Döngüler sonuç elde etmek yerine süreçteki işlemleri dikkate aldığından, simulasyon çalışmalarında kullanılır.
-
-
--   **for()** döngüsü ile belirlenen sayıda işlem tekrarı yapılırken **while()** ya da **repeat()** döngülerinde bir sayaç ya da bir dizin ile kontrol sağlanarak işlemlerin tekrarlı yapılmasını sağlar.
-
--   **for()** bir vektör, liste ya da matris içindeki her bir elemanın bir değişken yardımıyla belirlenen komutu veya kodu sırasıyla yapması için oluşturulan bir döngüdür.
-
--   **for()** döngüsünün genel kullanımı aşağıdaki gibidir.
 
 -   <div>
 
@@ -899,12 +826,163 @@ Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.
     > time3 <- system.time(z<-y^2)
     > time3
        user  system elapsed 
-       0.06    0.00    0.06 
+       0.08    0.00    0.08 
        user  system elapsed 
-          0       0       0 
+       0.02    0.00    0.01 
     ```
 
     </div>
+
+## İçiçe `for` döngüleri
+
+`for` döngüler birbirinin içinde yuvalanabilir.
+
+``` r
+x <- matrix(1:6, 2, 3)
+
+for(i in seq_len(nrow(x))) {
+        for(j in seq_len(ncol(x))) {
+                print(x[i, j])
+        }   
+}
+```
+
+İç içe döngüler genellikle çok boyutlu veya hiyerarşik veri yapıları (örn. matrisler, listeler) için gereklidir. Yine de iç içe geçme konusunda dikkatli olun. 2-3 seviyeden fazla iç içe geçme genellikle kodun okunmasını/anlaşılmasını zorlaştırır. Çok sayıda iç içe döngüye ihtiyaç duyuyorsanız, fonksiyonları kullanarak döngüleri parçalamak isteyebilirsiniz (daha sonra tartışılacaktır).
+
+- sıra sizde
+
+Aşağıdaki çıktıyı sağlayacak kodu yazınız.
+1 + 1 = 2
+2 + 2 = 4
+3 + 3 = 6
+4 + 4 = 8
+5 + 5 = 10
+6 + 6 = 12
+7 + 7 = 14
+8 + 8 = 16
+9 + 9 = 18
+10 + 10 = 20
+
+
+## `while` döngüsü
+
+While döngüleri bir koşulu test ederek başlar. Koşul doğruysa, döngü gövdesini çalıştırır. Döngü gövdesi yürütüldükten sonra, koşul tekrar test edilir ve koşul yanlış olana kadar bu şekilde devam eder, ardından döngüden çıkılır.
+
+
+```r
+> count <- 0
+> while(count < 10) {
++         print(count)
++         count <- count + 1
++ }
+[1] 0
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+```
+
+While döngüleri düzgün yazılmazsa sonsuz döngülere neden olabilir. Dikkatli kullanın!
+
+Bazen testte birden fazla koşul olabilir.
+
+
+```r
+> z <- 5
+> set.seed(1)
+> 
+> while(z >= 3 && z <= 10) {
++         coin <- rbinom(1, 1, 0.5)
++         
++         if(coin == 1) {  ## rastgele çalışır
++                 z <- z + 1
++         } else {
++                 z <- z - 1
++         } 
++ }
+> print(z)
+[1] 2
+```
+
+Koşullar her zaman soldan sağa doğru değerlendirilir. Örneğin, yukarıdaki kodda `z` 3'ten küçük olsaydı, ikinci test değerlendirilmezdi.
+
+## `repeat` Döngüler
+
+
+`repeat` başlangıçtan itibaren sonsuz bir döngü başlatır. Bunlar istatistiksel veya veri analizi uygulamalarında yaygın olarak kullanılmaz, ancak kullanım alanları vardır. Bir `repeat` döngüsünden çıkmanın tek yolu `break` çağrısı yapmaktır.
+
+Olası bir paradigma, bir çözüm arıyor olabileceğiniz ve çözüme ulaşana kadar durmak istemediğiniz yinelemeli bir algoritmada olabilir.
+
+
+```r
+x0 <- 1
+tol <- 1e-8
+
+repeat {
+        x1 <- computeEstimate()
+        
+        if(abs(x1 - x0) < tol) {  ## Yeterince yakın mı?
+                break
+        } else {
+                x0 <- x1
+        } 
+}
+```
+
+Yukarıdaki kodun `computeEstimate()` fonksiyonu tanımlanmamışsa çalışmayacağını unutmayın (bunu sadece bu gösterimin amaçları için uydurdum).
+
+Yukarıdaki döngü biraz tehlikelidir çünkü duracağının garantisi yoktur. x0`ve`x1`değerlerinin ileri geri salındığı ve asla yakınsamadığı bir duruma girebilirsiniz. Bir`for` döngüsü kullanarak iterasyon sayısına sabit bir sınır koymak ve ardından yakınsamanın sağlanıp sağlanmadığını rapor etmek daha iyidir.
+
+## `next`, `break`
+
+`next` bir döngünün bir yinelemesini atlamak için kullanılır.
+
+
+```r
+for(i in 1:100) {
+        if(i <= 20) {
+                ## İlk 20 tekrarı atlayın
+                next                 
+        }
+        ## burada işlem yapılabilir
+}
+```
+
+`break` döngünün hangi yinelemede olduğuna bakılmaksızın bir döngüden hemen çıkmak için kullanılır.
+
+
+```r
+for(i in 1:100) {
+      print(i)
+
+      if(i > 20) {
+              ## 20 iterasyondan sonra döngüyü durdur
+              break  
+      }		
+}
+```
+
+## Özet
+
+-   if`,`while`ve`for` gibi kontrol yapıları bir R programının akışını kontrol etmenizi sağlar
+
+-   Sonsuz döngülerden, teorik olarak doğru olduklarına inansanız bile, genellikle kaçınılmalıdır.
+
+-   Burada bahsedilen kontrol yapıları öncelikle program yazmak için kullanışlıdır; komut satırı etkileşimli çalışmalar için "apply" fonksiyonları daha kullanışlıdır.
+
+
+
+# Uygulama
+
+
+
+
+
 
 ## Coklu veri seti olusturma ve dışarı aktarma
 
