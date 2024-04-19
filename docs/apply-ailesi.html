@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bölüm 14 apply ailesi | lavaan</title>
+<title>Bölüm 17 apply ailesi | lavaan</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
 <meta name="description" content="apply() fonksiyonu matris ve dizilerde satır ve sütundaki değerlerin belirlenen fonksiyona göre değerlerini özetlemek için kullanılır. apply() fonksiyonunun genel kullanımı &gt; # apply(x, margin,...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Bölüm 14 apply ailesi | lavaan">
+<meta property="og:title" content="Bölüm 17 apply ailesi | lavaan">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC733/apply-ailesi.html">
 <meta property="og:description" content="apply() fonksiyonu matris ve dizilerde satır ve sütundaki değerlerin belirlenen fonksiyona göre değerlerini özetlemek için kullanılır. apply() fonksiyonunun genel kullanımı &gt; # apply(x, margin,...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bölüm 14 apply ailesi | lavaan">
+<meta name="twitter:title" content="Bölüm 17 apply ailesi | lavaan">
 <meta name="twitter:description" content="apply() fonksiyonu matris ve dizilerde satır ve sütundaki değerlerin belirlenen fonksiyona göre değerlerini özetlemek için kullanılır. apply() fonksiyonunun genel kullanımı &gt; # apply(x, margin,...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -67,11 +67,14 @@
 <li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
 <li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
 <li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
-<li><a class="" href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></li>
-<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
-<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></li>
-<li><a class="active" href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></li>
-<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="ifelse.html"><span class="header-section-number">11</span> ifelse()</a></li>
+<li><a class="" href="for.html"><span class="header-section-number">12</span> for</a></li>
+<li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">13</span> while döngüsü</a></li>
+<li><a class="" href="uygulama-2.html"><span class="header-section-number">14</span> Uygulama</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">15</span> Fonksiyonlar</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">16</span> Döngü Fonkisyonları</a></li>
+<li><a class="active" href="apply-ailesi.html"><span class="header-section-number">17</span> apply ailesi</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">18</span> Hata Ayıklama/Debugging</a></li>
 </ul>
 
         <div class="book-extra">
@@ -79,9 +82,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="apply-ailesi" class="section level1" number="14">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="apply-ailesi" class="section level1" number="17">
 <h1>
-<span class="header-section-number">Bölüm 14</span> apply ailesi<a class="anchor" aria-label="anchor" href="#apply-ailesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Bölüm 17</span> apply ailesi<a class="anchor" aria-label="anchor" href="#apply-ailesi"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
 <li><p><strong>apply()</strong> fonksiyonu matris ve dizilerde satır ve sütundaki değerlerin
@@ -173,9 +176,9 @@ katsayısının hesaplanması</li>
 <span id="cb527-2"><a href="apply-ailesi.html#cb527-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">apply</span>(Matris1, <span class="dv">2</span>, <span class="cf">function</span>(x){(<span class="fu">sd</span>(x)<span class="sc">/</span><span class="fu">mean</span>(x))<span class="sc">*</span><span class="dv">100</span>})</span>
 <span id="cb527-3"><a href="apply-ailesi.html#cb527-3" tabindex="-1"></a><span class="sc">&gt;</span> </span>
 <span id="cb527-4"><a href="apply-ailesi.html#cb527-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">11.24914</span> <span class="fl">10.05771</span> <span class="fl">11.02709</span> <span class="fl">10.59998</span> <span class="fl">12.97312</span></span></code></pre></div>
-<div id="lapply-fonksiyonu" class="section level2" number="14.1">
+<div id="lapply-fonksiyonu" class="section level2" number="17.1">
 <h2>
-<span class="header-section-number">14.1</span> lapply() Fonksiyonu<a class="anchor" aria-label="anchor" href="#lapply-fonksiyonu"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.1</span> lapply() Fonksiyonu<a class="anchor" aria-label="anchor" href="#lapply-fonksiyonu"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>lapply()</strong> fonksiyonu <strong>apply()</strong> fonksiyonunun listeler (list-apply),
@@ -185,9 +188,9 @@ vektörler ve veri setleri için özelleşmiş halidir.</p></li>
 </ul>
 <hr>
 </div>
-<div id="lapply-fonksiyonu-1" class="section level2" number="14.2">
+<div id="lapply-fonksiyonu-1" class="section level2" number="17.2">
 <h2>
-<span class="header-section-number">14.2</span> lapply() Fonksiyonu<a class="anchor" aria-label="anchor" href="#lapply-fonksiyonu-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.2</span> lapply() Fonksiyonu<a class="anchor" aria-label="anchor" href="#lapply-fonksiyonu-1"><i class="fas fa-link"></i></a>
 </h2>
 <p><code>lappy()</code> fonksiyonuyla elde edilen çıktılar da liste şeklindedir.
 <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> fonksiyonunun genel kullanımı</p>
@@ -457,14 +460,14 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></div>
-<div class="next"><a href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></div>
+<div class="prev"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">16</span> Döngü Fonkisyonları</a></div>
+<div class="next"><a href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">18</span> Hata Ayıklama/Debugging</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#apply-ailesi"><span class="header-section-number">14</span> apply ailesi</a></li>
-<li><a class="nav-link" href="#lapply-fonksiyonu"><span class="header-section-number">14.1</span> lapply() Fonksiyonu</a></li>
-<li><a class="nav-link" href="#lapply-fonksiyonu-1"><span class="header-section-number">14.2</span> lapply() Fonksiyonu</a></li>
+<li><a class="nav-link" href="#apply-ailesi"><span class="header-section-number">17</span> apply ailesi</a></li>
+<li><a class="nav-link" href="#lapply-fonksiyonu"><span class="header-section-number">17.1</span> lapply() Fonksiyonu</a></li>
+<li><a class="nav-link" href="#lapply-fonksiyonu-1"><span class="header-section-number">17.2</span> lapply() Fonksiyonu</a></li>
 </ul>
 
       <div class="book-extra">

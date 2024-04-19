@@ -186,15 +186,14 @@ yem-aşamaları
 uygulama-1
 kaynakca
 kontrol-yapıları
-if-else
 örnekler
 sıra-sizde
 if-all
 if-any
-if-coklu-islem
+if-çoklu-islem
 ifelse
 sıra-sizde-1
-for-döngüsü
+for
 for-döngüsü-ve-kontrol
 next-ve-break
 içiçe-for-döngüleri
@@ -206,7 +205,6 @@ uygulama-2
 coklu-veri-seti-olusturma-ve-dışarı-aktarma
 for-ödev-1
 for-ödev-2
-for-ödev-2-1
 fonksiyonlar
 rda-fonkisyonlar
 ilk-fonksiyon
@@ -239,5 +237,5 @@ neyin-yanlış-olduğunu-anlamak
 rde-hata-ayıklama-araçları
 traceback
 debug
-using-recover
+recover
 özet-5

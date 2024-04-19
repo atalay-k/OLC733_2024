@@ -263,7 +263,7 @@ Tarayıcıdayken, normal bir oturumda kullanabileceğiniz diğer R işlevlerini 
 undebug(lm)    ## Unflag the 'lm()' function for debugging
 ```
 
-## Using `recover()`
+## `recover()`
 
 `recover()` fonksiyonu, bir hata oluştuğunda R'nin hata davranışını değiştirmek için kullanılabilir. Normalde, bir fonksiyonda hata oluştuğunda, R bir hata mesajı yazdırır, fonksiyondan çıkar ve diğer komutları beklemek üzere sizi çalışma alanınıza geri döndürür. 
 

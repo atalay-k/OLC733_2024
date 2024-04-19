@@ -37,7 +37,7 @@ Yaygın olarak kullanılan kontrol yapıları:
 
 -   **for()** döngüsünün genel kullanımı aşağıdaki gibidir.
 
-## `if`-`else`
+#`if`-`else`
 
 `if`-`else` kombinasyonu muhtemelen R'de (veya belki de herhangi bir dilde) en sık kullanılan kontrol yapısıdır. Bu yapı, bir koşulu test etmenize ve doğru ya da yanlış olmasına bağlı olarak ona göre hareket etmenize olanak tanır.
 
@@ -84,8 +84,8 @@ if(x > 3) {
         y <- 0
 }
 x;y
-[1] 8.191857
-[1] 10
+[1] 2.56725
+[1] 0
 ```
 
 `y` değeri `x > 3` olup olmamasına bağlı olarak ayarlanır. Bu ifade eşdeğer bir şekilde de yazılabilir.
@@ -97,8 +97,6 @@ y <- if(x > 3) {
 } else { 
         0
 }
-y
-[1] 10
 ```
 
 Bu ifadeyi yazmanın hiçbir yolu diğerinden daha doğru değildir. Hangisini kullanacağınız sizin  tercihlerinize bağlıdır
@@ -125,9 +123,9 @@ cümlesi ise değerlendirmeyi gösterilebilir.
 ```r
 > x <-75
 > if(x>=65){
-+ print("Başarılı")
++ print("Basarılı")
 + }
-[1] "Başarılı"
+[1] "Basarılı"
 ```
 
 Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir. 
@@ -136,7 +134,7 @@ Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir.
 ```r
 > x <-60
 > if(x>=65){
-+ print("Başarılı")
++ print("Basarılı")
 + }
 ```
 
@@ -146,11 +144,11 @@ Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir.
 > x <-60
 > # Başarılı Durum
 > if(x>=65){
-+ print("Başarılı")
++ print("Basarılı")
 + }else{
-+ print("Başarısız")
++ print("Basarisiz")
 + }
-[1] "Başarısız"
+[1] "Basarisiz"
 ```
 
 Koşul her zaman iki kategori ile tanımlanamayabilir. Bu durumda kullanımı
@@ -202,20 +200,20 @@ için test ediniz.
 ```r
 > x <- rnorm(1)
 > x
-[1] -0.6841717
+[1] 0.9696094
 ```
 
 Random olarak üretilen sayının 1'den büyük olması durumunda çıktı "1'den büyük" -1 ile 1 arasında olması durumunda "-1 ile +1 arasında" -1'den küçük olması durumunda ise "-1'den küçük" çıktısı versin.
 
 
 ```
-[1] -0.86147
-[1] "sayi -1 ile +1 arasında"
+[1] 0.7480502
+[1] "sayı -1 ile +1 arasında"
 ```
 
 ## if() & all()
 
-Her ne kadar `if()` önermesi bir elemanlı vektorlerde çıktı verirken `if()` önermesi içinde kullanılabilen `all` fonkisyonu ile vektorun tüm elemanları icin kosul test edilebilir.
+Her ne kadar `if()` önermesi bir elemanlı vektörlerde çıktı verirken `if()` önermesi içinde kullanılabilen `all` fonkisyonu ile vektörün tüm elemanları için kosul test edilebilir.
 
 
 ```r
@@ -233,7 +231,7 @@ Her ne kadar `if()` önermesi bir elemanlı vektorlerde çıktı verirken `if()`
 
 ## if() & any()
 
-Bir vektorde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiyonu içinde `any()` fonksiyonu ile sağlanabilir.
+Bir vektörde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiyonu içinde `any()` fonksiyonu ile sağlanabilir.
 
 
 ```r
@@ -249,7 +247,7 @@ Bir vektorde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiyo
 [1] "nesne en az bir negatif sayi icerir"
 ```
 
-## if() coklu islem
+## if() çoklu islem
 
 
 ```r
@@ -272,11 +270,11 @@ Bir vektorde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiyo
 > goster3c
 [1] "Dogru"
 [1] 1 2 3
-[1] 242 876  73 726
+[1] 273 898 207 854
 ```
 
 
-## ifelse()
+# ifelse()
 
 `ifelse()` durum cümlesi, `if()` durum cümlelerinde vektörlerin kullanımından kaynaklı sıkıntılara çözüm sunar. Bu bakımdan `ifelse()`, `if()` durum cümlelerinin vektörler için kullanılabilir halidir.
 
@@ -287,13 +285,12 @@ Bir vektorde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiyo
 
 ```r
 > x <- 20
-> ifelse(x>= 65, "Başarılı" ,"Başarısız"
-+ )
+> ifelse(x>= 65, "Başarılı" ,"Başarısız")
 [1] "Başarısız"
 ```
 
 
-Eksik verinin 99 ile gosterildiği bir vektorde eksik veri yerine NA atama
+`ifelse()` eksik veri atamakiçin de kullanılabilir. Eksik verinin 99 ile gösterildiği bir vektörde eksik veri yerine NA atama örneği
 
 
 ```r
@@ -304,7 +301,7 @@ Eksik verinin 99 ile gosterildiği bir vektorde eksik veri yerine NA atama
 ```
 ### Sıra Sizde
 
-Elimizdeki bir nesnede yer alan sayıların tek ya da çift olduğunu yazdırma
+1. Elimizdeki bir nesnede yer alan sayıların tek ya da çift olduğunu yazdırma
 
 
 
@@ -327,7 +324,7 @@ Elimizdeki bir nesnede yer alan sayıların tek ya da çift olduğunu yazdırma
 ```
 
 
-Elimizdeki bir nesnede yer alan sayıların 0, pozitif ya negatif oldugu belirleme
+2. Elimizdeki bir nesnede yer alan sayıların 0, pozitif ya negatif oldugu belirleme
 
 
 
@@ -348,7 +345,7 @@ Elimizdeki bir nesnede yer alan sayıların 0, pozitif ya negatif oldugu belirle
 ```
 
 
-finalden 50 ve uzeri alan ve en az 11 derse devam edem ogrencilerin gecme notlari finalin %60 ve vizenin %40 alinarak hesaplansin, 11'den az derse devam eden ogrencilerin gecme notu final notunun %60' olarak alinsin
+3. finalden 50 ve uzeri alan ve en az 11 derse devam edem ogrencilerin gecme notlari finalin %60 ve vizenin %40 alinarak hesaplansin, 11'den az derse devam eden ogrencilerin gecme notu final notunun %60' olarak alinsin
 
 
 ```r
@@ -358,10 +355,9 @@ finalden 50 ve uzeri alan ve en az 11 derse devam edem ogrencilerin gecme notlar
 ```
 
 
-## `for` Döngüsü
+# `for`
 
-Zaman zaman diğer döngü türlerine ihtiyaç duysanız da, veri analizi deneyimimde for döngüsünün yeterli olmadığı çok az durumla karşılaştım.
-
+Zaman zaman diğer döngü türlerine ihtiyaç duysanız da, for döngüsünün yeterli olmadığı nadir durum vardır.
 R'de for döngüleri bir ara değişken alır ve ona bir dizi ya da vektörden ardışık değerler atar. For döngüleri en yaygın olarak bir nesnenin (liste, vektör, vb.) elemanları üzerinde yineleme yapmak için kullanılır.
 
 
@@ -437,9 +433,9 @@ Bir satırlık döngüler için, küme parantezleri kesinlikle gerekli değildir
 [1] "d"
 ```
 
-Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullanmayı seviyorum, çünkü bu şekilde döngüyü birden fazla satıra genişletmeye karar verirseniz, küme parantezleri eklemeyi unuttuğunuz için yanmayacaksınız (ve bundan *yanacaksınız*).
+Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullanmayı seviyorum, çünkü bu şekilde döngüyü birden fazla satıra genişletmeye karar verirseniz, küme parantezleri eklemeyi unuttuğunuz için hata alamazsınız.
 
--   <div>
+
 
     
     ```r
@@ -458,14 +454,13 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     [1] 10
     ```
 
-    </div>
+
 
 
 -   Döngüde indeks değişkeni herhangi bir nesne ile tanımlanabilir. Örneğin **i**
 
 -   Ayrıca indeks değerinin başlangıcı 1 olmak zorunda **değildir.**
 
--   <div>
 
     
     ```r
@@ -478,12 +473,11 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     [1] 8
     ```
 
-    </div>
+
 
 
 -   karakter yazımında indeks **i** sadece tekrar amaçlı kullanılır.
 
--   <div>
 
     
     ```r
@@ -498,11 +492,10 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     [1] "Merhaba"
     ```
 
-    </div>
+
 
 -   Aşağıdaki çıktıyı sağlayacak kodu yazınız.
 
--   <div>
 
     
     ```
@@ -518,13 +511,12 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     10  +   10  =  20 
     ```
 
-    </div>
+
 
 -   Döngüdelerde bir degişken yeniden tanımlanacak ise mutlaka döngü öncesi o değişken tanımlanmalıdır.
 
 -   Oluşturulan bir matrisin satırlarında yer alan sayıların toplamını başka bir nesneye atama
 
--   <div>
 
     
     ```r
@@ -543,11 +535,10 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     [1]  3  5  7  9 11
     ```
 
-    </div>
+
 
 -   `cat()`, `paste()` gibi fonksiyonları uzun bir döngüde, döngünün durumunu görmek için de kullanabilirsiniz .
 
--   <div>
 
     
     ```r
@@ -562,11 +553,10 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     [10] "Islem 10 tamamlandi"
     ```
 
-    </div>
+
 
 -   Döngülerde her zaman `i` indeksini kullanmak zorunda **değiliz.**
 
--   <div>
 
     
     ```r
@@ -583,53 +573,46 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     [1] 46
     ```
 
-    </div>
 
--   Her zaman işlemi tüm elemanlara uygulamak istemeyebiliriz.
 
--   Bunun önlemek icin akış kontrolü yapmak gerekir.
 
--   Kontrol mantıksal operatörlerle ya da koşul cümleleri ile sağlanabilir.
 
 ## **for()** Döngüsü ve Kontrol
 
--   <div>
+Her zaman işlemi tüm elemanlara uygulamak istemeyebiliriz. Bunun önlemek icin akış kontrolü yapmak gerekir.
 
-    
-    ```r
-    > for(i in 1:3){
-    +       if (i==2) cat("indeks cift sayidir:","\n")
-    +       else cat(i,"\n")
-    + }
-    1 
-    indeks cift sayidir: 
-    3 
-    ```
+Kontrol mantıksal operatörlerle ya da koşul cümleleri ile sağlanabilir.
 
-    </div>
 
--   <div>
+```r
+>     for(i in 1:3){
++           if (i==2) cat("indeks cift sayidir:","\n")
++           else cat(i,"\n")
++     }
+1 
+indeks cift sayidir: 
+3 
+```
 
-    
-    ```r
-    > for(i in 1:3){
-    +   if (i==2) {
-    +     cat("indeks degeri ikidir:",i,"\n") 
-    +   }else{cat("indeks degeri iki degildir","\n")}
-    + }
-    indeks degeri iki degildir 
-    indeks degeri ikidir: 2 
-    indeks degeri iki degildir 
-    ```
 
-    </div>
+
+```r
+>     for(i in 1:3){
++       if (i==2) {
++         cat("indeks degeri ikidir:",i,"\n") 
++       }else{cat("indeks degeri iki degildir","\n")}
++ }
+indeks degeri iki degildir 
+indeks degeri ikidir: 2 
+indeks degeri iki degildir 
+```
+
 
 
 -   Bazen döngüler iç içe kullanılabilir 5X5 bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun orneğin m[2,5]=10 olsun.
 
 -   Bu işlemi yapmak için öncelikle boş bir matris oluştumak lazım.
 
--   <div>
 
     
     ```r
@@ -643,11 +626,9 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     [5,]    0    0    0    0    0
     ```
 
-    </div>
 
 -   Aşağıdaki çıktıyı elde edecek kodu oluşturmaya çalışın
 
--   <div>
 
     
     ```
@@ -659,7 +640,7 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     [5,]    5   10   15   20   25
     ```
 
-    </div>
+
 
 
 -   Kullanıcı tarafından belirlenen **nxn** boyutunda bir matris oluşturulsun.
@@ -688,7 +669,6 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
 
 -   Aynı zamanda veri seti, matris ve listelerle de çalışabilir.
 
--   <div>
 
     
     ```r
@@ -716,10 +696,10 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     sutun toplamlari: 20 
     ```
 
-    </div>
 
 
--   <div>
+
+
 
     
     ```r
@@ -738,11 +718,10 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
     [10,]   10   29
     ```
 
-    </div>
+
 
 Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.
 
--   <div>
 
     
     ```
@@ -758,7 +737,7 @@ Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.
     10 satirdaki degerlerin carpimi 290 olarak hesaplanmistir. 
     ```
 
-    </div>
+
 
 ## `next()` ve `break()`
 
@@ -766,7 +745,6 @@ Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.
 
 -   Döngüyü sadece belirli bir koşulda çalıştırmak istemezseniz `next()` fonksiyonunu kullanabilirsiniz.
 
--   <div>
 
     
     ```r
@@ -782,12 +760,12 @@ Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.
     [1] 6
     ```
 
-    </div>
+
 
 
 -   Döngüyü sadece belirli bir koşulda durdurmak isterseniz `break()` fonksiyonunu kullanabilirsiniz.
 
--   <div>
+
 
     
     ```r
@@ -800,11 +778,10 @@ Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.
     [1] 2
     ```
 
-    </div>
+
 
 -   Döngüler uzun zamanda çalışır.
 
--   <div>
 
     
     ```r
@@ -828,10 +805,10 @@ Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.
        user  system elapsed 
        0.08    0.00    0.08 
        user  system elapsed 
-       0.02    0.00    0.01 
+          0       0       0 
     ```
 
-    </div>
+
 
 ## İçiçe `for` döngüleri
 
@@ -864,7 +841,7 @@ Aşağıdaki çıktıyı sağlayacak kodu yazınız.
 10 + 10 = 20
 
 
-## `while` döngüsü
+# `while` döngüsü
 
 While döngüleri bir koşulu test ederek başlar. Koşul doğruysa, döngü gövdesini çalıştırır. Döngü gövdesi yürütüldükten sonra, koşul tekrar test edilir ve koşul yanlış olana kadar bu şekilde devam eder, ardından döngüden çıkılır.
 
@@ -1003,50 +980,46 @@ Fibonacci dizisinin elemanlari **1 1 2 3 5 8 13 21 34 55 89 ...** dizinin eleman
 
 ## **`for()`** Ödev-2
 
--   <div>
 
-    
-    ```r
-    > set.seed(1786)
-    > ornek<-exp(matrix(rnorm(2000),nrow=100))
-    > index1.temp<-sample(1:100,10)
-    > index2.temp<-sample(1:20,10)
-    > for(i in 1:10){
-    +   ornek[index1.temp[i],index2.temp[i]]<--1
-    + }
-    >  head(ornek,6)
-              [,1]      [,2]      [,3]      [,4]      [,5]      [,6]     [,7]
-    [1,] 0.5549525 0.3247338 0.5236032 0.3821027 0.4187483 0.1588847 5.226161
-    [2,] 0.5671734 1.2431592 0.8812069 2.6695443 0.6984453 1.0838792 1.079946
-    [3,] 4.8068457 0.3449856 0.6079096 0.9194116 1.5361330 1.9082522 0.671977
-    [4,] 1.3509234 2.3569582 0.1931423 4.0707377 0.3527276 2.3498825 1.198514
-    [5,] 0.9012032 0.2310683 0.2317487 1.3809955 0.9168741 0.6237213 1.609403
-    [6,] 1.2331483 1.1066056 0.3546027 0.3705946 0.9002303 0.2528151 3.337512
-              [,8]      [,9]     [,10]     [,11]     [,12]     [,13]     [,14]
-    [1,] 2.6280057 1.2251526 0.4760966 5.2379018 1.4782655 1.3761338 1.0202608
-    [2,] 2.2087385 0.5195551 0.3757409 0.9004808 0.7409205 2.0543842 0.3668661
-    [3,] 1.5310016 0.6735007 2.2069776 0.5060078 0.7171477 1.2378655 0.3651527
-    [4,] 2.5592899 1.8205257 1.2624052 0.1524106 0.3828322 1.2406799 0.7954326
-    [5,] 1.1005990 1.0619758 2.1047783 2.7816902 1.4010878 0.6140937 0.5136842
-    [6,] 0.9799103 2.7520425 2.5407624 1.3889136 0.4346808 1.0637950 0.1859157
-             [,15]     [,16]      [,17]     [,18]    [,19]     [,20]
-    [1,] 0.1437680 4.1807643  1.7389423 3.0760640 1.550557 4.4838291
-    [2,] 3.8674407 1.9349214  0.6333922 0.4862532 5.275571 0.1161029
-    [3,] 1.4724240 0.5971116 11.5869157 0.7580736 4.755297 1.0583051
-    [4,] 0.1243085 0.8376231  1.3723291 2.0884571 2.506128 1.2094517
-    [5,] 6.2971803 0.8422164  1.5335222 0.3079718 2.729447 1.7164885
-    [6,] 3.8052219 2.1611055  0.3280288 2.7773368 1.726558 1.3193446
-    ```
+```r
+>     set.seed(1786)
+>     ornek<-exp(matrix(rnorm(2000),nrow=100))
+>     index1.temp<-sample(1:100,10)
+>     index2.temp<-sample(1:20,10)
+>     for(i in 1:10){
++       ornek[index1.temp[i],index2.temp[i]]<--1
++     }
+>      head(ornek,6)
+          [,1]      [,2]      [,3]      [,4]      [,5]      [,6]     [,7]
+[1,] 0.5549525 0.3247338 0.5236032 0.3821027 0.4187483 0.1588847 5.226161
+[2,] 0.5671734 1.2431592 0.8812069 2.6695443 0.6984453 1.0838792 1.079946
+[3,] 4.8068457 0.3449856 0.6079096 0.9194116 1.5361330 1.9082522 0.671977
+[4,] 1.3509234 2.3569582 0.1931423 4.0707377 0.3527276 2.3498825 1.198514
+[5,] 0.9012032 0.2310683 0.2317487 1.3809955 0.9168741 0.6237213 1.609403
+[6,] 1.2331483 1.1066056 0.3546027 0.3705946 0.9002303 0.2528151 3.337512
+          [,8]      [,9]     [,10]     [,11]     [,12]     [,13]     [,14]
+[1,] 2.6280057 1.2251526 0.4760966 5.2379018 1.4782655 1.3761338 1.0202608
+[2,] 2.2087385 0.5195551 0.3757409 0.9004808 0.7409205 2.0543842 0.3668661
+[3,] 1.5310016 0.6735007 2.2069776 0.5060078 0.7171477 1.2378655 0.3651527
+[4,] 2.5592899 1.8205257 1.2624052 0.1524106 0.3828322 1.2406799 0.7954326
+[5,] 1.1005990 1.0619758 2.1047783 2.7816902 1.4010878 0.6140937 0.5136842
+[6,] 0.9799103 2.7520425 2.5407624 1.3889136 0.4346808 1.0637950 0.1859157
+         [,15]     [,16]      [,17]     [,18]    [,19]     [,20]
+[1,] 0.1437680 4.1807643  1.7389423 3.0760640 1.550557 4.4838291
+[2,] 3.8674407 1.9349214  0.6333922 0.4862532 5.275571 0.1161029
+[3,] 1.4724240 0.5971116 11.5869157 0.7580736 4.755297 1.0583051
+[4,] 0.1243085 0.8376231  1.3723291 2.0884571 2.506128 1.2094517
+[5,] 6.2971803 0.8422164  1.5335222 0.3079718 2.729447 1.7164885
+[6,] 3.8052219 2.1611055  0.3280288 2.7773368 1.726558 1.3193446
+```
 
-    </div>
+
 
 -   **ornek** veri setinde i. satırda negatif sayı yok ise çıktıda **i. satırın ortalaması....dir** yazsin.
 
 -   Eğer veri setinde her hangi bir satırda negatif sayı var ise **satır i negatif sayı bulunmaktadır.**
 
 -   veri setindeki satırlardaki toplam negatif sayı toplamı üçü geçerse çktıda **cok sayıda negatif sayı** yazsın ve döngü çalışmayı durdursun.
-
-## **`for()`** Ödev-2
 
 
 ```

@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bölüm 12 Fonksiyonlar | lavaan</title>
+<title>Bölüm 15 Fonksiyonlar | lavaan</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
 <meta name="description" content="En sık kullandığımız fonksiyonlar oluşturma c(), rep(), seq(), numeric(), character(), factor(), logical(), matrix(), array(), data.frame(), list() Kaydetme save(), load() okuma/yazma...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Bölüm 12 Fonksiyonlar | lavaan">
+<meta property="og:title" content="Bölüm 15 Fonksiyonlar | lavaan">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC733/fonksiyonlar.html">
 <meta property="og:description" content="En sık kullandığımız fonksiyonlar oluşturma c(), rep(), seq(), numeric(), character(), factor(), logical(), matrix(), array(), data.frame(), list() Kaydetme save(), load() okuma/yazma...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bölüm 12 Fonksiyonlar | lavaan">
+<meta name="twitter:title" content="Bölüm 15 Fonksiyonlar | lavaan">
 <meta name="twitter:description" content="En sık kullandığımız fonksiyonlar oluşturma c(), rep(), seq(), numeric(), character(), factor(), logical(), matrix(), array(), data.frame(), list() Kaydetme save(), load() okuma/yazma...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -67,11 +67,14 @@
 <li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
 <li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
 <li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
-<li><a class="" href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></li>
-<li><a class="active" href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
-<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></li>
-<li><a class="" href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></li>
-<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="ifelse.html"><span class="header-section-number">11</span> ifelse()</a></li>
+<li><a class="" href="for.html"><span class="header-section-number">12</span> for</a></li>
+<li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">13</span> while döngüsü</a></li>
+<li><a class="" href="uygulama-2.html"><span class="header-section-number">14</span> Uygulama</a></li>
+<li><a class="active" href="fonksiyonlar.html"><span class="header-section-number">15</span> Fonksiyonlar</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">16</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="apply-ailesi.html"><span class="header-section-number">17</span> apply ailesi</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">18</span> Hata Ayıklama/Debugging</a></li>
 </ul>
 
         <div class="book-extra">
@@ -79,9 +82,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="fonksiyonlar" class="section level1" number="12">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="fonksiyonlar" class="section level1" number="15">
 <h1>
-<span class="header-section-number">Bölüm 12</span> Fonksiyonlar<a class="anchor" aria-label="anchor" href="#fonksiyonlar"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Bölüm 15</span> Fonksiyonlar<a class="anchor" aria-label="anchor" href="#fonksiyonlar"><i class="fas fa-link"></i></a>
 </h1>
 <p>En sık kullandığımız fonksiyonlar</p>
 <div class="inline-table"><table class="table table-sm">
@@ -141,9 +144,9 @@ Fonksiyonlar ayrıca genellikle kodun başkalarıyla veya kamuyla paylaşılmas�
 Bu arayüz, potansiyel kullanıcılara kodun bir soyutlamasını sağlar.
 Bu soyutlama kullanıcıların hayatını kolaylaştırır çünkü onları kodun nasıl çalıştığına dair her ayrıntıyı bilmek zorunda bırakmaz.
 Buna ek olarak, bir arayüzün oluşturulması, geliştiricinin kullanıcıya kodun önemli veya en alakalı yönlerini iletmesine olanak tanır.</p>
-<div id="rda-fonkisyonlar" class="section level2" number="12.1">
+<div id="rda-fonkisyonlar" class="section level2" number="15.1">
 <h2>
-<span class="header-section-number">12.1</span> R'da Fonkisyonlar<a class="anchor" aria-label="anchor" href="#rda-fonkisyonlar"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.1</span> R'da Fonkisyonlar<a class="anchor" aria-label="anchor" href="#rda-fonkisyonlar"><i class="fas fa-link"></i></a>
 </h2>
 <p>R'deki fonksiyonlar "birinci sınıf nesnelerdir", yani diğer R nesneleri gibi ele alınabilirler.
 Daha da önemlisi,</p>
@@ -153,9 +156,9 @@ Bu, <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> ve <c
 <li><p>Fonksiyonlar iç içe geçebilir, böylece bir fonksiyonu başka bir fonksiyonun içinde tanımlayabilirsiniz</p></li>
 </ul>
 </div>
-<div id="ilk-fonksiyon" class="section level2" number="12.2">
+<div id="ilk-fonksiyon" class="section level2" number="15.2">
 <h2>
-<span class="header-section-number">12.2</span> İlk fonksiyon<a class="anchor" aria-label="anchor" href="#ilk-fonksiyon"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.2</span> İlk fonksiyon<a class="anchor" aria-label="anchor" href="#ilk-fonksiyon"><i class="fas fa-link"></i></a>
 </h2>
 <p>Fonksiyonlar <code>function()</code> kullanılarak tanımlanır ve diğer her şey gibi R nesneleri olarak saklanır.
 Özellikle, "function" sınıfının R nesneleridirler.</p>
@@ -263,9 +266,9 @@ Tüm fonksiyon argümanlarının adları olduğundan, bunlar adları kullanılar
 <p>Bir fonksiyonun çok sayıda argümanı varsa ve hangi argümanın belirtildiği her zaman net olmayabilirse, bir argümanı adıyla belirtmek bazen yararlıdır.
 Burada, fonksiyonumuzun yalnızca bir argümanı vardır, bu nedenle herhangi bir karışıklık olmaz.</p>
 </div>
-<div id="argüman-eşleştirme" class="section level2" number="12.3">
+<div id="argüman-eşleştirme" class="section level2" number="15.3">
 <h2>
-<span class="header-section-number">12.3</span> Argüman Eşleştirme<a class="anchor" aria-label="anchor" href="#arg%C3%BCman-e%C5%9Fle%C5%9Ftirme"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.3</span> Argüman Eşleştirme<a class="anchor" aria-label="anchor" href="#arg%C3%BCman-e%C5%9Fle%C5%9Ftirme"><i class="fas fa-link"></i></a>
 </h2>
 <p>Bir R fonksiyonunu argümanlarla çağırmak çeşitli şekillerde yapılabilir.
 Bu ilk başta kafa karıştırıcı olabilir, ancak komut satırında etkileşimli çalışma yaparken gerçekten kullanışlıdır.
@@ -285,18 +288,18 @@ sd()<code>fonksiyonunun iki argümanı olduğunu unutmayın: x</code> sayı vekt
 <span id="cb465-4"><a href="fonksiyonlar.html#cb465-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata)                 </span>
 <span id="cb465-5"><a href="fonksiyonlar.html#cb465-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki bağımsız değişkeni de adla belirtin</span></span>
 <span id="cb465-6"><a href="fonksiyonlar.html#cb465-6" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)  </span>
-<span id="cb465-7"><a href="fonksiyonlar.html#cb465-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.105525</span></span>
-<span id="cb465-8"><a href="fonksiyonlar.html#cb465-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.105525</span></span>
-<span id="cb465-9"><a href="fonksiyonlar.html#cb465-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.105525</span></span></code></pre></div>
+<span id="cb465-7"><a href="fonksiyonlar.html#cb465-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9157824</span></span>
+<span id="cb465-8"><a href="fonksiyonlar.html#cb465-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9157824</span></span>
+<span id="cb465-9"><a href="fonksiyonlar.html#cb465-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9157824</span></span></code></pre></div>
 <p>Fonksiyon argümanlarını isimle belirtirken, bunları hangi sırada belirttiğiniz önemli değildir.
 Aşağıdaki örnekte, fonksiyon tanımında tanımlanan ilk argüman <code>x</code> olmasına rağmen, önce <code>na.rm</code> argümanını, ardından <code>x</code> argümanını belirtiyoruz.</p>
 <div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="fonksiyonlar.html#cb466-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
 <span id="cb466-2"><a href="fonksiyonlar.html#cb466-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)     </span>
-<span id="cb466-3"><a href="fonksiyonlar.html#cb466-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.105525</span></span></code></pre></div>
+<span id="cb466-3"><a href="fonksiyonlar.html#cb466-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9157824</span></span></code></pre></div>
 <p>Konumsal eşleştirme ile ada göre eşleştirmeyi karıştırabilirsiniz.
 Bir argüman isme göre eşleştirildiğinde, argüman listesinden "çıkarılır" ve kalan isimsiz argümanlar fonksiyon tanımında listelendikleri sırayla eşleştirilir.</p>
 <div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="fonksiyonlar.html#cb467-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span>
-<span id="cb467-2"><a href="fonksiyonlar.html#cb467-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.105525</span></span></code></pre></div>
+<span id="cb467-2"><a href="fonksiyonlar.html#cb467-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9157824</span></span></code></pre></div>
 <p>Burada, <code>mydata</code> nesnesi <code>x</code> argümanına atanır, çünkü henüz belirtilmemiş tek argüman budur.</p>
 <p>Aşağıda, bir veri kümesine doğrusal modeller uyduran <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunun argüman listesi yer almaktadır.</p>
 <div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="fonksiyonlar.html#cb468-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(lm)</span>
@@ -331,9 +334,9 @@ Bazen bir argümanın <code>NULL</code> değerini almasına izin vermek yararlı
 <p>Kullanışlı bir fonksiyon yazmak için mümkün olduğunca kısa isimler kullanılmalıdır; bununla birlikte bu isimler kullanıcıya yapılacak işlemi anlaşılırkılmalıdır.
 Bunun yanında R'da özel anlamı olan <code>c,C,D,F,I,q,t,T</code> gibi tek harfl ik fonksiyon isimleri kullanmaktan ve R'da hazır olan fonksiyon isimlerini kişisel tanımlı fonksiyonlara vermekten kaçınılmalıdır.</p>
 </div>
-<div id="tembel-değerlendirme" class="section level2" number="12.4">
+<div id="tembel-değerlendirme" class="section level2" number="15.4">
 <h2>
-<span class="header-section-number">12.4</span> Tembel Değerlendirme<a class="anchor" aria-label="anchor" href="#tembel-de%C4%9Ferlendirme"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.4</span> Tembel Değerlendirme<a class="anchor" aria-label="anchor" href="#tembel-de%C4%9Ferlendirme"><i class="fas fa-link"></i></a>
 </h2>
 <p>Fonksiyonların argümanları <em>lazily</em> olarak değerlendirilir, bu nedenle sadece fonksiyonun gövdesinde gerektiği gibi değerlendirilirler.</p>
 <p>Bu örnekte, <code>f()</code> fonksiyonunun iki argümanı vardır: a<code>ve</code>b`.</p>
@@ -357,9 +360,9 @@ Bir argüman kullanmayan bir fonksiyon yazmak ve bunu fark etmemek yaygındır �
 Bunun nedeni <code>b</code>nin <code>print(a)</code>dan sonrasına kadar değerlendirilmek zorunda olmamasıdır.
 İşlev <code>print(b)</code>yi değerlendirmeye çalıştığında, işlev bir hata atmak zorunda kalmıştır.</p>
 </div>
-<div id="argümanı" class="section level2" number="12.5">
+<div id="argümanı" class="section level2" number="15.5">
 <h2>
-<span class="header-section-number">12.5</span> <code>...</code> argümanı<a class="anchor" aria-label="anchor" href="#arg%C3%BCman%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.5</span> <code>...</code> argümanı<a class="anchor" aria-label="anchor" href="#arg%C3%BCman%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <p>R'de <code>...</code> argümanı olarak bilinen ve genellikle diğer fonksiyonlara aktarılan değişken sayıda argümanı gösteren özel bir argüman vardır.
 ...` argümanı genellikle başka bir fonksiyonu genişletirken kullanılır ve orijinal fonksiyonun tüm argüman listesini kopyalamak istemezsiniz</p>
@@ -373,7 +376,7 @@ Aşağıdaki fonksiyon <code>type</code> argümanı için varsayılanı <code>ty
 <div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="fonksiyonlar.html#cb474-1" tabindex="-1"></a><span class="sc">&gt;</span> mean</span>
 <span id="cb474-2"><a href="fonksiyonlar.html#cb474-2" tabindex="-1"></a><span class="cf">function</span> (x, ...) </span>
 <span id="cb474-3"><a href="fonksiyonlar.html#cb474-3" tabindex="-1"></a><span class="fu">UseMethod</span>(<span class="st">"mean"</span>)</span>
-<span id="cb474-4"><a href="fonksiyonlar.html#cb474-4" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x000001fd76eec2a8</span><span class="sc">&gt;</span></span>
+<span id="cb474-4"><a href="fonksiyonlar.html#cb474-4" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x0000018fc72e4398</span><span class="sc">&gt;</span></span>
 <span id="cb474-5"><a href="fonksiyonlar.html#cb474-5" tabindex="-1"></a><span class="er">&lt;</span>environment<span class="sc">:</span> namespace<span class="sc">:</span>base<span class="sc">&gt;</span></span></code></pre></div>
 <p>Fonksiyona aktarılan argüman sayısı önceden bilinemediğinde <code>...</code> argümanı gereklidir.
 Bu durum <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> ve <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> gibi fonksiyonlarda açıkça görülmektedir.</p>
@@ -387,9 +390,9 @@ Bu durum <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> ve
 <p>Hem <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> hem de <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> birden fazla karakter vektörünü bir araya getirerek konsola metin yazdırdığından, bu fonksiyonların kullanıcı tarafından fonksiyona kaç karakter vektörü aktarılacağını önceden bilmesi imkansızdır.
 Bu yüzden her iki fonksiyonun da ilk argümanı <code>...</code> şeklindedir.</p>
 </div>
-<div id="argümanından-sonra-gelen-argümanlar" class="section level2" number="12.6">
+<div id="argümanından-sonra-gelen-argümanlar" class="section level2" number="15.6">
 <h2>
-<span class="header-section-number">12.6</span> <code>...</code> argümanından sonra gelen argümanlar<a class="anchor" aria-label="anchor" href="#arg%C3%BCman%C4%B1ndan-sonra-gelen-arg%C3%BCmanlar"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.6</span> <code>...</code> argümanından sonra gelen argümanlar<a class="anchor" aria-label="anchor" href="#arg%C3%BCman%C4%B1ndan-sonra-gelen-arg%C3%BCmanlar"><i class="fas fa-link"></i></a>
 </h2>
 <p>...<code>ile ilgili bir sorun, argüman listesinde _after_</code>...` olarak görünen herhangi bir argümanın açıkça adlandırılması gerektiği ve kısmen eşleştirilemeyeceği veya konum olarak eşleştirilemeyeceğidir.</p>
 <p><code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> fonksiyonunun argümanlarına bir göz atın.</p>
@@ -404,9 +407,9 @@ Bu yüzden her iki fonksiyonun da ilk argümanı <code>...</code> şeklindedir.<
 <div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="fonksiyonlar.html#cb478-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">se =</span> <span class="st">":"</span>)</span>
 <span id="cb478-2"><a href="fonksiyonlar.html#cb478-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"a b :"</span></span></code></pre></div>
 </div>
-<div id="yazım-aşamaları" class="section level2" number="12.7">
+<div id="yazım-aşamaları" class="section level2" number="15.7">
 <h2>
-<span class="header-section-number">12.7</span> Yazım Aşamaları<a class="anchor" aria-label="anchor" href="#yaz%C4%B1m-a%C5%9Famalar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.7</span> Yazım Aşamaları<a class="anchor" aria-label="anchor" href="#yaz%C4%B1m-a%C5%9Famalar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <p>Fonksiyon yazmak kadar iyi bir fonksiyon yazmak da önemlidir.
 İyi bir fonksiyonun ilk özelliği doğru sonucu veriyor olmasıdır.</p>
@@ -418,18 +421,18 @@ Bu yüzden her iki fonksiyonun da ilk argümanı <code>...</code> şeklindedir.<
 <li>Fonksiyonun argümanları belirleyin</li>
 <li>Argüman isimlerinizi kullanacağınız değişkenlerle değiştirin</li>
 </ul>
-<div id="sıra-sizde-2" class="section level3" number="12.7.1">
+<div id="sıra-sizde-2" class="section level3" number="15.7.1">
 <h3>
-<span class="header-section-number">12.7.1</span> Sıra Sizde<a class="anchor" aria-label="anchor" href="#s%C4%B1ra-sizde-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.7.1</span> Sıra Sizde<a class="anchor" aria-label="anchor" href="#s%C4%B1ra-sizde-2"><i class="fas fa-link"></i></a>
 </h3>
 <p>Geometrik ortalamanın farklı hesaplama yolları bulunmaktadır.
 Logaritma değerlerine dayalı olarak hesaplandığında, geometrik ortalama,gözlem değerlerinin logaritmalarının aritmetik ortalamasıdır.
 Bir x vektorunun geometrik ortalamaasını logartimalara dayalı olarakhesaplayan bir fonsiyon yazıp, <code>x &lt;- 1:100</code> için çalıştırınız.</p>
 </div>
 </div>
-<div id="özet-3" class="section level2" number="12.8">
+<div id="özet-3" class="section level2" number="15.8">
 <h2>
-<span class="header-section-number">12.8</span> Özet<a class="anchor" aria-label="anchor" href="#%C3%B6zet-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">15.8</span> Özet<a class="anchor" aria-label="anchor" href="#%C3%B6zet-3"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Fonksiyonlar <code>function()</code> direktifi kullanılarak tanımlanabilir ve diğer R nesneleri gibi R nesnelerine atanır</p></li>
@@ -642,22 +645,22 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></div>
-<div class="next"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></div>
+<div class="prev"><a href="uygulama-2.html"><span class="header-section-number">14</span> Uygulama</a></div>
+<div class="next"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">16</span> Döngü Fonkisyonları</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#fonksiyonlar"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
-<li><a class="nav-link" href="#rda-fonkisyonlar"><span class="header-section-number">12.1</span> R'da Fonkisyonlar</a></li>
-<li><a class="nav-link" href="#ilk-fonksiyon"><span class="header-section-number">12.2</span> İlk fonksiyon</a></li>
-<li><a class="nav-link" href="#arg%C3%BCman-e%C5%9Fle%C5%9Ftirme"><span class="header-section-number">12.3</span> Argüman Eşleştirme</a></li>
-<li><a class="nav-link" href="#tembel-de%C4%9Ferlendirme"><span class="header-section-number">12.4</span> Tembel Değerlendirme</a></li>
-<li><a class="nav-link" href="#arg%C3%BCman%C4%B1"><span class="header-section-number">12.5</span> ... argümanı</a></li>
-<li><a class="nav-link" href="#arg%C3%BCman%C4%B1ndan-sonra-gelen-arg%C3%BCmanlar"><span class="header-section-number">12.6</span> ... argümanından sonra gelen argümanlar</a></li>
+<li><a class="nav-link" href="#fonksiyonlar"><span class="header-section-number">15</span> Fonksiyonlar</a></li>
+<li><a class="nav-link" href="#rda-fonkisyonlar"><span class="header-section-number">15.1</span> R'da Fonkisyonlar</a></li>
+<li><a class="nav-link" href="#ilk-fonksiyon"><span class="header-section-number">15.2</span> İlk fonksiyon</a></li>
+<li><a class="nav-link" href="#arg%C3%BCman-e%C5%9Fle%C5%9Ftirme"><span class="header-section-number">15.3</span> Argüman Eşleştirme</a></li>
+<li><a class="nav-link" href="#tembel-de%C4%9Ferlendirme"><span class="header-section-number">15.4</span> Tembel Değerlendirme</a></li>
+<li><a class="nav-link" href="#arg%C3%BCman%C4%B1"><span class="header-section-number">15.5</span> ... argümanı</a></li>
+<li><a class="nav-link" href="#arg%C3%BCman%C4%B1ndan-sonra-gelen-arg%C3%BCmanlar"><span class="header-section-number">15.6</span> ... argümanından sonra gelen argümanlar</a></li>
 <li>
-<a class="nav-link" href="#yaz%C4%B1m-a%C5%9Famalar%C4%B1"><span class="header-section-number">12.7</span> Yazım Aşamaları</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#s%C4%B1ra-sizde-2"><span class="header-section-number">12.7.1</span> Sıra Sizde</a></li></ul>
+<a class="nav-link" href="#yaz%C4%B1m-a%C5%9Famalar%C4%B1"><span class="header-section-number">15.7</span> Yazım Aşamaları</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#s%C4%B1ra-sizde-2"><span class="header-section-number">15.7.1</span> Sıra Sizde</a></li></ul>
 </li>
-<li><a class="nav-link" href="#%C3%B6zet-3"><span class="header-section-number">12.8</span> Özet</a></li>
+<li><a class="nav-link" href="#%C3%B6zet-3"><span class="header-section-number">15.8</span> Özet</a></li>
 </ul>
 
       <div class="book-extra">

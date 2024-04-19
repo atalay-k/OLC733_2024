@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Ders Hakkında | lavaan</title>
+<title>Bölüm 11 ifelse() | lavaan</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="Bu notlar OLC733 dersi için hazırlanmıştır.">
+<meta name="description" content="ifelse() durum cümlesi, if() durum cümlelerinde vektörlerin kullanımından kaynaklı sıkıntılara çözüm sunar. Bu bakımdan ifelse(), if() durum cümlelerinin vektörler için kullanılabilir halidir....">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Ders Hakkında | lavaan">
+<meta property="og:title" content="Bölüm 11 ifelse() | lavaan">
 <meta property="og:type" content="book">
-<meta property="og:url" content="https://github.com/atalay-k/OLC733">
-<meta property="og:description" content="Bu notlar OLC733 dersi için hazırlanmıştır.">
+<meta property="og:url" content="https://github.com/atalay-k/OLC733/ifelse.html">
+<meta property="og:description" content="ifelse() durum cümlesi, if() durum cümlelerinde vektörlerin kullanımından kaynaklı sıkıntılara çözüm sunar. Bu bakımdan ifelse(), if() durum cümlelerinin vektörler için kullanılabilir halidir....">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ders Hakkında | lavaan">
-<meta name="twitter:description" content="Bu notlar OLC733 dersi için hazırlanmıştır.">
+<meta name="twitter:title" content="Bölüm 11 ifelse() | lavaan">
+<meta name="twitter:description" content="ifelse() durum cümlesi, if() durum cümlelerinde vektörlerin kullanımından kaynaklı sıkıntılara çözüm sunar. Bu bakımdan ifelse(), if() durum cümlelerinin vektörler için kullanılabilir halidir....">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -56,7 +56,7 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="active" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="index.html">Ders Hakkında</a></li>
 <li><a class="" href="varsay%C4%B1mlar-i.html"><span class="header-section-number">1</span> Varsayımlar I</a></li>
 <li><a class="" href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">2</span> Varsayımlar II</a></li>
 <li><a class="" href="regresyon.html"><span class="header-section-number">3</span> Regresyon</a></li>
@@ -67,7 +67,7 @@
 <li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
 <li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
 <li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
-<li><a class="" href="ifelse.html"><span class="header-section-number">11</span> ifelse()</a></li>
+<li><a class="active" href="ifelse.html"><span class="header-section-number">11</span> ifelse()</a></li>
 <li><a class="" href="for.html"><span class="header-section-number">12</span> for</a></li>
 <li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">13</span> while döngüsü</a></li>
 <li><a class="" href="uygulama-2.html"><span class="header-section-number">14</span> Uygulama</a></li>
@@ -82,49 +82,56 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><!--bookdown:title:end--><!--bookdown:title:start--><div id="ders-hakkında" class="section level1 unnumbered">
-<h1>Ders Hakkında<a class="anchor" aria-label="anchor" href="#ders-hakk%C4%B1nda"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="ifelse" class="section level1" number="11">
+<h1>
+<span class="header-section-number">Bölüm 11</span> ifelse()<a class="anchor" aria-label="anchor" href="#ifelse"><i class="fas fa-link"></i></a>
 </h1>
-<p>Bu dersin amacı, R yazılımını kullanarak veri üzerinde istenilen çok değişkenli istatistiksel ve psikometrik işlemlerin yapılabilmesini sağlamaktır.</p>
-<p>Tez ve makale çalışmalarında öğrencilerimizin analizlerini R yazılımı ile hiçbir paket programa ihtiyaç duymadan kendi başlarına yapmalarını sağlamaktır.</p>
-<p>Ders İçeriği:</p>
-<ul>
-<li>Çok değişkenli İstatistik Varsayımları<br>
-</li>
-<li>Çoklu Regresyon<br>
-</li>
-<li>Yol Analizi</li>
-<li>Açımlayıcı Faktör Analizi<br>
-</li>
-<li>Doğrulayıcı Faktör Analizi<br>
-</li>
-<li>Progralamaya Giriş<br>
-</li>
-<li>Klasik Test Kuramı<br>
-</li>
-<li>Madde Tepki Kuramı<br>
-</li>
-<li>Veri Üretimi</li>
-</ul>
-<div id="eğitmen" class="section level2 unnumbered">
-<h2>Eğitmen<a class="anchor" aria-label="anchor" href="#e%C4%9Fitmen"><i class="fas fa-link"></i></a>
-</h2>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:black;overflow:visible;position:relative;"><path d="M224 256A128 128 0 1 1 224 0a128 128 0 1 1 0 256zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 36-146.9c2-8.1 9.8-13.4 17.9-11.3c70.1 17.6 121.9 81 121.9 156.4c0 17-13.8 30.7-30.7 30.7H285.5c-2.1 0-4-.4-5.8-1.1l.3 1.1H168l.3-1.1c-1.8 .7-3.8 1.1-5.8 1.1H30.7C13.8 512 0 498.2 0 481.3c0-75.5 51.9-138.9 121.9-156.4c8.1-2 15.9 3.3 17.9 11.3l36 146.9 33.4-123.9z"></path></svg><a href="https://avesis.hacettepe.edu.tr/katalay">Dr. Kübra Atalay Kabasakal</a></p>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:black;overflow:visible;position:relative;"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"></path></svg><a href="mailto:kkatalay@gmail.com" class="email">kkatalay@gmail.com</a></p>
-<p><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:black;overflow:visible;position:relative;"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"></path></svg><a href="mailto:katalay@hacettepe.edu.tr" class="email">katalay@hacettepe.edu.tr</a></p>
-</div>
-<div id="kitaplar" class="section level2 unnumbered">
-<h2>Kitaplar<a class="anchor" aria-label="anchor" href="#kitaplar"><i class="fas fa-link"></i></a>
-</h2>
-<ul>
-<li><p>Atar, B., Atalay Kabasakal, K, Unsal Ozberk, E. B., Ozberk, E. H. &amp; Kibrislioglu Uysal, N. (2020). R ile Veri Analizi ve Psikometri Uygulamaları, Pegem Akademi, Ankara.🔗 <a href="https://pegem.net/urun/R-ile-Veri-Analizi-ve-Psikometri-Uygulamalari/60801">📖</a></p></li>
-<li><p>Desjardins, C. D., &amp; Bulut, O. (2018). Handbook of educational measurement and psychometrics using R. Boca Raton, FL: CRC Press. 🔗<a href="https://www.routledge.com/Handbook-of-Educational-Measurement-and-Psychometrics-Using-R/Desjardins-Bulut/p/book/9780367734671">📖</a></p></li>
-<li><p>Demir, E. R Diliyle İstatistik Uygulamaları. Pegem Akademi, Ankara.(2021). 🔗<a href="https://pegem.net/urun/R-Diliyle-Istatistik-Uygulamalari/61912">📖</a></p></li>
-<li><p>Kline,R. B. (2019). Yapısal Eşitlik Modellemesinin İlkeleri ve Uygulaması(4. Baskı). (S. Şen, Çev.) Ankara: Nobel Yayınevi.</p></li>
-<li><p>Şen, S. (2020). Mplus ile Yapısal Eşitlik Modellemesi Uygulamaları (2020).Nobel Yayınevi.</p></li>
-<li><p>Tabachnick, B. G., &amp; Fidell, L. S. (2012). Using Multivariate Statistics (4rd ed.). New York: Harper Collins.</p></li>
-<li><p>Wolf, E. J., Harrington, K. M., Clark, S. L., &amp; Miller, M. W. (2013). Sample Size Requirements for Structural Equation Models: An Evaluation of Power, Bias, and Solution Propriety. Educational and Psychological Measurement, 73(6), 913–934. <a href="https://doi.org/10.1177/0013164413495237" class="uri">https://doi.org/10.1177/0013164413495237</a></p></li>
-</ul>
+<p><code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> durum cümlesi, <code>if()</code> durum cümlelerinde vektörlerin kullanımından kaynaklı sıkıntılara çözüm sunar. Bu bakımdan <code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code>, <code>if()</code> durum cümlelerinin vektörler için kullanılabilir halidir.</p>
+<p><code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> durum cümlesinin genel kullanımı aşağıdaki gibidir.</p>
+<p><strong><code>ifelse(koşul, Doğru İfade, Yanlış İfade)</code></strong></p>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="ifelse.html#cb418-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb418-2"><a href="ifelse.html#cb418-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ifelse</span>(x<span class="sc">&gt;=</span> <span class="dv">65</span>, <span class="st">"Başarılı"</span> ,<span class="st">"Başarısız"</span>)</span>
+<span id="cb418-3"><a href="ifelse.html#cb418-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Başarısız"</span></span></code></pre></div>
+<p><code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> eksik veri atamakiçin de kullanılabilir. Eksik verinin 99 ile gösterildiği bir vektörde eksik veri yerine NA atama örneği</p>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="ifelse.html#cb419-1" tabindex="-1"></a><span class="sc">&gt;</span> (x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">99</span>,<span class="dv">5</span>))</span>
+<span id="cb419-2"><a href="ifelse.html#cb419-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">ifelse</span>(x<span class="sc">==</span><span class="dv">99</span>, <span class="cn">NA</span>, x)</span>
+<span id="cb419-3"><a href="ifelse.html#cb419-3" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">1</span>  <span class="dv">2</span>  <span class="dv">3</span>  <span class="dv">4</span> <span class="dv">99</span>  <span class="dv">5</span></span>
+<span id="cb419-4"><a href="ifelse.html#cb419-4" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">1</span>  <span class="dv">2</span>  <span class="dv">3</span>  <span class="dv">4</span> <span class="cn">NA</span>  <span class="dv">5</span></span></code></pre></div>
+<div id="sıra-sizde-1" class="section level3" number="11.0.1">
+<h3>
+<span class="header-section-number">11.0.1</span> Sıra Sizde<a class="anchor" aria-label="anchor" href="#s%C4%B1ra-sizde-1"><i class="fas fa-link"></i></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Elimizdeki bir nesnede yer alan sayıların tek ya da çift olduğunu yazdırma</li>
+</ol>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="ifelse.html#cb420-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">41</span>)</span>
+<span id="cb420-2"><a href="ifelse.html#cb420-2" tabindex="-1"></a><span class="sc">&gt;</span> sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">90</span>,<span class="dv">27</span>)</span>
+<span id="cb420-3"><a href="ifelse.html#cb420-3" tabindex="-1"></a><span class="sc">&gt;</span> sayilar</span>
+<span id="cb420-4"><a href="ifelse.html#cb420-4" tabindex="-1"></a> [<span class="dv">1</span>] <span class="dv">89</span> <span class="dv">84</span> <span class="dv">54</span> <span class="dv">81</span> <span class="dv">57</span> <span class="dv">78</span> <span class="dv">55</span> <span class="dv">71</span> <span class="dv">80</span> <span class="dv">62</span> <span class="dv">87</span> <span class="dv">67</span> <span class="dv">70</span> <span class="dv">83</span> <span class="dv">82</span> <span class="dv">61</span> <span class="dv">66</span> <span class="dv">53</span> <span class="dv">50</span> <span class="dv">69</span> <span class="dv">79</span> <span class="dv">64</span> <span class="dv">85</span> <span class="dv">51</span> <span class="dv">73</span></span>
+<span id="cb420-5"><a href="ifelse.html#cb420-5" tabindex="-1"></a>[<span class="dv">26</span>] <span class="dv">74</span> <span class="dv">88</span></span></code></pre></div>
+<pre><code> [1] "Tek Sayi"  "Cift Sayi" "Cift Sayi" "Tek Sayi"  "Tek Sayi"  "Cift Sayi"
+ [7] "Tek Sayi"  "Tek Sayi"  "Cift Sayi" "Cift Sayi" "Tek Sayi"  "Tek Sayi" 
+[13] "Cift Sayi" "Tek Sayi"  "Cift Sayi" "Tek Sayi"  "Cift Sayi" "Tek Sayi" 
+[19] "Cift Sayi" "Tek Sayi"  "Tek Sayi"  "Cift Sayi" "Tek Sayi"  "Tek Sayi" 
+[25] "Tek Sayi"  "Cift Sayi" "Cift Sayi"</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Elimizdeki bir nesnede yer alan sayıların 0, pozitif ya negatif oldugu belirleme</li>
+</ol>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="ifelse.html#cb422-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">987</span>)</span>
+<span id="cb422-2"><a href="ifelse.html#cb422-2" tabindex="-1"></a><span class="sc">&gt;</span> sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">27</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb422-3"><a href="ifelse.html#cb422-3" tabindex="-1"></a><span class="sc">&gt;</span> sayilar</span>
+<span id="cb422-4"><a href="ifelse.html#cb422-4" tabindex="-1"></a> [<span class="dv">1</span>]   <span class="dv">4</span>   <span class="dv">3</span>   <span class="dv">4</span>   <span class="dv">2</span>   <span class="dv">1</span>   <span class="dv">7</span> <span class="sc">-</span><span class="dv">10</span>   <span class="dv">5</span>   <span class="dv">6</span>  <span class="sc">-</span><span class="dv">8</span>   <span class="dv">7</span>  <span class="sc">-</span><span class="dv">3</span>   <span class="dv">9</span>   <span class="dv">7</span>  <span class="sc">-</span><span class="dv">9</span>  <span class="dv">10</span>   <span class="dv">4</span>  <span class="sc">-</span><span class="dv">1</span>  <span class="sc">-</span><span class="dv">8</span></span>
+<span id="cb422-5"><a href="ifelse.html#cb422-5" tabindex="-1"></a>[<span class="dv">20</span>]   <span class="dv">8</span>  <span class="sc">-</span><span class="dv">3</span>   <span class="dv">0</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">8</span>   <span class="dv">1</span>   <span class="dv">3</span></span></code></pre></div>
+<pre><code> [1] "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Negatif"
+ [8] "Pozitif" "Pozitif" "Negatif" "Pozitif" "Negatif" "Pozitif" "Pozitif"
+[15] "Negatif" "Pozitif" "Pozitif" "Negatif" "Negatif" "Pozitif" "Negatif"
+[22] "Sıfır"   "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif"</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>finalden 50 ve uzeri alan ve en az 11 derse devam edem ogrencilerin gecme notlari finalin %60 ve vizenin %40 alinarak hesaplansin, 11'den az derse devam eden ogrencilerin gecme notu final notunun %60' olarak alinsin</li>
+</ol>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="ifelse.html#cb424-1" tabindex="-1"></a><span class="sc">&gt;</span> vize <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">55</span>)</span>
+<span id="cb424-2"><a href="ifelse.html#cb424-2" tabindex="-1"></a><span class="sc">&gt;</span> final <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">65</span>,<span class="dv">70</span>,<span class="dv">50</span>,<span class="dv">80</span>)</span>
+<span id="cb424-3"><a href="ifelse.html#cb424-3" tabindex="-1"></a><span class="sc">&gt;</span> devam <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">12</span>,<span class="dv">11</span>)</span></code></pre></div>
 </div>
 </div>
 <script>
@@ -329,20 +336,18 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="empty"></div>
-<div class="next"><a href="varsay%C4%B1mlar-i.html"><span class="header-section-number">1</span> Varsayımlar I</a></div>
+<div class="prev"><a href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></div>
+<div class="next"><a href="for.html"><span class="header-section-number">12</span> for</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ders-hakk%C4%B1nda">Ders Hakkında</a></li>
-<li><a class="nav-link" href="#e%C4%9Fitmen">Eğitmen</a></li>
-<li><a class="nav-link" href="#kitaplar">Kitaplar</a></li>
-</ul>
+      <ul class="nav navbar-nav"><li>
+<a class="nav-link" href="#ifelse"><span class="header-section-number">11</span> ifelse()</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#s%C4%B1ra-sizde-1"><span class="header-section-number">11.0.1</span> Sıra Sizde</a></li></ul>
+</li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="/blob/master/book/index.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="/edit/master/book/index.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="/blob/master/book/10_kontrol.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/10_kontrol.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
