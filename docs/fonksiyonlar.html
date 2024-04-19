@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bölüm 12 Fonksiyonlar | lavaan</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="En sık kullandığımız fonksiyonlar oluşturma c(), rep(), seq(), numeric(), character(), factor(), logical(), matrix(), array(), data.frame(), list() Kaydetme save(), load() okuma/yazma...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Bölüm 12 Fonksiyonlar | lavaan">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC733/fonksiyonlar.html">
+<meta property="og:description" content="En sık kullandığımız fonksiyonlar oluşturma c(), rep(), seq(), numeric(), character(), factor(), logical(), matrix(), array(), data.frame(), list() Kaydetme save(), load() okuma/yazma...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bölüm 12 Fonksiyonlar | lavaan">
+<meta name="twitter:description" content="En sık kullandığımız fonksiyonlar oluşturma c(), rep(), seq(), numeric(), character(), factor(), logical(), matrix(), array(), data.frame(), list() Kaydetme save(), load() okuma/yazma...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.32/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="libs/plotly-binding-4.10.4/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script><link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet">
+<script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script><script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script><script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script><script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script><script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script><script src="libs/rglwidgetClass-1.2.8/init.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script><script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script><script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script><script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script><script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script><script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script><script src="libs/viz-1.8.2/viz.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">lavaan</a>:
+        <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="varsay%C4%B1mlar-i.html"><span class="header-section-number">1</span> Varsayımlar I</a></li>
+<li><a class="" href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">2</span> Varsayımlar II</a></li>
+<li><a class="" href="regresyon.html"><span class="header-section-number">3</span> Regresyon</a></li>
+<li><a class="" href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></li>
+<li><a class="" href="lavaan-ve-sem.html"><span class="header-section-number">5</span> lavaan ve sem</a></li>
+<li><a class="" href="yol-analizi.html"><span class="header-section-number">6</span> Yol Analizi</a></li>
+<li><a class="" href="afa.html"><span class="header-section-number">7</span> AFA</a></li>
+<li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
+<li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
+<li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
+<li><a class="" href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></li>
+<li><a class="active" href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="fonksiyonlar" class="section level1" number="12">
+<h1>
+<span class="header-section-number">Bölüm 12</span> Fonksiyonlar<a class="anchor" aria-label="anchor" href="#fonksiyonlar"><i class="fas fa-link"></i></a>
+</h1>
+<p>En sık kullandığımız fonksiyonlar</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="12%">
+<col width="87%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>oluşturma</td>
+<td>c(), rep(), seq(), numeric(), character(), factor(), logical(), matrix(), array(), data.frame(), list()</td>
+</tr>
+<tr class="even">
+<td>Kaydetme</td>
+<td>save(), load()</td>
+</tr>
+<tr class="odd">
+<td>okuma/yazma</td>
+<td>read<em>(),write()</em>
+</td>
+</tr>
+<tr class="even">
+<td>dönüştürme</td>
+<td>as.numeric(),as.character(),as.factor(),as.logical(), as.matrix(), as.array(), as.data.frame(), as.list()</td>
+</tr>
+<tr class="odd">
+<td>isimlendirme</td>
+<td>names(), clonames(), rownames()</td>
+</tr>
+<tr class="even">
+<td>indeksleme</td>
+<td>
+<p>[ i ] (vektör için), [ i, j] (matris ve data frame için),</p>
+<p>[ i, j, k, …] (dizi için), [ [ k ] ] (liste için)</p>
+<p>j, k, tam sayı, karakter ya da mantıksal ifade olabilir</p>
+</td>
+</tr>
+<tr class="odd">
+<td>birleştirme</td>
+<td>c(), paste(), cbind(), rbind(), merge()</td>
+</tr>
+<tr class="even">
+<td>sıralama</td>
+<td>order(), arrange()</td>
+</tr>
+<tr class="odd">
+<td>tur</td>
+<td>class(), length(), dim(), nrow(), ncol() ………</td>
+</tr>
+</tbody>
+</table></div>
+<p>Fonksiyon yazmak, bir R programcısının temel faaliyetlerinden biridir.
+Sadece bir "kullanıcıdan" R için yeni fonksiyonlar yaratan bir geliştiriciye geçişin temel adımını temsil eder.
+Fonksiyonlar genellikle, belki de biraz farklı koşullar altında birçok kez yürütülmesi gereken bir dizi ifadeyi kapsüllemek için kullanılır.
+Fonksiyonlar ayrıca genellikle kodun başkalarıyla veya kamuyla paylaşılması gerektiğinde yazılır.</p>
+<p>Bir fonksiyonun yazılması, bir geliştiricinin koda bir dizi parametre ile açıkça belirtilen bir arayüz oluşturmasına olanak tanır.
+Bu arayüz, potansiyel kullanıcılara kodun bir soyutlamasını sağlar.
+Bu soyutlama kullanıcıların hayatını kolaylaştırır çünkü onları kodun nasıl çalıştığına dair her ayrıntıyı bilmek zorunda bırakmaz.
+Buna ek olarak, bir arayüzün oluşturulması, geliştiricinin kullanıcıya kodun önemli veya en alakalı yönlerini iletmesine olanak tanır.</p>
+<div id="rda-fonkisyonlar" class="section level2" number="12.1">
+<h2>
+<span class="header-section-number">12.1</span> R'da Fonkisyonlar<a class="anchor" aria-label="anchor" href="#rda-fonkisyonlar"><i class="fas fa-link"></i></a>
+</h2>
+<p>R'deki fonksiyonlar "birinci sınıf nesnelerdir", yani diğer R nesneleri gibi ele alınabilirler.
+Daha da önemlisi,</p>
+<ul>
+<li><p>Fonksiyonlar diğer fonksiyonlara argüman olarak aktarılabilir.
+Bu, <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> ve <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> gibi çeşitli uygulama fonksiyonları için çok kullanışlıdır.</p></li>
+<li><p>Fonksiyonlar iç içe geçebilir, böylece bir fonksiyonu başka bir fonksiyonun içinde tanımlayabilirsiniz</p></li>
+</ul>
+</div>
+<div id="ilk-fonksiyon" class="section level2" number="12.2">
+<h2>
+<span class="header-section-number">12.2</span> İlk fonksiyon<a class="anchor" aria-label="anchor" href="#ilk-fonksiyon"><i class="fas fa-link"></i></a>
+</h2>
+<p>Fonksiyonlar <code>function()</code> kullanılarak tanımlanır ve diğer her şey gibi R nesneleri olarak saklanır.
+Özellikle, "function" sınıfının R nesneleridirler.</p>
+<p>İşte hiçbir argüman almayan ve hiçbir şey yapmayan basit bir fonksiyon.</p>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="fonksiyonlar.html#cb453-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb453-2"><a href="fonksiyonlar.html#cb453-2" tabindex="-1"></a><span class="sc">+</span>         <span class="do">## Bu boş bir fonksiyondur</span></span>
+<span id="cb453-3"><a href="fonksiyonlar.html#cb453-3" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb453-4"><a href="fonksiyonlar.html#cb453-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Fonksiyonların kendi sınıfları vardır</span></span>
+<span id="cb453-5"><a href="fonksiyonlar.html#cb453-5" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">class</span>(f)  </span>
+<span id="cb453-6"><a href="fonksiyonlar.html#cb453-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Bu işlevi çalıştırın</span></span>
+<span id="cb453-7"><a href="fonksiyonlar.html#cb453-7" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">f</span>()       </span>
+<span id="cb453-8"><a href="fonksiyonlar.html#cb453-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"function"</span></span>
+<span id="cb453-9"><a href="fonksiyonlar.html#cb453-9" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<p>Çok ilginç değil ama bu da bir başlangıç.
+Yapabileceğimiz bir sonraki şey, aslında önemsiz olmayan bir <em>fonksiyon gövdesine</em> sahip bir fonksiyon oluşturmaktır.</p>
+<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="fonksiyonlar.html#cb454-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb454-2"><a href="fonksiyonlar.html#cb454-2" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">cat</span>(<span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb454-3"><a href="fonksiyonlar.html#cb454-3" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb454-4"><a href="fonksiyonlar.html#cb454-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>()</span>
+<span id="cb454-5"><a href="fonksiyonlar.html#cb454-5" tabindex="-1"></a>Merhaba<span class="sc">!</span></span></code></pre></div>
+<p>Temel bir fonksiyonun son unsuru <em>fonksiyon argümanlarıdır</em>.
+Bunlar, kullanıcıya belirtebileceğiniz ve kullanıcının açıkça ayarlayabileceği seçeneklerdir.
+Bu temel fonksiyon için, konsola kaç kez "Merhaba!" yazdırılacağını belirleyen bir argüman ekleyebiliriz.</p>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="fonksiyonlar.html#cb455-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
+<span id="cb455-2"><a href="fonksiyonlar.html#cb455-2" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(num)) {</span>
+<span id="cb455-3"><a href="fonksiyonlar.html#cb455-3" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">cat</span>(<span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb455-4"><a href="fonksiyonlar.html#cb455-4" tabindex="-1"></a><span class="sc">+</span>         }</span>
+<span id="cb455-5"><a href="fonksiyonlar.html#cb455-5" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb455-6"><a href="fonksiyonlar.html#cb455-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">3</span>)</span>
+<span id="cb455-7"><a href="fonksiyonlar.html#cb455-7" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb455-8"><a href="fonksiyonlar.html#cb455-8" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb455-9"><a href="fonksiyonlar.html#cb455-9" tabindex="-1"></a>Merhaba<span class="sc">!</span></span></code></pre></div>
+<p>Açıkçası, aynı etki için sadece <code>cat("Merhaba!\n")</code> üç kere kesip yapıştırabilirdik.
+Ama o zaman programlama yapmıyor olurduk.
+Ayrıca, kodunuzu bir başkasına vermeniz ve onu kodu istediği kadar kesip yapıştırmaya zorlamanız da iyi olmayacaktır:) "Merhaba!".</p>
+<blockquote>
+<p>Genel olarak, kendinizi çok fazla kesme ve yapıştırma yaparken bulursanız, bu genellikle bir fonksiyon yazmanız gerekebileceğine dair iyi bir işarettir.</p>
+</blockquote>
+<p>R'da uzmanlaştıkça ve yapılan işler karmaşıklaştıkça fonksiyon yazma ihtiyacıduyulmaktadır.
+Fonksiyon yazma gereksinimi özellikle tekrarlı işlemler yapılması gerektiği durumda ortaya çıkmaktadır.
+Fonksiyon yazmak - pratiklik kazandırır (ekonomiktir) - Paylaşılmasını koylaştırır.
+- Tekrar kullanılabilirlik sağlar.</p>
+<p>Tekrarlı işlemlerde hatalardan kurtulmanın yolu fonksiyon kullanmaktır.
+Fonksiyonlar, koşullu önermeler ve döngüler ile kullanılarak çok sayıda komut ile yapılabilecek olan işlemler tek bir komut satırı ile yapılabilir hale gelmektedir</p>
+<p>Son olarak, yukarıdaki fonksiyon <em>hiçbir şey döndürmez</em>.
+Sadece konsola <code>tekrar</code> sayıda "Merhaba!" yazdırır ve sonra çıkar.
+Ancak bir fonksiyonun, belki de kodun başka bir bölümüne beslenebilecek bir şey döndürmesi genellikle yararlıdır.</p>
+<p>Sıradaki fonksiyon konsola yazdırılan toplam karakter sayısını döndürür.</p>
+<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="fonksiyonlar.html#cb456-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(tekrar) {</span>
+<span id="cb456-2"><a href="fonksiyonlar.html#cb456-2" tabindex="-1"></a><span class="sc">+</span>         Merhaba <span class="ot">&lt;-</span> <span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb456-3"><a href="fonksiyonlar.html#cb456-3" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(tekrar)) {</span>
+<span id="cb456-4"><a href="fonksiyonlar.html#cb456-4" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">cat</span>(Merhaba)</span>
+<span id="cb456-5"><a href="fonksiyonlar.html#cb456-5" tabindex="-1"></a><span class="sc">+</span>         }</span>
+<span id="cb456-6"><a href="fonksiyonlar.html#cb456-6" tabindex="-1"></a><span class="sc">+</span>         chars <span class="ot">&lt;-</span> <span class="fu">nchar</span>(Merhaba) <span class="sc">*</span> tekrar</span>
+<span id="cb456-7"><a href="fonksiyonlar.html#cb456-7" tabindex="-1"></a><span class="sc">+</span>         chars</span>
+<span id="cb456-8"><a href="fonksiyonlar.html#cb456-8" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb456-9"><a href="fonksiyonlar.html#cb456-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">3</span>)</span>
+<span id="cb456-10"><a href="fonksiyonlar.html#cb456-10" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb456-11"><a href="fonksiyonlar.html#cb456-11" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb456-12"><a href="fonksiyonlar.html#cb456-12" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb456-13"><a href="fonksiyonlar.html#cb456-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">27</span></span></code></pre></div>
+<p>Yukarıdaki fonksiyonda, fonksiyonun karakter sayısını döndürmesi için özel bir şey belirtmemiz gerekmedi.
+R'de, bir fonksiyonun geri dönüş değeri her zaman değerlendirilen en son ifadedir.
+Bu fonksiyonda değerlendirilen son ifade <code>chars</code> değişkeni olduğu için, fonksiyonun dönüş değeri de bu olur.</p>
+<p>Bir fonksiyondan açık bir değer döndürmek için kullanılabilecek bir <code><a href="https://rdrr.io/r/base/function.html">return()</a></code> fonksiyonu olduğunu unutmayın, ancak nadiren kullanılır.</p>
+<p>Son olarak, yukarıdaki fonksiyonda, kullanıcı <code>tekrar</code> argümanının değerini belirtmelidir.
+Eğer kullanıcı tarafından belirtilmezse, R bir hata verecektir.</p>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="fonksiyonlar.html#cb457-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>()</span>
+<span id="cb457-2"><a href="fonksiyonlar.html#cb457-2" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">f</span>()<span class="sc">:</span> argument <span class="st">"tekrar"</span> is missing, with no default</span></code></pre></div>
+<p>Bu davranışı <code>tekrar</code> argümanı için bir <em>varsayılan değer</em> belirleyerek değiştirebiliriz.
+Belirtmek isterseniz, herhangi bir fonksiyon argümanının varsayılan bir değeri olabilir.
+Bazen, argüman değerleri nadiren değiştirilir (özel durumlar hariç) ve bu argüman için bir varsayılan değer ayarlamak mantıklıdır.
+Bu, kullanıcıyı fonksiyon her çağrıldığında bu argümanın değerini belirtme zorunluluğundan kurtarır.</p>
+<p>Örneğin, burada <code>tekrar</code> için varsayılan değeri 1 olarak ayarlayabiliriz, böylece fonksiyon <code>tekrar</code> argümanı açıkça belirtilmeden çağrılırsa, konsola bir kez "Merhaba!" yazdırır.</p>
+<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="fonksiyonlar.html#cb458-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">tekrar =</span> <span class="dv">1</span>) {</span>
+<span id="cb458-2"><a href="fonksiyonlar.html#cb458-2" tabindex="-1"></a><span class="sc">+</span>         Merhaba <span class="ot">&lt;-</span> <span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb458-3"><a href="fonksiyonlar.html#cb458-3" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(tekrar)) {</span>
+<span id="cb458-4"><a href="fonksiyonlar.html#cb458-4" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">cat</span>(Merhaba)</span>
+<span id="cb458-5"><a href="fonksiyonlar.html#cb458-5" tabindex="-1"></a><span class="sc">+</span>         }</span>
+<span id="cb458-6"><a href="fonksiyonlar.html#cb458-6" tabindex="-1"></a><span class="sc">+</span>         chars <span class="ot">&lt;-</span> <span class="fu">nchar</span>(Merhaba) <span class="sc">*</span> tekrar</span>
+<span id="cb458-7"><a href="fonksiyonlar.html#cb458-7" tabindex="-1"></a><span class="sc">+</span>         chars</span>
+<span id="cb458-8"><a href="fonksiyonlar.html#cb458-8" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb458-9"><a href="fonksiyonlar.html#cb458-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>()    <span class="do">## 'tekrar' için varsayılan değeri kullan</span></span>
+<span id="cb458-10"><a href="fonksiyonlar.html#cb458-10" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">2</span>)   <span class="do">## Kullanıcı tarafından belirtilen değeri kullan</span></span>
+<span id="cb458-11"><a href="fonksiyonlar.html#cb458-11" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb458-12"><a href="fonksiyonlar.html#cb458-12" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">9</span></span>
+<span id="cb458-13"><a href="fonksiyonlar.html#cb458-13" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb458-14"><a href="fonksiyonlar.html#cb458-14" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb458-15"><a href="fonksiyonlar.html#cb458-15" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">18</span></span></code></pre></div>
+<p>Fonksiyonun hala konsola yazdırılan karakter sayısını döndürdüğünü unutmayın.</p>
+<p>Bu noktada, bir fonksiyon yazdık</p>
+<ul>
+<li><p>fonksiyonunun <code>tekrar</code> adında ve <em>varsayılan değeri</em> 1 olan bir <em>formal argümanı</em> vardır.
+<em>formal argümanlar</em> fonksiyon tanımına dahil edilen argümanlardır.
+<code><a href="https://rdrr.io/r/base/formals.html">formals()</a></code> fonksiyonu bir fonksiyonun tüm biçimsel argümanlarının bir listesini döndürür</p></li>
+<li><p>"Merhaba!" mesajını <code>tekrar</code> argümanıyla belirtilen sayıda konsola yazdırır</p></li>
+<li><p>*konsola yazdırılan karakter sayısını döndürür</p></li>
+</ul>
+<p>Fonksiyonlar, isteğe bağlı olarak varsayılan değerlere sahip olabilen <em>isimli argümanlara</em> sahiptir.
+Tüm fonksiyon argümanlarının adları olduğundan, bunlar adları kullanılarak belirtilebilir.</p>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="fonksiyonlar.html#cb459-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="at">tekrar =</span> <span class="dv">2</span>)</span>
+<span id="cb459-2"><a href="fonksiyonlar.html#cb459-2" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb459-3"><a href="fonksiyonlar.html#cb459-3" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb459-4"><a href="fonksiyonlar.html#cb459-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">18</span></span></code></pre></div>
+<p>Bir fonksiyonun çok sayıda argümanı varsa ve hangi argümanın belirtildiği her zaman net olmayabilirse, bir argümanı adıyla belirtmek bazen yararlıdır.
+Burada, fonksiyonumuzun yalnızca bir argümanı vardır, bu nedenle herhangi bir karışıklık olmaz.</p>
+</div>
+<div id="argüman-eşleştirme" class="section level2" number="12.3">
+<h2>
+<span class="header-section-number">12.3</span> Argüman Eşleştirme<a class="anchor" aria-label="anchor" href="#arg%C3%BCman-e%C5%9Fle%C5%9Ftirme"><i class="fas fa-link"></i></a>
+</h2>
+<p>Bir R fonksiyonunu argümanlarla çağırmak çeşitli şekillerde yapılabilir.
+Bu ilk başta kafa karıştırıcı olabilir, ancak komut satırında etkileşimli çalışma yaparken gerçekten kullanışlıdır.
+R fonksiyonları argümanları <em>konumsal olarak</em> veya isme göre eşleştirilebilir.
+Konumsal eşleştirme, R'nin ilk değeri ilk argümana, ikinci değeri ikinci argümana vb.
+atadığı anlamına gelir.
+Yani aşağıdaki <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> çağrısında</p>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="fonksiyonlar.html#cb460-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str</span>(rnorm)</span>
+<span id="cb460-2"><a href="fonksiyonlar.html#cb460-2" tabindex="-1"></a><span class="sc">&gt;</span> mydata <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">2</span>, <span class="dv">1</span>)              <span class="do">## Bazı veriler oluşturun</span></span>
+<span id="cb460-3"><a href="fonksiyonlar.html#cb460-3" tabindex="-1"></a><span class="cf">function</span> (n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)  </span></code></pre></div>
+<p>100, <code>n</code> argümanına, 2 <code>ortalama</code> argümanına ve 1 <code>sd</code> argümanına atanır, hepsi de konum eşleştirmesi ile yapılır.</p>
+<p>Aşağıdaki <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code> fonksiyonu (bir sayı vektörünün ampirik standart sapmasını hesaplar) çağrılarının tümü eşdeğerdir.
+sd()<code>fonksiyonunun iki argümanı olduğunu unutmayın: x</code> sayı vektörünü gösterir ve <code>na.rm</code> eksik değerlerin kaldırılıp kaldırılmayacağını belirten bir mantıksaldır.</p>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="fonksiyonlar.html#cb461-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Konumsal eşleşme ilk argüman, na.rm için varsayılan</span></span>
+<span id="cb461-2"><a href="fonksiyonlar.html#cb461-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(mydata)                     </span>
+<span id="cb461-3"><a href="fonksiyonlar.html#cb461-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## 'x' argümanını isimle belirtin, varsayılan 'na.rm'</span></span>
+<span id="cb461-4"><a href="fonksiyonlar.html#cb461-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata)                 </span>
+<span id="cb461-5"><a href="fonksiyonlar.html#cb461-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki bağımsız değişkeni de adla belirtin</span></span>
+<span id="cb461-6"><a href="fonksiyonlar.html#cb461-6" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)  </span>
+<span id="cb461-7"><a href="fonksiyonlar.html#cb461-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.063435</span></span>
+<span id="cb461-8"><a href="fonksiyonlar.html#cb461-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.063435</span></span>
+<span id="cb461-9"><a href="fonksiyonlar.html#cb461-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.063435</span></span></code></pre></div>
+<p>Fonksiyon argümanlarını isimle belirtirken, bunları hangi sırada belirttiğiniz önemli değildir.
+Aşağıdaki örnekte, fonksiyon tanımında tanımlanan ilk argüman <code>x</code> olmasına rağmen, önce <code>na.rm</code> argümanını, ardından <code>x</code> argümanını belirtiyoruz.</p>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="fonksiyonlar.html#cb462-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
+<span id="cb462-2"><a href="fonksiyonlar.html#cb462-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)     </span>
+<span id="cb462-3"><a href="fonksiyonlar.html#cb462-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.063435</span></span></code></pre></div>
+<p>Konumsal eşleştirme ile ada göre eşleştirmeyi karıştırabilirsiniz.
+Bir argüman isme göre eşleştirildiğinde, argüman listesinden "çıkarılır" ve kalan isimsiz argümanlar fonksiyon tanımında listelendikleri sırayla eşleştirilir.</p>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="fonksiyonlar.html#cb463-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span>
+<span id="cb463-2"><a href="fonksiyonlar.html#cb463-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.063435</span></span></code></pre></div>
+<p>Burada, <code>mydata</code> nesnesi <code>x</code> argümanına atanır, çünkü henüz belirtilmemiş tek argüman budur.</p>
+<p>Aşağıda, bir veri kümesine doğrusal modeller uyduran <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunun argüman listesi yer almaktadır.</p>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="fonksiyonlar.html#cb464-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(lm)</span>
+<span id="cb464-2"><a href="fonksiyonlar.html#cb464-2" tabindex="-1"></a><span class="cf">function</span> (formula, data, subset, weights, na.action, <span class="at">method =</span> <span class="st">"qr"</span>, </span>
+<span id="cb464-3"><a href="fonksiyonlar.html#cb464-3" tabindex="-1"></a>    <span class="at">model =</span> <span class="cn">TRUE</span>, <span class="at">x =</span> <span class="cn">FALSE</span>, <span class="at">y =</span> <span class="cn">FALSE</span>, <span class="at">qr =</span> <span class="cn">TRUE</span>, <span class="at">singular.ok =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb464-4"><a href="fonksiyonlar.html#cb464-4" tabindex="-1"></a>    <span class="at">contrasts =</span> <span class="cn">NULL</span>, offset, ...) </span>
+<span id="cb464-5"><a href="fonksiyonlar.html#cb464-5" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<p>Aşağıdaki iki kod satırı eşdeğerdir.</p>
+<div class="sourceCode" id="cb465"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mydata</span>, <span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, model <span class="op">=</span> <span class="cn">FALSE</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, <span class="va">mydata</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, model <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<p>Bu işlem güvenli olsa da, bazı karışıklıklara yol açabileceğinden, argümanların sırası ile çok fazla uğraşmanızı önermem.</p>
+<p>Çoğu zaman, adlandırılmış argümanlar komut satırında uzun bir argüman listeniz olduğunda ve listenin sonuna yakın bir argüman dışında her şey için varsayılanları kullanmak istediğinizde kullanışlıdır.
+Adlandırılmış bağımsız değişkenler, bağımsız değişken listesindeki konumunu değil, bağımsız değişkenin adını hatırlayabiliyorsanız da yardımcı olur.
+Örneğin, çizim fonksiyonları genellikle özelleştirmeye izin vermek için çok sayıda seçeneğe sahiptir, ancak bu, argüman listesindeki her argümanın konumunu tam olarak hatırlamayı zorlaştırır.</p>
+<p>Fonksiyon argümanları da <em>kısmen</em> eşleştirilebilir, bu da etkileşimli çalışma için kullanışlıdır.
+Bir argüman verildiğinde işlem sırası şöyledir</p>
+<ol style="list-style-type: decimal">
+<li>Adlandırılmış bir argüman için tam eşleşmeyi kontrol edin</li>
+<li>Kısmi eşleşme olup olmadığını kontrol edin</li>
+<li>Konumsal eşleşme olup olmadığını kontrol edin</li>
+</ol>
+<p>Uzun kod veya programlar yazarken kısmi eşleştirmeden kaçınılmalıdır, çünkü birisi kodu okuduğunda karışıklığa yol açabilir.
+Ancak, çok uzun argüman adlarına sahip işlevleri etkileşimli olarak çağırırken kısmi eşleştirme çok kullanışlıdır.</p>
+<p>Varsayılan bir değer belirtmemenin yanı sıra, bir argümanın değerini <code>NULL</code> olarak da ayarlayabilirsiniz.</p>
+<div class="sourceCode" id="cb466"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">c</span> <span class="op">=</span> <span class="fl">2</span>, <span class="va">d</span> <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">{</span></span>
+<span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>Bir R nesnesinin <code>NULL</code> olup olmadığını <code><a href="https://rdrr.io/r/base/NULL.html">is.null()</a></code> fonksiyonu ile kontrol edebilirsiniz.
+Bazen bir argümanın <code>NULL</code> değerini almasına izin vermek yararlıdır, bu da fonksiyonun belirli bir işlem yapması gerektiğini gösterebilir.</p>
+<p>Kullanışlı bir fonksiyon yazmak için mümkün olduğunca kısa isimler kullanılmalıdır; bununla birlikte bu isimler kullanıcıya yapılacak işlemi anlaşılırkılmalıdır.
+Bunun yanında R'da özel anlamı olan <code>c,C,D,F,I,q,t,T</code> gibi tek harfl ik fonksiyon isimleri kullanmaktan ve R'da hazır olan fonksiyon isimlerini kişisel tanımlı fonksiyonlara vermekten kaçınılmalıdır.</p>
+</div>
+<div id="tembel-değerlendirme" class="section level2" number="12.4">
+<h2>
+<span class="header-section-number">12.4</span> Tembel Değerlendirme<a class="anchor" aria-label="anchor" href="#tembel-de%C4%9Ferlendirme"><i class="fas fa-link"></i></a>
+</h2>
+<p>Fonksiyonların argümanları <em>lazily</em> olarak değerlendirilir, bu nedenle sadece fonksiyonun gövdesinde gerektiği gibi değerlendirilirler.</p>
+<p>Bu örnekte, <code>f()</code> fonksiyonunun iki argümanı vardır: a<code>ve</code>b`.</p>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="fonksiyonlar.html#cb467-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb467-2"><a href="fonksiyonlar.html#cb467-2" tabindex="-1"></a><span class="sc">+</span>         a<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb467-3"><a href="fonksiyonlar.html#cb467-3" tabindex="-1"></a><span class="sc">+</span> } </span>
+<span id="cb467-4"><a href="fonksiyonlar.html#cb467-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">2</span>)</span>
+<span id="cb467-5"><a href="fonksiyonlar.html#cb467-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span></code></pre></div>
+<p>Bu fonksiyon aslında <code>b</code> argümanını asla kullanmaz, bu nedenle <code>f(2)</code> çağrısı bir hata üretmez, çünkü 2 konum olarak <code>a</code> ile eşleşir.
+Bu davranış iyi ya da kötü olabilir.
+Bir argüman kullanmayan bir fonksiyon yazmak ve bunu fark etmemek yaygındır çünkü R asla hata vermez.</p>
+<p>Bu örnek de tembel değerlendirmeyi gösterir, ancak sonunda bir hatayla sonuçlanır.</p>
+<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="fonksiyonlar.html#cb468-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb468-2"><a href="fonksiyonlar.html#cb468-2" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">print</span>(a)</span>
+<span id="cb468-3"><a href="fonksiyonlar.html#cb468-3" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">print</span>(b)</span>
+<span id="cb468-4"><a href="fonksiyonlar.html#cb468-4" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb468-5"><a href="fonksiyonlar.html#cb468-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">45</span>)</span>
+<span id="cb468-6"><a href="fonksiyonlar.html#cb468-6" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">f</span>(<span class="dv">45</span>)<span class="sc">:</span> argument <span class="st">"b"</span> is missing, with no default</span>
+<span id="cb468-7"><a href="fonksiyonlar.html#cb468-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">45</span></span></code></pre></div>
+<p>Hata tetiklenmeden önce ilk olarak "45 "in yazdırıldığına dikkat edin.
+Bunun nedeni <code>b</code>nin <code>print(a)</code>dan sonrasına kadar değerlendirilmek zorunda olmamasıdır.
+İşlev <code>print(b)</code>yi değerlendirmeye çalıştığında, işlev bir hata atmak zorunda kalmıştır.</p>
+</div>
+<div id="argümanı" class="section level2" number="12.5">
+<h2>
+<span class="header-section-number">12.5</span> <code>...</code> argümanı<a class="anchor" aria-label="anchor" href="#arg%C3%BCman%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<p>R'de <code>...</code> argümanı olarak bilinen ve genellikle diğer fonksiyonlara aktarılan değişken sayıda argümanı gösteren özel bir argüman vardır.
+...` argümanı genellikle başka bir fonksiyonu genişletirken kullanılır ve orijinal fonksiyonun tüm argüman listesini kopyalamak istemezsiniz</p>
+<p>Örneğin, özel bir çizim fonksiyonu varsayılan <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> fonksiyonunu tüm argüman listesiyle birlikte kullanmak isteyebilir.
+Aşağıdaki fonksiyon <code>type</code> argümanı için varsayılanı <code>type = "l"</code> değerine değiştirir (orijinal varsayılan <code>type = "p"</code> idi).</p>
+<div class="sourceCode" id="cb469"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">myplot</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">type</span> <span class="op">=</span> <span class="st">"l"</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
+<span>        <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, type <span class="op">=</span> <span class="va">type</span>, <span class="va">...</span><span class="op">)</span>         <span class="co">## '...'yi 'plot' işlevine geçirin</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>Jenerik fonksiyonlar, metotlara ekstra argümanlar aktarılabilmesi için <code>...</code> kullanır.</p>
+<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="fonksiyonlar.html#cb470-1" tabindex="-1"></a><span class="sc">&gt;</span> mean</span>
+<span id="cb470-2"><a href="fonksiyonlar.html#cb470-2" tabindex="-1"></a><span class="cf">function</span> (x, ...) </span>
+<span id="cb470-3"><a href="fonksiyonlar.html#cb470-3" tabindex="-1"></a><span class="fu">UseMethod</span>(<span class="st">"mean"</span>)</span>
+<span id="cb470-4"><a href="fonksiyonlar.html#cb470-4" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x000001d31cdb9328</span><span class="sc">&gt;</span></span>
+<span id="cb470-5"><a href="fonksiyonlar.html#cb470-5" tabindex="-1"></a><span class="er">&lt;</span>environment<span class="sc">:</span> namespace<span class="sc">:</span>base<span class="sc">&gt;</span></span></code></pre></div>
+<p>Fonksiyona aktarılan argüman sayısı önceden bilinemediğinde <code>...</code> argümanı gereklidir.
+Bu durum <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> ve <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> gibi fonksiyonlarda açıkça görülmektedir.</p>
+<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="fonksiyonlar.html#cb471-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(paste)</span>
+<span id="cb471-2"><a href="fonksiyonlar.html#cb471-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(cat)</span>
+<span id="cb471-3"><a href="fonksiyonlar.html#cb471-3" tabindex="-1"></a><span class="cf">function</span> (..., <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">collapse =</span> <span class="cn">NULL</span>, <span class="at">recycle0 =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb471-4"><a href="fonksiyonlar.html#cb471-4" tabindex="-1"></a><span class="cn">NULL</span></span>
+<span id="cb471-5"><a href="fonksiyonlar.html#cb471-5" tabindex="-1"></a><span class="cf">function</span> (..., <span class="at">file =</span> <span class="st">""</span>, <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">fill =</span> <span class="cn">FALSE</span>, <span class="at">labels =</span> <span class="cn">NULL</span>, </span>
+<span id="cb471-6"><a href="fonksiyonlar.html#cb471-6" tabindex="-1"></a>    <span class="at">append =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb471-7"><a href="fonksiyonlar.html#cb471-7" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<p>Hem <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> hem de <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> birden fazla karakter vektörünü bir araya getirerek konsola metin yazdırdığından, bu fonksiyonların kullanıcı tarafından fonksiyona kaç karakter vektörü aktarılacağını önceden bilmesi imkansızdır.
+Bu yüzden her iki fonksiyonun da ilk argümanı <code>...</code> şeklindedir.</p>
+</div>
+<div id="argümanından-sonra-gelen-argümanlar" class="section level2" number="12.6">
+<h2>
+<span class="header-section-number">12.6</span> <code>...</code> argümanından sonra gelen argümanlar<a class="anchor" aria-label="anchor" href="#arg%C3%BCman%C4%B1ndan-sonra-gelen-arg%C3%BCmanlar"><i class="fas fa-link"></i></a>
+</h2>
+<p>...<code>ile ilgili bir sorun, argüman listesinde _after_</code>...` olarak görünen herhangi bir argümanın açıkça adlandırılması gerektiği ve kısmen eşleştirilemeyeceği veya konum olarak eşleştirilemeyeceğidir.</p>
+<p><code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> fonksiyonunun argümanlarına bir göz atın.</p>
+<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="fonksiyonlar.html#cb472-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(paste)</span>
+<span id="cb472-2"><a href="fonksiyonlar.html#cb472-2" tabindex="-1"></a><span class="cf">function</span> (..., <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">collapse =</span> <span class="cn">NULL</span>, <span class="at">recycle0 =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb472-3"><a href="fonksiyonlar.html#cb472-3" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<p>paste()<code>fonksiyonu ile,</code>sep<code>ve</code>collapse` argümanları, varsayılan değerler kullanılmayacaksa, açıkça ve tam olarak adlandırılmalıdır.</p>
+<p>Burada "a" ve "b "nin birlikte yapıştırılmasını ve iki nokta üst üste ile ayrılmasını istediğimi belirtiyorum.</p>
+<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="fonksiyonlar.html#cb473-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">sep =</span> <span class="st">":"</span>)</span>
+<span id="cb473-2"><a href="fonksiyonlar.html#cb473-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"a:b"</span></span></code></pre></div>
+<p>Eğer <code>sep</code> argümanını tam olarak belirtmezsem ve kısmi eşleştirmeye güvenmeye çalışırsam, beklenen sonucu alamıyorum.</p>
+<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="fonksiyonlar.html#cb474-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">se =</span> <span class="st">":"</span>)</span>
+<span id="cb474-2"><a href="fonksiyonlar.html#cb474-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"a b :"</span></span></code></pre></div>
+</div>
+<div id="yazım-aşamaları" class="section level2" number="12.7">
+<h2>
+<span class="header-section-number">12.7</span> Yazım Aşamaları<a class="anchor" aria-label="anchor" href="#yaz%C4%B1m-a%C5%9Famalar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Fonksiyon yazmak kadar iyi bir fonksiyon yazmak da önemlidir.
+İyi bir fonksiyonun ilk özelliği doğru sonucu veriyor olmasıdır.</p>
+<p>Bunu sağlayabilmek için fonksiyon yazmadan önce problemi iyi tanımlamakve problemin çözümünü komut satırları ile yazmak daha sonra bunufonksiyona dönüştürmek gereklidir.</p>
+<p>Bir fonksiyonun doğru sonucu vermesi kadar diğer kullanıcılar tarafından anlaşılır olması da önemlidir.</p>
+<ul>
+<li>Önce bir taslak oluşturun.</li>
+<li>Taslağınızı içine komut satırlarınıza yapıştırın</li>
+<li>Fonksiyonun argümanları belirleyin</li>
+<li>Argüman isimlerinizi kullanacağınız değişkenlerle değiştirin</li>
+</ul>
+<div id="sıra-sizde-3" class="section level3" number="12.7.1">
+<h3>
+<span class="header-section-number">12.7.1</span> Sıra Sizde<a class="anchor" aria-label="anchor" href="#s%C4%B1ra-sizde-3"><i class="fas fa-link"></i></a>
+</h3>
+<p>Geometrik ortalamanın farklı hesaplama yolları bulunmaktadır.
+Logaritma değerlerine dayalı olarak hesaplandığında, geometrik ortalama,gözlem değerlerinin logaritmalarının aritmetik ortalamasıdır.
+Bir x vektorunun geometrik ortalamaasını logartimalara dayalı olarakhesaplayan bir fonsiyon yazıp, <code>x &lt;- 1:100</code> için çalıştırınız.</p>
+</div>
+</div>
+<div id="özet-3" class="section level2" number="12.8">
+<h2>
+<span class="header-section-number">12.8</span> Özet<a class="anchor" aria-label="anchor" href="#%C3%B6zet-3"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Fonksiyonlar <code>function()</code> direktifi kullanılarak tanımlanabilir ve diğer R nesneleri gibi R nesnelerine atanır</p></li>
+<li><p>Fonksiyonlar adlandırılmış argümanlarla tanımlanabilir; bu fonksiyon argümanlarının varsayılan değerleri olabilir</p></li>
+<li><p>Fonksiyon argümanları isme göre veya argüman listesindeki konuma göre belirtilebilir</p></li>
+<li><p>Fonksiyonlar her zaman fonkisyon gövdesinde değerlendirilen son ifadeyi döndürür</p></li>
+<li><p>Bir fonksiyon tanımında özel <code>...</code> argümanı kullanılarak değişken sayıda argüman belirtilebilir.</p></li>
+</ul>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></div>
+<div class="next"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#fonksiyonlar"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
+<li><a class="nav-link" href="#rda-fonkisyonlar"><span class="header-section-number">12.1</span> R'da Fonkisyonlar</a></li>
+<li><a class="nav-link" href="#ilk-fonksiyon"><span class="header-section-number">12.2</span> İlk fonksiyon</a></li>
+<li><a class="nav-link" href="#arg%C3%BCman-e%C5%9Fle%C5%9Ftirme"><span class="header-section-number">12.3</span> Argüman Eşleştirme</a></li>
+<li><a class="nav-link" href="#tembel-de%C4%9Ferlendirme"><span class="header-section-number">12.4</span> Tembel Değerlendirme</a></li>
+<li><a class="nav-link" href="#arg%C3%BCman%C4%B1"><span class="header-section-number">12.5</span> ... argümanı</a></li>
+<li><a class="nav-link" href="#arg%C3%BCman%C4%B1ndan-sonra-gelen-arg%C3%BCmanlar"><span class="header-section-number">12.6</span> ... argümanından sonra gelen argümanlar</a></li>
+<li>
+<a class="nav-link" href="#yaz%C4%B1m-a%C5%9Famalar%C4%B1"><span class="header-section-number">12.7</span> Yazım Aşamaları</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#s%C4%B1ra-sizde-3"><span class="header-section-number">12.7.1</span> Sıra Sizde</a></li></ul>
+</li>
+<li><a class="nav-link" href="#%C3%B6zet-3"><span class="header-section-number">12.8</span> Özet</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="/blob/master/book/11_fonksiyonlar.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/11_fonksiyonlar.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>lavaan</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

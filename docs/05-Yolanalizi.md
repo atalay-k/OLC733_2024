@@ -1299,28 +1299,7 @@ ilkesi), ama hala veriye iyi uyan modeldir.
 **İyi Uyuma karşı Model Tutumluluğu**
 
 
-
-## sem fonksiyonu
-
-
-| Argüman	| Açıklama	| Değerleri| 
-| ---|---|---|
-| Model	  |YEM modeli tanımlanır.| 	|
-| Data	  |Gözlenen değişkenlerin yer aldığı veri setidir.| | 	
-|sampling.weights	| Örneklem ağırlıklandırması yapılacağı durumlarda tanımlanır. | 	Veri çerçevesinde ağırlıklandırma bilgisinin yer aldığı değişkenin adıdır.| 
-|group	|Çoklu grup analizlerde grup değişkeni tanımlanır. |	Veri matrisinde grubu tanımlayan değişkenin adıdır. |
-|cluster	|Çok düzeyli analizlerde düzey değişkeni tanımlanır. 	|Veri matrisinde düzeyi tanımlayan değişkenin adıdır. |
-|constraints|	Modele eklenecek diğer sınırlandırmalar tanımlanır. |	|
-|estimator	|Kestirim yöntemidir. |	“ML”, “GLS”, “WLS”, ”ULS”, ”DWLS” gibi|
-
-| formul	| tur	|  
-| ---|---|
-| gizil değişken tanımlama	| =~	| 
-| regresyon	| ~	| 
-| kovaryans	| ~~	|  
-| kesisim	| ~1	|  
-
-
+### Modeli tanımlama
 
 - MODEL bölümü modelin belirlenmesi 
 - Yol analizinde, her bir içsel (endogenous) değişkenin bir 
@@ -1629,23 +1608,23 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
 ```
 
 ```{=html}
-<div id="nmrbggzbfo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nmrbggzbfo table {
+<div id="xfnqsyglsx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xfnqsyglsx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nmrbggzbfo thead, #nmrbggzbfo tbody, #nmrbggzbfo tfoot, #nmrbggzbfo tr, #nmrbggzbfo td, #nmrbggzbfo th {
+#xfnqsyglsx thead, #xfnqsyglsx tbody, #xfnqsyglsx tfoot, #xfnqsyglsx tr, #xfnqsyglsx td, #xfnqsyglsx th {
   border-style: none;
 }
 
-#nmrbggzbfo p {
+#xfnqsyglsx p {
   margin: 0;
   padding: 0;
 }
 
-#nmrbggzbfo .gt_table {
+#xfnqsyglsx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1671,12 +1650,12 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-left-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_caption {
+#xfnqsyglsx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nmrbggzbfo .gt_title {
+#xfnqsyglsx .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1688,7 +1667,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-width: 0;
 }
 
-#nmrbggzbfo .gt_subtitle {
+#xfnqsyglsx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1700,7 +1679,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-width: 0;
 }
 
-#nmrbggzbfo .gt_heading {
+#xfnqsyglsx .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1712,13 +1691,13 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_bottom_border {
+#xfnqsyglsx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_col_headings {
+#xfnqsyglsx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1733,7 +1712,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_col_heading {
+#xfnqsyglsx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1753,7 +1732,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#nmrbggzbfo .gt_column_spanner_outer {
+#xfnqsyglsx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1765,15 +1744,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 4px;
 }
 
-#nmrbggzbfo .gt_column_spanner_outer:first-child {
+#xfnqsyglsx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nmrbggzbfo .gt_column_spanner_outer:last-child {
+#xfnqsyglsx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nmrbggzbfo .gt_column_spanner {
+#xfnqsyglsx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1785,11 +1764,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   width: 100%;
 }
 
-#nmrbggzbfo .gt_spanner_row {
+#xfnqsyglsx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nmrbggzbfo .gt_group_heading {
+#xfnqsyglsx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1815,7 +1794,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   text-align: left;
 }
 
-#nmrbggzbfo .gt_empty_group_heading {
+#xfnqsyglsx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1830,15 +1809,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: middle;
 }
 
-#nmrbggzbfo .gt_from_md > :first-child {
+#xfnqsyglsx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nmrbggzbfo .gt_from_md > :last-child {
+#xfnqsyglsx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nmrbggzbfo .gt_row {
+#xfnqsyglsx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1857,7 +1836,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   overflow-x: hidden;
 }
 
-#nmrbggzbfo .gt_stub {
+#xfnqsyglsx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1870,7 +1849,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_stub_row_group {
+#xfnqsyglsx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1884,15 +1863,15 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   vertical-align: top;
 }
 
-#nmrbggzbfo .gt_row_group_first td {
+#xfnqsyglsx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nmrbggzbfo .gt_row_group_first th {
+#xfnqsyglsx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nmrbggzbfo .gt_summary_row {
+#xfnqsyglsx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1902,16 +1881,16 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_first_summary_row {
+#xfnqsyglsx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_first_summary_row.thick {
+#xfnqsyglsx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nmrbggzbfo .gt_last_summary_row {
+#xfnqsyglsx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1921,7 +1900,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_grand_summary_row {
+#xfnqsyglsx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1931,7 +1910,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_first_grand_summary_row {
+#xfnqsyglsx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1941,7 +1920,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-top-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_last_grand_summary_row_top {
+#xfnqsyglsx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1951,11 +1930,11 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_striped {
+#xfnqsyglsx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nmrbggzbfo .gt_table_body {
+#xfnqsyglsx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1964,7 +1943,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-bottom-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_footnotes {
+#xfnqsyglsx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1978,7 +1957,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_footnote {
+#xfnqsyglsx .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1987,7 +1966,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_sourcenotes {
+#xfnqsyglsx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2001,7 +1980,7 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   border-right-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_sourcenote {
+#xfnqsyglsx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2009,63 +1988,63 @@ sem_modelcomp(yol_fit_v2,yol_fit_v1)
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_left {
+#xfnqsyglsx .gt_left {
   text-align: left;
 }
 
-#nmrbggzbfo .gt_center {
+#xfnqsyglsx .gt_center {
   text-align: center;
 }
 
-#nmrbggzbfo .gt_right {
+#xfnqsyglsx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nmrbggzbfo .gt_font_normal {
+#xfnqsyglsx .gt_font_normal {
   font-weight: normal;
 }
 
-#nmrbggzbfo .gt_font_bold {
+#xfnqsyglsx .gt_font_bold {
   font-weight: bold;
 }
 
-#nmrbggzbfo .gt_font_italic {
+#xfnqsyglsx .gt_font_italic {
   font-style: italic;
 }
 
-#nmrbggzbfo .gt_super {
+#xfnqsyglsx .gt_super {
   font-size: 65%;
 }
 
-#nmrbggzbfo .gt_footnote_marks {
+#xfnqsyglsx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nmrbggzbfo .gt_asterisk {
+#xfnqsyglsx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nmrbggzbfo .gt_indent_1 {
+#xfnqsyglsx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nmrbggzbfo .gt_indent_2 {
+#xfnqsyglsx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nmrbggzbfo .gt_indent_3 {
+#xfnqsyglsx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nmrbggzbfo .gt_indent_4 {
+#xfnqsyglsx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nmrbggzbfo .gt_indent_5 {
+#xfnqsyglsx .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2234,24 +2213,6 @@ toplam etki = doğrudan etki + toplam dolaylı etki
 
 
 
-## semPaths
-
-
-| Argüman |	Açıklama |	Değerleri |
-| ---|---|---|
-|Object	|YEM modeli analiz çıktısını içeren nesnedir. |
-|What	|Diyagramda hangi değerlerin gösterileceği tanımlanır. |	“path”, “diagram” ve “mod”: yalnızca diyagramı “est” ve “par” kestirilen; “stand” ve “std” standartlaştırılmış parametreler “eq” ve “cons” eşitlenen parametreler aynı renkle gösterilir. |
-|whatLabels	|Yol çizgilerinde hangi değerlerin gösterileceği tanımlanır. |	what argümanıyla aynı değerleri alır. |
-|Style	|Diyagramın biçimi tanımlanır.	“ram”, “mx”, “OpenMx”, “lisrel”|
-|layout	|Diyagramın tasarımı tanımlanır. |	“tree”, “tree2”, “circle”, “circle2”, “spring”|
-|title|	Çoklu grup analizlerde grup adlarının diyagram başlığı olarak tanımlanması sağlanır.|	|
-|Reorder|	Faktör yüklerine göre sıralama yapılır.| 	TRUE, FALSE|
-|edge.label.cex	|Yol çizgilerinde yer alan parametre kestirim değerlerinin font büyüklüğüdür.| 	Sayısal değer|
-|color|	Diyagramdaki şekillerin renkleri tanımlanır. |	Liste: list(man=””, lat= “”, int=””) man: gözlenen, lat: gizil değişken, int: kesişim|
-|rotation|	Diyagramın yönü belirlenir. |	1, 2, 3, 4|
-|NCharNodes|	Değişken adlarının maksimum kaç karakter olacağı tanımlanır. |	Sayısal değer|
-|SizeMan|	Gözlenen değişkene ilişkin dörtgen şeklinin büyüklüğü tanımlanır. |	Sayısal değer|
-|sizeLat|	Gizil değişkene ilişkin daire şeklinin büyüklüğü tanımlanır. |	Sayısal değer |
 
 
 

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bölüm 11 Uygulama | lavaan</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="Döngüler diğer bütün programa dillerinde sıklıkla kullanılan akış kontrolü (flow control) mekanizmasının bir parçasıdır. Her ne kadar R vektörel elementler üzerine kurulmuş olsa da bazı durumlarda...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Bölüm 11 Uygulama | lavaan">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC733/uygulama-2.html">
+<meta property="og:description" content="Döngüler diğer bütün programa dillerinde sıklıkla kullanılan akış kontrolü (flow control) mekanizmasının bir parçasıdır. Her ne kadar R vektörel elementler üzerine kurulmuş olsa da bazı durumlarda...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bölüm 11 Uygulama | lavaan">
+<meta name="twitter:description" content="Döngüler diğer bütün programa dillerinde sıklıkla kullanılan akış kontrolü (flow control) mekanizmasının bir parçasıdır. Her ne kadar R vektörel elementler üzerine kurulmuş olsa da bazı durumlarda...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.32/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="libs/plotly-binding-4.10.4/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script><link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet">
+<script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script><script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script><script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script><script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script><script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script><script src="libs/rglwidgetClass-1.2.8/init.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script><script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script><script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script><script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script><script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script><script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script><script src="libs/viz-1.8.2/viz.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">lavaan</a>:
+        <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="varsay%C4%B1mlar-i.html"><span class="header-section-number">1</span> Varsayımlar I</a></li>
+<li><a class="" href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">2</span> Varsayımlar II</a></li>
+<li><a class="" href="regresyon.html"><span class="header-section-number">3</span> Regresyon</a></li>
+<li><a class="" href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></li>
+<li><a class="" href="lavaan-ve-sem.html"><span class="header-section-number">5</span> lavaan ve sem</a></li>
+<li><a class="" href="yol-analizi.html"><span class="header-section-number">6</span> Yol Analizi</a></li>
+<li><a class="" href="afa.html"><span class="header-section-number">7</span> AFA</a></li>
+<li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
+<li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
+<li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
+<li><a class="active" href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="uygulama-2" class="section level1" number="11">
+<h1>
+<span class="header-section-number">Bölüm 11</span> Uygulama<a class="anchor" aria-label="anchor" href="#uygulama-2"><i class="fas fa-link"></i></a>
+</h1>
+<ul>
+<li><p>Döngüler diğer bütün programa dillerinde sıklıkla kullanılan <strong>akış kontrolü (flow control)</strong> mekanizmasının bir parçasıdır.</p></li>
+<li><p>Her ne kadar R vektörel elementler üzerine kurulmuş olsa da bazı durumlarda döngülerin kullanılması gerekebilir.</p></li>
+<li><p>Örneğin, simulasyon çalışmaları genellikle iterasyonel ve tekrar eden süreçleri içermektedir.</p></li>
+<li><p>Döngüler sonuç elde etmek yerine süreçteki işlemleri dikkate aldığından, simulasyon çalışmalarında kullanılır.</p></li>
+<li><p><strong>for()</strong> döngüsü ile belirlenen sayıda işlem tekrarı yapılırken <strong>while()</strong> ya da <strong>repeat()</strong> döngülerinde bir sayaç ya da bir dizin ile kontrol sağlanarak işlemlerin tekrarlı yapılmasını sağlar.</p></li>
+<li><p><strong>for()</strong> bir vektör, liste ya da matris içindeki her bir elemanın bir değişken yardımıyla belirlenen komutu veya kodu sırasıyla yapması için oluşturulan bir döngüdür.</p></li>
+<li><p><strong>for()</strong> döngüsünün genel kullanımı aşağıdaki gibidir.</p></li>
+<li><div>
+<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="uygulama-2.html#cb432-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb432-2"><a href="uygulama-2.html#cb432-2" tabindex="-1"></a><span class="sc">+</span>  <span class="fu">print</span>(i)</span>
+<span id="cb432-3"><a href="uygulama-2.html#cb432-3" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb432-4"><a href="uygulama-2.html#cb432-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
+<span id="cb432-5"><a href="uygulama-2.html#cb432-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">2</span></span>
+<span id="cb432-6"><a href="uygulama-2.html#cb432-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">3</span></span>
+<span id="cb432-7"><a href="uygulama-2.html#cb432-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span>
+<span id="cb432-8"><a href="uygulama-2.html#cb432-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span>
+<span id="cb432-9"><a href="uygulama-2.html#cb432-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">6</span></span>
+<span id="cb432-10"><a href="uygulama-2.html#cb432-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">7</span></span>
+<span id="cb432-11"><a href="uygulama-2.html#cb432-11" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span>
+<span id="cb432-12"><a href="uygulama-2.html#cb432-12" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">9</span></span>
+<span id="cb432-13"><a href="uygulama-2.html#cb432-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span></span></code></pre></div>
+</div></li>
+<li><p>Döngüde indeks değişkeni herhangi bir nesne ile tanımlanabilir. Örneğin <strong>i</strong></p></li>
+<li><p>Ayrıca indeks değerinin başlangıcı 1 olmak zorunda <strong>değildir.</strong></p></li>
+<li><div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="uygulama-2.html#cb433-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">8</span>) {</span>
+<span id="cb433-2"><a href="uygulama-2.html#cb433-2" tabindex="-1"></a><span class="sc">+</span>  <span class="fu">print</span>(i)</span>
+<span id="cb433-3"><a href="uygulama-2.html#cb433-3" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb433-4"><a href="uygulama-2.html#cb433-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span>
+<span id="cb433-5"><a href="uygulama-2.html#cb433-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">6</span></span>
+<span id="cb433-6"><a href="uygulama-2.html#cb433-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">7</span></span>
+<span id="cb433-7"><a href="uygulama-2.html#cb433-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code></pre></div>
+</div></li>
+<li><p>karakter yazımında indeks <strong>i</strong> sadece tekrar amaçlı kullanılır.</p></li>
+<li><div>
+<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="uygulama-2.html#cb434-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb434-2"><a href="uygulama-2.html#cb434-2" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">print</span>(<span class="st">"Merhaba"</span>)</span>
+<span id="cb434-3"><a href="uygulama-2.html#cb434-3" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb434-4"><a href="uygulama-2.html#cb434-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Merhaba"</span></span>
+<span id="cb434-5"><a href="uygulama-2.html#cb434-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Merhaba"</span></span>
+<span id="cb434-6"><a href="uygulama-2.html#cb434-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Merhaba"</span></span>
+<span id="cb434-7"><a href="uygulama-2.html#cb434-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Merhaba"</span></span>
+<span id="cb434-8"><a href="uygulama-2.html#cb434-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Merhaba"</span></span>
+<span id="cb434-9"><a href="uygulama-2.html#cb434-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Merhaba"</span></span></code></pre></div>
+</div></li>
+<li><p>Aşağıdaki çıktıyı sağlayacak kodu yazınız.</p></li>
+<li><div>
+<pre><code>1  +   1  =  2 
+2  +   2  =  4 
+3  +   3  =  6 
+4  +   4  =  8 
+5  +   5  =  10 
+6  +   6  =  12 
+7  +   7  =  14 
+8  +   8  =  16 
+9  +   9  =  18 
+10  +   10  =  20 </code></pre>
+</div></li>
+<li><p>Döngüdelerde bir degişken yeniden tanımlanacak ise mutlaka döngü öncesi o değişken tanımlanmalıdır.</p></li>
+<li><p>Oluşturulan bir matrisin satırlarında yer alan sayıların toplamını başka bir nesneye atama</p></li>
+<li><div>
+<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="uygulama-2.html#cb436-1" tabindex="-1"></a><span class="sc">&gt;</span> (X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>))</span>
+<span id="cb436-2"><a href="uygulama-2.html#cb436-2" tabindex="-1"></a><span class="sc">&gt;</span> Y <span class="ot">&lt;-</span> <span class="fu">array</span>()</span>
+<span id="cb436-3"><a href="uygulama-2.html#cb436-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(X)) {</span>
+<span id="cb436-4"><a href="uygulama-2.html#cb436-4" tabindex="-1"></a><span class="sc">+</span>     Y[i] <span class="ot">&lt;-</span> X[i,<span class="dv">1</span>] <span class="sc">+</span> X[i,<span class="dv">2</span>]</span>
+<span id="cb436-5"><a href="uygulama-2.html#cb436-5" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb436-6"><a href="uygulama-2.html#cb436-6" tabindex="-1"></a><span class="sc">&gt;</span> Y</span>
+<span id="cb436-7"><a href="uygulama-2.html#cb436-7" tabindex="-1"></a>     a b</span>
+<span id="cb436-8"><a href="uygulama-2.html#cb436-8" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="dv">1</span> <span class="dv">2</span></span>
+<span id="cb436-9"><a href="uygulama-2.html#cb436-9" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="dv">2</span> <span class="dv">3</span></span>
+<span id="cb436-10"><a href="uygulama-2.html#cb436-10" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="dv">3</span> <span class="dv">4</span></span>
+<span id="cb436-11"><a href="uygulama-2.html#cb436-11" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="dv">4</span> <span class="dv">5</span></span>
+<span id="cb436-12"><a href="uygulama-2.html#cb436-12" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="dv">5</span> <span class="dv">6</span></span>
+<span id="cb436-13"><a href="uygulama-2.html#cb436-13" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">3</span>  <span class="dv">5</span>  <span class="dv">7</span>  <span class="dv">9</span> <span class="dv">11</span></span></code></pre></div>
+</div></li>
+<li><p><code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code>, <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> gibi fonksiyonları uzun bir döngüde, döngünün durumunu görmek için de kullanabilirsiniz .</p></li>
+<li><div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="uygulama-2.html#cb437-1" tabindex="-1"></a><span class="sc">&gt;</span> islem.kontrol <span class="ot">&lt;-</span> <span class="fu">array</span>()</span>
+<span id="cb437-2"><a href="uygulama-2.html#cb437-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb437-3"><a href="uygulama-2.html#cb437-3" tabindex="-1"></a><span class="sc">+</span>   islem.kontrol[i] <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Islem "</span>, i, <span class="st">" tamamlandi"</span>, <span class="at">sep=</span><span class="st">""</span>)</span>
+<span id="cb437-4"><a href="uygulama-2.html#cb437-4" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb437-5"><a href="uygulama-2.html#cb437-5" tabindex="-1"></a><span class="sc">&gt;</span> islem.kontrol</span>
+<span id="cb437-6"><a href="uygulama-2.html#cb437-6" tabindex="-1"></a> [<span class="dv">1</span>] <span class="st">"Islem 1 tamamlandi"</span>  <span class="st">"Islem 2 tamamlandi"</span>  <span class="st">"Islem 3 tamamlandi"</span> </span>
+<span id="cb437-7"><a href="uygulama-2.html#cb437-7" tabindex="-1"></a> [<span class="dv">4</span>] <span class="st">"Islem 4 tamamlandi"</span>  <span class="st">"Islem 5 tamamlandi"</span>  <span class="st">"Islem 6 tamamlandi"</span> </span>
+<span id="cb437-8"><a href="uygulama-2.html#cb437-8" tabindex="-1"></a> [<span class="dv">7</span>] <span class="st">"Islem 7 tamamlandi"</span>  <span class="st">"Islem 8 tamamlandi"</span>  <span class="st">"Islem 9 tamamlandi"</span> </span>
+<span id="cb437-9"><a href="uygulama-2.html#cb437-9" tabindex="-1"></a>[<span class="dv">10</span>] <span class="st">"Islem 10 tamamlandi"</span></span></code></pre></div>
+</div></li>
+<li><p>Döngülerde her zaman <code>i</code> indeksini kullanmak zorunda <strong>değiliz.</strong></p></li>
+<li><div>
+<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="uygulama-2.html#cb438-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">10</span>)</span>
+<span id="cb438-2"><a href="uygulama-2.html#cb438-2" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>,<span class="dv">100</span>)</span>
+<span id="cb438-3"><a href="uygulama-2.html#cb438-3" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb438-4"><a href="uygulama-2.html#cb438-4" tabindex="-1"></a><span class="er">&gt;</span> sayac <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb438-5"><a href="uygulama-2.html#cb438-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span> (val <span class="cf">in</span> x) {</span>
+<span id="cb438-6"><a href="uygulama-2.html#cb438-6" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">if</span>(val <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb438-7"><a href="uygulama-2.html#cb438-7" tabindex="-1"></a><span class="sc">+</span>     sayac <span class="ot">=</span> sayac<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb438-8"><a href="uygulama-2.html#cb438-8" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb438-9"><a href="uygulama-2.html#cb438-9" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb438-10"><a href="uygulama-2.html#cb438-10" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">print</span>(sayac)</span>
+<span id="cb438-11"><a href="uygulama-2.html#cb438-11" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">46</span></span></code></pre></div>
+</div></li>
+<li><p>Her zaman işlemi tüm elemanlara uygulamak istemeyebiliriz.</p></li>
+<li><p>Bunun önlemek icin akış kontrolü yapmak gerekir.</p></li>
+<li><p>Kontrol mantıksal operatörlerle ya da koşul cümleleri ile sağlanabilir.</p></li>
+</ul>
+<div id="for-döngüsü-ve-kontrol" class="section level2" number="11.1">
+<h2>
+<span class="header-section-number">11.1</span> <strong>for()</strong> Döngüsü ve Kontrol<a class="anchor" aria-label="anchor" href="#for-d%C3%B6ng%C3%BCs%C3%BC-ve-kontrol"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><div>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="uygulama-2.html#cb439-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb439-2"><a href="uygulama-2.html#cb439-2" tabindex="-1"></a><span class="sc">+</span>       <span class="cf">if</span> (i<span class="sc">==</span><span class="dv">2</span>) <span class="fu">cat</span>(<span class="st">"indeks cift sayidir:"</span>,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb439-3"><a href="uygulama-2.html#cb439-3" tabindex="-1"></a><span class="sc">+</span>       <span class="cf">else</span> <span class="fu">cat</span>(i,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb439-4"><a href="uygulama-2.html#cb439-4" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb439-5"><a href="uygulama-2.html#cb439-5" tabindex="-1"></a><span class="dv">1</span> </span>
+<span id="cb439-6"><a href="uygulama-2.html#cb439-6" tabindex="-1"></a>indeks cift sayidir<span class="sc">:</span> </span>
+<span id="cb439-7"><a href="uygulama-2.html#cb439-7" tabindex="-1"></a><span class="dv">3</span> </span></code></pre></div>
+</div></li>
+<li><div>
+<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="uygulama-2.html#cb440-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb440-2"><a href="uygulama-2.html#cb440-2" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">if</span> (i<span class="sc">==</span><span class="dv">2</span>) {</span>
+<span id="cb440-3"><a href="uygulama-2.html#cb440-3" tabindex="-1"></a><span class="sc">+</span>     <span class="fu">cat</span>(<span class="st">"indeks degeri ikidir:"</span>,i,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>) </span>
+<span id="cb440-4"><a href="uygulama-2.html#cb440-4" tabindex="-1"></a><span class="sc">+</span>   }<span class="cf">else</span>{<span class="fu">cat</span>(<span class="st">"indeks degeri iki degildir"</span>,<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)}</span>
+<span id="cb440-5"><a href="uygulama-2.html#cb440-5" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb440-6"><a href="uygulama-2.html#cb440-6" tabindex="-1"></a>indeks degeri iki degildir </span>
+<span id="cb440-7"><a href="uygulama-2.html#cb440-7" tabindex="-1"></a>indeks degeri ikidir<span class="sc">:</span> <span class="dv">2</span> </span>
+<span id="cb440-8"><a href="uygulama-2.html#cb440-8" tabindex="-1"></a>indeks degeri iki degildir </span></code></pre></div>
+</div></li>
+<li><p>Bazen döngüler iç içe kullanılabilir 5X5 bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun orneğin m[2,5]=10 olsun.</p></li>
+<li><p>Bu işlemi yapmak için öncelikle boş bir matris oluştumak lazım.</p></li>
+<li><div>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="uygulama-2.html#cb441-1" tabindex="-1"></a><span class="sc">&gt;</span> m2 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span><span class="dv">5</span>,<span class="at">ncol=</span><span class="dv">5</span>)</span>
+<span id="cb441-2"><a href="uygulama-2.html#cb441-2" tabindex="-1"></a><span class="sc">&gt;</span> m2</span>
+<span id="cb441-3"><a href="uygulama-2.html#cb441-3" tabindex="-1"></a>     [,<span class="dv">1</span>] [,<span class="dv">2</span>] [,<span class="dv">3</span>] [,<span class="dv">4</span>] [,<span class="dv">5</span>]</span>
+<span id="cb441-4"><a href="uygulama-2.html#cb441-4" tabindex="-1"></a>[<span class="dv">1</span>,]    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span></span>
+<span id="cb441-5"><a href="uygulama-2.html#cb441-5" tabindex="-1"></a>[<span class="dv">2</span>,]    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span></span>
+<span id="cb441-6"><a href="uygulama-2.html#cb441-6" tabindex="-1"></a>[<span class="dv">3</span>,]    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span></span>
+<span id="cb441-7"><a href="uygulama-2.html#cb441-7" tabindex="-1"></a>[<span class="dv">4</span>,]    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span></span>
+<span id="cb441-8"><a href="uygulama-2.html#cb441-8" tabindex="-1"></a>[<span class="dv">5</span>,]    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span>    <span class="dv">0</span></span></code></pre></div>
+</div></li>
+<li><p>Aşağıdaki çıktıyı elde edecek kodu oluşturmaya çalışın</p></li>
+<li><div>
+<pre><code>     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    2    3    4    5
+[2,]    2    4    6    8   10
+[3,]    3    6    9   12   15
+[4,]    4    8   12   16   20
+[5,]    5   10   15   20   25</code></pre>
+</div></li>
+<li><p>Kullanıcı tarafından belirlenen <strong>nxn</strong> boyutunda bir matris oluşturulsun.</p></li>
+<li><p><strong>nxn</strong> bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun.</p></li>
+<li><p>örneğin m[2,5]=10 olsun.</p></li>
+<li><p>Eger matrisin boyutları 10x10'dan büyükse sadece 10 satırını yazsın eğer matrisi boyutları 10x10'dan küçükse hepsini yazsın.</p></li>
+<li>
+<p>Kullancı üç girdiğinde oluşacak çıktı:</p>
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    2    4    6
+[3,]    3    6    9</code></pre>
+</li>
+<li><p>Döngünün indeksi her zaman bir tam sayı olmak zorunda değildir.</p></li>
+<li><p>Liste, veri seti, matris de olabilir.</p></li>
+<li><p><strong>if</strong> sadece numerik değer ve vektörlerle çalışmaz.</p></li>
+<li><p>Aynı zamanda veri seti, matris ve listelerle de çalışabilir.</p></li>
+<li><div>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="uygulama-2.html#cb444-1" tabindex="-1"></a><span class="sc">&gt;</span> d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb444-2"><a href="uygulama-2.html#cb444-2" tabindex="-1"></a><span class="sc">&gt;</span> d</span>
+<span id="cb444-3"><a href="uygulama-2.html#cb444-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(x <span class="cf">in</span> d) {</span>
+<span id="cb444-4"><a href="uygulama-2.html#cb444-4" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">cat</span>(<span class="st">"sutun toplamlari:"</span>, <span class="fu">sum</span>(x), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb444-5"><a href="uygulama-2.html#cb444-5" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">a</th>
+<th align="right">b</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">6</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<pre><code>sutun toplamlari: 15 
+sutun toplamlari: 20 </code></pre>
+</div></li>
+<li><div>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="uygulama-2.html#cb446-1" tabindex="-1"></a><span class="sc">&gt;</span> X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">20</span><span class="sc">:</span><span class="dv">29</span>)</span>
+<span id="cb446-2"><a href="uygulama-2.html#cb446-2" tabindex="-1"></a><span class="sc">&gt;</span> X</span>
+<span id="cb446-3"><a href="uygulama-2.html#cb446-3" tabindex="-1"></a>      [,<span class="dv">1</span>] [,<span class="dv">2</span>]</span>
+<span id="cb446-4"><a href="uygulama-2.html#cb446-4" tabindex="-1"></a> [<span class="dv">1</span>,]    <span class="dv">1</span>   <span class="dv">20</span></span>
+<span id="cb446-5"><a href="uygulama-2.html#cb446-5" tabindex="-1"></a> [<span class="dv">2</span>,]    <span class="dv">2</span>   <span class="dv">21</span></span>
+<span id="cb446-6"><a href="uygulama-2.html#cb446-6" tabindex="-1"></a> [<span class="dv">3</span>,]    <span class="dv">3</span>   <span class="dv">22</span></span>
+<span id="cb446-7"><a href="uygulama-2.html#cb446-7" tabindex="-1"></a> [<span class="dv">4</span>,]    <span class="dv">4</span>   <span class="dv">23</span></span>
+<span id="cb446-8"><a href="uygulama-2.html#cb446-8" tabindex="-1"></a> [<span class="dv">5</span>,]    <span class="dv">5</span>   <span class="dv">24</span></span>
+<span id="cb446-9"><a href="uygulama-2.html#cb446-9" tabindex="-1"></a> [<span class="dv">6</span>,]    <span class="dv">6</span>   <span class="dv">25</span></span>
+<span id="cb446-10"><a href="uygulama-2.html#cb446-10" tabindex="-1"></a> [<span class="dv">7</span>,]    <span class="dv">7</span>   <span class="dv">26</span></span>
+<span id="cb446-11"><a href="uygulama-2.html#cb446-11" tabindex="-1"></a> [<span class="dv">8</span>,]    <span class="dv">8</span>   <span class="dv">27</span></span>
+<span id="cb446-12"><a href="uygulama-2.html#cb446-12" tabindex="-1"></a> [<span class="dv">9</span>,]    <span class="dv">9</span>   <span class="dv">28</span></span>
+<span id="cb446-13"><a href="uygulama-2.html#cb446-13" tabindex="-1"></a>[<span class="dv">10</span>,]   <span class="dv">10</span>   <span class="dv">29</span></span></code></pre></div>
+</div></li>
+</ul>
+<p>Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.</p>
+<ul>
+<li><div>
+<pre><code>1 satirdaki degerlerin carpimi 20 olarak hesaplanmistir. 
+2 satirdaki degerlerin carpimi 42 olarak hesaplanmistir. 
+3 satirdaki degerlerin carpimi 66 olarak hesaplanmistir. 
+4 satirdaki degerlerin carpimi 92 olarak hesaplanmistir. 
+5 satirdaki degerlerin carpimi 120 olarak hesaplanmistir. 
+6 satirdaki degerlerin carpimi 150 olarak hesaplanmistir. 
+7 satirdaki degerlerin carpimi 182 olarak hesaplanmistir. 
+8 satirdaki degerlerin carpimi 216 olarak hesaplanmistir. 
+9 satirdaki degerlerin carpimi 252 olarak hesaplanmistir. 
+10 satirdaki degerlerin carpimi 290 olarak hesaplanmistir. </code></pre>
+</div></li>
+</ul>
+</div>
+<div id="next-ve-break" class="section level2" number="11.2">
+<h2>
+<span class="header-section-number">11.2</span> <code>next()</code> ve <code>break()</code><a class="anchor" aria-label="anchor" href="#next-ve-break"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p><code>next()</code> ve <code>break()</code> fonksiyonları döngülerde kontrol mekanizmasidır.</p></li>
+<li><p>Döngüyü sadece belirli bir koşulda çalıştırmak istemezseniz <code>next()</code> fonksiyonunu kullanabilirsiniz.</p></li>
+<li><div>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="uygulama-2.html#cb448-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>){</span>
+<span id="cb448-2"><a href="uygulama-2.html#cb448-2" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">if</span>(i<span class="sc">==</span><span class="dv">3</span>){</span>
+<span id="cb448-3"><a href="uygulama-2.html#cb448-3" tabindex="-1"></a><span class="sc">+</span>     <span class="cf">next</span></span>
+<span id="cb448-4"><a href="uygulama-2.html#cb448-4" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb448-5"><a href="uygulama-2.html#cb448-5" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">print</span> (i)}</span>
+<span id="cb448-6"><a href="uygulama-2.html#cb448-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
+<span id="cb448-7"><a href="uygulama-2.html#cb448-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">2</span></span>
+<span id="cb448-8"><a href="uygulama-2.html#cb448-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span>
+<span id="cb448-9"><a href="uygulama-2.html#cb448-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span>
+<span id="cb448-10"><a href="uygulama-2.html#cb448-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">6</span></span></code></pre></div>
+</div></li>
+<li><p>Döngüyü sadece belirli bir koşulda durdurmak isterseniz <code>break()</code> fonksiyonunu kullanabilirsiniz.</p></li>
+<li><div>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="uygulama-2.html#cb449-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>){</span>
+<span id="cb449-2"><a href="uygulama-2.html#cb449-2" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">if</span>(i<span class="sc">==</span><span class="dv">3</span>){</span>
+<span id="cb449-3"><a href="uygulama-2.html#cb449-3" tabindex="-1"></a><span class="sc">+</span>     <span class="cf">break</span></span>
+<span id="cb449-4"><a href="uygulama-2.html#cb449-4" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb449-5"><a href="uygulama-2.html#cb449-5" tabindex="-1"></a><span class="sc">+</span>   <span class="fu">print</span> (i)}</span>
+<span id="cb449-6"><a href="uygulama-2.html#cb449-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
+<span id="cb449-7"><a href="uygulama-2.html#cb449-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">2</span></span></code></pre></div>
+</div></li>
+<li><p>Döngüler uzun zamanda çalışır.</p></li>
+<li><div>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="uygulama-2.html#cb450-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># donguler uzun zamanda calisir</span></span>
+<span id="cb450-2"><a href="uygulama-2.html#cb450-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">853</span>)</span>
+<span id="cb450-3"><a href="uygulama-2.html#cb450-3" tabindex="-1"></a><span class="sc">&gt;</span> y<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">1000000</span>),<span class="at">nrow=</span><span class="dv">1000</span>)</span>
+<span id="cb450-4"><a href="uygulama-2.html#cb450-4" tabindex="-1"></a><span class="sc">&gt;</span> z<span class="ot">&lt;-</span><span class="dv">0</span><span class="sc">*</span>y</span>
+<span id="cb450-5"><a href="uygulama-2.html#cb450-5" tabindex="-1"></a><span class="sc">&gt;</span> time1<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(<span class="fu">Sys.time</span>())</span>
+<span id="cb450-6"><a href="uygulama-2.html#cb450-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co">#loop:</span></span>
+<span id="cb450-7"><a href="uygulama-2.html#cb450-7" tabindex="-1"></a><span class="er">&gt;</span> time2 <span class="ot">&lt;-</span> <span class="fu">system.time</span>(</span>
+<span id="cb450-8"><a href="uygulama-2.html#cb450-8" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>){</span>
+<span id="cb450-9"><a href="uygulama-2.html#cb450-9" tabindex="-1"></a><span class="sc">+</span>   <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>){</span>
+<span id="cb450-10"><a href="uygulama-2.html#cb450-10" tabindex="-1"></a><span class="sc">+</span>     z[i,j]<span class="ot">&lt;-</span>y[i,j]<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb450-11"><a href="uygulama-2.html#cb450-11" tabindex="-1"></a><span class="sc">+</span>   }</span>
+<span id="cb450-12"><a href="uygulama-2.html#cb450-12" tabindex="-1"></a><span class="sc">+</span> })</span>
+<span id="cb450-13"><a href="uygulama-2.html#cb450-13" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb450-14"><a href="uygulama-2.html#cb450-14" tabindex="-1"></a><span class="er">&gt;</span> time2</span>
+<span id="cb450-15"><a href="uygulama-2.html#cb450-15" tabindex="-1"></a><span class="sc">&gt;</span> <span class="co"># ayni islemi dongusuz yapma</span></span>
+<span id="cb450-16"><a href="uygulama-2.html#cb450-16" tabindex="-1"></a><span class="er">&gt;</span> time3 <span class="ot">&lt;-</span> <span class="fu">system.time</span>(z<span class="ot">&lt;-</span>y<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb450-17"><a href="uygulama-2.html#cb450-17" tabindex="-1"></a><span class="sc">&gt;</span> time3</span>
+<span id="cb450-18"><a href="uygulama-2.html#cb450-18" tabindex="-1"></a>   user  system elapsed </span>
+<span id="cb450-19"><a href="uygulama-2.html#cb450-19" tabindex="-1"></a>   <span class="fl">0.06</span>    <span class="fl">0.00</span>    <span class="fl">0.06</span> </span>
+<span id="cb450-20"><a href="uygulama-2.html#cb450-20" tabindex="-1"></a>   user  system elapsed </span>
+<span id="cb450-21"><a href="uygulama-2.html#cb450-21" tabindex="-1"></a>      <span class="dv">0</span>       <span class="dv">0</span>       <span class="dv">0</span> </span></code></pre></div>
+</div></li>
+</ul>
+</div>
+<div id="coklu-veri-seti-olusturma-ve-dışarı-aktarma" class="section level2" number="11.3">
+<h2>
+<span class="header-section-number">11.3</span> Coklu veri seti olusturma ve dışarı aktarma<a class="anchor" aria-label="anchor" href="#coklu-veri-seti-olusturma-ve-d%C4%B1%C5%9Far%C4%B1-aktarma"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım.</li>
+<li>Fonksiyonun ilk girdisi veri seti sayısı olmalı</li>
+<li>Kullanıcı oluşturmak istediği her bir veri seti için satır ve sütun sayısını belirleyebilirsin.</li>
+<li>Örneğin oluşturduğu ilk veri setin 5 satır, 10 sütunlu ikincisi veri seti ise 10 satır, 20 sütunlu olsun.</li>
+<li>Oluşturacak olan her bir veri setinin her bir sütunu standart normal dağılıma uygun olacak şekilde üretilsin.</li>
+<li>Oluşturulan veri setlerinden ilki "veri_1.xlsx" şeklinde, devamında ise sayı değiştirilerek dışarı aktarılsın.</li>
+</ul>
+</div>
+<div id="for-ödev-1" class="section level2" number="11.4">
+<h2>
+<span class="header-section-number">11.4</span> <strong><code>for()</code></strong> Ödev-1<a class="anchor" aria-label="anchor" href="#for-%C3%B6dev-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Fibonacci dizisinin elemanlari <strong>1 1 2 3 5 8 13 21 34 55 89 ...</strong> dizinin elemanlarını <code>for()</code> döngüsü ile oluşturmaya çalışınız.</p>
+</div>
+<div id="for-ödev-2" class="section level2" number="11.5">
+<h2>
+<span class="header-section-number">11.5</span> <strong><code>for()</code></strong> Ödev-2<a class="anchor" aria-label="anchor" href="#for-%C3%B6dev-2"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="uygulama-2.html#cb451-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">set.seed</span>(<span class="dv">1786</span>)</span>
+<span id="cb451-2"><a href="uygulama-2.html#cb451-2" tabindex="-1"></a><span class="sc">&gt;</span> ornek<span class="ot">&lt;-</span><span class="fu">exp</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2000</span>),<span class="at">nrow=</span><span class="dv">100</span>))</span>
+<span id="cb451-3"><a href="uygulama-2.html#cb451-3" tabindex="-1"></a><span class="sc">&gt;</span> index1.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">10</span>)</span>
+<span id="cb451-4"><a href="uygulama-2.html#cb451-4" tabindex="-1"></a><span class="sc">&gt;</span> index2.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,<span class="dv">10</span>)</span>
+<span id="cb451-5"><a href="uygulama-2.html#cb451-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb451-6"><a href="uygulama-2.html#cb451-6" tabindex="-1"></a><span class="sc">+</span>   ornek[index1.temp[i],index2.temp[i]]<span class="ot">&lt;-</span><span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb451-7"><a href="uygulama-2.html#cb451-7" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb451-8"><a href="uygulama-2.html#cb451-8" tabindex="-1"></a><span class="sc">&gt;</span>  <span class="fu">head</span>(ornek,<span class="dv">6</span>)</span>
+<span id="cb451-9"><a href="uygulama-2.html#cb451-9" tabindex="-1"></a>          [,<span class="dv">1</span>]      [,<span class="dv">2</span>]      [,<span class="dv">3</span>]      [,<span class="dv">4</span>]      [,<span class="dv">5</span>]      [,<span class="dv">6</span>]     [,<span class="dv">7</span>]</span>
+<span id="cb451-10"><a href="uygulama-2.html#cb451-10" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">0.5549525</span> <span class="fl">0.3247338</span> <span class="fl">0.5236032</span> <span class="fl">0.3821027</span> <span class="fl">0.4187483</span> <span class="fl">0.1588847</span> <span class="fl">5.226161</span></span>
+<span id="cb451-11"><a href="uygulama-2.html#cb451-11" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">0.5671734</span> <span class="fl">1.2431592</span> <span class="fl">0.8812069</span> <span class="fl">2.6695443</span> <span class="fl">0.6984453</span> <span class="fl">1.0838792</span> <span class="fl">1.079946</span></span>
+<span id="cb451-12"><a href="uygulama-2.html#cb451-12" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">4.8068457</span> <span class="fl">0.3449856</span> <span class="fl">0.6079096</span> <span class="fl">0.9194116</span> <span class="fl">1.5361330</span> <span class="fl">1.9082522</span> <span class="fl">0.671977</span></span>
+<span id="cb451-13"><a href="uygulama-2.html#cb451-13" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">1.3509234</span> <span class="fl">2.3569582</span> <span class="fl">0.1931423</span> <span class="fl">4.0707377</span> <span class="fl">0.3527276</span> <span class="fl">2.3498825</span> <span class="fl">1.198514</span></span>
+<span id="cb451-14"><a href="uygulama-2.html#cb451-14" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">0.9012032</span> <span class="fl">0.2310683</span> <span class="fl">0.2317487</span> <span class="fl">1.3809955</span> <span class="fl">0.9168741</span> <span class="fl">0.6237213</span> <span class="fl">1.609403</span></span>
+<span id="cb451-15"><a href="uygulama-2.html#cb451-15" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">1.2331483</span> <span class="fl">1.1066056</span> <span class="fl">0.3546027</span> <span class="fl">0.3705946</span> <span class="fl">0.9002303</span> <span class="fl">0.2528151</span> <span class="fl">3.337512</span></span>
+<span id="cb451-16"><a href="uygulama-2.html#cb451-16" tabindex="-1"></a>          [,<span class="dv">8</span>]      [,<span class="dv">9</span>]     [,<span class="dv">10</span>]     [,<span class="dv">11</span>]     [,<span class="dv">12</span>]     [,<span class="dv">13</span>]     [,<span class="dv">14</span>]</span>
+<span id="cb451-17"><a href="uygulama-2.html#cb451-17" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">2.6280057</span> <span class="fl">1.2251526</span> <span class="fl">0.4760966</span> <span class="fl">5.2379018</span> <span class="fl">1.4782655</span> <span class="fl">1.3761338</span> <span class="fl">1.0202608</span></span>
+<span id="cb451-18"><a href="uygulama-2.html#cb451-18" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">2.2087385</span> <span class="fl">0.5195551</span> <span class="fl">0.3757409</span> <span class="fl">0.9004808</span> <span class="fl">0.7409205</span> <span class="fl">2.0543842</span> <span class="fl">0.3668661</span></span>
+<span id="cb451-19"><a href="uygulama-2.html#cb451-19" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">1.5310016</span> <span class="fl">0.6735007</span> <span class="fl">2.2069776</span> <span class="fl">0.5060078</span> <span class="fl">0.7171477</span> <span class="fl">1.2378655</span> <span class="fl">0.3651527</span></span>
+<span id="cb451-20"><a href="uygulama-2.html#cb451-20" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">2.5592899</span> <span class="fl">1.8205257</span> <span class="fl">1.2624052</span> <span class="fl">0.1524106</span> <span class="fl">0.3828322</span> <span class="fl">1.2406799</span> <span class="fl">0.7954326</span></span>
+<span id="cb451-21"><a href="uygulama-2.html#cb451-21" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">1.1005990</span> <span class="fl">1.0619758</span> <span class="fl">2.1047783</span> <span class="fl">2.7816902</span> <span class="fl">1.4010878</span> <span class="fl">0.6140937</span> <span class="fl">0.5136842</span></span>
+<span id="cb451-22"><a href="uygulama-2.html#cb451-22" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">0.9799103</span> <span class="fl">2.7520425</span> <span class="fl">2.5407624</span> <span class="fl">1.3889136</span> <span class="fl">0.4346808</span> <span class="fl">1.0637950</span> <span class="fl">0.1859157</span></span>
+<span id="cb451-23"><a href="uygulama-2.html#cb451-23" tabindex="-1"></a>         [,<span class="dv">15</span>]     [,<span class="dv">16</span>]      [,<span class="dv">17</span>]     [,<span class="dv">18</span>]    [,<span class="dv">19</span>]     [,<span class="dv">20</span>]</span>
+<span id="cb451-24"><a href="uygulama-2.html#cb451-24" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">0.1437680</span> <span class="fl">4.1807643</span>  <span class="fl">1.7389423</span> <span class="fl">3.0760640</span> <span class="fl">1.550557</span> <span class="fl">4.4838291</span></span>
+<span id="cb451-25"><a href="uygulama-2.html#cb451-25" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">3.8674407</span> <span class="fl">1.9349214</span>  <span class="fl">0.6333922</span> <span class="fl">0.4862532</span> <span class="fl">5.275571</span> <span class="fl">0.1161029</span></span>
+<span id="cb451-26"><a href="uygulama-2.html#cb451-26" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">1.4724240</span> <span class="fl">0.5971116</span> <span class="fl">11.5869157</span> <span class="fl">0.7580736</span> <span class="fl">4.755297</span> <span class="fl">1.0583051</span></span>
+<span id="cb451-27"><a href="uygulama-2.html#cb451-27" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">0.1243085</span> <span class="fl">0.8376231</span>  <span class="fl">1.3723291</span> <span class="fl">2.0884571</span> <span class="fl">2.506128</span> <span class="fl">1.2094517</span></span>
+<span id="cb451-28"><a href="uygulama-2.html#cb451-28" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">6.2971803</span> <span class="fl">0.8422164</span>  <span class="fl">1.5335222</span> <span class="fl">0.3079718</span> <span class="fl">2.729447</span> <span class="fl">1.7164885</span></span>
+<span id="cb451-29"><a href="uygulama-2.html#cb451-29" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">3.8052219</span> <span class="fl">2.1611055</span>  <span class="fl">0.3280288</span> <span class="fl">2.7773368</span> <span class="fl">1.726558</span> <span class="fl">1.3193446</span></span></code></pre></div>
+</div></li>
+<li><p><strong>ornek</strong> veri setinde i. satırda negatif sayı yok ise çıktıda <strong>i. satırın ortalaması....dir</strong> yazsin.</p></li>
+<li><p>Eğer veri setinde her hangi bir satırda negatif sayı var ise <strong>satır i negatif sayı bulunmaktadır.</strong></p></li>
+<li><p>veri setindeki satırlardaki toplam negatif sayı toplamı üçü geçerse çktıda <strong>cok sayıda negatif sayı</strong> yazsın ve döngü çalışmayı durdursun.</p></li>
+</ul>
+</div>
+<div id="for-ödev-2-1" class="section level2" number="11.6">
+<h2>
+<span class="header-section-number">11.6</span> <strong><code>for()</code></strong> Ödev-2<a class="anchor" aria-label="anchor" href="#for-%C3%B6dev-2-1"><i class="fas fa-link"></i></a>
+</h2>
+<pre><code>[1] "Satir 1 ortalamasi 0.986111423178787"
+[1] "Satir 2 ortalamasi 1.66440473890558"
+[1] "Satir 3 ortalamasi 1.86445460243509"
+[1] "Satir 4 negatif sayi icermektedir."
+[1] "Satir 5 negatif sayi icermektedir."
+[1] "Satir 6 ortalamasi 2.18755744815693"
+[1] "Satir 7 ortalamasi 2.42896783600747"
+[1] "Satir 8 ortalamasi 1.11152186047931"
+[1] "Satir 9 ortalamasi 1.28348082027049"
+[1] "Satir 10 ortalamasi 1.49790135754768"
+[1] "Satir 11 ortalamasi 1.00823845594998"
+[1] "Satir 12 ortalamasi 1.84432161490249"
+[1] "Satir 13 ortalamasi 2.30730516248531"
+[1] "Satir 14 ortalamasi 1.32997520232501"
+[1] "Satir 15 ortalamasi 1.40736423997693"
+[1] "Satir 16 ortalamasi 0.930694377568197"
+[1] "Satir 17 ortalamasi 1.09683802891735"
+[1] "Satir 18 ortalamasi 1.34543057465283"
+[1] "Satir 19 ortalamasi 1.91931890408157"
+[1] "Satir 20 ortalamasi 1.46149447129439"
+[1] "Satir 21 ortalamasi 1.48698773010654"
+[1] "Satir 22 ortalamasi 2.50083591324982"
+[1] "Satir 23 ortalamasi 2.49403230671112"
+[1] "Satir 24 ortalamasi 2.03307899444367"
+[1] "Satir 25 ortalamasi 1.47358418101605"
+[1] "Satir 26 ortalamasi 1.77152589640626"
+[1] "Satir 27 ortalamasi 1.25135003349089"
+[1] "Satir 28 ortalamasi 1.33894076274636"
+[1] "Satir 29 ortalamasi 1.82874224246664"
+[1] "Satir 30 ortalamasi 1.23831471787453"
+[1] "Satir 31 ortalamasi 1.82082600141082"
+[1] "Satir 32 ortalamasi 1.12466160143214"
+[1] "Satir 33 ortalamasi 1.32597664522914"
+[1] "Satir 34 negatif sayi icermektedir."
+[1] "Satir 35 ortalamasi 2.32162456679167"
+[1] "Satir 36 ortalamasi 2.23274928866424"
+[1] "Satir 37 negatif sayi icermektedir."
+[1] "Satir 38 ortalamasi 2.275511227626"
+[1] "Satir 39 ortalamasi 1.7921160361432"
+[1] "Satir 40 ortalamasi 0.970509167208986"
+[1] "Satir 41 ortalamasi 1.24765799189581"
+[1] "Satir 42 ortalamasi 2.51234120817512"
+[1] "Satir 43 ortalamasi 2.31828043397862"
+[1] "Satir 44 negatif sayi icermektedir."
+[1] "Satir 45 ortalamasi 1.95647545685842"
+[1] "Satir 46 negatif sayi icermektedir."
+[1] "Satir 47 ortalamasi 2.36551615481398"
+[1] "Satir 48 ortalamasi 1.97786024664016"
+[1] "Satir 49 ortalamasi 1.6393028512105"
+[1] "Satir 50 ortalamasi 3.73629039983628"
+[1] "Satir 51 ortalamasi 1.82116726064836"
+[1] "Satir 52 ortalamasi 1.87732770333814"
+[1] "Satir 53 ortalamasi 2.7020031804201"
+[1] "Satir 54 ortalamasi 1.05164097984234"
+[1] "Satir 55 ortalamasi 1.88981004324099"
+[1] "Satir 56 ortalamasi 1.54248819505925"
+[1] "Satir 57 ortalamasi 1.65731581957976"
+[1] "Satir 58 ortalamasi 1.36890435340706"
+[1] "Satir 59 negatif sayi icermektedir."
+[1] "Satir 60 ortalamasi 2.22046851034413"
+[1] "Satir 61 ortalamasi 1.0408644748318"
+[1] "Satir 62 ortalamasi 1.72072095294252"
+[1] "Satir 63 ortalamasi 1.53167534425738"
+[1] "Satir 64 ortalamasi 1.72856879470484"
+[1] "Satir 65 ortalamasi 1.37607074870477"
+[1] "Satir 66 ortalamasi 1.42295571491744"
+[1] "Satir 67 ortalamasi 0.88385039568476"
+[1] "Satir 68 ortalamasi 2.35701379888311"
+[1] "Satir 69 ortalamasi 1.35179926755423"
+[1] "Satir 70 ortalamasi 1.28012686374286"
+[1] "Satir 71 negatif sayi icermektedir."
+[1] "Satir 72 ortalamasi 1.67406636870506"
+[1] "Satir 73 ortalamasi 1.37691945587952"
+[1] "Satir 74 ortalamasi 2.00099153014073"
+[1] "Satir 75 negatif sayi icermektedir."
+[1] "Satir 76 ortalamasi 1.60454610453076"
+[1] "Satir 77 ortalamasi 2.0804975152321"
+[1] "Satir 78 ortalamasi 1.67436426400702"
+[1] "Satir 79 ortalamasi 2.04712004349156"
+[1] "Satir 80 ortalamasi 1.2963699279751"
+[1] "Satir 81 ortalamasi 2.06864424004881"
+[1] "Satir 82 ortalamasi 2.18401195176334"
+[1] "Satir 83 ortalamasi 2.38233635418165"
+[1] "Satir 84 ortalamasi 1.65733160944781"
+[1] "Satir 85 ortalamasi 1.53913327407787"
+[1] "Satir 86 ortalamasi 1.5977866331596"
+[1] "Satir 87 ortalamasi 1.53640423869466"
+[1] "Satir 88 ortalamasi 1.4151688443321"
+[1] "Satir 89 ortalamasi 1.65657353958559"
+[1] "Satir 90 ortalamasi 1.09930366562984"
+[1] "Satir 91 ortalamasi 2.04289262764082"
+[1] "Satir 92 ortalamasi 1.49359077505866"
+[1] "Satir 93 ortalamasi 1.59542242961016"
+[1] "Satir 94 negatif sayi icermektedir."
+[1] "Satir 95 ortalamasi 1.63562964801907"
+[1] "Satir 96 ortalamasi 1.25826462716513"
+[1] "Satir 97 ortalamasi 3.88578289773781"
+[1] "Satir 98 ortalamasi 2.05151453891869"
+[1] "Satir 99 ortalamasi 1.96874159472044"
+[1] "Satir 100 ortalamasi 1.5918224514213"</code></pre>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></div>
+<div class="next"><a href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#uygulama-2"><span class="header-section-number">11</span> Uygulama</a></li>
+<li><a class="nav-link" href="#for-d%C3%B6ng%C3%BCs%C3%BC-ve-kontrol"><span class="header-section-number">11.1</span> for() Döngüsü ve Kontrol</a></li>
+<li><a class="nav-link" href="#next-ve-break"><span class="header-section-number">11.2</span> next() ve break()</a></li>
+<li><a class="nav-link" href="#coklu-veri-seti-olusturma-ve-d%C4%B1%C5%9Far%C4%B1-aktarma"><span class="header-section-number">11.3</span> Coklu veri seti olusturma ve dışarı aktarma</a></li>
+<li><a class="nav-link" href="#for-%C3%B6dev-1"><span class="header-section-number">11.4</span> for() Ödev-1</a></li>
+<li><a class="nav-link" href="#for-%C3%B6dev-2"><span class="header-section-number">11.5</span> for() Ödev-2</a></li>
+<li><a class="nav-link" href="#for-%C3%B6dev-2-1"><span class="header-section-number">11.6</span> for() Ödev-2</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="/blob/master/book/10_kontrol.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/10_kontrol.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>lavaan</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

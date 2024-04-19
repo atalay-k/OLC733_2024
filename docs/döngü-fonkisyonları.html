@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bölüm 13 Döngü Fonkisyonları | lavaan</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="13.1 Komut Satırında Döngü Oluşturma Programlama yaparken for ve while döngüleri yazmak yararlıdır, ancak komut satırında etkileşimli olarak çalışırken özellikle kolay değildir. Küme parantezleri...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Bölüm 13 Döngü Fonkisyonları | lavaan">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC733/döngü-fonkisyonları.html">
+<meta property="og:description" content="13.1 Komut Satırında Döngü Oluşturma Programlama yaparken for ve while döngüleri yazmak yararlıdır, ancak komut satırında etkileşimli olarak çalışırken özellikle kolay değildir. Küme parantezleri...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bölüm 13 Döngü Fonkisyonları | lavaan">
+<meta name="twitter:description" content="13.1 Komut Satırında Döngü Oluşturma Programlama yaparken for ve while döngüleri yazmak yararlıdır, ancak komut satırında etkileşimli olarak çalışırken özellikle kolay değildir. Küme parantezleri...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.32/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="libs/plotly-binding-4.10.4/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script><link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet">
+<script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script><script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script><script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script><script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script><script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script><script src="libs/rglwidgetClass-1.2.8/init.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script><script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script><script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script><script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script><script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script><script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script><script src="libs/viz-1.8.2/viz.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">lavaan</a>:
+        <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="varsay%C4%B1mlar-i.html"><span class="header-section-number">1</span> Varsayımlar I</a></li>
+<li><a class="" href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">2</span> Varsayımlar II</a></li>
+<li><a class="" href="regresyon.html"><span class="header-section-number">3</span> Regresyon</a></li>
+<li><a class="" href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></li>
+<li><a class="" href="lavaan-ve-sem.html"><span class="header-section-number">5</span> lavaan ve sem</a></li>
+<li><a class="" href="yol-analizi.html"><span class="header-section-number">6</span> Yol Analizi</a></li>
+<li><a class="" href="afa.html"><span class="header-section-number">7</span> AFA</a></li>
+<li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
+<li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
+<li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
+<li><a class="" href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
+<li><a class="active" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="döngü-fonkisyonları" class="section level1" number="13">
+<h1>
+<span class="header-section-number">Bölüm 13</span> Döngü Fonkisyonları<a class="anchor" aria-label="anchor" href="#d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1"><i class="fas fa-link"></i></a>
+</h1>
+<div id="komut-satırında-döngü-oluşturma" class="section level2" number="13.1">
+<h2>
+<span class="header-section-number">13.1</span> Komut Satırında Döngü Oluşturma<a class="anchor" aria-label="anchor" href="#komut-sat%C4%B1r%C4%B1nda-d%C3%B6ng%C3%BC-olu%C5%9Fturma"><i class="fas fa-link"></i></a>
+</h2>
+<p>Programlama yaparken <code>for</code> ve <code>while</code> döngüleri yazmak yararlıdır, ancak komut satırında etkileşimli olarak çalışırken özellikle kolay değildir. Küme parantezleri içeren çok satırlı ifadeleri komut satırında çalışırken sıralamak o kadar kolay değildir. R, hayatınızı kolaylaştırmak için döngüleri kompakt bir biçimde uygulayan bazı fonksiyonlara sahiptir.</p>
+<ul>
+<li><p><code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code>: Bir liste üzerinde döngü ve her öğe üzerinde bir işlevi değerlendirme</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code>: <code>lapply</code> ile aynıdır ancak sonucu basitleştirmeye çalışın</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/apply.html">apply()</a></code>: Bir dizinin kenar boşlukları üzerinde bir işlev uygulama</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/tapply.html">tapply()</a></code>: Bir vektörün alt kümeleri üzerinde bir fonksiyon uygulama</p></li>
+<li><p><code><a href="https://rdrr.io/r/base/mapply.html">mapply()</a></code>: <code>lapply</code> nin çok değişkenli versiyonu</p></li>
+</ul>
+<p>Yardımcı bir işlev olan <code>split</code> de özellikle <code>lapply</code> ile birlikte kullanışlıdır.</p>
+</div>
+<div id="lapply" class="section level2" number="13.2">
+<h2>
+<span class="header-section-number">13.2</span> <code>lapply()</code><a class="anchor" aria-label="anchor" href="#lapply"><i class="fas fa-link"></i></a>
+</h2>
+<p>lapply()` fonksiyonu aşağıdaki basit işlemler dizisini gerçekleştirir:</p>
+<ol style="list-style-type: decimal">
+<li>Bir liste üzerinde döngü yaparak, listedeki her bir öğe üzerinde yineleme yapar</li>
+<li>Listenin her bir öğesine bir <em>fonksiyon</em> uygular (sizin belirlediğiniz bir fonksiyon)</li>
+<li>ve bir liste döndürür (<code>l</code> "liste" içindir).</li>
+</ol>
+<p>Bu fonksiyon üç argüman alır: (1) bir liste <code>X</code>; (2) bir fonksiyon (veya bir fonksiyonun adı) <code>FUN</code>; (3) <code>...</code> argümanı aracılığıyla diğer argümanlar. Eğer <code>X</code> bir liste değilse, <code><a href="https://rdrr.io/r/base/list.html">as.list()</a></code> kullanılarak bir listeye zorlanacaktır.</p>
+<p>lapply()` fonksiyonunun gövdesi burada görülebilir.</p>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-1" tabindex="-1"></a><span class="sc">&gt;</span> lapply</span>
+<span id="cb475-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-2" tabindex="-1"></a><span class="cf">function</span> (X, FUN, ...) </span>
+<span id="cb475-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-3" tabindex="-1"></a>{</span>
+<span id="cb475-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-4" tabindex="-1"></a>    FUN <span class="ot">&lt;-</span> <span class="fu">match.fun</span>(FUN)</span>
+<span id="cb475-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-5" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.vector</span>(X) <span class="sc">||</span> <span class="fu">is.object</span>(X)) </span>
+<span id="cb475-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-6" tabindex="-1"></a>        X <span class="ot">&lt;-</span> <span class="fu">as.list</span>(X)</span>
+<span id="cb475-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-7" tabindex="-1"></a>    <span class="fu">.Internal</span>(<span class="fu">lapply</span>(X, FUN))</span>
+<span id="cb475-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-8" tabindex="-1"></a>}</span>
+<span id="cb475-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-9" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x0000020c60bae408</span><span class="sc">&gt;</span></span>
+<span id="cb475-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb475-10" tabindex="-1"></a><span class="er">&lt;</span>environment<span class="sc">:</span> namespace<span class="sc">:</span>base<span class="sc">&gt;</span></span></code></pre></div>
+<p>Girdinin sınıfından bağımsız olarak <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> fonksiyonunun her zaman bir liste döndürdüğünü unutmamak önemlidir.</p>
+<p>İşte <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> fonksiyonunun bir listenin tüm elemanlarına uygulanmasına bir örnek. Orijinal listede isimler varsa, isimler çıktıda korunacaktır.</p>
+<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb476-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>))</span>
+<span id="cb476-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb476-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lapply</span>(x, mean)</span>
+<span id="cb476-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb476-3" tabindex="-1"></a><span class="sc">$</span>a</span>
+<span id="cb476-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb476-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">3</span></span>
+<span id="cb476-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb476-5" tabindex="-1"></a></span>
+<span id="cb476-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb476-6" tabindex="-1"></a><span class="sc">$</span>b</span>
+<span id="cb476-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb476-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.1322028</span></span></code></pre></div>
+<p>Burada <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> fonksiyonunu <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> fonksiyonuna bir argüman olarak aktardığımıza dikkat edin. R'deki fonksiyonlar bu şekilde kullanılabilir ve tıpkı diğer nesneler gibi argüman olarak ileri geri aktarılabilir. Bir fonksiyonu başka bir fonksiyona aktardığınızda, bir fonksiyonu <em>çağırırken</em> yaptığınız gibi <code>()</code> açık ve kapalı parantezlerini eklemeniz gerekmez.</p>
+<p>İşte <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> kullanımına başka bir örnek.</p>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">b =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">c =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">1</span>), <span class="at">d =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">5</span>))</span>
+<span id="cb477-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lapply</span>(x, mean)</span>
+<span id="cb477-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-3" tabindex="-1"></a><span class="sc">$</span>a</span>
+<span id="cb477-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">2.5</span></span>
+<span id="cb477-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-5" tabindex="-1"></a></span>
+<span id="cb477-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-6" tabindex="-1"></a><span class="sc">$</span>b</span>
+<span id="cb477-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.248845</span></span>
+<span id="cb477-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-8" tabindex="-1"></a></span>
+<span id="cb477-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-9" tabindex="-1"></a><span class="sc">$</span>c</span>
+<span id="cb477-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9935285</span></span>
+<span id="cb477-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-11" tabindex="-1"></a></span>
+<span id="cb477-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-12" tabindex="-1"></a><span class="sc">$</span>d</span>
+<span id="cb477-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb477-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">5.051388</span></span></code></pre></div>
+<p>Bir fonksiyonu her biri farklı bir argümanla birden çok kez değerlendirmek için <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> fonksiyonunu kullanabilirsiniz. Aşağıda, <code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code> fonksiyonunu (düzgün dağılımlı rastgele değişkenler üretmek için) her seferinde farklı sayıda rastgele sayı üreterek dört kez çağırdığım bir örnek yer almaktadır.</p>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb478-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lapply</span>(x, runif)</span>
+<span id="cb478-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-3" tabindex="-1"></a>[[<span class="dv">1</span>]]</span>
+<span id="cb478-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.02778712</span></span>
+<span id="cb478-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-5" tabindex="-1"></a></span>
+<span id="cb478-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-6" tabindex="-1"></a>[[<span class="dv">2</span>]]</span>
+<span id="cb478-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.5273108</span> <span class="fl">0.8803191</span></span>
+<span id="cb478-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-8" tabindex="-1"></a></span>
+<span id="cb478-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-9" tabindex="-1"></a>[[<span class="dv">3</span>]]</span>
+<span id="cb478-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.37306337</span> <span class="fl">0.04795913</span> <span class="fl">0.13862825</span></span>
+<span id="cb478-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-11" tabindex="-1"></a></span>
+<span id="cb478-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-12" tabindex="-1"></a>[[<span class="dv">4</span>]]</span>
+<span id="cb478-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb478-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.3214921</span> <span class="fl">0.1548316</span> <span class="fl">0.1322282</span> <span class="fl">0.2213059</span></span></code></pre></div>
+<p>Bir fonksiyonu <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> fonksiyonuna aktardığınızda, <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> listenin elemanlarını alır ve bunları uyguladığınız fonksiyonun <em>ilk argümanı</em> olarak geçirir. Yukarıdaki örnekte, <code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code> fonksiyonunun ilk argümanı <code>n</code>dir ve bu nedenle <code>1:4</code> dizisinin tüm elemanları <code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code> fonksiyonunun <code>n</code> argümanına aktarılır.</p>
+<p>lapply()<code>fonksiyonuna aktardığınız fonksiyonlar başka argümanlara sahip olabilir. Örneğin,</code>runif()<code>fonksiyonunun bir</code>min<code>ve</code>max<code>argümanı da vardır. Yukarıdaki örnekte</code>min<code>ve</code>max<code>için varsayılan değerleri kullandım. Bunun için</code>lapply()` bağlamında farklı değerleri nasıl belirtebilirsiniz?</p>
+<p>İşte burada <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> fonksiyonunun <code>...</code> argümanı devreye girer. ...` argümanına yerleştirdiğiniz tüm argümanlar, listenin öğelerine uygulanan fonksiyona aktarılacaktır.</p>
+<p>Burada, <code>min = 0</code> ve <code>max = 10</code> argümanları her çağrıldığında <code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code> fonksiyonuna aktarılır.</p>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb479-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lapply</span>(x, runif, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
+<span id="cb479-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-3" tabindex="-1"></a>[[<span class="dv">1</span>]]</span>
+<span id="cb479-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">2.263808</span></span>
+<span id="cb479-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-5" tabindex="-1"></a></span>
+<span id="cb479-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-6" tabindex="-1"></a>[[<span class="dv">2</span>]]</span>
+<span id="cb479-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.314165</span> <span class="fl">9.815635</span></span>
+<span id="cb479-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-8" tabindex="-1"></a></span>
+<span id="cb479-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-9" tabindex="-1"></a>[[<span class="dv">3</span>]]</span>
+<span id="cb479-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">3.270137</span> <span class="fl">5.069395</span> <span class="fl">6.814425</span></span>
+<span id="cb479-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-11" tabindex="-1"></a></span>
+<span id="cb479-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-12" tabindex="-1"></a>[[<span class="dv">4</span>]]</span>
+<span id="cb479-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb479-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9916910</span> <span class="fl">1.1890256</span> <span class="fl">0.5043966</span> <span class="fl">9.2925392</span></span></code></pre></div>
+<p>Yani artık rastgele sayılar 0 ile 1 arasında (varsayılan) olmak yerine, hepsi 0 ile 10 arasındadır.</p>
+<p>lapply()<code>fonksiyonu ve arkadaşları _anonim_ fonksiyonları yoğun bir şekilde kullanır. Anonim fonksiyonların isimleri yoktur. Bu fonksiyonlar siz</code>lapply()<code>fonksiyonunu kullanırken "anında" oluşturulur. lapply()</code> çağrısı tamamlandığında, fonksiyon kaybolur ve çalışma alanında görünmez.</p>
+<p>Burada iki matris içeren bir liste oluşturuyorum.</p>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>), <span class="at">b =</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">2</span>)) </span>
+<span id="cb480-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-2" tabindex="-1"></a><span class="sc">&gt;</span> x</span>
+<span id="cb480-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-3" tabindex="-1"></a><span class="sc">$</span>a</span>
+<span id="cb480-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-4" tabindex="-1"></a>     [,<span class="dv">1</span>] [,<span class="dv">2</span>]</span>
+<span id="cb480-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-5" tabindex="-1"></a>[<span class="dv">1</span>,]    <span class="dv">1</span>    <span class="dv">3</span></span>
+<span id="cb480-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-6" tabindex="-1"></a>[<span class="dv">2</span>,]    <span class="dv">2</span>    <span class="dv">4</span></span>
+<span id="cb480-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-7" tabindex="-1"></a></span>
+<span id="cb480-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-8" tabindex="-1"></a><span class="sc">$</span>b</span>
+<span id="cb480-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-9" tabindex="-1"></a>     [,<span class="dv">1</span>] [,<span class="dv">2</span>]</span>
+<span id="cb480-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-10" tabindex="-1"></a>[<span class="dv">1</span>,]    <span class="dv">1</span>    <span class="dv">4</span></span>
+<span id="cb480-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-11" tabindex="-1"></a>[<span class="dv">2</span>,]    <span class="dv">2</span>    <span class="dv">5</span></span>
+<span id="cb480-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb480-12" tabindex="-1"></a>[<span class="dv">3</span>,]    <span class="dv">3</span>    <span class="dv">6</span></span></code></pre></div>
+<p>Listedeki her matrisin ilk sütununu çıkarmak istediğimi varsayalım. Şöyle yazabilirim
+her matrisin ilk sütununu çıkarmak için anonim bir fonksiyon.</p>
+<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb481-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lapply</span>(x, <span class="cf">function</span>(elt) { elt[,<span class="dv">1</span>] })</span>
+<span id="cb481-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb481-2" tabindex="-1"></a><span class="sc">$</span>a</span>
+<span id="cb481-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb481-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span></span>
+<span id="cb481-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb481-4" tabindex="-1"></a></span>
+<span id="cb481-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb481-5" tabindex="-1"></a><span class="sc">$</span>b</span>
+<span id="cb481-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb481-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span></span></code></pre></div>
+<p>Dikkat ederseniz <code>function()</code> tanımını doğrudan <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> çağrısının içinde. Bu tamamen kabul edilebilir bir durumdur. Keyfi olarak karmaşık bir fonksiyon tanımını <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> içine koyabilirsiniz, ancak daha karmaşık olacaksa, fonksiyonu ayrı olarak tanımlamak muhtemelen daha iyi bir fikirdir.</p>
+<p>Örneğin, aşağıdakileri yapabilirdim.</p>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb482-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(elt) {</span>
+<span id="cb482-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb482-2" tabindex="-1"></a><span class="sc">+</span>         elt[, <span class="dv">1</span>]</span>
+<span id="cb482-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb482-3" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb482-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb482-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lapply</span>(x, f)</span>
+<span id="cb482-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb482-5" tabindex="-1"></a><span class="sc">$</span>a</span>
+<span id="cb482-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb482-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span></span>
+<span id="cb482-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb482-7" tabindex="-1"></a></span>
+<span id="cb482-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb482-8" tabindex="-1"></a><span class="sc">$</span>b</span>
+<span id="cb482-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb482-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span></span></code></pre></div>
+<p>Artık fonksiyon anonim değildir; adı <code>f</code>dir. Anonim bir fonksiyon mu kullanacağınız yoksa önce bir fonksiyon mu tanımlayacağınız bağlamınıza bağlıdır. Eğer <code>f</code> fonksiyonunun kodunuzun diğer bölümlerinde çok ihtiyaç duyacağınız bir şey olduğunu düşünüyorsanız, onu ayrıca tanımlamak isteyebilirsiniz. Ancak sadece bu <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> çağrısı için kullanacaksanız, muhtemelen anonim bir fonksiyon kullanmak daha basittir.</p>
+</div>
+<div id="sapply" class="section level2" number="13.3">
+<h2>
+<span class="header-section-number">13.3</span> <code>sapply()</code><a class="anchor" aria-label="anchor" href="#sapply"><i class="fas fa-link"></i></a>
+</h2>
+<p>sapply()<code>fonksiyonu</code>lapply()<code>fonksiyonuna benzer şekilde davranır; tek gerçek fark dönüş değerindedir. sapply()</code> mümkünse <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> sonucunu basitleştirmeye çalışacaktır. Esasen, <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> girdisi üzerinde <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> çağırır ve ardından aşağıdaki algoritmayı uygular:</p>
+<ul>
+<li><p>Eğer sonuç her elemanın uzunluğu 1 olan bir liste ise, o zaman bir vektör döndürülür</p></li>
+<li><p>Sonuç, her elemanı aynı uzunlukta (&gt; 1) bir vektör olan bir liste ise, bir matris döndürülür.</p></li>
+<li><p>İşleri çözemezse, bir liste döndürülür</p></li>
+</ul>
+<p>İşte <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> çağrısının sonucu.</p>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">b =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="at">c =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">1</span>), <span class="at">d =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">5</span>))</span>
+<span id="cb483-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lapply</span>(x, mean)</span>
+<span id="cb483-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-3" tabindex="-1"></a><span class="sc">$</span>a</span>
+<span id="cb483-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">2.5</span></span>
+<span id="cb483-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-5" tabindex="-1"></a></span>
+<span id="cb483-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-6" tabindex="-1"></a><span class="sc">$</span>b</span>
+<span id="cb483-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">0.251483</span></span>
+<span id="cb483-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-8" tabindex="-1"></a></span>
+<span id="cb483-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-9" tabindex="-1"></a><span class="sc">$</span>c</span>
+<span id="cb483-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.481246</span></span>
+<span id="cb483-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-11" tabindex="-1"></a></span>
+<span id="cb483-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-12" tabindex="-1"></a><span class="sc">$</span>d</span>
+<span id="cb483-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb483-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">4.968715</span></span></code></pre></div>
+<p>lapply()` işlevinin (her zamanki gibi) bir liste döndürdüğüne, ancak listenin her bir öğesinin uzunluğunun 1 olduğuna dikkat edin.</p>
+<p>İşte aynı liste üzerinde <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> çağrısının sonucu.</p>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb484-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sapply</span>(x, mean) </span>
+<span id="cb484-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb484-2" tabindex="-1"></a>        a         b         c         d </span>
+<span id="cb484-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb484-3" tabindex="-1"></a> <span class="fl">2.500000</span> <span class="sc">-</span><span class="fl">0.251483</span>  <span class="fl">1.481246</span>  <span class="fl">4.968715</span> </span></code></pre></div>
+<p>lapply()<code>işlevinin sonucu, her öğesinin uzunluğu 1 olan bir liste olduğundan,</code>sapply()` işlevi çıktıyı, genellikle bir listeden daha kullanışlı olan sayısal bir vektöre daraltmıştır.</p>
+</div>
+<div id="split" class="section level2" number="13.4">
+<h2>
+<span class="header-section-number">13.4</span> <code>split()</code><a class="anchor" aria-label="anchor" href="#split"><i class="fas fa-link"></i></a>
+</h2>
+<p>split()` fonksiyonu bir vektörü veya diğer nesneleri alır ve bunları bir faktör veya faktörler listesi tarafından belirlenen gruplara böler.</p>
+<p>split()` fonksiyonunun argümanları şunlardır</p>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb485-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str</span>(split)</span>
+<span id="cb485-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb485-2" tabindex="-1"></a><span class="cf">function</span> (x, f, <span class="at">drop =</span> <span class="cn">FALSE</span>, ...)  </span></code></pre></div>
+<p>nerede</p>
+<ul>
+<li>x` bir vektör (veya liste) veya veri setidir</li>
+<li>f` bir faktör (veya bir faktöre zorlanmış) veya bir faktörler listesi</li>
+<li>
+<code>drop</code> boş faktör seviyelerinin bırakılıp bırakılmayacağını belirtir</li>
+</ul>
+<p>split()<code>ve</code>lapply()<code>veya</code>sapply()` gibi bir fonksiyonun kombinasyonu R'de yaygın bir paradigmadır. Temel fikir, bir veri yapısını alıp başka bir değişken tarafından tanımlanan alt kümelere bölebilmeniz ve bu alt kümeler üzerinde bir fonksiyon uygulayabilmenizdir. Bu fonksiyonun alt kümeler üzerinde uygulanmasının sonuçları daha sonra harmanlanır ve bir nesne olarak döndürülür. Bu işlem dizisi bazen başka bağlamlarda "map-reduce" olarak adlandırılır.</p>
+<p>Burada bazı verileri simüle ediyoruz ve bir faktör değişkenine göre bölüyoruz. Bir faktör değişkeninde "seviyeler oluşturmak" için <code><a href="https://rdrr.io/r/base/gl.html">gl()</a></code> fonksiyonunu kullandığımıza dikkat edin.</p>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="fu">runif</span>(<span class="dv">10</span>), <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">1</span>))</span>
+<span id="cb486-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-2" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="fu">gl</span>(<span class="dv">3</span>, <span class="dv">10</span>)</span>
+<span id="cb486-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">split</span>(x, f)</span>
+<span id="cb486-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-4" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span></span>
+<span id="cb486-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-5" tabindex="-1"></a> [<span class="dv">1</span>]  <span class="fl">0.3981302</span> <span class="sc">-</span><span class="fl">0.4075286</span>  <span class="fl">1.3242586</span> <span class="sc">-</span><span class="fl">0.7012317</span> <span class="sc">-</span><span class="fl">0.5806143</span> <span class="sc">-</span><span class="fl">1.0010722</span></span>
+<span id="cb486-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-6" tabindex="-1"></a> [<span class="dv">7</span>] <span class="sc">-</span><span class="fl">0.6681786</span>  <span class="fl">0.9451850</span>  <span class="fl">0.4337021</span>  <span class="fl">1.0051592</span></span>
+<span id="cb486-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-7" tabindex="-1"></a></span>
+<span id="cb486-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-8" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">2</span><span class="st">`</span></span>
+<span id="cb486-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-9" tabindex="-1"></a> [<span class="dv">1</span>] <span class="fl">0.34822440</span> <span class="fl">0.94893818</span> <span class="fl">0.64667919</span> <span class="fl">0.03527777</span> <span class="fl">0.59644846</span> <span class="fl">0.41531800</span></span>
+<span id="cb486-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-10" tabindex="-1"></a> [<span class="dv">7</span>] <span class="fl">0.07689704</span> <span class="fl">0.52804888</span> <span class="fl">0.96233331</span> <span class="fl">0.70874005</span></span>
+<span id="cb486-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-11" tabindex="-1"></a></span>
+<span id="cb486-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-12" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">3</span><span class="st">`</span></span>
+<span id="cb486-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-13" tabindex="-1"></a> [<span class="dv">1</span>]  <span class="fl">1.13444766</span>  <span class="fl">1.76559900</span>  <span class="fl">1.95513668</span>  <span class="fl">0.94943430</span>  <span class="fl">0.69418458</span>  <span class="fl">1.89367370</span></span>
+<span id="cb486-14"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb486-14" tabindex="-1"></a> [<span class="dv">7</span>] <span class="sc">-</span><span class="fl">0.04729815</span>  <span class="fl">2.97133739</span>  <span class="fl">0.61636789</span>  <span class="fl">2.65414530</span></span></code></pre></div>
+<p>Yaygın bir deyim <code>split</code> ve ardından <code>lapply</code>dir.</p>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb487-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lapply</span>(<span class="fu">split</span>(x, f), mean)</span>
+<span id="cb487-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb487-2" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span></span>
+<span id="cb487-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb487-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.07478098</span></span>
+<span id="cb487-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb487-4" tabindex="-1"></a></span>
+<span id="cb487-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb487-5" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">2</span><span class="st">`</span></span>
+<span id="cb487-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb487-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.5266905</span></span>
+<span id="cb487-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb487-7" tabindex="-1"></a></span>
+<span id="cb487-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb487-8" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">3</span><span class="st">`</span></span>
+<span id="cb487-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb487-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.458703</span></span></code></pre></div>
+</div>
+<div id="veri-setini-bölme" class="section level2" number="13.5">
+<h2>
+<span class="header-section-number">13.5</span> Veri Setini Bölme<a class="anchor" aria-label="anchor" href="#veri-setini-b%C3%B6lme"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb488-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(datasets)</span>
+<span id="cb488-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb488-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">head</span>(airquality)</span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">Ozone</th>
+<th align="right">Solar.R</th>
+<th align="right">Wind</th>
+<th align="right">Temp</th>
+<th align="right">Month</th>
+<th align="right">Day</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="right">41</td>
+<td align="right">190</td>
+<td align="right">7.4</td>
+<td align="right">67</td>
+<td align="right">5</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">36</td>
+<td align="right">118</td>
+<td align="right">8.0</td>
+<td align="right">72</td>
+<td align="right">5</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">12</td>
+<td align="right">149</td>
+<td align="right">12.6</td>
+<td align="right">74</td>
+<td align="right">5</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">18</td>
+<td align="right">313</td>
+<td align="right">11.5</td>
+<td align="right">62</td>
+<td align="right">5</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">14.3</td>
+<td align="right">56</td>
+<td align="right">5</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">28</td>
+<td align="right">NA</td>
+<td align="right">14.9</td>
+<td align="right">66</td>
+<td align="right">5</td>
+<td align="right">6</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Her ay için ayrı alt veri çerçevelerimiz olması için <code>airquality</code> veri çerçevesini <code>Month</code> değişkenine göre bölebiliriz.</p>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-1" tabindex="-1"></a><span class="sc">&gt;</span> s <span class="ot">&lt;-</span> <span class="fu">split</span>(airquality, airquality<span class="sc">$</span>Month)</span>
+<span id="cb489-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str</span>(s)</span>
+<span id="cb489-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-3" tabindex="-1"></a>List of <span class="dv">5</span></span>
+<span id="cb489-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-4" tabindex="-1"></a> <span class="sc">$</span> <span class="dv">5</span><span class="sc">:</span><span class="st">'data.frame'</span><span class="sc">:</span>  <span class="dv">31</span> obs. of  <span class="dv">6</span> variables<span class="sc">:</span></span>
+<span id="cb489-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-5" tabindex="-1"></a>  ..<span class="sc">$</span> Ozone  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">41</span> <span class="dv">36</span> <span class="dv">12</span> <span class="dv">18</span> <span class="cn">NA</span> <span class="dv">28</span> <span class="dv">23</span> <span class="dv">19</span> <span class="dv">8</span> <span class="cn">NA</span> ...</span>
+<span id="cb489-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-6" tabindex="-1"></a>  ..<span class="sc">$</span> Solar.R<span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">190</span> <span class="dv">118</span> <span class="dv">149</span> <span class="dv">313</span> <span class="cn">NA</span> <span class="cn">NA</span> <span class="dv">299</span> <span class="dv">99</span> <span class="dv">19</span> <span class="dv">194</span> ...</span>
+<span id="cb489-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-7" tabindex="-1"></a>  ..<span class="sc">$</span> Wind   <span class="sc">:</span> num [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="fl">7.4</span> <span class="dv">8</span> <span class="fl">12.6</span> <span class="fl">11.5</span> <span class="fl">14.3</span> <span class="fl">14.9</span> <span class="fl">8.6</span> <span class="fl">13.8</span> <span class="fl">20.1</span> <span class="fl">8.6</span> ...</span>
+<span id="cb489-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-8" tabindex="-1"></a>  ..<span class="sc">$</span> Temp   <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">67</span> <span class="dv">72</span> <span class="dv">74</span> <span class="dv">62</span> <span class="dv">56</span> <span class="dv">66</span> <span class="dv">65</span> <span class="dv">59</span> <span class="dv">61</span> <span class="dv">69</span> ...</span>
+<span id="cb489-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-9" tabindex="-1"></a>  ..<span class="sc">$</span> Month  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">5</span> <span class="dv">5</span> <span class="dv">5</span> <span class="dv">5</span> <span class="dv">5</span> <span class="dv">5</span> <span class="dv">5</span> <span class="dv">5</span> <span class="dv">5</span> <span class="dv">5</span> ...</span>
+<span id="cb489-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-10" tabindex="-1"></a>  ..<span class="sc">$</span> Day    <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span> <span class="dv">10</span> ...</span>
+<span id="cb489-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-11" tabindex="-1"></a> <span class="sc">$</span> <span class="dv">6</span><span class="sc">:</span><span class="st">'data.frame'</span><span class="sc">:</span>  <span class="dv">30</span> obs. of  <span class="dv">6</span> variables<span class="sc">:</span></span>
+<span id="cb489-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-12" tabindex="-1"></a>  ..<span class="sc">$</span> Ozone  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="cn">NA</span> <span class="cn">NA</span> <span class="cn">NA</span> <span class="cn">NA</span> <span class="cn">NA</span> <span class="cn">NA</span> <span class="dv">29</span> <span class="cn">NA</span> <span class="dv">71</span> <span class="dv">39</span> ...</span>
+<span id="cb489-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-13" tabindex="-1"></a>  ..<span class="sc">$</span> Solar.R<span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="dv">286</span> <span class="dv">287</span> <span class="dv">242</span> <span class="dv">186</span> <span class="dv">220</span> <span class="dv">264</span> <span class="dv">127</span> <span class="dv">273</span> <span class="dv">291</span> <span class="dv">323</span> ...</span>
+<span id="cb489-14"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-14" tabindex="-1"></a>  ..<span class="sc">$</span> Wind   <span class="sc">:</span> num [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="fl">8.6</span> <span class="fl">9.7</span> <span class="fl">16.1</span> <span class="fl">9.2</span> <span class="fl">8.6</span> <span class="fl">14.3</span> <span class="fl">9.7</span> <span class="fl">6.9</span> <span class="fl">13.8</span> <span class="fl">11.5</span> ...</span>
+<span id="cb489-15"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-15" tabindex="-1"></a>  ..<span class="sc">$</span> Temp   <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="dv">78</span> <span class="dv">74</span> <span class="dv">67</span> <span class="dv">84</span> <span class="dv">85</span> <span class="dv">79</span> <span class="dv">82</span> <span class="dv">87</span> <span class="dv">90</span> <span class="dv">87</span> ...</span>
+<span id="cb489-16"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-16" tabindex="-1"></a>  ..<span class="sc">$</span> Month  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="dv">6</span> <span class="dv">6</span> <span class="dv">6</span> <span class="dv">6</span> <span class="dv">6</span> <span class="dv">6</span> <span class="dv">6</span> <span class="dv">6</span> <span class="dv">6</span> <span class="dv">6</span> ...</span>
+<span id="cb489-17"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-17" tabindex="-1"></a>  ..<span class="sc">$</span> Day    <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span> <span class="dv">10</span> ...</span>
+<span id="cb489-18"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-18" tabindex="-1"></a> <span class="sc">$</span> <span class="dv">7</span><span class="sc">:</span><span class="st">'data.frame'</span><span class="sc">:</span>  <span class="dv">31</span> obs. of  <span class="dv">6</span> variables<span class="sc">:</span></span>
+<span id="cb489-19"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-19" tabindex="-1"></a>  ..<span class="sc">$</span> Ozone  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">135</span> <span class="dv">49</span> <span class="dv">32</span> <span class="cn">NA</span> <span class="dv">64</span> <span class="dv">40</span> <span class="dv">77</span> <span class="dv">97</span> <span class="dv">97</span> <span class="dv">85</span> ...</span>
+<span id="cb489-20"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-20" tabindex="-1"></a>  ..<span class="sc">$</span> Solar.R<span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">269</span> <span class="dv">248</span> <span class="dv">236</span> <span class="dv">101</span> <span class="dv">175</span> <span class="dv">314</span> <span class="dv">276</span> <span class="dv">267</span> <span class="dv">272</span> <span class="dv">175</span> ...</span>
+<span id="cb489-21"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-21" tabindex="-1"></a>  ..<span class="sc">$</span> Wind   <span class="sc">:</span> num [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="fl">4.1</span> <span class="fl">9.2</span> <span class="fl">9.2</span> <span class="fl">10.9</span> <span class="fl">4.6</span> <span class="fl">10.9</span> <span class="fl">5.1</span> <span class="fl">6.3</span> <span class="fl">5.7</span> <span class="fl">7.4</span> ...</span>
+<span id="cb489-22"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-22" tabindex="-1"></a>  ..<span class="sc">$</span> Temp   <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">84</span> <span class="dv">85</span> <span class="dv">81</span> <span class="dv">84</span> <span class="dv">83</span> <span class="dv">83</span> <span class="dv">88</span> <span class="dv">92</span> <span class="dv">92</span> <span class="dv">89</span> ...</span>
+<span id="cb489-23"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-23" tabindex="-1"></a>  ..<span class="sc">$</span> Month  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">7</span> <span class="dv">7</span> <span class="dv">7</span> <span class="dv">7</span> <span class="dv">7</span> <span class="dv">7</span> <span class="dv">7</span> <span class="dv">7</span> <span class="dv">7</span> <span class="dv">7</span> ...</span>
+<span id="cb489-24"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-24" tabindex="-1"></a>  ..<span class="sc">$</span> Day    <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span> <span class="dv">10</span> ...</span>
+<span id="cb489-25"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-25" tabindex="-1"></a> <span class="sc">$</span> <span class="dv">8</span><span class="sc">:</span><span class="st">'data.frame'</span><span class="sc">:</span>  <span class="dv">31</span> obs. of  <span class="dv">6</span> variables<span class="sc">:</span></span>
+<span id="cb489-26"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-26" tabindex="-1"></a>  ..<span class="sc">$</span> Ozone  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">39</span> <span class="dv">9</span> <span class="dv">16</span> <span class="dv">78</span> <span class="dv">35</span> <span class="dv">66</span> <span class="dv">122</span> <span class="dv">89</span> <span class="dv">110</span> <span class="cn">NA</span> ...</span>
+<span id="cb489-27"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-27" tabindex="-1"></a>  ..<span class="sc">$</span> Solar.R<span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">83</span> <span class="dv">24</span> <span class="dv">77</span> <span class="cn">NA</span> <span class="cn">NA</span> <span class="cn">NA</span> <span class="dv">255</span> <span class="dv">229</span> <span class="dv">207</span> <span class="dv">222</span> ...</span>
+<span id="cb489-28"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-28" tabindex="-1"></a>  ..<span class="sc">$</span> Wind   <span class="sc">:</span> num [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="fl">6.9</span> <span class="fl">13.8</span> <span class="fl">7.4</span> <span class="fl">6.9</span> <span class="fl">7.4</span> <span class="fl">4.6</span> <span class="dv">4</span> <span class="fl">10.3</span> <span class="dv">8</span> <span class="fl">8.6</span> ...</span>
+<span id="cb489-29"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-29" tabindex="-1"></a>  ..<span class="sc">$</span> Temp   <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">81</span> <span class="dv">81</span> <span class="dv">82</span> <span class="dv">86</span> <span class="dv">85</span> <span class="dv">87</span> <span class="dv">89</span> <span class="dv">90</span> <span class="dv">90</span> <span class="dv">92</span> ...</span>
+<span id="cb489-30"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-30" tabindex="-1"></a>  ..<span class="sc">$</span> Month  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">8</span> <span class="dv">8</span> <span class="dv">8</span> <span class="dv">8</span> <span class="dv">8</span> <span class="dv">8</span> <span class="dv">8</span> <span class="dv">8</span> <span class="dv">8</span> <span class="dv">8</span> ...</span>
+<span id="cb489-31"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-31" tabindex="-1"></a>  ..<span class="sc">$</span> Day    <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span> <span class="dv">10</span> ...</span>
+<span id="cb489-32"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-32" tabindex="-1"></a> <span class="sc">$</span> <span class="dv">9</span><span class="sc">:</span><span class="st">'data.frame'</span><span class="sc">:</span>  <span class="dv">30</span> obs. of  <span class="dv">6</span> variables<span class="sc">:</span></span>
+<span id="cb489-33"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-33" tabindex="-1"></a>  ..<span class="sc">$</span> Ozone  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="dv">96</span> <span class="dv">78</span> <span class="dv">73</span> <span class="dv">91</span> <span class="dv">47</span> <span class="dv">32</span> <span class="dv">20</span> <span class="dv">23</span> <span class="dv">21</span> <span class="dv">24</span> ...</span>
+<span id="cb489-34"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-34" tabindex="-1"></a>  ..<span class="sc">$</span> Solar.R<span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="dv">167</span> <span class="dv">197</span> <span class="dv">183</span> <span class="dv">189</span> <span class="dv">95</span> <span class="dv">92</span> <span class="dv">252</span> <span class="dv">220</span> <span class="dv">230</span> <span class="dv">259</span> ...</span>
+<span id="cb489-35"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-35" tabindex="-1"></a>  ..<span class="sc">$</span> Wind   <span class="sc">:</span> num [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="fl">6.9</span> <span class="fl">5.1</span> <span class="fl">2.8</span> <span class="fl">4.6</span> <span class="fl">7.4</span> <span class="fl">15.5</span> <span class="fl">10.9</span> <span class="fl">10.3</span> <span class="fl">10.9</span> <span class="fl">9.7</span> ...</span>
+<span id="cb489-36"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-36" tabindex="-1"></a>  ..<span class="sc">$</span> Temp   <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="dv">91</span> <span class="dv">92</span> <span class="dv">93</span> <span class="dv">93</span> <span class="dv">87</span> <span class="dv">84</span> <span class="dv">80</span> <span class="dv">78</span> <span class="dv">75</span> <span class="dv">73</span> ...</span>
+<span id="cb489-37"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-37" tabindex="-1"></a>  ..<span class="sc">$</span> Month  <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="dv">9</span> <span class="dv">9</span> <span class="dv">9</span> <span class="dv">9</span> <span class="dv">9</span> <span class="dv">9</span> <span class="dv">9</span> <span class="dv">9</span> <span class="dv">9</span> <span class="dv">9</span> ...</span>
+<span id="cb489-38"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb489-38" tabindex="-1"></a>  ..<span class="sc">$</span> Day    <span class="sc">:</span> int [<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span> <span class="dv">10</span> ...</span></code></pre></div>
+<p>Daha sonra her bir alt veri çerçevesi için <code>Ozone</code>, <code>Solar.R</code> ve <code>Wind</code> sütun ortalamalarını alabiliriz.</p>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lapply</span>(s, <span class="cf">function</span>(x) {</span>
+<span id="cb490-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-2" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">colMeans</span>(x[, <span class="fu">c</span>(<span class="st">"Ozone"</span>, <span class="st">"Solar.R"</span>, <span class="st">"Wind"</span>)])</span>
+<span id="cb490-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-3" tabindex="-1"></a><span class="sc">+</span> })</span>
+<span id="cb490-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-4" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">5</span><span class="st">`</span></span>
+<span id="cb490-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-5" tabindex="-1"></a>   Ozone  Solar.R     Wind </span>
+<span id="cb490-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-6" tabindex="-1"></a>      <span class="cn">NA</span>       <span class="cn">NA</span> <span class="fl">11.62258</span> </span>
+<span id="cb490-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-7" tabindex="-1"></a></span>
+<span id="cb490-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-8" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">6</span><span class="st">`</span></span>
+<span id="cb490-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-9" tabindex="-1"></a>    Ozone   Solar.R      Wind </span>
+<span id="cb490-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-10" tabindex="-1"></a>       <span class="cn">NA</span> <span class="fl">190.16667</span>  <span class="fl">10.26667</span> </span>
+<span id="cb490-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-11" tabindex="-1"></a></span>
+<span id="cb490-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-12" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">7</span><span class="st">`</span></span>
+<span id="cb490-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-13" tabindex="-1"></a>     Ozone    Solar.R       Wind </span>
+<span id="cb490-14"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-14" tabindex="-1"></a>        <span class="cn">NA</span> <span class="fl">216.483871</span>   <span class="fl">8.941935</span> </span>
+<span id="cb490-15"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-15" tabindex="-1"></a></span>
+<span id="cb490-16"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-16" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">8</span><span class="st">`</span></span>
+<span id="cb490-17"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-17" tabindex="-1"></a>   Ozone  Solar.R     Wind </span>
+<span id="cb490-18"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-18" tabindex="-1"></a>      <span class="cn">NA</span>       <span class="cn">NA</span> <span class="fl">8.793548</span> </span>
+<span id="cb490-19"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-19" tabindex="-1"></a></span>
+<span id="cb490-20"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-20" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">9</span><span class="st">`</span></span>
+<span id="cb490-21"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-21" tabindex="-1"></a>   Ozone  Solar.R     Wind </span>
+<span id="cb490-22"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb490-22" tabindex="-1"></a>      <span class="cn">NA</span> <span class="fl">167.4333</span>  <span class="fl">10.1800</span> </span></code></pre></div>
+<p>Daha okunabilir bir çıktı için burada <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> kullanmak daha iyi olabilir.</p>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb491-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sapply</span>(s, <span class="cf">function</span>(x) {</span>
+<span id="cb491-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb491-2" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">colMeans</span>(x[, <span class="fu">c</span>(<span class="st">"Ozone"</span>, <span class="st">"Solar.R"</span>, <span class="st">"Wind"</span>)])</span>
+<span id="cb491-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb491-3" tabindex="-1"></a><span class="sc">+</span> })</span>
+<span id="cb491-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb491-4" tabindex="-1"></a>               <span class="dv">5</span>         <span class="dv">6</span>          <span class="dv">7</span>        <span class="dv">8</span>        <span class="dv">9</span></span>
+<span id="cb491-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb491-5" tabindex="-1"></a>Ozone         <span class="cn">NA</span>        <span class="cn">NA</span>         <span class="cn">NA</span>       <span class="cn">NA</span>       <span class="cn">NA</span></span>
+<span id="cb491-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb491-6" tabindex="-1"></a>Solar.R       <span class="cn">NA</span> <span class="fl">190.16667</span> <span class="fl">216.483871</span>       <span class="cn">NA</span> <span class="fl">167.4333</span></span>
+<span id="cb491-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb491-7" tabindex="-1"></a>Wind    <span class="fl">11.62258</span>  <span class="fl">10.26667</span>   <span class="fl">8.941935</span> <span class="fl">8.793548</span>  <span class="fl">10.1800</span></span></code></pre></div>
+<p>Ne yazık ki, verilerde <code>NA</code>lar vardır, bu nedenle bu değişkenlerin ortalamalarını alamayız. Ancak, <code>colMeans</code> fonksiyonuna ortalamayı hesaplamadan önce <code>NA</code>ları kaldırmasını söyleyebiliriz.</p>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb492-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sapply</span>(s, <span class="cf">function</span>(x) {</span>
+<span id="cb492-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb492-2" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">colMeans</span>(x[, <span class="fu">c</span>(<span class="st">"Ozone"</span>, <span class="st">"Solar.R"</span>, <span class="st">"Wind"</span>)], </span>
+<span id="cb492-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb492-3" tabindex="-1"></a><span class="sc">+</span>                  <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb492-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb492-4" tabindex="-1"></a><span class="sc">+</span> })</span>
+<span id="cb492-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb492-5" tabindex="-1"></a>                <span class="dv">5</span>         <span class="dv">6</span>          <span class="dv">7</span>          <span class="dv">8</span>         <span class="dv">9</span></span>
+<span id="cb492-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb492-6" tabindex="-1"></a>Ozone    <span class="fl">23.61538</span>  <span class="fl">29.44444</span>  <span class="fl">59.115385</span>  <span class="fl">59.961538</span>  <span class="fl">31.44828</span></span>
+<span id="cb492-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb492-7" tabindex="-1"></a>Solar.R <span class="fl">181.29630</span> <span class="fl">190.16667</span> <span class="fl">216.483871</span> <span class="fl">171.857143</span> <span class="fl">167.43333</span></span>
+<span id="cb492-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb492-8" tabindex="-1"></a>Wind     <span class="fl">11.62258</span>  <span class="fl">10.26667</span>   <span class="fl">8.941935</span>   <span class="fl">8.793548</span>  <span class="fl">10.18000</span></span></code></pre></div>
+</div>
+<div id="tapply" class="section level2" number="13.6">
+<h2>
+<span class="header-section-number">13.6</span> tapply<a class="anchor" aria-label="anchor" href="#tapply"><i class="fas fa-link"></i></a>
+</h2>
+<p><code><a href="https://rdrr.io/r/base/tapply.html">tapply()</a></code> bir vektörün alt kümeleri üzerinde bir fonksiyon uygulamak için kullanılır. Sadece vektörler için <code><a href="https://rdrr.io/r/base/split.html">split()</a></code> ve <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> fonksiyonlarının bir kombinasyonu olarak düşünülebilir. Bana <code><a href="https://rdrr.io/r/base/tapply.html">tapply()</a></code>'deki "t "nin "table" anlamına geldiği söylendi, ancak bu doğrulanmadı.</p>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb493-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str</span>(tapply)</span>
+<span id="cb493-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb493-2" tabindex="-1"></a><span class="cf">function</span> (X, INDEX, <span class="at">FUN =</span> <span class="cn">NULL</span>, ..., <span class="at">default =</span> <span class="cn">NA</span>, <span class="at">simplify =</span> <span class="cn">TRUE</span>)  </span></code></pre></div>
+<p>tapply()` işlevinin argümanları aşağıdaki gibidir:</p>
+<ul>
+<li>X` bir vektördür</li>
+<li>
+<code>INDEX</code> bir faktör ya da faktörler listesidir (ya da faktörlere zorlanırlar)</li>
+<li>FUN` uygulanacak bir işlevdir</li>
+<li>... geçirilecek diğer argümanları içerir <code>FUN</code>
+</li>
+<li>
+<code>basitleştir</code>, sonucu basitleştirmeli miyiz?</li>
+</ul>
+<p>Sayılardan oluşan bir vektör verildiğinde, basit bir işlem grup ortalamalarını almaktır.</p>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## veri üret</span></span>
+<span id="cb494-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-2" tabindex="-1"></a><span class="er">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>), <span class="fu">runif</span>(<span class="dv">10</span>), <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">1</span>))</span>
+<span id="cb494-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## factor değişken</span></span>
+<span id="cb494-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-4" tabindex="-1"></a><span class="er">&gt;</span> f <span class="ot">&lt;-</span> <span class="fu">gl</span>(<span class="dv">3</span>, <span class="dv">10</span>)   </span>
+<span id="cb494-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-5" tabindex="-1"></a><span class="sc">&gt;</span> f</span>
+<span id="cb494-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">tapply</span>(x, f, mean)</span>
+<span id="cb494-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-7" tabindex="-1"></a> [<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">3</span> <span class="dv">3</span> <span class="dv">3</span> <span class="dv">3</span> <span class="dv">3</span> <span class="dv">3</span> <span class="dv">3</span> <span class="dv">3</span> <span class="dv">3</span></span>
+<span id="cb494-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-8" tabindex="-1"></a>Levels<span class="sc">:</span> <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span></span>
+<span id="cb494-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-9" tabindex="-1"></a>        <span class="dv">1</span>         <span class="dv">2</span>         <span class="dv">3</span> </span>
+<span id="cb494-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb494-10" tabindex="-1"></a><span class="fl">0.1457707</span> <span class="fl">0.4659058</span> <span class="fl">1.2320306</span> </span></code></pre></div>
+<p>Sonucu sadeleştirmeden grup ortalamalarını da alabiliriz, bu da bize bir liste verecektir. Tek bir değer döndüren fonksiyonlar için genellikle istediğimiz bu değildir, ancak yapılabilir.</p>
+<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb495-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">tapply</span>(x, f, mean, <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb495-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb495-2" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span></span>
+<span id="cb495-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb495-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.1457707</span></span>
+<span id="cb495-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb495-4" tabindex="-1"></a></span>
+<span id="cb495-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb495-5" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">2</span><span class="st">`</span></span>
+<span id="cb495-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb495-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.4659058</span></span>
+<span id="cb495-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb495-7" tabindex="-1"></a></span>
+<span id="cb495-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb495-8" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">3</span><span class="st">`</span></span>
+<span id="cb495-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb495-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.232031</span></span></code></pre></div>
+<p>Tek bir değerden daha fazlasını döndüren fonksiyonları da uygulayabiliriz. Bu durumda, <code><a href="https://rdrr.io/r/base/tapply.html">tapply()</a></code> sonucu basitleştirmeyecek ve bir liste döndürecektir. İşte her bir alt grubun aralığını bulmak için bir örnek.</p>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb496-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">tapply</span>(x, f, range)</span>
+<span id="cb496-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb496-2" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span></span>
+<span id="cb496-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb496-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">1.024548</span>  <span class="fl">1.512213</span></span>
+<span id="cb496-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb496-4" tabindex="-1"></a></span>
+<span id="cb496-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb496-5" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">2</span><span class="st">`</span></span>
+<span id="cb496-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb496-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.06490054</span> <span class="fl">0.85750154</span></span>
+<span id="cb496-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb496-7" tabindex="-1"></a></span>
+<span id="cb496-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb496-8" tabindex="-1"></a><span class="sc">$</span><span class="st">`</span><span class="at">3</span><span class="st">`</span></span>
+<span id="cb496-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb496-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">0.8697888</span>  <span class="fl">2.4970410</span></span></code></pre></div>
+</div>
+<div id="apply" class="section level2" number="13.7">
+<h2>
+<span class="header-section-number">13.7</span> <code>apply()</code><a class="anchor" aria-label="anchor" href="#apply"><i class="fas fa-link"></i></a>
+</h2>
+<p>apply()<code>fonksiyonu, bir dizinin kenar boşlukları üzerinde bir fonksiyonu (genellikle anonim bir fonksiyon) değerlendirmek için kullanılır. Çoğunlukla bir matrisin (sadece 2 boyutlu bir dizi) satırlarına veya sütunlarına bir fonksiyon uygulamak için kullanılır. Ancak, örneğin bir dizi matrisin ortalamasını almak gibi genel dizilerde de kullanılabilir. apply()</code> kullanmak bir döngü yazmaktan gerçekten daha hızlı değildir, ancak tek satırda çalışır ve oldukça kompakttır.</p>
+<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb497-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str</span>(apply)</span>
+<span id="cb497-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb497-2" tabindex="-1"></a><span class="cf">function</span> (X, MARGIN, FUN, ..., <span class="at">simplify =</span> <span class="cn">TRUE</span>)  </span></code></pre></div>
+<p>apply()` işlevinin argümanları şunlardır</p>
+<ul>
+<li>X` bir dizidir</li>
+<li>MARGIN` hangi kenar boşluklarının "tutulması" gerektiğini gösteren bir tamsayı vektörüdür.</li>
+<li>FUN` uygulanacak bir fonksiyondur</li>
+<li>...<code>,</code>FUN`a aktarılacak diğer argümanlar içindir</li>
+</ul>
+<p>Burada 20'ye 10'luk bir Normal rastgele sayılar matrisi oluşturuyorum. Daha sonra her bir sütunun ortalamasını hesaplıyorum.</p>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb498-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">200</span>), <span class="dv">20</span>, <span class="dv">10</span>)</span>
+<span id="cb498-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb498-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">apply</span>(x, <span class="dv">2</span>, mean)  <span class="do">## Her sütunun ortalamasını alın</span></span>
+<span id="cb498-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb498-3" tabindex="-1"></a> [<span class="dv">1</span>] <span class="sc">-</span><span class="fl">0.05285811</span> <span class="sc">-</span><span class="fl">0.07607188</span> <span class="sc">-</span><span class="fl">0.14416325</span>  <span class="fl">0.26788937</span> <span class="sc">-</span><span class="fl">0.04893217</span> <span class="sc">-</span><span class="fl">0.31775109</span></span>
+<span id="cb498-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb498-4" tabindex="-1"></a> [<span class="dv">7</span>]  <span class="fl">0.04588463</span> <span class="sc">-</span><span class="fl">0.02798894</span>  <span class="fl">0.07064680</span> <span class="sc">-</span><span class="fl">0.23878366</span></span></code></pre></div>
+<p>Ayrıca her satırın toplamını da hesaplayabilirim.</p>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb499-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">apply</span>(x, <span class="dv">1</span>, sum)   <span class="do">## Her satırın ortalamasını alın</span></span>
+<span id="cb499-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb499-2" tabindex="-1"></a> [<span class="dv">1</span>] <span class="sc">-</span><span class="fl">3.81001275</span>  <span class="fl">0.28069148</span> <span class="sc">-</span><span class="fl">2.84131594</span> <span class="sc">-</span><span class="fl">0.34383521</span>  <span class="fl">3.35432798</span> <span class="sc">-</span><span class="fl">1.41790398</span></span>
+<span id="cb499-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb499-3" tabindex="-1"></a> [<span class="dv">7</span>]  <span class="fl">4.16348869</span> <span class="sc">-</span><span class="fl">3.12614772</span> <span class="sc">-</span><span class="fl">5.05668423</span>  <span class="fl">5.08399986</span> <span class="sc">-</span><span class="fl">0.48483448</span>  <span class="fl">5.33222301</span></span>
+<span id="cb499-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb499-4" tabindex="-1"></a>[<span class="dv">13</span>] <span class="sc">-</span><span class="fl">3.33862932</span> <span class="sc">-</span><span class="fl">1.39998450</span>  <span class="fl">2.37859098</span>  <span class="fl">0.01082604</span> <span class="sc">-</span><span class="fl">6.29457190</span> <span class="sc">-</span><span class="fl">0.26287700</span></span>
+<span id="cb499-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb499-5" tabindex="-1"></a>[<span class="dv">19</span>]  <span class="fl">0.71133578</span> <span class="sc">-</span><span class="fl">3.38125293</span></span></code></pre></div>
+<p>Her iki <code><a href="https://rdrr.io/r/base/apply.html">apply()</a></code> çağrısında da dönüş değerinin bir sayı vektörü olduğuna dikkat edin.</p>
+<p>Muhtemelen ikinci argümanın, satır istatistikleri mi yoksa sütun istatistikleri mi istediğimize bağlı olarak 1 veya 2 olduğunu fark etmişsinizdir. Peki <code><a href="https://rdrr.io/r/base/apply.html">apply()</a></code> fonksiyonunun ikinci argümanı tam olarak nedir?</p>
+<p>MARGIN<code>argümanı esasen</code>apply()` fonksiyonuna dizinin hangi boyutunu korumak veya saklamak istediğinizi belirtir. Yani her bir sütunun ortalamasını alırken şunu belirtirim</p>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb500-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">apply</span>(x, <span class="dv">2</span>, mean)</span></code></pre></div>
+<p>çünkü ortalamayı alarak ilk boyutu (satırları) daraltmak istiyorum ve sütun sayısını korumak istiyorum. Benzer şekilde, satır toplamlarını istediğimde</p>
+<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb501-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">apply</span>(x, <span class="dv">1</span>, mean)</span></code></pre></div>
+<p>çünkü sütunları (ikinci boyut) daraltmak ve satır sayısını (ilk boyut) korumak istiyorum.</p>
+</div>
+<div id="sütunsatır-toplamları-ve-ortalamaları" class="section level2" number="13.8">
+<h2>
+<span class="header-section-number">13.8</span> Sütun/Satır Toplamları ve Ortalamaları<a class="anchor" aria-label="anchor" href="#s%C3%BCtunsat%C4%B1r-toplamlar%C4%B1-ve-ortalamalar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Matrislerin sütun/satır toplamları ve sütun/satır ortalamalarının özel durumları için bazı kullanışlı kısayollarımız vardır.</p>
+<ul>
+<li>
+<code>rowSums</code> = <code>apply(x, 1, sum)</code>
+</li>
+<li>
+<code>rowMeans</code> = <code>apply(x, 1, mean)</code>
+</li>
+<li>
+<code>colSums</code> = <code>apply(x, 2, sum)</code>
+</li>
+<li>
+<code>colMeans</code> = <code>apply(x, 2, mean)</code>
+</li>
+</ul>
+<p>Kısayol fonksiyonları yoğun bir şekilde optimize edilmiştir ve bu nedenle çok daha hızlıdır, ancak büyük bir matris kullanmadığınız sürece muhtemelen fark etmeyeceksiniz. Bu fonksiyonların bir başka güzel yönü de biraz daha açıklayıcı olmalarıdır. Kodunuzda <code>colMeans(x)</code> yazmak, <code>apply(x, 2, mean)</code> yazmaktan muhtemelen daha anlaşılırdır.</p>
+</div>
+<div id="diğer-apply-lar" class="section level2" number="13.9">
+<h2>
+<span class="header-section-number">13.9</span> Diğer apply lar<a class="anchor" aria-label="anchor" href="#di%C4%9Fer-apply-lar"><i class="fas fa-link"></i></a>
+</h2>
+<p><code><a href="https://rdrr.io/r/base/apply.html">apply()</a></code> fonksiyonu ile toplamları ve ortalamaları almaktan daha fazlasını yapabilirsiniz. Örneğin, <code><a href="https://rdrr.io/r/stats/quantile.html">quantile()</a></code> fonksiyonunu kullanarak bir matrisin satırlarının niceliklerini hesaplayabilirsiniz.</p>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">200</span>), <span class="dv">20</span>, <span class="dv">10</span>)</span>
+<span id="cb502-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## çeyreklikler</span></span>
+<span id="cb502-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-3" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">apply</span>(x, <span class="dv">1</span>, quantile, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))    </span>
+<span id="cb502-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-4" tabindex="-1"></a>          [,<span class="dv">1</span>]       [,<span class="dv">2</span>]       [,<span class="dv">3</span>]       [,<span class="dv">4</span>]       [,<span class="dv">5</span>]         [,<span class="dv">6</span>]</span>
+<span id="cb502-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-5" tabindex="-1"></a><span class="dv">25</span>% <span class="sc">-</span><span class="fl">1.1168291</span> <span class="sc">-</span><span class="fl">0.2023664</span> <span class="sc">-</span><span class="fl">0.6802383</span> <span class="sc">-</span><span class="fl">1.3551031</span> <span class="sc">-</span><span class="fl">0.1823252</span> <span class="sc">-</span><span class="fl">1.267431359</span></span>
+<span id="cb502-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-6" tabindex="-1"></a><span class="dv">75</span>%  <span class="fl">0.4138139</span>  <span class="fl">1.0892341</span>  <span class="fl">0.6240771</span> <span class="sc">-</span><span class="fl">0.4557305</span>  <span class="fl">1.3744778</span>  <span class="fl">0.002908451</span></span>
+<span id="cb502-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-7" tabindex="-1"></a>          [,<span class="dv">7</span>]       [,<span class="dv">8</span>]       [,<span class="dv">9</span>]      [,<span class="dv">10</span>]      [,<span class="dv">11</span>]      [,<span class="dv">12</span>]     [,<span class="dv">13</span>]</span>
+<span id="cb502-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-8" tabindex="-1"></a><span class="dv">25</span>% <span class="sc">-</span><span class="fl">0.9954289</span> <span class="sc">-</span><span class="fl">0.2107765</span> <span class="sc">-</span><span class="fl">0.8557544</span> <span class="sc">-</span><span class="fl">0.7000363</span> <span class="sc">-</span><span class="fl">1.0884151</span> <span class="sc">-</span><span class="fl">0.6693040</span> <span class="fl">0.2908481</span></span>
+<span id="cb502-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-9" tabindex="-1"></a><span class="dv">75</span>%  <span class="fl">0.2281247</span>  <span class="fl">1.1643644</span>  <span class="fl">0.5043939</span>  <span class="fl">0.3575873</span>  <span class="fl">0.1843547</span>  <span class="fl">0.8210295</span> <span class="fl">1.3667301</span></span>
+<span id="cb502-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-10" tabindex="-1"></a>         [,<span class="dv">14</span>]      [,<span class="dv">15</span>]       [,<span class="dv">16</span>]      [,<span class="dv">17</span>]      [,<span class="dv">18</span>]      [,<span class="dv">19</span>]</span>
+<span id="cb502-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-11" tabindex="-1"></a><span class="dv">25</span>% <span class="sc">-</span><span class="fl">0.4602083</span> <span class="sc">-</span><span class="fl">1.0432010</span> <span class="sc">-</span><span class="fl">1.12773555</span> <span class="sc">-</span><span class="fl">1.4571706</span> <span class="sc">-</span><span class="fl">0.2406991</span> <span class="sc">-</span><span class="fl">0.3226845</span></span>
+<span id="cb502-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-12" tabindex="-1"></a><span class="dv">75</span>%  <span class="fl">0.4424153</span>  <span class="fl">0.3571219</span>  <span class="fl">0.03653687</span> <span class="sc">-</span><span class="fl">0.1705336</span>  <span class="fl">0.6504486</span>  <span class="fl">1.1460854</span></span>
+<span id="cb502-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-13" tabindex="-1"></a>        [,<span class="dv">20</span>]</span>
+<span id="cb502-14"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-14" tabindex="-1"></a><span class="dv">25</span>% <span class="sc">-</span><span class="fl">0.329898</span></span>
+<span id="cb502-15"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb502-15" tabindex="-1"></a><span class="dv">75</span>%  <span class="fl">1.247092</span></span></code></pre></div>
+<p>Dikkat ederseniz <code>probs = c(0.25, 0.75)</code> argümanını <code><a href="https://rdrr.io/r/stats/quantile.html">quantile()</a></code> fonksiyonuna <code>...</code> argümanı aracılığıyla <code><a href="https://rdrr.io/r/base/apply.html">apply()</a></code> fonksiyonuna aktarmak zorunda kaldım.</p>
+<p>Daha yüksek boyutlu bir örnek için, <span class="math inline">\(2\times2\)</span> matrislerinden oluşan bir dizi oluşturabilir ve dizideki matrislerin ortalamasını hesaplayabilirim.</p>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb503-1" tabindex="-1"></a><span class="sc">&gt;</span> a <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="fu">rnorm</span>(<span class="dv">2</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">10</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">10</span>))</span>
+<span id="cb503-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb503-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">apply</span>(a, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), mean)</span>
+<span id="cb503-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb503-3" tabindex="-1"></a>            [,<span class="dv">1</span>]        [,<span class="dv">2</span>]</span>
+<span id="cb503-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb503-4" tabindex="-1"></a>[<span class="dv">1</span>,]  <span class="fl">0.08796671</span> <span class="sc">-</span><span class="fl">0.04719386</span></span>
+<span id="cb503-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb503-5" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="sc">-</span><span class="fl">0.15271298</span>  <span class="fl">0.07811452</span></span></code></pre></div>
+<p>Buradaki <code><a href="https://rdrr.io/r/base/apply.html">apply()</a></code> çağrısında, <code>MARGIN</code> argümanı aracılığıyla birinci ve ikinci boyutları korumak ve ortalamayı alarak üçüncü boyutu daraltmak istediğimi belirttim.</p>
+<p>Bu özel işlemi <code><a href="https://rdrr.io/r/base/colSums.html">colMeans()</a></code> fonksiyonu aracılığıyla yapmanın daha hızlı bir yolu vardır.</p>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb504-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">rowMeans</span>(a, <span class="at">dims =</span> <span class="dv">2</span>)    <span class="do">## daha hızlı</span></span>
+<span id="cb504-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb504-2" tabindex="-1"></a>            [,<span class="dv">1</span>]        [,<span class="dv">2</span>]</span>
+<span id="cb504-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb504-3" tabindex="-1"></a>[<span class="dv">1</span>,]  <span class="fl">0.08796671</span> <span class="sc">-</span><span class="fl">0.04719386</span></span>
+<span id="cb504-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb504-4" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="sc">-</span><span class="fl">0.15271298</span>  <span class="fl">0.07811452</span></span></code></pre></div>
+<p>Bu durumda, <code><a href="https://rdrr.io/r/base/colSums.html">rowMeans()</a></code> kullanımının daha az okunabilir olduğunu iddia edebilirim, ancak büyük dizilerde önemli ölçüde daha hızlıdır.</p>
+</div>
+<div id="mapply" class="section level2" number="13.10">
+<h2>
+<span class="header-section-number">13.10</span> <code>mapply()</code><a class="anchor" aria-label="anchor" href="#mapply"><i class="fas fa-link"></i></a>
+</h2>
+<p><code><a href="https://rdrr.io/r/base/mapply.html">mapply()</a></code> fonksiyonu, bir dizi argüman üzerinde paralel olarak bir fonksiyon uygulayan bir tür çok değişkenli uygulamadır. lapply()<code>ve arkadaşlarının yalnızca tek bir R nesnesi üzerinde yineleme yaptığını hatırlayın. Peki ya birden fazla R nesnesi üzerinde paralel olarak yineleme yapmak isterseniz? İşte</code>mapply()` bunun içindir.</p>
+<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb505-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str</span>(mapply)</span>
+<span id="cb505-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb505-2" tabindex="-1"></a><span class="cf">function</span> (FUN, ..., <span class="at">MoreArgs =</span> <span class="cn">NULL</span>, <span class="at">SIMPLIFY =</span> <span class="cn">TRUE</span>, <span class="at">USE.NAMES =</span> <span class="cn">TRUE</span>)  </span></code></pre></div>
+<p>mapply()` işlevinin argümanları şunlardır</p>
+<ul>
+<li>FUN` uygulanacak bir işlevdir</li>
+<li>...` üzerine uygulanacak R nesnelerini içerir</li>
+<li>
+<code>MoreArgs</code> <code>FUN</code> için diğer argümanların bir listesidir.</li>
+<li>SIMPLIFY` sonucun basitleştirilip basitleştirilmeyeceğini belirtir</li>
+</ul>
+<p>mapply()<code>fonksiyonu,</code>lapply()<code>fonksiyonundan farklı bir argüman sırasına sahiptir, çünkü üzerinde yinelenecek nesne yerine uygulanacak fonksiyon önce gelir. Fonksiyonu uyguladığımız R nesneleri</code>...` argümanında verilir, çünkü keyfi sayıda R nesnesi üzerinde uygulama yapabiliriz.</p>
+<p>Örneğin, aşağıdakileri yazmak sıkıcıdır</p>
+<p><code>list(rep(1, 4), rep(2, 3), rep(3, 2), rep(4, 1))</code></p>
+<p>Bunun yerine <code><a href="https://rdrr.io/r/base/mapply.html">mapply()</a></code> ile şunları yapabiliriz</p>
+<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-1" tabindex="-1"></a><span class="sc">&gt;</span>  <span class="fu">mapply</span>(rep, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">4</span><span class="sc">:</span><span class="dv">1</span>)</span>
+<span id="cb506-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-2" tabindex="-1"></a>[[<span class="dv">1</span>]]</span>
+<span id="cb506-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span> <span class="dv">1</span></span>
+<span id="cb506-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-4" tabindex="-1"></a></span>
+<span id="cb506-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-5" tabindex="-1"></a>[[<span class="dv">2</span>]]</span>
+<span id="cb506-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">2</span> <span class="dv">2</span> <span class="dv">2</span></span>
+<span id="cb506-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-7" tabindex="-1"></a></span>
+<span id="cb506-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-8" tabindex="-1"></a>[[<span class="dv">3</span>]]</span>
+<span id="cb506-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">3</span> <span class="dv">3</span></span>
+<span id="cb506-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-10" tabindex="-1"></a></span>
+<span id="cb506-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-11" tabindex="-1"></a>[[<span class="dv">4</span>]]</span>
+<span id="cb506-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb506-12" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span></code></pre></div>
+<p>Bu, <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code>in ilk argümanına <code>1:4</code> dizisini ve ikinci argümanına <code>4:1</code> dizisini geçirir.</p>
+<p>İşte randon Normal değişkenleri simüle etmek için başka bir örnek.</p>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-1" tabindex="-1"></a><span class="sc">&gt;</span> noise <span class="ot">&lt;-</span> <span class="cf">function</span>(n, mean, sd) {</span>
+<span id="cb507-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-2" tabindex="-1"></a><span class="sc">+</span>       <span class="fu">rnorm</span>(n, mean, sd)</span>
+<span id="cb507-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-3" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb507-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## 5 random sayı</span></span>
+<span id="cb507-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-5" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">noise</span>(<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>)        </span>
+<span id="cb507-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-6" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb507-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-7" tabindex="-1"></a><span class="er">&gt;</span> <span class="do">##  sadece 1 sayı kümesini simüle ediyor, 5 değil</span></span>
+<span id="cb507-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-8" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">noise</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)    </span>
+<span id="cb507-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-9" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="fl">0.3206461</span> <span class="sc">-</span><span class="fl">2.3295293</span>  <span class="fl">2.8577035</span>  <span class="fl">3.8336537</span>  <span class="fl">0.8745584</span></span>
+<span id="cb507-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb507-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">0.9618047</span>  <span class="fl">4.1743005</span>  <span class="fl">3.2786541</span>  <span class="fl">3.2274558</span>  <span class="fl">7.2471708</span></span></code></pre></div>
+<p>Burada <code><a href="https://rdrr.io/r/base/mapply.html">mapply()</a></code> fonksiyonunu kullanarak <code>1:5</code> dizisini ayrı ayrı <code>noise()</code> fonksiyonuna aktarabiliriz, böylece her biri farklı uzunluk ve ortalamaya sahip 5 rastgele sayı kümesi elde edebiliriz.</p>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">mapply</span>(noise, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)</span>
+<span id="cb508-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-2" tabindex="-1"></a>[[<span class="dv">1</span>]]</span>
+<span id="cb508-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">0.5196913</span></span>
+<span id="cb508-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-4" tabindex="-1"></a></span>
+<span id="cb508-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-5" tabindex="-1"></a>[[<span class="dv">2</span>]]</span>
+<span id="cb508-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">4.2979182</span> <span class="fl">0.3150475</span></span>
+<span id="cb508-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-7" tabindex="-1"></a></span>
+<span id="cb508-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-8" tabindex="-1"></a>[[<span class="dv">3</span>]]</span>
+<span id="cb508-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">3.7828267</span> <span class="fl">4.7827545</span> <span class="fl">0.3294826</span></span>
+<span id="cb508-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-10" tabindex="-1"></a></span>
+<span id="cb508-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-11" tabindex="-1"></a>[[<span class="dv">4</span>]]</span>
+<span id="cb508-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-12" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">4.796247</span> <span class="fl">3.776826</span> <span class="fl">5.351488</span> <span class="fl">2.422804</span></span>
+<span id="cb508-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-13" tabindex="-1"></a></span>
+<span id="cb508-14"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-14" tabindex="-1"></a>[[<span class="dv">5</span>]]</span>
+<span id="cb508-15"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb508-15" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">4.826027</span> <span class="fl">7.764568</span> <span class="fl">5.336980</span> <span class="fl">6.646382</span> <span class="fl">4.558211</span></span></code></pre></div>
+<p>Yukarıdaki <code><a href="https://rdrr.io/r/base/mapply.html">mapply()</a></code> çağrısı aşağıdaki ile aynıdır</p>
+<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">list</span>(<span class="fu">noise</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">noise</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb509-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-2" tabindex="-1"></a><span class="sc">+</span>      <span class="fu">noise</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>), <span class="fu">noise</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>),</span>
+<span id="cb509-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-3" tabindex="-1"></a><span class="sc">+</span>      <span class="fu">noise</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>))</span>
+<span id="cb509-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-4" tabindex="-1"></a>[[<span class="dv">1</span>]]</span>
+<span id="cb509-5"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">1.058783</span></span>
+<span id="cb509-6"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-6" tabindex="-1"></a></span>
+<span id="cb509-7"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-7" tabindex="-1"></a>[[<span class="dv">2</span>]]</span>
+<span id="cb509-8"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-8" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="fl">1.9781486</span> <span class="sc">-</span><span class="fl">0.4499823</span></span>
+<span id="cb509-9"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-9" tabindex="-1"></a></span>
+<span id="cb509-10"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-10" tabindex="-1"></a>[[<span class="dv">3</span>]]</span>
+<span id="cb509-11"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-11" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">2.1922228</span>  <span class="fl">5.3382452</span>  <span class="fl">0.8261824</span></span>
+<span id="cb509-12"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-12" tabindex="-1"></a></span>
+<span id="cb509-13"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-13" tabindex="-1"></a>[[<span class="dv">4</span>]]</span>
+<span id="cb509-14"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-14" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.347834</span> <span class="fl">5.990564</span> <span class="fl">3.976276</span> <span class="fl">2.800743</span></span>
+<span id="cb509-15"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-15" tabindex="-1"></a></span>
+<span id="cb509-16"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-16" tabindex="-1"></a>[[<span class="dv">5</span>]]</span>
+<span id="cb509-17"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb509-17" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">4.644104</span> <span class="fl">4.148037</span> <span class="fl">6.993318</span> <span class="fl">6.455321</span> <span class="fl">1.546739</span></span></code></pre></div>
+</div>
+<div id="bir-fonksiyonu-vektörleştirme" class="section level2" number="13.11">
+<h2>
+<span class="header-section-number">13.11</span> Bir Fonksiyonu Vektörleştirme<a class="anchor" aria-label="anchor" href="#bir-fonksiyonu-vekt%C3%B6rle%C5%9Ftirme"><i class="fas fa-link"></i></a>
+</h2>
+<p><code><a href="https://rdrr.io/r/base/mapply.html">mapply()</a></code> fonksiyonu bir fonksiyonu otomatik olarak "vektörleştirmek" için kullanılabilir. Bunun anlamı, tipik olarak yalnızca tek argüman alan bir fonksiyonu almak ve vektör argümanları alabilen yeni bir fonksiyon oluşturmak için kullanılabileceğidir. Bu genellikle fonksiyonları çizmek istediğinizde gereklidir.</p>
+<p>İşte bazı veriler, bir ortalama parametre ve bir standart sapma verildiğinde kareler toplamını hesaplayan bir fonksiyon örneği. Formül <span class="math inline">\(\sum_{i=1}^n(x_i-\mu)^2/\sigma^2\)</span> şeklindedir.</p>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb510-1" tabindex="-1"></a><span class="sc">&gt;</span> sumsq <span class="ot">&lt;-</span> <span class="cf">function</span>(mu, sigma, x) {</span>
+<span id="cb510-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb510-2" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">sum</span>(((x <span class="sc">-</span> mu) <span class="sc">/</span> sigma)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb510-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb510-3" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
+<p>Bu fonksiyon bir ortalama <code>mu</code>, bir standart sapma <code>sigma</code> ve bir vektör <code>x</code> içinde bazı veriler alır.</p>
+<p>Birçok istatistiksel uygulamada, en uygun <code>mu</code> ve <code>sigma</code> değerlerini bulmak için kareler toplamını minimize etmek isteriz. Bunu yapmadan önce, birçok farklı <code>mu</code> veya <code>sigma</code> değeri için fonksiyonu değerlendirmek veya çizmek isteyebiliriz. Ancak, bir <code>mu</code> veya <code>sigma</code> vektörü geçmek bu fonksiyonla çalışmayacaktır çünkü vektörleştirilmemiştir.</p>
+<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb511-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)       <span class="do">## veri üret</span></span>
+<span id="cb511-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb511-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sumsq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, x)  <span class="do">## İstediğimiz bu değil</span></span>
+<span id="cb511-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb511-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">109.7211</span></span></code></pre></div>
+<p><code>sumsq()</code> çağrısının 10 değer yerine yalnızca bir değer ürettiğine dikkat edin.</p>
+<p>Ancak, yapmak istediğimizi <code><a href="https://rdrr.io/r/base/mapply.html">mapply()</a></code> kullanarak yapabiliriz.</p>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb512-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">mapply</span>(sumsq, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">MoreArgs =</span> <span class="fu">list</span>(<span class="at">x =</span> x))</span>
+<span id="cb512-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb512-2" tabindex="-1"></a> [<span class="dv">1</span>] <span class="fl">209.3372</span> <span class="fl">126.2175</span> <span class="fl">111.1558</span> <span class="fl">105.9960</span> <span class="fl">103.6587</span> <span class="fl">102.4167</span> <span class="fl">101.6844</span> <span class="fl">101.2198</span></span>
+<span id="cb512-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb512-3" tabindex="-1"></a> [<span class="dv">9</span>] <span class="fl">100.9086</span> <span class="fl">100.6913</span></span></code></pre></div>
+<p>Hatta R'de <code><a href="https://rdrr.io/r/base/Vectorize.html">Vectorize()</a></code> adında, fonksiyonunuzun vektörleştirilmiş bir versiyonunu otomatik olarak oluşturabilen bir fonksiyon bile vardır. Böylece aşağıdaki gibi tamamen vektörleştirilmiş bir <code>vsumsq()</code> fonksiyonu oluşturabiliriz.</p>
+<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb513-1" tabindex="-1"></a><span class="sc">&gt;</span> vsumsq <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(sumsq, <span class="fu">c</span>(<span class="st">"mu"</span>, <span class="st">"sigma"</span>))</span>
+<span id="cb513-2"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb513-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">vsumsq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, x)</span>
+<span id="cb513-3"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb513-3" tabindex="-1"></a> [<span class="dv">1</span>] <span class="fl">209.3372</span> <span class="fl">126.2175</span> <span class="fl">111.1558</span> <span class="fl">105.9960</span> <span class="fl">103.6587</span> <span class="fl">102.4167</span> <span class="fl">101.6844</span> <span class="fl">101.2198</span></span>
+<span id="cb513-4"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html#cb513-4" tabindex="-1"></a> [<span class="dv">9</span>] <span class="fl">100.9086</span> <span class="fl">100.6913</span></span></code></pre></div>
+<p>Çok havalı, değil mi?</p>
+</div>
+<div id="özet-4" class="section level2" number="13.12">
+<h2>
+<span class="header-section-number">13.12</span> Özet<a class="anchor" aria-label="anchor" href="#%C3%B6zet-4"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>R'deki döngü fonksiyonları çok güçlüdür çünkü kompakt bir form kullanarak veriler üzerinde bir dizi işlem yapmanıza olanak tanır</p></li>
+<li><p>Bir döngü fonksiyonunun çalışması, bir R nesnesi (örneğin bir liste, vektör veya matris) üzerinde yinelemeyi, nesnenin her bir öğesine bir fonksiyon uygulamayı ve sonuçları harmanlayıp harmanlanmış sonuçları döndürmeyi içerir.</p></li>
+<li><p>Döngü fonksiyonları, döngü fonksiyonunun ömrü boyunca var olan ancak hiçbir yerde saklanmayan anonim fonksiyonları yoğun bir şekilde kullanır</p></li>
+<li><p>split()` fonksiyonu, bir R nesnesini başka bir değişken tarafından belirlenen ve daha sonra döngü fonksiyonları kullanılarak üzerinde döngü yapılabilen alt kümelere bölmek için kullanılabilir.</p></li>
+</ul>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></div>
+<div class="next"><a href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></li>
+<li><a class="nav-link" href="#komut-sat%C4%B1r%C4%B1nda-d%C3%B6ng%C3%BC-olu%C5%9Fturma"><span class="header-section-number">13.1</span> Komut Satırında Döngü Oluşturma</a></li>
+<li><a class="nav-link" href="#lapply"><span class="header-section-number">13.2</span> lapply()</a></li>
+<li><a class="nav-link" href="#sapply"><span class="header-section-number">13.3</span> sapply()</a></li>
+<li><a class="nav-link" href="#split"><span class="header-section-number">13.4</span> split()</a></li>
+<li><a class="nav-link" href="#veri-setini-b%C3%B6lme"><span class="header-section-number">13.5</span> Veri Setini Bölme</a></li>
+<li><a class="nav-link" href="#tapply"><span class="header-section-number">13.6</span> tapply</a></li>
+<li><a class="nav-link" href="#apply"><span class="header-section-number">13.7</span> apply()</a></li>
+<li><a class="nav-link" href="#s%C3%BCtunsat%C4%B1r-toplamlar%C4%B1-ve-ortalamalar%C4%B1"><span class="header-section-number">13.8</span> Sütun/Satır Toplamları ve Ortalamaları</a></li>
+<li><a class="nav-link" href="#di%C4%9Fer-apply-lar"><span class="header-section-number">13.9</span> Diğer apply lar</a></li>
+<li><a class="nav-link" href="#mapply"><span class="header-section-number">13.10</span> mapply()</a></li>
+<li><a class="nav-link" href="#bir-fonksiyonu-vekt%C3%B6rle%C5%9Ftirme"><span class="header-section-number">13.11</span> Bir Fonksiyonu Vektörleştirme</a></li>
+<li><a class="nav-link" href="#%C3%B6zet-4"><span class="header-section-number">13.12</span> Özet</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="/blob/master/book/13_apply.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/13_apply.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>lavaan</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

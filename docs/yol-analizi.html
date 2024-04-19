@@ -4,21 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bölüm 5 Yol Analizi | OLC733</title>
+<title>Bölüm 6 Yol Analizi | lavaan</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
 <meta name="description" content="Yol analizi modeli YEM ailesinin en eski üyelerinden biridir ve halen yaygın olarak kullanılmaktadır. Herbir yapının sadece tek bir gözlenen ölçümün (göstergesinin) olduğu durumlar bulunabilir ve...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Bölüm 5 Yol Analizi | OLC733">
+<meta property="og:title" content="Bölüm 6 Yol Analizi | lavaan">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC733/yol-analizi.html">
 <meta property="og:description" content="Yol analizi modeli YEM ailesinin en eski üyelerinden biridir ve halen yaygın olarak kullanılmaktadır. Herbir yapının sadece tek bir gözlenen ölçümün (göstergesinin) olduğu durumlar bulunabilir ve...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bölüm 5 Yol Analizi | OLC733">
+<meta name="twitter:title" content="Bölüm 6 Yol Analizi | lavaan">
 <meta name="twitter:description" content="Yol analizi modeli YEM ailesinin en eski üyelerinden biridir ve halen yaygın olarak kullanılmaktadır. Herbir yapının sadece tek bir gözlenen ölçümün (göstergesinin) olduğu durumlar bulunabilir ve...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="libs/datatables-binding-0.32/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
@@ -42,7 +43,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">OLC733</a>:
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">lavaan</a>:
         <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
@@ -60,10 +61,17 @@
 <li><a class="" href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">2</span> Varsayımlar II</a></li>
 <li><a class="" href="regresyon.html"><span class="header-section-number">3</span> Regresyon</a></li>
 <li><a class="" href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></li>
-<li><a class="active" href="yol-analizi.html"><span class="header-section-number">5</span> Yol Analizi</a></li>
-<li><a class="" href="afa.html"><span class="header-section-number">6</span> AFA</a></li>
-<li><a class="" href="dfa.html"><span class="header-section-number">7</span> DFA</a></li>
-<li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">8</span> Ölçme Değişmezliği</a></li>
+<li><a class="" href="lavaan-ve-sem.html"><span class="header-section-number">5</span> lavaan ve sem</a></li>
+<li><a class="active" href="yol-analizi.html"><span class="header-section-number">6</span> Yol Analizi</a></li>
+<li><a class="" href="afa.html"><span class="header-section-number">7</span> AFA</a></li>
+<li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
+<li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
+<li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
+<li><a class="" href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
 </ul>
 
         <div class="book-extra">
@@ -71,9 +79,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="yol-analizi" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="yol-analizi" class="section level1" number="6">
 <h1>
-<span class="header-section-number">Bölüm 5</span> Yol Analizi<a class="anchor" aria-label="anchor" href="#yol-analizi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Bölüm 6</span> Yol Analizi<a class="anchor" aria-label="anchor" href="#yol-analizi"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
 <li><p><strong>Yol analizi modeli</strong> <strong>YEM</strong> ailesinin en eski üyelerinden
@@ -89,9 +97,9 @@ modelidir.</p></li>
 <li><p>YEM bir grup değişken arasındaki ilişkilerin modellenmesine ve öngörülen modellerin test edilmesine imkan verir.</p></li>
 <li><p>Temelde gözlenenen değişkenlerin varyanslarına ve gözlenen değişkenler arasındaki kovaryanslara dayalı olan YEM analizlerinin amacı bir grup gözlenen değişken arasındaki kovaryans örüntüsünü anlamak ve araştırma modeli ile gözlenen değişkenlerin varyanslarını açıklamaktır.</p></li>
 </ul>
-<div id="yol-analizi-modelleri" class="section level2" number="5.1">
+<div id="yol-analizi-modelleri" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">5.1</span> Yol Analizi Modelleri<a class="anchor" aria-label="anchor" href="#yol-analizi-modelleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Yol Analizi Modelleri<a class="anchor" aria-label="anchor" href="#yol-analizi-modelleri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Yol analizinde amaç <strong>ölçülen değişkenler arasındaki ilişkileri </strong> açıklamaktır.</p></li>
@@ -100,9 +108,9 @@ doğrudan olmayan etkileri gösteren yapısal modellerin
 tanımlanmasına</strong> ve test edilmesine izin verir</p></li>
 </ul>
 </div>
-<div id="bir-araştırma-senaryosu-hastalık-faktörleri" class="section level2" number="5.2">
+<div id="bir-araştırma-senaryosu-hastalık-faktörleri" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">5.2</span> Bir Araştırma Senaryosu: Hastalık Faktörleri<a class="anchor" aria-label="anchor" href="#bir-ara%C5%9Ft%C4%B1rma-senaryosu-hastal%C4%B1k-fakt%C3%B6rleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> Bir Araştırma Senaryosu: Hastalık Faktörleri<a class="anchor" aria-label="anchor" href="#bir-ara%C5%9Ft%C4%B1rma-senaryosu-hastal%C4%B1k-fakt%C3%B6rleri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Sunumdaki örnek Roth, Wiebe, Fillingim ve Shay’in (1989) çalışmasından gelmektedir. Çalışmalarında
@@ -120,40 +128,40 @@ tanımlanmasına</strong> ve test edilmesine izin verir</p></li>
 <p><span class="math inline">\(\text{stres}_i = \beta_0 + \beta_{\text{eegzersiz}_i} + \beta_{\text{dayanıklılık}_i} + e_{fi}\)</span></p>
 <p><span class="math inline">\(\text{hastalık}_i = \beta_0 + \beta_{\text{eegzersiz}_i} + \beta_{\text{dayanıklılık}_i} + \beta_{\text{form}_i} + \beta_{\text{stres}_i} + e_{fi}\)</span></p>
 <p>Bu modeller R'da <strong>lavaan paketi</strong> ile model denklemi oluşturularak kullanılmalıdır.</p>
-<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
 <span><span class="st">               form      ~ egzersiz + dayaniklilik'</span></span></code></pre></div>
 <ul>
 <li>Veri setini okuma</li>
 </ul>
-<div class="sourceCode" id="cb224"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
 <span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_table.html">read_table</a></span><span class="op">(</span><span class="st">"import/illness.dat"</span>, col_names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"form"</span>, <span class="st">"stres"</span>, <span class="st">"hastalik"</span>, <span class="st">"egzersiz"</span>, <span class="st">"dayaniklilik"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Yol modelini kurma</li>
 </ul>
-<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb228"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span>
 <span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
 <span><span class="st">               form      ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">egzersiz ~~ dayaniklilik'</span></span>
 <span><span class="va">yol_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/sem.html">sem</a></span><span class="op">(</span><span class="va">yol_model</span>, <span class="va">veri</span><span class="op">)</span></span></code></pre></div>
-<div id="hastalık-faktörleri-yol-modeli" class="section level3" number="5.2.1">
+<div id="hastalık-faktörleri-yol-modeli" class="section level3" number="6.2.1">
 <h3>
-<span class="header-section-number">5.2.1</span> Hastalık Faktörleri Yol Modeli<a class="anchor" aria-label="anchor" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-modeli"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2.1</span> Hastalık Faktörleri Yol Modeli<a class="anchor" aria-label="anchor" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-modeli"><i class="fas fa-link"></i></a>
 </h3>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="yol-şemasının-öğeleri" class="section level2" number="5.3">
+<div id="yol-şemasının-öğeleri" class="section level2" number="6.3">
 <h2>
-<span class="header-section-number">5.3</span> Yol Şemasının Öğeleri<a class="anchor" aria-label="anchor" href="#yol-%C5%9Femas%C4%B1n%C4%B1n-%C3%B6%C4%9Feleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3</span> Yol Şemasının Öğeleri<a class="anchor" aria-label="anchor" href="#yol-%C5%9Femas%C4%B1n%C4%B1n-%C3%B6%C4%9Feleri"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>Gözlenen Değişken</strong></p>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-5-1.png" width="30%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-5-1.png" width="30%" style="display: block; margin: auto;"></div>
 <p><strong>Dışsal (Exogenous) Değişken:</strong> Nedenleri bilinmeyen ve
 modelde gösterilmeyen değişkendir. Dışsal değişken
 değişkenlik göstermekte <strong>serbesttir.</strong></p>
@@ -174,7 +182,7 @@ ve sayısı bilinmediğinden <strong>bozukluklar gizil değişkenler</strong> ol
 düşünülebilir ve çember sembolü ile temsil edilirler.</p></li>
 </ul>
 <p><strong>Gizil Değişkenler</strong></p>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-6-1.png" width="30%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-6-1.png" width="30%" style="display: block; margin: auto;"></div>
 <ul>
 <li><p>doğrudan <strong>ölçülmezler.</strong></p></li>
 <li><p>bir değer <strong>alamayabilirler.</strong></p></li>
@@ -210,7 +218,7 @@ residual path coefficient) olarak da adlandırılır ve <strong>bozukluğa bir �
 program onlarla ilgili herhangi bir kestirimde bulunmadan önce ölçeğe ihtiyaç duyduklarından böyle bir <strong>sabit atanır.</strong>
 </li>
 </ul>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li>İki dışsal değişken arasındaki analiz edilmeyen ilişki
 <ul>
@@ -230,9 +238,9 @@ kovaryans</li>
 </li>
 </ul>
 </div>
-<div id="doğrudan-etki" class="section level2" number="5.4">
+<div id="doğrudan-etki" class="section level2" number="6.4">
 <h2>
-<span class="header-section-number">5.4</span> <strong>Doğrudan Etki</strong><a class="anchor" aria-label="anchor" href="#do%C4%9Frudan-etki"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4</span> <strong>Doğrudan Etki</strong><a class="anchor" aria-label="anchor" href="#do%C4%9Frudan-etki"><i class="fas fa-link"></i></a>
 </h2>
 <p>Bir dışsal veya içsel bir değişken diğer bir içsel değişkenin
 doğrudan nedeni olabilir.</p>
@@ -253,14 +261,14 @@ doğrudan nedeni olabilir.</p>
 </li>
 <li>dayaniklilik → hastalik</li>
 </ul>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="yol-şemasının-öğeleri-1" class="section level2" number="5.5">
+<div id="yol-şemasının-öğeleri-1" class="section level2" number="6.5">
 <h2>
-<span class="header-section-number">5.5</span> Yol Şemasının Öğeleri<a class="anchor" aria-label="anchor" href="#yol-%C5%9Femas%C4%B1n%C4%B1n-%C3%B6%C4%9Feleri-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5</span> Yol Şemasının Öğeleri<a class="anchor" aria-label="anchor" href="#yol-%C5%9Femas%C4%B1n%C4%B1n-%C3%B6%C4%9Feleri-1"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>Dolaylı veya Arabulucu Etki</strong></p>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li><p>Bazı <strong>içsel değişkenlerin yol modelinde hem bağımsız hem de
 bağımlı değişken olarak ikili rolü</strong> vardır. Bu değişkenlere
@@ -280,9 +288,9 @@ değişkenlere iletirler, böyle etkilere <strong>dolaylı etkiler</strong> adı
 </li>
 </ul>
 </div>
-<div id="yol-analizi-modeli" class="section level2" number="5.6">
+<div id="yol-analizi-modeli" class="section level2" number="6.6">
 <h2>
-<span class="header-section-number">5.6</span> Yol Analizi Modeli<a class="anchor" aria-label="anchor" href="#yol-analizi-modeli"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.6</span> Yol Analizi Modeli<a class="anchor" aria-label="anchor" href="#yol-analizi-modeli"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Veri modellemedeki düşünce <strong>gözlenen kovaryans matrisinin bir
@@ -327,11 +335,11 @@ kovaryanslar model tarafından açıklandığı zaman artık
 <li><p>Aksi halde, artık kovaryans matrisinin sıfırdan farklı
 olacaktır.</p></li>
 </ul>
-<div id="hastalık-faktörleri-yol-şeması" class="section level3" number="5.6.1">
+<div id="hastalık-faktörleri-yol-şeması" class="section level3" number="6.6.1">
 <h3>
-<span class="header-section-number">5.6.1</span> Hastalık Faktörleri (Yol Şeması)<a class="anchor" aria-label="anchor" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-%C5%9Femas%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.6.1</span> Hastalık Faktörleri (Yol Şeması)<a class="anchor" aria-label="anchor" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-%C5%9Femas%C4%B1"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb226"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span>
 <span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -345,12 +353,12 @@ olacaktır.</p></li>
 <span>           edge.label.cex <span class="op">=</span> <span class="fl">1.8</span>,</span>
 <span>           pastel<span class="op">=</span><span class="cn">TRUE</span>,</span>
 <span>           nCharNodes <span class="op">=</span> <span class="fl">0</span>, nCharEdges <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="evren-kovaryans-matrisi" class="section level2" number="5.7">
+<div id="evren-kovaryans-matrisi" class="section level2" number="6.7">
 <h2>
-<span class="header-section-number">5.7</span> Evren Kovaryans Matrisi<a class="anchor" aria-label="anchor" href="#evren-kovaryans-matrisi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7</span> Evren Kovaryans Matrisi<a class="anchor" aria-label="anchor" href="#evren-kovaryans-matrisi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>hastalık faktörleri örneği için gözlenen değişkenlerin evren
@@ -409,9 +417,9 @@ kestirimi olarak kabul eder.</p></li>
 belli sınırlılıklar içerisinde kestirilir ancak bir sabite eşit olmak üzere
 sabitlenmez.</p></li>
 </ul>
-<div id="serbestlik-derecesi" class="section level3" number="5.7.1">
+<div id="serbestlik-derecesi" class="section level3" number="6.7.1">
 <h3>
-<span class="header-section-number">5.7.1</span> Serbestlik Derecesi:<a class="anchor" aria-label="anchor" href="#serbestlik-derecesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.7.1</span> Serbestlik Derecesi:<a class="anchor" aria-label="anchor" href="#serbestlik-derecesi"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p><strong>Model serbestlik derecesi (sd)</strong> model gözlemlerinin sayısı ve
@@ -429,9 +437,9 @@ modelden kestirilecek parametre sayısı arasındaki farka eşittir:</p></li>
 </ul>
 </div>
 </div>
-<div id="model-tanımlanması" class="section level2" number="5.8">
+<div id="model-tanımlanması" class="section level2" number="6.8">
 <h2>
-<span class="header-section-number">5.8</span> Model Tanımlanması<a class="anchor" aria-label="anchor" href="#model-tan%C4%B1mlanmas%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.8</span> Model Tanımlanması<a class="anchor" aria-label="anchor" href="#model-tan%C4%B1mlanmas%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>(Model Identification) İlkeleri</strong></p>
 <ul>
@@ -475,9 +483,9 @@ değişkenlerin (yol modelinde bozuklukların) varyansı 1.0’e
 eşitlenir böylece gizil değişkenin varyansı standartlaştırılmış
 ölçekte olur.</p></li>
 </ul>
-<div id="yetersiz-tanımlanma-underidentification" class="section level3" number="5.8.1">
+<div id="yetersiz-tanımlanma-underidentification" class="section level3" number="6.8.1">
 <h3>
-<span class="header-section-number">5.8.1</span> <strong>Yetersiz Tanımlanma (Underidentification)</strong><a class="anchor" aria-label="anchor" href="#yetersiz-tan%C4%B1mlanma-underidentification"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.8.1</span> <strong>Yetersiz Tanımlanma (Underidentification)</strong><a class="anchor" aria-label="anchor" href="#yetersiz-tan%C4%B1mlanma-underidentification"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>Yetersiz tanımlanan bir modelde <strong>serbest model parametrelerinin</strong>
@@ -509,9 +517,9 @@ parametreye ait tek bir kestirim üretmeye</strong> çalışırken de
 benzer bir durum söz konusudur.</p></li>
 </ul>
 </div>
-<div id="ancak-tanımlanma-just-identification" class="section level3" number="5.8.2">
+<div id="ancak-tanımlanma-just-identification" class="section level3" number="6.8.2">
 <h3>
-<span class="header-section-number">5.8.2</span> <strong>Ancak Tanımlanma (Just Identification)</strong><a class="anchor" aria-label="anchor" href="#ancak-tan%C4%B1mlanma-just-identification"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.8.2</span> <strong>Ancak Tanımlanma (Just Identification)</strong><a class="anchor" aria-label="anchor" href="#ancak-tan%C4%B1mlanma-just-identification"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Ancak tanımlanan bir modelde <strong>parametre sayısı ve gözlem sayısı</strong>
@@ -538,9 +546,9 @@ parametreye ait tek bir kestirim üretmekle kalmayıp
 <strong>model veriye mükemmel uyum</strong> sağlayacaktır.</p></li>
 </ul>
 </div>
-<div id="aşırı-tanımlanma-overidentification" class="section level3" number="5.8.3">
+<div id="aşırı-tanımlanma-overidentification" class="section level3" number="6.8.3">
 <h3>
-<span class="header-section-number">5.8.3</span> <strong>Aşırı Tanımlanma (Overidentification)</strong><a class="anchor" aria-label="anchor" href="#a%C5%9F%C4%B1r%C4%B1-tan%C4%B1mlanma-overidentification"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.8.3</span> <strong>Aşırı Tanımlanma (Overidentification)</strong><a class="anchor" aria-label="anchor" href="#a%C5%9F%C4%B1r%C4%B1-tan%C4%B1mlanma-overidentification"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Aşırı tanımlanan bir modelde <strong>parametre sayısı, gözlem sayısından
@@ -576,9 +584,9 @@ sağlamakla kalmaz tek bir çözüm üretir.</p></li>
 </ul>
 </div>
 </div>
-<div id="model-veri-uyumunun-değerlendirilmesi" class="section level2" number="5.9">
+<div id="model-veri-uyumunun-değerlendirilmesi" class="section level2" number="6.9">
 <h2>
-<span class="header-section-number">5.9</span> Model-Veri Uyumunun Değerlendirilmesi<a class="anchor" aria-label="anchor" href="#model-veri-uyumunun-de%C4%9Ferlendirilmesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.9</span> Model-Veri Uyumunun Değerlendirilmesi<a class="anchor" aria-label="anchor" href="#model-veri-uyumunun-de%C4%9Ferlendirilmesi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Kestirilen parametre sayısından daha fazla sayıda
@@ -641,9 +649,9 @@ yaklaşım kullanılmalıdır. </strong></p></li>
 <li><p><strong>Çoklu indekslerin kullanılması</strong> bir modelin uyumu ile ilgili
 <strong>en doğru yaklaşımı verecektir. </strong></p></li>
 </ul>
-<div id="ki-kare-testi-chi-square-test" class="section level3" number="5.9.1">
+<div id="ki-kare-testi-chi-square-test" class="section level3" number="6.9.1">
 <h3>
-<span class="header-section-number">5.9.1</span> Ki-Kare Testi (Chi-Square Test)<a class="anchor" aria-label="anchor" href="#ki-kare-testi-chi-square-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.9.1</span> Ki-Kare Testi (Chi-Square Test)<a class="anchor" aria-label="anchor" href="#ki-kare-testi-chi-square-test"><i class="fas fa-link"></i></a>
 </h3>
 <p>Ki-kare testi gözlenen kovaryans matrisinin tanımlanan modelle
 tutarlı olup olmadığını değerlendirir.</p>
@@ -687,7 +695,7 @@ model ki-kare aslında bir <strong>kötülük uyum</strong> indeksidir.</p></li>
 <strong>reddedilmemesi</strong> tercih edilir. <strong>Sıfır hipotezinin reddedilmemesi modelin veriye uyduğunu önerir.</strong></p></li>
 <li><p>Diğer yandan sıfır hipotezinin reddedilmesi <strong>model-veri uyumunun iyi olmadığını önerir. </strong></p></li>
 </ul>
-<div class="sourceCode" id="cb227"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb230"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> , <span class="st">"pvalue"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  chisq     df pvalue 
 ##   12.3    1.0    0.0</code></pre>
@@ -716,9 +724,9 @@ yeterliğini incelemek için <strong>diğer indeksler</strong> düşünülmelidi
 <li><p>Ayrıca <strong>NC örneklem büyüklüğünün etkisini tamamen düzeltmez. </strong></p></li>
 </ul>
 </div>
-<div id="rmsea" class="section level3" number="5.9.2">
+<div id="rmsea" class="section level3" number="6.9.2">
 <h3>
-<span class="header-section-number">5.9.2</span> RMSEA<a class="anchor" aria-label="anchor" href="#rmsea"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.9.2</span> RMSEA<a class="anchor" aria-label="anchor" href="#rmsea"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Root Mean Square Error of Approximation (RMSEA)
@@ -760,7 +768,7 @@ hipotezi <span class="math inline">\(H_{0}:\epsilon_{0} ≤ 0.05\)</span> redded
 <li><p>Çıktıda kestirilen RMSEA değeri ve
 ilgili %90 güven aralığı (90% C. I.) verilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb229"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb232"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="co"># summary(yol_fit, fit.measures = TRUE)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rmsea"</span>,<span class="st">"rmsea.ci.lower"</span>,</span>
 <span>                       <span class="st">"rmsea.ci.upper"</span>,<span class="st">"rmsea.pvalue"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -774,9 +782,9 @@ araştırmacının modelinin evrende tahmini yaklaşık uyuma sahip
 olduğu hipotezi reddedilir.</p></li>
 </ul>
 </div>
-<div id="srmr" class="section level3" number="5.9.3">
+<div id="srmr" class="section level3" number="6.9.3">
 <h3>
-<span class="header-section-number">5.9.3</span> SRMR<a class="anchor" aria-label="anchor" href="#srmr"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.9.3</span> SRMR<a class="anchor" aria-label="anchor" href="#srmr"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Standardized Root Mean Square Residual (SRMR)</strong> Bu indeks RMR
 indeksinin hesaplandığı şekilde hesaplanır ancak standartlaştırılmış
@@ -784,7 +792,7 @@ artıklar kullanılır.</p>
 <ul>
 <li>0.08’den küçük değerler uygun olarak düşünülür (Hu &amp; Bentler, 1999).</li>
 </ul>
-<div class="sourceCode" id="cb231"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb234"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitMeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>, <span class="st">"srmr"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  srmr 
 ## 0.043</code></pre>
@@ -800,9 +808,9 @@ alınır.</p>
 <li>Sıfır değeri mükemmel bir uyum belirtir ancak sıfırdan büyük değerlerin yorumlanması zordur.</li>
 </ul>
 </div>
-<div id="karşılaştırmalı-uyum-indeksleri" class="section level3" number="5.9.4">
+<div id="karşılaştırmalı-uyum-indeksleri" class="section level3" number="6.9.4">
 <h3>
-<span class="header-section-number">5.9.4</span> Karşılaştırmalı Uyum İndeksleri<a class="anchor" aria-label="anchor" href="#kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmal%C4%B1-uyum-indeksleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.9.4</span> Karşılaştırmalı Uyum İndeksleri<a class="anchor" aria-label="anchor" href="#kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmal%C4%B1-uyum-indeksleri"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>(Comparative Fit Indices)</strong></p>
 <ul>
@@ -873,7 +881,7 @@ büyüklükteki verilerin kullanıldığı çalışmalarda kararlı
 değildir.</strong></p></li>
 <li><p>sıfır modeli için ki-kare testine ait değerleri ve CFI ve TLI değerlerini verir:</p></li>
 </ul>
-<div class="sourceCode" id="cb233"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb236"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"nnfi"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   cfi   tli  nnfi 
 ## 0.948 0.485 0.485</code></pre>
@@ -885,9 +893,9 @@ olduğundan TLI indeksi model için zayıf uyum belirtir</p></li>
 </ul>
 </div>
 </div>
-<div id="uyum-indekslerini-raporlarken-öneriler" class="section level2" number="5.10">
+<div id="uyum-indekslerini-raporlarken-öneriler" class="section level2" number="6.10">
 <h2>
-<span class="header-section-number">5.10</span> Uyum İndekslerini Raporlarken Öneriler<a class="anchor" aria-label="anchor" href="#uyum-indekslerini-raporlarken-%C3%B6neriler"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.10</span> Uyum İndekslerini Raporlarken Öneriler<a class="anchor" aria-label="anchor" href="#uyum-indekslerini-raporlarken-%C3%B6neriler"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Tek bir indeks model uyumunun sadece belli bir yönünü
@@ -935,7 +943,7 @@ tartışma vardır.</p>
 <li>Önerilen uyum indeksleri göz önüne alınınca model-veri
 uyumu ile ilgili ne söylenebilir?</li>
 </ul>
-<div class="sourceCode" id="cb235"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb238"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> ,<span class="st">"pvalue"</span>,</span>
 <span>                                     <span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"rmsea"</span>,    </span>
 <span>                                     <span class="st">"rmsea.ci.lower"</span>,<span class="st">"rmsea.ci.upper"</span></span>
@@ -945,9 +953,9 @@ uyumu ile ilgili ne söylenebilir?</li>
 ##          rmsea rmsea.ci.lower rmsea.ci.upper           srmr 
 ##          0.168          0.093          0.258          0.043</code></pre>
 </div>
-<div id="bireysel-istatistiksel-testler" class="section level2" number="5.11">
+<div id="bireysel-istatistiksel-testler" class="section level2" number="6.11">
 <h2>
-<span class="header-section-number">5.11</span> Bireysel İstatistiksel testler:<a class="anchor" aria-label="anchor" href="#bireysel-istatistiksel-testler"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.11</span> Bireysel İstatistiksel testler:<a class="anchor" aria-label="anchor" href="#bireysel-istatistiksel-testler"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>t-değeri</strong></p>
 <ul>
@@ -983,7 +991,7 @@ ortalaması tipik bir artığı temsil eden bir indeks sağlar.</li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb237"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># lavResiduals(yol_fit)</span></span>
 <span><span class="co"># resid(yol_fit)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">yol_fit</span>, type<span class="op">=</span><span class="st">'normalized'</span><span class="op">)</span></span></code></pre></div>
@@ -1001,15 +1009,15 @@ ortalaması tipik bir artığı temsil eden bir indeks sağlar.</li>
 <li>Standarlaştırılmış hata kovaryans matrisinde yer alan diyagonal dışındaki her bir değerin mutlak değerinin 1.96’dan küçük olması beklenir.</li>
 </ul>
 </div>
-<div id="modifikasyon-indeksleri" class="section level2" number="5.12">
+<div id="modifikasyon-indeksleri" class="section level2" number="6.12">
 <h2>
-<span class="header-section-number">5.12</span> Modifikasyon İndeksleri<a class="anchor" aria-label="anchor" href="#modifikasyon-indeksleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.12</span> Modifikasyon İndeksleri<a class="anchor" aria-label="anchor" href="#modifikasyon-indeksleri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>modindices</strong> fonksiyonu ile modifikasyon indeksleri istenebilir.</p></li>
 <li><p><strong>mi</strong> sütunu yapılacak modifikasyon sonucunda ki-karedeki düşüsü göstermektedir.</p></li>
 </ul>
-<div class="sourceCode" id="cb239"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/modificationIndices.html">modindices</a></span><span class="op">(</span><span class="va">yol_fit</span>, sort <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">## modindices(yol_fit, sort = TRUE, maximum.number = 5)</span></span></code></pre></div>
 <div class="kable-table">
@@ -1085,16 +1093,16 @@ eklenebilir</p></li>
 veriye mükemmel uyum sağlayacaktır</p></li>
 </ul>
 </div>
-<div id="modelin-yeniden-tanımlanması" class="section level2" number="5.13">
+<div id="modelin-yeniden-tanımlanması" class="section level2" number="6.13">
 <h2>
-<span class="header-section-number">5.13</span> Modelin Yeniden Tanımlanması<a class="anchor" aria-label="anchor" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.13</span> Modelin Yeniden Tanımlanması<a class="anchor" aria-label="anchor" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>Revised Model 1</strong></p>
 <ul>
 <li>stres ~ form
 yolu eklenir.</li>
 </ul>
-<div class="sourceCode" id="cb240"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model_v1</span> <span class="op">&lt;-</span> </span>
 <span><span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -1102,25 +1110,25 @@ yolu eklenir.</li>
 <span><span class="st">stres     ~ form</span></span>
 <span><span class="st">egzersiz ~~ dayaniklilik'</span> </span>
 <span><span class="va">yol_fit_v1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/sem.html">sem</a></span><span class="op">(</span><span class="va">yol_model_v1</span>, <span class="va">veri</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>,rotation<span class="op">=</span><span class="fl">2</span>, curvePivot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>sizeMan <span class="op">=</span> <span class="fl">12</span>, sizeInt <span class="op">=</span> <span class="fl">1</span>, </span>
 <span>sizeLat <span class="op">=</span> <span class="fl">4</span>,</span>
 <span>edge.label.cex <span class="op">=</span> <span class="fl">1.8</span>,</span>
 <span>pastel<span class="op">=</span><span class="cn">TRUE</span>,</span>
 <span>nCharNodes <span class="op">=</span> <span class="fl">0</span>, nCharEdges <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-26-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-26-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li><p>Yeni tanımlanan model için verilen uyum indeksleri
 beklendiği gibidir.</p></li>
 <li><p>Kikare = 0 ve sd = 0 olduğunda, p değerini 0,0000 olarak
 yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p></li>
 </ul>
-<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>,fit.measures<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span>,<span class="st">"p"</span>,<span class="st">"df"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## chisq    df 
 ##     0     0</code></pre>
-<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p_pa</span> <span class="op">&lt;-</span> </span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>, whatLabels <span class="op">=</span> <span class="st">"est"</span>,</span>
 <span>sizeMan <span class="op">=</span> <span class="fl">10</span>,</span>
@@ -1130,17 +1138,17 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <span><span class="va">p_pa_2</span> <span class="op">&lt;-</span> <span class="fu">semptools</span><span class="fu">::</span><span class="fu"><a href="https://sfcheung.github.io/semptools/reference/mark_sig.html">mark_sig</a></span><span class="op">(</span><span class="va">p_pa</span>, <span class="va">yol_fit_v1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">p_pa_2</span><span class="op">)</span></span></code></pre></div>
 <p>good fit vs parsinomy parsinomy principle</p>
-<p><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-29-1.png" width="100%" style="display: block; margin: auto;"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-29-2.png" width="100%" style="display: block; margin: auto;"></p>
+<p><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-29-1.png" width="100%" style="display: block; margin: auto;"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-29-2.png" width="100%" style="display: block; margin: auto;"></p>
 </div>
-<div id="modelin-yeniden-tanımlanması-1" class="section level2" number="5.14">
+<div id="modelin-yeniden-tanımlanması-1" class="section level2" number="6.14">
 <h2>
-<span class="header-section-number">5.14</span> Modelin Yeniden Tanımlanması<a class="anchor" aria-label="anchor" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.14</span> Modelin Yeniden Tanımlanması<a class="anchor" aria-label="anchor" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1-1"><i class="fas fa-link"></i></a>
 </h2>
 <p><strong>Revised Model 2</strong></p>
 <ul>
 <li>anlamlı olmayan yol katsayıları kaldırıldır</li>
 </ul>
-<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model_v1</span> <span class="op">&lt;-</span> </span>
 <span><span class="st">'stres     ~ egzersiz + dayaniklilik</span></span>
 <span><span class="st">hastalik  ~ egzersiz + dayaniklilik + form + stres</span></span>
@@ -1159,11 +1167,11 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <ul>
 <li>anlamlı olmayan yol katsayıları kaldırıldır</li>
 </ul>
-<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rmsea"</span>,<span class="st">"cfi"</span>,<span class="st">"srmr"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## rmsea   cfi  srmr 
 ## 0.000 1.000 0.011</code></pre>
-<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb251"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="cn">NA</span>, <span class="st">"form"</span>,  <span class="cn">NA</span>,   <span class="cn">NA</span>,</span>
 <span>              <span class="st">"egzersiz"</span>, <span class="cn">NA</span>, <span class="cn">NA</span>,  <span class="cn">NA</span>,   <span class="cn">NA</span>,</span>
 <span>                <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>,  <span class="cn">NA</span>, <span class="st">"hastalik"</span>,</span>
@@ -1178,12 +1186,12 @@ yazdırır. Ancak bu değer ki kare testinin reddedildiği anlamına gelmez.</p>
 <span>           style <span class="op">=</span> <span class="st">"ram"</span>,</span>
 <span>           nCharNodes <span class="op">=</span> <span class="fl">0</span>, nCharEdges <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>           layout<span class="op">=</span><span class="va">m</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-1.png" width="45%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-32-1.png" width="45%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p_pa_2</span> <span class="op">&lt;-</span> <span class="fu">semptools</span><span class="fu">::</span><span class="fu"><a href="https://sfcheung.github.io/semptools/reference/mark_sig.html">mark_sig</a></span><span class="op">(</span><span class="va">p_pa</span>, <span class="va">yol_fit_v2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">p_pa_2</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="05-Yolanalizi_files/figure-html/unnamed-chunk-32-2.png" width="45%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="06-Yolanalizi_files/figure-html/unnamed-chunk-32-2.png" width="45%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> , <span class="st">"pvalue"</span>,</span>
 <span>                                        <span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"rmsea"</span>,</span>
 <span>                                        <span class="st">"rmsea.ci.lower"</span>,   <span class="st">"rmsea.ci.upper"</span></span>
@@ -1199,9 +1207,9 @@ değeri (1,354) 0.05 alfa düzeyinde istatistiksel olarak anlamlı
 değildir.</p></li>
 <li><p>RMSEA, CFI ve SRMR indekslerinin değerleri istenilen değerdedir</p></li>
 </ul>
-<div id="ki-kare-fark-testi" class="section level3" number="5.14.1">
+<div id="ki-kare-fark-testi" class="section level3" number="6.14.1">
 <h3>
-<span class="header-section-number">5.14.1</span> Ki-Kare Fark Testi<a class="anchor" aria-label="anchor" href="#ki-kare-fark-testi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.14.1</span> Ki-Kare Fark Testi<a class="anchor" aria-label="anchor" href="#ki-kare-fark-testi"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>
@@ -1270,9 +1278,9 @@ olan) revised model 1’e (daha karmaşık olan) tercih edilir
 </li>
 </ul>
 </div>
-<div id="aic-ve-bic" class="section level3" number="5.14.2">
+<div id="aic-ve-bic" class="section level3" number="6.14.2">
 <h3>
-<span class="header-section-number">5.14.2</span> AIC ve BIC<a class="anchor" aria-label="anchor" href="#aic-ve-bic"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.14.2</span> AIC ve BIC<a class="anchor" aria-label="anchor" href="#aic-ve-bic"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>Akaike Information Criterion (AIC) ve Bayesian
@@ -1295,12 +1303,12 @@ hiyerarşik olmayan modellerin arasından seçim yapmak
 için kullanılır. Bağıl olarak daha küçük değerler uygundur</p></li>
 </ul>
 <p>model1</p>
-<div class="sourceCode" id="cb252"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v1</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"AIC"</span>,<span class="st">"BIC"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   aic   bic 
 ## 21423 21483</code></pre>
 <p>model2</p>
-<div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"AIC"</span>,<span class="st">"BIC"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##   aic   bic 
 ## 21418 21466</code></pre>
@@ -1321,84 +1329,10 @@ ilkesi), ama hala veriye iyi uyan modeldir.</p></li>
 </ul>
 <p><strong>İyi Uyuma karşı Model Tutumluluğu</strong></p>
 </div>
-</div>
-<div id="sem-fonksiyonu" class="section level2" number="5.15">
-<h2>
-<span class="header-section-number">5.15</span> sem fonksiyonu<a class="anchor" aria-label="anchor" href="#sem-fonksiyonu"><i class="fas fa-link"></i></a>
-</h2>
-<div class="inline-table"><table class="table table-sm">
-<colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
-</colgroup>
-<thead><tr class="header">
-<th>Argüman</th>
-<th>Açıklama</th>
-<th>Değerleri</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Model</td>
-<td>YEM modeli tanımlanır.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Data</td>
-<td>Gözlenen değişkenlerin yer aldığı veri setidir.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>sampling.weights</td>
-<td>Örneklem ağırlıklandırması yapılacağı durumlarda tanımlanır.</td>
-<td>Veri çerçevesinde ağırlıklandırma bilgisinin yer aldığı değişkenin adıdır.</td>
-</tr>
-<tr class="even">
-<td>group</td>
-<td>Çoklu grup analizlerde grup değişkeni tanımlanır.</td>
-<td>Veri matrisinde grubu tanımlayan değişkenin adıdır.</td>
-</tr>
-<tr class="odd">
-<td>cluster</td>
-<td>Çok düzeyli analizlerde düzey değişkeni tanımlanır.</td>
-<td>Veri matrisinde düzeyi tanımlayan değişkenin adıdır.</td>
-</tr>
-<tr class="even">
-<td>constraints</td>
-<td>Modele eklenecek diğer sınırlandırmalar tanımlanır.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>estimator</td>
-<td>Kestirim yöntemidir.</td>
-<td>“ML”, “GLS”, “WLS”, ”ULS”, ”DWLS” gibi</td>
-</tr>
-</tbody>
-</table></div>
-<div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th>formul</th>
-<th>tur</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>gizil değişken tanımlama</td>
-<td>=~</td>
-</tr>
-<tr class="even">
-<td>regresyon</td>
-<td>~</td>
-</tr>
-<tr class="odd">
-<td>kovaryans</td>
-<td>~~</td>
-</tr>
-<tr class="even">
-<td>kesisim</td>
-<td>~1</td>
-</tr>
-</tbody>
-</table></div>
+<div id="modeli-tanımlama" class="section level3" number="6.14.3">
+<h3>
+<span class="header-section-number">6.14.3</span> Modeli tanımlama<a class="anchor" aria-label="anchor" href="#modeli-tan%C4%B1mlama"><i class="fas fa-link"></i></a>
+</h3>
 <ul>
 <li>MODEL bölümü modelin belirlenmesi</li>
 <li>Yol analizinde, her bir içsel (endogenous) değişkenin bir
@@ -1422,7 +1356,7 @@ ardı edilir.</p></li>
 <li><p>Ortalamalar/kesişimler çıkarılınca, kestirilen
 <strong>parametre sayısı 14</strong> olmalıdır.</p></li>
 </ul>
-<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## lavaan 0.6.17 ended normally after 8 iterations
 ## 
@@ -1484,7 +1418,7 @@ bölünmesiyle t istatistiği elde edilir:
 <strong>anlamlı olarak 0’dan farklı
 olduğunu önerir.</strong></p></li>
 </ul>
-<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/standardizedSolution.html">standardizedsolution</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1686,9 +1620,10 @@ dayaniklilik değişkenleri arasındaki <strong>kovaryans</strong>
 tahminidir.</p></li>
 </ul>
 </div>
-<div id="standartlaştırılmış-artık" class="section level2" number="5.16">
+</div>
+<div id="standartlaştırılmış-artık" class="section level2" number="6.15">
 <h2>
-<span class="header-section-number">5.16</span> Standartlaştırılmış Artık<a class="anchor" aria-label="anchor" href="#standartla%C5%9Ft%C4%B1r%C4%B1lm%C4%B1%C5%9F-art%C4%B1k"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.15</span> Standartlaştırılmış Artık<a class="anchor" aria-label="anchor" href="#standartla%C5%9Ft%C4%B1r%C4%B1lm%C4%B1%C5%9F-art%C4%B1k"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Standartlaştırılmamış artık varyans (unstandardized
@@ -1705,14 +1640,14 @@ için toplam varyansın yaklaşık
 <li><p><strong>1261.4 / 1508.75 = 0.836</strong></p></li>
 </ul>
 </div>
-<div id="kestirim" class="section level2" number="5.17">
+<div id="kestirim" class="section level2" number="6.16">
 <h2>
-<span class="header-section-number">5.17</span> Kestirim<a class="anchor" aria-label="anchor" href="#kestirim"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.16</span> Kestirim<a class="anchor" aria-label="anchor" href="#kestirim"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Standartlaştırılmamış sonuçlar</li>
 </ul>
-<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">yol_fit</span>,standardized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -1956,7 +1891,7 @@ yordayıcılar tarafından açıklandığını önerir.</p></li>
 <p>Not: Her bir içsel değişken için <span class="math inline">\(R^2\)</span> değeri ve standartlaştırılmış
 artık varyansının toplamı “1”e eşit olmalıdır:
 0.164 + 0.836 = 1</p>
-<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">yol_fit</span>, rsquare<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">out</span><span class="op">$</span><span class="va">PE</span><span class="op">[</span><span class="fl">15</span><span class="op">:</span><span class="fl">17</span>,<span class="op">]</span></span></code></pre></div>
 <ul>
@@ -1967,11 +1902,11 @@ artık varyansının toplamı “1”e eşit olmalıdır:
 <li>form 0.164</li>
 </ul>
 </div>
-<div id="model-sonuçlarının-rapor-edilmesi" class="section level2" number="5.18">
+<div id="model-sonuçlarının-rapor-edilmesi" class="section level2" number="6.17">
 <h2>
-<span class="header-section-number">5.18</span> Model Sonuçlarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.17</span> Model Sonuçlarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/standardizedSolution.html">standardizedsolution</a></span><span class="op">(</span><span class="va">yol_fit</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">op</span> <span class="op">==</span> <span class="st">"~"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
@@ -1981,7 +1916,7 @@ artık varyansının toplamı “1”e eşit olmalıdır:
 <span>               caption<span class="op">=</span><span class="st">"Factor Loadings"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <caption>
-<span id="tab:unnamed-chunk-40">Tablo 5.1: </span>Factor Loadings</caption>
+<span id="tab:unnamed-chunk-40">Tablo 6.1: </span>Factor Loadings</caption>
 <thead><tr class="header">
 <th align="left">Bağımlı Değişkenler</th>
 <th align="left">Gosterge</th>
@@ -2057,12 +1992,12 @@ artık varyansının toplamı “1”e eşit olmalıdır:
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb263"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dr-JT/semoutput">semoutput</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_anova.html">sem_anova</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="va">yol_fit_v1</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table data-quarto-disable-processing="true" class="table" style="width: auto !important; ">
 <caption>
-<span id="tab:unnamed-chunk-41">Tablo 5.2: </span>Model Comparison
+<span id="tab:unnamed-chunk-41">Tablo 6.2: </span>Model Comparison
 </caption>
 <thead><tr>
 <th style="text-align:right;">
@@ -2155,29 +2090,29 @@ NA
 </tbody>
 </table></div>
 </div>
-<div id="model-karşılaştırmalarının-rapor-edilmesi" class="section level2" number="5.19">
+<div id="model-karşılaştırmalarının-rapor-edilmesi" class="section level2" number="6.18">
 <h2>
-<span class="header-section-number">5.19</span> Model Karşılaştırmalarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmalar%C4%B1n%C4%B1n-rapor-edilmesi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.18</span> Model Karşılaştırmalarının Rapor Edilmesi<a class="anchor" aria-label="anchor" href="#model-kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmalar%C4%B1n%C4%B1n-rapor-edilmesi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_modelcomp.html">sem_modelcomp</a></span><span class="op">(</span><span class="va">yol_fit_v2</span>,<span class="va">yol_fit_v1</span><span class="op">)</span></span></code></pre></div>
-<div id="nmrbggzbfo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nmrbggzbfo table {
+<div id="qghennwpnb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qghennwpnb table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nmrbggzbfo thead, #nmrbggzbfo tbody, #nmrbggzbfo tfoot, #nmrbggzbfo tr, #nmrbggzbfo td, #nmrbggzbfo th {
+#qghennwpnb thead, #qghennwpnb tbody, #qghennwpnb tfoot, #qghennwpnb tr, #qghennwpnb td, #qghennwpnb th {
   border-style: none;
 }
 
-#nmrbggzbfo p {
+#qghennwpnb p {
   margin: 0;
   padding: 0;
 }
 
-#nmrbggzbfo .gt_table {
+#qghennwpnb .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2203,12 +2138,12 @@ NA
   border-left-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_caption {
+#qghennwpnb .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nmrbggzbfo .gt_title {
+#qghennwpnb .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2220,7 +2155,7 @@ NA
   border-bottom-width: 0;
 }
 
-#nmrbggzbfo .gt_subtitle {
+#qghennwpnb .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2232,7 +2167,7 @@ NA
   border-top-width: 0;
 }
 
-#nmrbggzbfo .gt_heading {
+#qghennwpnb .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2244,13 +2179,13 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_bottom_border {
+#qghennwpnb .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_col_headings {
+#qghennwpnb .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2265,7 +2200,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_col_heading {
+#qghennwpnb .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2285,7 +2220,7 @@ NA
   overflow-x: hidden;
 }
 
-#nmrbggzbfo .gt_column_spanner_outer {
+#qghennwpnb .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2297,15 +2232,15 @@ NA
   padding-right: 4px;
 }
 
-#nmrbggzbfo .gt_column_spanner_outer:first-child {
+#qghennwpnb .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nmrbggzbfo .gt_column_spanner_outer:last-child {
+#qghennwpnb .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nmrbggzbfo .gt_column_spanner {
+#qghennwpnb .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2317,11 +2252,11 @@ NA
   width: 100%;
 }
 
-#nmrbggzbfo .gt_spanner_row {
+#qghennwpnb .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nmrbggzbfo .gt_group_heading {
+#qghennwpnb .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2347,7 +2282,7 @@ NA
   text-align: left;
 }
 
-#nmrbggzbfo .gt_empty_group_heading {
+#qghennwpnb .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2362,15 +2297,15 @@ NA
   vertical-align: middle;
 }
 
-#nmrbggzbfo .gt_from_md > :first-child {
+#qghennwpnb .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nmrbggzbfo .gt_from_md > :last-child {
+#qghennwpnb .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nmrbggzbfo .gt_row {
+#qghennwpnb .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2389,7 +2324,7 @@ NA
   overflow-x: hidden;
 }
 
-#nmrbggzbfo .gt_stub {
+#qghennwpnb .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2402,7 +2337,7 @@ NA
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_stub_row_group {
+#qghennwpnb .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2416,15 +2351,15 @@ NA
   vertical-align: top;
 }
 
-#nmrbggzbfo .gt_row_group_first td {
+#qghennwpnb .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nmrbggzbfo .gt_row_group_first th {
+#qghennwpnb .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nmrbggzbfo .gt_summary_row {
+#qghennwpnb .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2434,16 +2369,16 @@ NA
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_first_summary_row {
+#qghennwpnb .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_first_summary_row.thick {
+#qghennwpnb .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nmrbggzbfo .gt_last_summary_row {
+#qghennwpnb .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2453,7 +2388,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_grand_summary_row {
+#qghennwpnb .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2463,7 +2398,7 @@ NA
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_first_grand_summary_row {
+#qghennwpnb .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2473,7 +2408,7 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_last_grand_summary_row_top {
+#qghennwpnb .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2483,11 +2418,11 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_striped {
+#qghennwpnb .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nmrbggzbfo .gt_table_body {
+#qghennwpnb .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2496,7 +2431,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_footnotes {
+#qghennwpnb .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2510,7 +2445,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_footnote {
+#qghennwpnb .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -2519,7 +2454,7 @@ NA
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_sourcenotes {
+#qghennwpnb .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2533,7 +2468,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#nmrbggzbfo .gt_sourcenote {
+#qghennwpnb .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2541,63 +2476,63 @@ NA
   padding-right: 15px;
 }
 
-#nmrbggzbfo .gt_left {
+#qghennwpnb .gt_left {
   text-align: left;
 }
 
-#nmrbggzbfo .gt_center {
+#qghennwpnb .gt_center {
   text-align: center;
 }
 
-#nmrbggzbfo .gt_right {
+#qghennwpnb .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nmrbggzbfo .gt_font_normal {
+#qghennwpnb .gt_font_normal {
   font-weight: normal;
 }
 
-#nmrbggzbfo .gt_font_bold {
+#qghennwpnb .gt_font_bold {
   font-weight: bold;
 }
 
-#nmrbggzbfo .gt_font_italic {
+#qghennwpnb .gt_font_italic {
   font-style: italic;
 }
 
-#nmrbggzbfo .gt_super {
+#qghennwpnb .gt_super {
   font-size: 65%;
 }
 
-#nmrbggzbfo .gt_footnote_marks {
+#qghennwpnb .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nmrbggzbfo .gt_asterisk {
+#qghennwpnb .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nmrbggzbfo .gt_indent_1 {
+#qghennwpnb .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nmrbggzbfo .gt_indent_2 {
+#qghennwpnb .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nmrbggzbfo .gt_indent_3 {
+#qghennwpnb .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nmrbggzbfo .gt_indent_4 {
+#qghennwpnb .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nmrbggzbfo .gt_indent_5 {
+#qghennwpnb .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2650,9 +2585,9 @@ NA
 </table></div>
 </div>
 </div>
-<div id="doğrudan-dolaylı-ve-toplam-etkiler" class="section level2" number="5.20">
+<div id="doğrudan-dolaylı-ve-toplam-etkiler" class="section level2" number="6.19">
 <h2>
-<span class="header-section-number">5.20</span> Doğrudan, Dolaylı ve Toplam Etkiler<a class="anchor" aria-label="anchor" href="#do%C4%9Frudan-dolayl%C4%B1-ve-toplam-etkiler"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.19</span> Doğrudan, Dolaylı ve Toplam Etkiler<a class="anchor" aria-label="anchor" href="#do%C4%9Frudan-dolayl%C4%B1-ve-toplam-etkiler"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>Toplam etki</strong>, bir değişken bir birim değiştiğinde diğer bir
@@ -2702,7 +2637,7 @@ standartlaştırılmış yol katsayılarının çarpılması sonucu elde edilir:
 <p>egzersiz → stres → hastalık</p>
 <p>dayanıklılık → form → hastalık</p>
 <p>dayanıklılık → stres → hastalık</p>
-<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb268"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yol_model</span> <span class="op">&lt;-</span>  <span class="st">'stres     ~ s_e*egzersiz + dayaniklilik</span></span>
 <span><span class="st">               hastalik  ~ h_e*egzersiz + dayaniklilik + h_f*form + h_s*stres</span></span>
 <span><span class="st">               form      ~ f_e*egzersiz + dayaniklilik</span></span>
@@ -2722,7 +2657,7 @@ standartlaştırılmış yol katsayılarının çarpılması sonucu elde edilir:
 <span><span class="st">               tot:=tot_ind + h_e'</span></span>
 <span></span>
 <span><span class="va">fsem1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/sem.html">sem</a></span><span class="op">(</span><span class="va">yol_model</span>,<span class="va">veri</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/standardizedSolution.html">standardizedsolution</a></span><span class="op">(</span><span class="va">fsem1</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -3004,95 +2939,11 @@ toplam etki = doğrudan etki + toplam dolaylı etki</p></li>
 <li><p>= 0.071</p></li>
 </ul>
 <div class="inline-figure"><img src="images/PA_8.PNG" width="75%" style="display: block; margin: auto;"></div>
-</div>
-<div id="sempaths" class="section level2" number="5.21">
-<h2>
-<span class="header-section-number">5.21</span> semPaths<a class="anchor" aria-label="anchor" href="#sempaths"><i class="fas fa-link"></i></a>
-</h2>
-<div class="inline-table"><table class="table table-sm">
-<colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
-</colgroup>
-<thead><tr class="header">
-<th>Argüman</th>
-<th>Açıklama</th>
-<th>Değerleri</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>Object</td>
-<td>YEM modeli analiz çıktısını içeren nesnedir.</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>What</td>
-<td>Diyagramda hangi değerlerin gösterileceği tanımlanır.</td>
-<td>“path”, “diagram” ve “mod”: yalnızca diyagramı “est” ve “par” kestirilen; “stand” ve “std” standartlaştırılmış parametreler “eq” ve “cons” eşitlenen parametreler aynı renkle gösterilir.</td>
-</tr>
-<tr class="odd">
-<td>whatLabels</td>
-<td>Yol çizgilerinde hangi değerlerin gösterileceği tanımlanır.</td>
-<td>what argümanıyla aynı değerleri alır.</td>
-</tr>
-<tr class="even">
-<td>Style</td>
-<td>Diyagramın biçimi tanımlanır. “ram”, “mx”, “OpenMx”, “lisrel”</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>layout</td>
-<td>Diyagramın tasarımı tanımlanır.</td>
-<td>“tree”, “tree2”, “circle”, “circle2”, “spring”</td>
-</tr>
-<tr class="even">
-<td>title</td>
-<td>Çoklu grup analizlerde grup adlarının diyagram başlığı olarak tanımlanması sağlanır.</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Reorder</td>
-<td>Faktör yüklerine göre sıralama yapılır.</td>
-<td>TRUE, FALSE</td>
-</tr>
-<tr class="even">
-<td>edge.label.cex</td>
-<td>Yol çizgilerinde yer alan parametre kestirim değerlerinin font büyüklüğüdür.</td>
-<td>Sayısal değer</td>
-</tr>
-<tr class="odd">
-<td>color</td>
-<td>Diyagramdaki şekillerin renkleri tanımlanır.</td>
-<td>Liste: list(man=””, lat= “”, int=””) man: gözlenen, lat: gizil değişken, int: kesişim</td>
-</tr>
-<tr class="even">
-<td>rotation</td>
-<td>Diyagramın yönü belirlenir.</td>
-<td>1, 2, 3, 4</td>
-</tr>
-<tr class="odd">
-<td>NCharNodes</td>
-<td>Değişken adlarının maksimum kaç karakter olacağı tanımlanır.</td>
-<td>Sayısal değer</td>
-</tr>
-<tr class="even">
-<td>SizeMan</td>
-<td>Gözlenen değişkene ilişkin dörtgen şeklinin büyüklüğü tanımlanır.</td>
-<td>Sayısal değer</td>
-</tr>
-<tr class="odd">
-<td>sizeLat</td>
-<td>Gizil değişkene ilişkin daire şeklinin büyüklüğü tanımlanır.</td>
-<td>Sayısal değer</td>
-</tr>
-</tbody>
-</table></div>
 <!-- https://shiny.rit.albany.edu/stat/cfa1test/lavaan.html -->
 </div>
-<div id="kaynaklar-3" class="section level2" number="5.22">
+<div id="kaynaklar-3" class="section level2" number="6.20">
 <h2>
-<span class="header-section-number">5.22</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.20</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar-3"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Roth, D. L., Wiebe, D. J., Fillingim, R. B., &amp; Shay, K. A. (1989). Life events, fitness, hardiness, and health: A simultaneous analysis of proposed stress-resistance effects. <em>Journal of Personality and Social Psychology, 57</em>(1), 136-142.</p></li>
@@ -3309,64 +3160,63 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></div>
-<div class="next"><a href="afa.html"><span class="header-section-number">6</span> AFA</a></div>
+<div class="prev"><a href="lavaan-ve-sem.html"><span class="header-section-number">5</span> lavaan ve sem</a></div>
+<div class="next"><a href="afa.html"><span class="header-section-number">7</span> AFA</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#yol-analizi"><span class="header-section-number">5</span> Yol Analizi</a></li>
-<li><a class="nav-link" href="#yol-analizi-modelleri"><span class="header-section-number">5.1</span> Yol Analizi Modelleri</a></li>
+<li><a class="nav-link" href="#yol-analizi"><span class="header-section-number">6</span> Yol Analizi</a></li>
+<li><a class="nav-link" href="#yol-analizi-modelleri"><span class="header-section-number">6.1</span> Yol Analizi Modelleri</a></li>
 <li>
-<a class="nav-link" href="#bir-ara%C5%9Ft%C4%B1rma-senaryosu-hastal%C4%B1k-fakt%C3%B6rleri"><span class="header-section-number">5.2</span> Bir Araştırma Senaryosu: Hastalık Faktörleri</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-modeli"><span class="header-section-number">5.2.1</span> Hastalık Faktörleri Yol Modeli</a></li></ul>
+<a class="nav-link" href="#bir-ara%C5%9Ft%C4%B1rma-senaryosu-hastal%C4%B1k-fakt%C3%B6rleri"><span class="header-section-number">6.2</span> Bir Araştırma Senaryosu: Hastalık Faktörleri</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-modeli"><span class="header-section-number">6.2.1</span> Hastalık Faktörleri Yol Modeli</a></li></ul>
 </li>
-<li><a class="nav-link" href="#yol-%C5%9Femas%C4%B1n%C4%B1n-%C3%B6%C4%9Feleri"><span class="header-section-number">5.3</span> Yol Şemasının Öğeleri</a></li>
-<li><a class="nav-link" href="#do%C4%9Frudan-etki"><span class="header-section-number">5.4</span> Doğrudan Etki</a></li>
-<li><a class="nav-link" href="#yol-%C5%9Femas%C4%B1n%C4%B1n-%C3%B6%C4%9Feleri-1"><span class="header-section-number">5.5</span> Yol Şemasının Öğeleri</a></li>
+<li><a class="nav-link" href="#yol-%C5%9Femas%C4%B1n%C4%B1n-%C3%B6%C4%9Feleri"><span class="header-section-number">6.3</span> Yol Şemasının Öğeleri</a></li>
+<li><a class="nav-link" href="#do%C4%9Frudan-etki"><span class="header-section-number">6.4</span> Doğrudan Etki</a></li>
+<li><a class="nav-link" href="#yol-%C5%9Femas%C4%B1n%C4%B1n-%C3%B6%C4%9Feleri-1"><span class="header-section-number">6.5</span> Yol Şemasının Öğeleri</a></li>
 <li>
-<a class="nav-link" href="#yol-analizi-modeli"><span class="header-section-number">5.6</span> Yol Analizi Modeli</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-%C5%9Femas%C4%B1"><span class="header-section-number">5.6.1</span> Hastalık Faktörleri (Yol Şeması)</a></li></ul>
-</li>
-<li>
-<a class="nav-link" href="#evren-kovaryans-matrisi"><span class="header-section-number">5.7</span> Evren Kovaryans Matrisi</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#serbestlik-derecesi"><span class="header-section-number">5.7.1</span> Serbestlik Derecesi:</a></li></ul>
+<a class="nav-link" href="#yol-analizi-modeli"><span class="header-section-number">6.6</span> Yol Analizi Modeli</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#hastal%C4%B1k-fakt%C3%B6rleri-yol-%C5%9Femas%C4%B1"><span class="header-section-number">6.6.1</span> Hastalık Faktörleri (Yol Şeması)</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#model-tan%C4%B1mlanmas%C4%B1"><span class="header-section-number">5.8</span> Model Tanımlanması</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#yetersiz-tan%C4%B1mlanma-underidentification"><span class="header-section-number">5.8.1</span> Yetersiz Tanımlanma (Underidentification)</a></li>
-<li><a class="nav-link" href="#ancak-tan%C4%B1mlanma-just-identification"><span class="header-section-number">5.8.2</span> Ancak Tanımlanma (Just Identification)</a></li>
-<li><a class="nav-link" href="#a%C5%9F%C4%B1r%C4%B1-tan%C4%B1mlanma-overidentification"><span class="header-section-number">5.8.3</span> Aşırı Tanımlanma (Overidentification)</a></li>
+<a class="nav-link" href="#evren-kovaryans-matrisi"><span class="header-section-number">6.7</span> Evren Kovaryans Matrisi</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#serbestlik-derecesi"><span class="header-section-number">6.7.1</span> Serbestlik Derecesi:</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#model-tan%C4%B1mlanmas%C4%B1"><span class="header-section-number">6.8</span> Model Tanımlanması</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#yetersiz-tan%C4%B1mlanma-underidentification"><span class="header-section-number">6.8.1</span> Yetersiz Tanımlanma (Underidentification)</a></li>
+<li><a class="nav-link" href="#ancak-tan%C4%B1mlanma-just-identification"><span class="header-section-number">6.8.2</span> Ancak Tanımlanma (Just Identification)</a></li>
+<li><a class="nav-link" href="#a%C5%9F%C4%B1r%C4%B1-tan%C4%B1mlanma-overidentification"><span class="header-section-number">6.8.3</span> Aşırı Tanımlanma (Overidentification)</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#model-veri-uyumunun-de%C4%9Ferlendirilmesi"><span class="header-section-number">5.9</span> Model-Veri Uyumunun Değerlendirilmesi</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ki-kare-testi-chi-square-test"><span class="header-section-number">5.9.1</span> Ki-Kare Testi (Chi-Square Test)</a></li>
-<li><a class="nav-link" href="#rmsea"><span class="header-section-number">5.9.2</span> RMSEA</a></li>
-<li><a class="nav-link" href="#srmr"><span class="header-section-number">5.9.3</span> SRMR</a></li>
-<li><a class="nav-link" href="#kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmal%C4%B1-uyum-indeksleri"><span class="header-section-number">5.9.4</span> Karşılaştırmalı Uyum İndeksleri</a></li>
+<a class="nav-link" href="#model-veri-uyumunun-de%C4%9Ferlendirilmesi"><span class="header-section-number">6.9</span> Model-Veri Uyumunun Değerlendirilmesi</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ki-kare-testi-chi-square-test"><span class="header-section-number">6.9.1</span> Ki-Kare Testi (Chi-Square Test)</a></li>
+<li><a class="nav-link" href="#rmsea"><span class="header-section-number">6.9.2</span> RMSEA</a></li>
+<li><a class="nav-link" href="#srmr"><span class="header-section-number">6.9.3</span> SRMR</a></li>
+<li><a class="nav-link" href="#kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmal%C4%B1-uyum-indeksleri"><span class="header-section-number">6.9.4</span> Karşılaştırmalı Uyum İndeksleri</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#uyum-indekslerini-raporlarken-%C3%B6neriler"><span class="header-section-number">5.10</span> Uyum İndekslerini Raporlarken Öneriler</a></li>
-<li><a class="nav-link" href="#bireysel-istatistiksel-testler"><span class="header-section-number">5.11</span> Bireysel İstatistiksel testler:</a></li>
-<li><a class="nav-link" href="#modifikasyon-indeksleri"><span class="header-section-number">5.12</span> Modifikasyon İndeksleri</a></li>
-<li><a class="nav-link" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1"><span class="header-section-number">5.13</span> Modelin Yeniden Tanımlanması</a></li>
+<li><a class="nav-link" href="#uyum-indekslerini-raporlarken-%C3%B6neriler"><span class="header-section-number">6.10</span> Uyum İndekslerini Raporlarken Öneriler</a></li>
+<li><a class="nav-link" href="#bireysel-istatistiksel-testler"><span class="header-section-number">6.11</span> Bireysel İstatistiksel testler:</a></li>
+<li><a class="nav-link" href="#modifikasyon-indeksleri"><span class="header-section-number">6.12</span> Modifikasyon İndeksleri</a></li>
+<li><a class="nav-link" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1"><span class="header-section-number">6.13</span> Modelin Yeniden Tanımlanması</a></li>
 <li>
-<a class="nav-link" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1-1"><span class="header-section-number">5.14</span> Modelin Yeniden Tanımlanması</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ki-kare-fark-testi"><span class="header-section-number">5.14.1</span> Ki-Kare Fark Testi</a></li>
-<li><a class="nav-link" href="#aic-ve-bic"><span class="header-section-number">5.14.2</span> AIC ve BIC</a></li>
+<a class="nav-link" href="#modelin-yeniden-tan%C4%B1mlanmas%C4%B1-1"><span class="header-section-number">6.14</span> Modelin Yeniden Tanımlanması</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ki-kare-fark-testi"><span class="header-section-number">6.14.1</span> Ki-Kare Fark Testi</a></li>
+<li><a class="nav-link" href="#aic-ve-bic"><span class="header-section-number">6.14.2</span> AIC ve BIC</a></li>
+<li><a class="nav-link" href="#modeli-tan%C4%B1mlama"><span class="header-section-number">6.14.3</span> Modeli tanımlama</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#sem-fonksiyonu"><span class="header-section-number">5.15</span> sem fonksiyonu</a></li>
-<li><a class="nav-link" href="#standartla%C5%9Ft%C4%B1r%C4%B1lm%C4%B1%C5%9F-art%C4%B1k"><span class="header-section-number">5.16</span> Standartlaştırılmış Artık</a></li>
-<li><a class="nav-link" href="#kestirim"><span class="header-section-number">5.17</span> Kestirim</a></li>
-<li><a class="nav-link" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi"><span class="header-section-number">5.18</span> Model Sonuçlarının Rapor Edilmesi</a></li>
-<li><a class="nav-link" href="#model-kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmalar%C4%B1n%C4%B1n-rapor-edilmesi"><span class="header-section-number">5.19</span> Model Karşılaştırmalarının Rapor Edilmesi</a></li>
-<li><a class="nav-link" href="#do%C4%9Frudan-dolayl%C4%B1-ve-toplam-etkiler"><span class="header-section-number">5.20</span> Doğrudan, Dolaylı ve Toplam Etkiler</a></li>
-<li><a class="nav-link" href="#sempaths"><span class="header-section-number">5.21</span> semPaths</a></li>
-<li><a class="nav-link" href="#kaynaklar-3"><span class="header-section-number">5.22</span> Kaynaklar</a></li>
+<li><a class="nav-link" href="#standartla%C5%9Ft%C4%B1r%C4%B1lm%C4%B1%C5%9F-art%C4%B1k"><span class="header-section-number">6.15</span> Standartlaştırılmış Artık</a></li>
+<li><a class="nav-link" href="#kestirim"><span class="header-section-number">6.16</span> Kestirim</a></li>
+<li><a class="nav-link" href="#model-sonu%C3%A7lar%C4%B1n%C4%B1n-rapor-edilmesi"><span class="header-section-number">6.17</span> Model Sonuçlarının Rapor Edilmesi</a></li>
+<li><a class="nav-link" href="#model-kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rmalar%C4%B1n%C4%B1n-rapor-edilmesi"><span class="header-section-number">6.18</span> Model Karşılaştırmalarının Rapor Edilmesi</a></li>
+<li><a class="nav-link" href="#do%C4%9Frudan-dolayl%C4%B1-ve-toplam-etkiler"><span class="header-section-number">6.19</span> Doğrudan, Dolaylı ve Toplam Etkiler</a></li>
+<li><a class="nav-link" href="#kaynaklar-3"><span class="header-section-number">6.20</span> Kaynaklar</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="/blob/master/book/05-Yolanalizi.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="/edit/master/book/05-Yolanalizi.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="/blob/master/book/06-Yolanalizi.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/06-Yolanalizi.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -3378,7 +3228,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-14.</p>
+    <p>"<strong>lavaan</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-17.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

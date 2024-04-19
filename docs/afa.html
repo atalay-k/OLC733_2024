@@ -4,21 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bölüm 6 AFA | OLC733</title>
+<title>Bölüm 7 AFA | lavaan</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
 <meta name="description" content="Bazı durumlarda, özellikle de ölçme araçları yeni geliştirildiyse: Araştırmacıların bir grup gözlenen/ölçülen değişkenin altında yatan faktör sayısı hakkında güçlü varsayımları yoktur....">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Bölüm 6 AFA | OLC733">
+<meta property="og:title" content="Bölüm 7 AFA | lavaan">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC733/afa.html">
 <meta property="og:description" content="Bazı durumlarda, özellikle de ölçme araçları yeni geliştirildiyse: Araştırmacıların bir grup gözlenen/ölçülen değişkenin altında yatan faktör sayısı hakkında güçlü varsayımları yoktur....">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bölüm 6 AFA | OLC733">
+<meta name="twitter:title" content="Bölüm 7 AFA | lavaan">
 <meta name="twitter:description" content="Bazı durumlarda, özellikle de ölçme araçları yeni geliştirildiyse: Araştırmacıların bir grup gözlenen/ölçülen değişkenin altında yatan faktör sayısı hakkında güçlü varsayımları yoktur....">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="libs/datatables-binding-0.32/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
@@ -42,7 +43,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">OLC733</a>:
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">lavaan</a>:
         <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
@@ -60,10 +61,17 @@
 <li><a class="" href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">2</span> Varsayımlar II</a></li>
 <li><a class="" href="regresyon.html"><span class="header-section-number">3</span> Regresyon</a></li>
 <li><a class="" href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></li>
-<li><a class="" href="yol-analizi.html"><span class="header-section-number">5</span> Yol Analizi</a></li>
-<li><a class="active" href="afa.html"><span class="header-section-number">6</span> AFA</a></li>
-<li><a class="" href="dfa.html"><span class="header-section-number">7</span> DFA</a></li>
-<li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">8</span> Ölçme Değişmezliği</a></li>
+<li><a class="" href="lavaan-ve-sem.html"><span class="header-section-number">5</span> lavaan ve sem</a></li>
+<li><a class="" href="yol-analizi.html"><span class="header-section-number">6</span> Yol Analizi</a></li>
+<li><a class="active" href="afa.html"><span class="header-section-number">7</span> AFA</a></li>
+<li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
+<li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
+<li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
+<li><a class="" href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
 </ul>
 
         <div class="book-extra">
@@ -71,9 +79,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="afa" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="afa" class="section level1" number="7">
 <h1>
-<span class="header-section-number">Bölüm 6</span> AFA<a class="anchor" aria-label="anchor" href="#afa"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Bölüm 7</span> AFA<a class="anchor" aria-label="anchor" href="#afa"><i class="fas fa-link"></i></a>
 </h1>
 <ul>
 <li>
@@ -119,7 +127,7 @@ katsayıları, tetrakorik korelasyon katsayısı).</li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span>  <span class="fl">1</span>,<span class="fl">6</span>,<span class="fl">5</span>,<span class="fl">4</span>,<span class="fl">8</span>,<span class="fl">6</span>,<span class="fl">2</span>,</span>
 <span>  <span class="fl">2</span>,<span class="fl">8</span>,<span class="fl">7</span>,<span class="fl">2</span>,<span class="fl">7</span>,<span class="fl">5</span>,<span class="fl">3</span>,</span>
@@ -129,7 +137,7 @@ katsayıları, tetrakorik korelasyon katsayısı).</li>
 <span>  <span class="fl">6</span>,<span class="fl">7</span>,<span class="fl">6</span>,<span class="fl">3</span>,<span class="fl">7</span>,<span class="fl">5</span>,<span class="fl">3</span>,</span>
 <span>  <span class="fl">7</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">7</span>,<span class="fl">7</span>,<span class="fl">5</span>,<span class="fl">3</span><span class="op">)</span>,nrow<span class="op">=</span><span class="fl">7</span>,byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"id"</span>, <span class="st">"handsome"</span>, <span class="st">"beatiful"</span>,<span class="st">"ugly"</span>,<span class="st">"brillant"</span>,<span class="st">"smart"</span>,<span class="st">"dumb"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb268"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>align <span class="op">=</span> <span class="st">"c"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -211,7 +219,7 @@ katsayıları, tetrakorik korelasyon katsayısı).</li>
 <li>Verideki 6 değişken arasındaki Pearson korelasyon katsayıları
 matrisi aşağıdaki gibidir:</li>
 </ul>
-<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>align <span class="op">=</span> <span class="st">"c"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -313,16 +321,16 @@ olmayacaktır.</strong>
 </ul>
 </li>
 </ul>
-<div id="örüntü-katsayıları" class="section level2" number="6.1">
+<div id="örüntü-katsayıları" class="section level2" number="7.1">
 <h2>
-<span class="header-section-number">6.1</span> Örüntü Katsayıları<a class="anchor" aria-label="anchor" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1lar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.1</span> Örüntü Katsayıları<a class="anchor" aria-label="anchor" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1lar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Korelasyon matrisinin faktör analizi sonucunda elde edilen <strong>karesi
 alınmamış</strong> (<strong>MR1</strong> ve <strong>MR2</strong>), <strong>karesi alınmış</strong> (<strong>MR1</strong> ve
 <strong>MR2</strong>)<strong>faktör ağırlıkları</strong> aşağıdaki gibidir.</li>
 </ul>
-<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span></span>
 <span><span class="va">fa1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span>,<span class="fl">2</span><span class="op">)</span><span class="op">$</span><span class="va">loading</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>,<span class="fl">2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">fa1</span>,<span class="va">fa1</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>align <span class="op">=</span> <span class="st">"c"</span>,col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"MR1"</span>,<span class="st">"MR2"</span>, <span class="st">"MR1^2"</span>,<span class="st">"MR2^2"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -460,9 +468,9 @@ bir şekilde yeniden üretecekti.</p></li>
 </li>
 </ul>
 </div>
-<div id="yapı-katsayıları" class="section level2" number="6.2">
+<div id="yapı-katsayıları" class="section level2" number="7.2">
 <h2>
-<span class="header-section-number">6.2</span> Yapı Katsayıları<a class="anchor" aria-label="anchor" href="#yap%C4%B1-katsay%C4%B1lar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2</span> Yapı Katsayıları<a class="anchor" aria-label="anchor" href="#yap%C4%B1-katsay%C4%B1lar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Faktör analizinde, <strong>örüntü katsayıları</strong> faktör puanlarını elde
@@ -494,9 +502,9 @@ katsayıları matrisine</strong> eşit olacaktır ( <span class="math inline">\(
 ilişkisizdir.</p></li>
 </ul>
 </div>
-<div id="ortak-varyans-katsayıları" class="section level2" number="6.3">
+<div id="ortak-varyans-katsayıları" class="section level2" number="7.3">
 <h2>
-<span class="header-section-number">6.3</span> Ortak Varyans Katsayıları<a class="anchor" aria-label="anchor" href="#ortak-varyans-katsay%C4%B1lar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3</span> Ortak Varyans Katsayıları<a class="anchor" aria-label="anchor" href="#ortak-varyans-katsay%C4%B1lar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -522,7 +530,7 @@ boyunca toplanırsa, elde edilen katsayı <strong>ortak varyans</strong>
 <li><p>Örneğin, "Handsome" değişkeni için ortak varyans değeri,
 <span class="math inline">\((1.0)^2 + (0)^2 = 1.0\)</span></p></li>
 </ul>
-<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fa1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/Promax.html">target.rot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Call: NULL
@@ -572,9 +580,9 @@ düşük olmadığına</strong> işaret etmektedir.</li>
 </li>
 </ul>
 </div>
-<div id="özdeğerler" class="section level2" number="6.4">
+<div id="özdeğerler" class="section level2" number="7.4">
 <h2>
-<span class="header-section-number">6.4</span> Özdeğerler<a class="anchor" aria-label="anchor" href="#%C3%B6zde%C4%9Ferler"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4</span> Özdeğerler<a class="anchor" aria-label="anchor" href="#%C3%B6zde%C4%9Ferler"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Aralarında ilişki bulunmayan faktörler için <strong>örüntü/yapı
@@ -584,7 +592,7 @@ olarak adlandırılır.</p></li>
 <li><p><strong>Özdeğerler karakteristik kökler</strong> olarak da bilinmektedir.</p></li>
 <li><p>Örneğin, birinci faktör ve ikinci faktör için özdeğerler 3 ve 3’dır.</p></li>
 </ul>
-<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">fa1</span><span class="op">*</span><span class="va">fa1</span>, toplam<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">colSums</a></span><span class="op">(</span><span class="va">fa1</span><span class="op">*</span><span class="va">fa1</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -687,9 +695,9 @@ X_{6 dumb}\\
 <p><span class="math inline">\(X\)</span> : gözlenen değişken matrisi ( <span class="math inline">\(Vx1\)</span> )<br><span class="math inline">\(\Lambda\)</span> : yapısal katsayı matrisi ( <span class="math inline">\(VxF\)</span> )<br><span class="math inline">\(\xi\)</span> : örtük değişken vektorü</p>
 <p><span class="math inline">\(\delta\)</span> : ölçme hatası</p>
 </div>
-<div id="afa-modeli" class="section level2" number="6.5">
+<div id="afa-modeli" class="section level2" number="7.5">
 <h2>
-<span class="header-section-number">6.5</span> AFA Modeli<a class="anchor" aria-label="anchor" href="#afa-modeli"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5</span> AFA Modeli<a class="anchor" aria-label="anchor" href="#afa-modeli"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -744,9 +752,9 @@ sağlayacak faktör yükleri matrisini <span class="math inline">\(\Lambda\)</sp
 \end{bmatrix}\]</span></p>
 </div>
 </div>
-<div id="afada-örneklem-büyüklüğü" class="section level2" number="6.6">
+<div id="afada-örneklem-büyüklüğü" class="section level2" number="7.6">
 <h2>
-<span class="header-section-number">6.6</span> AFA’da Örneklem Büyüklüğü<a class="anchor" aria-label="anchor" href="#afada-%C3%B6rneklem-b%C3%BCy%C3%BCkl%C3%BC%C4%9F%C3%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.6</span> AFA’da Örneklem Büyüklüğü<a class="anchor" aria-label="anchor" href="#afada-%C3%B6rneklem-b%C3%BCy%C3%BCkl%C3%BC%C4%9F%C3%BC"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Örneklem büyüklüğü, AFA'da yapılanlar da dahil olmak üzere tüm
@@ -783,9 +791,9 @@ bulmuştur.</p></li>
 örneklem büyüklüğü gereklidir.</p></li>
 </ul>
 </div>
-<div id="örnek-veri" class="section level2" number="6.7">
+<div id="örnek-veri" class="section level2" number="7.7">
 <h2>
-<span class="header-section-number">6.7</span> Örnek Veri<a class="anchor" aria-label="anchor" href="#%C3%B6rnek-veri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.7</span> Örnek Veri<a class="anchor" aria-label="anchor" href="#%C3%B6rnek-veri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Veri Amerika Birleşik Devletleri ve Kanada'daki üniversite
@@ -803,9 +811,9 @@ gözlenen/ölçülen değişken aşağıdaki gibidir:</p></li>
 </ul>
 <div class="inline-figure"><img src="images/AFA_1.PNG" width="75%" style="display: block; margin: auto;"></div>
 </div>
-<div id="ilişki-katsayıları-matrisi" class="section level2" number="6.8">
+<div id="ilişki-katsayıları-matrisi" class="section level2" number="7.8">
 <h2>
-<span class="header-section-number">6.8</span> İlişki Katsayıları Matrisi<a class="anchor" aria-label="anchor" href="#ili%C5%9Fki-katsay%C4%B1lar%C4%B1-matrisi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8</span> İlişki Katsayıları Matrisi<a class="anchor" aria-label="anchor" href="#ili%C5%9Fki-katsay%C4%B1lar%C4%B1-matrisi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Değişkenler için <strong>toplanan puanlar</strong>, değişkenler arasındaki iki
@@ -852,7 +860,7 @@ aralığına sahip değildir.</strong></p></li>
 <li>AFA’da analiz edilen <strong>ilişkiler matrisidir.</strong> Örnek veri için
 <span class="math inline">\(R_{11 x 11}\)</span> korelasyon matrisi aşağıdaki gibidir</li>
 </ul>
-<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://haven.tidyverse.org">haven</a></span><span class="op">)</span></span>
 <span><span class="va">EFA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://haven.tidyverse.org/reference/read_spss.html">read_sav</a></span><span class="op">(</span><span class="st">"import/EFA.sav"</span><span class="op">)</span></span>
 <span><span class="va">matris</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">EFA</span><span class="op">[</span>,<span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">13</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,<span class="fl">2</span><span class="op">)</span></span>
@@ -871,9 +879,9 @@ per9  0.44 0.46 0.54 0.50 0.39 0.23 0.40 0.39 1.00    NA    NA
 per10 0.38 0.41 0.45 0.35 0.41 0.30 0.42 0.39 0.63  1.00    NA
 per11 0.43 0.49 0.55 0.42 0.46 0.25 0.42 0.44 0.68  0.59     1</code></pre>
 </div>
-<div id="kmo" class="section level2" number="6.9">
+<div id="kmo" class="section level2" number="7.9">
 <h2>
-<span class="header-section-number">6.9</span> KMO<a class="anchor" aria-label="anchor" href="#kmo"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9</span> KMO<a class="anchor" aria-label="anchor" href="#kmo"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>AFA'da bir grup ölçülen değişkenden ortak faktör çıkarılması
@@ -903,7 +911,7 @@ arasındaki örtüşmenin derecesini</strong> inceler. Daha çok değişken orta
 şeyler paylaşırsa, KMO değeri daha büyük olacaktır. Bu nedenle <strong>KMO
 değerinin büyük olması</strong> beklenir.</p></li>
 </ul>
-<div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span></span>
 <span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="va">EFA</span><span class="op">[</span> ,<span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">13</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/KMO.html">KMO</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span></code></pre></div>
@@ -928,13 +936,13 @@ raporlanır. Madde bazında KMO değeri ise <strong>belirli bir maddenin
 testin tamamından</strong> farklı olup olmadığına ilişkin bilgi verebilir.</p></li>
 </ul>
 <p>Veri seti iki kategorik ise <strong>KMO</strong> aşağıdaki şekilde hesaplanabilir.</p>
-<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">kor_mat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/tetrachor.html">tetrachoric</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span><span class="op">$</span><span class="va">rho</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/KMO.html">KMO</a></span><span class="op">(</span><span class="va">kor_mat</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="bartlettin-testi" class="section level2" number="6.10">
+<div id="bartlettin-testi" class="section level2" number="7.10">
 <h2>
-<span class="header-section-number">6.10</span> Bartlett’in Testi<a class="anchor" aria-label="anchor" href="#bartlettin-testi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.10</span> Bartlett’in Testi<a class="anchor" aria-label="anchor" href="#bartlettin-testi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Korelasyon matrisinin <strong>bir birim matrisi</strong> (sıfır hipotezi) olup
@@ -943,7 +951,7 @@ Sphericity” olarak adlandırılır. Yaklaşık olarak bir ki-kare
 dağılımını izleyen istatistiksel bir testle birlikte gelir. Sıfır
 hipotezinin reddedilmesi beklenir.</li>
 </ul>
-<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/cortest.bartlett.html">cortest.bartlett</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## $chisq
 ## [1] 808
@@ -955,9 +963,9 @@ hipotezinin reddedilmesi beklenir.</li>
 ## [1] 55</code></pre>
 <p>Burada <strong>sıfır hipotezi reddedilir.</strong> AFA analizi devam edebilir.</p>
 </div>
-<div id="çıkarılacak-faktörlerin-sayısı" class="section level2" number="6.11">
+<div id="çıkarılacak-faktörlerin-sayısı" class="section level2" number="7.11">
 <h2>
-<span class="header-section-number">6.11</span> Çıkarılacak Faktörlerin Sayısı<a class="anchor" aria-label="anchor" href="#%C3%A7%C4%B1kar%C4%B1lacak-fakt%C3%B6rlerin-say%C4%B1s%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.11</span> Çıkarılacak Faktörlerin Sayısı<a class="anchor" aria-label="anchor" href="#%C3%A7%C4%B1kar%C4%B1lacak-fakt%C3%B6rlerin-say%C4%B1s%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -1012,7 +1020,7 @@ faktörü tutmayabilir.</strong></p></li>
 <li><p>Bu kural çoğu istatistiksel paketteki faktörlerin sayısını
 belirlemek için varsayılan karar verme stratejisidir.</p></li>
 </ul>
-<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span><span class="op">$</span><span class="va">e.values</span></span>
 <span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span><span class="op">$</span><span class="va">e.values</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##  [1] 6.078 1.521 1.154 0.456 0.400 0.333 0.301 0.254 0.236 0.168 0.099
@@ -1029,7 +1037,7 @@ eşittir.</p></li>
 kuralına göre <strong>AFA’dan 3 faktör</strong> çıkarılacaktır</p></li>
 <li><p>3 faktör çıkarma işlemi</p></li>
 </ul>
-<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">veri</span>, nfactors <span class="op">=</span> <span class="fl">3</span>,fm<span class="op">=</span><span class="st">"pa"</span>,rotate<span class="op">=</span><span class="st">"none"</span><span class="op">)</span></span>
 <span><span class="va">out</span></span></code></pre></div>
 <pre><code>## Factor Analysis using method =  pa
@@ -1077,9 +1085,9 @@ kuralına göre <strong>AFA’dan 3 faktör</strong> çıkarılacaktır</p></li>
 ## Multiple R square of scores with factors          0.97 0.89 0.81
 ## Minimum correlation of possible factor scores     0.94 0.78 0.61</code></pre>
 </div>
-<div id="psych-fa" class="section level2" number="6.12">
+<div id="psych-fa" class="section level2" number="7.12">
 <h2>
-<span class="header-section-number">6.12</span> psych fa()<a class="anchor" aria-label="anchor" href="#psych-fa"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.12</span> psych fa()<a class="anchor" aria-label="anchor" href="#psych-fa"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table style="width:89%;" class="table table-sm">
 <colgroup>
@@ -1177,9 +1185,9 @@ grafiğin düzleştiği noktada durdurulmalıdır.</p></li>
 testi</strong> denir, çünkü dirseğin veya düzleşmenin nerede oluştuğunu
 belirlemek için ilgili grafiğin en sağ kısmına bir kalem
 yerleştirilebilir.</p>
-<div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/VSS.scree.html">scree</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span>, factors <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="06-AFA_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="07-AFA_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;"></div>
 </li>
 </ul>
 <p><strong>Artık Korelasyon Matrisinin İncelenmesi</strong></p>
@@ -1194,7 +1202,7 @@ incelenmesini</strong> içerir.</p></li>
 artık matrisin bir üçgeninde <strong>|0.05|'den büyük olan girdilerin
 sayısını verir.</strong></p></li>
 </ul>
-<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">residuals</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">out</span><span class="op">$</span><span class="va">residual</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##        per1  per2  per3  per4  per5  per6  per7  per8  per9 per10 per11
 ## per1   0.01  0.01  0.00  0.00 -0.01 -0.01  0.01  0.01 -0.01  0.02 -0.01
@@ -1208,7 +1216,7 @@ sayısını verir.</strong></p></li>
 ## per9  -0.01 -0.03 -0.01  0.05 -0.01  0.00  0.01  0.00  0.28  0.02 -0.01
 ## per10  0.02  0.00 -0.01 -0.03 -0.02  0.02  0.01 -0.02  0.02  0.47  0.00
 ## per11 -0.01  0.02  0.02 -0.02  0.02 -0.02 -0.01  0.01 -0.01  0.00  0.33</code></pre>
-<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">residuals</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/lower.tri.html">lower.tri</a></span><span class="op">(</span><span class="va">residuals</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">0.05</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <ul>
@@ -1233,13 +1241,13 @@ edilen değerlerle karşılaştırılır.</p></li>
 <p>Faktör ya da bileşen sayısı, <strong>rastgele örneklemlerden elde edilen
 öz değerlerden büyük olan öz değer sayısına</strong> göre belirlenir
 (Franklin vd. 1995).</p>
-<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.parallel.html">fa.parallel</a></span><span class="op">(</span><span class="va">veri</span>, fa <span class="op">=</span> <span class="st">"fa"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="06-AFA_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="07-AFA_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## Parallel analysis suggests that the number of factors =  3  and the number of components =  NA</code></pre>
 </li>
 </ul>
-<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">nFactors</span><span class="op">)</span> </span>
 <span><span class="va">PA</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/nFactors/man/nScree.html">nScree</a></span><span class="op">(</span> x<span class="op">=</span><span class="va">out</span><span class="op">$</span><span class="va">e.values</span>, aparallel<span class="op">=</span><span class="cn">NULL</span>,cor<span class="op">=</span><span class="cn">TRUE</span>, model<span class="op">=</span><span class="st">"factors"</span>, criteria<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span> </span>
 <span><span class="va">PA</span><span class="op">$</span><span class="va">Components</span></span></code></pre></div>
@@ -1259,9 +1267,9 @@ edilen değerlerle karşılaştırılır.</p></li>
 </tr></tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/nFactors/man/plotnScree.html">plotnScree</a></span><span class="op">(</span><span class="va">PA</span>, legend<span class="op">=</span><span class="cn">TRUE</span>, ylab<span class="op">=</span><span class="st">"Ozdegerler"</span>, main<span class="op">=</span><span class="st">"Faktor Cozumu"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="06-AFA_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="07-AFA_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li><p>Paralel analizde, <strong>gerçek verilerden ve rastgele sıralı verilerden
 ardışık çiftlerdeki özdeğerler karşılaştırılır.</strong></p></li>
@@ -1270,9 +1278,9 @@ veriler için ilgili faktörün özdeğerini aştığında faktörler
 korunur.</strong></p></li>
 </ul>
 </div>
-<div id="örüntü-katsayıları-pattern-coefficients" class="section level2" number="6.13">
+<div id="örüntü-katsayıları-pattern-coefficients" class="section level2" number="7.13">
 <h2>
-<span class="header-section-number">6.13</span> Örüntü Katsayıları (Pattern Coefficients)<a class="anchor" aria-label="anchor" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1lar%C4%B1-pattern-coefficients"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.13</span> Örüntü Katsayıları (Pattern Coefficients)<a class="anchor" aria-label="anchor" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1lar%C4%B1-pattern-coefficients"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>AFA modeli aşağıdaki gibidir.</p></li>
@@ -1283,7 +1291,7 @@ eğim katsayılarına benzerler).</p></li>
 <li><p>Örüntü katsayıları ölçülen değişkendeki puanları elde etmek için
 <strong>faktöre uygulanan ağırlıklardır.</strong> Her bir faktörün <strong>her bir ölçülen değişkendeki bireysel (unique) katkısını</strong> temsil ederler.</p></li>
 </ul>
-<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">veri</span>,<span class="fl">3</span>,fm<span class="op">=</span><span class="st">"pa"</span>,rotate<span class="op">=</span><span class="st">"none"</span><span class="op">)</span></span>
 <span><span class="va">out</span><span class="op">$</span><span class="va">loadings</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span></span></code></pre></div>
 <pre><code>##         PA1     PA2      PA3
@@ -1321,9 +1329,9 @@ ve<strong>%14,4</strong>’ünün ikinci ve üçüncü faktör tarafından açı
 <li><p>Diğer örüntü katsayıları için de benzer açıklamalar yapılır.</p></li>
 </ul>
 </div>
-<div id="ortak-varyans-katsayıları-communality-coefficients" class="section level2" number="6.14">
+<div id="ortak-varyans-katsayıları-communality-coefficients" class="section level2" number="7.14">
 <h2>
-<span class="header-section-number">6.14</span> Ortak varyans Katsayıları (Communality Coefficients)<a class="anchor" aria-label="anchor" href="#ortak-varyans-katsay%C4%B1lar%C4%B1-communality-coefficients"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.14</span> Ortak varyans Katsayıları (Communality Coefficients)<a class="anchor" aria-label="anchor" href="#ortak-varyans-katsay%C4%B1lar%C4%B1-communality-coefficients"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Örüntü katsayıları <strong>ortak varyans katsayı</strong> ile yakından ilgilidir.
@@ -1343,7 +1351,7 @@ kareleri toplanarak hesaplanır.</p></li>
 için</p></li>
 </ul>
 <p><span class="math inline">\(\lambda^2_{11} + \lambda^2_{12} +\lambda^2_{13} = .67^2 + (-0.14)^2 + (-0.44)^2 = .67\)</span></p>
-<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span>  <span class="va">out</span></span></code></pre></div>
 <pre><code>## Factor Analysis using method =  pa
 ## Call: fa(r = veri, nfactors = 3, rotate = "none", fm = "pa")
@@ -1403,9 +1411,9 @@ katsayıları ile karşılaşmak mümkündür. Bu durumlar <strong>uygun olmayan
 çözümler</strong> olarak adlandırılır.</p></li>
 </ul>
 </div>
-<div id="yüklerin-kareleri-toplamı-açıklanan-varyans" class="section level2" number="6.15">
+<div id="yüklerin-kareleri-toplamı-açıklanan-varyans" class="section level2" number="7.15">
 <h2>
-<span class="header-section-number">6.15</span> Yüklerin Kareleri Toplamı-Açıklanan Varyans<a class="anchor" aria-label="anchor" href="#y%C3%BCklerin-kareleri-toplam%C4%B1-a%C3%A7%C4%B1klanan-varyans"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.15</span> Yüklerin Kareleri Toplamı-Açıklanan Varyans<a class="anchor" aria-label="anchor" href="#y%C3%BCklerin-kareleri-toplam%C4%B1-a%C3%A7%C4%B1klanan-varyans"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Her bir faktör için, örüntü katsayılarının karesi toplanarak
@@ -1415,7 +1423,7 @@ yüklerin kareleri toplamı hesaplanır.</li>
 bir faktör tarafından açıklanan varyans yüzdesini verir.</li>
 <li>Birinci faktör için:</li>
 </ul>
-<div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">out</span><span class="op">$</span><span class="va">loadings</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">/</span><span class="fl">11</span><span class="op">*</span><span class="fl">100</span></span></code></pre></div>
 <pre><code>## [1] 52.9</code></pre>
 <ul>
@@ -1426,7 +1434,7 @@ tarafından açıklanan miktarıdır.</strong></p></li>
 faktör tarafından açıklandığını önerir</p></li>
 <li><p>İkinci faktör için</p></li>
 </ul>
-<div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb303"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">out</span><span class="op">$</span><span class="va">loadings</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">/</span><span class="fl">11</span><span class="op">*</span><span class="fl">100</span></span></code></pre></div>
 <pre><code>## [1] 11.6</code></pre>
 <ul>
@@ -1434,7 +1442,7 @@ faktör tarafından açıklandığını önerir</p></li>
 açıklanan miktarıdır.</strong></p></li>
 <li>
 <p>üçüncü faktör için</p>
-<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">out</span><span class="op">$</span><span class="va">loadings</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">/</span><span class="fl">11</span><span class="op">*</span><span class="fl">100</span></span></code></pre></div>
 <pre><code>## [1] 7.81</code></pre>
 <ul>
@@ -1447,7 +1455,7 @@ de benzer şekilde hesaplanır.</p></li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb304"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span><span class="op">$</span><span class="va">Vaccounted</span></span></code></pre></div>
 <pre><code>##                         PA1   PA2    PA3
 ## SS loadings           5.814 1.271 0.8589
@@ -1459,15 +1467,15 @@ de benzer şekilde hesaplanır.</p></li>
 varyansın toplamda yaklaşık <strong>%72,23'ünü</strong> açıkladığı sonucuna
 varılabilir</p>
 </div>
-<div id="üretilen-ve-artık-korelasyon-matrisleri" class="section level2" number="6.16">
+<div id="üretilen-ve-artık-korelasyon-matrisleri" class="section level2" number="7.16">
 <h2>
-<span class="header-section-number">6.16</span> Üretilen ve Artık Korelasyon Matrisleri<a class="anchor" aria-label="anchor" href="#%C3%BCretilen-ve-art%C4%B1k-korelasyon-matrisleri"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.16</span> Üretilen ve Artık Korelasyon Matrisleri<a class="anchor" aria-label="anchor" href="#%C3%BCretilen-ve-art%C4%B1k-korelasyon-matrisleri"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Üretilen korelasyon matrisinin köşegenindeki öğeler çıkarılan ortak
 varyanslardır.</li>
 </ul>
-<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb309"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/factor.model.html">factor.model</a></span><span class="op">(</span><span class="va">out</span><span class="op">$</span><span class="va">loadings</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##        per1  per2  per3  per4  per5  per6  per7  per8  per9 per10 per11
 ## per1  0.988 0.845 0.787 0.788 0.410 0.332 0.474 0.410 0.453 0.361 0.436
@@ -1485,15 +1493,15 @@ varyanslardır.</li>
 <li>Üretilen korelasyon matrisinin köşegenindeki öğeler çıkarılan ortak
 varyanslardır.</li>
 </ul>
-<div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rep_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/factor.model.html">factor.model</a></span><span class="op">(</span><span class="va">out</span><span class="op">$</span><span class="va">loadings</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/diag.html">diag</a></span><span class="op">(</span><span class="va">rep_matrix</span><span class="op">)</span><span class="op">==</span><span class="va">out</span><span class="op">$</span><span class="va">communality</span></span></code></pre></div>
 <pre><code>##  per1  per2  per3  per4  per5  per6  per7  per8  per9 per10 per11 
 ##  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
 </div>
-<div id="faktörleştirme-yöntemi" class="section level2" number="6.17">
+<div id="faktörleştirme-yöntemi" class="section level2" number="7.17">
 <h2>
-<span class="header-section-number">6.17</span> Faktörleştirme yöntemi<a class="anchor" aria-label="anchor" href="#fakt%C3%B6rle%C5%9Ftirme-y%C3%B6ntemi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.17</span> Faktörleştirme yöntemi<a class="anchor" aria-label="anchor" href="#fakt%C3%B6rle%C5%9Ftirme-y%C3%B6ntemi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>psych</strong> paketinde kullanılan faktörleştirme yöntemlerinden
@@ -1502,11 +1510,11 @@ bazıları: uls, ols, minres, wls, pa, ml...</p></li>
 <li><p>ml çok değişkenli normalliği gerektirir. pa faktör yüklerinin nispetene küçük olduğu ve küçük örneklemlerde kararlı kestirimler yapar.</p></li>
 </ul>
 </div>
-<div id="faktörlerin-yorumlanması" class="section level2" number="6.18">
+<div id="faktörlerin-yorumlanması" class="section level2" number="7.18">
 <h2>
-<span class="header-section-number">6.18</span> Faktörlerin Yorumlanması<a class="anchor" aria-label="anchor" href="#fakt%C3%B6rlerin-yorumlanmas%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.18</span> Faktörlerin Yorumlanması<a class="anchor" aria-label="anchor" href="#fakt%C3%B6rlerin-yorumlanmas%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb310"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb313"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span><span class="op">$</span><span class="va">loadings</span></span></code></pre></div>
 <pre><code>## 
 ## Loadings:
@@ -1543,11 +1551,11 @@ faktörlerin doğası daha açık hale gelecektir. Bu da <strong>Faktör
 Döndürme</strong> (Factor Rotation) adı verilen bir yöntemle
 gerçekleştirilir</p></li>
 </ul>
-<div class="inline-figure"><img src="06-AFA_files/figure-html/unnamed-chunk-29-1.png" width="120%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="07-AFA_files/figure-html/unnamed-chunk-29-1.png" width="120%" style="display: block; margin: auto;"></div>
 </div>
-<div id="maddelerin-analizden-çıkarılması" class="section level2" number="6.19">
+<div id="maddelerin-analizden-çıkarılması" class="section level2" number="7.19">
 <h2>
-<span class="header-section-number">6.19</span> Maddelerin Analizden Çıkarılması<a class="anchor" aria-label="anchor" href="#maddelerin-analizden-%C3%A7%C4%B1kar%C4%B1lmas%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.19</span> Maddelerin Analizden Çıkarılması<a class="anchor" aria-label="anchor" href="#maddelerin-analizden-%C3%A7%C4%B1kar%C4%B1lmas%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -1565,9 +1573,9 @@ düşünülebilir:</p>
 gerçekleştirilmesi gerekmektedir.</p></li>
 </ul>
 </div>
-<div id="faktör-döndürmenin-amacı" class="section level2" number="6.20">
+<div id="faktör-döndürmenin-amacı" class="section level2" number="7.20">
 <h2>
-<span class="header-section-number">6.20</span> Faktör Döndürmenin Amacı<a class="anchor" aria-label="anchor" href="#fakt%C3%B6r-d%C3%B6nd%C3%BCrmenin-amac%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.20</span> Faktör Döndürmenin Amacı<a class="anchor" aria-label="anchor" href="#fakt%C3%B6r-d%C3%B6nd%C3%BCrmenin-amac%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>İlk çözümde PER1-PER11 ölçülen değişkenlerinden 3 faktör çıkarıldı.</p></li>
@@ -1701,9 +1709,9 @@ gibi elde edilir: <span class="math inline">\(0.6\sqrt{0.2}=.848\)</span>
 </li>
 </ul>
 </div>
-<div id="dik-döndürme" class="section level2" number="6.21">
+<div id="dik-döndürme" class="section level2" number="7.21">
 <h2>
-<span class="header-section-number">6.21</span> Dik Döndürme<a class="anchor" aria-label="anchor" href="#dik-d%C3%B6nd%C3%BCrme"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.21</span> Dik Döndürme<a class="anchor" aria-label="anchor" href="#dik-d%C3%B6nd%C3%BCrme"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -1782,9 +1790,9 @@ olarak, bu yöntem faktörlerin yorumlanmasını sadeleştirir.</p>
 küçültür. Sonuç olarak bu yöntem gözlenen değişkenlerin yorumlanmasını
 kolaylaştırır.</p>
 <p><strong>Equamax</strong>: Varimax ve Quartimax’ın bileşimidir.</p>
-<div class="sourceCode" id="cb312"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out_dik</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">veri</span>,<span class="fl">3</span>,fm<span class="op">=</span><span class="st">"pa"</span>,rotate<span class="op">=</span><span class="st">"varimax"</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb313"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb316"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">out_dik</span><span class="op">$</span><span class="va">loadings</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span>, digits <span class="op">=</span> <span class="fl">3</span>, cut <span class="op">=</span> <span class="fl">0.30</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##         PA1   PA2    PA3
 ## per1  0.957 0.186 0.1924
@@ -1804,7 +1812,7 @@ kolaylaştırır.</p>
 <li><p>Döndürülen yüklerin kareleri toplamı da aynı şekilde hesaplanır
 ancak döndürülen örüntü matrisindeki yüklerin kareleri toplanır</p></li>
 </ul>
-<div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb318"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">out_dik</span><span class="op">$</span><span class="va">loadings</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 2.91</code></pre>
 <p><span class="math inline">\(0.958^2 + 0.777^2 +...+0.263^2\)</span></p>
@@ -1815,7 +1823,7 @@ sonra aynıdır (yaklaşık %72,23).</p></li>
 <li><p>Ancak her bir faktör tarafından açıklanan varyans miktarı faktör
 eksenleri faktör uzayında döndürüldükten sonra yeniden dağıtılır.</p></li>
 </ul>
-<div class="sourceCode" id="cb317"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb320"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out</span><span class="op">$</span><span class="va">Vaccounted</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">3</span>,<span class="op">]</span></span>
 <span><span class="va">out_dik</span><span class="op">$</span><span class="va">Vaccounted</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">3</span>,<span class="op">]</span></span></code></pre></div>
 <pre><code>##                  PA1   PA2    PA3
@@ -1824,14 +1832,14 @@ eksenleri faktör uzayında döndürüldükten sonra yeniden dağıtılır.</p><
 ##                  PA1   PA2   PA3
 ## Proportion Var 0.264 0.263 0.195
 ## Cumulative Var 0.264 0.527 0.722</code></pre>
-<div id="dik-döndürmede-yük-grafiği" class="section level3" number="6.21.1">
+<div id="dik-döndürmede-yük-grafiği" class="section level3" number="7.21.1">
 <h3>
-<span class="header-section-number">6.21.1</span> Dik Döndürmede Yük Grafiği<a class="anchor" aria-label="anchor" href="#dik-d%C3%B6nd%C3%BCrmede-y%C3%BCk-grafi%C4%9Fi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.21.1</span> Dik Döndürmede Yük Grafiği<a class="anchor" aria-label="anchor" href="#dik-d%C3%B6nd%C3%BCrmede-y%C3%BCk-grafi%C4%9Fi"><i class="fas fa-link"></i></a>
 </h3>
 <p>döndürmeden sonraki çözüm için yük grafiği verilir</p>
-<div class="inline-figure"><img src="06-AFA_files/figure-html/unnamed-chunk-39-1.png" width="75%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="07-AFA_files/figure-html/unnamed-chunk-39-1.png" width="75%" style="display: block; margin: auto;"></div>
 <p>Döndürmeden önceki yük grafiğiyle</p>
-<div class="inline-figure"><img src="06-AFA_files/figure-html/unnamed-chunk-40-1.png" width="75%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="07-AFA_files/figure-html/unnamed-chunk-40-1.png" width="75%" style="display: block; margin: auto;"></div>
 <p>karşılaştırınca değişkenler arasındaki <strong>ilişkiler değişmez</strong> ancak
 <strong>faktör uzayındaki faktör eksenleri değişir.</strong></p>
 <ul>
@@ -1841,7 +1849,7 @@ değildir:</strong> Bazı değişkenlerin sadece bir faktöre mümkün olduğunc
 yüklenip diğerlerine yüklenmemesi beklenir.</p></li>
 <li><p>Örneğin, aşağıdaki 3 yük önemsiz değildir.</p></li>
 </ul>
-<div class="sourceCode" id="cb319"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb322"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">out_dik</span><span class="op">$</span><span class="va">loadings</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">3</span>,<span class="op">]</span>, digits <span class="op">=</span> <span class="fl">3</span>, cutoff <span class="op">=</span> <span class="fl">0.30</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##        PA1   PA2   PA3
 ## per2 0.777 0.242 0.292
@@ -1901,9 +1909,9 @@ değil, “Pattern Matrix” olarak adlandırılır.</p></li>
 </ul>
 </div>
 </div>
-<div id="örüntü-katsayısı-ve-yapı-katsayısı" class="section level2" number="6.22">
+<div id="örüntü-katsayısı-ve-yapı-katsayısı" class="section level2" number="7.22">
 <h2>
-<span class="header-section-number">6.22</span> Örüntü Katsayısı ve Yapı Katsayısı<a class="anchor" aria-label="anchor" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1s%C4%B1-ve-yap%C4%B1-katsay%C4%B1s%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.22</span> Örüntü Katsayısı ve Yapı Katsayısı<a class="anchor" aria-label="anchor" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1s%C4%B1-ve-yap%C4%B1-katsay%C4%B1s%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>Yapı matrisi</strong> gözlenen değişkenlerle faktörler arasındaki iki
@@ -1933,7 +1941,7 @@ gösterilebilir: <span class="math display">\[\Lambda _T\Phi = S \]</span></p></
 <li><p><span class="math inline">\(\Phi\)</span> bir birim matris olduğunda <span class="math inline">\(\Lambda _T=S\)</span></p></li>
 <li><p>Döndürme olmadığında <span class="math inline">\(\Lambda=S\)</span></p></li>
 </ul>
-<div class="sourceCode" id="cb321"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb324"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out_egik</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">veri</span>,<span class="fl">3</span>,fm<span class="op">=</span><span class="st">"pa"</span>,rotate<span class="op">=</span><span class="st">"promax"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">out_egik</span><span class="op">$</span><span class="va">loadings</span>, digits <span class="op">=</span> <span class="fl">3</span>, cutoff <span class="op">=</span> <span class="fl">0.30</span><span class="op">)</span></span></code></pre></div>
@@ -1956,7 +1964,7 @@ gösterilebilir: <span class="math display">\[\Lambda _T\Phi = S \]</span></p></
 ## SS loadings    2.97 2.872 2.021
 ## Proportion Var 0.27 0.261 0.184
 ## Cumulative Var 0.27 0.531 0.715</code></pre>
-<div class="sourceCode" id="cb323"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb326"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">out_egik</span><span class="op">$</span><span class="va">Structure</span>, digits <span class="op">=</span> <span class="fl">3</span>, cutoff <span class="op">=</span> <span class="fl">0.30</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Loadings:
@@ -1977,7 +1985,7 @@ gösterilebilir: <span class="math display">\[\Lambda _T\Phi = S \]</span></p></
 ## SS loadings    4.787 4.526 4.155
 ## Proportion Var 0.435 0.411 0.378
 ## Cumulative Var 0.435 0.847 1.224</code></pre>
-<div class="sourceCode" id="cb325"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb328"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">out_egik</span><span class="op">$</span><span class="va">Phi</span></span></code></pre></div>
 <pre><code>##       PA1   PA2   PA3
 ## PA1 1.000 0.573 0.629
@@ -1993,18 +2001,18 @@ adı altında rapor edilir. Karışıklığı önlemek amacıyla, hangi grup
 katsayıların rapor edildiği açıkça belirtilmelidir.</p></li>
 </ul>
 </div>
-<div id="dik-ve-eğik-döndürme" class="section level2" number="6.23">
+<div id="dik-ve-eğik-döndürme" class="section level2" number="7.23">
 <h2>
-<span class="header-section-number">6.23</span> Dik ve Eğik Döndürme<a class="anchor" aria-label="anchor" href="#dik-ve-e%C4%9Fik-d%C3%B6nd%C3%BCrme"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.23</span> Dik ve Eğik Döndürme<a class="anchor" aria-label="anchor" href="#dik-ve-e%C4%9Fik-d%C3%B6nd%C3%BCrme"><i class="fas fa-link"></i></a>
 </h2>
 <p>Dik döndürme ve eğik döndürme sonucu elde edilen faktör çözümleri
 karşılaştırıldığında, <strong>eğik döndürme</strong> sonucu elde edilen faktör
 yapısının <strong>daha basit ve dahakolay yorumlanabilir</strong> olduğu
 görülmektedir</p>
 </div>
-<div id="yorum" class="section level2" number="6.24">
+<div id="yorum" class="section level2" number="7.24">
 <h2>
-<span class="header-section-number">6.24</span> Yorum<a class="anchor" aria-label="anchor" href="#yorum"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.24</span> Yorum<a class="anchor" aria-label="anchor" href="#yorum"><i class="fas fa-link"></i></a>
 </h2>
 <p>AFA’dan uygun bir sonuç elde edildikten sonra, çıkarılan faktörlerin
 yorumlanması gerekir.</p>
@@ -2032,9 +2040,9 @@ yöntemle her bir birey için faktörlerin kestirimi elde edilir.</p></li>
 karşılaştırılması).</p></li>
 </ul>
 </div>
-<div id="faktör-puanı-kestirimi" class="section level2" number="6.25">
+<div id="faktör-puanı-kestirimi" class="section level2" number="7.25">
 <h2>
-<span class="header-section-number">6.25</span> Faktör Puanı Kestirimi:<a class="anchor" aria-label="anchor" href="#fakt%C3%B6r-puan%C4%B1-kestirimi"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.25</span> Faktör Puanı Kestirimi:<a class="anchor" aria-label="anchor" href="#fakt%C3%B6r-puan%C4%B1-kestirimi"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p><strong>Regresyon yöntemiyle</strong> elde edilen faktör puanlarının ortalaması
@@ -2046,7 +2054,7 @@ ortalaması 0 ve standart sapması 1’dir. Faktör puanları arasında
 ilişki yoktur. Bartlett yönteminin kestirilen faktörlerin dikliğini
 sağlaması için modifiye edilmiş halidir.</p></li>
 </ul>
-<div class="sourceCode" id="cb327"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fa_egik</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/psych/man/fa.html">fa</a></span><span class="op">(</span><span class="va">veri</span>, nfactors<span class="op">=</span><span class="fl">3</span>, rotate<span class="op">=</span><span class="st">"promax"</span>, scores<span class="op">=</span><span class="st">"regression"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">fa_egik</span><span class="op">$</span><span class="va">scores</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##          MR1    MR2    MR3
@@ -2057,9 +2065,9 @@ sağlaması için modifiye edilmiş halidir.</p></li>
 ## [5,] -1.2752 -0.659 -1.057
 ## [6,]  0.0253  0.679  0.299</code></pre>
 </div>
-<div id="eganet" class="section level2" number="6.26">
+<div id="eganet" class="section level2" number="7.26">
 <h2>
-<span class="header-section-number">6.26</span> EGAnet<a class="anchor" aria-label="anchor" href="#eganet"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.26</span> EGAnet<a class="anchor" aria-label="anchor" href="#eganet"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>
@@ -2079,7 +2087,7 @@ değerlendirmek için bir bootstrap yöntemi sağlanmıştır.</p>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb329"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb332"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-ega.net">EGAnet</a></span><span class="op">)</span>; <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psychTools</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Perform Unique Variable Analysis</span></span>
@@ -2093,9 +2101,9 @@ değerlendirmek için bir bootstrap yöntemi sağlanmıştır.</p>
 ## 
 ## $remove
 ## [1] "per2"  "per3"  "per4"  "per7"  "per7"  "per8"  "per10" "per11"</code></pre>
-<div class="sourceCode" id="cb331"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb334"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://r-ega.net/reference/EGA.html">EGA</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="06-AFA_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="07-AFA_files/figure-html/unnamed-chunk-48-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## Model: GLASSO (EBIC with gamma = 0.5)
 ## Correlations: auto
 ## Lambda: 0.0935127102774255 (n = 100, ratio = 0.1)
@@ -2126,9 +2134,9 @@ değerlendirmek için bir bootstrap yöntemi sağlanmıştır.</p>
 ## 
 ## TEFI: -5.507</code></pre>
 </div>
-<div id="kaynaklar-4" class="section level2" number="6.27">
+<div id="kaynaklar-4" class="section level2" number="7.27">
 <h2>
-<span class="header-section-number">6.27</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.27</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar-4"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>Thompson, B. (2004). <em>Exploratory and confirmatory factor analysis:
@@ -2362,47 +2370,47 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="yol-analizi.html"><span class="header-section-number">5</span> Yol Analizi</a></div>
-<div class="next"><a href="dfa.html"><span class="header-section-number">7</span> DFA</a></div>
+<div class="prev"><a href="yol-analizi.html"><span class="header-section-number">6</span> Yol Analizi</a></div>
+<div class="next"><a href="dfa.html"><span class="header-section-number">8</span> DFA</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#afa"><span class="header-section-number">6</span> AFA</a></li>
-<li><a class="nav-link" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1lar%C4%B1"><span class="header-section-number">6.1</span> Örüntü Katsayıları</a></li>
-<li><a class="nav-link" href="#yap%C4%B1-katsay%C4%B1lar%C4%B1"><span class="header-section-number">6.2</span> Yapı Katsayıları</a></li>
-<li><a class="nav-link" href="#ortak-varyans-katsay%C4%B1lar%C4%B1"><span class="header-section-number">6.3</span> Ortak Varyans Katsayıları</a></li>
-<li><a class="nav-link" href="#%C3%B6zde%C4%9Ferler"><span class="header-section-number">6.4</span> Özdeğerler</a></li>
-<li><a class="nav-link" href="#afa-modeli"><span class="header-section-number">6.5</span> AFA Modeli</a></li>
-<li><a class="nav-link" href="#afada-%C3%B6rneklem-b%C3%BCy%C3%BCkl%C3%BC%C4%9F%C3%BC"><span class="header-section-number">6.6</span> AFA’da Örneklem Büyüklüğü</a></li>
-<li><a class="nav-link" href="#%C3%B6rnek-veri"><span class="header-section-number">6.7</span> Örnek Veri</a></li>
-<li><a class="nav-link" href="#ili%C5%9Fki-katsay%C4%B1lar%C4%B1-matrisi"><span class="header-section-number">6.8</span> İlişki Katsayıları Matrisi</a></li>
-<li><a class="nav-link" href="#kmo"><span class="header-section-number">6.9</span> KMO</a></li>
-<li><a class="nav-link" href="#bartlettin-testi"><span class="header-section-number">6.10</span> Bartlett’in Testi</a></li>
-<li><a class="nav-link" href="#%C3%A7%C4%B1kar%C4%B1lacak-fakt%C3%B6rlerin-say%C4%B1s%C4%B1"><span class="header-section-number">6.11</span> Çıkarılacak Faktörlerin Sayısı</a></li>
-<li><a class="nav-link" href="#psych-fa"><span class="header-section-number">6.12</span> psych fa()</a></li>
-<li><a class="nav-link" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1lar%C4%B1-pattern-coefficients"><span class="header-section-number">6.13</span> Örüntü Katsayıları (Pattern Coefficients)</a></li>
-<li><a class="nav-link" href="#ortak-varyans-katsay%C4%B1lar%C4%B1-communality-coefficients"><span class="header-section-number">6.14</span> Ortak varyans Katsayıları (Communality Coefficients)</a></li>
-<li><a class="nav-link" href="#y%C3%BCklerin-kareleri-toplam%C4%B1-a%C3%A7%C4%B1klanan-varyans"><span class="header-section-number">6.15</span> Yüklerin Kareleri Toplamı-Açıklanan Varyans</a></li>
-<li><a class="nav-link" href="#%C3%BCretilen-ve-art%C4%B1k-korelasyon-matrisleri"><span class="header-section-number">6.16</span> Üretilen ve Artık Korelasyon Matrisleri</a></li>
-<li><a class="nav-link" href="#fakt%C3%B6rle%C5%9Ftirme-y%C3%B6ntemi"><span class="header-section-number">6.17</span> Faktörleştirme yöntemi</a></li>
-<li><a class="nav-link" href="#fakt%C3%B6rlerin-yorumlanmas%C4%B1"><span class="header-section-number">6.18</span> Faktörlerin Yorumlanması</a></li>
-<li><a class="nav-link" href="#maddelerin-analizden-%C3%A7%C4%B1kar%C4%B1lmas%C4%B1"><span class="header-section-number">6.19</span> Maddelerin Analizden Çıkarılması</a></li>
-<li><a class="nav-link" href="#fakt%C3%B6r-d%C3%B6nd%C3%BCrmenin-amac%C4%B1"><span class="header-section-number">6.20</span> Faktör Döndürmenin Amacı</a></li>
+<li><a class="nav-link" href="#afa"><span class="header-section-number">7</span> AFA</a></li>
+<li><a class="nav-link" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1lar%C4%B1"><span class="header-section-number">7.1</span> Örüntü Katsayıları</a></li>
+<li><a class="nav-link" href="#yap%C4%B1-katsay%C4%B1lar%C4%B1"><span class="header-section-number">7.2</span> Yapı Katsayıları</a></li>
+<li><a class="nav-link" href="#ortak-varyans-katsay%C4%B1lar%C4%B1"><span class="header-section-number">7.3</span> Ortak Varyans Katsayıları</a></li>
+<li><a class="nav-link" href="#%C3%B6zde%C4%9Ferler"><span class="header-section-number">7.4</span> Özdeğerler</a></li>
+<li><a class="nav-link" href="#afa-modeli"><span class="header-section-number">7.5</span> AFA Modeli</a></li>
+<li><a class="nav-link" href="#afada-%C3%B6rneklem-b%C3%BCy%C3%BCkl%C3%BC%C4%9F%C3%BC"><span class="header-section-number">7.6</span> AFA’da Örneklem Büyüklüğü</a></li>
+<li><a class="nav-link" href="#%C3%B6rnek-veri"><span class="header-section-number">7.7</span> Örnek Veri</a></li>
+<li><a class="nav-link" href="#ili%C5%9Fki-katsay%C4%B1lar%C4%B1-matrisi"><span class="header-section-number">7.8</span> İlişki Katsayıları Matrisi</a></li>
+<li><a class="nav-link" href="#kmo"><span class="header-section-number">7.9</span> KMO</a></li>
+<li><a class="nav-link" href="#bartlettin-testi"><span class="header-section-number">7.10</span> Bartlett’in Testi</a></li>
+<li><a class="nav-link" href="#%C3%A7%C4%B1kar%C4%B1lacak-fakt%C3%B6rlerin-say%C4%B1s%C4%B1"><span class="header-section-number">7.11</span> Çıkarılacak Faktörlerin Sayısı</a></li>
+<li><a class="nav-link" href="#psych-fa"><span class="header-section-number">7.12</span> psych fa()</a></li>
+<li><a class="nav-link" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1lar%C4%B1-pattern-coefficients"><span class="header-section-number">7.13</span> Örüntü Katsayıları (Pattern Coefficients)</a></li>
+<li><a class="nav-link" href="#ortak-varyans-katsay%C4%B1lar%C4%B1-communality-coefficients"><span class="header-section-number">7.14</span> Ortak varyans Katsayıları (Communality Coefficients)</a></li>
+<li><a class="nav-link" href="#y%C3%BCklerin-kareleri-toplam%C4%B1-a%C3%A7%C4%B1klanan-varyans"><span class="header-section-number">7.15</span> Yüklerin Kareleri Toplamı-Açıklanan Varyans</a></li>
+<li><a class="nav-link" href="#%C3%BCretilen-ve-art%C4%B1k-korelasyon-matrisleri"><span class="header-section-number">7.16</span> Üretilen ve Artık Korelasyon Matrisleri</a></li>
+<li><a class="nav-link" href="#fakt%C3%B6rle%C5%9Ftirme-y%C3%B6ntemi"><span class="header-section-number">7.17</span> Faktörleştirme yöntemi</a></li>
+<li><a class="nav-link" href="#fakt%C3%B6rlerin-yorumlanmas%C4%B1"><span class="header-section-number">7.18</span> Faktörlerin Yorumlanması</a></li>
+<li><a class="nav-link" href="#maddelerin-analizden-%C3%A7%C4%B1kar%C4%B1lmas%C4%B1"><span class="header-section-number">7.19</span> Maddelerin Analizden Çıkarılması</a></li>
+<li><a class="nav-link" href="#fakt%C3%B6r-d%C3%B6nd%C3%BCrmenin-amac%C4%B1"><span class="header-section-number">7.20</span> Faktör Döndürmenin Amacı</a></li>
 <li>
-<a class="nav-link" href="#dik-d%C3%B6nd%C3%BCrme"><span class="header-section-number">6.21</span> Dik Döndürme</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#dik-d%C3%B6nd%C3%BCrmede-y%C3%BCk-grafi%C4%9Fi"><span class="header-section-number">6.21.1</span> Dik Döndürmede Yük Grafiği</a></li></ul>
+<a class="nav-link" href="#dik-d%C3%B6nd%C3%BCrme"><span class="header-section-number">7.21</span> Dik Döndürme</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#dik-d%C3%B6nd%C3%BCrmede-y%C3%BCk-grafi%C4%9Fi"><span class="header-section-number">7.21.1</span> Dik Döndürmede Yük Grafiği</a></li></ul>
 </li>
-<li><a class="nav-link" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1s%C4%B1-ve-yap%C4%B1-katsay%C4%B1s%C4%B1"><span class="header-section-number">6.22</span> Örüntü Katsayısı ve Yapı Katsayısı</a></li>
-<li><a class="nav-link" href="#dik-ve-e%C4%9Fik-d%C3%B6nd%C3%BCrme"><span class="header-section-number">6.23</span> Dik ve Eğik Döndürme</a></li>
-<li><a class="nav-link" href="#yorum"><span class="header-section-number">6.24</span> Yorum</a></li>
-<li><a class="nav-link" href="#fakt%C3%B6r-puan%C4%B1-kestirimi"><span class="header-section-number">6.25</span> Faktör Puanı Kestirimi:</a></li>
-<li><a class="nav-link" href="#eganet"><span class="header-section-number">6.26</span> EGAnet</a></li>
-<li><a class="nav-link" href="#kaynaklar-4"><span class="header-section-number">6.27</span> Kaynaklar</a></li>
+<li><a class="nav-link" href="#%C3%B6r%C3%BCnt%C3%BC-katsay%C4%B1s%C4%B1-ve-yap%C4%B1-katsay%C4%B1s%C4%B1"><span class="header-section-number">7.22</span> Örüntü Katsayısı ve Yapı Katsayısı</a></li>
+<li><a class="nav-link" href="#dik-ve-e%C4%9Fik-d%C3%B6nd%C3%BCrme"><span class="header-section-number">7.23</span> Dik ve Eğik Döndürme</a></li>
+<li><a class="nav-link" href="#yorum"><span class="header-section-number">7.24</span> Yorum</a></li>
+<li><a class="nav-link" href="#fakt%C3%B6r-puan%C4%B1-kestirimi"><span class="header-section-number">7.25</span> Faktör Puanı Kestirimi:</a></li>
+<li><a class="nav-link" href="#eganet"><span class="header-section-number">7.26</span> EGAnet</a></li>
+<li><a class="nav-link" href="#kaynaklar-4"><span class="header-section-number">7.27</span> Kaynaklar</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="/blob/master/book/06-AFA.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="/edit/master/book/06-AFA.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="/blob/master/book/07-AFA.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/07-AFA.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
@@ -2414,7 +2422,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-14.</p>
+    <p>"<strong>lavaan</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-17.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

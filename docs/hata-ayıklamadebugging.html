@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bölüm 15 Hata Ayıklama/Debugging | lavaan</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="15.1 Yanlış bir şeyler var! R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Bölüm 15 Hata Ayıklama/Debugging | lavaan">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC733/hata-ayıklamadebugging.html">
+<meta property="og:description" content="15.1 Yanlış bir şeyler var! R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bölüm 15 Hata Ayıklama/Debugging | lavaan">
+<meta name="twitter:description" content="15.1 Yanlış bir şeyler var! R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.32/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="libs/plotly-binding-4.10.4/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script><link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet">
+<script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script><script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script><script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script><script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script><script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script><script src="libs/rglwidgetClass-1.2.8/init.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script><script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script><script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script><script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script><script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script><script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script><script src="libs/viz-1.8.2/viz.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">lavaan</a>:
+        <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="varsay%C4%B1mlar-i.html"><span class="header-section-number">1</span> Varsayımlar I</a></li>
+<li><a class="" href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">2</span> Varsayımlar II</a></li>
+<li><a class="" href="regresyon.html"><span class="header-section-number">3</span> Regresyon</a></li>
+<li><a class="" href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></li>
+<li><a class="" href="lavaan-ve-sem.html"><span class="header-section-number">5</span> lavaan ve sem</a></li>
+<li><a class="" href="yol-analizi.html"><span class="header-section-number">6</span> Yol Analizi</a></li>
+<li><a class="" href="afa.html"><span class="header-section-number">7</span> AFA</a></li>
+<li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
+<li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
+<li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
+<li><a class="" href="uygulama-2.html"><span class="header-section-number">11</span> Uygulama</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">12</span> Fonksiyonlar</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">13</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></li>
+<li><a class="active" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="hata-ayıklamadebugging" class="section level1" number="15">
+<h1>
+<span class="header-section-number">Bölüm 15</span> Hata Ayıklama/Debugging<a class="anchor" aria-label="anchor" href="#hata-ay%C4%B1klamadebugging"><i class="fas fa-link"></i></a>
+</h1>
+<div id="yanlış-bir-şeyler-var" class="section level2" number="15.1">
+<h2>
+<span class="header-section-number">15.1</span> Yanlış bir şeyler var!<a class="anchor" aria-label="anchor" href="#yanl%C4%B1%C5%9F-bir-%C5%9Feyler-var"><i class="fas fa-link"></i></a>
+</h2>
+<p>R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri vardır. R'de herhangi bir fonksiyonun çalıştırılması aşağıdaki <em>koşullarla</em> sonuçlanabilir.</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/message.html">message()</a></code> fonksiyonu tarafından üretilen genel bir bildirim/teşhis mesajı; fonksiyonun yürütülmesi devam eder</li>
+<li>
+<code>warning</code>: Bir şeylerin yanlış gittiğine dair bir gösterge, ancak ölümcül olması gerekmez; işlevin yürütülmesi devam eder. Uyarılar <code><a href="https://rdrr.io/r/base/warning.html">warning()</a></code> fonksiyonu tarafından oluşturulur</li>
+<li>
+<code>error</code>: Ölümcül bir sorun oluştuğunu ve işlevin yürütülmesinin durduğunu gösteren bir gösterge. Hatalar <code><a href="https://rdrr.io/r/base/stop.html">stop()</a></code> fonksiyonu tarafından üretilir.</li>
+<li>
+<code>condition</code>: Beklenmedik bir şeyin meydana geldiğini gösteren genel bir kavramdır; programcılar isterlerse kendi özel koşullarını oluşturabilirler.</li>
+</ul>
+<p>İşte R'yi kullanırken alabileceğiniz bir uyarı örneği.</p>
+<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="hata-ay%C4%B1klamadebugging.html#cb528-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">log</span>(<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb528-2"><a href="hata-ay%C4%B1klamadebugging.html#cb528-2" tabindex="-1"></a>Warning <span class="cf">in</span> <span class="fu">log</span>(<span class="sc">-</span><span class="dv">1</span>)<span class="sc">:</span> NaNs produced</span>
+<span id="cb528-3"><a href="hata-ay%C4%B1klamadebugging.html#cb528-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="cn">NaN</span></span></code></pre></div>
+<p>Bu uyarı, negatif bir sayının logunu almanın <code>NaN</code> değeriyle sonuçlandığını bilmenizi sağlar, çünkü negatif sayıların logunu alamazsınız. Bununla birlikte, R bir hata vermez, çünkü döndürebileceği yararlı bir değere, <code>NaN</code> değerine sahiptir. Uyarı sadece beklenmedik bir şey olduğunu size bildirmek için vardır. Ne programladığınıza bağlı olarak, kodun başka bir bölümüne geçmek için kasıtlı olarak negatif bir sayının logunu almış olabilirsiniz.</p>
+<p>İşte girdisinin niteliğine bağlı olarak konsola bir mesaj yazdırmak üzere tasarlanmış başka bir fonksiyon.</p>
+<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="hata-ay%C4%B1klamadebugging.html#cb529-1" tabindex="-1"></a><span class="sc">&gt;</span> printmessage <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb529-2"><a href="hata-ay%C4%B1klamadebugging.html#cb529-2" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb529-3"><a href="hata-ay%C4%B1klamadebugging.html#cb529-3" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">print</span>(<span class="st">"x  sifirdan büyüktür"</span>)</span>
+<span id="cb529-4"><a href="hata-ay%C4%B1klamadebugging.html#cb529-4" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">else</span></span>
+<span id="cb529-5"><a href="hata-ay%C4%B1klamadebugging.html#cb529-5" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">print</span>(<span class="st">"x sifirdan küçük ve ya eşittir"</span>)</span>
+<span id="cb529-6"><a href="hata-ay%C4%B1klamadebugging.html#cb529-6" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">invisible</span>(x)        </span>
+<span id="cb529-7"><a href="hata-ay%C4%B1klamadebugging.html#cb529-7" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
+<p>Bu fonksiyon basittir---x`in sıfırdan büyük mü yoksa sıfırdan küçük mü ya da sıfıra eşit mi olduğunu belirten bir mesaj yazdırır. Ayrıca girdisini <em>görünmez</em> olarak döndürür, bu da "print" fonksiyonlarında yaygın bir uygulamadır. Bir nesneyi görünmez olarak döndürmek, fonksiyon çağrıldığında dönüş değerinin otomatik olarak yazdırılmayacağı anlamına gelir.</p>
+<p>Yukarıdaki fonksiyona dikkatlice bakın ve herhangi bir hata ya da sorun tespit edip edemeyeceğinize bakın.</p>
+<p>Fonksiyonu aşağıdaki gibi çalıştırabiliriz.</p>
+<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="hata-ay%C4%B1klamadebugging.html#cb530-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">printmessage</span>(<span class="dv">1</span>)</span>
+<span id="cb530-2"><a href="hata-ay%C4%B1klamadebugging.html#cb530-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"x  sifirdan büyüktür"</span></span></code></pre></div>
+<p>İşlev bu noktada iyi çalışıyor gibi görünüyor. Hata, uyarı veya mesaj yok.</p>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="hata-ay%C4%B1klamadebugging.html#cb531-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">printmessage</span>(<span class="cn">NA</span>)</span>
+<span id="cb531-2"><a href="hata-ay%C4%B1klamadebugging.html#cb531-2" tabindex="-1"></a>Error <span class="cf">in</span> <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="fu">print</span>(<span class="st">"x  sifirdan büyüktür"</span>) <span class="cf">else</span> <span class="fu">print</span>(<span class="st">"x sifirdan küçük ve ya eşittir"</span>)<span class="sc">:</span> missing value where <span class="cn">TRUE</span><span class="sc">/</span><span class="cn">FALSE</span> needed</span></code></pre></div>
+<p>Ne oldu?</p>
+<p>Fonksiyonun yaptığı ilk şey <code>x &gt; 0</code> olup olmadığını test etmektir. Ancak <code>x</code> bir <code>NA</code> veya <code>NaN</code> değeri ise bu testi yapamazsınız. R bu durumda ne yapacağını bilemez, bu yüzden ölümcül bir hata ile durur.</p>
+<p>Bu sorunu <code>NA</code> değerlerinin olasılığını öngörerek ve <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code> fonksiyonu ile girdinin <code>NA</code> olup olmadığını kontrol ederek çözebiliriz.</p>
+<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="hata-ay%C4%B1klamadebugging.html#cb532-1" tabindex="-1"></a><span class="sc">&gt;</span> printmessage2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb532-2"><a href="hata-ay%C4%B1klamadebugging.html#cb532-2" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">if</span>(<span class="fu">is.na</span>(x))</span>
+<span id="cb532-3"><a href="hata-ay%C4%B1klamadebugging.html#cb532-3" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">print</span>(<span class="st">"x in eksik degeri var!"</span>)</span>
+<span id="cb532-4"><a href="hata-ay%C4%B1klamadebugging.html#cb532-4" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">else</span> <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb532-5"><a href="hata-ay%C4%B1klamadebugging.html#cb532-5" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">print</span>(<span class="st">"x 0'dan buyuk"</span>)</span>
+<span id="cb532-6"><a href="hata-ay%C4%B1klamadebugging.html#cb532-6" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">else</span></span>
+<span id="cb532-7"><a href="hata-ay%C4%B1klamadebugging.html#cb532-7" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">print</span>(<span class="st">"x sifirdan küçük ve ya eşittir"</span>)</span>
+<span id="cb532-8"><a href="hata-ay%C4%B1klamadebugging.html#cb532-8" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">invisible</span>(x)</span>
+<span id="cb532-9"><a href="hata-ay%C4%B1klamadebugging.html#cb532-9" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
+<p>Şimdi aşağıdakileri çalıştırabiliriz.</p>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="hata-ay%C4%B1klamadebugging.html#cb533-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">printmessage2</span>(<span class="cn">NA</span>)</span>
+<span id="cb533-2"><a href="hata-ay%C4%B1klamadebugging.html#cb533-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"x in eksik degeri var!"</span></span></code></pre></div>
+<p>Ve her şey yolunda.</p>
+<p>Peki ya aşağıdaki durum.</p>
+<div class="sourceCode" id="cb534"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb534-1"><a href="hata-ay%C4%B1klamadebugging.html#cb534-1" tabindex="-1"></a><span class="sc">&gt;</span> x <span class="ot">&lt;-</span> <span class="fu">log</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb534-2"><a href="hata-ay%C4%B1klamadebugging.html#cb534-2" tabindex="-1"></a>Warning <span class="cf">in</span> <span class="fu">log</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>))<span class="sc">:</span> NaNs produced</span></code></pre></div>
+<p>Burada bazı <code>NaN</code>lar bekliyoruz çünkü negatif bir sayının logunu almak mantıklı değildir.</p>
+<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="hata-ay%C4%B1klamadebugging.html#cb535-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">printmessage2</span>(x)</span>
+<span id="cb535-2"><a href="hata-ay%C4%B1klamadebugging.html#cb535-2" tabindex="-1"></a>Error <span class="cf">in</span> <span class="cf">if</span> (<span class="fu">is.na</span>(x)) <span class="fu">print</span>(<span class="st">"x in eksik degeri var!"</span>) <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="fu">print</span>(<span class="st">"x 0'dan buyuk"</span>) <span class="cf">else</span> <span class="fu">print</span>(<span class="st">"x sifirdan küçük ve ya eşittir"</span>)<span class="sc">:</span> the condition has length <span class="sc">&gt;</span> <span class="dv">1</span></span></code></pre></div>
+<p>Şimdi ne olacak? Neden bu hatayı alıyoruz?</p>
+<p>Buradaki sorun, <code>printmessage2()</code> fonksiyonuna 1 yerine 2 uzunluğunda bir <code>x</code> vektörü vermiş olmamdır. <code>printmessage2()</code> fonksiyonunun gövdesi içinde <code>is.na(x)</code> ifadesi, <code>if</code> deyiminde test edilen bir vektör döndürür. Ancak, <code>if</code> vektör argümanları alamaz, bu nedenle bir hata alırsınız (R'nin önceki sürümlerinde yalnızca bir uyarı alırdınız). Buradaki temel sorun <code>printmessage2()</code> ifadesinin <em>vektörleştirilmemiş</em> olmasıdır.</p>
+<p>Bu sorunu iki şekilde çözebiliriz. Birincisi basitçe vektör argümanlarına izin vermemektir. Diğer yol ise <code>printmessage2()</code> fonksiyonunu vektör argümanları almasına izin verecek şekilde vektörleştirmektir.</p>
+<p>İlk yol için, basitçe girdinin uzunluğunu kontrol etmemiz gerekir.</p>
+<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="hata-ay%C4%B1klamadebugging.html#cb536-1" tabindex="-1"></a><span class="sc">&gt;</span> printmessage3 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb536-2"><a href="hata-ay%C4%B1klamadebugging.html#cb536-2" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">if</span>(<span class="fu">length</span>(x) <span class="sc">&gt;</span> 1L)</span>
+<span id="cb536-3"><a href="hata-ay%C4%B1klamadebugging.html#cb536-3" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">stop</span>(<span class="st">"'x' vektörünün uzunluğu 1'den büyüktür"</span>)</span>
+<span id="cb536-4"><a href="hata-ay%C4%B1klamadebugging.html#cb536-4" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">if</span>(<span class="fu">is.na</span>(x))</span>
+<span id="cb536-5"><a href="hata-ay%C4%B1klamadebugging.html#cb536-5" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">print</span>(<span class="st">"x'in eksik değeri var"</span>)</span>
+<span id="cb536-6"><a href="hata-ay%C4%B1klamadebugging.html#cb536-6" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">else</span> <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb536-7"><a href="hata-ay%C4%B1klamadebugging.html#cb536-7" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">print</span>(<span class="st">"x 0'dan büyük"</span>)</span>
+<span id="cb536-8"><a href="hata-ay%C4%B1klamadebugging.html#cb536-8" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">else</span></span>
+<span id="cb536-9"><a href="hata-ay%C4%B1klamadebugging.html#cb536-9" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">print</span>(<span class="st">"x sifirdan küçük ve ya eşittir"</span>)</span>
+<span id="cb536-10"><a href="hata-ay%C4%B1klamadebugging.html#cb536-10" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">invisible</span>(x)</span>
+<span id="cb536-11"><a href="hata-ay%C4%B1klamadebugging.html#cb536-11" tabindex="-1"></a><span class="sc">+</span> }</span></code></pre></div>
+<p>Şimdi <code>printmessage3()</code> fonksiyonuna bir vektör verdiğimizde bir hata almamız gerekir.</p>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="hata-ay%C4%B1klamadebugging.html#cb537-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">printmessage3</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
+<span id="cb537-2"><a href="hata-ay%C4%B1klamadebugging.html#cb537-2" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">printmessage3</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)<span class="sc">:</span> <span class="st">'x'</span> vektörünün uzunluğu <span class="dv">1</span><span class="st">'den büyüktür</span></span></code></pre></div>
+<p>Fonksiyonun vektörleştirilmesi <code><a href="https://rdrr.io/r/base/Vectorize.html">Vectorize()</a></code> fonksiyonu ile kolayca gerçekleştirilebilir.</p>
+<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="hata-ay%C4%B1klamadebugging.html#cb538-1" tabindex="-1"></a><span class="sc">&gt;</span> printmessage4 <span class="ot">&lt;-</span> <span class="fu">Vectorize</span>(printmessage2)</span>
+<span id="cb538-2"><a href="hata-ay%C4%B1klamadebugging.html#cb538-2" tabindex="-1"></a><span class="sc">&gt;</span> out <span class="ot">&lt;-</span> <span class="fu">printmessage4</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb538-3"><a href="hata-ay%C4%B1klamadebugging.html#cb538-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"x sifirdan küçük ve ya eşittir"</span></span>
+<span id="cb538-4"><a href="hata-ay%C4%B1klamadebugging.html#cb538-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"x 0'dan buyuk"</span></span></code></pre></div>
+<p>Şimdi doğru mesajların herhangi bir uyarı veya hata olmadan yazdırıldığını görebilirsiniz. printmessage4()<code>fonksiyonunun geri dönüş değerini</code>out<code>adında ayrı bir R nesnesinde sakladığıma dikkat edin. Bunun nedeni,</code>Vectorize()` fonksiyonunu kullandığımda artık dönüş değerinin görünmezliğini korumamasıdır.</p>
+</div>
+<div id="neyin-yanlış-olduğunu-anlamak" class="section level2" number="15.2">
+<h2>
+<span class="header-section-number">15.2</span> Neyin Yanlış Olduğunu Anlamak<a class="anchor" aria-label="anchor" href="#neyin-yanl%C4%B1%C5%9F-oldu%C4%9Funu-anlamak"><i class="fas fa-link"></i></a>
+</h2>
+<p>Herhangi bir R kodunda hata ayıklamanın birincil görevi, sorunun ne olduğunu doğru bir şekilde teşhis etmektir. Kodunuzla (veya bir başkasının koduyla) ilgili bir sorunu teşhis ederken, öncelikle ne olmasını beklediğinizi anlamanız önemlidir. Daha sonra neyin <em>olduğunu</em> ve beklentilerinizden nasıl saptığını belirlemeniz gerekir. Sormanız gereken bazı temel sorular şunlardır</p>
+<ul>
+<li>Girdiniz neydi? Fonksiyonu nasıl çağırdınız?</li>
+<li>Ne bekliyordunuz? Çıktı, mesajlar, diğer sonuçlar?</li>
+<li>Ne elde ettiniz?</li>
+<li>Elde ettiğiniz şey beklediğinizden nasıl farklıydı?</li>
+<li>Beklentileriniz ilk etapta doğru muydu?</li>
+<li>Sorunu (tam olarak) yeniden üretebilir misiniz?</li>
+</ul>
+<p>Bu soruları yanıtlayabilmek sadece kendi iyiliğiniz için değil, aynı zamanda sorunu ayıklamak için başka birinden yardım istemeniz gerekebilecek durumlarda da önemlidir. Tecrübeli programcılar size tam olarak bu soruları soracaktır.</p>
+</div>
+<div id="rde-hata-ayıklama-araçları" class="section level2" number="15.3">
+<h2>
+<span class="header-section-number">15.3</span> R'de Hata Ayıklama Araçları<a class="anchor" aria-label="anchor" href="#rde-hata-ay%C4%B1klama-ara%C3%A7lar%C4%B1"><i class="fas fa-link"></i></a>
+</h2>
+<p>R, kodunuzda hata ayıklama yapmanıza yardımcı olacak bir dizi araç sağlar. R'de fonksiyonlarda hata ayıklamak için kullanılan başlıca araçlar şunlardır</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/traceback.html">traceback()</a></code>: bir hata oluştuktan sonra fonksiyon çağrı yığınını yazdırır; hata yoksa hiçbir şey yapmaz</li>
+<li>
+<code><a href="https://rdrr.io/r/base/debug.html">debug()</a></code>: bir fonksiyonu "hata ayıklama" modu için işaretler, bu da bir fonksiyonun yürütülmesinde her seferinde bir satır adım atmanızı sağlar</li>
+<li>
+<code><a href="https://rdrr.io/r/base/browser.html">browser()</a></code>: çağrıldığı her yerde bir işlevin yürütülmesini askıya alır ve işlevi hata ayıklama moduna geçirir</li>
+<li>
+<code><a href="https://rdrr.io/r/base/trace.html">trace()</a></code>: bir fonksiyonun belirli yerlerine hata ayıklama kodu eklemenizi sağlar</li>
+<li>
+<code><a href="https://rdrr.io/r/utils/recover.html">recover()</a></code>: fonksiyon çağrı yığınına göz atabilmeniz için hata davranışını değiştirmenize olanak tanır</li>
+</ul>
+<p>Bu fonksiyonlar, bir fonksiyonun içinden geçmenizi sağlamak için özel olarak tasarlanmış etkileşimli araçlardır. Ayrıca, fonksiyona <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> veya <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> deyimlerini eklemek gibi daha kör bir teknik de vardır.</p>
+</div>
+<div id="traceback" class="section level2" number="15.4">
+<h2>
+<span class="header-section-number">15.4</span> <code>traceback()</code><a class="anchor" aria-label="anchor" href="#traceback"><i class="fas fa-link"></i></a>
+</h2>
+<p><code><a href="https://rdrr.io/r/base/traceback.html">traceback()</a></code> fonksiyonu, bir hata oluştuktan sonra <em>fonksiyon çağrı yığınını</em> yazdırır. Fonksiyon çağrı yığını, hata oluşmadan önce çağrılan fonksiyonlar dizisidir.</p>
+<p>Örneğin, bir <code>a()</code> fonksiyonunuz olabilir. Bu fonksiyonda <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> ve <code>d()</code> fonksiyonlarını çağıran <code>b()</code> fonksiyonuna bağlı çalışabilir. Bir hata oluşursa, hatanın hangi fonksiyonda oluştuğu hemen anlaşılamayabilir. <code><a href="https://rdrr.io/r/base/traceback.html">traceback()</a></code> fonksiyonu hata oluştuğunda kaç seviye derinde olduğunuzu gösterir.</p>
+<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb539-1"><a href="hata-ay%C4%B1klamadebugging.html#cb539-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">mean</span>(x)</span>
+<span id="cb539-2"><a href="hata-ay%C4%B1klamadebugging.html#cb539-2" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">mean</span>(x) <span class="sc">:</span> object <span class="st">'x'</span> not found</span>
+<span id="cb539-3"><a href="hata-ay%C4%B1klamadebugging.html#cb539-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">traceback</span>()</span>
+<span id="cb539-4"><a href="hata-ay%C4%B1klamadebugging.html#cb539-4" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span> <span class="fu">mean</span>(x)</span></code></pre></div>
+<p>Burada, <code>x</code> nesnesi mevcut olmadığı için hatanın <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> fonksiyonunun içinde meydana geldiği açıktır.</p>
+<p>Bir hata oluştuktan hemen sonra <code><a href="https://rdrr.io/r/base/traceback.html">traceback()</a></code> fonksiyonu çağrılmalıdır. Başka bir fonksiyon çağrıldığında, geri izleme özelliğini kaybedersiniz.</p>
+<p>Burada doğrusal modelleme için <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunu kullanan biraz daha karmaşık bir örnek verilmiştir.</p>
+<div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb540-1"><a href="hata-ay%C4%B1klamadebugging.html#cb540-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb540-2"><a href="hata-ay%C4%B1klamadebugging.html#cb540-2" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">eval</span>(expr, envir, enclos) <span class="sc">:</span> object ’y’ not found</span>
+<span id="cb540-3"><a href="hata-ay%C4%B1klamadebugging.html#cb540-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">traceback</span>()</span>
+<span id="cb540-4"><a href="hata-ay%C4%B1klamadebugging.html#cb540-4" tabindex="-1"></a><span class="dv">7</span><span class="sc">:</span> <span class="fu">eval</span>(expr, envir, enclos)</span>
+<span id="cb540-5"><a href="hata-ay%C4%B1klamadebugging.html#cb540-5" tabindex="-1"></a><span class="dv">6</span><span class="sc">:</span> <span class="fu">eval</span>(predvars, data, env)</span>
+<span id="cb540-6"><a href="hata-ay%C4%B1klamadebugging.html#cb540-6" tabindex="-1"></a><span class="dv">5</span><span class="sc">:</span> <span class="fu">model.frame.default</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">drop.unused.levels =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb540-7"><a href="hata-ay%C4%B1klamadebugging.html#cb540-7" tabindex="-1"></a><span class="dv">4</span><span class="sc">:</span> <span class="fu">model.frame</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">drop.unused.levels =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb540-8"><a href="hata-ay%C4%B1klamadebugging.html#cb540-8" tabindex="-1"></a><span class="dv">3</span><span class="sc">:</span> <span class="fu">eval</span>(expr, envir, enclos)</span>
+<span id="cb540-9"><a href="hata-ay%C4%B1klamadebugging.html#cb540-9" tabindex="-1"></a><span class="dv">2</span><span class="sc">:</span> <span class="fu">eval</span>(mf, <span class="fu">parent.frame</span>())</span>
+<span id="cb540-10"><a href="hata-ay%C4%B1klamadebugging.html#cb540-10" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span></code></pre></div>
+<p>Şimdi hatanın fonksiyon çağrı yığınının 7. seviyesine kadar atılmadığını görebilirsiniz, bu durumda <code><a href="https://rdrr.io/r/base/eval.html">eval()</a></code> fonksiyonu <code>y ~ x</code> formülünü değerlendirmeye çalışmış ve <code>y</code> nesnesinin mevcut olmadığını fark etmiştir.</p>
+<p>Geri izlemeye bakmak, hatanın kabaca nerede oluştuğunu anlamak için yararlıdır, ancak daha ayrıntılı hata ayıklama için kullanışlı değildir. Bunun için <code><a href="https://rdrr.io/r/base/debug.html">debug()</a></code> fonksiyonuna başvurabilirsiniz.</p>
+</div>
+<div id="debug" class="section level2" number="15.5">
+<h2>
+<span class="header-section-number">15.5</span> <code>debug()</code><a class="anchor" aria-label="anchor" href="#debug"><i class="fas fa-link"></i></a>
+</h2>
+<p><code><a href="https://rdrr.io/r/base/debug.html">debug()</a></code> işlevi, bir işlev için etkileşimli bir hata ayıklayıcı (R'de "tarayıcı" olarak da bilinir) başlatır. Hata ayıklayıcıyla, bir hatanın tam olarak nerede oluştuğunu saptamak için bir R işlevini her seferinde bir ifadeyle adımlayabilirsiniz.</p>
+<p><code><a href="https://rdrr.io/r/base/debug.html">debug()</a></code> fonksiyonu ilk argüman olarak bir fonksiyon alır. Burada <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunun hata ayıklamasına bir örnek verilmiştir.</p>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="hata-ay%C4%B1klamadebugging.html#cb541-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">debug</span>(lm)      </span>
+<span id="cb541-2"><a href="hata-ay%C4%B1klamadebugging.html#cb541-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb541-3"><a href="hata-ay%C4%B1klamadebugging.html#cb541-3" tabindex="-1"></a>debugging <span class="cf">in</span><span class="sc">:</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb541-4"><a href="hata-ay%C4%B1klamadebugging.html#cb541-4" tabindex="-1"></a>debug<span class="sc">:</span> {</span>
+<span id="cb541-5"><a href="hata-ay%C4%B1klamadebugging.html#cb541-5" tabindex="-1"></a>    ret.x <span class="ot">&lt;-</span> x</span>
+<span id="cb541-6"><a href="hata-ay%C4%B1klamadebugging.html#cb541-6" tabindex="-1"></a>    ret.y <span class="ot">&lt;-</span> y</span>
+<span id="cb541-7"><a href="hata-ay%C4%B1klamadebugging.html#cb541-7" tabindex="-1"></a>    cl <span class="ot">&lt;-</span> <span class="fu">match.call</span>()</span>
+<span id="cb541-8"><a href="hata-ay%C4%B1klamadebugging.html#cb541-8" tabindex="-1"></a>    ...</span>
+<span id="cb541-9"><a href="hata-ay%C4%B1klamadebugging.html#cb541-9" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span>qr)</span>
+<span id="cb541-10"><a href="hata-ay%C4%B1klamadebugging.html#cb541-10" tabindex="-1"></a>        z<span class="sc">$</span>qr <span class="ot">&lt;-</span> <span class="cn">NULL</span> </span>
+<span id="cb541-11"><a href="hata-ay%C4%B1klamadebugging.html#cb541-11" tabindex="-1"></a>    z</span>
+<span id="cb541-12"><a href="hata-ay%C4%B1klamadebugging.html#cb541-12" tabindex="-1"></a>} </span>
+<span id="cb541-13"><a href="hata-ay%C4%B1klamadebugging.html#cb541-13" tabindex="-1"></a>Browse[<span class="dv">2</span>]<span class="sc">&gt;</span></span></code></pre></div>
+<p>Şimdi, <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunu her çağırdığınızda etkileşimli hata ayıklayıcıyı başlatacaktır. Bu davranışı kapatmak için <code><a href="https://rdrr.io/r/base/debug.html">undebug()</a></code> fonksiyonunu çağırmanız gerekir.</p>
+<p>Hata ayıklayıcı, tarayıcıyı fonksiyon gövdesinin en üst seviyesinde çağırır. Buradan gövdedeki her bir ifade boyunca adım atabilirsiniz. Tarayıcıda çağırabileceğiniz birkaç özel komut vardır:</p>
+<ul>
+<li>
+<code>n</code> geçerli ifadeyi yürütür ve sonraki ifadeye geçer</li>
+<li>
+<code>c</code> fonksiyonun yürütülmesine devam eder ve bir hata oluşana ya da fonksiyondan çıkılana kadar durmaz</li>
+<li>
+<code>Q</code> tarayıcıdan çıkar</li>
+</ul>
+<p>İşte <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunu kullanan bir tarayıcı oturumu örneği.</p>
+<div class="sourceCode" id="cb542"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Browse</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">&gt;</span> <span class="va">n</span>   <span class="co">##  geçerli ifadeyi yürütür ve sonraki ifadeye geçer</span></span>
+<span><span class="va">debug</span><span class="op">:</span> <span class="va">ret.x</span> <span class="op">&lt;-</span> <span class="va">x</span></span>
+<span><span class="va">Browse</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">&gt;</span> <span class="va">n</span></span>
+<span><span class="va">debug</span><span class="op">:</span> <span class="va">ret.y</span> <span class="op">&lt;-</span> <span class="va">y</span></span>
+<span><span class="va">Browse</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">&gt;</span> <span class="va">n</span></span>
+<span><span class="va">debug</span><span class="op">:</span> <span class="va">cl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.call.html">match.call</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">Browse</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">&gt;</span> <span class="va">n</span></span>
+<span><span class="va">debug</span><span class="op">:</span> <span class="va">mf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.call.html">match.call</a></span><span class="op">(</span>expand.dots <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">Browse</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">&gt;</span> <span class="va">n</span></span>
+<span><span class="va">debug</span><span class="op">:</span> <span class="va">m</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/match.html">match</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"formula"</span>, <span class="st">"data"</span>, <span class="st">"subset"</span>, <span class="st">"weights"</span>, <span class="st">"na.action"</span>,</span>
+<span>    <span class="st">"offset"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">mf</span><span class="op">)</span>, <span class="fl">0L</span><span class="op">)</span></span></code></pre></div>
+<p>Tarayıcıdayken, normal bir oturumda kullanabileceğiniz diğer R işlevlerini çalıştırabilirsiniz. Özellikle, mevcut ortamınızda (fonksiyon ortamı) ne olduğunu görmek için <code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code> ve fonksiyon ortamındaki R nesnelerinin değerlerini yazdırmak için <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> fonksiyonlarını kullanabilirsiniz.</p>
+<p><code><a href="https://rdrr.io/r/base/debug.html">undebug()</a></code> fonksiyonu ile etkileşimli hata ayıklamayı kapatabilirsiniz.</p>
+<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/debug.html">undebug</a></span><span class="op">(</span><span class="va">lm</span><span class="op">)</span>    <span class="co">## Unflag the 'lm()' function for debugging</span></span></code></pre></div>
+</div>
+<div id="using-recover" class="section level2" number="15.6">
+<h2>
+<span class="header-section-number">15.6</span> Using <code>recover()</code><a class="anchor" aria-label="anchor" href="#using-recover"><i class="fas fa-link"></i></a>
+</h2>
+<p><code><a href="https://rdrr.io/r/utils/recover.html">recover()</a></code> fonksiyonu, bir hata oluştuğunda R'nin hata davranışını değiştirmek için kullanılabilir. Normalde, bir fonksiyonda hata oluştuğunda, R bir hata mesajı yazdırır, fonksiyondan çıkar ve diğer komutları beklemek üzere sizi çalışma alanınıza geri döndürür.</p>
+<p><code><a href="https://rdrr.io/r/utils/recover.html">recover()</a></code> ile R'ye bir hata oluştuğunda, hatanın oluştuğu tam noktada yürütmeyi durdurması gerektiğini söyleyebilirsiniz. Bu size hatanın oluştuğu ortamı kurcalama fırsatı verebilir. Bu, bozulmuş veya yanlışlıkla değiştirilmiş herhangi bir R nesnesi veya verisi olup olmadığını görmek için yararlı olabilir.</p>
+<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="hata-ay%C4%B1klamadebugging.html#cb544-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">options</span>(<span class="at">error =</span> recover)    <span class="do">## Change default R error behavior</span></span>
+<span id="cb544-2"><a href="hata-ay%C4%B1klamadebugging.html#cb544-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">read.csv</span>(<span class="st">"nosuchfile"</span>)      <span class="do">## This code doesn't work</span></span>
+<span id="cb544-3"><a href="hata-ay%C4%B1klamadebugging.html#cb544-3" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">file</span>(file, <span class="st">"rt"</span>) <span class="sc">:</span> cannot open the connection</span>
+<span id="cb544-4"><a href="hata-ay%C4%B1klamadebugging.html#cb544-4" tabindex="-1"></a>In addition<span class="sc">:</span> Warning message<span class="sc">:</span></span>
+<span id="cb544-5"><a href="hata-ay%C4%B1klamadebugging.html#cb544-5" tabindex="-1"></a>In <span class="fu">file</span>(file, <span class="st">"rt"</span>) <span class="sc">:</span></span>
+<span id="cb544-6"><a href="hata-ay%C4%B1klamadebugging.html#cb544-6" tabindex="-1"></a>  cannot open file ’nosuchfile’<span class="sc">:</span> No such file or directory</span>
+<span id="cb544-7"><a href="hata-ay%C4%B1klamadebugging.html#cb544-7" tabindex="-1"></a>  </span>
+<span id="cb544-8"><a href="hata-ay%C4%B1klamadebugging.html#cb544-8" tabindex="-1"></a>Enter a frame number, or <span class="dv">0</span> to exit</span>
+<span id="cb544-9"><a href="hata-ay%C4%B1klamadebugging.html#cb544-9" tabindex="-1"></a></span>
+<span id="cb544-10"><a href="hata-ay%C4%B1klamadebugging.html#cb544-10" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span> <span class="fu">read.csv</span>(<span class="st">"nosuchfile"</span>)</span>
+<span id="cb544-11"><a href="hata-ay%C4%B1klamadebugging.html#cb544-11" tabindex="-1"></a><span class="dv">2</span><span class="sc">:</span> <span class="fu">read.table</span>(<span class="at">file =</span> file, <span class="at">header =</span> header, <span class="at">sep =</span> sep, <span class="at">quote =</span> quote, <span class="at">dec =</span></span>
+<span id="cb544-12"><a href="hata-ay%C4%B1klamadebugging.html#cb544-12" tabindex="-1"></a><span class="dv">3</span><span class="sc">:</span> <span class="fu">file</span>(file, <span class="st">"rt"</span>)</span>
+<span id="cb544-13"><a href="hata-ay%C4%B1klamadebugging.html#cb544-13" tabindex="-1"></a></span>
+<span id="cb544-14"><a href="hata-ay%C4%B1klamadebugging.html#cb544-14" tabindex="-1"></a>Selection<span class="sc">:</span></span></code></pre></div>
+<p><code><a href="https://rdrr.io/r/utils/recover.html">recover()</a></code> fonksiyonu, bir hata oluştuğunda ilk olarak fonksiyon çağrı yığınını yazdıracaktır. Daha sonra, çağrı yığınının etrafında atlamayı ve sorunu araştırmayı seçebilirsiniz. Bir kare numarası seçtiğinizde, tarayıcıya yerleştirileceksiniz (tıpkı <code><a href="https://rdrr.io/r/base/debug.html">debug()</a></code> ile tetiklenen etkileşimli hata ayıklayıcı gibi) ve etrafı kurcalayabileceksiniz.</p>
+</div>
+<div id="özet-5" class="section level2" number="15.7">
+<h2>
+<span class="header-section-number">15.7</span> ÖZet<a class="anchor" aria-label="anchor" href="#%C3%B6zet-5"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Bir sorunun/durumun üç ana göstergesi vardır: <code>message</code>, <code>warning</code>, <code>error</code>; sadece bir <code>error</code> ölümcüldür</li>
+<li>Problemli bir fonksiyonu analiz ederken, problemi yeniden üretebildiğinizden emin olun, beklentilerinizi ve çıktının beklentinizden nasıl farklı olduğunu açıkça belirtin</li>
+<li>Etkileşimli hata ayıklama araçları <code>traceback</code>, <code>debug</code>, <code>browser</code>, <code>trace</code> ve <code>recover</code> işlevlerdeki sorunlu kodları bulmak için kullanılabilir</li>
+<li><strong>Hata ayıklama araçları düşünmenin yerini tutmaz!</strong></li>
+</ul>
+<!-- https://bookdown.org/rdpeng/rprogdatascience/parallel-computation.html -->
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="apply-ailesi.html"><span class="header-section-number">14</span> apply ailesi</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#hata-ay%C4%B1klamadebugging"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="nav-link" href="#yanl%C4%B1%C5%9F-bir-%C5%9Feyler-var"><span class="header-section-number">15.1</span> Yanlış bir şeyler var!</a></li>
+<li><a class="nav-link" href="#neyin-yanl%C4%B1%C5%9F-oldu%C4%9Funu-anlamak"><span class="header-section-number">15.2</span> Neyin Yanlış Olduğunu Anlamak</a></li>
+<li><a class="nav-link" href="#rde-hata-ay%C4%B1klama-ara%C3%A7lar%C4%B1"><span class="header-section-number">15.3</span> R'de Hata Ayıklama Araçları</a></li>
+<li><a class="nav-link" href="#traceback"><span class="header-section-number">15.4</span> traceback()</a></li>
+<li><a class="nav-link" href="#debug"><span class="header-section-number">15.5</span> debug()</a></li>
+<li><a class="nav-link" href="#using-recover"><span class="header-section-number">15.6</span> Using recover()</a></li>
+<li><a class="nav-link" href="#%C3%B6zet-5"><span class="header-section-number">15.7</span> ÖZet</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="/blob/master/book/14_debug.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/14_debug.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>lavaan</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
