@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Bölüm 11 if-else | OLC733</title>
+
+    <meta name="author" content="Kubra Atalay Kabasakal" />
+  
+   <meta name="description" content="Bu notlar OLC733 dersi için hazırlanmıştır." />
+   <meta name="generator" content="placeholder" />
+  <meta property="og:title" content="Bölüm 11 if-else | OLC733" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/atalay-k/OLC733" />
+  
+  <meta property="og:description" content="Bu notlar OLC733 dersi için hazırlanmıştır." />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bölüm 11 if-else | OLC733" />
+  
+  <meta name="twitter:description" content="Bu notlar OLC733 dersi için hazırlanmıştır." />
+  
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+    <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+    <script src="libs/bs3compat-0.7.0/transition.js"></script>
+    <script src="libs/bs3compat-0.7.0/tabs.js"></script>
+    <script src="libs/bs3compat-0.7.0/bs3compat.js"></script>
+    <link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet" />
+    <script src="libs/bs4_book-1.0.0/bs4_book.js"></script>
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+    <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding-0.32/datatables.js"></script>
+    <link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+    <script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+    <script src="libs/typedarray-0.1/typedarray.min.js"></script>
+    <link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+    <script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+    <script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script>
+    <link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet" />
+    <script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/init.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script>
+    <script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script>
+    <script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script>
+    <script src="libs/viz-1.8.2/viz.js"></script>
+    <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding-1.0.11/grViz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+      <link rel="stylesheet" href="include/psyteachr.css" />
+    <link rel="stylesheet" href="include/webex.css" />
+    <link rel="stylesheet" href="include/style.css" />
+  
+</head>
+
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book">
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">OLC733</a>:
+        <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+      <nav aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <div id="book-toc"></div>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="#">View book source <i class="fab fa-github"></i></a></li></p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="col-sm-12 col-md-9 col-lg-7" id="content">
+<div id="if-else" class="section level1" number="11">
+<h1><span class="header-section-number">Bölüm 11</span> <code>if</code>-<code>else</code></h1>
+<p><code>if</code>-<code>else</code> kombinasyonu muhtemelen R'de (veya belki de herhangi bir dilde) en sık kullanılan kontrol yapısıdır. Bu yapı, bir koşulu test etmenize ve doğru ya da yanlış olmasına bağlı olarak ona göre hareket etmenize olanak tanır.</p>
+<p>Öncelilke <code>if</code> koşullu ifadesinin kullanımını gösterelim:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="if-else.html#cb1-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>koşul<span class="sc">&gt;</span>) {</span>
+<span id="cb1-2"><a href="if-else.html#cb1-2" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb1-3"><a href="if-else.html#cb1-3" tabindex="-1"></a>} </span></code></pre></div>
+<p>Yukarıdaki kod, koşul yanlışsa hiçbir şey yapmaz. Koşul yanlış olduğunda yürütmek istediğiniz bir eyleminiz varsa, o zaman bir <code>else</code> cümlesine ihtiyacınız vardır.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="if-else.html#cb2-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>koşul<span class="sc">&gt;</span>) {</span>
+<span id="cb2-2"><a href="if-else.html#cb2-2" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb2-3"><a href="if-else.html#cb2-3" tabindex="-1"></a>} </span>
+<span id="cb2-4"><a href="if-else.html#cb2-4" tabindex="-1"></a><span class="cf">else</span> {</span>
+<span id="cb2-5"><a href="if-else.html#cb2-5" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb2-6"><a href="if-else.html#cb2-6" tabindex="-1"></a>}</span></code></pre></div>
+<p><code>if</code>i herhangi bir <code>if</code> ile takip ederek bir dizi test yapabilirsiniz. <code>else if</code> kullanabilirsiniz.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="if-else.html#cb3-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
+<span id="cb3-2"><a href="if-else.html#cb3-2" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb3-3"><a href="if-else.html#cb3-3" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(<span class="sc">&lt;</span>kosul2<span class="sc">&gt;</span>)  {</span>
+<span id="cb3-4"><a href="if-else.html#cb3-4" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb3-5"><a href="if-else.html#cb3-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb3-6"><a href="if-else.html#cb3-6" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb3-7"><a href="if-else.html#cb3-7" tabindex="-1"></a>}</span></code></pre></div>
+<p>İşte geçerli bir if/else yapısına bir örnek.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="if-else.html#cb4-1" tabindex="-1"></a><span class="do">##  bir rastgele sayı oluşturun</span></span>
+<span id="cb4-2"><a href="if-else.html#cb4-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb4-3"><a href="if-else.html#cb4-3" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
+<span id="cb4-4"><a href="if-else.html#cb4-4" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb4-5"><a href="if-else.html#cb4-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-6"><a href="if-else.html#cb4-6" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb4-7"><a href="if-else.html#cb4-7" tabindex="-1"></a>}</span>
+<span id="cb4-8"><a href="if-else.html#cb4-8" tabindex="-1"></a>x;y</span>
+<span id="cb4-9"><a href="if-else.html#cb4-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">6.963303</span></span>
+<span id="cb4-10"><a href="if-else.html#cb4-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span></span></code></pre></div>
+<p><code>y</code> değeri <code>x &gt; 3</code> olup olmamasına bağlı olarak ayarlanır. Bu ifade eşdeğer bir şekilde de yazılabilir.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="if-else.html#cb5-1" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
+<span id="cb5-2"><a href="if-else.html#cb5-2" tabindex="-1"></a>        <span class="dv">10</span></span>
+<span id="cb5-3"><a href="if-else.html#cb5-3" tabindex="-1"></a>} <span class="cf">else</span> { </span>
+<span id="cb5-4"><a href="if-else.html#cb5-4" tabindex="-1"></a>        <span class="dv">0</span></span>
+<span id="cb5-5"><a href="if-else.html#cb5-5" tabindex="-1"></a>}</span></code></pre></div>
+<p>Bu ifadeyi yazmanın hiçbir yolu diğerinden daha doğru değildir. Hangisini kullanacağınız sizin tercihlerinize bağlıdır</p>
+<p>Elbette <code>else</code> cümlesi gerekli değildir. Kendi koşulları doğruysa her zaman çalıştırılan bir dizi if cümlesine sahip olabilirsiniz.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="if-else.html#cb6-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
+<span id="cb6-2"><a href="if-else.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="if-else.html#cb6-3" tabindex="-1"></a>}</span>
+<span id="cb6-4"><a href="if-else.html#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="if-else.html#cb6-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul2<span class="sc">&gt;</span>) {</span>
+<span id="cb6-6"><a href="if-else.html#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="if-else.html#cb6-7" tabindex="-1"></a>}</span></code></pre></div>
+<div id="örnekler" class="section level3" number="11.0.1">
+<h3><span class="header-section-number">11.0.1</span> Örnekler</h3>
+<p>Ölçme açısından bakılacak olursa koşul bir ölçütü, durum
+cümlesi ise değerlendirmeyi gösterilebilir.
+Örneğin, yapılan bir sınavda geçme notu 60 olarak belirlendiğinde, 75 alan bir öğrencinin durumu aşağıdaki <code>if()</code> durum cümlesiyle belirlenebilmektedir.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="if-else.html#cb7-1" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">75</span></span>
+<span id="cb7-2"><a href="if-else.html#cb7-2" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb7-3"><a href="if-else.html#cb7-3" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Basarılı&quot;</span>)</span>
+<span id="cb7-4"><a href="if-else.html#cb7-4" tabindex="-1"></a>}</span>
+<span id="cb7-5"><a href="if-else.html#cb7-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;Basarılı&quot;</span></span></code></pre></div>
+<p>Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir.
+- Aşağıdaki kod çıktı vermeyecektir</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="if-else.html#cb8-1" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">60</span></span>
+<span id="cb8-2"><a href="if-else.html#cb8-2" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb8-3"><a href="if-else.html#cb8-3" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Basarılı&quot;</span>)</span>
+<span id="cb8-4"><a href="if-else.html#cb8-4" tabindex="-1"></a>}</span></code></pre></div>
+<ul>
+<li>else kullanımı ile çıktı alabiliriz</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="if-else.html#cb9-1" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">60</span></span>
+<span id="cb9-2"><a href="if-else.html#cb9-2" tabindex="-1"></a><span class="co"># Başarılı Durum</span></span>
+<span id="cb9-3"><a href="if-else.html#cb9-3" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb9-4"><a href="if-else.html#cb9-4" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Basarılı&quot;</span>)</span>
+<span id="cb9-5"><a href="if-else.html#cb9-5" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb9-6"><a href="if-else.html#cb9-6" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Basarisiz&quot;</span>)</span>
+<span id="cb9-7"><a href="if-else.html#cb9-7" tabindex="-1"></a>}</span>
+<span id="cb9-8"><a href="if-else.html#cb9-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;Basarisiz&quot;</span></span></code></pre></div>
+<p>Koşul her zaman iki kategori ile tanımlanamayabilir. Bu durumda kullanımı
+<code>else if()</code> ile destekleyebiliriz</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="if-else.html#cb10-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">75</span> <span class="co"># Başarılı Durum</span></span>
+<span id="cb10-2"><a href="if-else.html#cb10-2" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">90</span>){</span>
+<span id="cb10-3"><a href="if-else.html#cb10-3" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;AA&quot;</span>)</span>
+<span id="cb10-4"><a href="if-else.html#cb10-4" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">80</span>){</span>
+<span id="cb10-5"><a href="if-else.html#cb10-5" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;BA&quot;</span>)</span>
+<span id="cb10-6"><a href="if-else.html#cb10-6" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">70</span>){</span>
+<span id="cb10-7"><a href="if-else.html#cb10-7" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;BB&quot;</span>)</span>
+<span id="cb10-8"><a href="if-else.html#cb10-8" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb10-9"><a href="if-else.html#cb10-9" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;CB&quot;</span>)</span>
+<span id="cb10-10"><a href="if-else.html#cb10-10" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">60</span>){</span>
+<span id="cb10-11"><a href="if-else.html#cb10-11" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;CC&quot;</span>)</span>
+<span id="cb10-12"><a href="if-else.html#cb10-12" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">50</span>){</span>
+<span id="cb10-13"><a href="if-else.html#cb10-13" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;DD&quot;</span>)</span>
+<span id="cb10-14"><a href="if-else.html#cb10-14" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">30</span>){</span>
+<span id="cb10-15"><a href="if-else.html#cb10-15" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;FD&quot;</span>)</span>
+<span id="cb10-16"><a href="if-else.html#cb10-16" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb10-17"><a href="if-else.html#cb10-17" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;FF&quot;</span>)</span>
+<span id="cb10-18"><a href="if-else.html#cb10-18" tabindex="-1"></a>}</span>
+<span id="cb10-19"><a href="if-else.html#cb10-19" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;BB&quot;</span></span></code></pre></div>
+</div>
+<div id="sıra-sizde" class="section level3" number="11.0.2">
+<h3><span class="header-section-number">11.0.2</span> Sıra sizde</h3>
+<ol style="list-style-type: decimal">
+<li>a sayısının çarpmaya göre tersi 1/a'dir. Ancak bu durum 0 için tanımsızdır.
+<code>if()</code> durum cümlesi kullanarak bu durumu kodlayınız. x &lt;- 5ve x&lt;-0 için
+için test ediniz.</li>
+</ol>
+<pre><code>[1] &quot;5&#39;in carpmaya gore tersi 1/5&quot;</code></pre>
+<p><code>x &lt;- 0</code>için test ediniz.</p>
+<pre><code>[1] &quot;1/0 tanımsızdır.&quot;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>-2 ile 2 arasinda sayilar üretip, bunu x değişkenine atayalım.</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="if-else.html#cb13-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
+<span id="cb13-2"><a href="if-else.html#cb13-2" tabindex="-1"></a>x</span>
+<span id="cb13-3"><a href="if-else.html#cb13-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">1.77565</span></span></code></pre></div>
+<p>Random olarak üretilen sayının 1'den büyük olması durumunda çıktı "1'den büyük" -1 ile 1 arasında olması durumunda "-1 ile +1 arasında" -1'den küçük olması durumunda ise "-1'den küçük" çıktısı versin.</p>
+<pre><code>[1] 0.4664366
+[1] &quot;sayı -1 ile +1 arasında&quot;</code></pre>
+</div>
+<div id="if-all" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> if() &amp; all()</h2>
+<p>Her ne kadar <code>if()</code> önermesi bir elemanlı vektörlerde çıktı verirken <code>if()</code> önermesi içinde kullanılabilen <code>all</code> fonkisyonu ile vektörün tüm elemanları için kosul test edilebilir.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="if-else.html#cb15-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb15-2"><a href="if-else.html#cb15-2" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">all</span>(x<span class="sc">&gt;</span><span class="dv">0</span>)){</span>
+<span id="cb15-3"><a href="if-else.html#cb15-3" tabindex="-1"></a>  </span>
+<span id="cb15-4"><a href="if-else.html#cb15-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;tum sayilar 0&#39;dan buyuktur&quot;</span>)</span>
+<span id="cb15-5"><a href="if-else.html#cb15-5" tabindex="-1"></a>  </span>
+<span id="cb15-6"><a href="if-else.html#cb15-6" tabindex="-1"></a>} <span class="cf">else</span>{</span>
+<span id="cb15-7"><a href="if-else.html#cb15-7" tabindex="-1"></a>  </span>
+<span id="cb15-8"><a href="if-else.html#cb15-8" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;tum sayilar 0&#39;dan buyuk degildir&quot;</span>)</span>
+<span id="cb15-9"><a href="if-else.html#cb15-9" tabindex="-1"></a>}</span>
+<span id="cb15-10"><a href="if-else.html#cb15-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;tum sayilar 0&#39;dan buyuk degildir&quot;</span></span></code></pre></div>
+</div>
+<div id="if-any" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> if() &amp; any()</h2>
+<p>Bir vektörde icinde yer alan her hangi bir elemana dair test ise <code>if()</code> fonksiyonu içinde <code>any()</code> fonksiyonu ile sağlanabilir.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="if-else.html#cb16-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb16-2"><a href="if-else.html#cb16-2" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">any</span>(x<span class="sc">&lt;</span><span class="dv">0</span>)){</span>
+<span id="cb16-3"><a href="if-else.html#cb16-3" tabindex="-1"></a>  </span>
+<span id="cb16-4"><a href="if-else.html#cb16-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;nesne en az bir negatif sayi icerir&quot;</span>)</span>
+<span id="cb16-5"><a href="if-else.html#cb16-5" tabindex="-1"></a>  </span>
+<span id="cb16-6"><a href="if-else.html#cb16-6" tabindex="-1"></a>} <span class="cf">else</span>{</span>
+<span id="cb16-7"><a href="if-else.html#cb16-7" tabindex="-1"></a>  </span>
+<span id="cb16-8"><a href="if-else.html#cb16-8" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;nesne negatif sayi icermez&quot;</span>)</span>
+<span id="cb16-9"><a href="if-else.html#cb16-9" tabindex="-1"></a>}</span>
+<span id="cb16-10"><a href="if-else.html#cb16-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;nesne en az bir negatif sayi icerir&quot;</span></span></code></pre></div>
+</div>
+<div id="if-çoklu-islem" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> if() çoklu islem</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="if-else.html#cb17-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb17-2"><a href="if-else.html#cb17-2" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb17-3"><a href="if-else.html#cb17-3" tabindex="-1"></a>  </span>
+<span id="cb17-4"><a href="if-else.html#cb17-4" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">&quot;Dogru&quot;</span>  </span>
+<span id="cb17-5"><a href="if-else.html#cb17-5" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb17-6"><a href="if-else.html#cb17-6" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
+<span id="cb17-7"><a href="if-else.html#cb17-7" tabindex="-1"></a>} <span class="cf">else</span>  {</span>
+<span id="cb17-8"><a href="if-else.html#cb17-8" tabindex="-1"></a>  </span>
+<span id="cb17-9"><a href="if-else.html#cb17-9" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">&quot;Yanlis&quot;</span>  </span>
+<span id="cb17-10"><a href="if-else.html#cb17-10" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb17-11"><a href="if-else.html#cb17-11" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
+<span id="cb17-12"><a href="if-else.html#cb17-12" tabindex="-1"></a>  </span>
+<span id="cb17-13"><a href="if-else.html#cb17-13" tabindex="-1"></a>}</span>
+<span id="cb17-14"><a href="if-else.html#cb17-14" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="if-else.html#cb17-15" tabindex="-1"></a>goster3</span>
+<span id="cb17-16"><a href="if-else.html#cb17-16" tabindex="-1"></a>goster3b</span>
+<span id="cb17-17"><a href="if-else.html#cb17-17" tabindex="-1"></a>goster3c</span>
+<span id="cb17-18"><a href="if-else.html#cb17-18" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">&quot;Dogru&quot;</span></span>
+<span id="cb17-19"><a href="if-else.html#cb17-19" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span></span>
+<span id="cb17-20"><a href="if-else.html#cb17-20" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">305</span> <span class="dv">792</span> <span class="dv">893</span> <span class="dv">534</span></span></code></pre></div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script>
+<script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script>
+  </main>
+
+  <div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          <li><a id="book-source" href="#">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="#">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5">
+  <div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>OLC733</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-19.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+
+
+</body>
+
+</html>

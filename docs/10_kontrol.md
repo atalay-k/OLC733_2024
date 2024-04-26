@@ -35,9 +35,7 @@ Yaygın olarak kullanılan kontrol yapıları:
 
 -   **for()** bir vektör, liste ya da matris içindeki her bir elemanın bir değişken yardımıyla belirlenen komutu veya kodu sırasıyla yapması için oluşturulan bir döngüdür.
 
--   **for()** döngüsünün genel kullanımı aşağıdaki gibidir.
-
-#`if`-`else`
+## `if`-`else`
 
 `if`-`else` kombinasyonu muhtemelen R'de (veya belki de herhangi bir dilde) en sık kullanılan kontrol yapısıdır. Bu yapı, bir koşulu test etmenize ve doğru ya da yanlış olmasına bağlı olarak ona göre hareket etmenize olanak tanır.
 
@@ -84,8 +82,8 @@ if(x > 3) {
         y <- 0
 }
 x;y
-[1] 2.56725
-[1] 0
+[1] 8.750534
+[1] 10
 ```
 
 `y` değeri `x > 3` olup olmamasına bağlı olarak ayarlanır. Bu ifade eşdeğer bir şekilde de yazılabilir.
@@ -121,10 +119,10 @@ cümlesi ise değerlendirmeyi gösterilebilir.
 
 
 ```r
-> x <-75
-> if(x>=65){
-+ print("Basarılı")
-+ }
+x <-75
+if(x>=65){
+print("Basarılı")
+}
 [1] "Basarılı"
 ```
 
@@ -132,22 +130,22 @@ Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir.
  - Aşağıdaki kod çıktı vermeyecektir
 
 ```r
-> x <-60
-> if(x>=65){
-+ print("Basarılı")
-+ }
+x <-60
+if(x>=65){
+print("Basarılı")
+}
 ```
 
 - else kullanımı ile çıktı alabiliriz
 
 ```r
-> x <-60
-> # Başarılı Durum
-> if(x>=65){
-+ print("Basarılı")
-+ }else{
-+ print("Basarisiz")
-+ }
+x <-60
+# Başarılı Durum
+if(x>=65){
+print("Basarılı")
+}else{
+print("Basarisiz")
+}
 [1] "Basarisiz"
 ```
 
@@ -156,24 +154,24 @@ Koşul her zaman iki kategori ile tanımlanamayabilir. Bu durumda kullanımı
 
 
 ```r
-> x <- 75 # Başarılı Durum
-> if(x>=90){
-+ print("AA")
-+ }else if(x>=80){
-+ print("BA")
-+ }else if(x>=70){
-+ print("BB")
-+ }else if(x>=65){
-+ print("CB")
-+ }else if(x>=60){
-+ print("CC")
-+ }else if(x>=50){
-+ print("DD")
-+ }else if(x>=30){
-+ print("FD")
-+ }else{
-+ print("FF")
-+ }
+x <- 75 # Başarılı Durum
+if(x>=90){
+print("AA")
+}else if(x>=80){
+print("BA")
+}else if(x>=70){
+print("BB")
+}else if(x>=65){
+print("CB")
+}else if(x>=60){
+print("CC")
+}else if(x>=50){
+print("DD")
+}else if(x>=30){
+print("FD")
+}else{
+print("FF")
+}
 [1] "BB"
 ```
 ### Sıra sizde
@@ -198,17 +196,17 @@ için test ediniz.
 
 
 ```r
-> x <- rnorm(1)
-> x
-[1] 0.9696094
+x <- rnorm(1)
+x
+[1] 0.06427316
 ```
 
 Random olarak üretilen sayının 1'den büyük olması durumunda çıktı "1'den büyük" -1 ile 1 arasında olması durumunda "-1 ile +1 arasında" -1'den küçük olması durumunda ise "-1'den küçük" çıktısı versin.
 
 
 ```
-[1] 0.7480502
-[1] "sayı -1 ile +1 arasında"
+[1] -1.438045
+[1] "sayı -1'den küçük"
 ```
 
 ## if() & all()
@@ -217,15 +215,15 @@ Her ne kadar `if()` önermesi bir elemanlı vektörlerde çıktı verirken `if()
 
 
 ```r
-> x <- c(1,2,-3,4)
-> if(all(x>0)){
-+   
-+   print("tum sayilar 0'dan buyuktur")
-+   
-+ } else{
-+   
-+   print("tum sayilar 0'dan buyuk degildir")
-+ }
+x <- c(1,2,-3,4)
+if(all(x>0)){
+  
+  print("tum sayilar 0'dan buyuktur")
+  
+} else{
+  
+  print("tum sayilar 0'dan buyuk degildir")
+}
 [1] "tum sayilar 0'dan buyuk degildir"
 ```
 
@@ -235,15 +233,15 @@ Bir vektörde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiy
 
 
 ```r
-> x <- c(1,2,-3,4)
-> if(any(x<0)){
-+   
-+   print("nesne en az bir negatif sayi icerir")
-+   
-+ } else{
-+   
-+   print("nesne negatif sayi icermez")
-+ }
+x <- c(1,2,-3,4)
+if(any(x<0)){
+  
+  print("nesne en az bir negatif sayi icerir")
+  
+} else{
+  
+  print("nesne negatif sayi icermez")
+}
 [1] "nesne en az bir negatif sayi icerir"
 ```
 
@@ -251,30 +249,30 @@ Bir vektörde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiy
 
 
 ```r
-> x <- 2
-> if(x == 2) {
-+   
-+   goster3 <- "Dogru"  
-+   goster3b <- c(1,2,3)
-+   goster3c <- sample(1:1000,4)
-+ } else  {
-+   
-+   goster3 <- "Yanlis"  
-+   goster3b <- c(3,2,1)
-+   goster3c <- 10000 + sample(1:1000,4)
-+   
-+ }
-> 
-> goster3
-> goster3b
-> goster3c
+x <- 2
+if(x == 2) {
+  
+  goster3 <- "Dogru"  
+  goster3b <- c(1,2,3)
+  goster3c <- sample(1:1000,4)
+} else  {
+  
+  goster3 <- "Yanlis"  
+  goster3b <- c(3,2,1)
+  goster3c <- 10000 + sample(1:1000,4)
+  
+}
+
+goster3
+goster3b
+goster3c
 [1] "Dogru"
 [1] 1 2 3
-[1] 273 898 207 854
+[1] 177 301  58 224
 ```
 
 
-# ifelse()
+## ifelse()
 
 `ifelse()` durum cümlesi, `if()` durum cümlelerinde vektörlerin kullanımından kaynaklı sıkıntılara çözüm sunar. Bu bakımdan `ifelse()`, `if()` durum cümlelerinin vektörler için kullanılabilir halidir.
 
@@ -284,8 +282,8 @@ Bir vektörde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiy
 
 
 ```r
-> x <- 20
-> ifelse(x>= 65, "Başarılı" ,"Başarısız")
+x <- 20
+ifelse(x>= 65, "Başarılı" ,"Başarısız")
 [1] "Başarısız"
 ```
 
@@ -294,8 +292,8 @@ Bir vektörde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiy
 
 
 ```r
-> (x <- c(1,2,3,4,99,5))
-> ifelse(x==99, NA, x)
+(x <- c(1,2,3,4,99,5))
+ifelse(x==99, NA, x)
 [1]  1  2  3  4 99  5
 [1]  1  2  3  4 NA  5
 ```
@@ -306,9 +304,9 @@ Bir vektörde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiy
 
 
 ```r
-> set.seed(41)
-> sayilar <- sample(50:90,27)
-> sayilar
+set.seed(41)
+sayilar <- sample(50:90,27)
+sayilar
  [1] 89 84 54 81 57 78 55 71 80 62 87 67 70 83 82 61 66 53 50 69 79 64 85 51 73
 [26] 74 88
 ```
@@ -329,9 +327,9 @@ Bir vektörde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiy
 
 
 ```r
-> set.seed(987)
-> sayilar <- sample(-10:10,27,replace=TRUE)
-> sayilar
+set.seed(987)
+sayilar <- sample(-10:10,27,replace=TRUE)
+sayilar
  [1]   4   3   4   2   1   7 -10   5   6  -8   7  -3   9   7  -9  10   4  -1  -8
 [20]   8  -3   0   4   5   8   1   3
 ```
@@ -345,13 +343,13 @@ Bir vektörde icinde yer alan her hangi bir elemana dair test ise `if()` fonksiy
 ```
 
 
-3. finalden 50 ve uzeri alan ve en az 11 derse devam edem ogrencilerin gecme notlari finalin %60 ve vizenin %40 alinarak hesaplansin, 11'den az derse devam eden ogrencilerin gecme notu final notunun %60' olarak alinsin
+3. Finalden 50 ve üzeri alan ve en az 11 derse devam edem öğrencilerin geçme notları finalin %60 ve vizenin %40 alınarak hesaplansın, 11'den az derse devam eden öğrencilerin geçme notu final notunun %60' olarak alınsın. 
 
 
 ```r
-> vize <- c(60,70,80,90,55)
-> final <- c(45,65,70,50,80)
-> devam <- c(14,10,13,12,11)
+vize <- c(60,70,80,90,55)
+final <- c(45,65,70,50,80)
+devam <- c(14,10,13,12,11)
 ```
 
 
@@ -362,9 +360,9 @@ R'de for döngüleri bir ara değişken alır ve ona bir dizi ya da vektörden a
 
 
 ```r
-> for(i in 1:10) {
-+         print(i)
-+ }
+for(i in 1:10) {
+        print(i)
+}
 [1] 1
 [1] 2
 [1] 3
@@ -383,12 +381,12 @@ Aşağıdaki üç döngünün hepsi aynı davranışa sahiptir.
 
 
 ```r
-> x <- c("a", "b", "c", "d")
-> 
-> for(i in 1:4) {
-+         ## 'x'in her bir öğesini yazdırır
-+         print(x[i])  
-+ }
+x <- c("a", "b", "c", "d")
+
+for(i in 1:4) {
+        ## 'x'in her bir öğesini yazdırır
+        print(x[i])  
+}
 [1] "a"
 [1] "b"
 [1] "c"
@@ -399,10 +397,10 @@ Aşağıdaki üç döngünün hepsi aynı davranışa sahiptir.
 
 
 ```r
-> ## 'x' uzunluğuna göre bir dizi oluşturun
-> for(i in seq_along(x)) {   
-+         print(x[i])
-+ }
+## 'x' uzunluğuna göre bir dizi oluşturun
+for(i in seq_along(x)) {   
+        print(x[i])
+}
 [1] "a"
 [1] "b"
 [1] "c"
@@ -413,9 +411,9 @@ Aşağıdaki üç döngünün hepsi aynı davranışa sahiptir.
 
 
 ```r
-> for(letter in x) {
-+         print(letter)
-+ }
+for(letter in x) {
+        print(letter)
+}
 [1] "a"
 [1] "b"
 [1] "c"
@@ -426,7 +424,7 @@ Bir satırlık döngüler için, küme parantezleri kesinlikle gerekli değildir
 
 
 ```r
-> for(i in 1:4) print(x[i])
+for(i in 1:4) print(x[i])
 [1] "a"
 [1] "b"
 [1] "c"
@@ -437,41 +435,39 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
 
 
 
-    
-    ```r
-    > for(i in 1:10) {
-    +  print(i)
-    + }
-    [1] 1
-    [1] 2
-    [1] 3
-    [1] 4
-    [1] 5
-    [1] 6
-    [1] 7
-    [1] 8
-    [1] 9
-    [1] 10
-    ```
+
+```r
+for(i in 1:10) {
+ print(i)
+}
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+```
 
 
 
 
--   Döngüde indeks değişkeni herhangi bir nesne ile tanımlanabilir. Örneğin **i**
-
--   Ayrıca indeks değerinin başlangıcı 1 olmak zorunda **değildir.**
+-   Döngüde indeks değişkeni herhangi bir nesne ile tanımlanabilir. Örneğin **i**,  ayrıca indeks değerinin başlangıcı 1 olmak zorunda **değildir.**
 
 
-    
-    ```r
-    > for(i in 5:8) {
-    +  print(i)
-    + }
-    [1] 5
-    [1] 6
-    [1] 7
-    [1] 8
-    ```
+
+```r
+for(i in 5:8) {
+ print(i)
+}
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+```
 
 
 
@@ -479,37 +475,37 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
 -   karakter yazımında indeks **i** sadece tekrar amaçlı kullanılır.
 
 
-    
-    ```r
-    > for(i in 5:10){
-    +   print("Merhaba")
-    + }
-    [1] "Merhaba"
-    [1] "Merhaba"
-    [1] "Merhaba"
-    [1] "Merhaba"
-    [1] "Merhaba"
-    [1] "Merhaba"
-    ```
+
+```r
+for(i in 5:10){
+  print("Merhaba")
+}
+[1] "Merhaba"
+[1] "Merhaba"
+[1] "Merhaba"
+[1] "Merhaba"
+[1] "Merhaba"
+[1] "Merhaba"
+```
 
 
 
 -   Aşağıdaki çıktıyı sağlayacak kodu yazınız.
 
 
-    
-    ```
-    1  +   1  =  2 
-    2  +   2  =  4 
-    3  +   3  =  6 
-    4  +   4  =  8 
-    5  +   5  =  10 
-    6  +   6  =  12 
-    7  +   7  =  14 
-    8  +   8  =  16 
-    9  +   9  =  18 
-    10  +   10  =  20 
-    ```
+
+```
+1  +   1  =  2 
+2  +   2  =  4 
+3  +   3  =  6 
+4  +   4  =  8 
+5  +   5  =  10 
+6  +   6  =  12 
+7  +   7  =  14 
+8  +   8  =  16 
+9  +   9  =  18 
+10  +   10  =  20 
+```
 
 
 
@@ -518,60 +514,60 @@ Bununla birlikte, tek satırlık döngüler için bile küme parantezleri kullan
 -   Oluşturulan bir matrisin satırlarında yer alan sayıların toplamını başka bir nesneye atama
 
 
-    
-    ```r
-    > (X <- cbind(a = 1:5, b=2:6))
-    > Y <- array()
-    > for(i in 1:nrow(X)) {
-    +     Y[i] <- X[i,1] + X[i,2]
-    + }
-    > Y
-         a b
-    [1,] 1 2
-    [2,] 2 3
-    [3,] 3 4
-    [4,] 4 5
-    [5,] 5 6
-    [1]  3  5  7  9 11
-    ```
+
+```r
+(X <- cbind(a = 1:5, b=2:6))
+Y <- array()
+for(i in 1:nrow(X)) {
+Y[i] <- X[i,1] + X[i,2]
+}
+Y
+     a b
+[1,] 1 2
+[2,] 2 3
+[3,] 3 4
+[4,] 4 5
+[5,] 5 6
+[1]  3  5  7  9 11
+```
 
 
 
 -   `cat()`, `paste()` gibi fonksiyonları uzun bir döngüde, döngünün durumunu görmek için de kullanabilirsiniz .
 
 
-    
-    ```r
-    > islem.kontrol <- array()
-    > for(i in 1:10){
-    +   islem.kontrol[i] <- paste("Islem ", i, " tamamlandi", sep="")
-    + }
-    > islem.kontrol
-     [1] "Islem 1 tamamlandi"  "Islem 2 tamamlandi"  "Islem 3 tamamlandi" 
-     [4] "Islem 4 tamamlandi"  "Islem 5 tamamlandi"  "Islem 6 tamamlandi" 
-     [7] "Islem 7 tamamlandi"  "Islem 8 tamamlandi"  "Islem 9 tamamlandi" 
-    [10] "Islem 10 tamamlandi"
-    ```
+
+```r
+islem.kontrol <- array()
+for(i in 1:10){
+  islem.kontrol[i] <- paste("Islem ", i, " tamamlandi", sep="")
+}
+islem.kontrol
+ [1] "Islem 1 tamamlandi"  "Islem 2 tamamlandi"  "Islem 3 tamamlandi" 
+ [4] "Islem 4 tamamlandi"  "Islem 5 tamamlandi"  "Islem 6 tamamlandi" 
+ [7] "Islem 7 tamamlandi"  "Islem 8 tamamlandi"  "Islem 9 tamamlandi" 
+[10] "Islem 10 tamamlandi"
+```
 
 
 
 -   Döngülerde her zaman `i` indeksini kullanmak zorunda **değiliz.**
 
 
-    
-    ```r
-    > set.seed(10)
-    > x <- sample(1:10000,100)
-    > 
-    > sayac <- 0
-    > for (val in x) {
-    +   if(val %% 2 == 0){
-    +     sayac = sayac+1
-    +   }
-    + }
-    > print(sayac)
-    [1] 46
-    ```
+
+```r
+set.seed(10)
+x <- sample(1:10000,100)
+
+sayac <- 0
+for (val in x) {
+  if(val %% 2 == 0){
+sayac = sayac+1
+  }
+}
+print(sayac)
+[1] 46
+```
 
 
 
@@ -585,10 +581,10 @@ Kontrol mantıksal operatörlerle ya da koşul cümleleri ile sağlanabilir.
 
 
 ```r
->     for(i in 1:3){
-+           if (i==2) cat("indeks cift sayidir:","\n")
-+           else cat(i,"\n")
-+     }
+for(i in 1:3){
+  if (i==2) cat("indeks cift sayidir:","\n")
+  else cat(i,"\n")
+}
 1 
 indeks cift sayidir: 
 3 
@@ -597,168 +593,98 @@ indeks cift sayidir:
 
 
 ```r
->     for(i in 1:3){
-+       if (i==2) {
-+         cat("indeks degeri ikidir:",i,"\n") 
-+       }else{cat("indeks degeri iki degildir","\n")}
-+ }
+for(i in 1:3){
+  if (i==2) {
+cat("indeks degeri ikidir:",i,"\n") 
+  }else{cat("indeks degeri iki degildir","\n")}
+}
 indeks degeri iki degildir 
 indeks degeri ikidir: 2 
 indeks degeri iki degildir 
 ```
 
+-   Döngünün indeksi her zaman bir tam sayı olmak zorunda değildir.  Liste, veri seti, matris de olabilir.
 
-
--   Bazen döngüler iç içe kullanılabilir 5X5 bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun orneğin m[2,5]=10 olsun.
-
--   Bu işlemi yapmak için öncelikle boş bir matris oluştumak lazım.
-
-
-    
-    ```r
-    > m2 <- matrix(0,nrow=5,ncol=5)
-    > m2
-         [,1] [,2] [,3] [,4] [,5]
-    [1,]    0    0    0    0    0
-    [2,]    0    0    0    0    0
-    [3,]    0    0    0    0    0
-    [4,]    0    0    0    0    0
-    [5,]    0    0    0    0    0
-    ```
-
-
--   Aşağıdaki çıktıyı elde edecek kodu oluşturmaya çalışın
-
-
-    
-    ```
-         [,1] [,2] [,3] [,4] [,5]
-    [1,]    1    2    3    4    5
-    [2,]    2    4    6    8   10
-    [3,]    3    6    9   12   15
-    [4,]    4    8   12   16   20
-    [5,]    5   10   15   20   25
-    ```
+-   **if** sadece numerik değer ve vektörlerle çalışmaz. Aynı zamanda veri seti, matris ve listelerle de çalışabilir.
 
 
 
+```r
+d <- data.frame(a = 1:5, b=2:6)
+d
+for(x in d) {
+  cat("sutun toplamlari:", sum(x), "\n")
+}
+```
 
--   Kullanıcı tarafından belirlenen **nxn** boyutunda bir matris oluşturulsun.
+<div class="kable-table">
 
--   **nxn** bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun.
+|  a|  b|
+|--:|--:|
+|  1|  2|
+|  2|  3|
+|  3|  4|
+|  4|  5|
+|  5|  6|
 
--   örneğin m[2,5]=10 olsun.
+</div>
 
--   Eger matrisin boyutları 10x10'dan büyükse sadece 10 satırını yazsın eğer matrisi boyutları 10x10'dan küçükse hepsini yazsın.
-
--   Kullancı üç girdiğinde oluşacak çıktı:
-
-    
-    ```
-         [,1] [,2] [,3]
-    [1,]    1    2    3
-    [2,]    2    4    6
-    [3,]    3    6    9
-    ```
-
--   Döngünün indeksi her zaman bir tam sayı olmak zorunda değildir.
-
--   Liste, veri seti, matris de olabilir.
-
--   **if** sadece numerik değer ve vektörlerle çalışmaz.
-
--   Aynı zamanda veri seti, matris ve listelerle de çalışabilir.
-
-
-    
-    ```r
-    > d <- data.frame(a = 1:5, b=2:6)
-    > d
-    > for(x in d) {
-    +   cat("sutun toplamlari:", sum(x), "\n")
-    + }
-    ```
-    
-    <div class="kable-table">
-    
-    |  a|  b|
-    |--:|--:|
-    |  1|  2|
-    |  2|  3|
-    |  3|  4|
-    |  4|  5|
-    |  5|  6|
-    
-    </div>
-    
-    ```
-    sutun toplamlari: 15 
-    sutun toplamlari: 20 
-    ```
+```
+sutun toplamlari: 15 
+sutun toplamlari: 20 
+```
 
 
 
 
 
 
-    
-    ```r
-    > X <- cbind(1:10, 20:29)
-    > X
-          [,1] [,2]
-     [1,]    1   20
-     [2,]    2   21
-     [3,]    3   22
-     [4,]    4   23
-     [5,]    5   24
-     [6,]    6   25
-     [7,]    7   26
-     [8,]    8   27
-     [9,]    9   28
-    [10,]   10   29
-    ```
+
+```r
+X <- cbind(1:5, 21:25)
+X
+     [,1] [,2]
+[1,]    1   21
+[2,]    2   22
+[3,]    3   23
+[4,]    4   24
+[5,]    5   25
+```
 
 
 
 Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.
 
 
-    
-    ```
-    1 satirdaki degerlerin carpimi 20 olarak hesaplanmistir. 
-    2 satirdaki degerlerin carpimi 42 olarak hesaplanmistir. 
-    3 satirdaki degerlerin carpimi 66 olarak hesaplanmistir. 
-    4 satirdaki degerlerin carpimi 92 olarak hesaplanmistir. 
-    5 satirdaki degerlerin carpimi 120 olarak hesaplanmistir. 
-    6 satirdaki degerlerin carpimi 150 olarak hesaplanmistir. 
-    7 satirdaki degerlerin carpimi 182 olarak hesaplanmistir. 
-    8 satirdaki degerlerin carpimi 216 olarak hesaplanmistir. 
-    9 satirdaki degerlerin carpimi 252 olarak hesaplanmistir. 
-    10 satirdaki degerlerin carpimi 290 olarak hesaplanmistir. 
-    ```
+
+```
+1 satirdaki degerlerin carpimi 21 olarak hesaplanmistir. 
+2 satirdaki degerlerin carpimi 44 olarak hesaplanmistir. 
+3 satirdaki degerlerin carpimi 69 olarak hesaplanmistir. 
+4 satirdaki degerlerin carpimi 96 olarak hesaplanmistir. 
+5 satirdaki degerlerin carpimi 125 olarak hesaplanmistir. 
+```
 
 
 
 ## `next()` ve `break()`
 
--   `next()` ve `break()` fonksiyonları döngülerde kontrol mekanizmasidır.
-
--   Döngüyü sadece belirli bir koşulda çalıştırmak istemezseniz `next()` fonksiyonunu kullanabilirsiniz.
+-   `next()` ve `break()` fonksiyonları döngülerde kontrol mekanizmasıdır. Döngüyü sadece belirli bir koşulda çalıştırmak istemezseniz `next()` fonksiyonunu kullanabilirsiniz.
 
 
-    
-    ```r
-    > for(i in 1:6){
-    +   if(i==3){
-    +     next
-    +   }
-    +   print (i)}
-    [1] 1
-    [1] 2
-    [1] 4
-    [1] 5
-    [1] 6
-    ```
+
+```r
+for(i in 1:6){
+  if(i==3){
+next
+  }
+  print (i)}
+[1] 1
+[1] 2
+[1] 4
+[1] 5
+[1] 6
+```
 
 
 
@@ -767,47 +693,55 @@ Aşağıdaki çıktıyı elde etmek için gerekli kodu yazınız.
 
 
 
-    
-    ```r
-    > for(i in 1:12){
-    +   if(i==3){
-    +     break
-    +   }
-    +   print (i)}
-    [1] 1
-    [1] 2
-    ```
+
+```r
+for(i in 1:12){
+  if(i==3){
+break
+  }
+  print (i)}
+[1] 1
+[1] 2
+```
 
 
 
--   Döngüler uzun zamanda çalışır.
+-   Döngüler uzun zamanda çalışır. ilk olarak başlangıç noktasını belirleyelim
 
 
-    
-    ```r
-    > # donguler uzun zamanda calisir
-    > set.seed(853)
-    > y<-matrix(rnorm(1000000),nrow=1000)
-    > z<-0*y
-    > time1<-as.numeric(Sys.time())
-    > #loop:
-    > time2 <- system.time(
-    +   for(i in 1:1000){
-    +   for(j in 1:1000){
-    +     z[i,j]<-y[i,j]^2
-    +   }
-    + })
-    > 
-    > time2
-    > # ayni islemi dongusuz yapma
-    > time3 <- system.time(z<-y^2)
-    > time3
-       user  system elapsed 
-       0.08    0.00    0.08 
-       user  system elapsed 
-          0       0       0 
-    ```
 
+```r
+set.seed(853)
+y<-matrix(rnorm(1000000),nrow=1000)
+z<-0*y
+time1<-as.numeric(Sys.time())
+```
+
+-  işlemi döngü ile yapalım.
+
+```r
+#loop:
+time2 <- system.time(
+  for(i in 1:1000){
+  for(j in 1:1000){
+z[i,j]<-y[i,j]^2
+  }
+})
+
+time2
+   user  system elapsed 
+   0.06    0.00    0.06 
+```
+
+- ayni islemi dongusuz yapma
+
+```r
+
+time3 <- system.time(z<-y^2)
+time3
+   user  system elapsed 
+   0.00    0.01    0.01 
+```
 
 
 ## İçiçe `for` döngüleri
@@ -828,17 +762,56 @@ for(i in seq_len(nrow(x))) {
 
 - sıra sizde
 
-Aşağıdaki çıktıyı sağlayacak kodu yazınız.
-1 + 1 = 2
-2 + 2 = 4
-3 + 3 = 6
-4 + 4 = 8
-5 + 5 = 10
-6 + 6 = 12
-7 + 7 = 14
-8 + 8 = 16
-9 + 9 = 18
-10 + 10 = 20
+-   Bazen döngüler iç içe kullanılabilir 5X5 bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun orneğin m[2,5]=10 olsun. Bu işlemi yapmak için öncelikle boş bir matris oluştumak lazım.
+
+
+
+```r
+m2 <- matrix(0,nrow=5,ncol=5)
+m2
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    0    0    0    0    0
+[2,]    0    0    0    0    0
+[3,]    0    0    0    0    0
+[4,]    0    0    0    0    0
+[5,]    0    0    0    0    0
+```
+
+
+-   Aşağıdaki çıktıyı elde edecek kodu oluşturmaya çalışın
+
+
+
+```
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    2    3    4    5
+[2,]    2    4    6    8   10
+[3,]    3    6    9   12   15
+[4,]    4    8   12   16   20
+[5,]    5   10   15   20   25
+```
+
+
+
+
+-   Kullanıcı tarafından belirlenen **nxn** boyutunda bir matris oluşturulsun.
+
+-   **nxn** bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun.
+
+-   örneğin m[2,5]=10 olsun.
+
+-   Eger matrisin boyutları 10x10'dan büyükse sadece 10 satırını yazsın eğer matrisi boyutları 10x10'dan küçükse hepsini yazsın.
+
+-   Kullancı üç girdiğinde oluşacak çıktı:
+
+
+```
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    2    4    6
+[3,]    3    6    9
+```
+
 
 
 # `while` döngüsü
@@ -847,11 +820,11 @@ While döngüleri bir koşulu test ederek başlar. Koşul doğruysa, döngü gö
 
 
 ```r
-> count <- 0
-> while(count < 10) {
-+         print(count)
-+         count <- count + 1
-+ }
+count <- 0
+while(count < 10) {
+        print(count)
+        count <- count + 1
+}
 [1] 0
 [1] 1
 [1] 2
@@ -870,19 +843,19 @@ Bazen testte birden fazla koşul olabilir.
 
 
 ```r
-> z <- 5
-> set.seed(1)
-> 
-> while(z >= 3 && z <= 10) {
-+         coin <- rbinom(1, 1, 0.5)
-+         
-+         if(coin == 1) {  ## rastgele çalışır
-+                 z <- z + 1
-+         } else {
-+                 z <- z - 1
-+         } 
-+ }
-> print(z)
+z <- 5
+set.seed(1)
+
+while(z >= 3 && z <= 10) {
+        coin <- rbinom(1, 1, 0.5)
+        
+        if(coin == 1) {  ## rastgele çalışır
+                z <- z + 1
+        } else {
+                z <- z - 1
+        } 
+}
+print(z)
 [1] 2
 ```
 
@@ -913,7 +886,7 @@ repeat {
 
 Yukarıdaki kodun `computeEstimate()` fonksiyonu tanımlanmamışsa çalışmayacağını unutmayın (bunu sadece bu gösterimin amaçları için uydurdum).
 
-Yukarıdaki döngü biraz tehlikelidir çünkü duracağının garantisi yoktur. x0`ve`x1`değerlerinin ileri geri salındığı ve asla yakınsamadığı bir duruma girebilirsiniz. Bir`for` döngüsü kullanarak iterasyon sayısına sabit bir sınır koymak ve ardından yakınsamanın sağlanıp sağlanmadığını rapor etmek daha iyidir.
+Yukarıdaki döngü biraz tehlikelidir çünkü duracağının garantisi yoktur. `x0` ve`x1` değerlerinin ileri geri salındığı ve asla yakınsamadığı bir duruma girebilirsiniz. Bir `for` döngüsü kullanarak iterasyon sayısına sabit bir sınır koymak ve ardından yakınsamanın sağlanıp sağlanmadığını rapor etmek daha iyidir.
 
 ## `next`, `break`
 
@@ -946,29 +919,12 @@ for(i in 1:100) {
 
 ## Özet
 
--   if`,`while`ve`for` gibi kontrol yapıları bir R programının akışını kontrol etmenizi sağlar
+-   `if`,`while`ve`for` gibi kontrol yapıları bir R programının akışını kontrol etmenizi sağlar
 
 -   Sonsuz döngülerden, teorik olarak doğru olduklarına inansanız bile, genellikle kaçınılmalıdır.
 
 -   Burada bahsedilen kontrol yapıları öncelikle program yazmak için kullanışlıdır; komut satırı etkileşimli çalışmalar için "apply" fonksiyonları daha kullanışlıdır.
 
-
-
-# Uygulama
-
-
-
-
-
-
-## Coklu veri seti olusturma ve dışarı aktarma
-
--   İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım.
--   Fonksiyonun ilk girdisi veri seti sayısı olmalı
--   Kullanıcı oluşturmak istediği her bir veri seti için satır ve sütun sayısını belirleyebilirsin.
--   Örneğin oluşturduğu ilk veri setin 5 satır, 10 sütunlu ikincisi veri seti ise 10 satır, 20 sütunlu olsun.
--   Oluşturacak olan her bir veri setinin her bir sütunu standart normal dağılıma uygun olacak şekilde üretilsin.
--   Oluşturulan veri setlerinden ilki "veri_1.xlsx" şeklinde, devamında ise sayı değiştirilerek dışarı aktarılsın.
 
 
 
@@ -982,14 +938,14 @@ Fibonacci dizisinin elemanlari **1 1 2 3 5 8 13 21 34 55 89 ...** dizinin eleman
 
 
 ```r
->     set.seed(1786)
->     ornek<-exp(matrix(rnorm(2000),nrow=100))
->     index1.temp<-sample(1:100,10)
->     index2.temp<-sample(1:20,10)
->     for(i in 1:10){
-+       ornek[index1.temp[i],index2.temp[i]]<--1
-+     }
->      head(ornek,6)
+set.seed(1786)
+ornek<-exp(matrix(rnorm(2000),nrow=100))
+index1.temp<-sample(1:100,10)
+index2.temp<-sample(1:20,10)
+for(i in 1:10){
+  ornek[index1.temp[i],index2.temp[i]]<--1
+}
+ head(ornek,6)
           [,1]      [,2]      [,3]      [,4]      [,5]      [,6]     [,7]
 [1,] 0.5549525 0.3247338 0.5236032 0.3821027 0.4187483 0.1588847 5.226161
 [2,] 0.5671734 1.2431592 0.8812069 2.6695443 0.6984453 1.0838792 1.079946

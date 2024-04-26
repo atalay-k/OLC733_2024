@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Bölüm 14 Uygulama | lavaan</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="14.1 Coklu veri seti olusturma ve dışarı aktarma İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım. Fonksiyonun ilk girdisi veri seti sayısı olmalı Kullanıcı oluşturmak istediği her bir...">
+<meta name="description" content="14.1 Çoklu veri seti oluşturma ve dışarı aktarma İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım. Fonksiyonun ilk girdisi veri seti sayısı olmalı, varsayılan olarak bir veri seti...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
 <meta property="og:title" content="Bölüm 14 Uygulama | lavaan">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC733/uygulama-2.html">
-<meta property="og:description" content="14.1 Coklu veri seti olusturma ve dışarı aktarma İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım. Fonksiyonun ilk girdisi veri seti sayısı olmalı Kullanıcı oluşturmak istediği her bir...">
+<meta property="og:description" content="14.1 Çoklu veri seti oluşturma ve dışarı aktarma İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım. Fonksiyonun ilk girdisi veri seti sayısı olmalı, varsayılan olarak bir veri seti...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bölüm 14 Uygulama | lavaan">
-<meta name="twitter:description" content="14.1 Coklu veri seti olusturma ve dışarı aktarma İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım. Fonksiyonun ilk girdisi veri seti sayısı olmalı Kullanıcı oluşturmak istediği her bir...">
+<meta name="twitter:description" content="14.1 Çoklu veri seti oluşturma ve dışarı aktarma İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım. Fonksiyonun ilk girdisi veri seti sayısı olmalı, varsayılan olarak bir veri seti...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -67,14 +67,13 @@
 <li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
 <li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
 <li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
-<li><a class="" href="ifelse.html"><span class="header-section-number">11</span> ifelse()</a></li>
-<li><a class="" href="for.html"><span class="header-section-number">12</span> for</a></li>
-<li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">13</span> while döngüsü</a></li>
+<li><a class="" href="for.html"><span class="header-section-number">11</span> for</a></li>
+<li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">12</span> while döngüsü</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">13</span> Fonksiyonlar</a></li>
 <li><a class="active" href="uygulama-2.html"><span class="header-section-number">14</span> Uygulama</a></li>
-<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">15</span> Fonksiyonlar</a></li>
-<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">16</span> Döngü Fonkisyonları</a></li>
-<li><a class="" href="apply-ailesi.html"><span class="header-section-number">17</span> apply ailesi</a></li>
-<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">18</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">15</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">16</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">17</span> Klasik Test Teorisi</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,164 +85,72 @@
 <h1>
 <span class="header-section-number">Bölüm 14</span> Uygulama<a class="anchor" aria-label="anchor" href="#uygulama-2"><i class="fas fa-link"></i></a>
 </h1>
-<div id="coklu-veri-seti-olusturma-ve-dışarı-aktarma" class="section level2" number="14.1">
+<div id="çoklu-veri-seti-oluşturma-ve-dışarı-aktarma" class="section level2" number="14.1">
 <h2>
-<span class="header-section-number">14.1</span> Coklu veri seti olusturma ve dışarı aktarma<a class="anchor" aria-label="anchor" href="#coklu-veri-seti-olusturma-ve-d%C4%B1%C5%9Far%C4%B1-aktarma"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.1</span> Çoklu veri seti oluşturma ve dışarı aktarma<a class="anchor" aria-label="anchor" href="#%C3%A7oklu-veri-seti-olu%C5%9Fturma-ve-d%C4%B1%C5%9Far%C4%B1-aktarma"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
-<li>İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım.</li>
-<li>Fonksiyonun ilk girdisi veri seti sayısı olmalı</li>
-<li>Kullanıcı oluşturmak istediği her bir veri seti için satır ve sütun sayısını belirleyebilirsin.</li>
-<li>Örneğin oluşturduğu ilk veri setin 5 satır, 10 sütunlu ikincisi veri seti ise 10 satır, 20 sütunlu olsun.</li>
-<li>Oluşturacak olan her bir veri setinin her bir sütunu standart normal dağılıma uygun olacak şekilde üretilsin.</li>
-<li>Oluşturulan veri setlerinden ilki "veri_1.xlsx" şeklinde, devamında ise sayı değiştirilerek dışarı aktarılsın.</li>
+<li>İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım. Fonksiyonun ilk girdisi veri seti sayısı olmalı, varsayılan olarak bir veri seti oluşturalan fonksiyon taslağı oluşturalım.</li>
 </ul>
-</div>
-<div id="for-ödev-1" class="section level2" number="14.2">
-<h2>
-<span class="header-section-number">14.2</span> <strong><code>for()</code></strong> Ödev-1<a class="anchor" aria-label="anchor" href="#for-%C3%B6dev-1"><i class="fas fa-link"></i></a>
-</h2>
-<p>Fibonacci dizisinin elemanlari <strong>1 1 2 3 5 8 13 21 34 55 89 ...</strong> dizinin elemanlarını <code>for()</code> döngüsü ile oluşturmaya çalışınız.</p>
-</div>
-<div id="for-ödev-2" class="section level2" number="14.3">
-<h2>
-<span class="header-section-number">14.3</span> <strong><code>for()</code></strong> Ödev-2<a class="anchor" aria-label="anchor" href="#for-%C3%B6dev-2"><i class="fas fa-link"></i></a>
-</h2>
-<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="uygulama-2.html#cb455-1" tabindex="-1"></a><span class="sc">&gt;</span>     <span class="fu">set.seed</span>(<span class="dv">1786</span>)</span>
-<span id="cb455-2"><a href="uygulama-2.html#cb455-2" tabindex="-1"></a><span class="sc">&gt;</span>     ornek<span class="ot">&lt;-</span><span class="fu">exp</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2000</span>),<span class="at">nrow=</span><span class="dv">100</span>))</span>
-<span id="cb455-3"><a href="uygulama-2.html#cb455-3" tabindex="-1"></a><span class="sc">&gt;</span>     index1.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">10</span>)</span>
-<span id="cb455-4"><a href="uygulama-2.html#cb455-4" tabindex="-1"></a><span class="sc">&gt;</span>     index2.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,<span class="dv">10</span>)</span>
-<span id="cb455-5"><a href="uygulama-2.html#cb455-5" tabindex="-1"></a><span class="sc">&gt;</span>     <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb455-6"><a href="uygulama-2.html#cb455-6" tabindex="-1"></a><span class="sc">+</span>       ornek[index1.temp[i],index2.temp[i]]<span class="ot">&lt;-</span><span class="sc">-</span><span class="dv">1</span></span>
-<span id="cb455-7"><a href="uygulama-2.html#cb455-7" tabindex="-1"></a><span class="sc">+</span>     }</span>
-<span id="cb455-8"><a href="uygulama-2.html#cb455-8" tabindex="-1"></a><span class="sc">&gt;</span>      <span class="fu">head</span>(ornek,<span class="dv">6</span>)</span>
-<span id="cb455-9"><a href="uygulama-2.html#cb455-9" tabindex="-1"></a>          [,<span class="dv">1</span>]      [,<span class="dv">2</span>]      [,<span class="dv">3</span>]      [,<span class="dv">4</span>]      [,<span class="dv">5</span>]      [,<span class="dv">6</span>]     [,<span class="dv">7</span>]</span>
-<span id="cb455-10"><a href="uygulama-2.html#cb455-10" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">0.5549525</span> <span class="fl">0.3247338</span> <span class="fl">0.5236032</span> <span class="fl">0.3821027</span> <span class="fl">0.4187483</span> <span class="fl">0.1588847</span> <span class="fl">5.226161</span></span>
-<span id="cb455-11"><a href="uygulama-2.html#cb455-11" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">0.5671734</span> <span class="fl">1.2431592</span> <span class="fl">0.8812069</span> <span class="fl">2.6695443</span> <span class="fl">0.6984453</span> <span class="fl">1.0838792</span> <span class="fl">1.079946</span></span>
-<span id="cb455-12"><a href="uygulama-2.html#cb455-12" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">4.8068457</span> <span class="fl">0.3449856</span> <span class="fl">0.6079096</span> <span class="fl">0.9194116</span> <span class="fl">1.5361330</span> <span class="fl">1.9082522</span> <span class="fl">0.671977</span></span>
-<span id="cb455-13"><a href="uygulama-2.html#cb455-13" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">1.3509234</span> <span class="fl">2.3569582</span> <span class="fl">0.1931423</span> <span class="fl">4.0707377</span> <span class="fl">0.3527276</span> <span class="fl">2.3498825</span> <span class="fl">1.198514</span></span>
-<span id="cb455-14"><a href="uygulama-2.html#cb455-14" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">0.9012032</span> <span class="fl">0.2310683</span> <span class="fl">0.2317487</span> <span class="fl">1.3809955</span> <span class="fl">0.9168741</span> <span class="fl">0.6237213</span> <span class="fl">1.609403</span></span>
-<span id="cb455-15"><a href="uygulama-2.html#cb455-15" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">1.2331483</span> <span class="fl">1.1066056</span> <span class="fl">0.3546027</span> <span class="fl">0.3705946</span> <span class="fl">0.9002303</span> <span class="fl">0.2528151</span> <span class="fl">3.337512</span></span>
-<span id="cb455-16"><a href="uygulama-2.html#cb455-16" tabindex="-1"></a>          [,<span class="dv">8</span>]      [,<span class="dv">9</span>]     [,<span class="dv">10</span>]     [,<span class="dv">11</span>]     [,<span class="dv">12</span>]     [,<span class="dv">13</span>]     [,<span class="dv">14</span>]</span>
-<span id="cb455-17"><a href="uygulama-2.html#cb455-17" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">2.6280057</span> <span class="fl">1.2251526</span> <span class="fl">0.4760966</span> <span class="fl">5.2379018</span> <span class="fl">1.4782655</span> <span class="fl">1.3761338</span> <span class="fl">1.0202608</span></span>
-<span id="cb455-18"><a href="uygulama-2.html#cb455-18" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">2.2087385</span> <span class="fl">0.5195551</span> <span class="fl">0.3757409</span> <span class="fl">0.9004808</span> <span class="fl">0.7409205</span> <span class="fl">2.0543842</span> <span class="fl">0.3668661</span></span>
-<span id="cb455-19"><a href="uygulama-2.html#cb455-19" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">1.5310016</span> <span class="fl">0.6735007</span> <span class="fl">2.2069776</span> <span class="fl">0.5060078</span> <span class="fl">0.7171477</span> <span class="fl">1.2378655</span> <span class="fl">0.3651527</span></span>
-<span id="cb455-20"><a href="uygulama-2.html#cb455-20" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">2.5592899</span> <span class="fl">1.8205257</span> <span class="fl">1.2624052</span> <span class="fl">0.1524106</span> <span class="fl">0.3828322</span> <span class="fl">1.2406799</span> <span class="fl">0.7954326</span></span>
-<span id="cb455-21"><a href="uygulama-2.html#cb455-21" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">1.1005990</span> <span class="fl">1.0619758</span> <span class="fl">2.1047783</span> <span class="fl">2.7816902</span> <span class="fl">1.4010878</span> <span class="fl">0.6140937</span> <span class="fl">0.5136842</span></span>
-<span id="cb455-22"><a href="uygulama-2.html#cb455-22" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">0.9799103</span> <span class="fl">2.7520425</span> <span class="fl">2.5407624</span> <span class="fl">1.3889136</span> <span class="fl">0.4346808</span> <span class="fl">1.0637950</span> <span class="fl">0.1859157</span></span>
-<span id="cb455-23"><a href="uygulama-2.html#cb455-23" tabindex="-1"></a>         [,<span class="dv">15</span>]     [,<span class="dv">16</span>]      [,<span class="dv">17</span>]     [,<span class="dv">18</span>]    [,<span class="dv">19</span>]     [,<span class="dv">20</span>]</span>
-<span id="cb455-24"><a href="uygulama-2.html#cb455-24" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">0.1437680</span> <span class="fl">4.1807643</span>  <span class="fl">1.7389423</span> <span class="fl">3.0760640</span> <span class="fl">1.550557</span> <span class="fl">4.4838291</span></span>
-<span id="cb455-25"><a href="uygulama-2.html#cb455-25" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">3.8674407</span> <span class="fl">1.9349214</span>  <span class="fl">0.6333922</span> <span class="fl">0.4862532</span> <span class="fl">5.275571</span> <span class="fl">0.1161029</span></span>
-<span id="cb455-26"><a href="uygulama-2.html#cb455-26" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">1.4724240</span> <span class="fl">0.5971116</span> <span class="fl">11.5869157</span> <span class="fl">0.7580736</span> <span class="fl">4.755297</span> <span class="fl">1.0583051</span></span>
-<span id="cb455-27"><a href="uygulama-2.html#cb455-27" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">0.1243085</span> <span class="fl">0.8376231</span>  <span class="fl">1.3723291</span> <span class="fl">2.0884571</span> <span class="fl">2.506128</span> <span class="fl">1.2094517</span></span>
-<span id="cb455-28"><a href="uygulama-2.html#cb455-28" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">6.2971803</span> <span class="fl">0.8422164</span>  <span class="fl">1.5335222</span> <span class="fl">0.3079718</span> <span class="fl">2.729447</span> <span class="fl">1.7164885</span></span>
-<span id="cb455-29"><a href="uygulama-2.html#cb455-29" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">3.8052219</span> <span class="fl">2.1611055</span>  <span class="fl">0.3280288</span> <span class="fl">2.7773368</span> <span class="fl">1.726558</span> <span class="fl">1.3193446</span></span></code></pre></div>
+<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fonksiyon_adi</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sayi</span><span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">{</span></span>
+<span></span>
+<span><span class="op">}</span></span></code></pre></div>
 <ul>
-<li><p><strong>ornek</strong> veri setinde i. satırda negatif sayı yok ise çıktıda <strong>i. satırın ortalaması....dir</strong> yazsin.</p></li>
-<li><p>Eğer veri setinde her hangi bir satırda negatif sayı var ise <strong>satır i negatif sayı bulunmaktadır.</strong></p></li>
-<li><p>veri setindeki satırlardaki toplam negatif sayı toplamı üçü geçerse çktıda <strong>cok sayıda negatif sayı</strong> yazsın ve döngü çalışmayı durdursun.</p></li>
+<li>Kullanıcı oluşturmak istediği her bir veri seti için satır ve sütun sayısını belirleyebilirsin. Satır ve sütun sayısını argüman olarak tanımlayalım. Örneğin oluşturduğu ilk veri setin 5 satır, 10 sütunlu ikincisi olsun. Bunun için argümana varsayalin değerler atayalım</li>
 </ul>
-<pre><code>[1] "Satir 1 ortalamasi 0.986111423178787"
-[1] "Satir 2 ortalamasi 1.66440473890558"
-[1] "Satir 3 ortalamasi 1.86445460243509"
-[1] "Satir 4 negatif sayi icermektedir."
-[1] "Satir 5 negatif sayi icermektedir."
-[1] "Satir 6 ortalamasi 2.18755744815693"
-[1] "Satir 7 ortalamasi 2.42896783600747"
-[1] "Satir 8 ortalamasi 1.11152186047931"
-[1] "Satir 9 ortalamasi 1.28348082027049"
-[1] "Satir 10 ortalamasi 1.49790135754768"
-[1] "Satir 11 ortalamasi 1.00823845594998"
-[1] "Satir 12 ortalamasi 1.84432161490249"
-[1] "Satir 13 ortalamasi 2.30730516248531"
-[1] "Satir 14 ortalamasi 1.32997520232501"
-[1] "Satir 15 ortalamasi 1.40736423997693"
-[1] "Satir 16 ortalamasi 0.930694377568197"
-[1] "Satir 17 ortalamasi 1.09683802891735"
-[1] "Satir 18 ortalamasi 1.34543057465283"
-[1] "Satir 19 ortalamasi 1.91931890408157"
-[1] "Satir 20 ortalamasi 1.46149447129439"
-[1] "Satir 21 ortalamasi 1.48698773010654"
-[1] "Satir 22 ortalamasi 2.50083591324982"
-[1] "Satir 23 ortalamasi 2.49403230671112"
-[1] "Satir 24 ortalamasi 2.03307899444367"
-[1] "Satir 25 ortalamasi 1.47358418101605"
-[1] "Satir 26 ortalamasi 1.77152589640626"
-[1] "Satir 27 ortalamasi 1.25135003349089"
-[1] "Satir 28 ortalamasi 1.33894076274636"
-[1] "Satir 29 ortalamasi 1.82874224246664"
-[1] "Satir 30 ortalamasi 1.23831471787453"
-[1] "Satir 31 ortalamasi 1.82082600141082"
-[1] "Satir 32 ortalamasi 1.12466160143214"
-[1] "Satir 33 ortalamasi 1.32597664522914"
-[1] "Satir 34 negatif sayi icermektedir."
-[1] "Satir 35 ortalamasi 2.32162456679167"
-[1] "Satir 36 ortalamasi 2.23274928866424"
-[1] "Satir 37 negatif sayi icermektedir."
-[1] "Satir 38 ortalamasi 2.275511227626"
-[1] "Satir 39 ortalamasi 1.7921160361432"
-[1] "Satir 40 ortalamasi 0.970509167208986"
-[1] "Satir 41 ortalamasi 1.24765799189581"
-[1] "Satir 42 ortalamasi 2.51234120817512"
-[1] "Satir 43 ortalamasi 2.31828043397862"
-[1] "Satir 44 negatif sayi icermektedir."
-[1] "Satir 45 ortalamasi 1.95647545685842"
-[1] "Satir 46 negatif sayi icermektedir."
-[1] "Satir 47 ortalamasi 2.36551615481398"
-[1] "Satir 48 ortalamasi 1.97786024664016"
-[1] "Satir 49 ortalamasi 1.6393028512105"
-[1] "Satir 50 ortalamasi 3.73629039983628"
-[1] "Satir 51 ortalamasi 1.82116726064836"
-[1] "Satir 52 ortalamasi 1.87732770333814"
-[1] "Satir 53 ortalamasi 2.7020031804201"
-[1] "Satir 54 ortalamasi 1.05164097984234"
-[1] "Satir 55 ortalamasi 1.88981004324099"
-[1] "Satir 56 ortalamasi 1.54248819505925"
-[1] "Satir 57 ortalamasi 1.65731581957976"
-[1] "Satir 58 ortalamasi 1.36890435340706"
-[1] "Satir 59 negatif sayi icermektedir."
-[1] "Satir 60 ortalamasi 2.22046851034413"
-[1] "Satir 61 ortalamasi 1.0408644748318"
-[1] "Satir 62 ortalamasi 1.72072095294252"
-[1] "Satir 63 ortalamasi 1.53167534425738"
-[1] "Satir 64 ortalamasi 1.72856879470484"
-[1] "Satir 65 ortalamasi 1.37607074870477"
-[1] "Satir 66 ortalamasi 1.42295571491744"
-[1] "Satir 67 ortalamasi 0.88385039568476"
-[1] "Satir 68 ortalamasi 2.35701379888311"
-[1] "Satir 69 ortalamasi 1.35179926755423"
-[1] "Satir 70 ortalamasi 1.28012686374286"
-[1] "Satir 71 negatif sayi icermektedir."
-[1] "Satir 72 ortalamasi 1.67406636870506"
-[1] "Satir 73 ortalamasi 1.37691945587952"
-[1] "Satir 74 ortalamasi 2.00099153014073"
-[1] "Satir 75 negatif sayi icermektedir."
-[1] "Satir 76 ortalamasi 1.60454610453076"
-[1] "Satir 77 ortalamasi 2.0804975152321"
-[1] "Satir 78 ortalamasi 1.67436426400702"
-[1] "Satir 79 ortalamasi 2.04712004349156"
-[1] "Satir 80 ortalamasi 1.2963699279751"
-[1] "Satir 81 ortalamasi 2.06864424004881"
-[1] "Satir 82 ortalamasi 2.18401195176334"
-[1] "Satir 83 ortalamasi 2.38233635418165"
-[1] "Satir 84 ortalamasi 1.65733160944781"
-[1] "Satir 85 ortalamasi 1.53913327407787"
-[1] "Satir 86 ortalamasi 1.5977866331596"
-[1] "Satir 87 ortalamasi 1.53640423869466"
-[1] "Satir 88 ortalamasi 1.4151688443321"
-[1] "Satir 89 ortalamasi 1.65657353958559"
-[1] "Satir 90 ortalamasi 1.09930366562984"
-[1] "Satir 91 ortalamasi 2.04289262764082"
-[1] "Satir 92 ortalamasi 1.49359077505866"
-[1] "Satir 93 ortalamasi 1.59542242961016"
-[1] "Satir 94 negatif sayi icermektedir."
-[1] "Satir 95 ortalamasi 1.63562964801907"
-[1] "Satir 96 ortalamasi 1.25826462716513"
-[1] "Satir 97 ortalamasi 3.88578289773781"
-[1] "Satir 98 ortalamasi 2.05151453891869"
-[1] "Satir 99 ortalamasi 1.96874159472044"
-[1] "Satir 100 ortalamasi 1.5918224514213"</code></pre>
-
+<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fonksiyon_adi</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sayi</span><span class="op">=</span><span class="fl">1</span>,<span class="va">satir</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span>,<span class="va">sutun</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
+<span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<ul>
+<li>Oluşturacak olan her bir veri setinin her bir sütunu standart normal dağılıma uygun olacak şekilde üretilsin. Oluşturulan veri setlerinden ilki "veri_1.xlsx" şeklinde çalışma alanına yazdırılsın</li>
+</ul>
+<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="uygulama-2.html#cb481-1" tabindex="-1"></a><span class="sc">&gt;</span> fonksiyon_adi <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">1</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>)){</span>
+<span id="cb481-2"><a href="uygulama-2.html#cb481-2" tabindex="-1"></a><span class="sc">+</span> </span>
+<span id="cb481-3"><a href="uygulama-2.html#cb481-3" tabindex="-1"></a><span class="sc">+</span>     df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span>satir, <span class="at">ncol=</span>sutun))</span>
+<span id="cb481-4"><a href="uygulama-2.html#cb481-4" tabindex="-1"></a><span class="sc">+</span>      writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df,<span class="st">"veri_1.xlsx"</span>)</span>
+<span id="cb481-5"><a href="uygulama-2.html#cb481-5" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb481-6"><a href="uygulama-2.html#cb481-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">1</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>))</span></code></pre></div>
+<ul>
+<li>Şimdi ise bu fonksiyonu çoklu dosya yazımına uygun hale getirelim</li>
+</ul>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="uygulama-2.html#cb482-1" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb482-2"><a href="uygulama-2.html#cb482-2" tabindex="-1"></a><span class="er">&gt;</span> fonksiyon_adi <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>)){</span>
+<span id="cb482-3"><a href="uygulama-2.html#cb482-3" tabindex="-1"></a><span class="sc">+</span>     </span>
+<span id="cb482-4"><a href="uygulama-2.html#cb482-4" tabindex="-1"></a><span class="sc">+</span>   df_list <span class="ot">&lt;-</span> <span class="fu">list</span>() <span class="do">## her bir veri setinin atanacağı yeni nesne</span></span>
+<span id="cb482-5"><a href="uygulama-2.html#cb482-5" tabindex="-1"></a><span class="sc">+</span>     </span>
+<span id="cb482-6"><a href="uygulama-2.html#cb482-6" tabindex="-1"></a><span class="sc">+</span>     <span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sayi){</span>
+<span id="cb482-7"><a href="uygulama-2.html#cb482-7" tabindex="-1"></a><span class="sc">+</span>     df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span>satir[i], <span class="at">ncol=</span>sutun[i])) <span class="co"># veri seti istenilen ozelliklerde olusturulur</span></span>
+<span id="cb482-8"><a href="uygulama-2.html#cb482-8" tabindex="-1"></a><span class="sc">+</span>     }</span>
+<span id="cb482-9"><a href="uygulama-2.html#cb482-9" tabindex="-1"></a><span class="sc">+</span>      <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sutun[i]){</span>
+<span id="cb482-10"><a href="uygulama-2.html#cb482-10" tabindex="-1"></a><span class="sc">+</span>      df[,j] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(satir[i],<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">2</span>) <span class="co">#  her bir veri setinin her bir sütunu standart normal dağılıma uygun uretilir</span></span>
+<span id="cb482-11"><a href="uygulama-2.html#cb482-11" tabindex="-1"></a><span class="sc">+</span>     }</span>
+<span id="cb482-12"><a href="uygulama-2.html#cb482-12" tabindex="-1"></a><span class="sc">+</span>      df_list[[i]] <span class="ot">&lt;-</span> df</span>
+<span id="cb482-13"><a href="uygulama-2.html#cb482-13" tabindex="-1"></a><span class="sc">+</span>       df_list</span>
+<span id="cb482-14"><a href="uygulama-2.html#cb482-14" tabindex="-1"></a><span class="sc">+</span>       writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df_list[[i]],<span class="fu">paste</span>(<span class="st">"veri"</span>,i,<span class="st">".xlsx"</span>, <span class="at">sep=</span><span class="st">""</span>))</span>
+<span id="cb482-15"><a href="uygulama-2.html#cb482-15" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb482-16"><a href="uygulama-2.html#cb482-16" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">4</span>))</span></code></pre></div>
+<div id="sıra-sizde-2" class="section level3" number="14.1.1">
+<h3>
+<span class="header-section-number">14.1.1</span> Sıra Sizde<a class="anchor" aria-label="anchor" href="#s%C4%B1ra-sizde-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>Geometrik ortalamanın farklı hesaplama yolları bulunmaktadır.
+Logaritma değerlerine dayalı olarak hesaplandığında, geometrik ortalama,gözlem değerlerinin logaritmalarının aritmetik ortalamasıdır.
+Bir x vektorunun geometrik ortalamaasını logartimalara dayalı olarakhesaplayan bir fonsiyon yazıp, <code>x &lt;- 1:100</code> için çalıştırınız.</p>
+</div>
+</div>
+<div id="özet-3" class="section level2" number="14.2">
+<h2>
+<span class="header-section-number">14.2</span> Özet<a class="anchor" aria-label="anchor" href="#%C3%B6zet-3"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Fonksiyonlar <code>function()</code> direktifi kullanılarak tanımlanabilir ve diğer R nesneleri gibi R nesnelerine atanır</p></li>
+<li><p>Fonksiyonlar adlandırılmış argümanlarla tanımlanabilir; bu fonksiyon argümanlarının varsayılan değerleri olabilir</p></li>
+<li><p>Fonksiyon argümanları isme göre veya argüman listesindeki konuma göre belirtilebilir</p></li>
+<li><p>Fonksiyonlar her zaman fonkisyon gövdesinde değerlendirilen son ifadeyi döndürür</p></li>
+<li><p>Bir fonksiyon tanımında özel <code>...</code> argümanı kullanılarak değişken sayıda argüman belirtilebilir.</p></li>
+</ul>
 </div>
 </div>
 <script>
@@ -448,21 +355,22 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">13</span> while döngüsü</a></div>
-<div class="next"><a href="fonksiyonlar.html"><span class="header-section-number">15</span> Fonksiyonlar</a></div>
+<div class="prev"><a href="fonksiyonlar.html"><span class="header-section-number">13</span> Fonksiyonlar</a></div>
+<div class="next"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">15</span> Döngü Fonkisyonları</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#uygulama-2"><span class="header-section-number">14</span> Uygulama</a></li>
-<li><a class="nav-link" href="#coklu-veri-seti-olusturma-ve-d%C4%B1%C5%9Far%C4%B1-aktarma"><span class="header-section-number">14.1</span> Coklu veri seti olusturma ve dışarı aktarma</a></li>
-<li><a class="nav-link" href="#for-%C3%B6dev-1"><span class="header-section-number">14.2</span> for() Ödev-1</a></li>
-<li><a class="nav-link" href="#for-%C3%B6dev-2"><span class="header-section-number">14.3</span> for() Ödev-2</a></li>
+<li>
+<a class="nav-link" href="#%C3%A7oklu-veri-seti-olu%C5%9Fturma-ve-d%C4%B1%C5%9Far%C4%B1-aktarma"><span class="header-section-number">14.1</span> Çoklu veri seti oluşturma ve dışarı aktarma</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#s%C4%B1ra-sizde-2"><span class="header-section-number">14.1.1</span> Sıra Sizde</a></li></ul>
+</li>
+<li><a class="nav-link" href="#%C3%B6zet-3"><span class="header-section-number">14.2</span> Özet</a></li>
 </ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="/blob/master/book/10_kontrol.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="/edit/master/book/10_kontrol.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="/blob/master/book/11_fonksiyonlar.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/11_fonksiyonlar.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

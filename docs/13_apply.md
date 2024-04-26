@@ -17,12 +17,12 @@ Programlama yaparken `for` ve `while` döngüleri yazmak yararlıdır, ancak kom
 
 - `mapply()`: `lapply` nin çok değişkenli versiyonu
 
-Yardımcı bir işlev olan `split` de özellikle `lapply` ile birlikte kullanışlıdır.
+Yardımcı bir fonksiyonlardan biri olan `split` de özellikle `lapply` ile birlikte kullanışlıdır.
 
 ## `lapply()`
 
 
-lapply()` fonksiyonu aşağıdaki basit işlemler dizisini gerçekleştirir:
+`lapply()` fonksiyonu aşağıdaki basit işlemler dizisini gerçekleştirir:
 
 1. Bir liste üzerinde döngü yaparak, listedeki her bir öğe üzerinde yineleme yapar
 2. Listenin her bir öğesine bir *fonksiyon* uygular (sizin belirlediğiniz bir fonksiyon)
@@ -42,7 +42,7 @@ function (X, FUN, ...)
         X <- as.list(X)
     .Internal(lapply(X, FUN))
 }
-<bytecode: 0x00000215f198a3b8>
+<bytecode: 0x0000014dad1223f8>
 <environment: namespace:base>
 ```
 
@@ -107,9 +107,9 @@ Bir fonksiyonu her biri farklı bir argümanla birden çok kez değerlendirmek i
 
 Bir fonksiyonu `lapply()` fonksiyonuna aktardığınızda, `lapply()` listenin elemanlarını alır ve bunları uyguladığınız fonksiyonun *ilk argümanı* olarak geçirir. Yukarıdaki örnekte, `runif()` fonksiyonunun ilk argümanı `n`dir ve bu nedenle `1:4` dizisinin tüm elemanları `runif()` fonksiyonunun `n` argümanına aktarılır.
 
-lapply()` fonksiyonuna aktardığınız fonksiyonlar başka argümanlara sahip olabilir. Örneğin, `runif()` fonksiyonunun bir `min` ve `max` argümanı da vardır. Yukarıdaki örnekte `min` ve `max` için varsayılan değerleri kullandım. Bunun için `lapply()` bağlamında farklı değerleri nasıl belirtebilirsiniz?
+`lapply()` fonksiyonuna aktardığınız fonksiyonlar başka argümanlara sahip olabilir. Örneğin, `runif()` fonksiyonunun bir `min` ve `max` argümanı da vardır. Yukarıdaki örnekte `min` ve `max` için varsayılan değerleri kullandım. Bunun için `lapply()` bağlamında farklı değerleri nasıl belirtebilirsiniz?
 
-İşte burada `lapply()` fonksiyonunun `...` argümanı devreye girer. ...` argümanına yerleştirdiğiniz tüm argümanlar, listenin öğelerine uygulanan fonksiyona aktarılacaktır.
+İşte burada `lapply()` fonksiyonunun `...` argümanı devreye girer. `...` argümanına yerleştirdiğiniz tüm argümanlar, listenin öğelerine uygulanan fonksiyona aktarılacaktır.
 
 Burada, `min = 0` ve `max = 10` argümanları her çağrıldığında `runif()` fonksiyonuna aktarılır.
 
@@ -132,7 +132,7 @@ Burada, `min = 0` ve `max = 10` argümanları her çağrıldığında `runif()` 
 
 Yani artık rastgele sayılar 0 ile 1 arasında (varsayılan) olmak yerine, hepsi 0 ile 10 arasındadır.
 
-lapply()` fonksiyonu ve arkadaşları _anonim_ fonksiyonları yoğun bir şekilde kullanır. Anonim fonksiyonların isimleri yoktur. Bu fonksiyonlar siz `lapply()` fonksiyonunu kullanırken "anında" oluşturulur. lapply()` çağrısı tamamlandığında, fonksiyon kaybolur ve çalışma alanında görünmez.
+lapply()` fonksiyonu ve arkadaşları _anonim/isimsiz_ fonksiyonları yoğun bir şekilde kullanır. Anonim fonksiyonların isimleri yoktur. Bu fonksiyonlar siz `lapply()` fonksiyonunu kullanırken "anında" oluşturulur. `lapply()` çağrısı tamamlandığında, fonksiyon kaybolur ve çalışma alanında görünmez.
 
 Burada iki matris içeren bir liste oluşturuyorum.
 
@@ -152,7 +152,7 @@ $b
 [3,]    3    6
 ```
 
-Listedeki her matrisin ilk sütununu çıkarmak istediğimi varsayalım. Şöyle yazabilirim
+Listedeki her matrisin ilk sütununu almak istediğimi varsayalım. Şöyle yazabilirim
 her matrisin ilk sütununu çıkarmak için anonim bir fonksiyon.
 
 
@@ -187,7 +187,7 @@ Artık fonksiyon anonim değildir; adı `f`dir. Anonim bir fonksiyon mu kullanac
 
 ## `sapply()`
 
-sapply()` fonksiyonu `lapply()` fonksiyonuna benzer şekilde davranır; tek gerçek fark dönüş değerindedir. sapply()` mümkünse `lapply()` sonucunu basitleştirmeye çalışacaktır. Esasen, `sapply()` girdisi üzerinde `lapply()` çağırır ve ardından aşağıdaki algoritmayı uygular:
+`sapply()` fonksiyonu `lapply()` fonksiyonuna benzer şekilde davranır; tek gerçek fark dönüş değerindedir. sapply()` mümkünse `lapply()` sonucunu basitleştirmeye çalışacaktır. Esasen, `sapply()` girdisi üzerinde `lapply()` çağırır ve ardından aşağıdaki algoritmayı uygular:
 
 - Eğer sonuç her elemanın uzunluğu 1 olan bir liste ise, o zaman bir vektör döndürülür
 
@@ -234,7 +234,7 @@ lapply()` işlevinin sonucu, her öğesinin uzunluğu 1 olan bir liste olduğund
 
 split()` fonksiyonu bir vektörü veya diğer nesneleri alır ve bunları bir faktör veya faktörler listesi tarafından belirlenen gruplara böler.
 
-split()` fonksiyonunun argümanları şunlardır
+`split()` fonksiyonunun argümanları şunlardır
 
 
 ```r
@@ -248,15 +248,15 @@ nerede
 - f` bir faktör (veya bir faktöre zorlanmış) veya bir faktörler listesi
 - `drop` boş faktör seviyelerinin bırakılıp bırakılmayacağını belirtir
 
-split()` ve `lapply()` veya `sapply()` gibi bir fonksiyonun kombinasyonu R'de yaygın bir paradigmadır. Temel fikir, bir veri yapısını alıp başka bir değişken tarafından tanımlanan alt kümelere bölebilmeniz ve bu alt kümeler üzerinde bir fonksiyon uygulayabilmenizdir. Bu fonksiyonun alt kümeler üzerinde uygulanmasının sonuçları daha sonra harmanlanır ve bir nesne olarak döndürülür. Bu işlem dizisi bazen başka bağlamlarda "map-reduce" olarak adlandırılır.
+`split()` ve `lapply()` veya `sapply()` gibi bir fonksiyonun kombinasyonu R'de yaygın bir paradigmadır. Temel fikir, bir veri yapısını alıp başka bir değişken tarafından tanımlanan alt kümelere bölebilmeniz ve bu alt kümeler üzerinde bir fonksiyon uygulayabilmenizdir. Bu fonksiyonun alt kümeler üzerinde uygulanmasının sonuçları daha sonra harmanlanır ve bir nesne olarak döndürülür. Bu işlem dizisi bazen başka bağlamlarda "map-reduce" olarak adlandırılır.
 
 Burada bazı verileri simüle ediyoruz ve bir faktör değişkenine göre bölüyoruz. Bir faktör değişkeninde "seviyeler oluşturmak" için `gl()` fonksiyonunu kullandığımıza dikkat edin.
 
 
 
 ```r
-> x <- c(rnorm(10), runif(10), rnorm(10, 1))
-> f <- gl(3, 10)
+> x <- c(rnorm(10), runif(10), rnorm(10, 5)) # 30 elemanlı vektor
+> f <- gl(3, 10) # 3 kaetgorili bagimsiz değişken
 > split(x, f)
 $`1`
  [1]  0.3981302 -0.4075286  1.3242586 -0.7012317 -0.5806143 -1.0010722
@@ -267,8 +267,8 @@ $`2`
  [7] 0.07689704 0.52804888 0.96233331 0.70874005
 
 $`3`
- [1]  1.13444766  1.76559900  1.95513668  0.94943430  0.69418458  1.89367370
- [7] -0.04729815  2.97133739  0.61636789  2.65414530
+ [1] 5.134448 5.765599 5.955137 4.949434 4.694185 5.893674 3.952702 6.971337
+ [9] 4.616368 6.654145
 ```
 
 Yaygın bir deyim `split` ve ardından `lapply`dir.
@@ -283,7 +283,7 @@ $`2`
 [1] 0.5266905
 
 $`3`
-[1] 1.458703
+[1] 5.458703
 ```
 
 ## Veri Setini Bölme
@@ -308,7 +308,7 @@ $`3`
 </div>
 
 
-Her ay için ayrı alt veri çerçevelerimiz olması için `airquality` veri çerçevesini `Month` değişkenine göre bölebiliriz.
+Her ay için ayrı alt veri seti olması için `airquality` veri setini `Month` değişkenine göre bölebiliriz.
 
 
 ```r
@@ -352,13 +352,13 @@ List of 5
   ..$ Day    : int [1:30] 1 2 3 4 5 6 7 8 9 10 ...
 ```
 
-Daha sonra her bir alt veri çerçevesi için `Ozone`, `Solar.R` ve `Wind` sütun ortalamalarını alabiliriz.
+Daha sonra her bir alt veri seti için `Ozone`, `Solar.R` ve `Wind` sütun ortalamalarını alabiliriz.
 
 
 ```r
 > lapply(s, function(x) {
 +         colMeans(x[, c("Ozone", "Solar.R", "Wind")])
-+ })
++ }) ## anaomin fonkisyon kullanıldığına dikkat ediniz.
 $`5`
    Ozone  Solar.R     Wind 
       NA       NA 11.62258 
@@ -411,7 +411,16 @@ Wind     11.62258  10.26667   8.941935   8.793548  10.18000
 
 ## tapply
 
-`tapply()` bir vektörün alt kümeleri üzerinde bir fonksiyon uygulamak için kullanılır. Sadece vektörler için `split()` ve `sapply()` fonksiyonlarının bir kombinasyonu olarak düşünülebilir. Bana `tapply()`'deki "t "nin "table" anlamına geldiği söylendi, ancak bu doğrulanmadı.
+- **tapply()**  fonksiyonun temel görevi verileri belirlenen grup veya faktör değişkenine göre özetlemektir. 
+
+- Fonksiyonda bulunan x argümanı vektör, veri seti ve liste şeklindeki nesneleri, index argümanı "x" nesnesinin altboyut, grup veya faktör değişkenini, FUN argümanı ise uygulanacak fonksiyonu belirtir. 
+
+- $tapply(x, Index, FUN, …)$
+
+
+- **tapply()** liste ve veri seti yapısındaki nesnelere uygulandığında, grup veya faktör değişkenine ilişkin fonksiyon değerlerini fonksiyon türüne gore vektör ya da liste şeklinde verir. 
+
+- Eğer **tapply()** içinde kullanılan fonksiyon tek bir değer veriyorsa, çıktı vektör; birden fazla değer veriyorsa, çıktı liste yapısındadır.
 
 
 ```r
@@ -459,7 +468,7 @@ $`3`
 ```
 
 
-Tek bir değerden daha fazlasını döndüren fonksiyonları da uygulayabiliriz. Bu durumda, `tapply()` sonucu basitleştirmeyecek ve bir liste döndürecektir. İşte her bir alt grubun aralığını bulmak için bir örnek.
+Tek bir değerden daha fazlasını döndüren fonksiyonları da uygulayabiliriz. Bu durumda, `tapply()` sonucu basitleştirmeyecek ve bir liste döndürecektir. İşte her bir alt grubun ranjını bulmak için bir örnek.
 
 
 ```r
@@ -475,555 +484,6 @@ $`3`
 ```
 
 
-## `apply()`
-
-
-apply()` fonksiyonu, bir dizinin kenar boşlukları üzerinde bir fonksiyonu (genellikle anonim bir fonksiyon) değerlendirmek için kullanılır. Çoğunlukla bir matrisin (sadece 2 boyutlu bir dizi) satırlarına veya sütunlarına bir fonksiyon uygulamak için kullanılır. Ancak, örneğin bir dizi matrisin ortalamasını almak gibi genel dizilerde de kullanılabilir. apply()` kullanmak bir döngü yazmaktan gerçekten daha hızlı değildir, ancak tek satırda çalışır ve oldukça kompakttır.
-
-
-
-```r
-> str(apply)
-function (X, MARGIN, FUN, ..., simplify = TRUE)  
-```
-
-apply()` işlevinin argümanları şunlardır
-
-- X` bir dizidir
-- MARGIN` hangi kenar boşluklarının "tutulması" gerektiğini gösteren bir tamsayı vektörüdür. 
-- FUN` uygulanacak bir fonksiyondur
-- ...`, `FUN`a aktarılacak diğer argümanlar içindir
-
-
-Burada 20'ye 10'luk bir Normal rastgele sayılar matrisi oluşturuyorum. Daha sonra her bir sütunun ortalamasını hesaplıyorum.
-
-
-```r
-> x <- matrix(rnorm(200), 20, 10)
-> apply(x, 2, mean)  ## Her sütunun ortalamasını alın
- [1] -0.05285811 -0.07607188 -0.14416325  0.26788937 -0.04893217 -0.31775109
- [7]  0.04588463 -0.02798894  0.07064680 -0.23878366
-```
-
-Ayrıca her satırın toplamını da hesaplayabilirim.
-
-
-```r
-> apply(x, 1, sum)   ## Her satırın ortalamasını alın
- [1] -3.81001275  0.28069148 -2.84131594 -0.34383521  3.35432798 -1.41790398
- [7]  4.16348869 -3.12614772 -5.05668423  5.08399986 -0.48483448  5.33222301
-[13] -3.33862932 -1.39998450  2.37859098  0.01082604 -6.29457190 -0.26287700
-[19]  0.71133578 -3.38125293
-```
-
-Her iki `apply()` çağrısında da dönüş değerinin bir sayı vektörü olduğuna dikkat edin.
-
-Muhtemelen ikinci argümanın, satır istatistikleri mi yoksa sütun istatistikleri mi istediğimize bağlı olarak 1 veya 2 olduğunu fark etmişsinizdir. Peki `apply()` fonksiyonunun ikinci argümanı tam olarak nedir?
-
-MARGIN` argümanı esasen `apply()` fonksiyonuna dizinin hangi boyutunu korumak veya saklamak istediğinizi belirtir. Yani her bir sütunun ortalamasını alırken şunu belirtirim
-
-
-```r
-> apply(x, 2, mean)
-```
-
-çünkü ortalamayı alarak ilk boyutu (satırları) daraltmak istiyorum ve sütun sayısını korumak istiyorum. Benzer şekilde, satır toplamlarını istediğimde
-
-
-```r
-> apply(x, 1, mean)
-```
-
-çünkü sütunları (ikinci boyut) daraltmak ve satır sayısını (ilk boyut) korumak istiyorum.
-
-
-## Sütun/Satır Toplamları ve Ortalamaları
-
-Matrislerin sütun/satır toplamları ve sütun/satır ortalamalarının özel durumları için bazı kullanışlı kısayollarımız vardır.
-
-- `rowSums` = `apply(x, 1, sum)`
-- `rowMeans` = `apply(x, 1, mean)`
-- `colSums` = `apply(x, 2, sum)`
-- `colMeans` = `apply(x, 2, mean)`
-
-Kısayol fonksiyonları yoğun bir şekilde optimize edilmiştir ve bu nedenle çok daha hızlıdır, ancak büyük bir matris kullanmadığınız sürece muhtemelen fark etmeyeceksiniz. Bu fonksiyonların bir başka güzel yönü de biraz daha açıklayıcı olmalarıdır. Kodunuzda `colMeans(x)` yazmak, `apply(x, 2, mean)` yazmaktan muhtemelen daha anlaşılırdır.
-
-## Diğer apply lar
-
-`apply()` fonksiyonu ile toplamları ve ortalamaları almaktan daha fazlasını yapabilirsiniz. Örneğin, `quantile()` fonksiyonunu kullanarak bir matrisin satırlarının niceliklerini hesaplayabilirsiniz.
-
-
-```r
-> x <- matrix(rnorm(200), 20, 10)
-> ## çeyreklikler
-> apply(x, 1, quantile, probs = c(0.25, 0.75))    
-          [,1]       [,2]       [,3]       [,4]       [,5]         [,6]
-25% -1.1168291 -0.2023664 -0.6802383 -1.3551031 -0.1823252 -1.267431359
-75%  0.4138139  1.0892341  0.6240771 -0.4557305  1.3744778  0.002908451
-          [,7]       [,8]       [,9]      [,10]      [,11]      [,12]     [,13]
-25% -0.9954289 -0.2107765 -0.8557544 -0.7000363 -1.0884151 -0.6693040 0.2908481
-75%  0.2281247  1.1643644  0.5043939  0.3575873  0.1843547  0.8210295 1.3667301
-         [,14]      [,15]       [,16]      [,17]      [,18]      [,19]
-25% -0.4602083 -1.0432010 -1.12773555 -1.4571706 -0.2406991 -0.3226845
-75%  0.4424153  0.3571219  0.03653687 -0.1705336  0.6504486  1.1460854
-        [,20]
-25% -0.329898
-75%  1.247092
-```
-
-Dikkat ederseniz `probs = c(0.25, 0.75)` argümanını `quantile()` fonksiyonuna `...` argümanı aracılığıyla `apply()` fonksiyonuna aktarmak zorunda kaldım.
-
-Daha yüksek boyutlu bir örnek için, $2\times2$ matrislerinden oluşan bir dizi oluşturabilir ve dizideki matrislerin ortalamasını hesaplayabilirim.
-
-
-```r
-> a <- array(rnorm(2 * 2 * 10), c(2, 2, 10))
-> apply(a, c(1, 2), mean)
-            [,1]        [,2]
-[1,]  0.08796671 -0.04719386
-[2,] -0.15271298  0.07811452
-```
-
-Buradaki `apply()` çağrısında, `MARGIN` argümanı aracılığıyla birinci ve ikinci boyutları korumak ve ortalamayı alarak üçüncü boyutu daraltmak istediğimi belirttim.
-
-Bu özel işlemi `colMeans()` fonksiyonu aracılığıyla yapmanın daha hızlı bir yolu vardır.
-
-
-```r
-> rowMeans(a, dims = 2)    ## daha hızlı
-            [,1]        [,2]
-[1,]  0.08796671 -0.04719386
-[2,] -0.15271298  0.07811452
-```
-
-
-Bu durumda, `rowMeans()` kullanımının daha az okunabilir olduğunu iddia edebilirim, ancak büyük dizilerde önemli ölçüde daha hızlıdır.
-
-## `mapply()`
-
-
-`mapply()` fonksiyonu, bir dizi argüman üzerinde paralel olarak bir fonksiyon uygulayan bir tür çok değişkenli uygulamadır. lapply()` ve arkadaşlarının yalnızca tek bir R nesnesi üzerinde yineleme yaptığını hatırlayın. Peki ya birden fazla R nesnesi üzerinde paralel olarak yineleme yapmak isterseniz? İşte `mapply()` bunun içindir.
-
-
-```r
-> str(mapply)
-function (FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)  
-```
-
-mapply()` işlevinin argümanları şunlardır
-
-- FUN` uygulanacak bir işlevdir
-- ...` üzerine uygulanacak R nesnelerini içerir
-- `MoreArgs` `FUN` için diğer argümanların bir listesidir.
-- SIMPLIFY` sonucun basitleştirilip basitleştirilmeyeceğini belirtir
-
-mapply()` fonksiyonu, `lapply()` fonksiyonundan farklı bir argüman sırasına sahiptir, çünkü üzerinde yinelenecek nesne yerine uygulanacak fonksiyon önce gelir. Fonksiyonu uyguladığımız R nesneleri `...` argümanında verilir, çünkü keyfi sayıda R nesnesi üzerinde uygulama yapabiliriz.
-
-Örneğin, aşağıdakileri yazmak sıkıcıdır
-
-`list(rep(1, 4), rep(2, 3), rep(3, 2), rep(4, 1))`
-
-Bunun yerine `mapply()` ile şunları yapabiliriz
-
-
-```r
->  mapply(rep, 1:4, 4:1)
-[[1]]
-[1] 1 1 1 1
-
-[[2]]
-[1] 2 2 2
-
-[[3]]
-[1] 3 3
-
-[[4]]
-[1] 4
-```
-
-Bu, `rep()`in ilk argümanına `1:4` dizisini ve ikinci argümanına `4:1` dizisini geçirir.
-
-
-İşte randon Normal değişkenleri simüle etmek için başka bir örnek.
-
-
-```r
-> noise <- function(n, mean, sd) {
-+       rnorm(n, mean, sd)
-+ }
-> ## 5 random sayı
-> noise(5, 1, 2)        
-> 
-> ##  sadece 1 sayı kümesini simüle ediyor, 5 değil
-> noise(1:5, 1:5, 2)    
-[1]  0.3206461 -2.3295293  2.8577035  3.8336537  0.8745584
-[1] -0.9618047  4.1743005  3.2786541  3.2274558  7.2471708
-```
-
-Burada `mapply()` fonksiyonunu kullanarak `1:5` dizisini ayrı ayrı `noise()` fonksiyonuna aktarabiliriz, böylece her biri farklı uzunluk ve ortalamaya sahip 5 rastgele sayı kümesi elde edebiliriz.
-
-
-
-```r
-> mapply(noise, 1:5, 1:5, 2)
-[[1]]
-[1] -0.5196913
-
-[[2]]
-[1] 4.2979182 0.3150475
-
-[[3]]
-[1] 3.7828267 4.7827545 0.3294826
-
-[[4]]
-[1] 4.796247 3.776826 5.351488 2.422804
-
-[[5]]
-[1] 4.826027 7.764568 5.336980 6.646382 4.558211
-```
-
-Yukarıdaki `mapply()` çağrısı aşağıdaki ile aynıdır
-
-
-```r
-> list(noise(1, 1, 2), noise(2, 2, 2),
-+      noise(3, 3, 2), noise(4, 4, 2),
-+      noise(5, 5, 2))
-[[1]]
-[1] -1.058783
-
-[[2]]
-[1]  1.9781486 -0.4499823
-
-[[3]]
-[1] -2.1922228  5.3382452  0.8261824
-
-[[4]]
-[1] 0.347834 5.990564 3.976276 2.800743
-
-[[5]]
-[1] 4.644104 4.148037 6.993318 6.455321 1.546739
-```
-
-## Bir Fonksiyonu Vektörleştirme
-
-`mapply()` fonksiyonu bir fonksiyonu otomatik olarak "vektörleştirmek" için kullanılabilir. Bunun anlamı, tipik olarak yalnızca tek argüman alan bir fonksiyonu almak ve vektör argümanları alabilen yeni bir fonksiyon oluşturmak için kullanılabileceğidir. Bu genellikle fonksiyonları çizmek istediğinizde gereklidir.
-
-İşte bazı veriler, bir ortalama parametre ve bir standart sapma verildiğinde kareler toplamını hesaplayan bir fonksiyon örneği. Formül $\sum_{i=1}^n(x_i-\mu)^2/\sigma^2$ şeklindedir.
-
-
-```r
-> sumsq <- function(mu, sigma, x) {
-+         sum(((x - mu) / sigma)^2)
-+ }
-```
-
-Bu fonksiyon bir ortalama `mu`, bir standart sapma `sigma` ve bir vektör `x` içinde bazı veriler alır.
-
-Birçok istatistiksel uygulamada, en uygun `mu` ve `sigma` değerlerini bulmak için kareler toplamını minimize etmek isteriz. Bunu yapmadan önce, birçok farklı `mu` veya `sigma` değeri için fonksiyonu değerlendirmek veya çizmek isteyebiliriz. Ancak, bir `mu` veya `sigma` vektörü geçmek bu fonksiyonla çalışmayacaktır çünkü vektörleştirilmemiştir.
-
-
-```r
-> x <- rnorm(100)       ## veri üret
-> sumsq(1:10, 1:10, x)  ## İstediğimiz bu değil
-[1] 109.7211
-```
-
-`sumsq()` çağrısının 10 değer yerine yalnızca bir değer ürettiğine dikkat edin.
-
-Ancak, yapmak istediğimizi `mapply()` kullanarak yapabiliriz.
-
-
-```r
-> mapply(sumsq, 1:10, 1:10, MoreArgs = list(x = x))
- [1] 209.3372 126.2175 111.1558 105.9960 103.6587 102.4167 101.6844 101.2198
- [9] 100.9086 100.6913
-```
-
-Hatta R'de `Vectorize()` adında, fonksiyonunuzun vektörleştirilmiş bir versiyonunu otomatik olarak oluşturabilen bir fonksiyon bile vardır. Böylece aşağıdaki gibi tamamen vektörleştirilmiş bir `vsumsq()` fonksiyonu oluşturabiliriz.
-
-
-```r
-> vsumsq <- Vectorize(sumsq, c("mu", "sigma"))
-> vsumsq(1:10, 1:10, x)
- [1] 209.3372 126.2175 111.1558 105.9960 103.6587 102.4167 101.6844 101.2198
- [9] 100.9086 100.6913
-```
-
-Çok havalı, değil mi?
-
-
-## Özet
-
-* R'deki döngü fonksiyonları çok güçlüdür çünkü kompakt bir form kullanarak veriler üzerinde bir dizi işlem yapmanıza olanak tanır
-
-* Bir döngü fonksiyonunun çalışması, bir R nesnesi (örneğin bir liste, vektör veya matris) üzerinde yinelemeyi, nesnenin her bir öğesine bir fonksiyon uygulamayı ve sonuçları harmanlayıp harmanlanmış sonuçları döndürmeyi içerir.
-
-* Döngü fonksiyonları, döngü fonksiyonunun ömrü boyunca var olan ancak hiçbir yerde saklanmayan anonim fonksiyonları yoğun bir şekilde kullanır
-
-* split()` fonksiyonu, bir R nesnesini başka bir değişken tarafından belirlenen ve daha sonra döngü fonksiyonları kullanılarak üzerinde döngü yapılabilen alt kümelere bölmek için kullanılabilir.
-
-
-# apply ailesi 
-
-
-- **apply()** fonksiyonu matris ve dizilerde satır ve sütundaki değerlerin 
-belirlenen fonksiyona göre değerlerini özetlemek için kullanılır. 
-
-- **apply()** fonksiyonunun genel kullanımı
-
-
-```r
-> # apply(x, margin, FUN, …)
-```
-
-- margin argümanı satır (**1**), sütun (**2**) veya her ikisini (**c(1,2)**)
-FUN argümanı ise uygulanacak fonksiyonu belirtmektedir.
-
-
-```r
-> X = matrix(c(1:9), nr= 3, byrow = T)
-> X
-     [,1] [,2] [,3]
-[1,]    1    2    3
-[2,]    4    5    6
-[3,]    7    8    9
-```
-
-
-```r
-> #1 satirlar icin, 
-> apply(X, 1, mean) # satir ortalamaları
-[1] 2 5 8
-```
-
-
-```r
-> #2 sutunlar icin
-> apply(X, 2, mean) # sutun ortalamaları
-[1] 4 5 6
-```
-
-
-- Ortalaması 50, standart sapması 5 olan normal dağılıma sahip 100 elemanlı
-"S1" vektöründen 20 satırlı ve 5 sütunlu matrisin oluşturulması
-
-
-```r
-> set.seed(12)
-> S1 <- sample(rnorm(10000, 50, 5), 100, replace=TRUE)
-> Matris1 <- matrix(S1, nrow=20, ncol=5)
-```
-
-- `mean()` fonksiyonunun "Matris1" nesnesinin her bir sütununa uygulanarak  sütunların ortalamasının alınması
-
-
-```r
-> apply(Matris1, 2, mean) # Fonksiyonun ikinci girdisi olan 2  sütun elamanlarını temsil etmektedir.
-[1] 48.20485 52.13701 49.38658 50.61689 48.60479
-```
-
-
-- `summary()` fonksiyonunun "Matris1" nesnesinin her bir sütununa uygulanması
-
-
-```r
-> apply(Matris1, 2, summary)
-            [,1]     [,2]     [,3]     [,4]     [,5]
-Min.    39.00080 40.23309 39.04749 39.32974 37.74364
-1st Qu. 45.21933 48.44165 45.57123 47.36401 43.71252
-Median  49.31295 52.24410 49.49029 51.08794 47.62144
-Mean    48.20485 52.13701 49.38658 50.61689 48.60479
-3rd Qu. 52.40540 55.97719 52.70180 54.36235 53.32016
-Max.    55.24910 63.33272 58.88203 59.93019 60.51715
-```
-
-- `summary()` fonksiyonunun "Matris1" nesnesinin her bir satırına uygulanması
-
-
-```r
-> apply(Matris1, 1, summary)
-            [,1]     [,2]     [,3]     [,4]     [,5]     [,6]     [,7]     [,8]
-Min.    45.82396 39.16789 51.63544 40.23309 39.04749 44.81304 39.73637 51.11418
-1st Qu. 47.78055 39.32974 52.46878 43.82775 47.16408 47.46234 46.19462 51.96290
-Median  48.36804 46.24689 53.43269 47.65095 49.56534 49.64774 49.12984 52.65739
-Mean    50.47126 45.82933 54.50679 47.52181 48.65629 52.22224 50.10067 54.92558
-3rd Qu. 54.95931 51.70256 56.11501 49.31343 52.65050 59.25790 55.94640 55.56069
-Max.    55.42443 52.69959 58.88203 56.58380 54.85404 59.93019 59.49613 63.33272
-            [,9]    [,10]    [,11]    [,12]    [,13]    [,14]    [,15]    [,16]
-Min.    44.96852 39.00080 43.36682 48.42947 42.13211 42.73818 40.55680 41.37856
-1st Qu. 48.34900 48.83882 52.38428 50.17014 48.46619 46.50319 43.21988 42.18138
-Median  52.21976 53.65437 52.38428 51.40809 48.88713 50.98943 45.46715 47.83169
-Mean    50.61489 50.35382 51.18599 53.07152 50.44334 49.60777 46.24742 47.67032
-3rd Qu. 53.31388 54.20555 52.91266 54.83276 55.24910 51.36429 46.82348 50.54044
-Max.    54.22331 56.06955 54.88190 60.51715 57.48218 56.44375 55.16980 56.41952
-           [,17]    [,18]    [,19]    [,20]
-Min.    40.53528 40.55680 37.74364 46.71473
-1st Qu. 46.04637 44.03153 47.73063 49.31247
-Median  47.98124 44.46635 49.30321 51.96828
-Mean    48.55872 45.45876 47.52113 50.83282
-3rd Qu. 49.85073 46.40143 50.16318 52.82962
-Max.    58.37998 51.83770 52.66500 53.33901
-```
-
-
-###kisisel tanımlı fonksiyon ile kullanılması
-
--  Yazılan **bagil_degiskenlik()** fonksiyonunun "Matris1" nesnesinin 
-her bir sütununa uygulanarak her bir değişkenin bağıl değişkenlik 
-katsayısının hesaplanması
-
-
-```r
-> 
-> bagil_degiskenlik <- function(x){
-+ (sd(x)/mean(x))*100
-+ }
-> apply(Matris1, 2, bagil_degiskenlik)
-[1] 11.24914 10.05771 11.02709 10.59998 12.97312
-```
-
-
-Adsız (anonymous) fonksiyonlar  ile kullanılması
-
-
-```r
-> 
-> apply(Matris1, 2, function(x){(sd(x)/mean(x))*100})
-> 
-[1] 11.24914 10.05771 11.02709 10.59998 12.97312
-```
-
-
-## lapply() Fonksiyonu
-
-
-- **lapply()** fonksiyonu **apply()** fonksiyonunun listeler (list-apply), 
-vektörler ve veri setleri için özelleşmiş halidir. 
-
-- Liste yapısında olduğu için satır veya sütuna ilişkin bir argüman kullanılmaz. 
-
-- **lappy()** fonksiyonu veri setlerinde kullanıldığında, sütundaki her bir değişkeni listenin elemanı olarak alır.
-
----
-
-## lapply() Fonksiyonu
-
-
-`lappy()` fonksiyonuyla elde edilen çıktılar da liste şeklindedir. 
-`lapply()` fonksiyonunun genel kullanımı 
-
-
-```r
-> # lapply(x, FUN, …)
-```
-
-
-
-```r
-> # liste olusturma
-> (mylist <- list(a=(1:10), b=(45:77)))
-> 
-$a
- [1]  1  2  3  4  5  6  7  8  9 10
-
-$b
- [1] 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69
-[26] 70 71 72 73 74 75 76 77
-```
-
-
-
-```r
-> # liste elemalarını toplama
-> (resultlapply <- lapply(mylist, sum))
-> 
-> liste <- list(a=c(1,2,3),b=c(4,5,6))
-> lapply(liste, function(x){x^(3/2)})
-$a
-[1] 55
-
-$b
-[1] 2013
-
-$a
-[1] 1.000000 2.828427 5.196152
-
-$b
-[1]  8.00000 11.18034 14.69694
-```
-
----
-## sapply() Fonksiyonu
-
-- **sapply()** fonksiyonu **lapply()** fonksiyonu gibi liste, 
-listelerin özelleşmiş hali olan veri setleri ve vektörler
-üzerinde çalışır. 
-
-- **sapply()** fonksiyonunun temel amacı çıktıları basitleştirmektir.
-
-- **lapply()** fonksiyonuyla elde edilen çıktılar liste biçimindeyken **sapply()** fonksiyonuyla elde edilen çıktılar daha çok vektör şeklindedir.
-
-
-- **sapply()** fonksiyonu **apply()** fonksiyonuyla benzer çıktılar verir ancak **sapply()** fonksiyonunda margin değerleri bulunmaz. 
-- `sapply()` fonksiyonunun genel kullanımı
-
-
-```r
-> 
-> mylist <- list(a=(1:10), b=(45:77))
-> 
-> resultsapply <- sapply(mylist, sum)
-> resultsapply
-   a    b 
-  55 2013 
-```
-
-
-
-```r
-> 
-> # lapply() fonksiyonunun liste veri türüne uygulanması
-> lapply(list(a=c(1,2,3)), mean) # Liste çıktısı vermektedir.
-> 
-$a
-[1] 2
-```
-
-
-
-```r
-> 
-> # lapply() fonksiyonunun çıktısının vektöre dönüştürülmesi
-> unlist(lapply(list(a=c(1,2,3)), mean))
-> 
-a 
-2 
-```
-
-
-```r
-> 
-> # sapply() fonksiyonunun liste veri türüne uygulanması
-> sapply(list(a=c(1,2,3)), mean) # Çıktı adlandırılmış vektör şeklindedir.
-> 
-a 
-2 
-```
-
-## tapply() Fonksiyonu
-
-
-- **tapply()**  fonksiyonun temel görevi verileri belirlenen grup veya faktör değişkenine göre özetlemektir. 
-
-- Fonksiyonda bulunan x argümanı vektör, veri seti ve liste şeklindeki nesneleri, index argümanı "x" nesnesinin altboyut, grup veya faktör değişkenini, FUN argümanı ise uygulanacak fonksiyonu belirtir. 
-
-- $tapply(x, Index, FUN, …)$
-
-
-- **tapply()** liste ve veri seti yapısındaki nesnelere uygulandığında, grup veya faktör değişkenine ilişkin fonksiyon değerlerini fonksiyon türüne gore vektör ya da liste şeklinde verir. 
-
-- Eğer **tapply()** içinde kullanılan fonksiyon tek bir değer veriyorsa, çıktı vektör; birden fazla değer veriyorsa, çıktı liste yapısındadır.
 
 
 
@@ -1164,4 +624,370 @@ Liste$cinsiyet: erkek
 Liste$cinsiyet: kadin
 [1] 162
 ```
+
+## `apply()`
+
+
+`apply()` fonksiyonu, bir dizinin kenar boşlukları üzerinde bir fonksiyonu (genellikle anonim bir fonksiyon) değerlendirmek için kullanılır. Çoğunlukla bir matrisin (sadece 2 boyutlu bir dizi) satırlarına veya sütunlarına bir fonksiyon uygulamak için kullanılır. Ancak, örneğin bir dizi matrisin ortalamasını almak gibi genel dizilerde de kullanılabilir. `apply()` kullanmak bir döngü yazmaktan gerçekten daha hızlı değildir, ancak tek satırda çalışır ve oldukça kompakttır.
+
+
+
+```r
+> str(apply)
+function (X, MARGIN, FUN, ..., simplify = TRUE)  
+```
+
+apply()` işlevinin argümanları şunlardır
+
+- X` bir dizidir
+- MARGIN` hangi kenar boşluklarının "tutulması" gerektiğini gösteren bir tamsayı vektörüdür. 
+- FUN` uygulanacak bir fonksiyondur
+- ...`, `FUN`a aktarılacak diğer argümanlar içindir
+
+
+Burada 20'ye 10'luk bir normal rastgele sayılar matrisi oluşturuyorum. Daha sonra her bir sütunun ortalamasını hesaplıyorum.
+
+
+```r
+> x <- matrix(rnorm(200), 20, 10)
+> apply(x, 2, mean)  ## Her sütunun ortalamasını alın
+ [1] -0.05285811 -0.07607188 -0.14416325  0.26788937 -0.04893217 -0.31775109
+ [7]  0.04588463 -0.02798894  0.07064680 -0.23878366
+```
+
+Ayrıca her satırın toplamını da hesaplayabilirim.
+
+
+```r
+> apply(x, 1, sum)   ## Her satırın ortalamasını alın
+ [1] -3.81001275  0.28069148 -2.84131594 -0.34383521  3.35432798 -1.41790398
+ [7]  4.16348869 -3.12614772 -5.05668423  5.08399986 -0.48483448  5.33222301
+[13] -3.33862932 -1.39998450  2.37859098  0.01082604 -6.29457190 -0.26287700
+[19]  0.71133578 -3.38125293
+```
+
+Her iki `apply()` çağrısında da dönüş değerinin bir sayı vektörü olduğuna dikkat edin.
+
+Muhtemelen ikinci argümanın, satır istatistikleri mi yoksa sütun istatistikleri mi istediğimize bağlı olarak 1 veya 2 olduğunu fark etmişsinizdir. Peki `apply()` fonksiyonunun ikinci argümanı tam olarak nedir?
+
+MARGIN` argümanı esasen `apply()` fonksiyonuna dizinin hangi boyutunu korumak veya saklamak istediğinizi belirtir. Yani her bir sütunun ortalamasını alırken şunu belirtirim
+
+
+```r
+> apply(x, 2, mean)
+```
+
+çünkü ortalamayı alarak ilk boyutu (satırları) daraltmak istiyorum ve sütun sayısını korumak istiyorum. Benzer şekilde, satır toplamlarını istediğimde
+
+
+```r
+> apply(x, 1, mean)
+```
+
+çünkü sütunları (ikinci boyut) daraltmak ve satır sayısını (ilk boyut) korumak istiyorum.
+
+
+## Sütun/Satır Toplamları ve Ortalamaları
+
+Matrislerin sütun/satır toplamları ve sütun/satır ortalamalarının özel durumları için bazı kullanışlı kısayollarımız vardır.
+
+- `rowSums` = `apply(x, 1, sum)`
+- `rowMeans` = `apply(x, 1, mean)`
+- `colSums` = `apply(x, 2, sum)`
+- `colMeans` = `apply(x, 2, mean)`
+
+Kısayol fonksiyonları yoğun bir şekilde optimize edilmiştir ve bu nedenle çok daha hızlıdır, ancak büyük bir matris kullanmadığınız sürece muhtemelen fark etmeyeceksiniz. Bu fonksiyonların bir başka güzel yönü de biraz daha açıklayıcı olmalarıdır. Kodunuzda `colMeans(x)` yazmak, `apply(x, 2, mean)` yazmaktan muhtemelen daha anlaşılırdır.
+
+- Ortalaması 50, standart sapması 5 olan normal dağılıma sahip 100 elemanlı
+"S1" vektöründen 20 satırlı ve 5 sütunlu matrisin oluşturulması
+
+
+```r
+> set.seed(12)
+> S1 <- sample(rnorm(10000, 50, 5), 100, replace=TRUE)
+> Matris1 <- matrix(S1, nrow=20, ncol=5)
+```
+
+- `mean()` fonksiyonunun "Matris1" nesnesinin her bir sütununa uygulanarak  sütunların ortalamasının alınması
+
+
+```r
+> apply(Matris1, 2, mean) # Fonksiyonun ikinci girdisi olan 2  sütun elamanlarını temsil etmektedir.
+[1] 48.20485 52.13701 49.38658 50.61689 48.60479
+```
+
+
+- `summary()` fonksiyonunun "Matris1" nesnesinin her bir sütununa uygulanması
+
+
+```r
+> apply(Matris1, 2, summary)
+            [,1]     [,2]     [,3]     [,4]     [,5]
+Min.    39.00080 40.23309 39.04749 39.32974 37.74364
+1st Qu. 45.21933 48.44165 45.57123 47.36401 43.71252
+Median  49.31295 52.24410 49.49029 51.08794 47.62144
+Mean    48.20485 52.13701 49.38658 50.61689 48.60479
+3rd Qu. 52.40540 55.97719 52.70180 54.36235 53.32016
+Max.    55.24910 63.33272 58.88203 59.93019 60.51715
+```
+
+- `summary()` fonksiyonunun "Matris1" nesnesinin her bir satırına uygulanması
+
+
+```r
+> apply(Matris1, 1, summary)
+            [,1]     [,2]     [,3]     [,4]     [,5]     [,6]     [,7]     [,8]
+Min.    45.82396 39.16789 51.63544 40.23309 39.04749 44.81304 39.73637 51.11418
+1st Qu. 47.78055 39.32974 52.46878 43.82775 47.16408 47.46234 46.19462 51.96290
+Median  48.36804 46.24689 53.43269 47.65095 49.56534 49.64774 49.12984 52.65739
+Mean    50.47126 45.82933 54.50679 47.52181 48.65629 52.22224 50.10067 54.92558
+3rd Qu. 54.95931 51.70256 56.11501 49.31343 52.65050 59.25790 55.94640 55.56069
+Max.    55.42443 52.69959 58.88203 56.58380 54.85404 59.93019 59.49613 63.33272
+            [,9]    [,10]    [,11]    [,12]    [,13]    [,14]    [,15]    [,16]
+Min.    44.96852 39.00080 43.36682 48.42947 42.13211 42.73818 40.55680 41.37856
+1st Qu. 48.34900 48.83882 52.38428 50.17014 48.46619 46.50319 43.21988 42.18138
+Median  52.21976 53.65437 52.38428 51.40809 48.88713 50.98943 45.46715 47.83169
+Mean    50.61489 50.35382 51.18599 53.07152 50.44334 49.60777 46.24742 47.67032
+3rd Qu. 53.31388 54.20555 52.91266 54.83276 55.24910 51.36429 46.82348 50.54044
+Max.    54.22331 56.06955 54.88190 60.51715 57.48218 56.44375 55.16980 56.41952
+           [,17]    [,18]    [,19]    [,20]
+Min.    40.53528 40.55680 37.74364 46.71473
+1st Qu. 46.04637 44.03153 47.73063 49.31247
+Median  47.98124 44.46635 49.30321 51.96828
+Mean    48.55872 45.45876 47.52113 50.83282
+3rd Qu. 49.85073 46.40143 50.16318 52.82962
+Max.    58.37998 51.83770 52.66500 53.33901
+```
+
+
+
+### kisisel tanımlı fonksiyon ile kullanılması
+
+-  Yazılan **bagil_degiskenlik()** fonksiyonunun "Matris1" nesnesinin 
+her bir sütununa uygulanarak her bir değişkenin bağıl değişkenlik 
+katsayısının hesaplanması
+
+
+```r
+> 
+> bagil_degiskenlik <- function(x){
++ (sd(x)/mean(x))*100
++ }
+> apply(Matris1, 2, bagil_degiskenlik)
+[1] 11.24914 10.05771 11.02709 10.59998 12.97312
+```
+
+
+Adsız (anonymous) fonksiyonlar  ile kullanılması
+
+
+```r
+> 
+> apply(Matris1, 2, function(x){(sd(x)/mean(x))*100})
+> 
+[1] 11.24914 10.05771 11.02709 10.59998 12.97312
+```
+
+
+<!-- ## Diğer apply lar -->
+
+<!-- `apply()` fonksiyonu ile toplamları ve ortalamaları almaktan daha fazlasını yapabilirsiniz. Örneğin, `quantile()` fonksiyonunu kullanarak bir matrisin satırlarının niceliklerini hesaplayabilirsiniz. -->
+
+<!-- ```{r} -->
+<!-- x <- matrix(rnorm(200), 20, 10) -->
+<!-- ## çeyreklikler -->
+<!-- apply(x, 1, quantile, probs = c(0.25, 0.75))     -->
+<!-- ``` -->
+
+<!-- Dikkat ederseniz `probs = c(0.25, 0.75)` argümanını `quantile()` fonksiyonuna `...` argümanı aracılığıyla `apply()` fonksiyonuna aktarmak zorunda kaldım. -->
+
+<!-- Daha yüksek boyutlu bir örnek için, $2\times2$ matrislerinden oluşan bir dizi oluşturabilir ve dizideki matrislerin ortalamasını hesaplayabilirim. -->
+
+<!-- ```{r} -->
+<!-- a <- array(rnorm(2 * 2 * 10), c(2, 2, 10)) -->
+<!-- apply(a, c(1, 2), mean) -->
+<!-- ``` -->
+
+<!-- Buradaki `apply()` çağrısında, `MARGIN` argümanı aracılığıyla birinci ve ikinci boyutları korumak ve ortalamayı alarak üçüncü boyutu daraltmak istediğimi belirttim. -->
+
+<!-- Bu özel işlemi `colMeans()` fonksiyonu aracılığıyla yapmanın daha hızlı bir yolu vardır. -->
+
+<!-- ```{r} -->
+<!-- rowMeans(a, dims = 2)    ## daha hızlı -->
+<!-- ``` -->
+
+
+<!-- Bu durumda, `rowMeans()` kullanımının daha az okunabilir olduğunu iddia edebilirim, ancak büyük dizilerde önemli ölçüde daha hızlıdır. -->
+
+## `mapply()`
+
+
+`mapply()` fonksiyonu, bir dizi argüman üzerinde paralel olarak bir fonksiyon uygulayan bir tür çok değişkenli uygulamadır. `lapply()` ve arkadaşlarının yalnızca tek bir R nesnesi üzerinde yineleme yaptığını hatırlayın. Peki ya birden fazla R nesnesi üzerinde paralel olarak yineleme yapmak isterseniz? İşte `mapply()` bunun içindir.
+
+
+```r
+> str(mapply)
+function (FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)  
+```
+
+mapply()` işlevinin argümanları şunlardır
+
+- FUN` uygulanacak bir işlevdir
+- ...` üzerine uygulanacak R nesnelerini içerir
+- `MoreArgs` `FUN` için diğer argümanların bir listesidir.
+- SIMPLIFY` sonucun basitleştirilip basitleştirilmeyeceğini belirtir
+
+`mapply()` fonksiyonu, `lapply()` fonksiyonundan farklı bir argüman sırasına sahiptir, çünkü üzerinde yinelenecek nesne yerine uygulanacak fonksiyon önce gelir. Fonksiyonu uyguladığımız R nesneleri `...` argümanında verilir, çünkü keyfi sayıda R nesnesi üzerinde uygulama yapabiliriz.
+
+Örneğin, aşağıdakileri yazmak sıkıcıdır
+
+`list(rep(1, 4), rep(2, 3), rep(3, 2), rep(4, 1))`
+
+Bunun yerine `mapply()` ile şunları yapabiliriz
+
+
+```r
+>  mapply(rep, 1:4, 4:1)
+[[1]]
+[1] 1 1 1 1
+
+[[2]]
+[1] 2 2 2
+
+[[3]]
+[1] 3 3
+
+[[4]]
+[1] 4
+```
+
+Bu, `rep()`in ilk argümanına `1:4` dizisini ve ikinci argümanına `4:1` dizisini geçirir.
+
+
+İşte randon Normal değişkenleri simüle etmek için başka bir örnek.
+
+
+```r
+> noise <- function(n, mean, sd) {
++       rnorm(n, mean, sd)
++ }
+> ## 5 random sayı
+> noise(5, 1, 2)        
+> 
+> ##  sadece 1 sayı kümesini simüle ediyor, 5 değil
+> noise(1:5, 1:5, 2)    
+[1] -4.327419  1.768021  1.886192  1.184867  3.169347
+[1] -0.7104655  5.0691634  3.3646210  6.2241624  6.4295708
+```
+
+Burada `mapply()` fonksiyonunu kullanarak `1:5` dizisini ayrı ayrı `noise()` fonksiyonuna aktarabiliriz, böylece her biri farklı uzunluk ve ortalamaya sahip 5 rastgele sayı kümesi elde edebiliriz.
+
+
+
+```r
+> mapply(noise, 1:5, 1:5, 2)
+[[1]]
+[1] 3.242948
+
+[[2]]
+[1] 6.278157 4.074560
+
+[[3]]
+[1] 2.4963123 0.7828741 1.7470981
+
+[[4]]
+[1]  3.237684302  8.405556702 -0.004281222  4.864798044
+
+[[5]]
+[1] 2.960924 3.354030 5.848408 4.250261 4.707497
+```
+
+Yukarıdaki `mapply()` çağrısı aşağıdaki ile aynıdır
+
+
+```r
+> list(noise(1, 1, 2), noise(2, 2, 2),
++      noise(3, 3, 2), noise(4, 4, 2),
++      noise(5, 5, 2))
+[[1]]
+[1] 0.3604737
+
+[[2]]
+[1] 0.8376833 3.0033085
+
+[[3]]
+[1] 1.944540 1.339083 4.066594
+
+[[4]]
+[1] 3.941666 4.764200 4.716390 5.835816
+
+[[5]]
+[1] 4.662944 2.941786 4.114172 4.941673 8.722601
+```
+
+## Bir Fonksiyonu Vektörleştirme
+
+`mapply()` fonksiyonu bir fonksiyonu otomatik olarak "vektörleştirmek" için kullanılabilir. Bunun anlamı, tipik olarak yalnızca tek argüman alan bir fonksiyonu almak ve vektör argümanları alabilen yeni bir fonksiyon oluşturmak için kullanılabileceğidir. 
+
+İşte bazı veriler, bir ortalama ve bir standart sapma verildiğinde kareler toplamını hesaplayan bir fonksiyon örneği. Formül $\sum_{i=1}^n(x_i-\mu)^2/\sigma^2$ şeklindedir.
+
+
+```r
+> sumsq <- function(mu, sigma, x) {
++         sum(((x - mu) / sigma)^2)
++ }
+```
+
+Bu fonksiyon bir ortalama `mu`, bir standart sapma `sigma` ve bir vektör `x` içinde bazı veriler alır.
+
+Birçok istatistiksel uygulamada, en uygun `mu` ve `sigma` değerlerini bulmak için kareler toplamını minimize etmek isteriz. Bunu yapmadan önce, birçok farklı `mu` veya `sigma` değeri için fonksiyonu değerlendirmek veya çizmek isteyebiliriz. Ancak, bir `mu` veya `sigma` vektörü geçmek bu fonksiyonla çalışmayacaktır çünkü vektörleştirilmemiştir.
+
+
+```r
+> x <- rnorm(100)       ## veri üret
+> sumsq(1:10, 1:10, x)  ## İstediğimiz bu değil
+[1] 135.6538
+```
+
+`sumsq()` çağrısının 10 değer yerine yalnızca bir değer ürettiğine dikkat edin.
+
+Ancak, yapmak istediğimizi `mapply()` kullanarak yapabiliriz.
+
+
+```r
+> mapply(sumsq, 1:10, 1:10, MoreArgs = list(x = x))
+ [1] 234.7801 142.9820 123.2306 115.3890 111.3348 108.9033 107.2993 106.1690
+ [9] 105.3329 104.6911
+```
+
+Hatta R'de `Vectorize()` adında, fonksiyonunuzun vektörleştirilmiş bir versiyonunu otomatik olarak oluşturabilen bir fonksiyon bile vardır. Böylece aşağıdaki gibi tamamen vektörleştirilmiş bir `vsumsq()` fonksiyonu oluşturabiliriz.
+
+
+```r
+> vsumsq <- Vectorize(sumsq, c("mu", "sigma"))
+> vsumsq(1:10, 1:10, x)
+ [1] 234.7801 142.9820 123.2306 115.3890 111.3348 108.9033 107.2993 106.1690
+ [9] 105.3329 104.6911
+```
+
+Çok havalı, değil mi?
+
+
+## Özet
+
+* R'deki döngü fonksiyonları çok güçlüdür çünkü kompakt bir form kullanarak veriler üzerinde bir dizi işlem yapmanıza olanak tanır
+
+* Bir döngü fonksiyonunun çalışması, bir R nesnesi (örneğin bir liste, vektör veya matris) üzerinde yinelemeyi, nesnenin her bir öğesine bir fonksiyon uygulamayı ve sonuçları harmanlayıp harmanlanmış sonuçları döndürmeyi içerir.
+
+* Döngü fonksiyonları, döngü fonksiyonunun ömrü boyunca var olan ancak hiçbir yerde saklanmayan anonim fonksiyonları yoğun bir şekilde kullanır
+
+* `split()` fonksiyonu, bir R nesnesini başka bir değişken tarafından belirlenen ve daha sonra döngü fonksiyonları kullanılarak üzerinde döngü yapılabilen alt kümelere bölmek için kullanılabilir.
+
+
+
+
+
+
+
+
 

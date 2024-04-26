@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bölüm 18 Hata Ayıklama/Debugging | lavaan</title>
+<title>Bölüm 16 Hata Ayıklama/Debugging | lavaan</title>
 <meta name="author" content="Kubra Atalay Kabasakal">
-<meta name="description" content="18.1 Yanlış bir şeyler var! R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri...">
+<meta name="description" content="16.1 Yanlış bir şeyler var! R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Bölüm 18 Hata Ayıklama/Debugging | lavaan">
+<meta property="og:title" content="Bölüm 16 Hata Ayıklama/Debugging | lavaan">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/atalay-k/OLC733/hata-ayıklamadebugging.html">
-<meta property="og:description" content="18.1 Yanlış bir şeyler var! R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri...">
+<meta property="og:description" content="16.1 Yanlış bir şeyler var! R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bölüm 18 Hata Ayıklama/Debugging | lavaan">
-<meta name="twitter:description" content="18.1 Yanlış bir şeyler var! R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri...">
+<meta name="twitter:title" content="Bölüm 16 Hata Ayıklama/Debugging | lavaan">
+<meta name="twitter:description" content="16.1 Yanlış bir şeyler var! R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -67,14 +67,13 @@
 <li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
 <li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
 <li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
-<li><a class="" href="ifelse.html"><span class="header-section-number">11</span> ifelse()</a></li>
-<li><a class="" href="for.html"><span class="header-section-number">12</span> for</a></li>
-<li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">13</span> while döngüsü</a></li>
+<li><a class="" href="for.html"><span class="header-section-number">11</span> for</a></li>
+<li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">12</span> while döngüsü</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">13</span> Fonksiyonlar</a></li>
 <li><a class="" href="uygulama-2.html"><span class="header-section-number">14</span> Uygulama</a></li>
-<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">15</span> Fonksiyonlar</a></li>
-<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">16</span> Döngü Fonkisyonları</a></li>
-<li><a class="" href="apply-ailesi.html"><span class="header-section-number">17</span> apply ailesi</a></li>
-<li><a class="active" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">18</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">15</span> Döngü Fonkisyonları</a></li>
+<li><a class="active" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">16</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">17</span> Klasik Test Teorisi</a></li>
 </ul>
 
         <div class="book-extra">
@@ -82,13 +81,13 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="hata-ayıklamadebugging" class="section level1" number="18">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="hata-ayıklamadebugging" class="section level1" number="16">
 <h1>
-<span class="header-section-number">Bölüm 18</span> Hata Ayıklama/Debugging<a class="anchor" aria-label="anchor" href="#hata-ay%C4%B1klamadebugging"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Bölüm 16</span> Hata Ayıklama/Debugging<a class="anchor" aria-label="anchor" href="#hata-ay%C4%B1klamadebugging"><i class="fas fa-link"></i></a>
 </h1>
-<div id="yanlış-bir-şeyler-var" class="section level2" number="18.1">
+<div id="yanlış-bir-şeyler-var" class="section level2" number="16.1">
 <h2>
-<span class="header-section-number">18.1</span> Yanlış bir şeyler var!<a class="anchor" aria-label="anchor" href="#yanl%C4%B1%C5%9F-bir-%C5%9Feyler-var"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.1</span> Yanlış bir şeyler var!<a class="anchor" aria-label="anchor" href="#yanl%C4%B1%C5%9F-bir-%C5%9Feyler-var"><i class="fas fa-link"></i></a>
 </h2>
 <p>R, size bir şeylerin yolunda gitmediğini göstermek için çeşitli yollara sahiptir. Sadece bildirimden ölümcül hataya kadar kullanılabilecek farklı gösterge seviyeleri vardır. R'de herhangi bir fonksiyonun çalıştırılması aşağıdaki <em>koşullarla</em> sonuçlanabilir.</p>
 <ul>
@@ -169,9 +168,9 @@
 <span id="cb542-4"><a href="hata-ay%C4%B1klamadebugging.html#cb542-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"x 0'dan buyuk"</span></span></code></pre></div>
 <p>Şimdi doğru mesajların herhangi bir uyarı veya hata olmadan yazdırıldığını görebilirsiniz. printmessage4()<code>fonksiyonunun geri dönüş değerini</code>out<code>adında ayrı bir R nesnesinde sakladığıma dikkat edin. Bunun nedeni,</code>Vectorize()` fonksiyonunu kullandığımda artık dönüş değerinin görünmezliğini korumamasıdır.</p>
 </div>
-<div id="neyin-yanlış-olduğunu-anlamak" class="section level2" number="18.2">
+<div id="neyin-yanlış-olduğunu-anlamak" class="section level2" number="16.2">
 <h2>
-<span class="header-section-number">18.2</span> Neyin Yanlış Olduğunu Anlamak<a class="anchor" aria-label="anchor" href="#neyin-yanl%C4%B1%C5%9F-oldu%C4%9Funu-anlamak"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.2</span> Neyin Yanlış Olduğunu Anlamak<a class="anchor" aria-label="anchor" href="#neyin-yanl%C4%B1%C5%9F-oldu%C4%9Funu-anlamak"><i class="fas fa-link"></i></a>
 </h2>
 <p>Herhangi bir R kodunda hata ayıklamanın birincil görevi, sorunun ne olduğunu doğru bir şekilde teşhis etmektir. Kodunuzla (veya bir başkasının koduyla) ilgili bir sorunu teşhis ederken, öncelikle ne olmasını beklediğinizi anlamanız önemlidir. Daha sonra neyin <em>olduğunu</em> ve beklentilerinizden nasıl saptığını belirlemeniz gerekir. Sormanız gereken bazı temel sorular şunlardır</p>
 <ul>
@@ -184,9 +183,9 @@
 </ul>
 <p>Bu soruları yanıtlayabilmek sadece kendi iyiliğiniz için değil, aynı zamanda sorunu ayıklamak için başka birinden yardım istemeniz gerekebilecek durumlarda da önemlidir. Tecrübeli programcılar size tam olarak bu soruları soracaktır.</p>
 </div>
-<div id="rde-hata-ayıklama-araçları" class="section level2" number="18.3">
+<div id="rde-hata-ayıklama-araçları" class="section level2" number="16.3">
 <h2>
-<span class="header-section-number">18.3</span> R'de Hata Ayıklama Araçları<a class="anchor" aria-label="anchor" href="#rde-hata-ay%C4%B1klama-ara%C3%A7lar%C4%B1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.3</span> R'de Hata Ayıklama Araçları<a class="anchor" aria-label="anchor" href="#rde-hata-ay%C4%B1klama-ara%C3%A7lar%C4%B1"><i class="fas fa-link"></i></a>
 </h2>
 <p>R, kodunuzda hata ayıklama yapmanıza yardımcı olacak bir dizi araç sağlar. R'de fonksiyonlarda hata ayıklamak için kullanılan başlıca araçlar şunlardır</p>
 <ul>
@@ -203,9 +202,9 @@
 </ul>
 <p>Bu fonksiyonlar, bir fonksiyonun içinden geçmenizi sağlamak için özel olarak tasarlanmış etkileşimli araçlardır. Ayrıca, fonksiyona <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> veya <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> deyimlerini eklemek gibi daha kör bir teknik de vardır.</p>
 </div>
-<div id="traceback" class="section level2" number="18.4">
+<div id="traceback" class="section level2" number="16.4">
 <h2>
-<span class="header-section-number">18.4</span> <code>traceback()</code><a class="anchor" aria-label="anchor" href="#traceback"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.4</span> <code>traceback()</code><a class="anchor" aria-label="anchor" href="#traceback"><i class="fas fa-link"></i></a>
 </h2>
 <p><code><a href="https://rdrr.io/r/base/traceback.html">traceback()</a></code> fonksiyonu, bir hata oluştuktan sonra <em>fonksiyon çağrı yığınını</em> yazdırır. Fonksiyon çağrı yığını, hata oluşmadan önce çağrılan fonksiyonlar dizisidir.</p>
 <p>Örneğin, bir <code>a()</code> fonksiyonunuz olabilir. Bu fonksiyonda <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> ve <code>d()</code> fonksiyonlarını çağıran <code>b()</code> fonksiyonuna bağlı çalışabilir. Bir hata oluşursa, hatanın hangi fonksiyonda oluştuğu hemen anlaşılamayabilir. <code><a href="https://rdrr.io/r/base/traceback.html">traceback()</a></code> fonksiyonu hata oluştuğunda kaç seviye derinde olduğunuzu gösterir.</p>
@@ -229,9 +228,9 @@
 <p>Şimdi hatanın fonksiyon çağrı yığınının 7. seviyesine kadar atılmadığını görebilirsiniz, bu durumda <code><a href="https://rdrr.io/r/base/eval.html">eval()</a></code> fonksiyonu <code>y ~ x</code> formülünü değerlendirmeye çalışmış ve <code>y</code> nesnesinin mevcut olmadığını fark etmiştir.</p>
 <p>Geri izlemeye bakmak, hatanın kabaca nerede oluştuğunu anlamak için yararlıdır, ancak daha ayrıntılı hata ayıklama için kullanışlı değildir. Bunun için <code><a href="https://rdrr.io/r/base/debug.html">debug()</a></code> fonksiyonuna başvurabilirsiniz.</p>
 </div>
-<div id="debug" class="section level2" number="18.5">
+<div id="debug" class="section level2" number="16.5">
 <h2>
-<span class="header-section-number">18.5</span> <code>debug()</code><a class="anchor" aria-label="anchor" href="#debug"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.5</span> <code>debug()</code><a class="anchor" aria-label="anchor" href="#debug"><i class="fas fa-link"></i></a>
 </h2>
 <p><code><a href="https://rdrr.io/r/base/debug.html">debug()</a></code> işlevi, bir işlev için etkileşimli bir hata ayıklayıcı (R'de "tarayıcı" olarak da bilinir) başlatır. Hata ayıklayıcıyla, bir hatanın tam olarak nerede oluştuğunu saptamak için bir R işlevini her seferinde bir ifadeyle adımlayabilirsiniz.</p>
 <p><code><a href="https://rdrr.io/r/base/debug.html">debug()</a></code> fonksiyonu ilk argüman olarak bir fonksiyon alır. Burada <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunun hata ayıklamasına bir örnek verilmiştir.</p>
@@ -276,9 +275,9 @@
 <div class="sourceCode" id="cb547"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/debug.html">undebug</a></span><span class="op">(</span><span class="va">lm</span><span class="op">)</span>    <span class="co">## Unflag the 'lm()' function for debugging</span></span></code></pre></div>
 </div>
-<div id="recover" class="section level2" number="18.6">
+<div id="recover" class="section level2" number="16.6">
 <h2>
-<span class="header-section-number">18.6</span> <code>recover()</code><a class="anchor" aria-label="anchor" href="#recover"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.6</span> <code>recover()</code><a class="anchor" aria-label="anchor" href="#recover"><i class="fas fa-link"></i></a>
 </h2>
 <p><code><a href="https://rdrr.io/r/utils/recover.html">recover()</a></code> fonksiyonu, bir hata oluştuğunda R'nin hata davranışını değiştirmek için kullanılabilir. Normalde, bir fonksiyonda hata oluştuğunda, R bir hata mesajı yazdırır, fonksiyondan çıkar ve diğer komutları beklemek üzere sizi çalışma alanınıza geri döndürür.</p>
 <p><code><a href="https://rdrr.io/r/utils/recover.html">recover()</a></code> ile R'ye bir hata oluştuğunda, hatanın oluştuğu tam noktada yürütmeyi durdurması gerektiğini söyleyebilirsiniz. Bu size hatanın oluştuğu ortamı kurcalama fırsatı verebilir. Bu, bozulmuş veya yanlışlıkla değiştirilmiş herhangi bir R nesnesi veya verisi olup olmadığını görmek için yararlı olabilir.</p>
@@ -298,9 +297,9 @@
 <span id="cb548-14"><a href="hata-ay%C4%B1klamadebugging.html#cb548-14" tabindex="-1"></a>Selection<span class="sc">:</span></span></code></pre></div>
 <p><code><a href="https://rdrr.io/r/utils/recover.html">recover()</a></code> fonksiyonu, bir hata oluştuğunda ilk olarak fonksiyon çağrı yığınını yazdıracaktır. Daha sonra, çağrı yığınının etrafında atlamayı ve sorunu araştırmayı seçebilirsiniz. Bir kare numarası seçtiğinizde, tarayıcıya yerleştirileceksiniz (tıpkı <code><a href="https://rdrr.io/r/base/debug.html">debug()</a></code> ile tetiklenen etkileşimli hata ayıklayıcı gibi) ve etrafı kurcalayabileceksiniz.</p>
 </div>
-<div id="özet-5" class="section level2" number="18.7">
+<div id="özet-5" class="section level2" number="16.7">
 <h2>
-<span class="header-section-number">18.7</span> ÖZet<a class="anchor" aria-label="anchor" href="#%C3%B6zet-5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.7</span> ÖZet<a class="anchor" aria-label="anchor" href="#%C3%B6zet-5"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>Bir sorunun/durumun üç ana göstergesi vardır: <code>message</code>, <code>warning</code>, <code>error</code>; sadece bir <code>error</code> ölümcüldür</li>
@@ -308,7 +307,72 @@
 <li>Etkileşimli hata ayıklama araçları <code>traceback</code>, <code>debug</code>, <code>browser</code>, <code>trace</code> ve <code>recover</code> işlevlerdeki sorunlu kodları bulmak için kullanılabilir</li>
 <li><strong>Hata ayıklama araçları düşünmenin yerini tutmaz!</strong></li>
 </ul>
-<!-- https://bookdown.org/rdpeng/rprogdatascience/parallel-computation.html -->
+<!-- https://bookdown.org/rdpeng/rprogdatascience/parallel-computation.html --><div class="sourceCode" id="cb549"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/rmarkdown">"rmarkdown"</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: package 'rmarkdown' was built under R version 4.3.3</code></pre>
+<div class="sourceCode" id="cb551"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/fontawesome">"fontawesome"</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://haozhu233.github.io/kableExtra/">"kableExtra"</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+## Attaching package: 'kableExtra'</code></pre>
+<pre><code>## The following object is masked from 'package:dplyr':
+## 
+##     group_rows</code></pre>
+<div class="sourceCode" id="cb554"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/hadley/emo">"emo"</a></span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># Required packages</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://dplyr.tidyverse.org">"dplyr"</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://r-forge.r-project.org/projects/car/">"car"</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Loading required package: carData</code></pre>
+<pre><code>## 
+## Attaching package: 'car'</code></pre>
+<pre><code>## The following object is masked from 'package:dplyr':
+## 
+##     recode</code></pre>
+<pre><code>## The following object is masked from 'package:purrr':
+## 
+##     some</code></pre>
+<div class="sourceCode" id="cb559"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://docs.ropensci.org/skimr/">"skimr"</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: package 'skimr' was built under R version 4.3.3</code></pre>
+<div class="sourceCode" id="cb561"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://boxuancui.github.io/DataExplorer/">"DataExplorer"</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: package 'DataExplorer' was built under R version 4.3.3</code></pre>
+<div class="sourceCode" id="cb563"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://www.sthda.com/english/wiki/ggcorrplot-visualization-of-a-correlation-matrix-using-ggplot2">"ggcorrplot"</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://personality-project.org/r/psych/">"psych"</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: package 'psych' was built under R version 4.3.3</code></pre>
+<pre><code>## 
+## Attaching package: 'psych'</code></pre>
+<pre><code>## The following object is masked from 'package:car':
+## 
+##     logit</code></pre>
+<pre><code>## The following object is masked from 'package:fontawesome':
+## 
+##     fa</code></pre>
+<pre><code>## The following objects are masked from 'package:ggplot2':
+## 
+##     %+%, alpha</code></pre>
+<div class="sourceCode" id="cb569"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"CTT"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+## Attaching package: 'CTT'</code></pre>
+<pre><code>## The following objects are masked from 'package:psych':
+## 
+##     polyserial, reliability</code></pre>
+<div class="sourceCode" id="cb572"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://www.ShinyItemAnalysis.org">"ShinyItemAnalysis"</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: package 'ShinyItemAnalysis' was built under R version 4.3.3</code></pre>
+<pre><code>## This is ShinyItemAnalysis version 1.5.0
+## - to run the interactive {shiny} app, call `run_app()`
+## - to learn more, visit `ShinyItemAnalysis.org`</code></pre>
+<div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/zief0002/QME">"QME"</a></span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"difR"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: package 'difR' was built under R version 4.3.3</code></pre>
+<div class="sourceCode" id="cb577"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/rmarkdown">"rmarkdown"</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <script>
@@ -513,19 +577,19 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><div class="chapter-nav">
-<div class="prev"><a href="apply-ailesi.html"><span class="header-section-number">17</span> apply ailesi</a></div>
-<div class="empty"></div>
+<div class="prev"><a href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">15</span> Döngü Fonkisyonları</a></div>
+<div class="next"><a href="klasik-test-teorisi.html"><span class="header-section-number">17</span> Klasik Test Teorisi</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#hata-ay%C4%B1klamadebugging"><span class="header-section-number">18</span> Hata Ayıklama/Debugging</a></li>
-<li><a class="nav-link" href="#yanl%C4%B1%C5%9F-bir-%C5%9Feyler-var"><span class="header-section-number">18.1</span> Yanlış bir şeyler var!</a></li>
-<li><a class="nav-link" href="#neyin-yanl%C4%B1%C5%9F-oldu%C4%9Funu-anlamak"><span class="header-section-number">18.2</span> Neyin Yanlış Olduğunu Anlamak</a></li>
-<li><a class="nav-link" href="#rde-hata-ay%C4%B1klama-ara%C3%A7lar%C4%B1"><span class="header-section-number">18.3</span> R'de Hata Ayıklama Araçları</a></li>
-<li><a class="nav-link" href="#traceback"><span class="header-section-number">18.4</span> traceback()</a></li>
-<li><a class="nav-link" href="#debug"><span class="header-section-number">18.5</span> debug()</a></li>
-<li><a class="nav-link" href="#recover"><span class="header-section-number">18.6</span> recover()</a></li>
-<li><a class="nav-link" href="#%C3%B6zet-5"><span class="header-section-number">18.7</span> ÖZet</a></li>
+<li><a class="nav-link" href="#hata-ay%C4%B1klamadebugging"><span class="header-section-number">16</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="nav-link" href="#yanl%C4%B1%C5%9F-bir-%C5%9Feyler-var"><span class="header-section-number">16.1</span> Yanlış bir şeyler var!</a></li>
+<li><a class="nav-link" href="#neyin-yanl%C4%B1%C5%9F-oldu%C4%9Funu-anlamak"><span class="header-section-number">16.2</span> Neyin Yanlış Olduğunu Anlamak</a></li>
+<li><a class="nav-link" href="#rde-hata-ay%C4%B1klama-ara%C3%A7lar%C4%B1"><span class="header-section-number">16.3</span> R'de Hata Ayıklama Araçları</a></li>
+<li><a class="nav-link" href="#traceback"><span class="header-section-number">16.4</span> traceback()</a></li>
+<li><a class="nav-link" href="#debug"><span class="header-section-number">16.5</span> debug()</a></li>
+<li><a class="nav-link" href="#recover"><span class="header-section-number">16.6</span> recover()</a></li>
+<li><a class="nav-link" href="#%C3%B6zet-5"><span class="header-section-number">16.7</span> ÖZet</a></li>
 </ul>
 
       <div class="book-extra">

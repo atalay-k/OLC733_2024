@@ -50,7 +50,7 @@ R'deki fonksiyonlar "birinci sınıf nesnelerdir", yani diğer R nesneleri gibi 
 Daha da önemlisi,
 
 -   Fonksiyonlar diğer fonksiyonlara argüman olarak aktarılabilir.
-    Bu, `lapply()` ve `sapply()` gibi çeşitli uygulama fonksiyonları için çok kullanışlıdır.
+    Bu, `lapply()` ve `sapply()` gibi çeşitli döngü fonksiyonları için çok kullanışlıdır.
 
 -   Fonksiyonlar iç içe geçebilir, böylece bir fonksiyonu başka bir fonksiyonun içinde tanımlayabilirsiniz
 
@@ -109,10 +109,15 @@ Ayrıca, kodunuzu bir başkasına vermeniz ve onu kodu istediği kadar kesip yap
 
 > Genel olarak, kendinizi çok fazla kesme ve yapıştırma yaparken bulursanız, bu genellikle bir fonksiyon yazmanız gerekebileceğine dair iyi bir işarettir.
 
-R'da uzmanlaştıkça ve yapılan işler karmaşıklaştıkça fonksiyon yazma ihtiyacıduyulmaktadır.
+R'da uzmanlaştıkça ve yapılan işler karmaşıklaştıkça fonksiyon yazma ihtiyacı duyulmaktadır.
 Fonksiyon yazma gereksinimi özellikle tekrarlı işlemler yapılması gerektiği durumda ortaya çıkmaktadır.
-Fonksiyon yazmak - pratiklik kazandırır (ekonomiktir) - Paylaşılmasını koylaştırır.
-- Tekrar kullanılabilirlik sağlar.
+Fonksiyon yazmak
+
+\- pratiklik kazandırır (ekonomiktir)
+
+\- Paylaşılmasını koylaştırır.
+
+\- Tekrar kullanılabilirlik sağlar.
 
 Tekrarlı işlemlerde hatalardan kurtulmanın yolu fonksiyon kullanmaktır.
 Fonksiyonlar, koşullu önermeler ve döngüler ile kullanılarak çok sayıda komut ile yapılabilecek olan işlemler tek bir komut satırı ile yapılabilir hale gelmektedir
@@ -234,11 +239,11 @@ sd()`fonksiyonunun iki argümanı olduğunu unutmayın: x` sayı vektörünü g�
 > sd(mydata)                     
 > ## 'x' argümanını isimle belirtin, varsayılan 'na.rm'
 > sd(x = mydata)                 
-> ## Her iki bağımsız değişkeni de adla belirtin
+> ## Her iki argümanı da adla belirtin
 > sd(x = mydata, na.rm = FALSE)  
-[1] 0.9157824
-[1] 0.9157824
-[1] 0.9157824
+[1] 0.9869802
+[1] 0.9869802
+[1] 0.9869802
 ```
 
 Fonksiyon argümanlarını isimle belirtirken, bunları hangi sırada belirttiğiniz önemli değildir.
@@ -248,7 +253,7 @@ Aşağıdaki örnekte, fonksiyon tanımında tanımlanan ilk argüman `x` olmas�
 ```r
 > ## Her iki argümanı da adla belirtin
 > sd(na.rm = FALSE, x = mydata)     
-[1] 0.9157824
+[1] 0.9869802
 ```
 
 Konumsal eşleştirme ile ada göre eşleştirmeyi karıştırabilirsiniz.
@@ -257,7 +262,7 @@ Bir argüman isme göre eşleştirildiğinde, argüman listesinden "çıkarılı
 
 ```r
 > sd(na.rm = FALSE, mydata)
-[1] 0.9157824
+[1] 0.9869802
 ```
 
 Burada, `mydata` nesnesi `x` argümanına atanır, çünkü henüz belirtilmemiş tek argüman budur.
@@ -283,18 +288,8 @@ lm(y ~ x, mydata, 1:100, model = FALSE)
 Bu işlem güvenli olsa da, bazı karışıklıklara yol açabileceğinden, argümanların sırası ile çok fazla uğraşmanızı önermem.
 
 Çoğu zaman, adlandırılmış argümanlar komut satırında uzun bir argüman listeniz olduğunda ve listenin sonuna yakın bir argüman dışında her şey için varsayılanları kullanmak istediğinizde kullanışlıdır.
-Adlandırılmış bağımsız değişkenler, bağımsız değişken listesindeki konumunu değil, bağımsız değişkenin adını hatırlayabiliyorsanız da yardımcı olur.
+Adlandırılmış argümanlar, konumunu değil, argüman adını hatırlayabiliyorsanız da yardımcı olur.
 Örneğin, çizim fonksiyonları genellikle özelleştirmeye izin vermek için çok sayıda seçeneğe sahiptir, ancak bu, argüman listesindeki her argümanın konumunu tam olarak hatırlamayı zorlaştırır.
-
-Fonksiyon argümanları da *kısmen* eşleştirilebilir, bu da etkileşimli çalışma için kullanışlıdır.
-Bir argüman verildiğinde işlem sırası şöyledir
-
-1.  Adlandırılmış bir argüman için tam eşleşmeyi kontrol edin
-2.  Kısmi eşleşme olup olmadığını kontrol edin
-3.  Konumsal eşleşme olup olmadığını kontrol edin
-
-Uzun kod veya programlar yazarken kısmi eşleştirmeden kaçınılmalıdır, çünkü birisi kodu okuduğunda karışıklığa yol açabilir.
-Ancak, çok uzun argüman adlarına sahip işlevleri etkileşimli olarak çağırırken kısmi eşleştirme çok kullanışlıdır.
 
 Varsayılan bir değer belirtmemenin yanı sıra, bir argümanın değerini `NULL` olarak da ayarlayabilirsiniz.
 
@@ -310,46 +305,10 @@ Bazen bir argümanın `NULL` değerini almasına izin vermek yararlıdır, bu da
 Kullanışlı bir fonksiyon yazmak için mümkün olduğunca kısa isimler kullanılmalıdır; bununla birlikte bu isimler kullanıcıya yapılacak işlemi anlaşılırkılmalıdır.
 Bunun yanında R'da özel anlamı olan `c,C,D,F,I,q,t,T` gibi tek harfl ik fonksiyon isimleri kullanmaktan ve R'da hazır olan fonksiyon isimlerini kişisel tanımlı fonksiyonlara vermekten kaçınılmalıdır.
 
-## Tembel Değerlendirme
-
-Fonksiyonların argümanları *lazily* olarak değerlendirilir, bu nedenle sadece fonksiyonun gövdesinde gerektiği gibi değerlendirilirler.
-
-Bu örnekte, `f()` fonksiyonunun iki argümanı vardır: a`ve`b\`.
-
-
-```r
-> f <- function(a, b) {
-+         a^2
-+ } 
-> f(2)
-[1] 4
-```
-
-Bu fonksiyon aslında `b` argümanını asla kullanmaz, bu nedenle `f(2)` çağrısı bir hata üretmez, çünkü 2 konum olarak `a` ile eşleşir.
-Bu davranış iyi ya da kötü olabilir.
-Bir argüman kullanmayan bir fonksiyon yazmak ve bunu fark etmemek yaygındır çünkü R asla hata vermez.
-
-Bu örnek de tembel değerlendirmeyi gösterir, ancak sonunda bir hatayla sonuçlanır.
-
-
-```r
-> f <- function(a, b) {
-+         print(a)
-+         print(b)
-+ }
-> f(45)
-Error in f(45): argument "b" is missing, with no default
-[1] 45
-```
-
-Hata tetiklenmeden önce ilk olarak "45 "in yazdırıldığına dikkat edin.
-Bunun nedeni `b`nin `print(a)`dan sonrasına kadar değerlendirilmek zorunda olmamasıdır.
-İşlev `print(b)`yi değerlendirmeye çalıştığında, işlev bir hata atmak zorunda kalmıştır.
-
 ## `...` argümanı
 
 R'de `...` argümanı olarak bilinen ve genellikle diğer fonksiyonlara aktarılan değişken sayıda argümanı gösteren özel bir argüman vardır.
-...\` argümanı genellikle başka bir fonksiyonu genişletirken kullanılır ve orijinal fonksiyonun tüm argüman listesini kopyalamak istemezsiniz
+`...` argümanı genellikle başka bir fonksiyonu genişletirken kullanılır ve orijinal fonksiyonun tüm argüman listesini kopyalamak istemezsiniz
 
 Örneğin, özel bir çizim fonksiyonu varsayılan `plot()` fonksiyonunu tüm argüman listesiyle birlikte kullanmak isteyebilir.
 Aşağıdaki fonksiyon `type` argümanı için varsayılanı `type = "l"` değerine değiştirir (orijinal varsayılan `type = "p"` idi).
@@ -367,7 +326,7 @@ Jenerik fonksiyonlar, metotlara ekstra argümanlar aktarılabilmesi için `...` 
 > mean
 function (x, ...) 
 UseMethod("mean")
-<bytecode: 0x0000018fc72e4398>
+<bytecode: 0x00000224f9618408>
 <environment: namespace:base>
 ```
 
@@ -390,7 +349,7 @@ Bu yüzden her iki fonksiyonun da ilk argümanı `...` şeklindedir.
 
 ## `...` argümanından sonra gelen argümanlar
 
-...`ile ilgili bir sorun, argüman listesinde _after_`...\` olarak görünen herhangi bir argümanın açıkça adlandırılması gerektiği ve kısmen eşleştirilemeyeceği veya konum olarak eşleştirilemeyeceğidir.
+`...` ile ilgili bir sorun, argüman listesinde _after_`...` olarak görünen herhangi bir argümanın açıkça adlandırılması gerektiği ve kısmen eşleştirilemeyeceği veya konum olarak eşleştirilemeyeceğidir.
 
 `paste()` fonksiyonunun argümanlarına bir göz atın.
 
@@ -401,7 +360,7 @@ function (..., sep = " ", collapse = NULL, recycle0 = FALSE)
 NULL
 ```
 
-paste()`fonksiyonu ile,`sep`ve`collapse\` argümanları, varsayılan değerler kullanılmayacaksa, açıkça ve tam olarak adlandırılmalıdır.
+ `paste()` fonksiyonu ile,`sep`ve`collapse` argümanları, varsayılan değerler kullanılmayacaksa, açıkça ve tam olarak adlandırılmalıdır.
 
 Burada "a" ve "b "nin birlikte yapıştırılmasını ve iki nokta üst üste ile ayrılmasını istediğimi belirtiyorum.
 
@@ -432,6 +391,60 @@ Bir fonksiyonun doğru sonucu vermesi kadar diğer kullanıcılar tarafından an
 -   Taslağınızı içine komut satırlarınıza yapıştırın
 -   Fonksiyonun argümanları belirleyin
 -   Argüman isimlerinizi kullanacağınız değişkenlerle değiştirin
+
+# Uygulama
+
+## Çoklu veri seti oluşturma ve dışarı aktarma
+
+-   İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım. Fonksiyonun ilk girdisi veri seti sayısı olmalı, varsayılan olarak bir veri seti oluşturalan fonksiyon taslağı oluşturalım.
+
+``` r
+fonksiyon_adi <- function(sayi=1){
+
+}
+```
+
+-   Kullanıcı oluşturmak istediği her bir veri seti için satır ve sütun sayısını belirleyebilirsin. Satır ve sütun sayısını argüman olarak tanımlayalım. Örneğin oluşturduğu ilk veri setin 5 satır, 10 sütunlu ikincisi olsun. Bunun için argümana varsayalin değerler atayalım
+
+``` r
+fonksiyon_adi <- function(sayi=1,satir=c(5),sutun=c(10)){
+
+}
+```
+
+-   Oluşturacak olan her bir veri setinin her bir sütunu standart normal dağılıma uygun olacak şekilde üretilsin. Oluşturulan veri setlerinden ilki "veri_1.xlsx" şeklinde çalışma alanına yazdırılsın
+
+
+```r
+> fonksiyon_adi <- function(sayi=1,satir=c(5),sutun=c(10)){
++ 
++     df <- data.frame(matrix(0,nrow=satir, ncol=sutun))
++      writexl::write_xlsx(df,"veri_1.xlsx")
++ }
+> fonksiyon_adi(sayi=1,satir=c(5),sutun=c(10))
+```
+
+-   Şimdi ise bu fonksiyonu çoklu dosya yazımına uygun hale getirelim
+
+
+```r
+> 
+> fonksiyon_adi <- function(sayi=3,satir=c(5,5,5),sutun=c(10,10,10)){
++     
++   df_list <- list() ## her bir veri setinin atanacağı yeni nesne
++     
++     for( i in 1:sayi){
++     df <- data.frame(matrix(0,nrow=satir[i], ncol=sutun[i])) # veri seti istenilen ozelliklerde olusturulur
++     }
++      for(j in 1:sutun[i]){
++      df[,j] <- round(rnorm(satir[i],0,1),2) #  her bir veri setinin her bir sütunu standart normal dağılıma uygun uretilir
++     }
++      df_list[[i]] <- df
++       df_list
++       writexl::write_xlsx(df_list[[i]],paste("veri",i,".xlsx", sep=""))
++ }
+> fonksiyon_adi(sayi=3,satir=c(5,4,3),sutun=c(10,5,4))
+```
 
 ### Sıra Sizde
 
