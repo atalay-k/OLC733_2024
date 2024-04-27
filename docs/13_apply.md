@@ -42,7 +42,7 @@ function (X, FUN, ...)
         X <- as.list(X)
     .Internal(lapply(X, FUN))
 }
-<bytecode: 0x0000014dad1223f8>
+<bytecode: 0x000002537da6e3b8>
 <environment: namespace:base>
 ```
 
@@ -286,7 +286,7 @@ $`3`
 [1] 5.458703
 ```
 
-## Veri Setini Bölme
+### Veri Setini Bölme
 
 
 ```r
@@ -687,7 +687,7 @@ MARGIN` argümanı esasen `apply()` fonksiyonuna dizinin hangi boyutunu korumak 
 çünkü sütunları (ikinci boyut) daraltmak ve satır sayısını (ilk boyut) korumak istiyorum.
 
 
-## Sütun/Satır Toplamları ve Ortalamaları
+### Sütun/Satır Toplamları ve Ortalamaları
 
 Matrislerin sütun/satır toplamları ve sütun/satır ortalamalarının özel durumları için bazı kullanışlı kısayollarımız vardır.
 

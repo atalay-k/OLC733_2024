@@ -31,6 +31,28 @@
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/style.css">
@@ -70,10 +92,9 @@
 <li><a class="" href="for.html"><span class="header-section-number">11</span> for</a></li>
 <li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">12</span> while döngüsü</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">13</span> Fonksiyonlar</a></li>
-<li><a class="" href="uygulama-2.html"><span class="header-section-number">14</span> Uygulama</a></li>
-<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">15</span> Döngü Fonkisyonları</a></li>
-<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">16</span> Hata Ayıklama/Debugging</a></li>
-<li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">17</span> Klasik Test Teorisi</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">14</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">16</span> Klasik Test Teorisi</a></li>
 </ul>
 
         <div class="book-extra">
@@ -168,7 +189,7 @@ ve semPlot paketinin <code>semPaths</code>fonksiyonlarının argümanları açı
 <li>
 <strong>cfa()</strong> fonksiyonunun kullanımı aşağıdaki gibidir:</li>
 </ul>
-<div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/cfa.html">cfa</a></span><span class="op">(</span>model <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>    data <span class="op">=</span> <span class="cn">NULL</span>, </span>
 <span>    ordered <span class="op">=</span> <span class="cn">NULL</span>, sampling.weights <span class="op">=</span> <span class="cn">NULL</span>, </span>

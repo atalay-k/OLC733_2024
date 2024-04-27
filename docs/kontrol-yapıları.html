@@ -31,6 +31,28 @@
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/style.css">
@@ -70,10 +92,9 @@
 <li><a class="" href="for.html"><span class="header-section-number">11</span> for</a></li>
 <li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">12</span> while döngüsü</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">13</span> Fonksiyonlar</a></li>
-<li><a class="" href="uygulama-2.html"><span class="header-section-number">14</span> Uygulama</a></li>
-<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">15</span> Döngü Fonkisyonları</a></li>
-<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">16</span> Hata Ayıklama/Debugging</a></li>
-<li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">17</span> Klasik Test Teorisi</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">14</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">16</span> Klasik Test Teorisi</a></li>
 </ul>
 
         <div class="book-extra">
@@ -111,37 +132,37 @@
 </h2>
 <p><code>if</code>-<code>else</code> kombinasyonu muhtemelen R'de (veya belki de herhangi bir dilde) en sık kullanılan kontrol yapısıdır. Bu yapı, bir koşulu test etmenize ve doğru ya da yanlış olmasına bağlı olarak ona göre hareket etmenize olanak tanır.</p>
 <p>Öncelilke <code>if</code> koşullu ifadesinin kullanımını gösterelim:</p>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb401-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>koşul<span class="sc">&gt;</span>) {</span>
-<span id="cb401-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb401-2" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
-<span id="cb401-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb401-3" tabindex="-1"></a>} </span></code></pre></div>
-<p>Yukarıdaki kod, koşul yanlışsa hiçbir şey yapmaz. Koşul yanlış olduğunda yürütmek istediğiniz bir eyleminiz varsa, o zaman bir <code>else</code> cümlesine ihtiyacınız vardır.</p>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb402-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>koşul<span class="sc">&gt;</span>) {</span>
-<span id="cb402-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb402-2" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
-<span id="cb402-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb402-3" tabindex="-1"></a>} </span>
-<span id="cb402-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb402-4" tabindex="-1"></a><span class="cf">else</span> {</span>
-<span id="cb402-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb402-5" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
-<span id="cb402-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb402-6" tabindex="-1"></a>}</span></code></pre></div>
-<p><code>if</code>i herhangi bir <code>if</code> ile takip ederek bir dizi test yapabilirsiniz. <code>else if</code> kullanabilirsiniz.</p>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb403-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb403-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>koşul<span class="sc">&gt;</span>) {</span>
 <span id="cb403-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb403-2" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
-<span id="cb403-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb403-3" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(<span class="sc">&lt;</span>kosul2<span class="sc">&gt;</span>)  {</span>
-<span id="cb403-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb403-4" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
-<span id="cb403-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb403-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb403-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb403-6" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
-<span id="cb403-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb403-7" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb403-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb403-3" tabindex="-1"></a>} </span></code></pre></div>
+<p>Yukarıdaki kod, koşul yanlışsa hiçbir şey yapmaz. Koşul yanlış olduğunda yürütmek istediğiniz bir eyleminiz varsa, o zaman bir <code>else</code> cümlesine ihtiyacınız vardır.</p>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>koşul<span class="sc">&gt;</span>) {</span>
+<span id="cb404-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-2" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb404-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-3" tabindex="-1"></a>} </span>
+<span id="cb404-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-4" tabindex="-1"></a><span class="cf">else</span> {</span>
+<span id="cb404-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-5" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb404-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-6" tabindex="-1"></a>}</span></code></pre></div>
+<p><code>if</code>i herhangi bir <code>if</code> ile takip ederek bir dizi test yapabilirsiniz. <code>else if</code> kullanabilirsiniz.</p>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb405-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
+<span id="cb405-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb405-2" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb405-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb405-3" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span>(<span class="sc">&lt;</span>kosul2<span class="sc">&gt;</span>)  {</span>
+<span id="cb405-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb405-4" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb405-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb405-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb405-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb405-6" tabindex="-1"></a>        <span class="do">## kodlar</span></span>
+<span id="cb405-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb405-7" tabindex="-1"></a>}</span></code></pre></div>
 <p>İşte geçerli bir if/else yapısına bir örnek.</p>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-1" tabindex="-1"></a><span class="do">##  bir rastgele sayı oluşturun</span></span>
-<span id="cb404-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb404-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-3" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
-<span id="cb404-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-4" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb404-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb404-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-6" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb404-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-7" tabindex="-1"></a>}</span>
-<span id="cb404-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-8" tabindex="-1"></a>x;y</span>
-<span id="cb404-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">8.750534</span></span>
-<span id="cb404-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb404-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-1" tabindex="-1"></a><span class="do">##  bir rastgele sayı oluşturun</span></span>
+<span id="cb406-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb406-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-3" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">3</span>) {</span>
+<span id="cb406-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-4" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb406-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-5" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb406-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-6" tabindex="-1"></a>        y <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb406-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-7" tabindex="-1"></a>}</span>
+<span id="cb406-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-8" tabindex="-1"></a>x;y</span>
+<span id="cb406-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">5.194521</span></span>
+<span id="cb406-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">10</span></span></code></pre></div>
 <p><code>y</code> değeri <code>x &gt; 3</code> olup olmamasına bağlı olarak ayarlanır. Bu ifade eşdeğer bir şekilde de yazılabilir.</p>
-<div class="sourceCode" id="cb405"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb407"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="kw">if</span><span class="op">(</span><span class="va">x</span> <span class="op">&gt;</span> <span class="fl">3</span><span class="op">)</span> <span class="op">{</span></span>
 <span>        <span class="fl">10</span></span>
 <span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span> </span>
@@ -149,13 +170,13 @@
 <span><span class="op">}</span></span></code></pre></div>
 <p>Bu ifadeyi yazmanın hiçbir yolu diğerinden daha doğru değildir. Hangisini kullanacağınız sizin tercihlerinize bağlıdır</p>
 <p>Elbette <code>else</code> cümlesi gerekli değildir. Kendi koşulları doğruysa her zaman çalıştırılan bir dizi if cümlesine sahip olabilirsiniz.</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
-<span id="cb406-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-2" tabindex="-1"></a></span>
-<span id="cb406-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-3" tabindex="-1"></a>}</span>
-<span id="cb406-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-4" tabindex="-1"></a></span>
-<span id="cb406-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul2<span class="sc">&gt;</span>) {</span>
-<span id="cb406-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-6" tabindex="-1"></a></span>
-<span id="cb406-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb406-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb408-1" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul1<span class="sc">&gt;</span>) {</span>
+<span id="cb408-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb408-2" tabindex="-1"></a></span>
+<span id="cb408-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb408-3" tabindex="-1"></a>}</span>
+<span id="cb408-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb408-4" tabindex="-1"></a></span>
+<span id="cb408-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb408-5" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">&lt;</span>kosul2<span class="sc">&gt;</span>) {</span>
+<span id="cb408-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb408-6" tabindex="-1"></a></span>
+<span id="cb408-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb408-7" tabindex="-1"></a>}</span></code></pre></div>
 <div id="örnekler" class="section level3" number="10.1.1">
 <h3>
 <span class="header-section-number">10.1.1</span> Örnekler<a class="anchor" aria-label="anchor" href="#%C3%B6rnekler"><i class="fas fa-link"></i></a>
@@ -163,14 +184,14 @@
 <p>Ölçme açısından bakılacak olursa koşul bir ölçütü, durum
 cümlesi ise değerlendirmeyi gösterilebilir.
 Örneğin, yapılan bir sınavda geçme notu 60 olarak belirlendiğinde, 75 alan bir öğrencinin durumu aşağıdaki <code>if()</code> durum cümlesiyle belirlenebilmektedir.</p>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb407-1" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">75</span></span>
-<span id="cb407-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb407-2" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
-<span id="cb407-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb407-3" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
-<span id="cb407-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb407-4" tabindex="-1"></a>}</span>
-<span id="cb407-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb407-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Basarılı"</span></span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-1" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">75</span></span>
+<span id="cb409-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-2" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb409-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-3" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
+<span id="cb409-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-4" tabindex="-1"></a>}</span>
+<span id="cb409-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-5" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Basarılı"</span></span></code></pre></div>
 <p>Ancak kontrol durumu çoğunlukla tek önermeye bağlı değildir.
 - Aşağıdaki kod çıktı vermeyecektir</p>
-<div class="sourceCode" id="cb408"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb410"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span><span class="fl">60</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="va">x</span><span class="op">&gt;=</span><span class="fl">65</span><span class="op">)</span><span class="op">{</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Basarılı"</span><span class="op">)</span></span>
@@ -178,35 +199,35 @@ cümlesi ise değerlendirmeyi gösterilebilir.
 <ul>
 <li>else kullanımı ile çıktı alabiliriz</li>
 </ul>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-1" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">60</span></span>
-<span id="cb409-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-2" tabindex="-1"></a><span class="co"># Başarılı Durum</span></span>
-<span id="cb409-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-3" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
-<span id="cb409-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-4" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
-<span id="cb409-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-5" tabindex="-1"></a>}<span class="cf">else</span>{</span>
-<span id="cb409-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-6" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarisiz"</span>)</span>
-<span id="cb409-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-7" tabindex="-1"></a>}</span>
-<span id="cb409-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb409-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Basarisiz"</span></span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb411-1" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="dv">60</span></span>
+<span id="cb411-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb411-2" tabindex="-1"></a><span class="co"># Başarılı Durum</span></span>
+<span id="cb411-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb411-3" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb411-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb411-4" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarılı"</span>)</span>
+<span id="cb411-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb411-5" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb411-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb411-6" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"Basarisiz"</span>)</span>
+<span id="cb411-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb411-7" tabindex="-1"></a>}</span>
+<span id="cb411-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb411-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Basarisiz"</span></span></code></pre></div>
 <p>Koşul her zaman iki kategori ile tanımlanamayabilir. Bu durumda kullanımı
 <code>else if()</code> ile destekleyebiliriz</p>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">75</span> <span class="co"># Başarılı Durum</span></span>
-<span id="cb410-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-2" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">90</span>){</span>
-<span id="cb410-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-3" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"AA"</span>)</span>
-<span id="cb410-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-4" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">80</span>){</span>
-<span id="cb410-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-5" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"BA"</span>)</span>
-<span id="cb410-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-6" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">70</span>){</span>
-<span id="cb410-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-7" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"BB"</span>)</span>
-<span id="cb410-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-8" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
-<span id="cb410-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-9" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"CB"</span>)</span>
-<span id="cb410-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-10" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">60</span>){</span>
-<span id="cb410-11"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-11" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"CC"</span>)</span>
-<span id="cb410-12"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-12" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">50</span>){</span>
-<span id="cb410-13"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-13" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"DD"</span>)</span>
-<span id="cb410-14"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-14" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">30</span>){</span>
-<span id="cb410-15"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-15" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"FD"</span>)</span>
-<span id="cb410-16"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-16" tabindex="-1"></a>}<span class="cf">else</span>{</span>
-<span id="cb410-17"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-17" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"FF"</span>)</span>
-<span id="cb410-18"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-18" tabindex="-1"></a>}</span>
-<span id="cb410-19"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb410-19" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"BB"</span></span></code></pre></div>
+<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">75</span> <span class="co"># Başarılı Durum</span></span>
+<span id="cb412-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-2" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">90</span>){</span>
+<span id="cb412-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-3" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"AA"</span>)</span>
+<span id="cb412-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-4" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">80</span>){</span>
+<span id="cb412-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-5" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"BA"</span>)</span>
+<span id="cb412-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-6" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">70</span>){</span>
+<span id="cb412-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-7" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"BB"</span>)</span>
+<span id="cb412-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-8" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">65</span>){</span>
+<span id="cb412-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-9" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"CB"</span>)</span>
+<span id="cb412-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-10" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">60</span>){</span>
+<span id="cb412-11"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-11" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"CC"</span>)</span>
+<span id="cb412-12"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-12" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">50</span>){</span>
+<span id="cb412-13"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-13" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"DD"</span>)</span>
+<span id="cb412-14"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-14" tabindex="-1"></a>}<span class="cf">else</span> <span class="cf">if</span>(x<span class="sc">&gt;=</span><span class="dv">30</span>){</span>
+<span id="cb412-15"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-15" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"FD"</span>)</span>
+<span id="cb412-16"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-16" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb412-17"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-17" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"FF"</span>)</span>
+<span id="cb412-18"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-18" tabindex="-1"></a>}</span>
+<span id="cb412-19"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb412-19" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"BB"</span></span></code></pre></div>
 </div>
 <div id="sıra-sizde" class="section level3" number="10.1.2">
 <h3>
@@ -223,12 +244,12 @@ için test ediniz.</li>
 <ol start="2" style="list-style-type: decimal">
 <li>-2 ile 2 arasinda sayilar üretip, bunu x değişkenine atayalım.</li>
 </ol>
-<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb413-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
-<span id="cb413-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb413-2" tabindex="-1"></a>x</span>
-<span id="cb413-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb413-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.06427316</span></span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
+<span id="cb415-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-2" tabindex="-1"></a>x</span>
+<span id="cb415-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="sc">-</span><span class="fl">0.6178733</span></span></code></pre></div>
 <p>Random olarak üretilen sayının 1'den büyük olması durumunda çıktı "1'den büyük" -1 ile 1 arasında olması durumunda "-1 ile +1 arasında" -1'den küçük olması durumunda ise "-1'den küçük" çıktısı versin.</p>
-<pre><code>[1] -1.438045
-[1] "sayı -1'den küçük"</code></pre>
+<pre><code>[1] 0.7510501
+[1] "sayı -1 ile +1 arasında"</code></pre>
 </div>
 </div>
 <div id="if-all" class="section level2" number="10.2">
@@ -236,57 +257,57 @@ için test ediniz.</li>
 <span class="header-section-number">10.2</span> if() &amp; all()<a class="anchor" aria-label="anchor" href="#if-all"><i class="fas fa-link"></i></a>
 </h2>
 <p>Her ne kadar <code>if()</code> önermesi bir elemanlı vektörlerde çıktı verirken <code>if()</code> önermesi içinde kullanılabilen <code>all</code> fonkisyonu ile vektörün tüm elemanları için kosul test edilebilir.</p>
-<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb415-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-2" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">all</span>(x<span class="sc">&gt;</span><span class="dv">0</span>)){</span>
-<span id="cb415-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-3" tabindex="-1"></a>  </span>
-<span id="cb415-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"tum sayilar 0'dan buyuktur"</span>)</span>
-<span id="cb415-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-5" tabindex="-1"></a>  </span>
-<span id="cb415-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-6" tabindex="-1"></a>} <span class="cf">else</span>{</span>
-<span id="cb415-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-7" tabindex="-1"></a>  </span>
-<span id="cb415-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-8" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"tum sayilar 0'dan buyuk degildir"</span>)</span>
-<span id="cb415-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-9" tabindex="-1"></a>}</span>
-<span id="cb415-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb415-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"tum sayilar 0'dan buyuk degildir"</span></span></code></pre></div>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb417-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-2" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">all</span>(x<span class="sc">&gt;</span><span class="dv">0</span>)){</span>
+<span id="cb417-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-3" tabindex="-1"></a>  </span>
+<span id="cb417-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"tum sayilar 0'dan buyuktur"</span>)</span>
+<span id="cb417-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-5" tabindex="-1"></a>  </span>
+<span id="cb417-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-6" tabindex="-1"></a>} <span class="cf">else</span>{</span>
+<span id="cb417-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-7" tabindex="-1"></a>  </span>
+<span id="cb417-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-8" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"tum sayilar 0'dan buyuk degildir"</span>)</span>
+<span id="cb417-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-9" tabindex="-1"></a>}</span>
+<span id="cb417-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"tum sayilar 0'dan buyuk degildir"</span></span></code></pre></div>
 </div>
 <div id="if-any" class="section level2" number="10.3">
 <h2>
 <span class="header-section-number">10.3</span> if() &amp; any()<a class="anchor" aria-label="anchor" href="#if-any"><i class="fas fa-link"></i></a>
 </h2>
 <p>Bir vektörde icinde yer alan her hangi bir elemana dair test ise <code>if()</code> fonksiyonu içinde <code><a href="https://rdrr.io/r/base/any.html">any()</a></code> fonksiyonu ile sağlanabilir.</p>
-<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb416-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-2" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">any</span>(x<span class="sc">&lt;</span><span class="dv">0</span>)){</span>
-<span id="cb416-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-3" tabindex="-1"></a>  </span>
-<span id="cb416-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"nesne en az bir negatif sayi icerir"</span>)</span>
-<span id="cb416-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-5" tabindex="-1"></a>  </span>
-<span id="cb416-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-6" tabindex="-1"></a>} <span class="cf">else</span>{</span>
-<span id="cb416-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-7" tabindex="-1"></a>  </span>
-<span id="cb416-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-8" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"nesne negatif sayi icermez"</span>)</span>
-<span id="cb416-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-9" tabindex="-1"></a>}</span>
-<span id="cb416-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb416-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"nesne en az bir negatif sayi icerir"</span></span></code></pre></div>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb418-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-2" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">any</span>(x<span class="sc">&lt;</span><span class="dv">0</span>)){</span>
+<span id="cb418-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-3" tabindex="-1"></a>  </span>
+<span id="cb418-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"nesne en az bir negatif sayi icerir"</span>)</span>
+<span id="cb418-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-5" tabindex="-1"></a>  </span>
+<span id="cb418-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-6" tabindex="-1"></a>} <span class="cf">else</span>{</span>
+<span id="cb418-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-7" tabindex="-1"></a>  </span>
+<span id="cb418-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-8" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"nesne negatif sayi icermez"</span>)</span>
+<span id="cb418-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-9" tabindex="-1"></a>}</span>
+<span id="cb418-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"nesne en az bir negatif sayi icerir"</span></span></code></pre></div>
 </div>
 <div id="if-çoklu-islem" class="section level2" number="10.4">
 <h2>
 <span class="header-section-number">10.4</span> if() çoklu islem<a class="anchor" aria-label="anchor" href="#if-%C3%A7oklu-islem"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb417-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-2" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">==</span> <span class="dv">2</span>) {</span>
-<span id="cb417-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-3" tabindex="-1"></a>  </span>
-<span id="cb417-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-4" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">"Dogru"</span>  </span>
-<span id="cb417-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-5" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb417-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-6" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
-<span id="cb417-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-7" tabindex="-1"></a>} <span class="cf">else</span>  {</span>
-<span id="cb417-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-8" tabindex="-1"></a>  </span>
-<span id="cb417-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-9" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">"Yanlis"</span>  </span>
-<span id="cb417-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-10" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb417-11"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-11" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
-<span id="cb417-12"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-12" tabindex="-1"></a>  </span>
-<span id="cb417-13"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-13" tabindex="-1"></a>}</span>
-<span id="cb417-14"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-14" tabindex="-1"></a></span>
-<span id="cb417-15"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-15" tabindex="-1"></a>goster3</span>
-<span id="cb417-16"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-16" tabindex="-1"></a>goster3b</span>
-<span id="cb417-17"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-17" tabindex="-1"></a>goster3c</span>
-<span id="cb417-18"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-18" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Dogru"</span></span>
-<span id="cb417-19"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-19" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span></span>
-<span id="cb417-20"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb417-20" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">177</span> <span class="dv">301</span>  <span class="dv">58</span> <span class="dv">224</span></span></code></pre></div>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb419-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-2" tabindex="-1"></a><span class="cf">if</span>(x <span class="sc">==</span> <span class="dv">2</span>) {</span>
+<span id="cb419-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-3" tabindex="-1"></a>  </span>
+<span id="cb419-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-4" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">"Dogru"</span>  </span>
+<span id="cb419-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-5" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb419-6"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-6" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
+<span id="cb419-7"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-7" tabindex="-1"></a>} <span class="cf">else</span>  {</span>
+<span id="cb419-8"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-8" tabindex="-1"></a>  </span>
+<span id="cb419-9"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-9" tabindex="-1"></a>  goster3 <span class="ot">&lt;-</span> <span class="st">"Yanlis"</span>  </span>
+<span id="cb419-10"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-10" tabindex="-1"></a>  goster3b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb419-11"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-11" tabindex="-1"></a>  goster3c <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="sc">+</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,<span class="dv">4</span>)</span>
+<span id="cb419-12"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-12" tabindex="-1"></a>  </span>
+<span id="cb419-13"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-13" tabindex="-1"></a>}</span>
+<span id="cb419-14"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-14" tabindex="-1"></a></span>
+<span id="cb419-15"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-15" tabindex="-1"></a>goster3</span>
+<span id="cb419-16"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-16" tabindex="-1"></a>goster3b</span>
+<span id="cb419-17"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-17" tabindex="-1"></a>goster3c</span>
+<span id="cb419-18"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-18" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Dogru"</span></span>
+<span id="cb419-19"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-19" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span></span>
+<span id="cb419-20"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-20" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">40</span> <span class="dv">684</span> <span class="dv">705</span> <span class="dv">934</span></span></code></pre></div>
 </div>
 <div id="ifelse" class="section level2" number="10.5">
 <h2>
@@ -295,14 +316,14 @@ için test ediniz.</li>
 <p><code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> durum cümlesi, <code>if()</code> durum cümlelerinde vektörlerin kullanımından kaynaklı sıkıntılara çözüm sunar. Bu bakımdan <code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code>, <code>if()</code> durum cümlelerinin vektörler için kullanılabilir halidir.</p>
 <p><code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> durum cümlesinin genel kullanımı aşağıdaki gibidir.</p>
 <p><strong><code>ifelse(koşul, Doğru İfade, Yanlış İfade)</code></strong></p>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb418-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-2" tabindex="-1"></a><span class="fu">ifelse</span>(x<span class="sc">&gt;=</span> <span class="dv">65</span>, <span class="st">"Başarılı"</span> ,<span class="st">"Başarısız"</span>)</span>
-<span id="cb418-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb418-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Başarısız"</span></span></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb420-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb420-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb420-2" tabindex="-1"></a><span class="fu">ifelse</span>(x<span class="sc">&gt;=</span> <span class="dv">65</span>, <span class="st">"Başarılı"</span> ,<span class="st">"Başarısız"</span>)</span>
+<span id="cb420-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb420-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"Başarısız"</span></span></code></pre></div>
 <p><code><a href="https://rdrr.io/r/base/ifelse.html">ifelse()</a></code> eksik veri atamakiçin de kullanılabilir. Eksik verinin 99 ile gösterildiği bir vektörde eksik veri yerine NA atama örneği</p>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-1" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">99</span>,<span class="dv">5</span>))</span>
-<span id="cb419-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-2" tabindex="-1"></a><span class="fu">ifelse</span>(x<span class="sc">==</span><span class="dv">99</span>, <span class="cn">NA</span>, x)</span>
-<span id="cb419-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-3" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">1</span>  <span class="dv">2</span>  <span class="dv">3</span>  <span class="dv">4</span> <span class="dv">99</span>  <span class="dv">5</span></span>
-<span id="cb419-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb419-4" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">1</span>  <span class="dv">2</span>  <span class="dv">3</span>  <span class="dv">4</span> <span class="cn">NA</span>  <span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb421-1" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">99</span>,<span class="dv">5</span>))</span>
+<span id="cb421-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb421-2" tabindex="-1"></a><span class="fu">ifelse</span>(x<span class="sc">==</span><span class="dv">99</span>, <span class="cn">NA</span>, x)</span>
+<span id="cb421-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb421-3" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">1</span>  <span class="dv">2</span>  <span class="dv">3</span>  <span class="dv">4</span> <span class="dv">99</span>  <span class="dv">5</span></span>
+<span id="cb421-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb421-4" tabindex="-1"></a>[<span class="dv">1</span>]  <span class="dv">1</span>  <span class="dv">2</span>  <span class="dv">3</span>  <span class="dv">4</span> <span class="cn">NA</span>  <span class="dv">5</span></span></code></pre></div>
 <div id="sıra-sizde-1" class="section level3" number="10.5.1">
 <h3>
 <span class="header-section-number">10.5.1</span> Sıra Sizde<a class="anchor" aria-label="anchor" href="#s%C4%B1ra-sizde-1"><i class="fas fa-link"></i></a>
@@ -310,11 +331,11 @@ için test ediniz.</li>
 <ol style="list-style-type: decimal">
 <li>Elimizdeki bir nesnede yer alan sayıların tek ya da çift olduğunu yazdırma</li>
 </ol>
-<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb420-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">41</span>)</span>
-<span id="cb420-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb420-2" tabindex="-1"></a>sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">90</span>,<span class="dv">27</span>)</span>
-<span id="cb420-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb420-3" tabindex="-1"></a>sayilar</span>
-<span id="cb420-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb420-4" tabindex="-1"></a> [<span class="dv">1</span>] <span class="dv">89</span> <span class="dv">84</span> <span class="dv">54</span> <span class="dv">81</span> <span class="dv">57</span> <span class="dv">78</span> <span class="dv">55</span> <span class="dv">71</span> <span class="dv">80</span> <span class="dv">62</span> <span class="dv">87</span> <span class="dv">67</span> <span class="dv">70</span> <span class="dv">83</span> <span class="dv">82</span> <span class="dv">61</span> <span class="dv">66</span> <span class="dv">53</span> <span class="dv">50</span> <span class="dv">69</span> <span class="dv">79</span> <span class="dv">64</span> <span class="dv">85</span> <span class="dv">51</span> <span class="dv">73</span></span>
-<span id="cb420-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb420-5" tabindex="-1"></a>[<span class="dv">26</span>] <span class="dv">74</span> <span class="dv">88</span></span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">41</span>)</span>
+<span id="cb422-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-2" tabindex="-1"></a>sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">90</span>,<span class="dv">27</span>)</span>
+<span id="cb422-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-3" tabindex="-1"></a>sayilar</span>
+<span id="cb422-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-4" tabindex="-1"></a> [<span class="dv">1</span>] <span class="dv">89</span> <span class="dv">84</span> <span class="dv">54</span> <span class="dv">81</span> <span class="dv">57</span> <span class="dv">78</span> <span class="dv">55</span> <span class="dv">71</span> <span class="dv">80</span> <span class="dv">62</span> <span class="dv">87</span> <span class="dv">67</span> <span class="dv">70</span> <span class="dv">83</span> <span class="dv">82</span> <span class="dv">61</span> <span class="dv">66</span> <span class="dv">53</span> <span class="dv">50</span> <span class="dv">69</span> <span class="dv">79</span> <span class="dv">64</span> <span class="dv">85</span> <span class="dv">51</span> <span class="dv">73</span></span>
+<span id="cb422-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-5" tabindex="-1"></a>[<span class="dv">26</span>] <span class="dv">74</span> <span class="dv">88</span></span></code></pre></div>
 <pre><code> [1] "Tek Sayi"  "Cift Sayi" "Cift Sayi" "Tek Sayi"  "Tek Sayi"  "Cift Sayi"
  [7] "Tek Sayi"  "Tek Sayi"  "Cift Sayi" "Cift Sayi" "Tek Sayi"  "Tek Sayi" 
 [13] "Cift Sayi" "Tek Sayi"  "Cift Sayi" "Tek Sayi"  "Cift Sayi" "Tek Sayi" 
@@ -323,11 +344,11 @@ için test ediniz.</li>
 <ol start="2" style="list-style-type: decimal">
 <li>Elimizdeki bir nesnede yer alan sayıların 0, pozitif ya negatif oldugu belirleme</li>
 </ol>
-<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">987</span>)</span>
-<span id="cb422-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-2" tabindex="-1"></a>sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">27</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
-<span id="cb422-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-3" tabindex="-1"></a>sayilar</span>
-<span id="cb422-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-4" tabindex="-1"></a> [<span class="dv">1</span>]   <span class="dv">4</span>   <span class="dv">3</span>   <span class="dv">4</span>   <span class="dv">2</span>   <span class="dv">1</span>   <span class="dv">7</span> <span class="sc">-</span><span class="dv">10</span>   <span class="dv">5</span>   <span class="dv">6</span>  <span class="sc">-</span><span class="dv">8</span>   <span class="dv">7</span>  <span class="sc">-</span><span class="dv">3</span>   <span class="dv">9</span>   <span class="dv">7</span>  <span class="sc">-</span><span class="dv">9</span>  <span class="dv">10</span>   <span class="dv">4</span>  <span class="sc">-</span><span class="dv">1</span>  <span class="sc">-</span><span class="dv">8</span></span>
-<span id="cb422-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb422-5" tabindex="-1"></a>[<span class="dv">20</span>]   <span class="dv">8</span>  <span class="sc">-</span><span class="dv">3</span>   <span class="dv">0</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">8</span>   <span class="dv">1</span>   <span class="dv">3</span></span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb424-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">987</span>)</span>
+<span id="cb424-2"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb424-2" tabindex="-1"></a>sayilar <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">10</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">27</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb424-3"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb424-3" tabindex="-1"></a>sayilar</span>
+<span id="cb424-4"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb424-4" tabindex="-1"></a> [<span class="dv">1</span>]   <span class="dv">4</span>   <span class="dv">3</span>   <span class="dv">4</span>   <span class="dv">2</span>   <span class="dv">1</span>   <span class="dv">7</span> <span class="sc">-</span><span class="dv">10</span>   <span class="dv">5</span>   <span class="dv">6</span>  <span class="sc">-</span><span class="dv">8</span>   <span class="dv">7</span>  <span class="sc">-</span><span class="dv">3</span>   <span class="dv">9</span>   <span class="dv">7</span>  <span class="sc">-</span><span class="dv">9</span>  <span class="dv">10</span>   <span class="dv">4</span>  <span class="sc">-</span><span class="dv">1</span>  <span class="sc">-</span><span class="dv">8</span></span>
+<span id="cb424-5"><a href="kontrol-yap%C4%B1lar%C4%B1.html#cb424-5" tabindex="-1"></a>[<span class="dv">20</span>]   <span class="dv">8</span>  <span class="sc">-</span><span class="dv">3</span>   <span class="dv">0</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">8</span>   <span class="dv">1</span>   <span class="dv">3</span></span></code></pre></div>
 <pre><code> [1] "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Pozitif" "Negatif"
  [8] "Pozitif" "Pozitif" "Negatif" "Pozitif" "Negatif" "Pozitif" "Pozitif"
 [15] "Negatif" "Pozitif" "Pozitif" "Negatif" "Negatif" "Pozitif" "Negatif"
@@ -335,7 +356,7 @@ için test ediniz.</li>
 <ol start="3" style="list-style-type: decimal">
 <li>Finalden 50 ve üzeri alan ve en az 11 derse devam edem öğrencilerin geçme notları finalin %60 ve vizenin %40 alınarak hesaplansın, 11'den az derse devam eden öğrencilerin geçme notu final notunun %60' olarak alınsın.</li>
 </ol>
-<div class="sourceCode" id="cb424"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb426"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vize</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">70</span>,<span class="fl">80</span>,<span class="fl">90</span>,<span class="fl">55</span><span class="op">)</span></span>
 <span><span class="va">final</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">45</span>,<span class="fl">65</span>,<span class="fl">70</span>,<span class="fl">50</span>,<span class="fl">80</span><span class="op">)</span></span>
 <span><span class="va">devam</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">14</span>,<span class="fl">10</span>,<span class="fl">13</span>,<span class="fl">12</span>,<span class="fl">11</span><span class="op">)</span></span></code></pre></div>

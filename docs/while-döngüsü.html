@@ -31,6 +31,28 @@
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/style.css">
@@ -70,10 +92,9 @@
 <li><a class="" href="for.html"><span class="header-section-number">11</span> for</a></li>
 <li><a class="active" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">12</span> while döngüsü</a></li>
 <li><a class="" href="fonksiyonlar.html"><span class="header-section-number">13</span> Fonksiyonlar</a></li>
-<li><a class="" href="uygulama-2.html"><span class="header-section-number">14</span> Uygulama</a></li>
-<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">15</span> Döngü Fonkisyonları</a></li>
-<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">16</span> Hata Ayıklama/Debugging</a></li>
-<li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">17</span> Klasik Test Teorisi</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">14</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">16</span> Klasik Test Teorisi</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,37 +107,37 @@
 <span class="header-section-number">Bölüm 12</span> <code>while</code> döngüsü<a class="anchor" aria-label="anchor" href="#while-d%C3%B6ng%C3%BCs%C3%BC"><i class="fas fa-link"></i></a>
 </h1>
 <p>While döngüleri bir koşulu test ederek başlar. Koşul doğruysa, döngü gövdesini çalıştırır. Döngü gövdesi yürütüldükten sonra, koşul tekrar test edilir ve koşul yanlış olana kadar bu şekilde devam eder, ardından döngüden çıkılır.</p>
-<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-1" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb452-2"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-2" tabindex="-1"></a><span class="cf">while</span>(count <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
-<span id="cb452-3"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-3" tabindex="-1"></a>        <span class="fu">print</span>(count)</span>
-<span id="cb452-4"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-4" tabindex="-1"></a>        count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb452-5"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-5" tabindex="-1"></a>}</span>
-<span id="cb452-6"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">0</span></span>
-<span id="cb452-7"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
-<span id="cb452-8"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">2</span></span>
-<span id="cb452-9"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">3</span></span>
-<span id="cb452-10"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span>
-<span id="cb452-11"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-11" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span>
-<span id="cb452-12"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-12" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">6</span></span>
-<span id="cb452-13"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">7</span></span>
-<span id="cb452-14"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-14" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span>
-<span id="cb452-15"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb452-15" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">9</span></span></code></pre></div>
+<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-1" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb454-2"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-2" tabindex="-1"></a><span class="cf">while</span>(count <span class="sc">&lt;</span> <span class="dv">10</span>) {</span>
+<span id="cb454-3"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-3" tabindex="-1"></a>        <span class="fu">print</span>(count)</span>
+<span id="cb454-4"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-4" tabindex="-1"></a>        count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb454-5"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-5" tabindex="-1"></a>}</span>
+<span id="cb454-6"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-6" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">0</span></span>
+<span id="cb454-7"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">1</span></span>
+<span id="cb454-8"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">2</span></span>
+<span id="cb454-9"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">3</span></span>
+<span id="cb454-10"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-10" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">4</span></span>
+<span id="cb454-11"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-11" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">5</span></span>
+<span id="cb454-12"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-12" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">6</span></span>
+<span id="cb454-13"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">7</span></span>
+<span id="cb454-14"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-14" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">8</span></span>
+<span id="cb454-15"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb454-15" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">9</span></span></code></pre></div>
 <p>While döngüleri düzgün yazılmazsa sonsuz döngülere neden olabilir. Dikkatli kullanın!</p>
 <p>Bazen testte birden fazla koşul olabilir.</p>
-<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-1" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb453-2"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb453-3"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-3" tabindex="-1"></a></span>
-<span id="cb453-4"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-4" tabindex="-1"></a><span class="cf">while</span>(z <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> z <span class="sc">&lt;=</span> <span class="dv">10</span>) {</span>
-<span id="cb453-5"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-5" tabindex="-1"></a>        coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
-<span id="cb453-6"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-6" tabindex="-1"></a>        </span>
-<span id="cb453-7"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-7" tabindex="-1"></a>        <span class="cf">if</span>(coin <span class="sc">==</span> <span class="dv">1</span>) {  <span class="do">## rastgele çalışır</span></span>
-<span id="cb453-8"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-8" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb453-9"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-9" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
-<span id="cb453-10"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-10" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb453-11"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-11" tabindex="-1"></a>        } </span>
-<span id="cb453-12"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-12" tabindex="-1"></a>}</span>
-<span id="cb453-13"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-13" tabindex="-1"></a><span class="fu">print</span>(z)</span>
-<span id="cb453-14"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb453-14" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-1" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb455-2"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb455-3"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-3" tabindex="-1"></a></span>
+<span id="cb455-4"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-4" tabindex="-1"></a><span class="cf">while</span>(z <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">&amp;&amp;</span> z <span class="sc">&lt;=</span> <span class="dv">10</span>) {</span>
+<span id="cb455-5"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-5" tabindex="-1"></a>        coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span>
+<span id="cb455-6"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-6" tabindex="-1"></a>        </span>
+<span id="cb455-7"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-7" tabindex="-1"></a>        <span class="cf">if</span>(coin <span class="sc">==</span> <span class="dv">1</span>) {  <span class="do">## rastgele çalışır</span></span>
+<span id="cb455-8"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-8" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb455-9"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-9" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb455-10"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-10" tabindex="-1"></a>                z <span class="ot">&lt;-</span> z <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb455-11"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-11" tabindex="-1"></a>        } </span>
+<span id="cb455-12"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-12" tabindex="-1"></a>}</span>
+<span id="cb455-13"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-13" tabindex="-1"></a><span class="fu">print</span>(z)</span>
+<span id="cb455-14"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb455-14" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">2</span></span></code></pre></div>
 <p>Koşullar her zaman soldan sağa doğru değerlendirilir. Örneğin, yukarıdaki kodda <code>z</code> 3'ten küçük olsaydı, ikinci test değerlendirilmezdi.</p>
 <div id="repeat-döngüler" class="section level2" number="12.1">
 <h2>
@@ -124,7 +145,7 @@
 </h2>
 <p><code>repeat</code> başlangıçtan itibaren sonsuz bir döngü başlatır. Bunlar istatistiksel veya veri analizi uygulamalarında yaygın olarak kullanılmaz, ancak kullanım alanları vardır. Bir <code>repeat</code> döngüsünden çıkmanın tek yolu <code><a href="https://rdrr.io/r/base/Control.html">break</a></code> çağrısı yapmaktır.</p>
 <p>Olası bir paradigma, bir çözüm arıyor olabileceğiniz ve çözüme ulaşana kadar durmak istemediğiniz yinelemeli bir algoritmada olabilir.</p>
-<div class="sourceCode" id="cb454"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x0</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
 <span><span class="va">tol</span> <span class="op">&lt;-</span> <span class="fl">1e-8</span></span>
 <span></span>
@@ -145,7 +166,7 @@
 <span class="header-section-number">12.2</span> <code>next</code>, <code>break</code><a class="anchor" aria-label="anchor" href="#next-break"><i class="fas fa-link"></i></a>
 </h2>
 <p><code><a href="https://rdrr.io/r/base/Control.html">next</a></code> bir döngünün bir yinelemesini atlamak için kullanılır.</p>
-<div class="sourceCode" id="cb455"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb457"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span> <span class="op">{</span></span>
 <span>        <span class="kw">if</span><span class="op">(</span><span class="va">i</span> <span class="op">&lt;=</span> <span class="fl">20</span><span class="op">)</span> <span class="op">{</span></span>
 <span>                <span class="co">## İlk 20 tekrarı atlayın</span></span>
@@ -154,7 +175,7 @@
 <span>        <span class="co">## burada işlem yapılabilir</span></span>
 <span><span class="op">}</span></span></code></pre></div>
 <p><code><a href="https://rdrr.io/r/base/Control.html">break</a></code> döngünün hangi yinelemede olduğuna bakılmaksızın bir döngüden hemen çıkmak için kullanılır.</p>
-<div class="sourceCode" id="cb456"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb458"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span> <span class="op">{</span></span>
 <span>      <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">i</span><span class="op">)</span></span>
 <span></span>
@@ -174,45 +195,45 @@
 <li><p>Burada bahsedilen kontrol yapıları öncelikle program yazmak için kullanışlıdır; komut satırı etkileşimli çalışmalar için "apply" fonksiyonları daha kullanışlıdır.</p></li>
 </ul>
 </div>
-<div id="for-ödev-1" class="section level2" number="12.4">
+<div id="ödev-1" class="section level2" number="12.4">
 <h2>
-<span class="header-section-number">12.4</span> <strong><code>for()</code></strong> Ödev-1<a class="anchor" aria-label="anchor" href="#for-%C3%B6dev-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.4</span> Ödev-1<a class="anchor" aria-label="anchor" href="#%C3%B6dev-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>Fibonacci dizisinin elemanlari <strong>1 1 2 3 5 8 13 21 34 55 89 ...</strong> dizinin elemanlarını <code>for()</code> döngüsü ile oluşturmaya çalışınız.</p>
+<p>Fibonacci dizisinin elemanlari <strong>1 1 2 3 5 8 13 21 34 55 89 ...</strong> dizinin elemanlarını <code>for()</code> ve/ve ya <code>while()</code> döngüsü ile oluşturmaya çalışınız.</p>
 </div>
-<div id="for-ödev-2" class="section level2" number="12.5">
+<div id="ödev-2" class="section level2" number="12.5">
 <h2>
-<span class="header-section-number">12.5</span> <strong><code>for()</code></strong> Ödev-2<a class="anchor" aria-label="anchor" href="#for-%C3%B6dev-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.5</span> Ödev-2<a class="anchor" aria-label="anchor" href="#%C3%B6dev-2"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1786</span>)</span>
-<span id="cb457-2"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-2" tabindex="-1"></a>ornek<span class="ot">&lt;-</span><span class="fu">exp</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2000</span>),<span class="at">nrow=</span><span class="dv">100</span>))</span>
-<span id="cb457-3"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-3" tabindex="-1"></a>index1.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">10</span>)</span>
-<span id="cb457-4"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-4" tabindex="-1"></a>index2.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,<span class="dv">10</span>)</span>
-<span id="cb457-5"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-5" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb457-6"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-6" tabindex="-1"></a>  ornek[index1.temp[i],index2.temp[i]]<span class="ot">&lt;-</span><span class="sc">-</span><span class="dv">1</span></span>
-<span id="cb457-7"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-7" tabindex="-1"></a>}</span>
-<span id="cb457-8"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-8" tabindex="-1"></a> <span class="fu">head</span>(ornek,<span class="dv">6</span>)</span>
-<span id="cb457-9"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-9" tabindex="-1"></a>          [,<span class="dv">1</span>]      [,<span class="dv">2</span>]      [,<span class="dv">3</span>]      [,<span class="dv">4</span>]      [,<span class="dv">5</span>]      [,<span class="dv">6</span>]     [,<span class="dv">7</span>]</span>
-<span id="cb457-10"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-10" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">0.5549525</span> <span class="fl">0.3247338</span> <span class="fl">0.5236032</span> <span class="fl">0.3821027</span> <span class="fl">0.4187483</span> <span class="fl">0.1588847</span> <span class="fl">5.226161</span></span>
-<span id="cb457-11"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-11" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">0.5671734</span> <span class="fl">1.2431592</span> <span class="fl">0.8812069</span> <span class="fl">2.6695443</span> <span class="fl">0.6984453</span> <span class="fl">1.0838792</span> <span class="fl">1.079946</span></span>
-<span id="cb457-12"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-12" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">4.8068457</span> <span class="fl">0.3449856</span> <span class="fl">0.6079096</span> <span class="fl">0.9194116</span> <span class="fl">1.5361330</span> <span class="fl">1.9082522</span> <span class="fl">0.671977</span></span>
-<span id="cb457-13"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-13" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">1.3509234</span> <span class="fl">2.3569582</span> <span class="fl">0.1931423</span> <span class="fl">4.0707377</span> <span class="fl">0.3527276</span> <span class="fl">2.3498825</span> <span class="fl">1.198514</span></span>
-<span id="cb457-14"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-14" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">0.9012032</span> <span class="fl">0.2310683</span> <span class="fl">0.2317487</span> <span class="fl">1.3809955</span> <span class="fl">0.9168741</span> <span class="fl">0.6237213</span> <span class="fl">1.609403</span></span>
-<span id="cb457-15"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-15" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">1.2331483</span> <span class="fl">1.1066056</span> <span class="fl">0.3546027</span> <span class="fl">0.3705946</span> <span class="fl">0.9002303</span> <span class="fl">0.2528151</span> <span class="fl">3.337512</span></span>
-<span id="cb457-16"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-16" tabindex="-1"></a>          [,<span class="dv">8</span>]      [,<span class="dv">9</span>]     [,<span class="dv">10</span>]     [,<span class="dv">11</span>]     [,<span class="dv">12</span>]     [,<span class="dv">13</span>]     [,<span class="dv">14</span>]</span>
-<span id="cb457-17"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-17" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">2.6280057</span> <span class="fl">1.2251526</span> <span class="fl">0.4760966</span> <span class="fl">5.2379018</span> <span class="fl">1.4782655</span> <span class="fl">1.3761338</span> <span class="fl">1.0202608</span></span>
-<span id="cb457-18"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-18" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">2.2087385</span> <span class="fl">0.5195551</span> <span class="fl">0.3757409</span> <span class="fl">0.9004808</span> <span class="fl">0.7409205</span> <span class="fl">2.0543842</span> <span class="fl">0.3668661</span></span>
-<span id="cb457-19"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-19" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">1.5310016</span> <span class="fl">0.6735007</span> <span class="fl">2.2069776</span> <span class="fl">0.5060078</span> <span class="fl">0.7171477</span> <span class="fl">1.2378655</span> <span class="fl">0.3651527</span></span>
-<span id="cb457-20"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-20" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">2.5592899</span> <span class="fl">1.8205257</span> <span class="fl">1.2624052</span> <span class="fl">0.1524106</span> <span class="fl">0.3828322</span> <span class="fl">1.2406799</span> <span class="fl">0.7954326</span></span>
-<span id="cb457-21"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-21" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">1.1005990</span> <span class="fl">1.0619758</span> <span class="fl">2.1047783</span> <span class="fl">2.7816902</span> <span class="fl">1.4010878</span> <span class="fl">0.6140937</span> <span class="fl">0.5136842</span></span>
-<span id="cb457-22"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-22" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">0.9799103</span> <span class="fl">2.7520425</span> <span class="fl">2.5407624</span> <span class="fl">1.3889136</span> <span class="fl">0.4346808</span> <span class="fl">1.0637950</span> <span class="fl">0.1859157</span></span>
-<span id="cb457-23"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-23" tabindex="-1"></a>         [,<span class="dv">15</span>]     [,<span class="dv">16</span>]      [,<span class="dv">17</span>]     [,<span class="dv">18</span>]    [,<span class="dv">19</span>]     [,<span class="dv">20</span>]</span>
-<span id="cb457-24"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-24" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">0.1437680</span> <span class="fl">4.1807643</span>  <span class="fl">1.7389423</span> <span class="fl">3.0760640</span> <span class="fl">1.550557</span> <span class="fl">4.4838291</span></span>
-<span id="cb457-25"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-25" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">3.8674407</span> <span class="fl">1.9349214</span>  <span class="fl">0.6333922</span> <span class="fl">0.4862532</span> <span class="fl">5.275571</span> <span class="fl">0.1161029</span></span>
-<span id="cb457-26"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-26" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">1.4724240</span> <span class="fl">0.5971116</span> <span class="fl">11.5869157</span> <span class="fl">0.7580736</span> <span class="fl">4.755297</span> <span class="fl">1.0583051</span></span>
-<span id="cb457-27"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-27" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">0.1243085</span> <span class="fl">0.8376231</span>  <span class="fl">1.3723291</span> <span class="fl">2.0884571</span> <span class="fl">2.506128</span> <span class="fl">1.2094517</span></span>
-<span id="cb457-28"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-28" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">6.2971803</span> <span class="fl">0.8422164</span>  <span class="fl">1.5335222</span> <span class="fl">0.3079718</span> <span class="fl">2.729447</span> <span class="fl">1.7164885</span></span>
-<span id="cb457-29"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb457-29" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">3.8052219</span> <span class="fl">2.1611055</span>  <span class="fl">0.3280288</span> <span class="fl">2.7773368</span> <span class="fl">1.726558</span> <span class="fl">1.3193446</span></span></code></pre></div>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1786</span>)</span>
+<span id="cb459-2"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-2" tabindex="-1"></a>ornek<span class="ot">&lt;-</span><span class="fu">exp</span>(<span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">2000</span>),<span class="at">nrow=</span><span class="dv">100</span>))</span>
+<span id="cb459-3"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-3" tabindex="-1"></a>index1.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">10</span>)</span>
+<span id="cb459-4"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-4" tabindex="-1"></a>index2.temp<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,<span class="dv">10</span>)</span>
+<span id="cb459-5"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-5" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb459-6"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-6" tabindex="-1"></a>  ornek[index1.temp[i],index2.temp[i]]<span class="ot">&lt;-</span><span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb459-7"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-7" tabindex="-1"></a>}</span>
+<span id="cb459-8"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-8" tabindex="-1"></a> <span class="fu">head</span>(ornek,<span class="dv">6</span>)</span>
+<span id="cb459-9"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-9" tabindex="-1"></a>          [,<span class="dv">1</span>]      [,<span class="dv">2</span>]      [,<span class="dv">3</span>]      [,<span class="dv">4</span>]      [,<span class="dv">5</span>]      [,<span class="dv">6</span>]     [,<span class="dv">7</span>]</span>
+<span id="cb459-10"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-10" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">0.5549525</span> <span class="fl">0.3247338</span> <span class="fl">0.5236032</span> <span class="fl">0.3821027</span> <span class="fl">0.4187483</span> <span class="fl">0.1588847</span> <span class="fl">5.226161</span></span>
+<span id="cb459-11"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-11" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">0.5671734</span> <span class="fl">1.2431592</span> <span class="fl">0.8812069</span> <span class="fl">2.6695443</span> <span class="fl">0.6984453</span> <span class="fl">1.0838792</span> <span class="fl">1.079946</span></span>
+<span id="cb459-12"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-12" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">4.8068457</span> <span class="fl">0.3449856</span> <span class="fl">0.6079096</span> <span class="fl">0.9194116</span> <span class="fl">1.5361330</span> <span class="fl">1.9082522</span> <span class="fl">0.671977</span></span>
+<span id="cb459-13"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-13" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">1.3509234</span> <span class="fl">2.3569582</span> <span class="fl">0.1931423</span> <span class="fl">4.0707377</span> <span class="fl">0.3527276</span> <span class="fl">2.3498825</span> <span class="fl">1.198514</span></span>
+<span id="cb459-14"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-14" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">0.9012032</span> <span class="fl">0.2310683</span> <span class="fl">0.2317487</span> <span class="fl">1.3809955</span> <span class="fl">0.9168741</span> <span class="fl">0.6237213</span> <span class="fl">1.609403</span></span>
+<span id="cb459-15"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-15" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">1.2331483</span> <span class="fl">1.1066056</span> <span class="fl">0.3546027</span> <span class="fl">0.3705946</span> <span class="fl">0.9002303</span> <span class="fl">0.2528151</span> <span class="fl">3.337512</span></span>
+<span id="cb459-16"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-16" tabindex="-1"></a>          [,<span class="dv">8</span>]      [,<span class="dv">9</span>]     [,<span class="dv">10</span>]     [,<span class="dv">11</span>]     [,<span class="dv">12</span>]     [,<span class="dv">13</span>]     [,<span class="dv">14</span>]</span>
+<span id="cb459-17"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-17" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">2.6280057</span> <span class="fl">1.2251526</span> <span class="fl">0.4760966</span> <span class="fl">5.2379018</span> <span class="fl">1.4782655</span> <span class="fl">1.3761338</span> <span class="fl">1.0202608</span></span>
+<span id="cb459-18"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-18" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">2.2087385</span> <span class="fl">0.5195551</span> <span class="fl">0.3757409</span> <span class="fl">0.9004808</span> <span class="fl">0.7409205</span> <span class="fl">2.0543842</span> <span class="fl">0.3668661</span></span>
+<span id="cb459-19"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-19" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">1.5310016</span> <span class="fl">0.6735007</span> <span class="fl">2.2069776</span> <span class="fl">0.5060078</span> <span class="fl">0.7171477</span> <span class="fl">1.2378655</span> <span class="fl">0.3651527</span></span>
+<span id="cb459-20"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-20" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">2.5592899</span> <span class="fl">1.8205257</span> <span class="fl">1.2624052</span> <span class="fl">0.1524106</span> <span class="fl">0.3828322</span> <span class="fl">1.2406799</span> <span class="fl">0.7954326</span></span>
+<span id="cb459-21"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-21" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">1.1005990</span> <span class="fl">1.0619758</span> <span class="fl">2.1047783</span> <span class="fl">2.7816902</span> <span class="fl">1.4010878</span> <span class="fl">0.6140937</span> <span class="fl">0.5136842</span></span>
+<span id="cb459-22"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-22" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">0.9799103</span> <span class="fl">2.7520425</span> <span class="fl">2.5407624</span> <span class="fl">1.3889136</span> <span class="fl">0.4346808</span> <span class="fl">1.0637950</span> <span class="fl">0.1859157</span></span>
+<span id="cb459-23"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-23" tabindex="-1"></a>         [,<span class="dv">15</span>]     [,<span class="dv">16</span>]      [,<span class="dv">17</span>]     [,<span class="dv">18</span>]    [,<span class="dv">19</span>]     [,<span class="dv">20</span>]</span>
+<span id="cb459-24"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-24" tabindex="-1"></a>[<span class="dv">1</span>,] <span class="fl">0.1437680</span> <span class="fl">4.1807643</span>  <span class="fl">1.7389423</span> <span class="fl">3.0760640</span> <span class="fl">1.550557</span> <span class="fl">4.4838291</span></span>
+<span id="cb459-25"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-25" tabindex="-1"></a>[<span class="dv">2</span>,] <span class="fl">3.8674407</span> <span class="fl">1.9349214</span>  <span class="fl">0.6333922</span> <span class="fl">0.4862532</span> <span class="fl">5.275571</span> <span class="fl">0.1161029</span></span>
+<span id="cb459-26"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-26" tabindex="-1"></a>[<span class="dv">3</span>,] <span class="fl">1.4724240</span> <span class="fl">0.5971116</span> <span class="fl">11.5869157</span> <span class="fl">0.7580736</span> <span class="fl">4.755297</span> <span class="fl">1.0583051</span></span>
+<span id="cb459-27"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-27" tabindex="-1"></a>[<span class="dv">4</span>,] <span class="fl">0.1243085</span> <span class="fl">0.8376231</span>  <span class="fl">1.3723291</span> <span class="fl">2.0884571</span> <span class="fl">2.506128</span> <span class="fl">1.2094517</span></span>
+<span id="cb459-28"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-28" tabindex="-1"></a>[<span class="dv">5</span>,] <span class="fl">6.2971803</span> <span class="fl">0.8422164</span>  <span class="fl">1.5335222</span> <span class="fl">0.3079718</span> <span class="fl">2.729447</span> <span class="fl">1.7164885</span></span>
+<span id="cb459-29"><a href="while-d%C3%B6ng%C3%BCs%C3%BC.html#cb459-29" tabindex="-1"></a>[<span class="dv">6</span>,] <span class="fl">3.8052219</span> <span class="fl">2.1611055</span>  <span class="fl">0.3280288</span> <span class="fl">2.7773368</span> <span class="fl">1.726558</span> <span class="fl">1.3193446</span></span></code></pre></div>
 <ul>
 <li><p><strong>ornek</strong> veri setinde i. satırda negatif sayı yok ise çıktıda <strong>i. satırın ortalaması....dir</strong> yazsin.</p></li>
 <li><p>Eğer veri setinde her hangi bir satırda negatif sayı var ise <strong>satır i negatif sayı bulunmaktadır.</strong></p></li>
@@ -532,8 +553,8 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#repeat-d%C3%B6ng%C3%BCler"><span class="header-section-number">12.1</span> repeat Döngüler</a></li>
 <li><a class="nav-link" href="#next-break"><span class="header-section-number">12.2</span> next, break</a></li>
 <li><a class="nav-link" href="#%C3%B6zet-2"><span class="header-section-number">12.3</span> Özet</a></li>
-<li><a class="nav-link" href="#for-%C3%B6dev-1"><span class="header-section-number">12.4</span> for() Ödev-1</a></li>
-<li><a class="nav-link" href="#for-%C3%B6dev-2"><span class="header-section-number">12.5</span> for() Ödev-2</a></li>
+<li><a class="nav-link" href="#%C3%B6dev-1"><span class="header-section-number">12.4</span> Ödev-1</a></li>
+<li><a class="nav-link" href="#%C3%B6dev-2"><span class="header-section-number">12.5</span> Ödev-2</a></li>
 </ul>
 
       <div class="book-extra">

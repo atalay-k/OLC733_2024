@@ -82,7 +82,7 @@ if(x > 3) {
         y <- 0
 }
 x;y
-[1] 8.750534
+[1] 5.194521
 [1] 10
 ```
 
@@ -198,15 +198,15 @@ için test ediniz.
 ```r
 x <- rnorm(1)
 x
-[1] 0.06427316
+[1] -0.6178733
 ```
 
 Random olarak üretilen sayının 1'den büyük olması durumunda çıktı "1'den büyük" -1 ile 1 arasında olması durumunda "-1 ile +1 arasında" -1'den küçük olması durumunda ise "-1'den küçük" çıktısı versin.
 
 
 ```
-[1] -1.438045
-[1] "sayı -1'den küçük"
+[1] 0.7510501
+[1] "sayı -1 ile +1 arasında"
 ```
 
 ## if() & all()
@@ -268,7 +268,7 @@ goster3b
 goster3c
 [1] "Dogru"
 [1] 1 2 3
-[1] 177 301  58 224
+[1]  40 684 705 934
 ```
 
 
@@ -730,7 +730,7 @@ z[i,j]<-y[i,j]^2
 
 time2
    user  system elapsed 
-   0.06    0.00    0.06 
+   0.08    0.00    0.08 
 ```
 
 - ayni islemi dongusuz yapma
@@ -740,7 +740,7 @@ time2
 time3 <- system.time(z<-y^2)
 time3
    user  system elapsed 
-   0.00    0.01    0.01 
+      0       0       0 
 ```
 
 
@@ -928,13 +928,13 @@ for(i in 1:100) {
 
 
 
-## **`for()`** Ödev-1
+##  Ödev-1
 
-Fibonacci dizisinin elemanlari **1 1 2 3 5 8 13 21 34 55 89 ...** dizinin elemanlarını `for()` döngüsü ile oluşturmaya çalışınız.
+Fibonacci dizisinin elemanlari **1 1 2 3 5 8 13 21 34 55 89 ...** dizinin elemanlarını `for()` ve/ve ya `while()` döngüsü ile oluşturmaya çalışınız.
 
 
 
-## **`for()`** Ödev-2
+## Ödev-2
 
 
 ```r
