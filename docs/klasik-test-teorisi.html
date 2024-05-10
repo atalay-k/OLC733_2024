@@ -36,6 +36,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -258,25 +259,13 @@ Preference to know how something works over simply knowing that it works (R)
 <p>Maddelere verilen yanıtlar 1 (hiç katılmıyorum) ile 7 (tamamen katılıyorum) arasında değişen 7 puanlık bir derecelendirme ölçeğine göre kaydedilmiştir.</p>
 <p>Ancak, NFC Ölçeğindeki toplam puanları hesaplamak için, madde yanıtları -3 (tamamen katılmıyorum) ile +3 (tamamen katılıyorum) olarak yeniden kodlanmalıdır.</p>
 <p>Grass et al. (2019 ) veri dosyalarını ve diğer materyalleri paylaşmıştır.</p>
-<p>Aşağıdaki analiz için, NFC Ölçeğine verilen yanıtlar, demografik değişkenler ve Öz Denetim Ölçeği gibi ölçüt ölçümlerinden elde edilen ek puanları içeren orijinal verilerin bir alt kümesini kullanacağız. Bu veri seti 🔗 <a href="%22import/nfc_data.csv%22">import/nfc_data.csv</a> indirilebilir.</p>
-<div class="sourceCode" id="cb580"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://dplyr.tidyverse.org">"dplyr"</a></span><span class="op">)</span> <span class="co"># veri düzenleme</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://r-forge.r-project.org/projects/car/">"car"</a></span><span class="op">)</span>   <span class="co"># veri düzenleme</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://docs.ropensci.org/skimr/">"skimr"</a></span><span class="op">)</span>  <span class="co"># veri inceleme</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://boxuancui.github.io/DataExplorer/">"DataExplorer"</a></span><span class="op">)</span> <span class="co"># veri inceleme</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://www.sthda.com/english/wiki/ggcorrplot-visualization-of-a-correlation-matrix-using-ggplot2">"ggcorrplot"</a></span><span class="op">)</span>   <span class="co"># veri inceleme</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://personality-project.org/r/psych/">"psych"</a></span><span class="op">)</span>  <span class="co">#KTK analizler</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"CTT"</span><span class="op">)</span>   <span class="co">#KTK analizler</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://www.ShinyItemAnalysis.org">"ShinyItemAnalysis"</a></span><span class="op">)</span> <span class="co">#KTK analizler</span></span>
-<span><span class="co"># devtools::install_github("zief0002/QME")</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/zief0002/QME">"QME"</a></span><span class="op">)</span> <span class="co">#KTK analizler</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"difR"</span><span class="op">)</span> <span class="co">#KTK analizler</span></span></code></pre></div>
+<p>Aşağıdaki analiz için, NFC Ölçeğine verilen yanıtlar, demografik değişkenler ve Öz Denetim Ölçeği gibi ölçüt ölçümlerinden elde edilen ek puanları içeren orijinal verilerin bir alt kümesini kullanacağız. Bu veri seti 🔗 <a href="import/nfc_data.csv">import/nfc_data.csv</a> indirilebilir.</p>
 <div id="veri-inceleme-1" class="section level2" number="16.1">
 <h2>
 <span class="header-section-number">16.1</span> Veri İnceleme<a class="anchor" aria-label="anchor" href="#veri-inceleme-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>Verileri özetlemek için genellikle hem istatistiksel hem de veri görselleştirme araçlarını kullanırız. Daha ayrıntılı bilgi için 🔗<a href="https://okanbulut.github.io/bigdata/eda.html">sayfayı</a> inceleyebilirsiniz.</p>
-<div class="sourceCode" id="cb581"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb547"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nfc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"import/nfc_data.csv"</span>, header <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -486,7 +475,7 @@ Preference to know how something works over simply knowing that it works (R)
 </table></div>
 </div>
 <p>Ayrıca fonksiyonunu ile veri setinin yapısını incelyebilirsiniz.</p>
-<div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 'data.frame':    1209 obs. of  23 variables:
 ##  $ id                : int  1 4 7 8 11 12 15 16 21 23 ...
@@ -512,8 +501,8 @@ Preference to know how something works over simply knowing that it works (R)
 ##  $ action_orientation: int  10 11 13 5 18 20 6 16 12 8 ...
 ##  $ effortful_control : int  11 32 10 0 10 24 -3 2 -6 21 ...
 ##  $ self_control      : int  5 16 -2 -4 11 11 -4 3 -10 5 ...</code></pre>
-<p>Veri kümesi 1209 satırdan (yani katılımcılar) ve 23 değişkenden (id, yaş, cinsiyet, eğitim, NFC Ölçeği maddelerine verilen yanıtları temsil eden nfc01 ila nfc16 ve ölçüt ölçümleri için üç puan) oluşmaktadır. DataExplorer paketindeki <span class="citation">(<a href="klasik-test-teorisi.html#ref-DataExplorer">Cui, 2024</a>)</span> introduce() ve plot_intro() fonksiyonlarını kullanarak veri seti hakkında biraz daha bilgi edinebiliriz:</p>
-<div class="sourceCode" id="cb584"><pre class="downlit sourceCode r">
+<p>Veri kümesi 1209 satırdan (yani katılımcılar) ve 23 değişkenden (id, yaş, cinsiyet, eğitim, NFC Ölçeği maddelerine verilen yanıtları temsil eden nfc01 ila nfc16 ve ölçüt ölçümleri için üç puan) oluşmaktadır. DataExplorer paketindeki <span class="citation">(<a href="klasik-test-teorisi.html#ref-DataExplorer">Cui, 2024</a>)</span> <code>introduce()</code> ve <code>plot_intro()</code> fonksiyonlarını kullanarak veri seti hakkında biraz daha bilgi edinebiliriz:</p>
+<div class="sourceCode" id="cb550"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/introduce.html">introduce</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -552,8 +541,8 @@ Preference to know how something works over simply knowing that it works (R)
 </tr></tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/introduce.html">introduce</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span><span class="op">)</span>, </span>
+<div class="sourceCode" id="cb551"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="fu">introduce</span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span><span class="op">)</span>, </span>
 <span>    row.names <span class="op">=</span> <span class="cn">TRUE</span>, col.names <span class="op">=</span> <span class="st">""</span>, </span>
 <span>    format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">","</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kable_styling.html">kable_styling</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -639,25 +628,25 @@ memory_usage
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb586"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb552"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/plot_intro.html">plot_intro</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>değişkenlerin çoğunun sürekli olduğunu (R Likert maddeleri de aslında sıralı olmalarına rağmen sürekli değişkenler olarak tanımlanır), kesikli (yani kategorik) değişkenler (yani cinsiyet ve eğitim) olduğunu göstermektedir. Ayrıca veri setindeki bazı değişkenlerin kayıp değerlere sahip olduğunu ancak kayıp veri oranının çok küçük olduğunu görüyoruz (sadece %0,029).</p>
-<div class="sourceCode" id="cb587"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb553"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/plot_missing.html">plot_missing</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>Eksik değerlere daha yakından bakmak için, her bir değişken için eksiklik oranını görselleştirebiliriz. grafik, yaş ve cinsiyetin bazı kayıp değerlere sahip olduğunu ancak kayıp oranının çok küçük olduğunu (%1’den az) göstermektedir.</p>
-<div class="sourceCode" id="cb588"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb554"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/plot_bar.html">plot_bar</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">nfc</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"education"</span>, <span class="st">"sex"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb589"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb555"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/plot_histogram.html">plot_histogram</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">nfc</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"age"</span>, <span class="st">"self_control"</span>, <span class="st">"action_orientation"</span>, <span class="st">"effortful_control"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb590"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb556"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/plot_boxplot.html">plot_boxplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">nfc</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">$</span><span class="va">sex</span><span class="op">)</span>, <span class="co"># cinsiyet değişkeninde eksik verisi olmayanlar</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"sex"</span>, <span class="st">"self_control"</span>, <span class="st">"action_orientation"</span>, <span class="st">"effortful_control"</span><span class="op">)</span><span class="op">]</span>,  by <span class="op">=</span> <span class="st">"sex"</span><span class="op">)</span> <span class="co"># Kategorik değişken düzeyleri için</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb591"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb557"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## # id değişkeni analizlere dahil edilmediği için çıkarıldı</span></span>
 <span><span class="va">nfc</span> <span class="op">&lt;-</span> <span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/drop_columns.html">drop_columns</a></span><span class="op">(</span><span class="va">nfc</span>, <span class="st">"id"</span><span class="op">)</span></span>
 <span><span class="co">#</span></span>
@@ -665,8 +654,8 @@ memory_usage
 <span><span class="co">#                              report_title = "Veri On Inceleme",</span></span>
 <span><span class="co">#                              output_file = "oninceleme.html")</span></span></code></pre></div>
 <p>Tüm özet istatistikleri tek bir rapor halinde düzenlemek için create_report() fonksiyonunu kullanabiliriz. Bu fonksiyon DataExplorer içindeki çoğu fonksiyonu çalıştırır ve bir HTML rapor dosyası çıktısı verir.🔗 <a href="oninceleme.html">oninceleme</a></p>
-<p>Tek bir analizde nfc veri setinin ayrıntılı bir özetini elde etmek için skimr paketindeki <span class="citation">(<a href="klasik-test-teorisi.html#ref-skimr">Waring et al., 2022</a>)</span> <code><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim()</a></code> fonksiyonunu kullanabiliriz. Çıktıdan da görebileceğiniz gibi, nfc veri setindeki değişkenler için benzer tanımlayıcı istatistikler elde edilir</p>
-<div class="sourceCode" id="cb592"><pre class="downlit sourceCode r">
+<p>Tek bir analizde nfc veri setinin ayrıntılı bir özetini elde etmek için skimr paketindeki <span class="citation">(<a href="klasik-test-teorisi.html#ref-skimr">Waring et al., 2022</a>)</span> <code>skim()</code> fonksiyonunu kullanabiliriz. Çıktıdan da görebileceğiniz gibi, nfc veri setindeki değişkenler için benzer tanımlayıcı istatistikler elde edilir</p>
+<div class="sourceCode" id="cb558"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">skimr</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <caption>
@@ -1047,7 +1036,7 @@ memory_usage
 </tbody>
 </table></div>
 <p>veriler için temel tanımlayıcı istatistikleri elde etmek için psych paketindeki <span class="citation">(<a href="klasik-test-teorisi.html#ref-psych">2024</a>)</span> describe() fonksiyonu kullanılabilir.</p>
-<div class="sourceCode" id="cb593"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb559"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.html">describe</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">nfc</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1446,7 +1435,7 @@ memory_usage
 </h2>
 <p>Madde analizine geçmeden önce, maddelerin birbirleriyle ne kadar güçlü bir şekilde ilişkili olduğunu incelemek için maddeler arasındaki korelasyonları da kontrol etmeliyiz. Maddelerin birbirleriyle belirli bir dereceye kadar ilişkili olmasını bekleriz çünkü maddelerin aynı örtük özelliği (bu örnekte NFC yapısı) ölçtüğünü varsayarız.</p>
 <p>Buna ek olarak, NFC Ölçeğindeki bazı maddelerin olumsuz ifadeler içerdiğini ve dolayısıyla bu maddelere verilen yanıtların diğer maddelerle ters yönde olabileceğini biliyoruz. Örneğin, yüksek NFC’ye sahip bireylerin “Problem çözmeyi içeren görevlerden keyif alma” gibi olumlu ifadeler içeren bir madde için “7 = tamamen katılıyorum” seçeneğini işaretlemeleri beklenirken, “Derinlemesine düşünmeyi gerektirebilecek durumları öngörme ve bunlardan kaçınma” gibi olumsuz ifadeler içeren bir madde için “1 = tamamen katılmıyorum” seçeneğini işaretlemeleri beklenmektedir.</p>
-<div class="sourceCode" id="cb594"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb560"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">matris</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">nfc</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"nfc"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">matris</span><span class="op">)</span></span></code></pre></div>
@@ -1600,7 +1589,7 @@ memory_usage
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb595"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb561"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cormat</span> <span class="op">&lt;-</span> <span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/tetrachor.html">polychoric</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">matris</span><span class="op">)</span><span class="op">$</span><span class="va">rho</span></span>
 <span></span>
 <span><span class="va">cormat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -2511,7 +2500,7 @@ nfc16
 </tbody>
 </table></div>
 <p>Maddeler arasındaki ilişkileri değerlendirmek için ggcorrplot paketini <span class="citation">(<a href="klasik-test-teorisi.html#ref-ggcorrplot">Kassambara, 2023</a>)</span> kullanarak bir korelasyon matrisi grafiği oluşturacağız. psych’den corPlot() kullanılarak da grafik oluşturualbilir.</p>
-<div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb562"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggcorrplot</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggcorrplot/man/ggcorrplot.html">ggcorrplot</a></span><span class="op">(</span></span>
 <span>  corr <span class="op">=</span> <span class="va">cormat</span>, <span class="co"># korelasyon matirisi</span></span>
 <span> type <span class="op">=</span> <span class="st">"lower"</span>, <span class="co"># alt kösegen</span></span>
@@ -2520,7 +2509,7 @@ nfc16
 <span> lab_size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="co">#</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>Ölçekteki birkaç maddenin (mavi/mor renkli kutulara bakınız) diğer maddelerle negatif korelasyona sahip olduğunu görüyoruz. Bunlar NFC Ölçeğindeki (R) işaretli maddelerdir (yani, negatif olarak ifade edilmiş maddeler). Tüm maddeleri aynı yöne koymak için bu maddelere verilen yanıtları ters kodlayacağız (yani, 1=tamamen katılıyorum ile 7=tamamen katılmıyorum). Bu işlem için psych’in reverse.code() fonksiyonunu kullanacağız.</p>
-<div class="sourceCode" id="cb597"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb563"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># ters kodlacak maddeler -1 ile belirtilmiştir.</span></span>
 <span></span>
 <span><span class="va">nfc_key</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">1</span><span class="op">)</span></span>
@@ -2530,7 +2519,7 @@ nfc16
 <span> items <span class="op">=</span> <span class="va">matris</span>, <span class="co"># veri</span></span>
 <span> mini <span class="op">=</span> <span class="fl">1</span>, <span class="co"># minumum deger</span></span>
 <span> maxi <span class="op">=</span> <span class="fl">7</span><span class="op">)</span> <span class="co"># maksimum deger</span></span></code></pre></div>
-<div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb564"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cor_ters_matris</span> <span class="op">&lt;-</span></span>
 <span> <span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/tetrachor.html">polychoric</a></span><span class="op">(</span><span class="va">ters_matris</span><span class="op">)</span><span class="op">$</span><span class="va">rho</span></span>
 <span> <span class="fu">ggcorrplot</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggcorrplot/man/ggcorrplot.html">ggcorrplot</a></span><span class="op">(</span></span>
@@ -2540,7 +2529,7 @@ nfc16
 <span> lab <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span> lab_size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> </span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb565"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># yeniden adlandırma</span></span>
 <span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">ters_matris</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">matris</span><span class="op">)</span></span>
 <span> <span class="va">ters_matris</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">ters_matris</span><span class="op">)</span></span>
@@ -2695,14 +2684,14 @@ nfc16
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb566"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://openmx.ssri.psu.edu">"OpenMx"</a></span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Attaching package: 'OpenMx'</code></pre>
 <pre><code>## The following object is masked from 'package:psych':
 ## 
 ##     tr</code></pre>
-<div class="sourceCode" id="cb603"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb569"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">means_cor</span> <span class="op">&lt;-</span></span>
 <span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/OpenMx/man/vechs.html">vechs</a></span><span class="op">(</span><span class="va">cor_ters_matris</span><span class="op">)</span><span class="op">)</span></span>
 <span> <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">qgraph</span><span class="op">)</span></span>
@@ -2713,7 +2702,7 @@ nfc16
 <span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">means_cor</span>, digits<span class="op">=</span><span class="fl">2</span><span class="op">)</span>,</span>
 <span> sep<span class="op">=</span><span class="st">" "</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb604"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb570"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-ega.net">EGAnet</a></span><span class="op">)</span>; <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psychTools</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Perform Unique Variable Analysis</span></span>
@@ -2756,7 +2745,7 @@ nfc16
 <span class="header-section-number">16.3</span> Madde analizi<a class="anchor" aria-label="anchor" href="#madde-analizi"><i class="fas fa-link"></i></a>
 </h2>
 <p>her bir madde için betimleyici istatistikler (örn. ortalama, standart sapma, minimum ve maksimum), madde düzeyinde istatistikler (örn. güçlük ve ayırt edicilik) ve bunların ölçek düzeyinde istatistiklerle (örn. güvenilirlik) ilişkileri R’de, ikili (yani, 0 veya 1) ve sıralı (örneğin, Likert ölçeği maddeleri) maddeler üzerinde madde analizi yapmak için çeşitli paketler bulunmaktadır.</p>
-<div class="sourceCode" id="cb606"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb572"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">itemanalysis_ctt</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/itemAnalysis.html">itemAnalysis</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">ters_matris</span>, pBisFlag <span class="op">=</span> <span class="fl">.2</span>,</span>
 <span> bisFlag <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span></span>
 <span> <span class="va">itemanalysis_ctt</span><span class="op">$</span><span class="va">itemReport</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> </span></code></pre></div>
@@ -3127,7 +3116,7 @@ nfc16
 <h3>
 <span class="header-section-number">16.3.1</span> psych (Revelle 2021): alpha()<a class="anchor" aria-label="anchor" href="#psych-revelle-2021-alpha"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb607"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb573"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">itemanalysis_psych</span> <span class="op">&lt;-</span> <span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/alpha.html">alpha</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">ters_matris</span><span class="op">)</span></span>
 <span> <span class="va">itemanalysis_psych</span> </span></code></pre></div>
 <pre><code>## 
@@ -3203,7 +3192,7 @@ nfc16
 <h3>
 <span class="header-section-number">16.3.2</span> ShinyItemAnalysis ( ):<a class="anchor" aria-label="anchor" href="#shinyitemanalysis"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb609"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">itemanalysis_shiny</span> <span class="op">&lt;-</span> <span class="fu">ShinyItemAnalysis</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ShinyItemAnalysis/man/ItemAnalysis.html">ItemAnalysis</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">ters_matris</span><span class="op">)</span></span>
 <span></span>
 <span> <span class="va">itemanalysis_shiny</span></span></code></pre></div>
@@ -3609,7 +3598,7 @@ nfc16
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb610"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb576"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ShinyItemAnalysis</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ShinyItemAnalysis/man/DDplot.html">DDplot</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">ters_matris</span>, discrim <span class="op">=</span> <span class="st">"RIR"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-28-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
@@ -3619,7 +3608,7 @@ nfc16
 <span class="header-section-number">16.4</span> Güvenirlik<a class="anchor" aria-label="anchor" href="#g%C3%BCvenirlik"><i class="fas fa-link"></i></a>
 </h2>
 <p>psych paketindeki splitHalf() fonksiyonu ile bu işlem çok daha kolaydır. Bu fonksiyon, belirli bir veri kümesi için tüm (ya da en azından çok sayıda) olası split-half güvenilirlik değerlerini hesaplar. Bu fonksiyonu kullanmak için sadece analiz edilecek veri setini belirtmek yeterlidir.</p>
-<div class="sourceCode" id="cb611"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb577"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/guttman.html">splitHalf</a></span><span class="op">(</span>r <span class="op">=</span> <span class="va">ters_matris</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Split half reliabilities  
 ## Call: psych::splitHalf(r = ters_matris)
@@ -3631,7 +3620,7 @@ nfc16
 ## Guttman lambda 2                          =  0.88
 ## Minimum split half reliability  (beta)    =  0.78
 ## Average interitem r =  0.3  with median =  0.29</code></pre>
-<div class="sourceCode" id="cb613"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb579"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">sp_rel</span> <span class="op">&lt;-</span> <span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/guttman.html">splitHalf</a></span><span class="op">(</span>r <span class="op">=</span> <span class="va">ters_matris</span>, raw <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span> <span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">sp_rel</span><span class="op">$</span><span class="va">raw</span>,</span>
 <span> breaks <span class="op">=</span> <span class="fl">101</span>,</span>
@@ -3644,7 +3633,7 @@ nfc16
 <span class="header-section-number">16.4.1</span> İç tuttarlık<a class="anchor" aria-label="anchor" href="#i%C3%A7-tuttarl%C4%B1k"><i class="fas fa-link"></i></a>
 </h3>
 <p>İç tutarlılık, bir ölçüm aracındaki maddeler arasındaki homojenlik derecesidir.</p>
-<div class="sourceCode" id="cb614"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb580"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">itemanalysis_ctt</span></span></code></pre></div>
 <pre><code>## 
 ##  Number of Items 
@@ -3656,7 +3645,7 @@ nfc16
 ##  Coefficient Alpha 
 ##  0.87</code></pre>
 <p>Benzer şekilde, psych içinde alpha() fonksiyonunu kullanarak madde analizi yaptığımızda, iç tutarlılık sonuçlarını da elde ettik. Tekrar itemanalysis_psych yazdırdığımızda aşağıdaki sonuçları görebiliriz:</p>
-<div class="sourceCode" id="cb616"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">itemanalysis_psych</span></span>
 <span><span class="co">## Reliability analysis   </span></span>
 <span><span class="co">## Call: psych::alpha(x = ters_matris)</span></span>
@@ -3677,10 +3666,10 @@ nfc16
 </ul>
 <p>Bu değerler arasında, iç tutarlılığı yorumlamak için raw_alpha değerini kullanırız. NFC Ölçeği için yüksek iç tutarlılığa işaret etmektedir. Çıktının “Bir madde çıkarılırsa güvenilirlik” başlığı altındaki ikinci kısmı, her bir madde araçtan çıkarıldıktan sonra iç tutarlılığın nasıl değiştiğini göstermektedir. Örneğimizde, ham_alfa sütunu iç tutarlılığın ya aynı kaldığını ya da 0,86’ya düştüğünü göstermektedir, bu da maddelerin hiçbirini çıkarmanın güvenilirliği artırmamıza yardımcı olmayacağını ve bu nedenle orijinal ölçeği kullanmamız gerektiğini göstermektedir.</p>
 <p>İç tuttarlık NFC Ölçeği için iç tutarlılığı hesaplamak üzere QME paketini ( ) kullanacağız. Alfa katsayısı ve Guttman’ın lambda güvenilirlik istatistiklerine ek olarak, QME paketi Feldt-Gilmer ve Feldt-Brennan güvenilirlik istatistiklerini de hesaplar.</p>
-<div class="sourceCode" id="cb617"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">reliability_qme</span> <span class="op">&lt;-</span> <span class="fu">QME</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/QME/man/analyze.html">analyze</a></span><span class="op">(</span>test <span class="op">=</span> <span class="va">ters_matris</span>, id <span class="op">=</span> <span class="cn">FALSE</span>, na_to_0 <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Adding id column.</code></pre>
-<div class="sourceCode" id="cb619"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">reliability_qme</span><span class="op">$</span><span class="va">test_level</span></span></code></pre></div>
 <pre><code>## $descriptives
 ##                          Value
@@ -3701,13 +3690,13 @@ nfc16
 ## Feldt-Brennan     0.8712988 0.8604551 0.8816133 4.732074
 ## Coefficient Alpha 0.8704009 0.8594817 0.8807874 4.748551</code></pre>
 <p>Spearman-Brown formülü İlk olarak, NFC ölçeğinin uzunluğunu 0,5 kat kısaltmanın güvenirliği nasıl değiştirileceğini inceleyeceğiz (yani, uzunluğu 16 maddeden 8 maddeye düşürmek)</p>
-<div class="sourceCode" id="cb621"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb587"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/spearman.brown.html">spearman.brown</a></span><span class="op">(</span>r.xx <span class="op">=</span> <span class="fl">0.87</span>, input <span class="op">=</span> <span class="fl">0.5</span>, n.or.r <span class="op">=</span> <span class="st">"n"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## $r.new
 ## [1] 0.7699115</code></pre>
 <p>Çıktı, NFC Ölçeğinin uzunluğunu 16 maddeden 8 maddeye düşürmek zorunda kalsaydık, iç tutarlılığın kabaca 0,77 olacağını göstermektedir.</p>
 <p>iç tutarlılığı 0.87’den (mevcut değer) 0.90’a (hedef değer) çıkarmak için kaç maddeye daha ihtiyacımız olacağını göreceğiz.</p>
-<div class="sourceCode" id="cb623"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb589"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/spearman.brown.html">spearman.brown</a></span><span class="op">(</span>r.xx <span class="op">=</span> <span class="fl">0.87</span>, input <span class="op">=</span> <span class="fl">0.90</span>, n.or.r <span class="op">=</span> <span class="st">"r"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">n</span><span class="op">$</span><span class="va">n.new</span> <span class="op">*</span> <span class="fl">16</span>, digits <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 22</code></pre>
@@ -3725,7 +3714,7 @@ nfc16
 <p>Öz-Kontrol Ölçeği’nin kısa formundan alınan öz-kontrol puanları <span class="citation">(<a href="klasik-test-teorisi.html#ref-bertrams2009">Bertrams &amp; Dickhäuser, 2009</a>)</span>, Yetişkin Mizaç Anketi, Çabalı Kontrol Ölçeğinden alınan çabalı kontrol puanları ve Eylem Kontrol Ölçeğinden alınan eylem yönelimi puanları.</p>
 <p>Önceki araştırmaların bulgularına dayanarak, NFC ile diğer üç yapı (öz kontrol, çaba gerektiren kontrol ve eylem kontrolü) arasında pozitif, küçük ila orta düzeyde ilişkiler bulmayı bekliyoruz</p>
 <p>İlk olarak, NFC Ölçeği için 1 ila 7 arasındaki madde puanlarını -3 ila +3 olarak yeniden kodlama car paketindeki <span class="citation">(<a href="klasik-test-teorisi.html#ref-car">Fox &amp; Weisberg, 2019</a>)</span> <code><a href="https://rdrr.io/pkg/psychTools/man/recode.html">recode()</a></code> fonkisyonu ile yapılabilir.</p>
-<div class="sourceCode" id="cb625"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb591"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">recode_nfc</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
 <span><span class="fu">car</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/car/man/recode.html">recode</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"1=-3; 2=-2; 3=-1; 4=0; 5=1; 6=2; 7=3"</span><span class="op">)</span></span>
 <span> <span class="op">}</span></span>
@@ -3737,16 +3726,16 @@ nfc16
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##  -43.00    9.00   18.00   16.62   26.00   48.00</code></pre>
 <p>Ölçüt bağlantılı geçerlik</p>
-<div class="sourceCode" id="cb627"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb593"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">nfc_score</span>,</span>
 <span> xlab <span class="op">=</span> <span class="st">"NFC Toplam Puan"</span>,</span>
 <span> main <span class="op">=</span> <span class="st">"NFC Puan Dağılımı"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-37-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>NFC Ölçeği puanlarını diğer ölçeklerden gelen puanlarla tek bir veri kümesinde birleştirebiliriz.</p>
-<div class="sourceCode" id="cb628"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb594"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">nfc_score</span>, <span class="va">nfc</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"action_orientation"</span>,</span>
 <span><span class="st">"self_control"</span>, <span class="st">"effortful_control"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb629"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb595"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cormat_scores</span> <span class="op">&lt;-</span> </span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">scores</span>, use <span class="op">=</span> <span class="st">"pairwise.complete.obs"</span><span class="op">)</span></span>
 <span></span>
@@ -3759,7 +3748,7 @@ nfc16
 <p>korelasyon matrisi grafiği, NFC Ölçeği puanları ile diğer ölçeklerden alınan puanlar arasında gerçekten de pozitif, küçük ila orta düzeyde bir korelasyon olduğunu göstermektedir. Bunların sadece ölçek puanları arasındaki ham korelasyonlar olduğunu unutmayın. Yani, her bir ölçekte yer alan ölçüm hatasından kaynaklanan zayıflama için düzeltilmemiştir.</p>
 <p>Zayıflatılmış korelasyonları elde etmek için psych paketinden <code><a href="https://rdrr.io/pkg/psych/man/correct.cor.html">correct.cor()</a></code> fonksiyonunu kullanacağız. Bu fonksiyonu kullanmak için, ölçek puanlarının ham korelasyon matrisini ve güvenilirlik (yani iç tutarlılık) tahminlerinin bir vektörünü listelememiz gerekir. NFC Ölçeği için güvenilirlik tahmini 0.87’dir ve üç kriter ölçümü için güvenilirlik tahminleri ( ) şeklindedir: Eylem Kontrol Ölçeği: 0.791 Özdenetim Ölçeği: 0.817 Çabalı Kontrol Ölçeği: 0.783</p>
 <p>Bu bilgiyi kullanarak, zayıflatılmış korelasyonları aşağıdaki gibi hesaplayabiliriz:</p>
-<div class="sourceCode" id="cb630"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/correct.cor.html">correct.cor</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">cormat_scores</span>, </span>
 <span>                   y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.87</span>, <span class="fl">0.791</span>, <span class="fl">0.817</span>, <span class="fl">0.783</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">.</span>, <span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -3855,7 +3844,7 @@ effortful_control
 </table></div>
 <p>yeni korelasyon matrisinde, üst köşegen kısmı zayıflama için düzeltilmiş dört ölçek puanı arasındaki korelasyonları, köşegen kısmı dört ölçek için güvenilirlik tahminlerini ve alt köşegen kısmı dört ölçek puanı arasındaki orijinal (yani ham) korelasyonları göstermektedir. Zayıflama için düzeltme uygulandıktan sonra, yeni korelasyon değerleri ham değerlerinden daha yüksek hale gelmiştir. Örneğin, NFC ölçeğinden alınan puanlar Çabalı Kontrol Ölçeğinden alınan puanlarla korelasyona sahipken, iki ölçek arasındaki düzeltilmiş korelasyon ’tir.</p>
 <p>Madde Geçerlik İndeksi NFC Ölçeğinden alınan toplam puanlar ile ölçüt ölçümleri arasındaki ilişkiye ek olarak, NFC Ölçeğindeki her bir madde ile ölçüt ölçümlerinden alınan puanlar arasındaki ilişkiyi kontrol etmek için madde geçerlilik indeksini (IVI) de hesaplayabiliriz. IVI -0,5 ile 0,5 arasında değişebilir ve büyük değerler (mutlak büyüklük olarak) daha yüksek geçerliliğe işaret eder. <code>ivi()</code> fonksiyonu orijinal olarak paketinden gelmektedir</p>
-<div class="sourceCode" id="cb631"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb597"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ivi</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">item</span>, <span class="va">criterion</span><span class="op">)</span> <span class="op">{</span></span>
 <span><span class="va">s_i</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">item</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">r</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">item</span>, <span class="va">criterion</span>, use <span class="op">=</span> <span class="st">"complete.obs"</span><span class="op">)</span></span>
@@ -3898,7 +3887,7 @@ effortful_control
 <li><p>study_year: The student’s year of study at the university</p></li>
 <li><p>major: öğrenci yaşam bilimlerinde ana dal yapmayı planlıyorsa 1, aksi takdirde 0</p></li>
 </ul>
-<div class="sourceCode" id="cb633"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"import/hci.csv"</span>, header <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">hci</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">hci</span><span class="op">)</span></span></code></pre></div>
@@ -4141,13 +4130,13 @@ effortful_control
 ##  $ eng_first_lang: chr  "yes" "yes" "yes" "yes" ...
 ##  $ study_year    : int  4 4 4 4 4 4 4 4 4 3 ...
 ##  $ major         : int  1 1 1 1 1 1 1 1 1 1 ...</code></pre>
-<div class="sourceCode" id="cb635"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb601"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/plot_bar.html">plot_bar</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">hci</span>, nrow <span class="op">=</span> <span class="fl">6</span>, ncol <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-43-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb636"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb602"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/plot_histogram.html">plot_histogram</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">hci</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"study_year"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-44-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb637"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb603"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">key</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"import/hci_key.csv"</span>, header <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="çeldirici-analiz" class="section level2" number="16.6">
@@ -4155,7 +4144,7 @@ effortful_control
 <span class="header-section-number">16.6</span> Çeldirici Analiz<a class="anchor" aria-label="anchor" href="#%C3%A7eldirici-analiz"><i class="fas fa-link"></i></a>
 </h2>
 <p>Bir çeldirici aşağıdaki gibi çeşitli nedenlerden dolayı iyi çalışmayabilir: çoğunlukla yeterli içerik bilgisine sahip öğrencilerin çeldiriciyi seçmesi neredeyse hiçbir öğrenci çeldiriciyi seçmemesi çoğu öğrenci (yeterli içerik bilgisine sahip olanlar da dahil) doğru seçenek yerine çeldiriciyi seçmesi</p>
-<div class="sourceCode" id="cb638"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb604"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_items</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">hci</span>, </span>
 <span>                           <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"item"</span><span class="op">)</span><span class="op">)</span> </span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">hci_items</span><span class="op">)</span></span></code></pre></div>
@@ -4341,7 +4330,7 @@ effortful_control
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb639"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb605"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">celdirici</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/distractorAnalysis.html">distractorAnalysis</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">hci_items</span>, key <span class="op">=</span> <span class="va">key</span><span class="op">)</span></span>
 <span><span class="va">celdirici</span><span class="op">$</span><span class="va">item1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
@@ -4558,20 +4547,20 @@ NA
 <h2>
 <span class="header-section-number">16.7</span> <a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb640"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb606"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">key3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="va">key</span><span class="op">$</span><span class="va">key</span><span class="op">)</span></span>
 <span><span class="fu">ShinyItemAnalysis</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ShinyItemAnalysis/man/plotDistractorAnalysis.html">plotDistractorAnalysis</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">hci_items</span>,       key <span class="op">=</span> <span class="va">key3</span>,</span>
 <span>      num.groups <span class="op">=</span> <span class="fl">3</span>, </span>
 <span>      item <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-49-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## $item1</code></pre>
-<div class="sourceCode" id="cb642"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb608"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_scored</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/score.html">score</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">hci_items</span>,</span>
 <span>     key <span class="op">=</span> <span class="va">key3</span>, </span>
 <span>     output.scored <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>    rel <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> </span></code></pre></div>
 <pre><code>## You will find additional options and better formatting using itemAnalysis().</code></pre>
-<div class="sourceCode" id="cb644"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb610"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">hci_scored</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## List of 3
 ##  $ score      : Named num [1:651] 16 19 17 20 19 20 20 14 18 17 ...
@@ -4593,7 +4582,7 @@ NA
 ##   .. ..$ : NULL
 ##   .. ..$ : chr [1:20] "item1" "item2" "item3" "item4" ...</code></pre>
 <p>Puanlama</p>
-<div class="sourceCode" id="cb646"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb612"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="va">hci_scored</span><span class="op">$</span><span class="va">score</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">scores</span>, </span>
@@ -4606,7 +4595,7 @@ NA
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    3.00   10.00   12.00   12.21   15.00   20.00</code></pre>
-<div class="sourceCode" id="cb648"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb614"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_scored</span><span class="op">$</span><span class="va">reliability</span></span></code></pre></div>
 <pre><code>## 
 ##  Number of Items 
@@ -4623,11 +4612,11 @@ NA
 <span class="header-section-number">16.8</span> Puanlama -Dönüşüm<a class="anchor" aria-label="anchor" href="#puanlama--d%C3%B6n%C3%BC%C5%9F%C3%BCm"><i class="fas fa-link"></i></a>
 </h2>
 <p>Toplam puanları (20 üzerinden) 50 ortalama ve 10 standart sapmaya sahip olacak şekilde yeniden ölçeklendirmek istediğimizi varsayalım (tıpkı T puanları gibi). Bu tür bir dönüşümü gerçekleştirmek için CTT paketindeki <code><a href="https://rdrr.io/pkg/CTT/man/score.transform.html">score.transform()</a></code> kullanabiliriz</p>
-<div class="sourceCode" id="cb650"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb616"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">scores_scaled</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/score.transform.html">score.transform</a></span><span class="op">(</span>scores <span class="op">=</span> <span class="va">scores</span>, </span>
 <span>                  mu.new <span class="op">=</span> <span class="fl">50</span>, </span>
 <span>                  sd.new <span class="op">=</span> <span class="fl">15</span><span class="op">)</span> </span></code></pre></div>
-<div class="sourceCode" id="cb651"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb617"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">scores_scaled</span><span class="op">$</span><span class="va">new.scores</span>,</span>
 <span>     xlab <span class="op">=</span> <span class="st">"Toplam Puan"</span>, </span>
 <span>     main <span class="op">=</span> <span class="st">"Toplam Puan Dağılımı"</span>,  </span>
@@ -4637,7 +4626,7 @@ NA
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>v <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">scores_scaled</span><span class="op">$</span><span class="va">new.scores</span><span class="op">)</span>, col <span class="op">=</span> <span class="st">"red"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>Madde analizleri İlk olarak, psych paketinden tetrachoric() fonksiyonunu kullanarak maddeler arasındaki korelasyonları kontrol edilir ve ardından ggcorrplot() kullanarak korelasyonları görselleştireceğiz.</p>
-<div class="sourceCode" id="cb652"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb618"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cormat_hci</span> <span class="op">&lt;-</span> <span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/tetrachor.html">tetrachoric</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">hci_scored</span><span class="op">$</span><span class="va">scored</span><span class="op">)</span><span class="op">$</span><span class="va">rho</span></span>
 <span><span class="fu">ggcorrplot</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggcorrplot/man/ggcorrplot.html">ggcorrplot</a></span><span class="op">(</span>corr <span class="op">=</span> <span class="va">cormat_hci</span>,</span>
 <span>                       type <span class="op">=</span> <span class="st">"lower"</span>, </span>
@@ -4646,7 +4635,7 @@ NA
 <span>                       lab_size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> </span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>Korelasyon matrisi grafiği, veri kümesinde 7. ve 17. maddeler gibi birkaç sorunlu madde olduğunu göstermektedir</p>
-<div class="sourceCode" id="cb653"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb619"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_items_scored</span> <span class="op">&lt;-</span> <span class="va">hci_scored</span><span class="op">$</span><span class="va">scored</span> </span>
 <span><span class="va">hci_itemanalysis</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/itemAnalysis.html">itemAnalysis</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">hci_items_scored</span>, pBisFlag <span class="op">=</span> <span class="fl">.2</span>, bisFlag <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span></span>
 <span></span>
@@ -4660,7 +4649,7 @@ NA
 ## 
 ##  Coefficient Alpha 
 ##  0.715</code></pre>
-<div class="sourceCode" id="cb655"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb621"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_itemanalysis</span><span class="op">$</span><span class="va">itemReport</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -4866,7 +4855,7 @@ NA
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb656"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb622"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_itemanalysis2</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/itemAnalysis.html">itemAnalysis</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">hci_items_scored</span><span class="op">[</span>, <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">7</span>, <span class="fl">17</span><span class="op">)</span><span class="op">]</span>, </span>
 <span>      pBisFlag <span class="op">=</span> <span class="fl">.2</span>, </span>
 <span>      bisFlag <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span></span>
@@ -4881,7 +4870,7 @@ NA
 ##  Coefficient Alpha 
 ##  0.733</code></pre>
 <p>Güncellenen madde analizi sonuçları, hci testinin iç tutarlılığının 0.73’e yükseldiğini göstermektedir</p>
-<div class="sourceCode" id="cb658"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb624"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_itemanalysis2</span><span class="op">$</span><span class="va">itemReport</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table style="width:100%;" class="table table-sm">
@@ -5078,7 +5067,7 @@ NA
 <p>Test düzeyinde önemli bir istatistik, aşağıdaki şekilde hesaplanabilen ölçmenin standart ölçüm hatasıdır (SEM):</p>
 <p><span class="math display">\[SEM = σ (1 − r_{xx})\]</span></p>
 <p>Burada test puanlarının standart sapması ve testin güvenilirliğidir. SEM ve güven aralıklarını hesaplamak için, madde verilerini girdi olarak alan ve toplam puan için SEM ve güven aralıklarını hesaplayan özel bir fonksiyon oluşturma</p>
-<div class="sourceCode" id="cb659"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb625"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sem.ctt</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">ci.level</span> <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st">"CTT"</span><span class="op">)</span></span>
 <span>  <span class="va">rxx</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/itemAnalysis.html">itemAnalysis</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">x</span><span class="op">)</span><span class="op">$</span><span class="va">alpha</span></span>
@@ -5141,7 +5130,7 @@ NA
 <span class="header-section-number">16.10</span> DIF<a class="anchor" aria-label="anchor" href="#dif"><i class="fas fa-link"></i></a>
 </h2>
 <p>DIF madde düzeyindeki yanlılığı tespit etmek için kullanılır. difR paketi ( ), DIF gösteren iki kategorili maddeleri tespit etmek için çeşitli yöntemler sağlar. Aşağıdaki örnekte, puanlanan hci maddelerini DIF açısından analiz etmek için Mantel-Haenszel (MH) ve lojistik regresyon yöntemlerini kullanacağız. Cinsiyet veya ana dil olarak İngilizce konuşulmasına bağlı olarak DIF sergileyen hci maddelerini belirlemek için grup değişkenleri olarak “sex” ve “eng_first_lang” kullanacağız.</p>
-<div class="sourceCode" id="cb660"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb626"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_scored</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"import/hci_scored.csv"</span>, header <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">hci_scored</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -5342,7 +5331,7 @@ NA
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb661"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb627"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">hci_scored</span><span class="op">$</span><span class="va">gender</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">hci_scored</span><span class="op">$</span><span class="va">eng_first_lang</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
@@ -5351,11 +5340,11 @@ NA
 ## 
 ##  no yes 
 ## 143 508</code></pre>
-<div class="sourceCode" id="cb663"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb629"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_items</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">hci_scored</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"item"</span><span class="op">)</span><span class="op">)</span></span>
 <span> <span class="va">gender</span> <span class="op">&lt;-</span> <span class="va">hci_scored</span><span class="op">$</span><span class="va">gender</span></span>
 <span> <span class="va">language</span> <span class="op">&lt;-</span> <span class="va">hci_scored</span><span class="op">$</span><span class="va">eng_first_lang</span></span></code></pre></div>
-<div class="sourceCode" id="cb664"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb630"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gender_MH</span> <span class="op">&lt;-</span> <span class="fu">difR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/difR/man/difMH.html">difMH</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">hci_items</span>,</span>
 <span>                         group <span class="op">=</span> <span class="va">gender</span>,</span>
 <span>                         focal.name <span class="op">=</span> <span class="st">"F"</span>,</span>
@@ -5444,11 +5433,11 @@ NA
 ##  
 ## Output was not captured!</code></pre>
 <p>Çıktı iki bölümden oluşmaktadır. İlk bölümde maddeler için MH ki-kare istatistikleri ve bunlara karşılık gelen p değerleri gösterilmektedir. İki maddenin (madde 1 ve 19) p değerleri .05’ten küçük olduğu için kız ve erkek öğrenciler arasında DIF gösterdiği gerekçesiyle değerinde işaretlendiğini görüyoruz. Bu maddeler ayrıca “DIF maddesi olarak tespit edilen maddeler” altında listelenmiştir. Çıktının ikinci kısmı, ETS delta sınıflandırması kullanılarak etki büyüklüğünü göstermektedir. İki madde (madde 1 ve 19) “B: Orta Derecede DIF” olarak sınıflandırılırken, geri kalan maddeler “A: İhmal Edilebilir DIF” olarak sınıflandırılmıştır. “C: Büyük DIF” işaretine sahip hiçbir madde yoktur. Grafik ayrıca MH ki-kare testine göre işaretlenmiş iki maddeyi de göstermektedir. Bu maddeler eşik ki-kare değeri için yatay çizginin üzerinde görünmektedir ( anlamlılık düzeyi için ).</p>
-<div class="sourceCode" id="cb666"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb632"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">gender_MH</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-65-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!</code></pre>
-<div class="sourceCode" id="cb668"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb634"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lang_MH</span> <span class="op">&lt;-</span> <span class="fu">difR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/difR/man/difMH.html">difMH</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">hci_items</span>,</span>
 <span>                       group <span class="op">=</span> <span class="va">language</span>,</span>
 <span>                       focal.name <span class="op">=</span> <span class="st">"no"</span>,</span>
@@ -5541,7 +5530,7 @@ NA
 ## Output was not captured! 
 ## The plot was not captured!</code></pre>
 <p>Sonuçlar, üç maddenin (madde 3, 16 ve 18) dile dayalı DIF içerdiği için işaretlendiğini göstermektedir. ETS delta sınıflandırması kullanılarak elde edilen etki büyüklüğü, madde 3’ün “B: Orta DIF” olarak sınıflandırıldığını, madde 16 ve 18’in ise “C: Büyük DIF” olarak sınıflandırıldığını göstermektedir. Bu maddelere ek olarak, 6. ve 20. maddeler “B: Orta DIF” olarak sınıflandırılmıştır. Dolayısıyla, bu maddelerin içeriğinin diğer işaretli maddelerle birlikte incelenmesi ve dile dayalı DIF’in neden ortaya çıktığının belirlenmesi faydalı olacaktır.</p>
-<div class="sourceCode" id="cb670"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb636"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gender_LR</span> <span class="op">&lt;-</span> <span class="fu">difR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/difR/man/difLogistic.html">difLogistic</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">hci_items</span>,</span>
 <span>                               group <span class="op">=</span> <span class="va">gender</span>,</span>
 <span>                               focal.name <span class="op">=</span> <span class="st">"F"</span>,</span>
@@ -5632,21 +5621,21 @@ NA
 ##  Jodoin &amp; Gierl (JG): 0 'A' 0.035 'B' 0.07 'C' 1 
 ## 
 ##  Output was not captured!</code></pre>
-<p><code><a href="https://rdrr.io/pkg/difR/man/difMH.html">difMH()</a></code> fonksiyonundan elde edilen çıktıya benzer şekilde<code>,difLogistic()</code> fonksiyonundan elde edilen çıktı da iki bölümden oluşur. Çıktının üst kısmı, öğeler için olabilirlik oranı test istatistiklerini ve karşılık gelen p değerlerini gösterir. LR yöntemi, 1. ve 19. maddelere ek olarak, anlamlılık düzeyinde 12. ve 20. maddeler olmak üzere iki DIF’li madde daha tespit etmiştir. Çıktının ikinci kısmı, sözde R-kare farkları kullanılarak hesaplanan etki büyüklüklerini göstermektedir. Sonuçlar, her iki etki büyüklüğü ölçütüne (ZT ve JG) dayalı olarak tüm maddeler için etki büyüklüğünün “A: İhmal Edilebilir DIF” olduğunu göstermektedir. Grafikte, dört DIF maddesinin (madde 1, 12, 19 ve 20) eşik olabilirlik oranı istatistiği ( anlamlılık düzeyi için 5.9915) için yatay çizginin üzerinde olduğunu görüyoruz.</p>
+<p><code>difMH()</code> fonksiyonundan elde edilen çıktıya benzer şekilde<code>,difLogistic()</code> fonksiyonundan elde edilen çıktı da iki bölümden oluşur. Çıktının üst kısmı, öğeler için olabilirlik oranı test istatistiklerini ve karşılık gelen p değerlerini gösterir. LR yöntemi, 1. ve 19. maddelere ek olarak, anlamlılık düzeyinde 12. ve 20. maddeler olmak üzere iki DIF’li madde daha tespit etmiştir. Çıktının ikinci kısmı, sözde R-kare farkları kullanılarak hesaplanan etki büyüklüklerini göstermektedir. Sonuçlar, her iki etki büyüklüğü ölçütüne (ZT ve JG) dayalı olarak tüm maddeler için etki büyüklüğünün “A: İhmal Edilebilir DIF” olduğunu göstermektedir. Grafikte, dört DIF maddesinin (madde 1, 12, 19 ve 20) eşik olabilirlik oranı istatistiği ( anlamlılık düzeyi için 5.9915) için yatay çizginin üzerinde olduğunu görüyoruz.</p>
 <p>Aynı fonksiyonu, olabilirlik oranı istatistiğine dayalı olarak işaretlenmiş maddeler için ayrı grafikler oluşturmak için de kullanılabilir. Çizim, x ekseninin toplam test puanları olduğu ve y ekseninin doğru cevap olasılığını (yani 0 üzerinden 1 plot(gender_LR) The plot was not captured! α = .05 α = .05 plot() 1 alma) gösterdiği ayrı madde karakteristik eğrileri oluşturur. Bu grafik, DIF türünün tek tip mi yoksa tek tip olmayan mı olduğunu ve iki gruptan hangisinin (yani referans ve odak) diğer gruba göre avantajlı olduğunu gösterebilir. Aşağıdaki örnekte, 1. ve 19. maddeler için madde karakteristik eğrileri oluşturacağız. Öğeyi item bağımsız değişkenini kullanarak ve çizim türünü plot = "itemCurve" kullanarak belirtiriz.</p>
-<div class="sourceCode" id="cb672"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb638"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">gender_LR</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-68-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!</code></pre>
-<div class="sourceCode" id="cb674"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb640"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">gender_LR</span>, item <span class="op">=</span> <span class="fl">1</span>, plot <span class="op">=</span> <span class="st">"itemCurve"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-69-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!</code></pre>
-<div class="sourceCode" id="cb676"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb642"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">gender_LR</span>, item <span class="op">=</span> <span class="fl">19</span>, plot <span class="op">=</span> <span class="st">"itemCurve"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-70-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!</code></pre>
-<div class="sourceCode" id="cb678"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb644"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lang_LR</span> <span class="op">&lt;-</span> <span class="fu">difR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/difR/man/difLogistic.html">difLogistic</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">hci_items</span>,</span>
 <span>                             group <span class="op">=</span> <span class="va">language</span>,</span>
 <span>                             focal.name <span class="op">=</span> <span class="st">"no"</span>,</span>
@@ -5745,10 +5734,10 @@ NA
 ##  Output was not captured! 
 ## The plot was not captured!</code></pre>
 <p>LR yöntemi, dil temelli DIF içeren altı madde tespit etmiştir: 1, 10, 13, 16, 18 ve 19. maddeler. Ancak bu maddelerin tümü, her iki etki büyüklüğü ölçütüne (ZT ve JG) göre “A: İhmal Edilebilir DIF” etki büyüklüğüne sahiptir. Son olarak, DIF içerdiği için işaretlenen maddelerden ikisine bir göz atalım. Şekillerde, 16. maddenin odak grup lehine tekdüze bir DIF’e sahip olduğunu, 10. maddenin ise tekdüze olmayan bir DIF’e sahip olduğunu görebiliriz (yani hangi grubun tercih edildiği testteki toplam puana bağlıdır)</p>
-<div class="sourceCode" id="cb680"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb646"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">lang_LR</span>, item <span class="op">=</span> <span class="fl">10</span>, plot <span class="op">=</span> <span class="st">"itemCurve"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-72-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb681"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb647"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">lang_LR</span>, item <span class="op">=</span> <span class="fl">16</span>, plot <span class="op">=</span> <span class="st">"itemCurve"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-72-2.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!
@@ -5762,7 +5751,7 @@ NA
 <p>Chiesi, Francesca, Kinga Morsanyi, Maria Anna Donati, and Caterina Primi. 2018. “Applying Item Response Theory to Develop a Shortened Version of the Need for Cognition Scale.” Advances in Cognitive Psychology 14 (3): 75.</p>
 <p>Grass, Julia, Florian Krieger, Philipp Paulus, Samuel Greiff, Anja Strobel, and Alexander Strobel. 2019. “Thinking in Action: Need for Cognition Predicts SelfControl Together with Action Orientation.” PLOS ONE 14 (8): 1–20. .</p>
 
-<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
 <div id="ref-bertrams2009" class="csl-entry">
 Bertrams, A., &amp; Dickhäuser, O. (2009). Messung dispositioneller Selbstkontroll-Kapazität. <em>Diagnostica</em>, <em>55</em>(1), 2–10. <a href="https://doi.org/10.1026/0012-1924.55.1.2">https://doi.org/10.1026/0012-1924.55.1.2</a>
 </div>

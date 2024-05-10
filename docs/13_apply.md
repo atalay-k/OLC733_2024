@@ -42,7 +42,7 @@ function (X, FUN, ...)
         X <- as.list(X)
     .Internal(lapply(X, FUN))
 }
-<bytecode: 0x000002537da6e3b8>
+<bytecode: 0x0000020a97874448>
 <environment: namespace:base>
 ```
 
@@ -132,7 +132,7 @@ Burada, `min = 0` ve `max = 10` argümanları her çağrıldığında `runif()` 
 
 Yani artık rastgele sayılar 0 ile 1 arasında (varsayılan) olmak yerine, hepsi 0 ile 10 arasındadır.
 
-lapply()` fonksiyonu ve arkadaşları _anonim/isimsiz_ fonksiyonları yoğun bir şekilde kullanır. Anonim fonksiyonların isimleri yoktur. Bu fonksiyonlar siz `lapply()` fonksiyonunu kullanırken "anında" oluşturulur. `lapply()` çağrısı tamamlandığında, fonksiyon kaybolur ve çalışma alanında görünmez.
+`lapply()` fonksiyonu ve arkadaşları _anonim/isimsiz_ fonksiyonları yoğun bir şekilde kullanır. Anonim fonksiyonların isimleri yoktur. Bu fonksiyonlar siz `lapply()` fonksiyonunu kullanırken "anında" oluşturulur. `lapply()` çağrısı tamamlandığında, fonksiyon kaybolur ve çalışma alanında görünmez.
 
 Burada iki matris içeren bir liste oluşturuyorum.
 
@@ -308,7 +308,7 @@ $`3`
 </div>
 
 
-Her ay için ayrı alt veri seti olması için `airquality` veri setini `Month` değişkenine göre bölebiliriz.
+Her ay için ayrı alt veri seti olduğu için `airquality` veri setini `Month` değişkenine göre bölebiliriz.
 
 
 ```r
@@ -411,9 +411,9 @@ Wind     11.62258  10.26667   8.941935   8.793548  10.18000
 
 ## tapply
 
-- **tapply()**  fonksiyonun temel görevi verileri belirlenen grup veya faktör değişkenine göre özetlemektir. 
+**tapply()**  fonksiyonun temel görevi verileri belirlenen grup veya faktör değişkenine göre özetlemektir. 
 
-- Fonksiyonda bulunan x argümanı vektör, veri seti ve liste şeklindeki nesneleri, index argümanı "x" nesnesinin altboyut, grup veya faktör değişkenini, FUN argümanı ise uygulanacak fonksiyonu belirtir. 
+Fonksiyonda bulunan x argümanı vektör, veri seti ve liste şeklindeki nesneleri, index argümanı "x" nesnesinin alt boyut, grup veya faktör değişkenini, FUN argümanı ise uygulanacak fonksiyonu belirtir. 
 
 - $tapply(x, Index, FUN, …)$
 
@@ -522,39 +522,13 @@ $kadin
 ```
 
 
-
-```r
-> 
-> isim <- c("Ali","Elif","Su","Deniz","Aras","Berk","Can","Ece","Efe","Arda")
-> boy <- c(160,165,170,155,167,162,169,158,160,164)
-> kilo <- c(55,55,57,50,48,65,58,62,45,47)
-> cinsiyet <- c("erkek","kadin","kadin","kadin","erkek",
-+ "erkek","erkek","kadin","erkek","erkek")
-> cinsiyet <- factor(cinsiyet)
-> beden <- c("S","M","S","M","S","L","M","L","S","S")
-> beden <- factor(beden)
-> #Once veri seti olusturalım
-> df <- data.frame(isim,boy,kilo,cinsiyet, beden)
-```
-
-
-
 ```r
 > 
 > tapply(df$boy, Liste$cinsiyet, sort)
+Error in df$boy: object of type 'closure' is not subsettable
 > 
 > tapply(df$boy, Liste$cinsiyet, sort, decreasing=TRUE)
-$erkek
-[1] 160 160 162 164 167 169
-
-$kadin
-[1] 155 158 165 170
-
-$erkek
-[1] 169 167 164 162 160 160
-
-$kadin
-[1] 170 165 158 155
+Error in df$boy: object of type 'closure' is not subsettable
 ```
 
 
@@ -562,12 +536,10 @@ $kadin
 ```r
 > 
 > tapply(df$boy, Liste$cinsiyet, mean)
+Error in df$boy: object of type 'closure' is not subsettable
 > 
 > tapply(df$boy, Liste$cinsiyet, mean)
-   erkek    kadin 
-163.6667 162.0000 
-   erkek    kadin 
-163.6667 162.0000 
+Error in df$boy: object of type 'closure' is not subsettable
 ```
 
 
@@ -579,50 +551,26 @@ $kadin
 > 
 > 
 > by(df$boy, Liste$cinsiyet, sort)
+Error in df$boy: object of type 'closure' is not subsettable
 > 
 > by(df$boy, Liste$cinsiyet, sort, decreasing=TRUE)
+Error in df$boy: object of type 'closure' is not subsettable
 > 
 > by(df$boy, Liste$cinsiyet, mean)
+Error in df$boy: object of type 'closure' is not subsettable
 > 
 > by(df$boy, Liste$cinsiyet, mean)
-Liste$cinsiyet: erkek
-[1] 160 160 162 164 167 169
------------------------------------------------------------- 
-Liste$cinsiyet: kadin
-[1] 155 158 165 170
-Liste$cinsiyet: erkek
-[1] 169 167 164 162 160 160
------------------------------------------------------------- 
-Liste$cinsiyet: kadin
-[1] 170 165 158 155
-Liste$cinsiyet: erkek
-[1] 163.6667
------------------------------------------------------------- 
-Liste$cinsiyet: kadin
-[1] 162
-Liste$cinsiyet: erkek
-[1] 163.6667
------------------------------------------------------------- 
-Liste$cinsiyet: kadin
-[1] 162
+Error in df$boy: object of type 'closure' is not subsettable
 ```
 
 
 ```r
 > 
 > by(df$boy, Liste$cinsiyet, mean)
+Error in df$boy: object of type 'closure' is not subsettable
 > 
 > by(df$boy, Liste$cinsiyet, mean)
-Liste$cinsiyet: erkek
-[1] 163.6667
------------------------------------------------------------- 
-Liste$cinsiyet: kadin
-[1] 162
-Liste$cinsiyet: erkek
-[1] 163.6667
------------------------------------------------------------- 
-Liste$cinsiyet: kadin
-[1] 162
+Error in df$boy: object of type 'closure' is not subsettable
 ```
 
 ## `apply()`
@@ -670,7 +618,7 @@ Her iki `apply()` çağrısında da dönüş değerinin bir sayı vektörü oldu
 
 Muhtemelen ikinci argümanın, satır istatistikleri mi yoksa sütun istatistikleri mi istediğimize bağlı olarak 1 veya 2 olduğunu fark etmişsinizdir. Peki `apply()` fonksiyonunun ikinci argümanı tam olarak nedir?
 
-MARGIN` argümanı esasen `apply()` fonksiyonuna dizinin hangi boyutunu korumak veya saklamak istediğinizi belirtir. Yani her bir sütunun ortalamasını alırken şunu belirtirim
+`MARGIN` argümanı esasen `apply()` fonksiyonuna dizinin hangi boyutunu korumak veya saklamak istediğinizi belirtir. Yani her bir sütunun ortalamasını alırken şunu belirtirim
 
 
 ```r
@@ -689,7 +637,7 @@ MARGIN` argümanı esasen `apply()` fonksiyonuna dizinin hangi boyutunu korumak 
 
 ### Sütun/Satır Toplamları ve Ortalamaları
 
-Matrislerin sütun/satır toplamları ve sütun/satır ortalamalarının özel durumları için bazı kullanışlı kısayollarımız vardır.
+Matrislerin sütun/satır toplamları ve sütun/satır ortalamalarının özel durumları için bazı kullanışlı kısa yollarımız vardır.
 
 - `rowSums` = `apply(x, 1, sum)`
 - `rowMeans` = `apply(x, 1, mean)`

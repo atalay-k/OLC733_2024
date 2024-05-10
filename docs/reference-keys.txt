@@ -199,11 +199,11 @@ for
 for-döngüsü-ve-kontrol
 next-ve-break
 içiçe-for-döngüleri
+ödev-1
 while-döngüsü
 repeat-döngüler
-next-break
 özet-2
-ödev-1
+ödev-1-1
 ödev-2
 fonksiyonlar
 rda-fonkisyonlar

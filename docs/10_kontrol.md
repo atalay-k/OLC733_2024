@@ -82,7 +82,7 @@ if(x > 3) {
         y <- 0
 }
 x;y
-[1] 5.194521
+[1] 8.545443
 [1] 10
 ```
 
@@ -198,14 +198,14 @@ için test ediniz.
 ```r
 x <- rnorm(1)
 x
-[1] -0.6178733
+[1] 1.112439
 ```
 
 Random olarak üretilen sayının 1'den büyük olması durumunda çıktı "1'den büyük" -1 ile 1 arasında olması durumunda "-1 ile +1 arasında" -1'den küçük olması durumunda ise "-1'den küçük" çıktısı versin.
 
 
 ```
-[1] 0.7510501
+[1] 0.06850901
 [1] "sayı -1 ile +1 arasında"
 ```
 
@@ -268,7 +268,7 @@ goster3b
 goster3c
 [1] "Dogru"
 [1] 1 2 3
-[1]  40 684 705 934
+[1] 559 488 420 790
 ```
 
 
@@ -705,7 +705,6 @@ break
 ```
 
 
-
 -   Döngüler uzun zamanda çalışır. ilk olarak başlangıç noktasını belirleyelim
 
 
@@ -730,7 +729,7 @@ z[i,j]<-y[i,j]^2
 
 time2
    user  system elapsed 
-   0.08    0.00    0.08 
+   0.06    0.00    0.06 
 ```
 
 - ayni islemi dongusuz yapma
@@ -740,7 +739,7 @@ time2
 time3 <- system.time(z<-y^2)
 time3
    user  system elapsed 
-      0       0       0 
+   0.01    0.00    0.02 
 ```
 
 
@@ -792,13 +791,9 @@ m2
 ```
 
 
+## Ödev-1
 
-
--   Kullanıcı tarafından belirlenen **nxn** boyutunda bir matris oluşturulsun.
-
--   **nxn** bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun.
-
--   örneğin m[2,5]=10 olsun.
+-   Kullanıcı tarafından belirlenen **nxn** boyutunda bir matris oluşturulsun. **nxn** bir matrisin her bir elemanı satır ve sütun indeksleri çarpımı olsun. örneğin m[2,5]=10 olsun.
 
 -   Eger matrisin boyutları 10x10'dan büyükse sadece 10 satırını yazsın eğer matrisi boyutları 10x10'dan küçükse hepsini yazsın.
 
@@ -888,34 +883,7 @@ Yukarıdaki kodun `computeEstimate()` fonksiyonu tanımlanmamışsa çalışmaya
 
 Yukarıdaki döngü biraz tehlikelidir çünkü duracağının garantisi yoktur. `x0` ve`x1` değerlerinin ileri geri salındığı ve asla yakınsamadığı bir duruma girebilirsiniz. Bir `for` döngüsü kullanarak iterasyon sayısına sabit bir sınır koymak ve ardından yakınsamanın sağlanıp sağlanmadığını rapor etmek daha iyidir.
 
-## `next`, `break`
 
-`next` bir döngünün bir yinelemesini atlamak için kullanılır.
-
-
-```r
-for(i in 1:100) {
-        if(i <= 20) {
-                ## İlk 20 tekrarı atlayın
-                next                 
-        }
-        ## burada işlem yapılabilir
-}
-```
-
-`break` döngünün hangi yinelemede olduğuna bakılmaksızın bir döngüden hemen çıkmak için kullanılır.
-
-
-```r
-for(i in 1:100) {
-      print(i)
-
-      if(i > 20) {
-              ## 20 iterasyondan sonra döngüyü durdur
-              break  
-      }		
-}
-```
 
 ## Özet
 
@@ -931,6 +899,9 @@ for(i in 1:100) {
 ##  Ödev-1
 
 Fibonacci dizisinin elemanlari **1 1 2 3 5 8 13 21 34 55 89 ...** dizinin elemanlarını `for()` ve/ve ya `while()` döngüsü ile oluşturmaya çalışınız.
+
+
+
 
 
 
@@ -1081,4 +1052,26 @@ for(i in 1:10){
 [1] "Satir 100 ortalamasi 1.5918224514213"
 ```
 
+
+
+
+Matris yazdırma 
+
+```r
+
+n<-as.numeric(readline(prompt = "Kare matriste satir/sutun sayisi olarak kullanilmak uzere bir sayi yaziniz: "))
+matris<-matrix(0,n,n)
+for(satir in 1:n){
+  for(sutun in 1:n){
+    matris[satir,sutun]<- satir*sutun
+  }
+}
+
+if(nrow(matris)<=10){
+  matris
+}else{
+  matris[1:10,1:10]
+}
+
+```
 

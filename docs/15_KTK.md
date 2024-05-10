@@ -3,148 +3,6 @@ bibliography: references.bib
 ---
 
 
-```r
-  library("rmarkdown")
-```
-
-```
-## Warning: package 'rmarkdown' was built under R version 4.3.3
-```
-
-```r
-  library("fontawesome")
-  library("kableExtra")
-```
-
-```
-## 
-## Attaching package: 'kableExtra'
-```
-
-```
-## The following object is masked from 'package:dplyr':
-## 
-##     group_rows
-```
-
-```r
-  library("emo")
-  
-  # Required packages
-  library("dplyr")
-  library("car")
-```
-
-```
-## Loading required package: carData
-```
-
-```
-## 
-## Attaching package: 'car'
-```
-
-```
-## The following object is masked from 'package:dplyr':
-## 
-##     recode
-```
-
-```
-## The following object is masked from 'package:purrr':
-## 
-##     some
-```
-
-```r
-  library("skimr")
-```
-
-```
-## Warning: package 'skimr' was built under R version 4.3.3
-```
-
-```r
-  library("DataExplorer")
-```
-
-```
-## Warning: package 'DataExplorer' was built under R version 4.3.3
-```
-
-```r
-  library("ggcorrplot")
-  library("psych")
-```
-
-```
-## Warning: package 'psych' was built under R version 4.3.3
-```
-
-```
-## 
-## Attaching package: 'psych'
-```
-
-```
-## The following object is masked from 'package:car':
-## 
-##     logit
-```
-
-```
-## The following object is masked from 'package:fontawesome':
-## 
-##     fa
-```
-
-```
-## The following objects are masked from 'package:ggplot2':
-## 
-##     %+%, alpha
-```
-
-```r
-  library("CTT")
-```
-
-```
-## 
-## Attaching package: 'CTT'
-```
-
-```
-## The following objects are masked from 'package:psych':
-## 
-##     polyserial, reliability
-```
-
-```r
-  library("ShinyItemAnalysis")
-```
-
-```
-## Warning: package 'ShinyItemAnalysis' was built under R version 4.3.3
-```
-
-```
-## This is ShinyItemAnalysis version 1.5.0
-## - to run the interactive {shiny} app, call `run_app()`
-## - to learn more, visit `ShinyItemAnalysis.org`
-```
-
-```r
-  library("QME")
-  library("difR")
-```
-
-```
-## Warning: package 'difR' was built under R version 4.3.3
-```
-
-```r
-  library("rmarkdown")
-```
 
 # Klasik Test Teorisi
 
@@ -241,22 +99,9 @@ Ancak, NFC Ölçeğindeki toplam puanları hesaplamak için, madde yanıtları -
 
 Grass et al. (2019 ) veri dosyalarını ve diğer materyalleri paylaşmıştır.
 
-Aşağıdaki analiz için, NFC Ölçeğine verilen yanıtlar, demografik değişkenler ve Öz Denetim Ölçeği gibi ölçüt ölçümlerinden elde edilen ek puanları içeren orijinal verilerin bir alt kümesini kullanacağız. Bu veri seti 🔗 [import/nfc_data.csv](%22import/nfc_data.csv%22) indirilebilir.
+Aşağıdaki analiz için, NFC Ölçeğine verilen yanıtlar, demografik değişkenler ve Öz Denetim Ölçeği gibi ölçüt ölçümlerinden elde edilen ek puanları içeren orijinal verilerin bir alt kümesini kullanacağız. Bu veri seti 🔗 [import/nfc_data.csv](import/nfc_data.csv) indirilebilir.
 
 
-```r
-library("dplyr") # veri düzenleme
-library("car")   # veri düzenleme
-library("skimr")  # veri inceleme
-library("DataExplorer") # veri inceleme
-library("ggcorrplot")   # veri inceleme
-library("psych")  #KTK analizler
-library("CTT")   #KTK analizler
-library("ShinyItemAnalysis") #KTK analizler
-# devtools::install_github("zief0002/QME")
-library("QME") #KTK analizler
-library("difR") #KTK analizler
-```
 
 ## Veri İnceleme
 
@@ -315,7 +160,7 @@ str(nfc)
 ##  $ self_control      : int  5 16 -2 -4 11 11 -4 3 -10 5 ...
 ```
 
-Veri kümesi 1209 satırdan (yani katılımcılar) ve 23 değişkenden (id, yaş, cinsiyet, eğitim, NFC Ölçeği maddelerine verilen yanıtları temsil eden nfc01 ila nfc16 ve ölçüt ölçümleri için üç puan) oluşmaktadır. DataExplorer paketindeki [@DataExplorer] introduce() ve plot_intro() fonksiyonlarını kullanarak veri seti hakkında biraz daha bilgi edinebiliriz:
+Veri kümesi 1209 satırdan (yani katılımcılar) ve 23 değişkenden (id, yaş, cinsiyet, eğitim, NFC Ölçeği maddelerine verilen yanıtları temsil eden nfc01 ila nfc16 ve ölçüt ölçümleri için üç puan) oluşmaktadır. DataExplorer paketindeki [@DataExplorer] `introduce()` ve `plot_intro()` fonksiyonlarını kullanarak veri seti hakkında biraz daha bilgi edinebiliriz:
 
 
 ```r
@@ -1396,7 +1241,7 @@ itemanalysis_psych
 
 -   G6: Guttman’ın Lambda 6 güvenilirliği
 
--    average_r: Ortalama maddeler arası korelasyonlar
+-   average_r: Ortalama maddeler arası korelasyonlar
 
 -   S/N: Sinyal/Gürültü oranı, burada s/n = nr/(1 − r)
 
@@ -1474,7 +1319,7 @@ round(n$n.new * 16, digits = 0)
 
 Yukarıdaki sonuç, 0,90’lık iç tutarlılık düzeyine ulaşmak için 22 maddeye (yani orijinal NFC maddeleriyle benzer özelliklere sahip 6 ek maddeye) ihtiyacımız olduğunu göstermektedir.
 
-### Ölçüt bağlantılı geçerlik 
+### Ölçüt bağlantılı geçerlik
 
 Ölçüt bağıntılı geçerlik, bir ölçme aracının aynı yapıyı (veya benzer yapıyı) ölçen başka bir aracın sonucunu ne kadar iyi tahmin ettiğini gösterir.
 
@@ -1715,7 +1560,7 @@ DataExplorer::plot_histogram(data = hci[, c("study_year")])
 key <- read.csv("import/hci_key.csv", header = TRUE)
 ```
 
-## Çeldirici Analiz 
+## Çeldirici Analiz
 
 Bir çeldirici aşağıdaki gibi çeşitli nedenlerden dolayı iyi çalışmayabilir: çoğunlukla yeterli içerik bilgisine sahip öğrencilerin çeldiriciyi seçmesi neredeyse hiçbir öğrenci çeldiriciyi seçmemesi çoğu öğrenci (yeterli içerik bilgisine sahip olanlar da dahil) doğru seçenek yerine çeldiriciyi seçmesi
 
@@ -2111,7 +1956,7 @@ head(sem_hci)
 
 </div>
 
-## DIF 
+## DIF
 
 DIF madde düzeyindeki yanlılığı tespit etmek için kullanılır. difR paketi ( ), DIF gösteren iki kategorili maddeleri tespit etmek için çeşitli yöntemler sağlar. Aşağıdaki örnekte, puanlanan hci maddelerini DIF açısından analiz etmek için Mantel-Haenszel (MH) ve lojistik regresyon yöntemlerini kullanacağız. Cinsiyet veya ana dil olarak İngilizce konuşulmasına bağlı olarak DIF sergileyen hci maddelerini belirlemek için grup değişkenleri olarak “sex” ve “eng_first_lang” kullanacağız.
 

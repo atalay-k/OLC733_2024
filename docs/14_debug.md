@@ -143,7 +143,7 @@ Fonksiyonun vektörleştirilmesi `Vectorize()` fonksiyonu ile kolayca gerçekle�
 [1] "x 0'dan buyuk"
 ```
 
-Şimdi doğru mesajların herhangi bir uyarı veya hata olmadan yazdırıldığını görebilirsiniz. printmessage4()` fonksiyonunun geri dönüş değerini `out` adında ayrı bir R nesnesinde sakladığıma dikkat edin. Bunun nedeni, `Vectorize()` fonksiyonunu kullandığımda artık dönüş değerinin görünmezliğini korumamasıdır.
+Şimdi doğru mesajların herhangi bir uyarı veya hata olmadan yazdırıldığını görebilirsiniz. `printmessage4()` fonksiyonunun geri dönüş değerini `out` adında ayrı bir R nesnesinde sakladığıma dikkat edin. Bunun nedeni, `Vectorize()` fonksiyonunu kullandığımda artık dönüş değerinin görünmezliğini korumamasıdır.
 
 ## Neyin Yanlış Olduğunu Anlamak
 
@@ -166,7 +166,7 @@ R, kodunuzda hata ayıklama yapmanıza yardımcı olacak bir dizi araç sağlar.
 
 - `traceback()`: bir hata oluştuktan sonra fonksiyon çağrı yığınını yazdırır; hata yoksa hiçbir şey yapmaz
 - `debug()`: bir fonksiyonu "hata ayıklama" modu için işaretler, bu da bir fonksiyonun yürütülmesinde her seferinde bir satır adım atmanızı sağlar
-- `browser()`: çağrıldığı her yerde bir işlevin yürütülmesini askıya alır ve işlevi hata ayıklama moduna geçirir
+- `browser()`: çağrıldığı her yerde bir fonksiyonun yürütülmesini askıya alır ve fonksiyonu hata ayıklama moduna geçirir
 - `trace()`: bir fonksiyonun belirli yerlerine hata ayıklama kodu eklemenizi sağlar 
 - `recover()`: fonksiyon çağrı yığınına göz atabilmeniz için hata davranışını değiştirmenize olanak tanır
 
@@ -211,7 +211,7 @@ Geri izlemeye bakmak, hatanın kabaca nerede oluştuğunu anlamak için yararlı
 
 ##  `debug()`
 
-`debug()` işlevi, bir işlev için etkileşimli bir hata ayıklayıcı (R'de "tarayıcı" olarak da bilinir) başlatır. Hata ayıklayıcıyla, bir hatanın tam olarak nerede oluştuğunu saptamak için bir R işlevini her seferinde bir ifadeyle adımlayabilirsiniz.
+`debug()` fonksiyonu, bir işlev için etkileşimli bir hata ayıklayıcı (R'de "tarayıcı" olarak da bilinir) başlatır. Hata ayıklayıcıyla, bir hatanın tam olarak nerede oluştuğunu saptamak için bir R işlevini her seferinde bir ifadeyle adımlayabilirsiniz.
 
 `debug()` fonksiyonu ilk argüman olarak bir fonksiyon alır. Burada `lm()` fonksiyonunun hata ayıklamasına bir örnek verilmiştir. 
 
@@ -288,7 +288,7 @@ Selection:
 
 `recover()` fonksiyonu, bir hata oluştuğunda ilk olarak fonksiyon çağrı yığınını yazdıracaktır. Daha sonra, çağrı yığınının etrafında atlamayı ve sorunu araştırmayı seçebilirsiniz. Bir kare numarası seçtiğinizde, tarayıcıya yerleştirileceksiniz (tıpkı `debug()` ile tetiklenen etkileşimli hata ayıklayıcı gibi) ve etrafı kurcalayabileceksiniz.
 
-## ÖZet
+## Özet
 
 
 - Bir sorunun/durumun üç ana göstergesi vardır: `message`, `warning`, `error`; sadece bir `error` ölümcüldür
