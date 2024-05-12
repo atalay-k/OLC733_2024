@@ -257,7 +257,10 @@ DataExplorer::plot_bar(data = nfc[, c("education", "sex")])
 
 
 ```r
-DataExplorer::plot_histogram(data = nfc[, c("age", "self_control", "action_orientation", "effortful_control")])
+DataExplorer::plot_histogram(data = 
+            nfc[, c("age", "self_control", 
+                    "action_orientation", 
+                    "effortful_control")])
 ```
 
 <img src="15_KTK_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" />
@@ -265,7 +268,10 @@ DataExplorer::plot_histogram(data = nfc[, c("age", "self_control", "action_orien
 
 ```r
 DataExplorer::plot_boxplot(data = nfc[!is.na(nfc$sex), # cinsiyet değişkeninde eksik verisi olmayanlar
-c("sex", "self_control", "action_orientation", "effortful_control")],  by = "sex") # Kategorik değişken düzeyleri için
+c("sex", "self_control", 
+  "action_orientation", 
+  "effortful_control")],  
+by = "sex") # Kategorik değişken düzeyleri için
 ```
 
 <img src="15_KTK_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" />
@@ -338,41 +344,40 @@ Table: (\#tab:unnamed-chunk-15)Data summary
 |effortful_control  |         0|             1|  6.84| 13.97| -45|  -2|   7|  16|   57|▁▂▇▃▁ |
 |self_control       |         0|             1|  0.12|  8.36| -22|  -5|   0|   5|   24|▁▅▇▃▁ |
 
-veriler için temel tanımlayıcı istatistikleri elde etmek için psych paketindeki [@psych] describe() fonksiyonu kullanılabilir.
+veriler için temel tanımlayıcı istatistikleri elde etmek için psych paketindeki [@psych] `describe()` fonksiyonu kullanılabilir.
 
 
 ```r
-psych::describe(x = nfc)
+psych::describe(x = nfc) %>% 
+  kable(digit=2)
 ```
 
-<div class="kable-table">
 
-|                   | vars|    n|       mean|         sd| median|    trimmed|     mad| min| max| range|       skew|   kurtosis|        se|
-|:------------------|----:|----:|----------:|----------:|------:|----------:|-------:|---:|---:|-----:|----------:|----------:|---------:|
-|age                |    1| 1204| 24.4252492|  3.9316979|     24| 23.9968880|  2.9652|  18|  50|    32|  1.5421412|  4.7857750| 0.1133096|
-|sex*               |    2| 1206|  1.4121061|  0.4924182|      1|  1.3902692|  0.0000|   1|   2|     1|  0.3566926| -1.8743225| 0.0141795|
-|education*         |    3| 1209|  1.0421836|  0.3110129|      1|  1.0000000|  0.0000|   1|   4|     3|  7.5917093| 58.4530403| 0.0089447|
-|nfc01              |    4| 1209|  5.5351530|  1.1886452|      6|  5.6811146|  1.4826|   1|   7|     6| -1.1753410|  1.5551147| 0.0341853|
-|nfc02              |    5| 1209|  4.9445823|  1.3903901|      5|  5.0134159|  1.4826|   1|   7|     6| -0.4919135| -0.3074685| 0.0399874|
-|nfc03              |    6| 1209|  4.4358974|  1.3969225|      5|  4.5067079|  1.4826|   1|   7|     6| -0.3160918| -0.4811379| 0.0401753|
-|nfc04              |    7| 1209|  2.4731183|  1.4730966|      2|  2.2497420|  1.4826|   1|   7|     6|  1.1564305|  0.6775486| 0.0423661|
-|nfc05              |    8| 1209|  5.8188586|  1.2272196|      6|  6.0082559|  1.4826|   1|   7|     6| -1.3305252|  2.0867034| 0.0352947|
-|nfc06              |    9| 1209|  3.7452440|  1.4998717|      4|  3.6914345|  1.4826|   1|   7|     6|  0.2429112| -0.6042283| 0.0431361|
-|nfc07              |   10| 1209|  2.7005790|  1.3183654|      2|  2.5706914|  1.4826|   1|   7|     6|  0.7892363|  0.2011242| 0.0379160|
-|nfc08              |   11| 1209|  3.3399504|  1.5545491|      3|  3.2693498|  1.4826|   1|   7|     6|  0.3954870| -0.6472303| 0.0447086|
-|nfc09              |   12| 1209|  2.4507858|  1.5151885|      2|  2.2311662|  1.4826|   1|   7|     6|  1.0261904|  0.3203071| 0.0435766|
-|nfc10              |   13| 1209|  3.1629446|  1.5248765|      3|  3.0588235|  1.4826|   1|   7|     6|  0.6146081| -0.3045751| 0.0438552|
-|nfc11              |   14| 1209|  2.7452440|  1.4482049|      2|  2.6078431|  1.4826|   1|   7|     6|  0.7184658| -0.1521455| 0.0416502|
-|nfc12              |   15| 1209|  2.4458230|  1.3991191|      2|  2.2641899|  1.4826|   1|   7|     6|  0.9347425|  0.1785533| 0.0402385|
-|nfc13              |   16| 1209|  4.1042184|  1.4208909|      4|  4.1289990|  1.4826|   1|   7|     6| -0.1302949| -0.5362533| 0.0408646|
-|nfc14              |   17| 1209|  3.5707196|  1.4716424|      4|  3.5448916|  1.4826|   1|   7|     6|  0.1136419| -0.5013325| 0.0423242|
-|nfc15              |   18| 1209|  2.2473118|  1.3449235|      2|  2.0309598|  1.4826|   1|   7|     6|  1.2456104|  1.2320487| 0.0386798|
-|nfc16              |   19| 1209|  2.4755997|  1.4023190|      2|  2.2765738|  1.4826|   1|   7|     6|  1.0604453|  0.7740859| 0.0403305|
-|action_orientation |   20| 1209|  9.8436725|  4.9563871|      9|  9.6491228|  4.4478|   0|  24|    24|  0.3294926| -0.4025273| 0.1425450|
-|effortful_control  |   21| 1209|  6.8403639| 13.9691651|      7|  6.9349845| 13.3434| -45|  57|   102| -0.0751545|  0.2692053| 0.4017513|
-|self_control       |   22| 1209|  0.1174524|  8.3631030|      0|  0.0815273|  7.4130| -22|  24|    46|  0.0579028| -0.2601582| 0.2405217|
 
-</div>
+|                   | vars|    n|  mean|    sd| median| trimmed|   mad| min| max| range|  skew| kurtosis|   se|
+|:------------------|----:|----:|-----:|-----:|------:|-------:|-----:|---:|---:|-----:|-----:|--------:|----:|
+|age                |    1| 1204| 24.43|  3.93|     24|   24.00|  2.97|  18|  50|    32|  1.54|     4.79| 0.11|
+|sex*               |    2| 1206|  1.41|  0.49|      1|    1.39|  0.00|   1|   2|     1|  0.36|    -1.87| 0.01|
+|education*         |    3| 1209|  1.04|  0.31|      1|    1.00|  0.00|   1|   4|     3|  7.59|    58.45| 0.01|
+|nfc01              |    4| 1209|  5.54|  1.19|      6|    5.68|  1.48|   1|   7|     6| -1.18|     1.56| 0.03|
+|nfc02              |    5| 1209|  4.94|  1.39|      5|    5.01|  1.48|   1|   7|     6| -0.49|    -0.31| 0.04|
+|nfc03              |    6| 1209|  4.44|  1.40|      5|    4.51|  1.48|   1|   7|     6| -0.32|    -0.48| 0.04|
+|nfc04              |    7| 1209|  2.47|  1.47|      2|    2.25|  1.48|   1|   7|     6|  1.16|     0.68| 0.04|
+|nfc05              |    8| 1209|  5.82|  1.23|      6|    6.01|  1.48|   1|   7|     6| -1.33|     2.09| 0.04|
+|nfc06              |    9| 1209|  3.75|  1.50|      4|    3.69|  1.48|   1|   7|     6|  0.24|    -0.60| 0.04|
+|nfc07              |   10| 1209|  2.70|  1.32|      2|    2.57|  1.48|   1|   7|     6|  0.79|     0.20| 0.04|
+|nfc08              |   11| 1209|  3.34|  1.55|      3|    3.27|  1.48|   1|   7|     6|  0.40|    -0.65| 0.04|
+|nfc09              |   12| 1209|  2.45|  1.52|      2|    2.23|  1.48|   1|   7|     6|  1.03|     0.32| 0.04|
+|nfc10              |   13| 1209|  3.16|  1.52|      3|    3.06|  1.48|   1|   7|     6|  0.61|    -0.30| 0.04|
+|nfc11              |   14| 1209|  2.75|  1.45|      2|    2.61|  1.48|   1|   7|     6|  0.72|    -0.15| 0.04|
+|nfc12              |   15| 1209|  2.45|  1.40|      2|    2.26|  1.48|   1|   7|     6|  0.93|     0.18| 0.04|
+|nfc13              |   16| 1209|  4.10|  1.42|      4|    4.13|  1.48|   1|   7|     6| -0.13|    -0.54| 0.04|
+|nfc14              |   17| 1209|  3.57|  1.47|      4|    3.54|  1.48|   1|   7|     6|  0.11|    -0.50| 0.04|
+|nfc15              |   18| 1209|  2.25|  1.34|      2|    2.03|  1.48|   1|   7|     6|  1.25|     1.23| 0.04|
+|nfc16              |   19| 1209|  2.48|  1.40|      2|    2.28|  1.48|   1|   7|     6|  1.06|     0.77| 0.04|
+|action_orientation |   20| 1209|  9.84|  4.96|      9|    9.65|  4.45|   0|  24|    24|  0.33|    -0.40| 0.14|
+|effortful_control  |   21| 1209|  6.84| 13.97|      7|    6.93| 13.34| -45|  57|   102| -0.08|     0.27| 0.40|
+|self_control       |   22| 1209|  0.12|  8.36|      0|    0.08|  7.41| -22|  24|    46|  0.06|    -0.26| 0.24|
 
 ## Korelasyon
 
@@ -739,7 +744,7 @@ kable_styling(bootstrap_options = c("striped", "condensed"), font_size =
 </tbody>
 </table>
 
-Maddeler arasındaki ilişkileri değerlendirmek için ggcorrplot paketini [@ggcorrplot] kullanarak bir korelasyon matrisi grafiği oluşturacağız. psych’den corPlot() kullanılarak da grafik oluşturualbilir.
+Maddeler arasındaki ilişkileri değerlendirmek için ggcorrplot paketini [@ggcorrplot] kullanarak bir korelasyon matrisi grafiği oluşturacağız. psych’den `corPlot()` kullanılarak da grafik oluşturualbilir.
 
 
 ```r
@@ -753,7 +758,7 @@ ggcorrplot::ggcorrplot(
 
 <img src="15_KTK_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;" />
 
-Ölçekteki birkaç maddenin (mavi/mor renkli kutulara bakınız) diğer maddelerle negatif korelasyona sahip olduğunu görüyoruz. Bunlar NFC Ölçeğindeki (R) işaretli maddelerdir (yani, negatif olarak ifade edilmiş maddeler). Tüm maddeleri aynı yöne koymak için bu maddelere verilen yanıtları ters kodlayacağız (yani, 1=tamamen katılıyorum ile 7=tamamen katılmıyorum). Bu işlem için psych’in reverse.code() fonksiyonunu kullanacağız.
+Ölçekteki birkaç maddenin (mavi/mor renkli kutulara bakınız) diğer maddelerle negatif korelasyona sahip olduğunu görüyoruz. Bunlar NFC Ölçeğindeki (R) işaretli maddelerdir (yani, negatif olarak ifade edilmiş maddeler). Tüm maddeleri aynı yöne koymak için bu maddelere verilen yanıtları ters kodlayacağız (yani, 1=tamamen katılıyorum ile 7=tamamen katılmıyorum). Bu işlem için psych’in `reverse.code()` fonksiyonunu kullanacağız.
 
 
 ```r
@@ -806,20 +811,6 @@ cor_ters_matris <-
 
 ```r
 library("OpenMx")
-```
-
-```
-## 
-## Attaching package: 'OpenMx'
-```
-
-```
-## The following object is masked from 'package:psych':
-## 
-##     tr
-```
-
-```r
  means_cor <-
  mean(vechs(cor_ters_matris))
  library(qgraph)
@@ -1053,7 +1044,7 @@ itemanalysis_ctt <- CTT::itemAnalysis(items = ters_matris, pBisFlag = .2,
 
 ```r
 itemanalysis_psych <- psych::alpha(x = ters_matris)
- itemanalysis_psych 
+ itemanalysis_psych
 ```
 
 ```
@@ -1133,31 +1124,389 @@ itemanalysis_psych <- psych::alpha(x = ters_matris)
 ```r
 itemanalysis_shiny <- ShinyItemAnalysis::ItemAnalysis(Data = ters_matris)
 
- itemanalysis_shiny
+ itemanalysis_shiny %>% kbl(digits = 2)
 ```
 
-<div class="kable-table">
-
-|      | Difficulty|     Mean|       SD|Cut.score | obs.min| Min.score| obs.max| Max.score| Prop.max.score|       RIR|       RIT|Corr.criterion |       ULI|gULI | Alpha.drop| Index.rel|Index.val | Perc.miss| Perc.nr|
-|:-----|----------:|--------:|--------:|:---------|-------:|---------:|-------:|---------:|--------------:|---------:|---------:|:--------------|---------:|:----|----------:|---------:|:---------|---------:|-------:|
-|nfc01 |  0.7558588| 5.535153| 1.188645|NA        |       1|         1|       7|         7|      0.1786600| 0.5830007| 0.6409212|NA             | 0.2726639|NA   |  0.8603155| 0.7618279|NA        |         0|       0|
-|nfc02 |  0.6574304| 4.944582| 1.390390|NA        |       1|         1|       7|         7|      0.1240695| 0.5983857| 0.6639133|NA             | 0.3391863|NA   |  0.8587924| 0.9230985|NA        |         0|       0|
-|nfc03 |  0.5726496| 4.435897| 1.396923|NA        |       1|         1|       7|         7|      0.0496278| 0.5120628| 0.5880748|NA             | 0.3049003|NA   |  0.8626385| 0.8214949|NA        |         0|       0|
-|nfc04 |  0.7544803| 5.526882| 1.473097|NA        |       1|         1|       7|         7|      0.2779156| 0.4275829| 0.5166594|NA             | 0.2873591|NA   |  0.8665634| 0.7610891|NA        |         0|       0|
-|nfc05 |  0.8031431| 5.818859| 1.227220|NA        |       1|         1|       7|         7|      0.3449132| 0.4657545| 0.5370291|NA             | 0.2271560|NA   |  0.8646917| 0.6590526|NA        |         0|       0|
-|nfc06 |  0.5424593| 4.254756| 1.499872|NA        |       1|         1|       7|         7|      0.0479735| 0.3164060| 0.4168850|NA             | 0.2222994|NA   |  0.8717944| 0.6252740|NA        |         0|       0|
-|nfc07 |  0.7165702| 5.299421| 1.318365|NA        |       1|         1|       7|         7|      0.1703888| 0.6637826| 0.7178357|NA             | 0.3415068|NA   |  0.8562648| 0.9463698|NA        |         0|       0|
-|nfc08 |  0.6100083| 4.660050| 1.554549|NA        |       1|         1|       7|         7|      0.1091811| 0.5697411| 0.6466604|NA             | 0.3888922|NA   |  0.8598588| 1.0052654|NA        |         0|       0|
-|nfc09 |  0.7582024| 5.549214| 1.515189|NA        |       1|         1|       7|         7|      0.3399504| 0.4916520| 0.5762896|NA             | 0.3239544|NA   |  0.8636576| 0.8731874|NA        |         0|       0|
-|nfc10 |  0.6395092| 4.837055| 1.524876|NA        |       1|         1|       7|         7|      0.1157982| 0.5032326| 0.5870436|NA             | 0.3259830|NA   |  0.8631153| 0.8951689|NA        |         0|       0|
-|nfc11 |  0.7091260| 5.254756| 1.448205|NA        |       1|         1|       7|         7|      0.2133995| 0.5772984| 0.6481750|NA             | 0.3536981|NA   |  0.8596070| 0.9386902|NA        |         0|       0|
-|nfc12 |  0.7590295| 5.554177| 1.399119|NA        |       1|         1|       7|         7|      0.2985939| 0.5069643| 0.5836499|NA             | 0.2986357|NA   |  0.8628642| 0.8165957|NA        |         0|       0|
-|nfc13 |  0.5173697| 4.104218| 1.420891|NA        |       1|         1|       7|         7|      0.0363937| 0.5384126| 0.6126837|NA             | 0.3263285|NA   |  0.8614377| 0.8705567|NA        |         0|       0|
-|nfc14 |  0.4284533| 3.570720| 1.471642|NA        |       1|         1|       7|         7|      0.0256410| 0.4585722| 0.5444198|NA             | 0.3143888|NA   |  0.8651300| 0.8011912|NA        |         0|       0|
-|nfc15 |  0.7921147| 5.752688| 1.344923|NA        |       1|         1|       7|         7|      0.3564930| 0.4678062| 0.5455510|NA             | 0.2594773|NA   |  0.8645620| 0.7337244|NA        |         0|       0|
-|nfc16 |  0.7540667| 5.524400| 1.402319|NA        |       1|         1|       7|         7|      0.2795699| 0.4585389| 0.5404478|NA             | 0.2721719|NA   |  0.8650091| 0.7578802|NA        |         0|       0|
-
-</div>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> Difficulty </th>
+   <th style="text-align:right;"> Mean </th>
+   <th style="text-align:right;"> SD </th>
+   <th style="text-align:left;"> Cut.score </th>
+   <th style="text-align:right;"> obs.min </th>
+   <th style="text-align:right;"> Min.score </th>
+   <th style="text-align:right;"> obs.max </th>
+   <th style="text-align:right;"> Max.score </th>
+   <th style="text-align:right;"> Prop.max.score </th>
+   <th style="text-align:right;"> RIR </th>
+   <th style="text-align:right;"> RIT </th>
+   <th style="text-align:left;"> Corr.criterion </th>
+   <th style="text-align:right;"> ULI </th>
+   <th style="text-align:left;"> gULI </th>
+   <th style="text-align:right;"> Alpha.drop </th>
+   <th style="text-align:right;"> Index.rel </th>
+   <th style="text-align:left;"> Index.val </th>
+   <th style="text-align:right;"> Perc.miss </th>
+   <th style="text-align:right;"> Perc.nr </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> nfc01 </td>
+   <td style="text-align:right;"> 0.76 </td>
+   <td style="text-align:right;"> 5.54 </td>
+   <td style="text-align:right;"> 1.19 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.18 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.64 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.27 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.76 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc02 </td>
+   <td style="text-align:right;"> 0.66 </td>
+   <td style="text-align:right;"> 4.94 </td>
+   <td style="text-align:right;"> 1.39 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.12 </td>
+   <td style="text-align:right;"> 0.60 </td>
+   <td style="text-align:right;"> 0.66 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.92 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc03 </td>
+   <td style="text-align:right;"> 0.57 </td>
+   <td style="text-align:right;"> 4.44 </td>
+   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.05 </td>
+   <td style="text-align:right;"> 0.51 </td>
+   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.82 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc04 </td>
+   <td style="text-align:right;"> 0.75 </td>
+   <td style="text-align:right;"> 5.53 </td>
+   <td style="text-align:right;"> 1.47 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.43 </td>
+   <td style="text-align:right;"> 0.52 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.29 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.87 </td>
+   <td style="text-align:right;"> 0.76 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc05 </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:right;"> 5.82 </td>
+   <td style="text-align:right;"> 1.23 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.47 </td>
+   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.23 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.66 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc06 </td>
+   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 4.25 </td>
+   <td style="text-align:right;"> 1.50 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.05 </td>
+   <td style="text-align:right;"> 0.32 </td>
+   <td style="text-align:right;"> 0.42 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.22 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.87 </td>
+   <td style="text-align:right;"> 0.63 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc07 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 5.30 </td>
+   <td style="text-align:right;"> 1.32 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.17 </td>
+   <td style="text-align:right;"> 0.66 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.95 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc08 </td>
+   <td style="text-align:right;"> 0.61 </td>
+   <td style="text-align:right;"> 4.66 </td>
+   <td style="text-align:right;"> 1.55 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.11 </td>
+   <td style="text-align:right;"> 0.57 </td>
+   <td style="text-align:right;"> 0.65 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.39 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 1.01 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc09 </td>
+   <td style="text-align:right;"> 0.76 </td>
+   <td style="text-align:right;"> 5.55 </td>
+   <td style="text-align:right;"> 1.52 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.49 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.32 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.87 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc10 </td>
+   <td style="text-align:right;"> 0.64 </td>
+   <td style="text-align:right;"> 4.84 </td>
+   <td style="text-align:right;"> 1.52 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.12 </td>
+   <td style="text-align:right;"> 0.50 </td>
+   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.33 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.90 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc11 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:right;"> 5.25 </td>
+   <td style="text-align:right;"> 1.45 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:right;"> 0.65 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.35 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.94 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc12 </td>
+   <td style="text-align:right;"> 0.76 </td>
+   <td style="text-align:right;"> 5.55 </td>
+   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 0.51 </td>
+   <td style="text-align:right;"> 0.58 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.82 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc13 </td>
+   <td style="text-align:right;"> 0.52 </td>
+   <td style="text-align:right;"> 4.10 </td>
+   <td style="text-align:right;"> 1.42 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:right;"> 0.61 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.33 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.87 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc14 </td>
+   <td style="text-align:right;"> 0.43 </td>
+   <td style="text-align:right;"> 3.57 </td>
+   <td style="text-align:right;"> 1.47 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> 0.46 </td>
+   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.31 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.87 </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc15 </td>
+   <td style="text-align:right;"> 0.79 </td>
+   <td style="text-align:right;"> 5.75 </td>
+   <td style="text-align:right;"> 1.34 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.36 </td>
+   <td style="text-align:right;"> 0.47 </td>
+   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.26 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.86 </td>
+   <td style="text-align:right;"> 0.73 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> nfc16 </td>
+   <td style="text-align:right;"> 0.75 </td>
+   <td style="text-align:right;"> 5.52 </td>
+   <td style="text-align:right;"> 1.40 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.46 </td>
+   <td style="text-align:right;"> 0.54 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.27 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.87 </td>
+   <td style="text-align:right;"> 0.76 </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0 </td>
+  </tr>
+</tbody>
+</table>
 
 
 ```r
@@ -1168,7 +1517,7 @@ ShinyItemAnalysis::DDplot(Data = ters_matris, discrim = "RIR")
 
 ## Güvenirlik
 
-psych paketindeki splitHalf() fonksiyonu ile bu işlem çok daha kolaydır. Bu fonksiyon, belirli bir veri kümesi için tüm (ya da en azından çok sayıda) olası split-half güvenilirlik değerlerini hesaplar. Bu fonksiyonu kullanmak için sadece analiz edilecek veri setini belirtmek yeterlidir.
+psych paketindeki `splitHalf()` fonksiyonu ile bu işlem çok daha kolaydır. Bu fonksiyon, belirli bir veri kümesi için tüm (ya da en azından çok sayıda) olası split-half güvenilirlik değerlerini hesaplar. Bu fonksiyonu kullanmak için sadece analiz edilecek veri setini belirtmek yeterlidir.
 
 
 ```r
@@ -1221,7 +1570,7 @@ itemanalysis_ctt
 ##  0.87
 ```
 
-Benzer şekilde, psych içinde alpha() fonksiyonunu kullanarak madde analizi yaptığımızda, iç tutarlılık sonuçlarını da elde ettik. Tekrar itemanalysis_psych yazdırdığımızda aşağıdaki sonuçları görebiliriz:
+Benzer şekilde, psych içinde `alpha()` fonksiyonunu kullanarak madde analizi yaptığımızda, iç tutarlılık sonuçlarını da elde ettik. Tekrar itemanalysis_psych yazdırdığımızda aşağıdaki sonuçları görebiliriz:
 
 
 ```r
@@ -1255,7 +1604,7 @@ itemanalysis_psych
 
 Bu değerler arasında, iç tutarlılığı yorumlamak için raw_alpha değerini kullanırız. NFC Ölçeği için yüksek iç tutarlılığa işaret etmektedir. Çıktının “Bir madde çıkarılırsa güvenilirlik” başlığı altındaki ikinci kısmı, her bir madde araçtan çıkarıldıktan sonra iç tutarlılığın nasıl değiştiğini göstermektedir. Örneğimizde, ham_alfa sütunu iç tutarlılığın ya aynı kaldığını ya da 0,86’ya düştüğünü göstermektedir, bu da maddelerin hiçbirini çıkarmanın güvenilirliği artırmamıza yardımcı olmayacağını ve bu nedenle orijinal ölçeği kullanmamız gerektiğini göstermektedir.
 
-İç tuttarlık NFC Ölçeği için iç tutarlılığı hesaplamak üzere QME paketini ( ) kullanacağız. Alfa katsayısı ve Guttman’ın lambda güvenilirlik istatistiklerine ek olarak, QME paketi Feldt-Gilmer ve Feldt-Brennan güvenilirlik istatistiklerini de hesaplar.
+İç tuttarlık NFC Ölçeği için iç tutarlılığı hesaplamak üzere QME paketini [@QME] kullanacağız. Alfa katsayısı ve Guttman’ın lambda güvenilirlik istatistiklerine ek olarak, QME paketi Feldt-Gilmer ve Feldt-Brennan güvenilirlik istatistiklerini de hesaplar.
 
 
 ```r
@@ -1442,7 +1791,9 @@ psych::correct.cor(x = cormat_scores,
 
 yeni korelasyon matrisinde, üst köşegen kısmı zayıflama için düzeltilmiş dört ölçek puanı arasındaki korelasyonları, köşegen kısmı dört ölçek için güvenilirlik tahminlerini ve alt köşegen kısmı dört ölçek puanı arasındaki orijinal (yani ham) korelasyonları göstermektedir. Zayıflama için düzeltme uygulandıktan sonra, yeni korelasyon değerleri ham değerlerinden daha yüksek hale gelmiştir. Örneğin, NFC ölçeğinden alınan puanlar Çabalı Kontrol Ölçeğinden alınan puanlarla korelasyona sahipken, iki ölçek arasındaki düzeltilmiş korelasyon ’tir.
 
-Madde Geçerlik İndeksi NFC Ölçeğinden alınan toplam puanlar ile ölçüt ölçümleri arasındaki ilişkiye ek olarak, NFC Ölçeğindeki her bir madde ile ölçüt ölçümlerinden alınan puanlar arasındaki ilişkiyi kontrol etmek için madde geçerlilik indeksini (IVI) de hesaplayabiliriz. IVI -0,5 ile 0,5 arasında değişebilir ve büyük değerler (mutlak büyüklük olarak) daha yüksek geçerliliğe işaret eder. `ivi()` fonksiyonu orijinal olarak paketinden gelmektedir
+### Madde Geçerlik İndeksi
+
+NFC Ölçeğinden alınan toplam puanlar ile ölçüt ölçümleri arasındaki ilişkiye ek olarak, NFC Ölçeğindeki her bir madde ile ölçüt ölçümlerinden alınan puanlar arasındaki ilişkiyi kontrol etmek için madde geçerlilik indeksini (IVI) de hesaplayabiliriz. IVI -0,5 ile 0,5 arasında değişebilir ve büyük değerler (mutlak büyüklük olarak) daha yüksek geçerliliğe işaret eder. `ivi()` fonksiyonu orijinal olarak paketinden gelmektedir
 
 
 ```r
@@ -1453,7 +1804,8 @@ index <- s_i * r
 return(index)
 }
 
-nfc_ivi <- apply(ters_matris,  2, function(x) ivi(item = x,criterion = nfc$action_orientation))
+nfc_ivi <- apply(ters_matris,  2, function(x) ivi(item = x,
+                                                  criterion = nfc$action_orientation))
 
 nfc_ivi <- as.data.frame(nfc_ivi)
 print(nfc_ivi)
@@ -1676,8 +2028,6 @@ celdirici$item1 %>% kbl(digits = 2)
 </table>
 
 
-
-## 
 
 
 ```r
@@ -1958,7 +2308,7 @@ head(sem_hci)
 
 ## DIF
 
-DIF madde düzeyindeki yanlılığı tespit etmek için kullanılır. difR paketi ( ), DIF gösteren iki kategorili maddeleri tespit etmek için çeşitli yöntemler sağlar. Aşağıdaki örnekte, puanlanan hci maddelerini DIF açısından analiz etmek için Mantel-Haenszel (MH) ve lojistik regresyon yöntemlerini kullanacağız. Cinsiyet veya ana dil olarak İngilizce konuşulmasına bağlı olarak DIF sergileyen hci maddelerini belirlemek için grup değişkenleri olarak “sex” ve “eng_first_lang” kullanacağız.
+DIF madde düzeyindeki yanlılığı tespit etmek için kullanılır. difR paketi [@difR] , DIF gösteren iki kategorili maddeleri tespit etmek için çeşitli yöntemler sağlar. Aşağıdaki örnekte, puanlanan hci maddelerini DIF açısından analiz etmek için Mantel-Haenszel (MH) ve lojistik regresyon yöntemlerini kullanacağız. Cinsiyet veya ana dil olarak İngilizce konuşulmasına bağlı olarak DIF sergileyen hci maddelerini belirlemek için grup değişkenleri olarak “sex” ve “eng_first_lang” kullanacağız.
 
 
 ```r

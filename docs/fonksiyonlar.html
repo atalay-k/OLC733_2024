@@ -96,6 +96,7 @@
 <li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">14</span> Döngü Fonkisyonları</a></li>
 <li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
 <li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">16</span> Klasik Test Teorisi</a></li>
+<li><a class="" href="mtk.html"><span class="header-section-number">17</span> MTK</a></li>
 </ul>
 
         <div class="book-extra">
@@ -311,18 +312,18 @@ sd()<code>fonksiyonunun iki argümanı olduğunu unutmayın: x</code> sayı vekt
 <span id="cb466-4"><a href="fonksiyonlar.html#cb466-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata)                 </span>
 <span id="cb466-5"><a href="fonksiyonlar.html#cb466-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
 <span id="cb466-6"><a href="fonksiyonlar.html#cb466-6" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)  </span>
-<span id="cb466-7"><a href="fonksiyonlar.html#cb466-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9256185</span></span>
-<span id="cb466-8"><a href="fonksiyonlar.html#cb466-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9256185</span></span>
-<span id="cb466-9"><a href="fonksiyonlar.html#cb466-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9256185</span></span></code></pre></div>
+<span id="cb466-7"><a href="fonksiyonlar.html#cb466-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9417724</span></span>
+<span id="cb466-8"><a href="fonksiyonlar.html#cb466-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9417724</span></span>
+<span id="cb466-9"><a href="fonksiyonlar.html#cb466-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9417724</span></span></code></pre></div>
 <p>Fonksiyon argümanlarını isimle belirtirken, bunları hangi sırada belirttiğiniz önemli değildir.
 Aşağıdaki örnekte, fonksiyon tanımında tanımlanan ilk argüman <code>x</code> olmasına rağmen, önce <code>na.rm</code> argümanını, ardından <code>x</code> argümanını belirtiyoruz.</p>
 <div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="fonksiyonlar.html#cb467-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
 <span id="cb467-2"><a href="fonksiyonlar.html#cb467-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)     </span>
-<span id="cb467-3"><a href="fonksiyonlar.html#cb467-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9256185</span></span></code></pre></div>
+<span id="cb467-3"><a href="fonksiyonlar.html#cb467-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9417724</span></span></code></pre></div>
 <p>Konumsal eşleştirme ile ada göre eşleştirmeyi karıştırabilirsiniz.
 Bir argüman isme göre eşleştirildiğinde, argüman listesinden "çıkarılır" ve kalan isimsiz argümanlar fonksiyon tanımında listelendikleri sırayla eşleştirilir.</p>
 <div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="fonksiyonlar.html#cb468-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span>
-<span id="cb468-2"><a href="fonksiyonlar.html#cb468-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9256185</span></span></code></pre></div>
+<span id="cb468-2"><a href="fonksiyonlar.html#cb468-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9417724</span></span></code></pre></div>
 <p>Burada, <code>mydata</code> nesnesi <code>x</code> argümanına atanır, çünkü henüz belirtilmemiş tek argüman budur.</p>
 <p>Aşağıda, bir veri kümesine doğrusal modeller uyduran <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunun argüman listesi yer almaktadır.</p>
 <div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="fonksiyonlar.html#cb469-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(lm)</span>
@@ -364,7 +365,7 @@ Aşağıdaki fonksiyon <code>type</code> argümanı için varsayılanı <code>ty
 <div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="fonksiyonlar.html#cb473-1" tabindex="-1"></a><span class="sc">&gt;</span> mean</span>
 <span id="cb473-2"><a href="fonksiyonlar.html#cb473-2" tabindex="-1"></a><span class="cf">function</span> (x, ...) </span>
 <span id="cb473-3"><a href="fonksiyonlar.html#cb473-3" tabindex="-1"></a><span class="fu">UseMethod</span>(<span class="st">"mean"</span>)</span>
-<span id="cb473-4"><a href="fonksiyonlar.html#cb473-4" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x000001606e368288</span><span class="sc">&gt;</span></span>
+<span id="cb473-4"><a href="fonksiyonlar.html#cb473-4" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x000001f9d20823d8</span><span class="sc">&gt;</span></span>
 <span id="cb473-5"><a href="fonksiyonlar.html#cb473-5" tabindex="-1"></a><span class="er">&lt;</span>environment<span class="sc">:</span> namespace<span class="sc">:</span>base<span class="sc">&gt;</span></span></code></pre></div>
 <p>Fonksiyona aktarılan argüman sayısı önceden bilinemediğinde <code>...</code> argümanı gereklidir.
 Bu durum <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> ve <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> gibi fonksiyonlarda açıkça görülmektedir.</p>
