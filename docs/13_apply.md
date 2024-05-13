@@ -42,7 +42,7 @@ function (X, FUN, ...)
         X <- as.list(X)
     .Internal(lapply(X, FUN))
 }
-<bytecode: 0x000001515bc863d8>
+<bytecode: 0x000001a8a8646478>
 <environment: namespace:base>
 ```
 
@@ -187,7 +187,7 @@ Artık fonksiyon anonim değildir; adı `f`dir. Anonim bir fonksiyon mu kullanac
 
 ## `sapply()`
 
-`sapply()` fonksiyonu `lapply()` fonksiyonuna benzer şekilde davranır; tek gerçek fark dönüş değerindedir. sapply()` mümkünse `lapply()` sonucunu basitleştirmeye çalışacaktır. Esasen, `sapply()` girdisi üzerinde `lapply()` çağırır ve ardından aşağıdaki algoritmayı uygular:
+`sapply()` fonksiyonu `lapply()` fonksiyonuna benzer şekilde davranır; tek gerçek fark dönüş değerindedir. `sapply()` mümkünse `lapply()` sonucunu basitleştirmeye çalışacaktır. Esasen, `sapply()` girdisi üzerinde `lapply()` çağırır ve ardından aşağıdaki algoritmayı uygular:
 
 - Eğer sonuç her elemanın uzunluğu 1 olan bir liste ise, o zaman bir vektör döndürülür
 
@@ -500,7 +500,7 @@ $`3`
 > beden <- factor(beden)
 > # tapply() fonksiyonunun liste veri yapısına uygulanması
 > Liste <- list(isim=isim,boy=boy,cinsiyet=cinsiyet,beden=beden,kilo=kilo)
-> 
+> df <- data.frame(isim=isim,boy=boy,cinsiyet=cinsiyet,beden=beden,kilo=kilo)
 > tapply(Liste$boy, Liste$cinsiyet, sort)
 $erkek
 [1] 160 160 162 164 167 169
@@ -525,10 +525,12 @@ $kadin
 ```r
 > 
 > tapply(df$boy, Liste$cinsiyet, sort)
-Error in df$boy: object of type 'closure' is not subsettable
 > 
-> tapply(df$boy, Liste$cinsiyet, sort, decreasing=TRUE)
-Error in df$boy: object of type 'closure' is not subsettable
+$erkek
+[1] 160 160 162 164 167 169
+
+$kadin
+[1] 155 158 165 170
 ```
 
 
@@ -536,10 +538,17 @@ Error in df$boy: object of type 'closure' is not subsettable
 ```r
 > 
 > tapply(df$boy, Liste$cinsiyet, mean)
-Error in df$boy: object of type 'closure' is not subsettable
-> 
-> tapply(df$boy, Liste$cinsiyet, mean)
-Error in df$boy: object of type 'closure' is not subsettable
+   erkek    kadin 
+163.6667 162.0000 
+```
+
+```r
+> tapply(df$boy, Liste$cinsiyet, sort, decreasing=TRUE)
+$erkek
+[1] 169 167 164 162 160 160
+
+$kadin
+[1] 170 165 158 155
 ```
 
 
@@ -551,26 +560,50 @@ Error in df$boy: object of type 'closure' is not subsettable
 > 
 > 
 > by(df$boy, Liste$cinsiyet, sort)
-Error in df$boy: object of type 'closure' is not subsettable
 > 
 > by(df$boy, Liste$cinsiyet, sort, decreasing=TRUE)
-Error in df$boy: object of type 'closure' is not subsettable
 > 
 > by(df$boy, Liste$cinsiyet, mean)
-Error in df$boy: object of type 'closure' is not subsettable
 > 
 > by(df$boy, Liste$cinsiyet, mean)
-Error in df$boy: object of type 'closure' is not subsettable
+Liste$cinsiyet: erkek
+[1] 160 160 162 164 167 169
+------------------------------------------------------------ 
+Liste$cinsiyet: kadin
+[1] 155 158 165 170
+Liste$cinsiyet: erkek
+[1] 169 167 164 162 160 160
+------------------------------------------------------------ 
+Liste$cinsiyet: kadin
+[1] 170 165 158 155
+Liste$cinsiyet: erkek
+[1] 163.6667
+------------------------------------------------------------ 
+Liste$cinsiyet: kadin
+[1] 162
+Liste$cinsiyet: erkek
+[1] 163.6667
+------------------------------------------------------------ 
+Liste$cinsiyet: kadin
+[1] 162
 ```
 
 
 ```r
 > 
 > by(df$boy, Liste$cinsiyet, mean)
-Error in df$boy: object of type 'closure' is not subsettable
 > 
 > by(df$boy, Liste$cinsiyet, mean)
-Error in df$boy: object of type 'closure' is not subsettable
+Liste$cinsiyet: erkek
+[1] 163.6667
+------------------------------------------------------------ 
+Liste$cinsiyet: kadin
+[1] 162
+Liste$cinsiyet: erkek
+[1] 163.6667
+------------------------------------------------------------ 
+Liste$cinsiyet: kadin
+[1] 162
 ```
 
 ## `apply()`
