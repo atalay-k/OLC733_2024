@@ -1804,8 +1804,9 @@ index <- s_i * r
 return(index)
 }
 
-nfc_ivi <- apply(ters_matris,  2, function(x) ivi(item = x,
-                                                  criterion = nfc$action_orientation))
+nfc_ivi <- apply(ters_matris,  2, 
+                 function(x) ivi(item = x,
+                                 criterion = nfc$action_orientation))
 
 nfc_ivi <- as.data.frame(nfc_ivi)
 print(nfc_ivi)
@@ -2144,7 +2145,7 @@ abline(v = mean(scores_scaled$new.scores), col = "red", lwd = 2, lty = 2)
 
 <img src="15_KTK_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" />
 
-Madde analizleri İlk olarak, psych paketinden tetrachoric() fonksiyonunu kullanarak maddeler arasındaki korelasyonları kontrol edilir ve ardından ggcorrplot() kullanarak korelasyonları görselleştireceğiz.
+Madde analizleri İlk olarak, psych paketinden `tetrachoric()` fonksiyonunu kullanarak maddeler arasındaki korelasyonları kontrol edilir ve ardından `ggcorrplot()` kullanarak korelasyonları görselleştireceğiz.
 
 
 ```r
@@ -2163,7 +2164,8 @@ Korelasyon matrisi grafiği, veri kümesinde 7. ve 17. maddeler gibi birkaç sor
 
 ```r
 hci_items_scored <- hci_scored$scored 
-hci_itemanalysis <- CTT::itemAnalysis(items = hci_items_scored, pBisFlag = .2, bisFlag = .2)
+hci_itemanalysis <- CTT::itemAnalysis(items = hci_items_scored,
+                                      pBisFlag = .2, bisFlag = .2)
 
 hci_itemanalysis
 ```
@@ -2182,39 +2184,210 @@ hci_itemanalysis
 
 
 ```r
-hci_itemanalysis$itemReport
+hci_itemanalysis$itemReport %>% 
+  kbl(digits = 2)
 ```
 
-<div class="kable-table">
-
-|itemName |  itemMean|      pBis|       bis| alphaIfDeleted|lowPBis |lowBis |
-|:--------|---------:|---------:|---------:|--------------:|:-------|:------|
-|item1    | 0.6989247| 0.2884191| 0.3799090|      0.7041972|        |       |
-|item2    | 0.7526882| 0.2206134| 0.3012595|      0.7099362|        |       |
-|item3    | 0.8479263| 0.3500418| 0.5342029|      0.7006955|        |       |
-|item4    | 0.4039939| 0.1729866| 0.2191492|      0.7150766|X       |       |
-|item5    | 0.4423963| 0.2767838| 0.3482235|      0.7053505|        |       |
-|item6    | 0.3625192| 0.3418847| 0.4382615|      0.6991489|        |       |
-|item7    | 0.5468510| 0.1009380| 0.1268260|      0.7219621|X       |X      |
-|item8    | 0.7050691| 0.3252153| 0.4298641|      0.7009218|        |       |
-|item9    | 0.4331797| 0.2129679| 0.2682936|      0.7114344|        |       |
-|item10   | 0.6482335| 0.2643568| 0.3401897|      0.7064185|        |       |
-|item11   | 0.7788018| 0.2851116| 0.3984179|      0.7046640|        |       |
-|item12   | 0.5729647| 0.3155934| 0.3979784|      0.7015908|        |       |
-|item13   | 0.6082949| 0.3612177| 0.4589895|      0.6972122|        |       |
-|item14   | 0.7588326| 0.3385578| 0.4646592|      0.7001197|        |       |
-|item15   | 0.4439324| 0.3005640| 0.3780651|      0.7030488|        |       |
-|item16   | 0.6067588| 0.3822268| 0.4854921|      0.6951640|        |       |
-|item17   | 0.2964670| 0.0434041| 0.0573203|      0.7253267|X       |X      |
-|item18   | 0.7972350| 0.4171207| 0.5941258|      0.6943156|        |       |
-|item19   | 0.7849462| 0.3665060| 0.5152831|      0.6981434|        |       |
-|item20   | 0.7219662| 0.3395533| 0.4534813|      0.6997382|        |       |
-
-</div>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> itemName </th>
+   <th style="text-align:right;"> itemMean </th>
+   <th style="text-align:right;"> pBis </th>
+   <th style="text-align:right;"> bis </th>
+   <th style="text-align:right;"> alphaIfDeleted </th>
+   <th style="text-align:left;"> lowPBis </th>
+   <th style="text-align:left;"> lowBis </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> item1 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:right;"> 0.29 </td>
+   <td style="text-align:right;"> 0.38 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item2 </td>
+   <td style="text-align:right;"> 0.75 </td>
+   <td style="text-align:right;"> 0.22 </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item3 </td>
+   <td style="text-align:right;"> 0.85 </td>
+   <td style="text-align:right;"> 0.35 </td>
+   <td style="text-align:right;"> 0.53 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item4 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.17 </td>
+   <td style="text-align:right;"> 0.22 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;"> X </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item5 </td>
+   <td style="text-align:right;"> 0.44 </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.35 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item6 </td>
+   <td style="text-align:right;"> 0.36 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.44 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item7 </td>
+   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 0.10 </td>
+   <td style="text-align:right;"> 0.13 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;"> X </td>
+   <td style="text-align:left;"> X </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item8 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:right;"> 0.33 </td>
+   <td style="text-align:right;"> 0.43 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item9 </td>
+   <td style="text-align:right;"> 0.43 </td>
+   <td style="text-align:right;"> 0.21 </td>
+   <td style="text-align:right;"> 0.27 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item10 </td>
+   <td style="text-align:right;"> 0.65 </td>
+   <td style="text-align:right;"> 0.26 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item11 </td>
+   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.29 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item12 </td>
+   <td style="text-align:right;"> 0.57 </td>
+   <td style="text-align:right;"> 0.32 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item13 </td>
+   <td style="text-align:right;"> 0.61 </td>
+   <td style="text-align:right;"> 0.36 </td>
+   <td style="text-align:right;"> 0.46 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item14 </td>
+   <td style="text-align:right;"> 0.76 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.46 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item15 </td>
+   <td style="text-align:right;"> 0.44 </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 0.38 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item16 </td>
+   <td style="text-align:right;"> 0.61 </td>
+   <td style="text-align:right;"> 0.38 </td>
+   <td style="text-align:right;"> 0.49 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item17 </td>
+   <td style="text-align:right;"> 0.30 </td>
+   <td style="text-align:right;"> 0.04 </td>
+   <td style="text-align:right;"> 0.06 </td>
+   <td style="text-align:right;"> 0.73 </td>
+   <td style="text-align:left;"> X </td>
+   <td style="text-align:left;"> X </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item18 </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:right;"> 0.42 </td>
+   <td style="text-align:right;"> 0.59 </td>
+   <td style="text-align:right;"> 0.69 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item19 </td>
+   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.37 </td>
+   <td style="text-align:right;"> 0.52 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item20 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.45 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+</tbody>
+</table>
 
 
 ```r
-hci_itemanalysis2 <- CTT::itemAnalysis(items = hci_items_scored[, -c(7, 17)], 
+hci_itemanalysis2 <- CTT::itemAnalysis(items =
+    hci_items_scored[, -c(7, 17)], 
       pBisFlag = .2, 
       bisFlag = .2)
 hci_itemanalysis2
@@ -2232,37 +2405,192 @@ hci_itemanalysis2
 ##  0.733
 ```
 
-Güncellenen madde analizi sonuçları, hci testinin iç tutarlılığının 0.73’e yükseldiğini göstermektedir
+Güncellenen madde analizi sonuçları, 
+hci testinin iç tutarlılığının 0.73’e yükseldiğini göstermektedir
 
 
 ```r
-hci_itemanalysis2$itemReport
+hci_itemanalysis2$itemReport %>% 
+  kbl(digits = 2)
 ```
 
-<div class="kable-table">
-
-|itemName |  itemMean|      pBis|       bis| alphaIfDeleted|lowPBis |lowBis |
-|:--------|---------:|---------:|---------:|--------------:|:-------|:------|
-|item1    | 0.6989247| 0.2948723| 0.3884093|      0.7228366|        |       |
-|item2    | 0.7526882| 0.2352250| 0.3212124|      0.7278005|        |       |
-|item3    | 0.8479263| 0.3584801| 0.5470807|      0.7187943|        |       |
-|item4    | 0.4039939| 0.1703088| 0.2157568|      0.7347497|X       |       |
-|item5    | 0.4423963| 0.2737195| 0.3443684|      0.7251008|        |       |
-|item6    | 0.3625192| 0.3401596| 0.4360500|      0.7186537|        |       |
-|item8    | 0.7050691| 0.3283374| 0.4339909|      0.7198352|        |       |
-|item9    | 0.4331797| 0.1987390| 0.2503683|      0.7322322|X       |       |
-|item10   | 0.6482335| 0.2751882| 0.3541283|      0.7247489|        |       |
-|item11   | 0.7788018| 0.2894657| 0.4045023|      0.7232886|        |       |
-|item12   | 0.5729647| 0.3206200| 0.4043173|      0.7205367|        |       |
-|item13   | 0.6082949| 0.3715534| 0.4721228|      0.7155900|        |       |
-|item14   | 0.7588326| 0.3533586| 0.4849728|      0.7179002|        |       |
-|item15   | 0.4439324| 0.3061087| 0.3850396|      0.7219610|        |       |
-|item16   | 0.6067588| 0.3916629| 0.4974776|      0.7136207|        |       |
-|item18   | 0.7972350| 0.4246352| 0.6048291|      0.7125853|        |       |
-|item19   | 0.7849462| 0.3547787| 0.4987953|      0.7180327|        |       |
-|item20   | 0.7219662| 0.3423104| 0.4571635|      0.7186383|        |       |
-
-</div>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> itemName </th>
+   <th style="text-align:right;"> itemMean </th>
+   <th style="text-align:right;"> pBis </th>
+   <th style="text-align:right;"> bis </th>
+   <th style="text-align:right;"> alphaIfDeleted </th>
+   <th style="text-align:left;"> lowPBis </th>
+   <th style="text-align:left;"> lowBis </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> item1 </td>
+   <td style="text-align:right;"> 0.70 </td>
+   <td style="text-align:right;"> 0.29 </td>
+   <td style="text-align:right;"> 0.39 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item2 </td>
+   <td style="text-align:right;"> 0.75 </td>
+   <td style="text-align:right;"> 0.24 </td>
+   <td style="text-align:right;"> 0.32 </td>
+   <td style="text-align:right;"> 0.73 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item3 </td>
+   <td style="text-align:right;"> 0.85 </td>
+   <td style="text-align:right;"> 0.36 </td>
+   <td style="text-align:right;"> 0.55 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item4 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.17 </td>
+   <td style="text-align:right;"> 0.22 </td>
+   <td style="text-align:right;"> 0.73 </td>
+   <td style="text-align:left;"> X </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item5 </td>
+   <td style="text-align:right;"> 0.44 </td>
+   <td style="text-align:right;"> 0.27 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.73 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item6 </td>
+   <td style="text-align:right;"> 0.36 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.44 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item8 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:right;"> 0.33 </td>
+   <td style="text-align:right;"> 0.43 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item9 </td>
+   <td style="text-align:right;"> 0.43 </td>
+   <td style="text-align:right;"> 0.20 </td>
+   <td style="text-align:right;"> 0.25 </td>
+   <td style="text-align:right;"> 0.73 </td>
+   <td style="text-align:left;"> X </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item10 </td>
+   <td style="text-align:right;"> 0.65 </td>
+   <td style="text-align:right;"> 0.28 </td>
+   <td style="text-align:right;"> 0.35 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item11 </td>
+   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.29 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item12 </td>
+   <td style="text-align:right;"> 0.57 </td>
+   <td style="text-align:right;"> 0.32 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item13 </td>
+   <td style="text-align:right;"> 0.61 </td>
+   <td style="text-align:right;"> 0.37 </td>
+   <td style="text-align:right;"> 0.47 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item14 </td>
+   <td style="text-align:right;"> 0.76 </td>
+   <td style="text-align:right;"> 0.35 </td>
+   <td style="text-align:right;"> 0.48 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item15 </td>
+   <td style="text-align:right;"> 0.44 </td>
+   <td style="text-align:right;"> 0.31 </td>
+   <td style="text-align:right;"> 0.39 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item16 </td>
+   <td style="text-align:right;"> 0.61 </td>
+   <td style="text-align:right;"> 0.39 </td>
+   <td style="text-align:right;"> 0.50 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item18 </td>
+   <td style="text-align:right;"> 0.80 </td>
+   <td style="text-align:right;"> 0.42 </td>
+   <td style="text-align:right;"> 0.60 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item19 </td>
+   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 0.35 </td>
+   <td style="text-align:right;"> 0.50 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> item20 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0.34 </td>
+   <td style="text-align:right;"> 0.46 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+</tbody>
+</table>
 
 Her ne kadar 4. ve 9. maddeler düşük nokta-çiftserili korelasyon gösterdikleri için işaretlenmiş olsalar da, çiftserili korelasyon değerleri çok düşük değildir.
 
@@ -2308,7 +2636,11 @@ head(sem_hci)
 
 ## DIF
 
-DIF madde düzeyindeki yanlılığı tespit etmek için kullanılır. difR paketi [@difR] , DIF gösteren iki kategorili maddeleri tespit etmek için çeşitli yöntemler sağlar. Aşağıdaki örnekte, puanlanan hci maddelerini DIF açısından analiz etmek için Mantel-Haenszel (MH) ve lojistik regresyon yöntemlerini kullanacağız. Cinsiyet veya ana dil olarak İngilizce konuşulmasına bağlı olarak DIF sergileyen hci maddelerini belirlemek için grup değişkenleri olarak “sex” ve “eng_first_lang” kullanacağız.
+DIF madde düzeyindeki yanlılığı tespit etmek için kullanılır. difR paketi [@difR] , DIF gösteren iki kategorili maddeleri tespit etmek için çeşitli yöntemler sağlar. 
+
+Aşağıdaki örnekte, puanlanan hci maddelerini DIF açısından analiz etmek için Mantel-Haenszel (MH) ve lojistik regresyon yöntemlerini kullanacağız.
+
+Cinsiyet veya ana dil olarak İngilizce konuşulmasına bağlı olarak DIF sergileyen hci maddelerini belirlemek için grup değişkenleri olarak “sex” ve “eng_first_lang” kullanacağız.
 
 
 ```r
@@ -2347,8 +2679,8 @@ table(hci_scored$eng_first_lang)
 
 ```r
 hci_items <- dplyr::select(hci_scored, starts_with("item"))
- gender <- hci_scored$gender
- language <- hci_scored$eng_first_lang
+gender <- hci_scored$gender
+language <- hci_scored$eng_first_lang
 ```
 
 
@@ -2445,7 +2777,15 @@ print(gender_MH)
 ## Output was not captured!
 ```
 
-Çıktı iki bölümden oluşmaktadır. İlk bölümde maddeler için MH ki-kare istatistikleri ve bunlara karşılık gelen p değerleri gösterilmektedir. İki maddenin (madde 1 ve 19) p değerleri .05’ten küçük olduğu için kız ve erkek öğrenciler arasında DIF gösterdiği gerekçesiyle değerinde işaretlendiğini görüyoruz. Bu maddeler ayrıca “DIF maddesi olarak tespit edilen maddeler” altında listelenmiştir. Çıktının ikinci kısmı, ETS delta sınıflandırması kullanılarak etki büyüklüğünü göstermektedir. İki madde (madde 1 ve 19) “B: Orta Derecede DIF” olarak sınıflandırılırken, geri kalan maddeler “A: İhmal Edilebilir DIF” olarak sınıflandırılmıştır. “C: Büyük DIF” işaretine sahip hiçbir madde yoktur. Grafik ayrıca MH ki-kare testine göre işaretlenmiş iki maddeyi de göstermektedir. Bu maddeler eşik ki-kare değeri için yatay çizginin üzerinde görünmektedir ( anlamlılık düzeyi için ).
+Çıktı iki bölümden oluşmaktadır. 
+
+İlk bölümde maddeler için MH ki-kare istatistikleri ve bunlara karşılık gelen p değerleri gösterilmektedir. 
+
+İki maddenin (madde 1 ve 19) p değerleri .05’ten küçük olduğu için kız ve erkek öğrenciler arasında DIF gösterdiği gerekçesiyle *  ile işaretlendiğini görüyoruz. Bu maddeler ayrıca “DIF maddesi olarak tespit edilen maddeler” altında listelenmiştir. 
+
+Çıktının ikinci kısmı, ETS delta sınıflandırması kullanılarak etki büyüklüğünü göstermektedir. İki madde (madde 1 ve 19) “B: Orta Derecede DIF” olarak sınıflandırılırken, geri kalan maddeler “A: İhmal Edilebilir DIF” olarak sınıflandırılmıştır. “C: Büyük DIF” işaretine sahip hiçbir madde yoktur.
+
+Grafik ayrıca MH ki-kare testine göre işaretlenmiş iki maddeyi de göstermektedir. Bu maddeler eşik ki-kare değeri için yatay çizginin üzerinde görünmektedir ( anlamlılık düzeyi için ).
 
 
 ```r
@@ -2557,7 +2897,9 @@ plot(lang_MH)
 ## The plot was not captured!
 ```
 
-Sonuçlar, üç maddenin (madde 3, 16 ve 18) dile dayalı DIF içerdiği için işaretlendiğini göstermektedir. ETS delta sınıflandırması kullanılarak elde edilen etki büyüklüğü, madde 3’ün “B: Orta DIF” olarak sınıflandırıldığını, madde 16 ve 18’in ise “C: Büyük DIF” olarak sınıflandırıldığını göstermektedir. Bu maddelere ek olarak, 6. ve 20. maddeler “B: Orta DIF” olarak sınıflandırılmıştır. Dolayısıyla, bu maddelerin içeriğinin diğer işaretli maddelerle birlikte incelenmesi ve dile dayalı DIF’in neden ortaya çıktığının belirlenmesi faydalı olacaktır.
+Sonuçlar, üç maddenin (madde 3, 16 ve 18) dile dayalı DIF içerdiği için işaretlendiğini göstermektedir. ETS delta sınıflandırması kullanılarak elde edilen etki büyüklüğü, madde 3’ün “B: Orta DIF” olarak sınıflandırıldığını, madde 16 ve 18’in ise “C: Büyük DIF” olarak sınıflandırıldığını göstermektedir. Bu maddelere ek olarak, 6. ve 20. maddeler “B: Orta DIF” olarak sınıflandırılmıştır. 
+
+Dolayısıyla, bu maddelerin içeriğinin diğer işaretli maddelerle birlikte incelenmesi ve dile dayalı DIF’in neden ortaya çıktığının belirlenmesi faydalı olacaktır.
 
 
 ```r
@@ -2656,7 +2998,9 @@ print(gender_LR)
 ##  Output was not captured!
 ```
 
-`difMH()` fonksiyonundan elde edilen çıktıya benzer şekilde`,difLogistic()` fonksiyonundan elde edilen çıktı da iki bölümden oluşur. Çıktının üst kısmı, öğeler için olabilirlik oranı test istatistiklerini ve karşılık gelen p değerlerini gösterir. LR yöntemi, 1. ve 19. maddelere ek olarak, anlamlılık düzeyinde 12. ve 20. maddeler olmak üzere iki DIF’li madde daha tespit etmiştir. Çıktının ikinci kısmı, sözde R-kare farkları kullanılarak hesaplanan etki büyüklüklerini göstermektedir. Sonuçlar, her iki etki büyüklüğü ölçütüne (ZT ve JG) dayalı olarak tüm maddeler için etki büyüklüğünün “A: İhmal Edilebilir DIF” olduğunu göstermektedir. Grafikte, dört DIF maddesinin (madde 1, 12, 19 ve 20) eşik olabilirlik oranı istatistiği ( anlamlılık düzeyi için 5.9915) için yatay çizginin üzerinde olduğunu görüyoruz.
+`difMH()` fonksiyonundan elde edilen çıktıya benzer şekilde`,difLogistic()` fonksiyonundan elde edilen çıktı da iki bölümden oluşur. Çıktının üst kısmı, öğeler için olabilirlik oranı test istatistiklerini ve karşılık gelen p değerlerini gösterir. 
+
+LR yöntemi, 1. ve 19. maddelere ek olarak, anlamlılık düzeyinde 12. ve 20. maddeler olmak üzere iki DIF’li madde daha tespit etmiştir. Çıktının ikinci kısmı, sözde R-kare farkları kullanılarak hesaplanan etki büyüklüklerini göstermektedir. Sonuçlar, her iki etki büyüklüğü ölçütüne (ZT ve JG) dayalı olarak tüm maddeler için etki büyüklüğünün “A: İhmal Edilebilir DIF” olduğunu göstermektedir. Grafikte, dört DIF maddesinin (madde 1, 12, 19 ve 20) eşik olabilirlik oranı istatistiği ( anlamlılık düzeyi için 5.9915) için yatay çizginin üzerinde olduğunu görüyoruz.
 
 Aynı fonksiyonu, olabilirlik oranı istatistiğine dayalı olarak işaretlenmiş maddeler için ayrı grafikler oluşturmak için de kullanılabilir. Çizim, x ekseninin toplam test puanları olduğu ve y ekseninin doğru cevap olasılığını (yani 0 üzerinden 1 plot(gender_LR) The plot was not captured! α = .05 α = .05 plot() 1 alma) gösterdiği ayrı madde karakteristik eğrileri oluşturur. Bu grafik, DIF türünün tek tip mi yoksa tek tip olmayan mı olduğunu ve iki gruptan hangisinin (yani referans ve odak) diğer gruba göre avantajlı olduğunu gösterebilir. Aşağıdaki örnekte, 1. ve 19. maddeler için madde karakteristik eğrileri oluşturacağız. Öğeyi item bağımsız değişkenini kullanarak ve çizim türünü plot = "itemCurve" kullanarak belirtiriz.
 

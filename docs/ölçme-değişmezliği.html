@@ -97,6 +97,7 @@
 <li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
 <li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">16</span> Klasik Test Teorisi</a></li>
 <li><a class="" href="mtk.html"><span class="header-section-number">17</span> MTK</a></li>
+<li><a class="" href="mtk-ile-madde-analizi-uygulamas%C4%B1.html"><span class="header-section-number">18</span> MTK ile Madde Analizi Uygulaması</a></li>
 </ul>
 
         <div class="book-extra">
@@ -483,7 +484,7 @@ X^2 | p&gt;0.05 |
 </tr></tbody>
 </table></div>
 <p>DFA modelini her grupta ayrı ayrı test ediniz.</p>
-<div class="sourceCode" id="cb389"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb391"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span>
 <span><span class="va">HS.model</span> <span class="op">&lt;-</span> <span class="st">'visual =~ x1 + x2 + x3</span></span>
 <span><span class="st">textual =~ x4 + x5 + x6</span></span>
@@ -494,7 +495,7 @@ X^2 | p&gt;0.05 |
 <span>              <span class="va">school</span><span class="op">==</span><span class="st">"Grant-White"</span><span class="op">)</span></span>
 <span><span class="va">Pasteur_cfa</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/cfa.html">cfa</a></span><span class="op">(</span><span class="va">HS.model</span>, data<span class="op">=</span><span class="va">Pasteur</span><span class="op">)</span></span>
 <span><span class="va">Grandwhite_cfa</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/cfa.html">cfa</a></span><span class="op">(</span><span class="va">HS.model</span>, data<span class="op">=</span><span class="va">Grandwhite</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb390"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb392"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span>, <span class="st">"df"</span>, <span class="st">"pvalue"</span>,<span class="st">"rmsea"</span>, <span class="st">"srmr"</span>,<span class="st">"cfi"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">Pasteur_cfa</span>, fit.measures <span class="op">=</span> <span class="va">fit</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">Grandwhite_cfa</span>,<span class="va">fit</span><span class="op">)</span></span></code></pre></div>
@@ -503,7 +504,7 @@ X^2 | p&gt;0.05 |
  chisq     df pvalue  rmsea   srmr    cfi 
 51.542 24.000  0.001  0.089  0.072  0.941 </code></pre>
 <p>Özdeş faktör yapısını eş zamanlı test ediniz.</p>
-<div class="sourceCode" id="cb392"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb394"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">configural</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/cfa.html">cfa</a></span><span class="op">(</span><span class="va">HS.model</span>, data<span class="op">=</span><span class="va">HolzingerSwineford1939</span>, </span>
 <span>group <span class="op">=</span> <span class="st">"school"</span><span class="op">)</span></span>
 <span><span class="co"># bicimsel degimezlik</span></span>
@@ -511,7 +512,7 @@ X^2 | p&gt;0.05 |
 <pre><code>  chisq      df  pvalue   rmsea    srmr     cfi 
 115.851  48.000   0.000   0.097   0.068   0.923 </code></pre>
 <p>Faktör yüklerinin eşitliğini test ediniz.</p>
-<div class="sourceCode" id="cb394"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb396"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">weak</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/cfa.html">cfa</a></span><span class="op">(</span><span class="va">HS.model</span>,data<span class="op">=</span><span class="va">HolzingerSwineford1939</span>, group <span class="op">=</span> <span class="st">"school"</span>,</span>
 <span>group.equal<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"loadings"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co"># bicimsel degimezlik</span></span>
@@ -523,7 +524,7 @@ X^2 | p&gt;0.05 |
   chisq      df  pvalue   rmsea    srmr     cfi 
 124.044  54.000   0.000   0.093   0.072   0.921 </code></pre>
 <p><strong>Modeller arası uyumu degerlendirme</strong></p>
-<div class="sourceCode" id="cb396"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb398"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># anova(weak, configural)</span></span>
 <span></span>
 <span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">weak</span>, <span class="va">configural</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
@@ -576,7 +577,7 @@ X^2 | p&gt;0.05 |
 </tbody>
 </table></div>
 <p><strong>Zayıf degismezlikte kestirilen faktor yukleri</strong></p>
-<div class="sourceCode" id="cb397"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb399"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">parEst</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">weak</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">op</span> <span class="op">==</span> <span class="st">"=~"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="st">'Latent Factor'</span><span class="op">=</span><span class="va">lhs</span>, Indicator<span class="op">=</span><span class="va">rhs</span>, B<span class="op">=</span><span class="va">est</span><span class="op">)</span> </span></code></pre></div>
@@ -705,7 +706,7 @@ X^2 | p&gt;0.05 |
 </tbody>
 </table></div>
 <p><strong>Gösterge sabitlerinin eşitliğini test ediniz.</strong></p>
-<div class="sourceCode" id="cb398"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb400"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">strong</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/cfa.html">cfa</a></span><span class="op">(</span><span class="va">HS.model</span>, data<span class="op">=</span><span class="va">HolzingerSwineford1939</span>, </span>
 <span>group <span class="op">=</span> <span class="st">"school"</span>, group.equal<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"loadings"</span>,<span class="st">"intercepts"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">weak</span>,fit.measures <span class="op">=</span> <span class="va">fit</span><span class="op">)</span></span>
@@ -716,7 +717,7 @@ X^2 | p&gt;0.05 |
   chisq      df  pvalue   rmsea    srmr     cfi 
 164.103  60.000   0.000   0.107   0.082   0.882 </code></pre>
 <p><strong>Modeller arası uyumu degerlendirme</strong></p>
-<div class="sourceCode" id="cb400"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb402"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># anova(strong, weak)</span></span>
 <span></span>
 <span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">strong</span>, <span class="va">weak</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>

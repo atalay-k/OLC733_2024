@@ -97,6 +97,7 @@
 <li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
 <li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">16</span> Klasik Test Teorisi</a></li>
 <li><a class="" href="mtk.html"><span class="header-section-number">17</span> MTK</a></li>
+<li><a class="" href="mtk-ile-madde-analizi-uygulamas%C4%B1.html"><span class="header-section-number">18</span> MTK ile Madde Analizi Uygulaması</a></li>
 </ul>
 
         <div class="book-extra">
@@ -185,34 +186,34 @@ Bu, <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> ve <c
 <p>Fonksiyonlar <code>function()</code> kullanılarak tanımlanır ve diğer her şey gibi R nesneleri olarak saklanır.
 Özellikle, "function" sınıfının R nesneleridirler.</p>
 <p>İşte hiçbir argüman almayan ve hiçbir şey yapmayan basit bir fonksiyon.</p>
-<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="fonksiyonlar.html#cb458-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb458-2"><a href="fonksiyonlar.html#cb458-2" tabindex="-1"></a><span class="sc">+</span>         <span class="do">## Bu boş bir fonksiyondur</span></span>
-<span id="cb458-3"><a href="fonksiyonlar.html#cb458-3" tabindex="-1"></a><span class="sc">+</span> }</span>
-<span id="cb458-4"><a href="fonksiyonlar.html#cb458-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Fonksiyonların kendi sınıfları vardır</span></span>
-<span id="cb458-5"><a href="fonksiyonlar.html#cb458-5" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">class</span>(f)  </span>
-<span id="cb458-6"><a href="fonksiyonlar.html#cb458-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Bu işlevi çalıştırın</span></span>
-<span id="cb458-7"><a href="fonksiyonlar.html#cb458-7" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">f</span>()       </span>
-<span id="cb458-8"><a href="fonksiyonlar.html#cb458-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"function"</span></span>
-<span id="cb458-9"><a href="fonksiyonlar.html#cb458-9" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="fonksiyonlar.html#cb460-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb460-2"><a href="fonksiyonlar.html#cb460-2" tabindex="-1"></a><span class="sc">+</span>         <span class="do">## Bu boş bir fonksiyondur</span></span>
+<span id="cb460-3"><a href="fonksiyonlar.html#cb460-3" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb460-4"><a href="fonksiyonlar.html#cb460-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Fonksiyonların kendi sınıfları vardır</span></span>
+<span id="cb460-5"><a href="fonksiyonlar.html#cb460-5" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">class</span>(f)  </span>
+<span id="cb460-6"><a href="fonksiyonlar.html#cb460-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Bu işlevi çalıştırın</span></span>
+<span id="cb460-7"><a href="fonksiyonlar.html#cb460-7" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">f</span>()       </span>
+<span id="cb460-8"><a href="fonksiyonlar.html#cb460-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"function"</span></span>
+<span id="cb460-9"><a href="fonksiyonlar.html#cb460-9" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
 <p>Çok ilginç değil ama bu da bir başlangıç.
 Yapabileceğimiz bir sonraki şey, aslında önemsiz olmayan bir <em>fonksiyon gövdesine</em> sahip bir fonksiyon oluşturmaktır.</p>
-<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="fonksiyonlar.html#cb459-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb459-2"><a href="fonksiyonlar.html#cb459-2" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">cat</span>(<span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb459-3"><a href="fonksiyonlar.html#cb459-3" tabindex="-1"></a><span class="sc">+</span> }</span>
-<span id="cb459-4"><a href="fonksiyonlar.html#cb459-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>()</span>
-<span id="cb459-5"><a href="fonksiyonlar.html#cb459-5" tabindex="-1"></a>Merhaba<span class="sc">!</span></span></code></pre></div>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="fonksiyonlar.html#cb461-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb461-2"><a href="fonksiyonlar.html#cb461-2" tabindex="-1"></a><span class="sc">+</span>         <span class="fu">cat</span>(<span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb461-3"><a href="fonksiyonlar.html#cb461-3" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb461-4"><a href="fonksiyonlar.html#cb461-4" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>()</span>
+<span id="cb461-5"><a href="fonksiyonlar.html#cb461-5" tabindex="-1"></a>Merhaba<span class="sc">!</span></span></code></pre></div>
 <p>Temel bir fonksiyonun son unsuru <em>fonksiyon argümanlarıdır</em>.
 Bunlar, kullanıcıya belirtebileceğiniz ve kullanıcının açıkça ayarlayabileceği seçeneklerdir.
 Bu temel fonksiyon için, konsola kaç kez "Merhaba!" yazdırılacağını belirleyen bir argüman ekleyebiliriz.</p>
-<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="fonksiyonlar.html#cb460-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
-<span id="cb460-2"><a href="fonksiyonlar.html#cb460-2" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(num)) {</span>
-<span id="cb460-3"><a href="fonksiyonlar.html#cb460-3" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">cat</span>(<span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb460-4"><a href="fonksiyonlar.html#cb460-4" tabindex="-1"></a><span class="sc">+</span>         }</span>
-<span id="cb460-5"><a href="fonksiyonlar.html#cb460-5" tabindex="-1"></a><span class="sc">+</span> }</span>
-<span id="cb460-6"><a href="fonksiyonlar.html#cb460-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">3</span>)</span>
-<span id="cb460-7"><a href="fonksiyonlar.html#cb460-7" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb460-8"><a href="fonksiyonlar.html#cb460-8" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb460-9"><a href="fonksiyonlar.html#cb460-9" tabindex="-1"></a>Merhaba<span class="sc">!</span></span></code></pre></div>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="fonksiyonlar.html#cb462-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(num) {</span>
+<span id="cb462-2"><a href="fonksiyonlar.html#cb462-2" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(num)) {</span>
+<span id="cb462-3"><a href="fonksiyonlar.html#cb462-3" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">cat</span>(<span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb462-4"><a href="fonksiyonlar.html#cb462-4" tabindex="-1"></a><span class="sc">+</span>         }</span>
+<span id="cb462-5"><a href="fonksiyonlar.html#cb462-5" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb462-6"><a href="fonksiyonlar.html#cb462-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">3</span>)</span>
+<span id="cb462-7"><a href="fonksiyonlar.html#cb462-7" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb462-8"><a href="fonksiyonlar.html#cb462-8" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb462-9"><a href="fonksiyonlar.html#cb462-9" tabindex="-1"></a>Merhaba<span class="sc">!</span></span></code></pre></div>
 <p>Açıkçası, aynı etki için sadece <code>cat("Merhaba!\n")</code> üç kere kesip yapıştırabilirdik.
 Ama o zaman programlama yapmıyor olurduk.
 Ayrıca, kodunuzu bir başkasına vermeniz ve onu kodu istediği kadar kesip yapıştırmaya zorlamanız da iyi olmayacaktır:) "Merhaba!".</p>
@@ -231,33 +232,7 @@ Fonksiyonlar, koşullu önermeler ve döngüler ile kullanılarak çok sayıda k
 Sadece konsola <code>tekrar</code> sayıda "Merhaba!" yazdırır ve sonra çıkar.
 Ancak bir fonksiyonun, belki de kodun başka bir bölümüne beslenebilecek bir şey döndürmesi genellikle yararlıdır.</p>
 <p>Sıradaki fonksiyon konsola yazdırılan toplam karakter sayısını döndürür.</p>
-<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="fonksiyonlar.html#cb461-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(tekrar) {</span>
-<span id="cb461-2"><a href="fonksiyonlar.html#cb461-2" tabindex="-1"></a><span class="sc">+</span>         Merhaba <span class="ot">&lt;-</span> <span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span></span>
-<span id="cb461-3"><a href="fonksiyonlar.html#cb461-3" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(tekrar)) {</span>
-<span id="cb461-4"><a href="fonksiyonlar.html#cb461-4" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">cat</span>(Merhaba)</span>
-<span id="cb461-5"><a href="fonksiyonlar.html#cb461-5" tabindex="-1"></a><span class="sc">+</span>         }</span>
-<span id="cb461-6"><a href="fonksiyonlar.html#cb461-6" tabindex="-1"></a><span class="sc">+</span>         chars <span class="ot">&lt;-</span> <span class="fu">nchar</span>(Merhaba) <span class="sc">*</span> tekrar</span>
-<span id="cb461-7"><a href="fonksiyonlar.html#cb461-7" tabindex="-1"></a><span class="sc">+</span>         chars</span>
-<span id="cb461-8"><a href="fonksiyonlar.html#cb461-8" tabindex="-1"></a><span class="sc">+</span> }</span>
-<span id="cb461-9"><a href="fonksiyonlar.html#cb461-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">3</span>)</span>
-<span id="cb461-10"><a href="fonksiyonlar.html#cb461-10" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb461-11"><a href="fonksiyonlar.html#cb461-11" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb461-12"><a href="fonksiyonlar.html#cb461-12" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb461-13"><a href="fonksiyonlar.html#cb461-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">27</span></span></code></pre></div>
-<p>Yukarıdaki fonksiyonda, fonksiyonun karakter sayısını döndürmesi için özel bir şey belirtmemiz gerekmedi.
-R'de, bir fonksiyonun geri dönüş değeri her zaman değerlendirilen en son ifadedir.
-Bu fonksiyonda değerlendirilen son ifade <code>chars</code> değişkeni olduğu için, fonksiyonun dönüş değeri de bu olur.</p>
-<p>Bir fonksiyondan açık bir değer döndürmek için kullanılabilecek bir <code><a href="https://rdrr.io/r/base/function.html">return()</a></code> fonksiyonu olduğunu unutmayın, ancak nadiren kullanılır.</p>
-<p>Son olarak, yukarıdaki fonksiyonda, kullanıcı <code>tekrar</code> argümanının değerini belirtmelidir.
-Eğer kullanıcı tarafından belirtilmezse, R bir hata verecektir.</p>
-<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="fonksiyonlar.html#cb462-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>()</span>
-<span id="cb462-2"><a href="fonksiyonlar.html#cb462-2" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">f</span>()<span class="sc">:</span> argument <span class="st">"tekrar"</span> is missing, with no default</span></code></pre></div>
-<p>Bu davranışı <code>tekrar</code> argümanı için bir <em>varsayılan değer</em> belirleyerek değiştirebiliriz.
-Belirtmek isterseniz, herhangi bir fonksiyon argümanının varsayılan bir değeri olabilir.
-Bazen, argüman değerleri nadiren değiştirilir (özel durumlar hariç) ve bu argüman için bir varsayılan değer ayarlamak mantıklıdır.
-Bu, kullanıcıyı fonksiyon her çağrıldığında bu argümanın değerini belirtme zorunluluğundan kurtarır.</p>
-<p>Örneğin, burada <code>tekrar</code> için varsayılan değeri 1 olarak ayarlayabiliriz, böylece fonksiyon <code>tekrar</code> argümanı açıkça belirtilmeden çağrılırsa, konsola bir kez "Merhaba!" yazdırır.</p>
-<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="fonksiyonlar.html#cb463-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">tekrar =</span> <span class="dv">1</span>) {</span>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="fonksiyonlar.html#cb463-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(tekrar) {</span>
 <span id="cb463-2"><a href="fonksiyonlar.html#cb463-2" tabindex="-1"></a><span class="sc">+</span>         Merhaba <span class="ot">&lt;-</span> <span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span></span>
 <span id="cb463-3"><a href="fonksiyonlar.html#cb463-3" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(tekrar)) {</span>
 <span id="cb463-4"><a href="fonksiyonlar.html#cb463-4" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">cat</span>(Merhaba)</span>
@@ -265,13 +240,39 @@ Bu, kullanıcıyı fonksiyon her çağrıldığında bu argümanın değerini be
 <span id="cb463-6"><a href="fonksiyonlar.html#cb463-6" tabindex="-1"></a><span class="sc">+</span>         chars <span class="ot">&lt;-</span> <span class="fu">nchar</span>(Merhaba) <span class="sc">*</span> tekrar</span>
 <span id="cb463-7"><a href="fonksiyonlar.html#cb463-7" tabindex="-1"></a><span class="sc">+</span>         chars</span>
 <span id="cb463-8"><a href="fonksiyonlar.html#cb463-8" tabindex="-1"></a><span class="sc">+</span> }</span>
-<span id="cb463-9"><a href="fonksiyonlar.html#cb463-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>()    <span class="do">## 'tekrar' için varsayılan değeri kullan</span></span>
-<span id="cb463-10"><a href="fonksiyonlar.html#cb463-10" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">2</span>)   <span class="do">## Kullanıcı tarafından belirtilen değeri kullan</span></span>
+<span id="cb463-9"><a href="fonksiyonlar.html#cb463-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">3</span>)</span>
+<span id="cb463-10"><a href="fonksiyonlar.html#cb463-10" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
 <span id="cb463-11"><a href="fonksiyonlar.html#cb463-11" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb463-12"><a href="fonksiyonlar.html#cb463-12" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">9</span></span>
-<span id="cb463-13"><a href="fonksiyonlar.html#cb463-13" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb463-14"><a href="fonksiyonlar.html#cb463-14" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb463-15"><a href="fonksiyonlar.html#cb463-15" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">18</span></span></code></pre></div>
+<span id="cb463-12"><a href="fonksiyonlar.html#cb463-12" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb463-13"><a href="fonksiyonlar.html#cb463-13" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">27</span></span></code></pre></div>
+<p>Yukarıdaki fonksiyonda, fonksiyonun karakter sayısını döndürmesi için özel bir şey belirtmemiz gerekmedi.
+R'de, bir fonksiyonun geri dönüş değeri her zaman değerlendirilen en son ifadedir.
+Bu fonksiyonda değerlendirilen son ifade <code>chars</code> değişkeni olduğu için, fonksiyonun dönüş değeri de bu olur.</p>
+<p>Bir fonksiyondan açık bir değer döndürmek için kullanılabilecek bir <code><a href="https://rdrr.io/r/base/function.html">return()</a></code> fonksiyonu olduğunu unutmayın, ancak nadiren kullanılır.</p>
+<p>Son olarak, yukarıdaki fonksiyonda, kullanıcı <code>tekrar</code> argümanının değerini belirtmelidir.
+Eğer kullanıcı tarafından belirtilmezse, R bir hata verecektir.</p>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="fonksiyonlar.html#cb464-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>()</span>
+<span id="cb464-2"><a href="fonksiyonlar.html#cb464-2" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">f</span>()<span class="sc">:</span> argument <span class="st">"tekrar"</span> is missing, with no default</span></code></pre></div>
+<p>Bu davranışı <code>tekrar</code> argümanı için bir <em>varsayılan değer</em> belirleyerek değiştirebiliriz.
+Belirtmek isterseniz, herhangi bir fonksiyon argümanının varsayılan bir değeri olabilir.
+Bazen, argüman değerleri nadiren değiştirilir (özel durumlar hariç) ve bu argüman için bir varsayılan değer ayarlamak mantıklıdır.
+Bu, kullanıcıyı fonksiyon her çağrıldığında bu argümanın değerini belirtme zorunluluğundan kurtarır.</p>
+<p>Örneğin, burada <code>tekrar</code> için varsayılan değeri 1 olarak ayarlayabiliriz, böylece fonksiyon <code>tekrar</code> argümanı açıkça belirtilmeden çağrılırsa, konsola bir kez "Merhaba!" yazdırır.</p>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="fonksiyonlar.html#cb465-1" tabindex="-1"></a><span class="sc">&gt;</span> f <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">tekrar =</span> <span class="dv">1</span>) {</span>
+<span id="cb465-2"><a href="fonksiyonlar.html#cb465-2" tabindex="-1"></a><span class="sc">+</span>         Merhaba <span class="ot">&lt;-</span> <span class="st">"Merhaba!</span><span class="sc">\n</span><span class="st">"</span></span>
+<span id="cb465-3"><a href="fonksiyonlar.html#cb465-3" tabindex="-1"></a><span class="sc">+</span>         <span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(tekrar)) {</span>
+<span id="cb465-4"><a href="fonksiyonlar.html#cb465-4" tabindex="-1"></a><span class="sc">+</span>                 <span class="fu">cat</span>(Merhaba)</span>
+<span id="cb465-5"><a href="fonksiyonlar.html#cb465-5" tabindex="-1"></a><span class="sc">+</span>         }</span>
+<span id="cb465-6"><a href="fonksiyonlar.html#cb465-6" tabindex="-1"></a><span class="sc">+</span>         chars <span class="ot">&lt;-</span> <span class="fu">nchar</span>(Merhaba) <span class="sc">*</span> tekrar</span>
+<span id="cb465-7"><a href="fonksiyonlar.html#cb465-7" tabindex="-1"></a><span class="sc">+</span>         chars</span>
+<span id="cb465-8"><a href="fonksiyonlar.html#cb465-8" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb465-9"><a href="fonksiyonlar.html#cb465-9" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>()    <span class="do">## 'tekrar' için varsayılan değeri kullan</span></span>
+<span id="cb465-10"><a href="fonksiyonlar.html#cb465-10" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="dv">2</span>)   <span class="do">## Kullanıcı tarafından belirtilen değeri kullan</span></span>
+<span id="cb465-11"><a href="fonksiyonlar.html#cb465-11" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb465-12"><a href="fonksiyonlar.html#cb465-12" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">9</span></span>
+<span id="cb465-13"><a href="fonksiyonlar.html#cb465-13" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb465-14"><a href="fonksiyonlar.html#cb465-14" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb465-15"><a href="fonksiyonlar.html#cb465-15" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">18</span></span></code></pre></div>
 <p>Fonksiyonun hala konsola yazdırılan karakter sayısını döndürdüğünü unutmayın.</p>
 <p>Bu noktada, bir fonksiyon yazdık</p>
 <ul>
@@ -283,10 +284,10 @@ Bu, kullanıcıyı fonksiyon her çağrıldığında bu argümanın değerini be
 </ul>
 <p>Fonksiyonlar, isteğe bağlı olarak varsayılan değerlere sahip olabilen <em>isimli argümanlara</em> sahiptir.
 Tüm fonksiyon argümanlarının adları olduğundan, bunlar adları kullanılarak belirtilebilir.</p>
-<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="fonksiyonlar.html#cb464-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="at">tekrar =</span> <span class="dv">2</span>)</span>
-<span id="cb464-2"><a href="fonksiyonlar.html#cb464-2" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb464-3"><a href="fonksiyonlar.html#cb464-3" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
-<span id="cb464-4"><a href="fonksiyonlar.html#cb464-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">18</span></span></code></pre></div>
+<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="fonksiyonlar.html#cb466-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">f</span>(<span class="at">tekrar =</span> <span class="dv">2</span>)</span>
+<span id="cb466-2"><a href="fonksiyonlar.html#cb466-2" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb466-3"><a href="fonksiyonlar.html#cb466-3" tabindex="-1"></a>Merhaba<span class="sc">!</span></span>
+<span id="cb466-4"><a href="fonksiyonlar.html#cb466-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="dv">18</span></span></code></pre></div>
 <p>Bir fonksiyonun çok sayıda argümanı varsa ve hangi argümanın belirtildiği her zaman net olmayabilirse, bir argümanı adıyla belirtmek bazen yararlıdır.
 Burada, fonksiyonumuzun yalnızca bir argümanı vardır, bu nedenle herhangi bir karışıklık olmaz.</p>
 </div>
@@ -300,39 +301,39 @@ R fonksiyonları argümanları <em>konumsal olarak</em> veya isme göre eşleşt
 Konumsal eşleştirme, R'nin ilk değeri ilk argümana, ikinci değeri ikinci argümana vb.
 atadığı anlamına gelir.
 Yani aşağıdaki <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> çağrısında</p>
-<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="fonksiyonlar.html#cb465-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str</span>(rnorm)</span>
-<span id="cb465-2"><a href="fonksiyonlar.html#cb465-2" tabindex="-1"></a><span class="sc">&gt;</span> mydata <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">2</span>, <span class="dv">1</span>)              <span class="do">## Bazı veriler oluşturun</span></span>
-<span id="cb465-3"><a href="fonksiyonlar.html#cb465-3" tabindex="-1"></a><span class="cf">function</span> (n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="fonksiyonlar.html#cb467-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str</span>(rnorm)</span>
+<span id="cb467-2"><a href="fonksiyonlar.html#cb467-2" tabindex="-1"></a><span class="sc">&gt;</span> mydata <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">2</span>, <span class="dv">1</span>)              <span class="do">## Bazı veriler oluşturun</span></span>
+<span id="cb467-3"><a href="fonksiyonlar.html#cb467-3" tabindex="-1"></a><span class="cf">function</span> (n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)  </span></code></pre></div>
 <p>100, <code>n</code> argümanına, 2 <code>ortalama</code> argümanına ve 1 <code>sd</code> argümanına atanır, hepsi de konum eşleştirmesi ile yapılır.</p>
 <p>Aşağıdaki <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code> fonksiyonu (bir sayı vektörünün ampirik standart sapmasını hesaplar) çağrılarının tümü eşdeğerdir.
 sd()<code>fonksiyonunun iki argümanı olduğunu unutmayın: x</code> sayı vektörünü gösterir ve <code>na.rm</code> eksik değerlerin kaldırılıp kaldırılmayacağını belirten bir mantıksaldır.</p>
-<div class="sourceCode" id="cb466"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb466-1"><a href="fonksiyonlar.html#cb466-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Konumsal eşleşme ilk argüman, na.rm için varsayılan</span></span>
-<span id="cb466-2"><a href="fonksiyonlar.html#cb466-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(mydata)                     </span>
-<span id="cb466-3"><a href="fonksiyonlar.html#cb466-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## 'x' argümanını isimle belirtin, varsayılan 'na.rm'</span></span>
-<span id="cb466-4"><a href="fonksiyonlar.html#cb466-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata)                 </span>
-<span id="cb466-5"><a href="fonksiyonlar.html#cb466-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
-<span id="cb466-6"><a href="fonksiyonlar.html#cb466-6" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)  </span>
-<span id="cb466-7"><a href="fonksiyonlar.html#cb466-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9242651</span></span>
-<span id="cb466-8"><a href="fonksiyonlar.html#cb466-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9242651</span></span>
-<span id="cb466-9"><a href="fonksiyonlar.html#cb466-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9242651</span></span></code></pre></div>
+<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="fonksiyonlar.html#cb468-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Konumsal eşleşme ilk argüman, na.rm için varsayılan</span></span>
+<span id="cb468-2"><a href="fonksiyonlar.html#cb468-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(mydata)                     </span>
+<span id="cb468-3"><a href="fonksiyonlar.html#cb468-3" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## 'x' argümanını isimle belirtin, varsayılan 'na.rm'</span></span>
+<span id="cb468-4"><a href="fonksiyonlar.html#cb468-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata)                 </span>
+<span id="cb468-5"><a href="fonksiyonlar.html#cb468-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
+<span id="cb468-6"><a href="fonksiyonlar.html#cb468-6" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)  </span>
+<span id="cb468-7"><a href="fonksiyonlar.html#cb468-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span>
+<span id="cb468-8"><a href="fonksiyonlar.html#cb468-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span>
+<span id="cb468-9"><a href="fonksiyonlar.html#cb468-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span></code></pre></div>
 <p>Fonksiyon argümanlarını isimle belirtirken, bunları hangi sırada belirttiğiniz önemli değildir.
 Aşağıdaki örnekte, fonksiyon tanımında tanımlanan ilk argüman <code>x</code> olmasına rağmen, önce <code>na.rm</code> argümanını, ardından <code>x</code> argümanını belirtiyoruz.</p>
-<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="fonksiyonlar.html#cb467-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
-<span id="cb467-2"><a href="fonksiyonlar.html#cb467-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)     </span>
-<span id="cb467-3"><a href="fonksiyonlar.html#cb467-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9242651</span></span></code></pre></div>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="fonksiyonlar.html#cb469-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
+<span id="cb469-2"><a href="fonksiyonlar.html#cb469-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)     </span>
+<span id="cb469-3"><a href="fonksiyonlar.html#cb469-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span></code></pre></div>
 <p>Konumsal eşleştirme ile ada göre eşleştirmeyi karıştırabilirsiniz.
 Bir argüman isme göre eşleştirildiğinde, argüman listesinden "çıkarılır" ve kalan isimsiz argümanlar fonksiyon tanımında listelendikleri sırayla eşleştirilir.</p>
-<div class="sourceCode" id="cb468"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb468-1"><a href="fonksiyonlar.html#cb468-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span>
-<span id="cb468-2"><a href="fonksiyonlar.html#cb468-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9242651</span></span></code></pre></div>
+<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="fonksiyonlar.html#cb470-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span>
+<span id="cb470-2"><a href="fonksiyonlar.html#cb470-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span></code></pre></div>
 <p>Burada, <code>mydata</code> nesnesi <code>x</code> argümanına atanır, çünkü henüz belirtilmemiş tek argüman budur.</p>
 <p>Aşağıda, bir veri kümesine doğrusal modeller uyduran <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunun argüman listesi yer almaktadır.</p>
-<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="fonksiyonlar.html#cb469-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(lm)</span>
-<span id="cb469-2"><a href="fonksiyonlar.html#cb469-2" tabindex="-1"></a><span class="cf">function</span> (formula, data, subset, weights, na.action, <span class="at">method =</span> <span class="st">"qr"</span>, </span>
-<span id="cb469-3"><a href="fonksiyonlar.html#cb469-3" tabindex="-1"></a>    <span class="at">model =</span> <span class="cn">TRUE</span>, <span class="at">x =</span> <span class="cn">FALSE</span>, <span class="at">y =</span> <span class="cn">FALSE</span>, <span class="at">qr =</span> <span class="cn">TRUE</span>, <span class="at">singular.ok =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb469-4"><a href="fonksiyonlar.html#cb469-4" tabindex="-1"></a>    <span class="at">contrasts =</span> <span class="cn">NULL</span>, offset, ...) </span>
-<span id="cb469-5"><a href="fonksiyonlar.html#cb469-5" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="fonksiyonlar.html#cb471-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(lm)</span>
+<span id="cb471-2"><a href="fonksiyonlar.html#cb471-2" tabindex="-1"></a><span class="cf">function</span> (formula, data, subset, weights, na.action, <span class="at">method =</span> <span class="st">"qr"</span>, </span>
+<span id="cb471-3"><a href="fonksiyonlar.html#cb471-3" tabindex="-1"></a>    <span class="at">model =</span> <span class="cn">TRUE</span>, <span class="at">x =</span> <span class="cn">FALSE</span>, <span class="at">y =</span> <span class="cn">FALSE</span>, <span class="at">qr =</span> <span class="cn">TRUE</span>, <span class="at">singular.ok =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb471-4"><a href="fonksiyonlar.html#cb471-4" tabindex="-1"></a>    <span class="at">contrasts =</span> <span class="cn">NULL</span>, offset, ...) </span>
+<span id="cb471-5"><a href="fonksiyonlar.html#cb471-5" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
 <p>Aşağıdaki iki kod satırı eşdeğerdir.</p>
-<div class="sourceCode" id="cb470"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">mydata</span>, <span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, model <span class="op">=</span> <span class="cn">FALSE</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x</span>, <span class="va">mydata</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, model <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p>Bu işlem güvenli olsa da, bazı karışıklıklara yol açabileceğinden, argümanların sırası ile çok fazla uğraşmanızı önermem.</p>
@@ -340,7 +341,7 @@ Bir argüman isme göre eşleştirildiğinde, argüman listesinden "çıkarılı
 Adlandırılmış argümanlar, konumunu değil, argüman adını hatırlayabiliyorsanız da yardımcı olur.
 Örneğin, çizim fonksiyonları genellikle özelleştirmeye izin vermek için çok sayıda seçeneğe sahiptir, ancak bu, argüman listesindeki her argümanın konumunu tam olarak hatırlamayı zorlaştırır.</p>
 <p>Varsayılan bir değer belirtmemenin yanı sıra, bir argümanın değerini <code>NULL</code> olarak da ayarlayabilirsiniz.</p>
-<div class="sourceCode" id="cb471"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb473"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">f</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span> <span class="op">=</span> <span class="fl">1</span>, <span class="va">c</span> <span class="op">=</span> <span class="fl">2</span>, <span class="va">d</span> <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span> <span class="op">{</span></span>
 <span></span>
 <span><span class="op">}</span></span></code></pre></div>
@@ -357,25 +358,25 @@ Bunun yanında R'da özel anlamı olan <code>c,C,D,F,I,q,t,T</code> gibi tek har
 <code>...</code> argümanı genellikle başka bir fonksiyonu genişletirken kullanılır ve orijinal fonksiyonun tüm argüman listesini kopyalamak istemezsiniz</p>
 <p>Örneğin, özel bir çizim fonksiyonu varsayılan <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> fonksiyonunu tüm argüman listesiyle birlikte kullanmak isteyebilir.
 Aşağıdaki fonksiyon <code>type</code> argümanı için varsayılanı <code>type = "l"</code> değerine değiştirir (orijinal varsayılan <code>type = "p"</code> idi).</p>
-<div class="sourceCode" id="cb472"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb474"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">myplot</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, <span class="va">type</span> <span class="op">=</span> <span class="st">"l"</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
 <span>        <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span>, type <span class="op">=</span> <span class="va">type</span>, <span class="va">...</span><span class="op">)</span>         <span class="co">## '...'yi 'plot' işlevine geçirin</span></span>
 <span><span class="op">}</span></span></code></pre></div>
 <p>Jenerik fonksiyonlar, metotlara ekstra argümanlar aktarılabilmesi için <code>...</code> kullanır.</p>
-<div class="sourceCode" id="cb473"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb473-1"><a href="fonksiyonlar.html#cb473-1" tabindex="-1"></a><span class="sc">&gt;</span> mean</span>
-<span id="cb473-2"><a href="fonksiyonlar.html#cb473-2" tabindex="-1"></a><span class="cf">function</span> (x, ...) </span>
-<span id="cb473-3"><a href="fonksiyonlar.html#cb473-3" tabindex="-1"></a><span class="fu">UseMethod</span>(<span class="st">"mean"</span>)</span>
-<span id="cb473-4"><a href="fonksiyonlar.html#cb473-4" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x000001b85eb2c3a8</span><span class="sc">&gt;</span></span>
-<span id="cb473-5"><a href="fonksiyonlar.html#cb473-5" tabindex="-1"></a><span class="er">&lt;</span>environment<span class="sc">:</span> namespace<span class="sc">:</span>base<span class="sc">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="fonksiyonlar.html#cb475-1" tabindex="-1"></a><span class="sc">&gt;</span> mean</span>
+<span id="cb475-2"><a href="fonksiyonlar.html#cb475-2" tabindex="-1"></a><span class="cf">function</span> (x, ...) </span>
+<span id="cb475-3"><a href="fonksiyonlar.html#cb475-3" tabindex="-1"></a><span class="fu">UseMethod</span>(<span class="st">"mean"</span>)</span>
+<span id="cb475-4"><a href="fonksiyonlar.html#cb475-4" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x0000012c7c7f0248</span><span class="sc">&gt;</span></span>
+<span id="cb475-5"><a href="fonksiyonlar.html#cb475-5" tabindex="-1"></a><span class="er">&lt;</span>environment<span class="sc">:</span> namespace<span class="sc">:</span>base<span class="sc">&gt;</span></span></code></pre></div>
 <p>Fonksiyona aktarılan argüman sayısı önceden bilinemediğinde <code>...</code> argümanı gereklidir.
 Bu durum <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> ve <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> gibi fonksiyonlarda açıkça görülmektedir.</p>
-<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="fonksiyonlar.html#cb474-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(paste)</span>
-<span id="cb474-2"><a href="fonksiyonlar.html#cb474-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(cat)</span>
-<span id="cb474-3"><a href="fonksiyonlar.html#cb474-3" tabindex="-1"></a><span class="cf">function</span> (..., <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">collapse =</span> <span class="cn">NULL</span>, <span class="at">recycle0 =</span> <span class="cn">FALSE</span>) </span>
-<span id="cb474-4"><a href="fonksiyonlar.html#cb474-4" tabindex="-1"></a><span class="cn">NULL</span></span>
-<span id="cb474-5"><a href="fonksiyonlar.html#cb474-5" tabindex="-1"></a><span class="cf">function</span> (..., <span class="at">file =</span> <span class="st">""</span>, <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">fill =</span> <span class="cn">FALSE</span>, <span class="at">labels =</span> <span class="cn">NULL</span>, </span>
-<span id="cb474-6"><a href="fonksiyonlar.html#cb474-6" tabindex="-1"></a>    <span class="at">append =</span> <span class="cn">FALSE</span>) </span>
-<span id="cb474-7"><a href="fonksiyonlar.html#cb474-7" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="fonksiyonlar.html#cb476-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(paste)</span>
+<span id="cb476-2"><a href="fonksiyonlar.html#cb476-2" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(cat)</span>
+<span id="cb476-3"><a href="fonksiyonlar.html#cb476-3" tabindex="-1"></a><span class="cf">function</span> (..., <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">collapse =</span> <span class="cn">NULL</span>, <span class="at">recycle0 =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb476-4"><a href="fonksiyonlar.html#cb476-4" tabindex="-1"></a><span class="cn">NULL</span></span>
+<span id="cb476-5"><a href="fonksiyonlar.html#cb476-5" tabindex="-1"></a><span class="cf">function</span> (..., <span class="at">file =</span> <span class="st">""</span>, <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">fill =</span> <span class="cn">FALSE</span>, <span class="at">labels =</span> <span class="cn">NULL</span>, </span>
+<span id="cb476-6"><a href="fonksiyonlar.html#cb476-6" tabindex="-1"></a>    <span class="at">append =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb476-7"><a href="fonksiyonlar.html#cb476-7" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
 <p>Hem <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> hem de <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> birden fazla karakter vektörünü bir araya getirerek konsola metin yazdırdığından, bu fonksiyonların kullanıcı tarafından fonksiyona kaç karakter vektörü aktarılacağını önceden bilmesi imkansızdır.
 Bu yüzden her iki fonksiyonun da ilk argümanı <code>...</code> şeklindedir.</p>
 </div>
@@ -385,16 +386,16 @@ Bu yüzden her iki fonksiyonun da ilk argümanı <code>...</code> şeklindedir.<
 </h2>
 <p><code>...</code> ile ilgili bir sorun, argüman listesinde <em>after</em><code>...</code> olarak görünen herhangi bir argümanın açıkça adlandırılması gerektiği ve kısmen eşleştirilemeyeceği veya konum olarak eşleştirilemeyeceğidir.</p>
 <p><code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> fonksiyonunun argümanlarına bir göz atın.</p>
-<div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="fonksiyonlar.html#cb475-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(paste)</span>
-<span id="cb475-2"><a href="fonksiyonlar.html#cb475-2" tabindex="-1"></a><span class="cf">function</span> (..., <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">collapse =</span> <span class="cn">NULL</span>, <span class="at">recycle0 =</span> <span class="cn">FALSE</span>) </span>
-<span id="cb475-3"><a href="fonksiyonlar.html#cb475-3" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
+<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="fonksiyonlar.html#cb477-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(paste)</span>
+<span id="cb477-2"><a href="fonksiyonlar.html#cb477-2" tabindex="-1"></a><span class="cf">function</span> (..., <span class="at">sep =</span> <span class="st">" "</span>, <span class="at">collapse =</span> <span class="cn">NULL</span>, <span class="at">recycle0 =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb477-3"><a href="fonksiyonlar.html#cb477-3" tabindex="-1"></a><span class="cn">NULL</span></span></code></pre></div>
 <p><code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> fonksiyonu ile,<code>sep</code>ve<code>collapse</code> argümanları, varsayılan değerler kullanılmayacaksa, açıkça ve tam olarak adlandırılmalıdır.</p>
 <p>Burada "a" ve "b "nin birlikte yapıştırılmasını ve iki nokta üst üste ile ayrılmasını istediğimi belirtiyorum.</p>
-<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="fonksiyonlar.html#cb476-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">sep =</span> <span class="st">":"</span>)</span>
-<span id="cb476-2"><a href="fonksiyonlar.html#cb476-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"a:b"</span></span></code></pre></div>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="fonksiyonlar.html#cb478-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">sep =</span> <span class="st">":"</span>)</span>
+<span id="cb478-2"><a href="fonksiyonlar.html#cb478-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"a:b"</span></span></code></pre></div>
 <p>Eğer <code>sep</code> argümanını tam olarak belirtmezsem ve kısmi eşleştirmeye güvenmeye çalışırsam, beklenen sonucu alamıyorum.</p>
-<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="fonksiyonlar.html#cb477-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">se =</span> <span class="st">":"</span>)</span>
-<span id="cb477-2"><a href="fonksiyonlar.html#cb477-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"a b :"</span></span></code></pre></div>
+<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="fonksiyonlar.html#cb479-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">se =</span> <span class="st">":"</span>)</span>
+<span id="cb479-2"><a href="fonksiyonlar.html#cb479-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"a b :"</span></span></code></pre></div>
 </div>
 <div id="yazım-aşamaları" class="section level2" number="13.6">
 <h2>
@@ -418,45 +419,45 @@ Bu yüzden her iki fonksiyonun da ilk argümanı <code>...</code> şeklindedir.<
 <ul>
 <li>İstenilen sayıda veri seti oluşturan bir fonksiyon yazalım. Fonksiyonun ilk girdisi veri seti sayısı olmalı, varsayılan olarak bir veri seti oluşturalan fonksiyon taslağı oluşturalım.</li>
 </ul>
-<div class="sourceCode" id="cb478"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb480"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fonksiyon_adi</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sayi</span><span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">{</span></span>
 <span></span>
 <span><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Kullanıcı oluşturmak istediği her bir veri seti için satır ve sütun sayısını belirleyebilirsin. Satır ve sütun sayısını argüman olarak tanımlayalım. Örneğin oluşturduğu ilk veri setin 5 satır, 10 sütunlu ikincisi olsun. Bunun için argümana varsayalin değerler atayalım</li>
 </ul>
-<div class="sourceCode" id="cb479"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb481"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fonksiyon_adi</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">sayi</span><span class="op">=</span><span class="fl">1</span>,<span class="va">satir</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span>,<span class="va">sutun</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
 <span></span>
 <span><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Oluşturacak olan her bir veri setinin her bir sütunu standart normal dağılıma uygun olacak şekilde üretilsin. Oluşturulan veri setlerinden ilki "veri_1.xlsx" şeklinde çalışma alanına yazdırılsın</li>
 </ul>
-<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="fonksiyonlar.html#cb480-1" tabindex="-1"></a><span class="sc">&gt;</span> fonksiyon_adi <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">1</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>)){</span>
-<span id="cb480-2"><a href="fonksiyonlar.html#cb480-2" tabindex="-1"></a><span class="sc">+</span> </span>
-<span id="cb480-3"><a href="fonksiyonlar.html#cb480-3" tabindex="-1"></a><span class="sc">+</span>     df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span>satir, <span class="at">ncol=</span>sutun))</span>
-<span id="cb480-4"><a href="fonksiyonlar.html#cb480-4" tabindex="-1"></a><span class="sc">+</span>      writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df,<span class="st">"veri_1.xlsx"</span>)</span>
-<span id="cb480-5"><a href="fonksiyonlar.html#cb480-5" tabindex="-1"></a><span class="sc">+</span> }</span>
-<span id="cb480-6"><a href="fonksiyonlar.html#cb480-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">1</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="fonksiyonlar.html#cb482-1" tabindex="-1"></a><span class="sc">&gt;</span> fonksiyon_adi <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">1</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>)){</span>
+<span id="cb482-2"><a href="fonksiyonlar.html#cb482-2" tabindex="-1"></a><span class="sc">+</span> </span>
+<span id="cb482-3"><a href="fonksiyonlar.html#cb482-3" tabindex="-1"></a><span class="sc">+</span>     df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span>satir, <span class="at">ncol=</span>sutun))</span>
+<span id="cb482-4"><a href="fonksiyonlar.html#cb482-4" tabindex="-1"></a><span class="sc">+</span>      writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df,<span class="st">"veri_1.xlsx"</span>)</span>
+<span id="cb482-5"><a href="fonksiyonlar.html#cb482-5" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb482-6"><a href="fonksiyonlar.html#cb482-6" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">1</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>))</span></code></pre></div>
 <ul>
 <li>Şimdi ise bu fonksiyonu çoklu dosya yazımına uygun hale getirelim</li>
 </ul>
-<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="fonksiyonlar.html#cb481-1" tabindex="-1"></a><span class="sc">&gt;</span> </span>
-<span id="cb481-2"><a href="fonksiyonlar.html#cb481-2" tabindex="-1"></a><span class="er">&gt;</span> fonksiyon_adi <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>)){</span>
-<span id="cb481-3"><a href="fonksiyonlar.html#cb481-3" tabindex="-1"></a><span class="sc">+</span>     </span>
-<span id="cb481-4"><a href="fonksiyonlar.html#cb481-4" tabindex="-1"></a><span class="sc">+</span>   df_list <span class="ot">&lt;-</span> <span class="fu">list</span>() <span class="do">## her bir veri setinin atanacağı yeni nesne</span></span>
-<span id="cb481-5"><a href="fonksiyonlar.html#cb481-5" tabindex="-1"></a><span class="sc">+</span>     </span>
-<span id="cb481-6"><a href="fonksiyonlar.html#cb481-6" tabindex="-1"></a><span class="sc">+</span>     <span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sayi){</span>
-<span id="cb481-7"><a href="fonksiyonlar.html#cb481-7" tabindex="-1"></a><span class="sc">+</span>     df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span>satir[i], <span class="at">ncol=</span>sutun[i])) <span class="co"># veri seti istenilen ozelliklerde olusturulur</span></span>
-<span id="cb481-8"><a href="fonksiyonlar.html#cb481-8" tabindex="-1"></a><span class="sc">+</span>     }</span>
-<span id="cb481-9"><a href="fonksiyonlar.html#cb481-9" tabindex="-1"></a><span class="sc">+</span>      <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sutun[i]){</span>
-<span id="cb481-10"><a href="fonksiyonlar.html#cb481-10" tabindex="-1"></a><span class="sc">+</span>      df[,j] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(satir[i],<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">2</span>) <span class="co">#  her bir veri setinin her bir sütunu standart normal dağılıma uygun uretilir</span></span>
-<span id="cb481-11"><a href="fonksiyonlar.html#cb481-11" tabindex="-1"></a><span class="sc">+</span>     }</span>
-<span id="cb481-12"><a href="fonksiyonlar.html#cb481-12" tabindex="-1"></a><span class="sc">+</span>      df_list[[i]] <span class="ot">&lt;-</span> df</span>
-<span id="cb481-13"><a href="fonksiyonlar.html#cb481-13" tabindex="-1"></a><span class="sc">+</span>       df_list</span>
-<span id="cb481-14"><a href="fonksiyonlar.html#cb481-14" tabindex="-1"></a><span class="sc">+</span>       writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df_list[[i]],<span class="fu">paste</span>(<span class="st">"veri"</span>,i,<span class="st">".xlsx"</span>, <span class="at">sep=</span><span class="st">""</span>))</span>
-<span id="cb481-15"><a href="fonksiyonlar.html#cb481-15" tabindex="-1"></a><span class="sc">+</span> }</span>
-<span id="cb481-16"><a href="fonksiyonlar.html#cb481-16" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">4</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="fonksiyonlar.html#cb483-1" tabindex="-1"></a><span class="sc">&gt;</span> </span>
+<span id="cb483-2"><a href="fonksiyonlar.html#cb483-2" tabindex="-1"></a><span class="er">&gt;</span> fonksiyon_adi <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>)){</span>
+<span id="cb483-3"><a href="fonksiyonlar.html#cb483-3" tabindex="-1"></a><span class="sc">+</span>     </span>
+<span id="cb483-4"><a href="fonksiyonlar.html#cb483-4" tabindex="-1"></a><span class="sc">+</span>   df_list <span class="ot">&lt;-</span> <span class="fu">list</span>() <span class="do">## her bir veri setinin atanacağı yeni nesne</span></span>
+<span id="cb483-5"><a href="fonksiyonlar.html#cb483-5" tabindex="-1"></a><span class="sc">+</span>     </span>
+<span id="cb483-6"><a href="fonksiyonlar.html#cb483-6" tabindex="-1"></a><span class="sc">+</span>     <span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sayi){</span>
+<span id="cb483-7"><a href="fonksiyonlar.html#cb483-7" tabindex="-1"></a><span class="sc">+</span>     df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="dv">0</span>,<span class="at">nrow=</span>satir[i], <span class="at">ncol=</span>sutun[i])) <span class="co"># veri seti istenilen ozelliklerde olusturulur</span></span>
+<span id="cb483-8"><a href="fonksiyonlar.html#cb483-8" tabindex="-1"></a><span class="sc">+</span>     }</span>
+<span id="cb483-9"><a href="fonksiyonlar.html#cb483-9" tabindex="-1"></a><span class="sc">+</span>      <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>sutun[i]){</span>
+<span id="cb483-10"><a href="fonksiyonlar.html#cb483-10" tabindex="-1"></a><span class="sc">+</span>      df[,j] <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(satir[i],<span class="dv">0</span>,<span class="dv">1</span>),<span class="dv">2</span>) <span class="co">#  her bir veri setinin her bir sütunu standart normal dağılıma uygun uretilir</span></span>
+<span id="cb483-11"><a href="fonksiyonlar.html#cb483-11" tabindex="-1"></a><span class="sc">+</span>     }</span>
+<span id="cb483-12"><a href="fonksiyonlar.html#cb483-12" tabindex="-1"></a><span class="sc">+</span>      df_list[[i]] <span class="ot">&lt;-</span> df</span>
+<span id="cb483-13"><a href="fonksiyonlar.html#cb483-13" tabindex="-1"></a><span class="sc">+</span>       df_list</span>
+<span id="cb483-14"><a href="fonksiyonlar.html#cb483-14" tabindex="-1"></a><span class="sc">+</span>       writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(df_list[[i]],<span class="fu">paste</span>(<span class="st">"veri"</span>,i,<span class="st">".xlsx"</span>, <span class="at">sep=</span><span class="st">""</span>))</span>
+<span id="cb483-15"><a href="fonksiyonlar.html#cb483-15" tabindex="-1"></a><span class="sc">+</span> }</span>
+<span id="cb483-16"><a href="fonksiyonlar.html#cb483-16" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">fonksiyon_adi</span>(<span class="at">sayi=</span><span class="dv">3</span>,<span class="at">satir=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>),<span class="at">sutun=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">4</span>))</span></code></pre></div>
 <div id="sıra-sizde-2" class="section level3" number="13.7.1">
 <h3>
 <span class="header-section-number">13.7.1</span> Sıra Sizde<a class="anchor" aria-label="anchor" href="#s%C4%B1ra-sizde-2"><i class="fas fa-link"></i></a>
