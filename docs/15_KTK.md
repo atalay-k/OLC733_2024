@@ -2166,20 +2166,6 @@ Korelasyon matrisi grafiği, veri kümesinde 7. ve 17. maddeler gibi birkaç sor
 hci_items_scored <- hci_scored$scored 
 hci_itemanalysis <- CTT::itemAnalysis(items = hci_items_scored,
                                       pBisFlag = .2, bisFlag = .2)
-
-hci_itemanalysis
-```
-
-```
-## 
-##  Number of Items 
-##  20 
-## 
-##  Number of Examinees 
-##  651 
-## 
-##  Coefficient Alpha 
-##  0.715
 ```
 
 
@@ -2998,12 +2984,11 @@ print(gender_LR)
 ##  Output was not captured!
 ```
 
-`difMH()` fonksiyonundan elde edilen çıktıya benzer şekilde`,difLogistic()` fonksiyonundan elde edilen çıktı da iki bölümden oluşur. Çıktının üst kısmı, öğeler için olabilirlik oranı test istatistiklerini ve karşılık gelen p değerlerini gösterir. 
+`difMH()` fonksiyonundan elde edilen çıktıya benzer şekilde`, `difLogistic()` fonksiyonundan elde edilen çıktı da iki bölümden oluşur. Çıktının üst kısmı, öğeler için olabilirlik oranı test istatistiklerini ve karşılık gelen p değerlerini gösterir. 
 
 LR yöntemi, 1. ve 19. maddelere ek olarak, anlamlılık düzeyinde 12. ve 20. maddeler olmak üzere iki DIF’li madde daha tespit etmiştir. Çıktının ikinci kısmı, sözde R-kare farkları kullanılarak hesaplanan etki büyüklüklerini göstermektedir. Sonuçlar, her iki etki büyüklüğü ölçütüne (ZT ve JG) dayalı olarak tüm maddeler için etki büyüklüğünün “A: İhmal Edilebilir DIF” olduğunu göstermektedir. Grafikte, dört DIF maddesinin (madde 1, 12, 19 ve 20) eşik olabilirlik oranı istatistiği ( anlamlılık düzeyi için 5.9915) için yatay çizginin üzerinde olduğunu görüyoruz.
 
-Aynı fonksiyonu, olabilirlik oranı istatistiğine dayalı olarak işaretlenmiş maddeler için ayrı grafikler oluşturmak için de kullanılabilir. Çizim, x ekseninin toplam test puanları olduğu ve y ekseninin doğru cevap olasılığını (yani 0 üzerinden 1 plot(gender_LR) The plot was not captured! α = .05 α = .05 plot() 1 alma) gösterdiği ayrı madde karakteristik eğrileri oluşturur. Bu grafik, DIF türünün tek tip mi yoksa tek tip olmayan mı olduğunu ve iki gruptan hangisinin (yani referans ve odak) diğer gruba göre avantajlı olduğunu gösterebilir. Aşağıdaki örnekte, 1. ve 19. maddeler için madde karakteristik eğrileri oluşturacağız. Öğeyi item bağımsız değişkenini kullanarak ve çizim türünü plot = "itemCurve" kullanarak belirtiriz.
-
+Aynı fonksiyonu, olabilirlik oranı istatistiğine dayalı olarak işaretlenmiş maddeler için ayrı grafikler oluşturmak için de kullanılabilir. Çizim, x ekseninin toplam test puanları olduğu ve y ekseninin doğru cevap olasılığını (yani 0 üzerinden 1 plot(gender_LR) The plot was not captured! α = .05 α = .05 plot() 1 alma) gösterdiği ayrı madde karakteristik eğrileri oluşturur. Bu grafik, DIF türünün tek tip mi yoksa tek tip olmayan mı olduğunu ve iki gruptan hangisinin (yani referans ve odak) diğer gruba göre avantajlı olduğunu gösterebilir. Aşağıdaki örnekte, 1. ve 19. maddeler için madde karakteristik eğrileri oluşturacağız. 
 
 ```r
 plot(gender_LR)
@@ -3164,8 +3149,8 @@ plot(lang_LR, item = 16, plot = "itemCurve")
 
 ## Kaynaklar
 
-Cacioppo, John T, and Richard E Petty. 1982. “The Need for Cognition.” Journal of Personality and Social Psychology 42 (1): 116.
+Cacioppo, John T, and Richard E Petty. (1982). The Need for Cognition. *Journal of Personality and Social Psychology 42*(1), 116.
 
-Chiesi, Francesca, Kinga Morsanyi, Maria Anna Donati, and Caterina Primi. 2018. “Applying Item Response Theory to Develop a Shortened Version of the Need for Cognition Scale.” Advances in Cognitive Psychology 14 (3): 75.
+Chiesi, Francesca, Kinga Morsanyi, Maria Anna Donati, and Caterina Primi. (2018). Applying Item Response Theory to Develop a Shortened Version of the Need for Cognition Scale. *Advances in Cognitive Psychology 14(3)*, 75.
 
-Grass, Julia, Florian Krieger, Philipp Paulus, Samuel Greiff, Anja Strobel, and Alexander Strobel. 2019. “Thinking in Action: Need for Cognition Predicts SelfControl Together with Action Orientation.” PLOS ONE 14 (8): 1–20. .
+Grass, Julia, Florian Krieger, Philipp Paulus, Samuel Greiff, Anja Strobel, and Alexander Strobel. (2019). Thinking in Action: Need for Cognition Predicts SelfControl Together with Action Orientation. *PLOS ONE 14*(8): 1–20.

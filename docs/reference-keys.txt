@@ -269,8 +269,8 @@ madde-bilgi-fonksiyonu
 pl-modeli-için-madde-bilgi-fonksiyonu
 pl-model-madde-bilgi-fonksiyonu
 test-bilgi-fonksiyonu
-test-bilgi-fonksiyonu-1
 maksimum-bilgi
+madde-tepki-kuramı-1
 kaynaklar-7
 mtk-ile-madde-analizi-uygulaması
 iki-kategorili-doğru-yanlış-mtk-modelleri
@@ -281,7 +281,6 @@ varsayımlar-1
 model-uyumu
 parametre-kestirimleri-1
 madde-karakteristik-eğrisi-mke-1
-iki-parametreli-lojistik-2-pl-model-1
 pl-model-1
 pl-model-2
 yetenek-parametresi-kestirimi

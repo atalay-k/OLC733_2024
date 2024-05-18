@@ -10,43 +10,7 @@
 
 - madde ve test bilgi fonksiyonu 
 
-- paketler
 
-```r
-library(mirt)
-```
-
-```
-## Loading required package: stats4
-```
-
-```
-## Loading required package: lattice
-```
-
-```r
-library(ggplot2)
-library(psych)
-```
-
-```
-## Warning: package 'psych' was built under R version 4.3.3
-```
-
-```
-## 
-## Attaching package: 'psych'
-```
-
-```
-## The following objects are masked from 'package:ggplot2':
-## 
-##     %+%, alpha
-```
-
-```r
-library(readr)
-```
 
 - kullanılacak veriler
   - `<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>`{=html}: [Sunu veri](https://raw.githubusercontent.com/atalay-k/mirt_k/main/dichotomous.csv)
@@ -126,20 +90,6 @@ birpl_model_v1 <- "F = 1-15
 ```r
 library(readr)
 ikikategorili <- read_csv("import/dichotomous.csv")[,-1]
-```
-
-```
-## New names:
-## Rows: 1000 Columns: 16
-## ── Column specification
-## ──────────────────────────────────────────────────────── Delimiter: "," dbl
-## (16): ...1, V1, V2, V3, V4, V5, V6, V7, V8, V9, V10, V11, V12, V13, V14,...
-## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
-## Specify the column types or set `show_col_types = FALSE` to quiet this message.
-## • `` -> `...1`
-```
-
-```r
 head(ikikategorili[,1:5])
 ```
 
@@ -159,32 +109,10 @@ head(ikikategorili[,1:5])
 
 
 ```r
-summary(ikikategorili)
+DataExplorer::plot_bar(ikikategorili)
 ```
 
-```
-##        V1              V2              V3              V4              V5      
-##  Min.   :0.000   Min.   :0.000   Min.   :0.000   Min.   :0.000   Min.   :0.00  
-##  1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:0.00  
-##  Median :0.000   Median :0.000   Median :0.000   Median :0.000   Median :0.00  
-##  Mean   :0.182   Mean   :0.074   Mean   :0.175   Mean   :0.164   Mean   :0.28  
-##  3rd Qu.:0.000   3rd Qu.:0.000   3rd Qu.:0.000   3rd Qu.:0.000   3rd Qu.:1.00  
-##  Max.   :1.000   Max.   :1.000   Max.   :1.000   Max.   :1.000   Max.   :1.00  
-##        V6              V7             V8              V9             V10       
-##  Min.   :0.000   Min.   :0.00   Min.   :0.000   Min.   :0.000   Min.   :0.000  
-##  1st Qu.:0.000   1st Qu.:0.00   1st Qu.:0.000   1st Qu.:0.000   1st Qu.:1.000  
-##  Median :1.000   Median :0.00   Median :0.000   Median :0.000   Median :1.000  
-##  Mean   :0.566   Mean   :0.44   Mean   :0.479   Mean   :0.435   Mean   :0.915  
-##  3rd Qu.:1.000   3rd Qu.:1.00   3rd Qu.:1.000   3rd Qu.:1.000   3rd Qu.:1.000  
-##  Max.   :1.000   Max.   :1.00   Max.   :1.000   Max.   :1.000   Max.   :1.000  
-##       V11             V12            V13             V14             V15       
-##  Min.   :0.000   Min.   :0.00   Min.   :0.000   Min.   :0.000   Min.   :0.000  
-##  1st Qu.:0.000   1st Qu.:1.00   1st Qu.:1.000   1st Qu.:0.000   1st Qu.:0.000  
-##  Median :0.000   Median :1.00   Median :1.000   Median :1.000   Median :1.000  
-##  Mean   :0.123   Mean   :0.76   Mean   :0.936   Mean   :0.612   Mean   :0.541  
-##  3rd Qu.:0.000   3rd Qu.:1.00   3rd Qu.:1.000   3rd Qu.:1.000   3rd Qu.:1.000  
-##  Max.   :1.000   Max.   :1.00   Max.   :1.000   Max.   :1.000   Max.   :1.000
-```
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;" /><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-6-2.png" width="100%" style="display: block; margin: auto;" />
 
 
 - Veriyi 1-0 olarak puanlamak için **key2binary()**
@@ -446,7 +374,10 @@ sum(abs(Q3) >0.2,na.rm=TRUE)
 </div>
 
 - Elde edilen 
-- **RMSEA** değeri = 0.0648 (%95 CI[0.0594, 0.0702]) ve - **SRMSR** değeri = 0.0929, önerilen eşik değerleri olan **RMSEA <= .06** 
+
+- **RMSEA** değeri = 0.0648 (%95 CI[0.0594, 0.0702]) ve 
+- **SRMSR** değeri = 0.0929, önerilen eşik değerleri olan **RMSEA <= .06** 
+
 - **SRMSR <= .08** kullanılarak verilerin modelin iyi uyum **sağlamadığını** göstermektedir.
 
 
@@ -455,30 +386,29 @@ Madde uyumlarına baktığımızda özellikle V1, V2 maddelerinde yüksek ki-kar
 
 
 ```r
-itemfit(birpl_uyum)
+library(dplyr)
+itemfit(birpl_uyum) %>% kable(digits=2)
 ```
 
-<div class="kable-table">
 
-|item |       S_X2| df.S_X2| RMSEA.S_X2|    p.S_X2|
-|:----|----------:|-------:|----------:|---------:|
-|V1   |  85.278855|       9|  0.0921082| 0.0000000|
-|V2   | 548.096538|       8|  0.2599609| 0.0000000|
-|V3   |  15.158476|       9|  0.0261717| 0.0866739|
-|V4   |  13.067239|       9|  0.0212689| 0.1595873|
-|V5   |  17.621197|       9|  0.0309656| 0.0398315|
-|V6   |  16.944400|       9|  0.0297253| 0.0495938|
-|V7   |  10.078871|       9|  0.0109542| 0.3441380|
-|V8   |   9.692087|       9|  0.0087736| 0.3759827|
-|V9   |   1.949685|       9|  0.0000000| 0.9922385|
-|V10  |   1.779015|       8|  0.0000000| 0.9870533|
-|V11  |  10.540939|       9|  0.0130915| 0.3084910|
-|V12  |   5.506152|       8|  0.0000000| 0.7023583|
-|V13  |  10.466486|       8|  0.0175676| 0.2337981|
-|V14  |  12.531175|       9|  0.0198178| 0.1849924|
-|V15  |   5.351539|       9|  0.0000000| 0.8026505|
 
-</div>
+|item |   S_X2| df.S_X2| RMSEA.S_X2| p.S_X2|
+|:----|------:|-------:|----------:|------:|
+|V1   |  85.28|       9|       0.09|   0.00|
+|V2   | 548.10|       8|       0.26|   0.00|
+|V3   |  15.16|       9|       0.03|   0.09|
+|V4   |  13.07|       9|       0.02|   0.16|
+|V5   |  17.62|       9|       0.03|   0.04|
+|V6   |  16.94|       9|       0.03|   0.05|
+|V7   |  10.08|       9|       0.01|   0.34|
+|V8   |   9.69|       9|       0.01|   0.38|
+|V9   |   1.95|       9|       0.00|   0.99|
+|V10  |   1.78|       8|       0.00|   0.99|
+|V11  |  10.54|       9|       0.01|   0.31|
+|V12  |   5.51|       8|       0.00|   0.70|
+|V13  |  10.47|       8|       0.02|   0.23|
+|V14  |  12.53|       9|       0.02|   0.18|
+|V15  |   5.35|       9|       0.00|   0.80|
 
 ### Parametre Kestirimleri
 
@@ -655,38 +585,9 @@ facet_items = FALSE)
 
 <img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-26-1.png" width="100%" style="display: block; margin: auto;" />
 
-## İki-Parametreli Lojistik (2-PL) Model
-
-- **2-PL** model yaygın olarak kullanılan MTK modellerindendir.
-
-
-- **2-PL** model için madde karakteristik eğrileri aşağıdaki eşitlikle elde edilir:
-
-
-$$ln(\frac{P_i(\theta)}{1-P_i(\theta)})=a_i(\theta - b_{i})$$
-
-Burada,
-- $P_i(\theta)$:  θ yetenek düzeyindeki bir bireyin i maddesini doğru 	yanıtlama olasılığı
-- $b_i$:       i maddesinin güçlük parametresi
-- $a_i$:       i maddesinin ayırt edicilik parametresi
-- .xsmall[Çoğu durumda ai(θ - bi), D = 1.7 normalleştirme sabitiyle çarpılır.]
-
 
 ##  2-PL Model
 
-- Bir madde için $a_i$ parametresi yetenek ölçeğinde $b_i$  noktasında **madde karakteristik eğrisinin eğimiyle orantılıdır.** 
-
-
-
-  - Daha **dik eğimli** maddeler farklı yetenek düzeylerindeki bireyleri ayırmada **daha az eğimli** maddelere göre daha kullanışlıdır. 
-  
-
-
-  - Bir maddenin bir θ yetenek düzeyinin yakınındaki bireyler arasındaki ayırt ediciliği 
-  - (θ düzeyine eşit veya daha düşük yetenek düzeyine sahip bireyleri θ düzeyinden yüksek yetenek düzeyine sahip bireylerden ayırma gücü) 
-  θ değerindeki madde karakteristik **eğrisinin eğimiyle** belirlenir.
-
--   $a_i$ değerleri kuramsal olarak (-∞, +∞) ölçeğindedir. 
 
 
 -  2-PL Model için Analiz
@@ -1200,10 +1101,15 @@ plot(ikipl_uyum, type='infoSE')
 ## Sıra Sizde
 
 1.`<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>`{=html}: [Veriyi açılan linkten farklı kaydet ile alabilirsiniz.](https://raw.githubusercontent.com/atalay-k/mirt_k/main/dat1.csv)
+
 2. MTK varsayamlarını test ediniz.
+
 3. Verinin hangi MTK modeline daha iyi uyum sağladığını inceleyiniz.
+
 4. Madde parametrelerini ve madde karakteristik eğrileri ile birlikte raporlayınız.
+
 5. Yetenek paramterelerini kestiriniz
+
 6. Test bilgi fonskiyonun grafiğini çiziniz.
 
 

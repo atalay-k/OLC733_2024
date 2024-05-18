@@ -5296,19 +5296,8 @@ NA
 <div class="sourceCode" id="cb619"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_items_scored</span> <span class="op">&lt;-</span> <span class="va">hci_scored</span><span class="op">$</span><span class="va">scored</span> </span>
 <span><span class="va">hci_itemanalysis</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/itemAnalysis.html">itemAnalysis</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">hci_items_scored</span>,</span>
-<span>                                      pBisFlag <span class="op">=</span> <span class="fl">.2</span>, bisFlag <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">hci_itemanalysis</span></span></code></pre></div>
-<pre><code>## 
-##  Number of Items 
-##  20 
-## 
-##  Number of Examinees 
-##  651 
-## 
-##  Coefficient Alpha 
-##  0.715</code></pre>
-<div class="sourceCode" id="cb621"><pre class="downlit sourceCode r">
+<span>                                      pBisFlag <span class="op">=</span> <span class="fl">.2</span>, bisFlag <span class="op">=</span> <span class="fl">.2</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb620"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_itemanalysis</span><span class="op">$</span><span class="va">itemReport</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
@@ -5763,7 +5752,7 @@ item20
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb622"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb621"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_itemanalysis2</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/itemAnalysis.html">itemAnalysis</a></span><span class="op">(</span>items <span class="op">=</span></span>
 <span>    <span class="va">hci_items_scored</span><span class="op">[</span>, <span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">7</span>, <span class="fl">17</span><span class="op">)</span><span class="op">]</span>, </span>
 <span>      pBisFlag <span class="op">=</span> <span class="fl">.2</span>, </span>
@@ -5780,7 +5769,7 @@ item20
 ##  0.733</code></pre>
 <p>Güncellenen madde analizi sonuçları,
 hci testinin iç tutarlılığının 0.73’e yükseldiğini göstermektedir</p>
-<div class="sourceCode" id="cb624"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb623"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_itemanalysis2</span><span class="op">$</span><span class="va">itemReport</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/kableExtra/man/kbl.html">kbl</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
@@ -6199,7 +6188,7 @@ item20
 <p>Test düzeyinde önemli bir istatistik, aşağıdaki şekilde hesaplanabilen ölçmenin standart ölçüm hatasıdır (SEM):</p>
 <p><span class="math display">\[SEM = σ (1 − r_{xx})\]</span></p>
 <p>Burada test puanlarının standart sapması ve testin güvenilirliğidir. SEM ve güven aralıklarını hesaplamak için, madde verilerini girdi olarak alan ve toplam puan için SEM ve güven aralıklarını hesaplayan özel bir fonksiyon oluşturma</p>
-<div class="sourceCode" id="cb625"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb624"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sem.ctt</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">ci.level</span> <span class="op">=</span> <span class="fl">0.95</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st">"CTT"</span><span class="op">)</span></span>
 <span>  <span class="va">rxx</span> <span class="op">&lt;-</span> <span class="fu">CTT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/CTT/man/itemAnalysis.html">itemAnalysis</a></span><span class="op">(</span>items <span class="op">=</span> <span class="va">x</span><span class="op">)</span><span class="op">$</span><span class="va">alpha</span></span>
@@ -6264,7 +6253,7 @@ item20
 <p>DIF madde düzeyindeki yanlılığı tespit etmek için kullanılır. difR paketi <span class="citation">(<a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html#ref-difR">Magis et al., 2010</a>)</span> , DIF gösteren iki kategorili maddeleri tespit etmek için çeşitli yöntemler sağlar.</p>
 <p>Aşağıdaki örnekte, puanlanan hci maddelerini DIF açısından analiz etmek için Mantel-Haenszel (MH) ve lojistik regresyon yöntemlerini kullanacağız.</p>
 <p>Cinsiyet veya ana dil olarak İngilizce konuşulmasına bağlı olarak DIF sergileyen hci maddelerini belirlemek için grup değişkenleri olarak “sex” ve “eng_first_lang” kullanacağız.</p>
-<div class="sourceCode" id="cb626"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb625"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_scored</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"import/hci_scored.csv"</span>, header <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">hci_scored</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -6465,7 +6454,7 @@ item20
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb627"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb626"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">hci_scored</span><span class="op">$</span><span class="va">gender</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">hci_scored</span><span class="op">$</span><span class="va">eng_first_lang</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
@@ -6474,11 +6463,11 @@ item20
 ## 
 ##  no yes 
 ## 143 508</code></pre>
-<div class="sourceCode" id="cb629"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb628"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hci_items</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">hci_scored</span>, <span class="fu"><a href="https://tidyselect.r-lib.org/reference/starts_with.html">starts_with</a></span><span class="op">(</span><span class="st">"item"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">gender</span> <span class="op">&lt;-</span> <span class="va">hci_scored</span><span class="op">$</span><span class="va">gender</span></span>
 <span><span class="va">language</span> <span class="op">&lt;-</span> <span class="va">hci_scored</span><span class="op">$</span><span class="va">eng_first_lang</span></span></code></pre></div>
-<div class="sourceCode" id="cb630"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb629"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gender_MH</span> <span class="op">&lt;-</span> <span class="fu">difR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/difR/man/difMH.html">difMH</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">hci_items</span>,</span>
 <span>                         group <span class="op">=</span> <span class="va">gender</span>,</span>
 <span>                         focal.name <span class="op">=</span> <span class="st">"F"</span>,</span>
@@ -6571,11 +6560,11 @@ item20
 <p>İki maddenin (madde 1 ve 19) p değerleri .05’ten küçük olduğu için kız ve erkek öğrenciler arasında DIF gösterdiği gerekçesiyle * ile işaretlendiğini görüyoruz. Bu maddeler ayrıca “DIF maddesi olarak tespit edilen maddeler” altında listelenmiştir.</p>
 <p>Çıktının ikinci kısmı, ETS delta sınıflandırması kullanılarak etki büyüklüğünü göstermektedir. İki madde (madde 1 ve 19) “B: Orta Derecede DIF” olarak sınıflandırılırken, geri kalan maddeler “A: İhmal Edilebilir DIF” olarak sınıflandırılmıştır. “C: Büyük DIF” işaretine sahip hiçbir madde yoktur.</p>
 <p>Grafik ayrıca MH ki-kare testine göre işaretlenmiş iki maddeyi de göstermektedir. Bu maddeler eşik ki-kare değeri için yatay çizginin üzerinde görünmektedir ( anlamlılık düzeyi için ).</p>
-<div class="sourceCode" id="cb632"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb631"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">gender_MH</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-65-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!</code></pre>
-<div class="sourceCode" id="cb634"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb633"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lang_MH</span> <span class="op">&lt;-</span> <span class="fu">difR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/difR/man/difMH.html">difMH</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">hci_items</span>,</span>
 <span>                       group <span class="op">=</span> <span class="va">language</span>,</span>
 <span>                       focal.name <span class="op">=</span> <span class="st">"no"</span>,</span>
@@ -6669,7 +6658,7 @@ item20
 ## The plot was not captured!</code></pre>
 <p>Sonuçlar, üç maddenin (madde 3, 16 ve 18) dile dayalı DIF içerdiği için işaretlendiğini göstermektedir. ETS delta sınıflandırması kullanılarak elde edilen etki büyüklüğü, madde 3’ün “B: Orta DIF” olarak sınıflandırıldığını, madde 16 ve 18’in ise “C: Büyük DIF” olarak sınıflandırıldığını göstermektedir. Bu maddelere ek olarak, 6. ve 20. maddeler “B: Orta DIF” olarak sınıflandırılmıştır.</p>
 <p>Dolayısıyla, bu maddelerin içeriğinin diğer işaretli maddelerle birlikte incelenmesi ve dile dayalı DIF’in neden ortaya çıktığının belirlenmesi faydalı olacaktır.</p>
-<div class="sourceCode" id="cb636"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb635"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gender_LR</span> <span class="op">&lt;-</span> <span class="fu">difR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/difR/man/difLogistic.html">difLogistic</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">hci_items</span>,</span>
 <span>                               group <span class="op">=</span> <span class="va">gender</span>,</span>
 <span>                               focal.name <span class="op">=</span> <span class="st">"F"</span>,</span>
@@ -6760,22 +6749,22 @@ item20
 ##  Jodoin &amp; Gierl (JG): 0 'A' 0.035 'B' 0.07 'C' 1 
 ## 
 ##  Output was not captured!</code></pre>
-<p><code>difMH()</code> fonksiyonundan elde edilen çıktıya benzer şekilde<code>,difLogistic()</code> fonksiyonundan elde edilen çıktı da iki bölümden oluşur. Çıktının üst kısmı, öğeler için olabilirlik oranı test istatistiklerini ve karşılık gelen p değerlerini gösterir.</p>
+<p><code>difMH()</code> fonksiyonundan elde edilen çıktıya benzer şekilde<code>,</code>difLogistic()` fonksiyonundan elde edilen çıktı da iki bölümden oluşur. Çıktının üst kısmı, öğeler için olabilirlik oranı test istatistiklerini ve karşılık gelen p değerlerini gösterir.</p>
 <p>LR yöntemi, 1. ve 19. maddelere ek olarak, anlamlılık düzeyinde 12. ve 20. maddeler olmak üzere iki DIF’li madde daha tespit etmiştir. Çıktının ikinci kısmı, sözde R-kare farkları kullanılarak hesaplanan etki büyüklüklerini göstermektedir. Sonuçlar, her iki etki büyüklüğü ölçütüne (ZT ve JG) dayalı olarak tüm maddeler için etki büyüklüğünün “A: İhmal Edilebilir DIF” olduğunu göstermektedir. Grafikte, dört DIF maddesinin (madde 1, 12, 19 ve 20) eşik olabilirlik oranı istatistiği ( anlamlılık düzeyi için 5.9915) için yatay çizginin üzerinde olduğunu görüyoruz.</p>
-<p>Aynı fonksiyonu, olabilirlik oranı istatistiğine dayalı olarak işaretlenmiş maddeler için ayrı grafikler oluşturmak için de kullanılabilir. Çizim, x ekseninin toplam test puanları olduğu ve y ekseninin doğru cevap olasılığını (yani 0 üzerinden 1 plot(gender_LR) The plot was not captured! α = .05 α = .05 plot() 1 alma) gösterdiği ayrı madde karakteristik eğrileri oluşturur. Bu grafik, DIF türünün tek tip mi yoksa tek tip olmayan mı olduğunu ve iki gruptan hangisinin (yani referans ve odak) diğer gruba göre avantajlı olduğunu gösterebilir. Aşağıdaki örnekte, 1. ve 19. maddeler için madde karakteristik eğrileri oluşturacağız. Öğeyi item bağımsız değişkenini kullanarak ve çizim türünü plot = "itemCurve" kullanarak belirtiriz.</p>
-<div class="sourceCode" id="cb638"><pre class="downlit sourceCode r">
+<p>Aynı fonksiyonu, olabilirlik oranı istatistiğine dayalı olarak işaretlenmiş maddeler için ayrı grafikler oluşturmak için de kullanılabilir. Çizim, x ekseninin toplam test puanları olduğu ve y ekseninin doğru cevap olasılığını (yani 0 üzerinden 1 plot(gender_LR) The plot was not captured! α = .05 α = .05 plot() 1 alma) gösterdiği ayrı madde karakteristik eğrileri oluşturur. Bu grafik, DIF türünün tek tip mi yoksa tek tip olmayan mı olduğunu ve iki gruptan hangisinin (yani referans ve odak) diğer gruba göre avantajlı olduğunu gösterebilir. Aşağıdaki örnekte, 1. ve 19. maddeler için madde karakteristik eğrileri oluşturacağız.</p>
+<div class="sourceCode" id="cb637"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">gender_LR</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-68-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!</code></pre>
-<div class="sourceCode" id="cb640"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb639"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">gender_LR</span>, item <span class="op">=</span> <span class="fl">1</span>, plot <span class="op">=</span> <span class="st">"itemCurve"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-69-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!</code></pre>
-<div class="sourceCode" id="cb642"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb641"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">gender_LR</span>, item <span class="op">=</span> <span class="fl">19</span>, plot <span class="op">=</span> <span class="st">"itemCurve"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-70-1.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!</code></pre>
-<div class="sourceCode" id="cb644"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb643"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lang_LR</span> <span class="op">&lt;-</span> <span class="fu">difR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/difR/man/difLogistic.html">difLogistic</a></span><span class="op">(</span>Data <span class="op">=</span> <span class="va">hci_items</span>,</span>
 <span>                             group <span class="op">=</span> <span class="va">language</span>,</span>
 <span>                             focal.name <span class="op">=</span> <span class="st">"no"</span>,</span>
@@ -6874,10 +6863,10 @@ item20
 ##  Output was not captured! 
 ## The plot was not captured!</code></pre>
 <p>LR yöntemi, dil temelli DIF içeren altı madde tespit etmiştir: 1, 10, 13, 16, 18 ve 19. maddeler. Ancak bu maddelerin tümü, her iki etki büyüklüğü ölçütüne (ZT ve JG) göre “A: İhmal Edilebilir DIF” etki büyüklüğüne sahiptir. Son olarak, DIF içerdiği için işaretlenen maddelerden ikisine bir göz atalım. Şekillerde, 16. maddenin odak grup lehine tekdüze bir DIF’e sahip olduğunu, 10. maddenin ise tekdüze olmayan bir DIF’e sahip olduğunu görebiliriz (yani hangi grubun tercih edildiği testteki toplam puana bağlıdır)</p>
-<div class="sourceCode" id="cb646"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb645"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">lang_LR</span>, item <span class="op">=</span> <span class="fl">10</span>, plot <span class="op">=</span> <span class="st">"itemCurve"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-72-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb647"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb646"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">lang_LR</span>, item <span class="op">=</span> <span class="fl">16</span>, plot <span class="op">=</span> <span class="st">"itemCurve"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="15_KTK_files/figure-html/unnamed-chunk-72-2.png" width="100%" style="display: block; margin: auto;"></div>
 <pre><code>## The plot was not captured!
@@ -6887,9 +6876,9 @@ item20
 <h2>
 <span class="header-section-number">16.10</span> Kaynaklar<a class="anchor" aria-label="anchor" href="#kaynaklar-6"><i class="fas fa-link"></i></a>
 </h2>
-<p>Cacioppo, John T, and Richard E Petty. 1982. “The Need for Cognition.” Journal of Personality and Social Psychology 42 (1): 116.</p>
-<p>Chiesi, Francesca, Kinga Morsanyi, Maria Anna Donati, and Caterina Primi. 2018. “Applying Item Response Theory to Develop a Shortened Version of the Need for Cognition Scale.” Advances in Cognitive Psychology 14 (3): 75.</p>
-<p>Grass, Julia, Florian Krieger, Philipp Paulus, Samuel Greiff, Anja Strobel, and Alexander Strobel. 2019. “Thinking in Action: Need for Cognition Predicts SelfControl Together with Action Orientation.” PLOS ONE 14 (8): 1–20. .</p>
+<p>Cacioppo, John T, and Richard E Petty. (1982). The Need for Cognition. <em>Journal of Personality and Social Psychology 42</em>(1), 116.</p>
+<p>Chiesi, Francesca, Kinga Morsanyi, Maria Anna Donati, and Caterina Primi. (2018). Applying Item Response Theory to Develop a Shortened Version of the Need for Cognition Scale. <em>Advances in Cognitive Psychology 14(3)</em>, 75.</p>
+<p>Grass, Julia, Florian Krieger, Philipp Paulus, Samuel Greiff, Anja Strobel, and Alexander Strobel. (2019). Thinking in Action: Need for Cognition Predicts SelfControl Together with Action Orientation. <em>PLOS ONE 14</em>(8): 1–20.</p>
 
 </div>
 </div>

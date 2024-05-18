@@ -82,8 +82,8 @@ if(x > 3) {
         y <- 0
 }
 x;y
-[1] 0.9527881
-[1] 0
+[1] 9.237013
+[1] 10
 ```
 
 `y` değeri `x > 3` olup olmamasına bağlı olarak ayarlanır. Bu ifade eşdeğer bir şekilde de yazılabilir.
@@ -198,14 +198,14 @@ için test ediniz.
 ```r
 x <- rnorm(1)
 x
-[1] 0.8515182
+[1] -0.1160083
 ```
 
 Random olarak üretilen sayının 1'den büyük olması durumunda çıktı "1'den büyük" -1 ile 1 arasında olması durumunda "-1 ile +1 arasında" -1'den küçük olması durumunda ise "-1'den küçük" çıktısı versin.
 
 
 ```
-[1] -0.1149444
+[1] -0.5932165
 [1] "sayı -1 ile +1 arasında"
 ```
 
@@ -268,7 +268,7 @@ goster3b
 goster3c
 [1] "Dogru"
 [1] 1 2 3
-[1] 200 271 556 825
+[1] 826 431 199 717
 ```
 
 
@@ -729,7 +729,7 @@ z[i,j]<-y[i,j]^2
 
 time2
    user  system elapsed 
-   0.10    0.00    0.09 
+   0.08    0.00    0.08 
 ```
 
 - ayni islemi dongusuz yapma

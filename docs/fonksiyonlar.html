@@ -313,18 +313,18 @@ sd()<code>fonksiyonunun iki argümanı olduğunu unutmayın: x</code> sayı vekt
 <span id="cb468-4"><a href="fonksiyonlar.html#cb468-4" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata)                 </span>
 <span id="cb468-5"><a href="fonksiyonlar.html#cb468-5" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
 <span id="cb468-6"><a href="fonksiyonlar.html#cb468-6" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)  </span>
-<span id="cb468-7"><a href="fonksiyonlar.html#cb468-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span>
-<span id="cb468-8"><a href="fonksiyonlar.html#cb468-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span>
-<span id="cb468-9"><a href="fonksiyonlar.html#cb468-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span></code></pre></div>
+<span id="cb468-7"><a href="fonksiyonlar.html#cb468-7" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9293469</span></span>
+<span id="cb468-8"><a href="fonksiyonlar.html#cb468-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9293469</span></span>
+<span id="cb468-9"><a href="fonksiyonlar.html#cb468-9" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9293469</span></span></code></pre></div>
 <p>Fonksiyon argümanlarını isimle belirtirken, bunları hangi sırada belirttiğiniz önemli değildir.
 Aşağıdaki örnekte, fonksiyon tanımında tanımlanan ilk argüman <code>x</code> olmasına rağmen, önce <code>na.rm</code> argümanını, ardından <code>x</code> argümanını belirtiyoruz.</p>
 <div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="fonksiyonlar.html#cb469-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="do">## Her iki argümanı da adla belirtin</span></span>
 <span id="cb469-2"><a href="fonksiyonlar.html#cb469-2" tabindex="-1"></a><span class="er">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)     </span>
-<span id="cb469-3"><a href="fonksiyonlar.html#cb469-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span></code></pre></div>
+<span id="cb469-3"><a href="fonksiyonlar.html#cb469-3" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9293469</span></span></code></pre></div>
 <p>Konumsal eşleştirme ile ada göre eşleştirmeyi karıştırabilirsiniz.
 Bir argüman isme göre eşleştirildiğinde, argüman listesinden "çıkarılır" ve kalan isimsiz argümanlar fonksiyon tanımında listelendikleri sırayla eşleştirilir.</p>
 <div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="fonksiyonlar.html#cb470-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span>
-<span id="cb470-2"><a href="fonksiyonlar.html#cb470-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">1.029468</span></span></code></pre></div>
+<span id="cb470-2"><a href="fonksiyonlar.html#cb470-2" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.9293469</span></span></code></pre></div>
 <p>Burada, <code>mydata</code> nesnesi <code>x</code> argümanına atanır, çünkü henüz belirtilmemiş tek argüman budur.</p>
 <p>Aşağıda, bir veri kümesine doğrusal modeller uyduran <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> fonksiyonunun argüman listesi yer almaktadır.</p>
 <div class="sourceCode" id="cb471"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb471-1"><a href="fonksiyonlar.html#cb471-1" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">args</span>(lm)</span>
@@ -366,7 +366,7 @@ Aşağıdaki fonksiyon <code>type</code> argümanı için varsayılanı <code>ty
 <div class="sourceCode" id="cb475"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb475-1"><a href="fonksiyonlar.html#cb475-1" tabindex="-1"></a><span class="sc">&gt;</span> mean</span>
 <span id="cb475-2"><a href="fonksiyonlar.html#cb475-2" tabindex="-1"></a><span class="cf">function</span> (x, ...) </span>
 <span id="cb475-3"><a href="fonksiyonlar.html#cb475-3" tabindex="-1"></a><span class="fu">UseMethod</span>(<span class="st">"mean"</span>)</span>
-<span id="cb475-4"><a href="fonksiyonlar.html#cb475-4" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x0000012c7c7f0248</span><span class="sc">&gt;</span></span>
+<span id="cb475-4"><a href="fonksiyonlar.html#cb475-4" tabindex="-1"></a><span class="sc">&lt;</span>bytecode<span class="sc">:</span> <span class="dv">0x00000225bf2342e8</span><span class="sc">&gt;</span></span>
 <span id="cb475-5"><a href="fonksiyonlar.html#cb475-5" tabindex="-1"></a><span class="er">&lt;</span>environment<span class="sc">:</span> namespace<span class="sc">:</span>base<span class="sc">&gt;</span></span></code></pre></div>
 <p>Fonksiyona aktarılan argüman sayısı önceden bilinemediğinde <code>...</code> argümanı gereklidir.
 Bu durum <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> ve <code><a href="https://rdrr.io/r/base/cat.html">cat()</a></code> gibi fonksiyonlarda açıkça görülmektedir.</p>
