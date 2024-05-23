@@ -98,6 +98,7 @@
 <li><a class="active" href="klasik-test-teorisi.html"><span class="header-section-number">16</span> Klasik Test Teorisi</a></li>
 <li><a class="" href="mtk.html"><span class="header-section-number">17</span> MTK</a></li>
 <li><a class="" href="mtk-ile-madde-analizi-uygulamas%C4%B1.html"><span class="header-section-number">18</span> MTK ile Madde Analizi Uygulaması</a></li>
+<li><a class="" href="veri-%C3%BCretimi.html"><span class="header-section-number">19</span> Veri Üretimi</a></li>
 </ul>
 
         <div class="book-extra">
@@ -503,7 +504,7 @@ Preference to know how something works over simply knowing that it works (R)
 ##  $ action_orientation: int  10 11 13 5 18 20 6 16 12 8 ...
 ##  $ effortful_control : int  11 32 10 0 10 24 -3 2 -6 21 ...
 ##  $ self_control      : int  5 16 -2 -4 11 11 -4 3 -10 5 ...</code></pre>
-<p>Veri kümesi 1209 satırdan (yani katılımcılar) ve 23 değişkenden (id, yaş, cinsiyet, eğitim, NFC Ölçeği maddelerine verilen yanıtları temsil eden nfc01 ila nfc16 ve ölçüt ölçümleri için üç puan) oluşmaktadır. DataExplorer paketindeki <span class="citation">(<a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html#ref-DataExplorer">Cui, 2024</a>)</span> <code>introduce()</code> ve <code>plot_intro()</code> fonksiyonlarını kullanarak veri seti hakkında biraz daha bilgi edinebiliriz:</p>
+<p>Veri kümesi 1209 satırdan (yani katılımcılar) ve 23 değişkenden (id, yaş, cinsiyet, eğitim, NFC Ölçeği maddelerine verilen yanıtları temsil eden nfc01 ila nfc16 ve ölçüt ölçümleri için üç puan) oluşmaktadır. DataExplorer paketindeki <span class="citation">(<a href="veri-%C3%BCretimi.html#ref-DataExplorer">Cui, 2024</a>)</span> <code>introduce()</code> ve <code>plot_intro()</code> fonksiyonlarını kullanarak veri seti hakkında biraz daha bilgi edinebiliriz:</p>
 <div class="sourceCode" id="cb553"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/introduce.html">introduce</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -662,7 +663,7 @@ memory_usage
 <span><span class="co">#                              report_title = "Veri On Inceleme",</span></span>
 <span><span class="co">#                              output_file = "oninceleme.html")</span></span></code></pre></div>
 <p>Tüm özet istatistikleri tek bir rapor halinde düzenlemek için create_report() fonksiyonunu kullanabiliriz. Bu fonksiyon DataExplorer içindeki çoğu fonksiyonu çalıştırır ve bir HTML rapor dosyası çıktısı verir.🔗 <a href="oninceleme.html">oninceleme</a></p>
-<p>Tek bir analizde nfc veri setinin ayrıntılı bir özetini elde etmek için skimr paketindeki <span class="citation">(<a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html#ref-skimr">Waring et al., 2022</a>)</span> <code>skim()</code> fonksiyonunu kullanabiliriz. Çıktıdan da görebileceğiniz gibi, nfc veri setindeki değişkenler için benzer tanımlayıcı istatistikler elde edilir</p>
+<p>Tek bir analizde nfc veri setinin ayrıntılı bir özetini elde etmek için skimr paketindeki <span class="citation">(<a href="veri-%C3%BCretimi.html#ref-skimr">Waring et al., 2022</a>)</span> <code>skim()</code> fonksiyonunu kullanabiliriz. Çıktıdan da görebileceğiniz gibi, nfc veri setindeki değişkenler için benzer tanımlayıcı istatistikler elde edilir</p>
 <div class="sourceCode" id="cb561"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">skimr</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/skimr/reference/skim.html">skim</a></span><span class="op">(</span><span class="va">nfc</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
@@ -1043,7 +1044,7 @@ memory_usage
 </tr>
 </tbody>
 </table></div>
-<p>veriler için temel tanımlayıcı istatistikleri elde etmek için psych paketindeki <span class="citation">(<a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html#ref-psych">2024</a>)</span> <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> fonksiyonu kullanılabilir.</p>
+<p>veriler için temel tanımlayıcı istatistikleri elde etmek için psych paketindeki <span class="citation">(<a href="veri-%C3%BCretimi.html#ref-psych">2024</a>)</span> <code><a href="https://rdrr.io/pkg/psych/man/describe.html">describe()</a></code> fonksiyonu kullanılabilir.</p>
 <div class="sourceCode" id="cb562"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/describe.html">describe</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">nfc</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>digit<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
@@ -2506,7 +2507,7 @@ nfc16
 </tr>
 </tbody>
 </table></div>
-<p>Maddeler arasındaki ilişkileri değerlendirmek için ggcorrplot paketini <span class="citation">(<a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html#ref-ggcorrplot">Kassambara, 2023</a>)</span> kullanarak bir korelasyon matrisi grafiği oluşturacağız. psych’den <code><a href="https://rdrr.io/pkg/psych/man/cor.plot.html">corPlot()</a></code> kullanılarak da grafik oluşturualbilir.</p>
+<p>Maddeler arasındaki ilişkileri değerlendirmek için ggcorrplot paketini <span class="citation">(<a href="veri-%C3%BCretimi.html#ref-ggcorrplot">Kassambara, 2023</a>)</span> kullanarak bir korelasyon matrisi grafiği oluşturacağız. psych’den <code><a href="https://rdrr.io/pkg/psych/man/cor.plot.html">corPlot()</a></code> kullanılarak da grafik oluşturualbilir.</p>
 <div class="sourceCode" id="cb565"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggcorrplot</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggcorrplot/man/ggcorrplot.html">ggcorrplot</a></span><span class="op">(</span></span>
 <span>  corr <span class="op">=</span> <span class="va">cormat</span>, <span class="co"># korelasyon matirisi</span></span>
@@ -4321,7 +4322,7 @@ NA
 <li><p>median_r: Medyan öğeler arası korelasyonlar</p></li>
 </ul>
 <p>Bu değerler arasında, iç tutarlılığı yorumlamak için raw_alpha değerini kullanırız. NFC Ölçeği için yüksek iç tutarlılığa işaret etmektedir. Çıktının “Bir madde çıkarılırsa güvenilirlik” başlığı altındaki ikinci kısmı, her bir madde araçtan çıkarıldıktan sonra iç tutarlılığın nasıl değiştiğini göstermektedir. Örneğimizde, ham_alfa sütunu iç tutarlılığın ya aynı kaldığını ya da 0,86’ya düştüğünü göstermektedir, bu da maddelerin hiçbirini çıkarmanın güvenilirliği artırmamıza yardımcı olmayacağını ve bu nedenle orijinal ölçeği kullanmamız gerektiğini göstermektedir.</p>
-<p>İç tuttarlık NFC Ölçeği için iç tutarlılığı hesaplamak üzere QME paketini <span class="citation">(<a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html#ref-QME">Brown et al., 2016</a>)</span> kullanacağız. Alfa katsayısı ve Guttman’ın lambda güvenilirlik istatistiklerine ek olarak, QME paketi Feldt-Gilmer ve Feldt-Brennan güvenilirlik istatistiklerini de hesaplar.</p>
+<p>İç tuttarlık NFC Ölçeği için iç tutarlılığı hesaplamak üzere QME paketini <span class="citation">(<a href="veri-%C3%BCretimi.html#ref-QME">Brown et al., 2016</a>)</span> kullanacağız. Alfa katsayısı ve Guttman’ın lambda güvenilirlik istatistiklerine ek olarak, QME paketi Feldt-Gilmer ve Feldt-Brennan güvenilirlik istatistiklerini de hesaplar.</p>
 <div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">reliability_qme</span> <span class="op">&lt;-</span> <span class="fu">QME</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/QME/man/analyze.html">analyze</a></span><span class="op">(</span>test <span class="op">=</span> <span class="va">ters_matris</span>, id <span class="op">=</span> <span class="cn">FALSE</span>, na_to_0 <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Adding id column.</code></pre>
@@ -4367,9 +4368,9 @@ NA
 <li><p>Eşzamanlı geçerlik</p></li>
 <li><p>Yordama geçerlik</p></li>
 </ul>
-<p>Öz-Kontrol Ölçeği’nin kısa formundan alınan öz-kontrol puanları <span class="citation">(<a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html#ref-bertrams2009">Bertrams &amp; Dickhäuser, 2009</a>)</span>, Yetişkin Mizaç Anketi, Çabalı Kontrol Ölçeğinden alınan çabalı kontrol puanları ve Eylem Kontrol Ölçeğinden alınan eylem yönelimi puanları.</p>
+<p>Öz-Kontrol Ölçeği’nin kısa formundan alınan öz-kontrol puanları <span class="citation">(<a href="veri-%C3%BCretimi.html#ref-bertrams2009">Bertrams &amp; Dickhäuser, 2009</a>)</span>, Yetişkin Mizaç Anketi, Çabalı Kontrol Ölçeğinden alınan çabalı kontrol puanları ve Eylem Kontrol Ölçeğinden alınan eylem yönelimi puanları.</p>
 <p>Önceki araştırmaların bulgularına dayanarak, NFC ile diğer üç yapı (öz kontrol, çaba gerektiren kontrol ve eylem kontrolü) arasında pozitif, küçük ila orta düzeyde ilişkiler bulmayı bekliyoruz</p>
-<p>İlk olarak, NFC Ölçeği için 1 ila 7 arasındaki madde puanlarını -3 ila +3 olarak yeniden kodlama car paketindeki <span class="citation">(<a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html#ref-car">Fox &amp; Weisberg, 2019</a>)</span> <code><a href="https://rdrr.io/pkg/psychTools/man/recode.html">recode()</a></code> fonkisyonu ile yapılabilir.</p>
+<p>İlk olarak, NFC Ölçeği için 1 ila 7 arasındaki madde puanlarını -3 ila +3 olarak yeniden kodlama car paketindeki <span class="citation">(<a href="veri-%C3%BCretimi.html#ref-car">Fox &amp; Weisberg, 2019</a>)</span> <code><a href="https://rdrr.io/pkg/psychTools/man/recode.html">recode()</a></code> fonkisyonu ile yapılabilir.</p>
 <div class="sourceCode" id="cb591"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">recode_nfc</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
 <span><span class="fu">car</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/car/man/recode.html">recode</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"1=-3; 2=-2; 3=-1; 4=0; 5=1; 6=2; 7=3"</span><span class="op">)</span></span>
@@ -6250,7 +6251,7 @@ item20
 <h2>
 <span class="header-section-number">16.9</span> DIF<a class="anchor" aria-label="anchor" href="#dif"><i class="fas fa-link"></i></a>
 </h2>
-<p>DIF madde düzeyindeki yanlılığı tespit etmek için kullanılır. difR paketi <span class="citation">(<a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html#ref-difR">Magis et al., 2010</a>)</span> , DIF gösteren iki kategorili maddeleri tespit etmek için çeşitli yöntemler sağlar.</p>
+<p>DIF madde düzeyindeki yanlılığı tespit etmek için kullanılır. difR paketi <span class="citation">(<a href="veri-%C3%BCretimi.html#ref-difR">Magis et al., 2010</a>)</span> , DIF gösteren iki kategorili maddeleri tespit etmek için çeşitli yöntemler sağlar.</p>
 <p>Aşağıdaki örnekte, puanlanan hci maddelerini DIF açısından analiz etmek için Mantel-Haenszel (MH) ve lojistik regresyon yöntemlerini kullanacağız.</p>
 <p>Cinsiyet veya ana dil olarak İngilizce konuşulmasına bağlı olarak DIF sergileyen hci maddelerini belirlemek için grup değişkenleri olarak “sex” ve “eng_first_lang” kullanacağız.</p>
 <div class="sourceCode" id="cb625"><pre class="downlit sourceCode r">

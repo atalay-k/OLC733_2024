@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bölüm 19 Veri Üretimi | lavaan</title>
+<meta name="author" content="Kubra Atalay Kabasakal">
+<meta name="description" content="İstatistiğin en önemli konularından birisi olasılık dağılımlarıdır. R’da veri üretimi yaparken çıktıların ne olduklarını bilmek yerine çıktıların olma olasılıkları üzerinden veri üretmek...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Bölüm 19 Veri Üretimi | lavaan">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/atalay-k/OLC733/veri-üretimi.html">
+<meta property="og:description" content="İstatistiğin en önemli konularından birisi olasılık dağılımlarıdır. R’da veri üretimi yaparken çıktıların ne olduklarını bilmek yerine çıktıların olma olasılıkları üzerinden veri üretmek...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bölüm 19 Veri Üretimi | lavaan">
+<meta name="twitter:description" content="İstatistiğin en önemli konularından birisi olasılık dağılımlarıdır. R’da veri üretimi yaparken çıktıların ne olduklarını bilmek yerine çıktıların olma olasılıkları üzerinden veri üretmek...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="libs/datatables-binding-0.32/datatables.js"></script><link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><script src="libs/plotly-binding-4.10.4/plotly.js"></script><script src="libs/typedarray-0.1/typedarray.min.js"></script><link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="libs/rglWebGL-binding-1.2.8/rglWebGL.js"></script><link href="libs/rglwidgetClass-1.2.8/rgl.css" rel="stylesheet">
+<script src="libs/rglwidgetClass-1.2.8/rglClass.src.js"></script><script src="libs/rglwidgetClass-1.2.8/utils.src.js"></script><script src="libs/rglwidgetClass-1.2.8/buffer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/subscenes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shaders.src.js"></script><script src="libs/rglwidgetClass-1.2.8/shadersrc.src.js"></script><script src="libs/rglwidgetClass-1.2.8/textures.src.js"></script><script src="libs/rglwidgetClass-1.2.8/projection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/mouse.src.js"></script><script src="libs/rglwidgetClass-1.2.8/init.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pieces.src.js"></script><script src="libs/rglwidgetClass-1.2.8/draw.src.js"></script><script src="libs/rglwidgetClass-1.2.8/controls.src.js"></script><script src="libs/rglwidgetClass-1.2.8/selection.src.js"></script><script src="libs/rglwidgetClass-1.2.8/rglTimer.src.js"></script><script src="libs/rglwidgetClass-1.2.8/pretty.src.js"></script><script src="libs/rglwidgetClass-1.2.8/axes.src.js"></script><script src="libs/rglwidgetClass-1.2.8/animation.src.js"></script><script src="libs/CanvasMatrix4-1.2.8/CanvasMatrix.src.js"></script><script src="libs/viz-1.8.2/viz.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları">lavaan</a>:
+        <small class="text-muted">R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları</small>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Ders Hakkında</a></li>
+<li><a class="" href="varsay%C4%B1mlar-i.html"><span class="header-section-number">1</span> Varsayımlar I</a></li>
+<li><a class="" href="varsay%C4%B1mlar-ii.html"><span class="header-section-number">2</span> Varsayımlar II</a></li>
+<li><a class="" href="regresyon.html"><span class="header-section-number">3</span> Regresyon</a></li>
+<li><a class="" href="%C3%A7oklu-regresyon.html"><span class="header-section-number">4</span> Çoklu Regresyon</a></li>
+<li><a class="" href="lavaan-ve-sem.html"><span class="header-section-number">5</span> lavaan ve sem</a></li>
+<li><a class="" href="yol-analizi.html"><span class="header-section-number">6</span> Yol Analizi</a></li>
+<li><a class="" href="afa.html"><span class="header-section-number">7</span> AFA</a></li>
+<li><a class="" href="dfa.html"><span class="header-section-number">8</span> DFA</a></li>
+<li><a class="" href="%C3%B6l%C3%A7me-de%C4%9Fi%C5%9Fmezli%C4%9Fi.html"><span class="header-section-number">9</span> Ölçme Değişmezliği</a></li>
+<li><a class="" href="kontrol-yap%C4%B1lar%C4%B1.html"><span class="header-section-number">10</span> Kontrol Yapıları</a></li>
+<li><a class="" href="for.html"><span class="header-section-number">11</span> for</a></li>
+<li><a class="" href="while-d%C3%B6ng%C3%BCs%C3%BC.html"><span class="header-section-number">12</span> while döngüsü</a></li>
+<li><a class="" href="fonksiyonlar.html"><span class="header-section-number">13</span> Fonksiyonlar</a></li>
+<li><a class="" href="d%C3%B6ng%C3%BC-fonkisyonlar%C4%B1.html"><span class="header-section-number">14</span> Döngü Fonkisyonları</a></li>
+<li><a class="" href="hata-ay%C4%B1klamadebugging.html"><span class="header-section-number">15</span> Hata Ayıklama/Debugging</a></li>
+<li><a class="" href="klasik-test-teorisi.html"><span class="header-section-number">16</span> Klasik Test Teorisi</a></li>
+<li><a class="" href="mtk.html"><span class="header-section-number">17</span> MTK</a></li>
+<li><a class="" href="mtk-ile-madde-analizi-uygulamas%C4%B1.html"><span class="header-section-number">18</span> MTK ile Madde Analizi Uygulaması</a></li>
+<li><a class="active" href="veri-%C3%BCretimi.html"><span class="header-section-number">19</span> Veri Üretimi</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="veri-üretimi" class="section level1" number="19">
+<h1>
+<span class="header-section-number">Bölüm 19</span> Veri Üretimi<a class="anchor" aria-label="anchor" href="#veri-%C3%BCretimi"><i class="fas fa-link"></i></a>
+</h1>
+<p>İstatistiğin en önemli konularından birisi <strong>olasılık dağılımlarıdır.</strong></p>
+<p>R’da veri üretimi yaparken çıktıların ne olduklarını bilmek yerine <strong>çıktıların olma olasılıkları üzerinden veri üretmek</strong> gerekebilir.</p>
+<p>Örneğin, bir sınıftaki öğrencilerin madeni para atışında, paranın yazı ya da tura gelme olasılığı üzerine veri üretimi yapılırken,</p>
+<ul>
+<li>yazı gelme olasılığının 0.5; tura gelme olasılığının 0.5 olduğu bu durumda <strong>Bernoulli dağılımı</strong> yardımıyla yüzlerce ya da binlerce para atışı için veri üretmek mümkündür.</li>
+</ul>
+<hr>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; margin-right: 2cm;">
+<p><strong>Paranın iki kere hava atılması</strong></p>
+<ul>
+<li><p>YY (1/4)</p></li>
+<li><p>TT (1/4)</p></li>
+<li><p>TY (2/4)</p></li>
+</ul>
+<div class="sourceCode" id="cb740"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">0</span><span class="op">:</span><span class="fl">2</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="va">x</span>,size<span class="op">=</span><span class="fl">2</span>,p<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span>
+<span><span class="va">y</span></span></code></pre></div>
+<pre><code>## [1] 0.25 0.50 0.25</code></pre>
+</div>
+<div>
+<p><br></p>
+</div>
+<div>
+<div class="sourceCode" id="cb742"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span> ,type<span class="op">=</span><span class="st">"h"</span>,col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">10</span>,</span>
+<span>main<span class="op">=</span><span class="st">"bozuk parayi iki kere havaya atma"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="18_Veri_Uretimi_files/figure-html/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<hr>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; margin-right: 2cm;">
+<p><strong>Paranın dört kere hava atılması</strong></p>
+<ul>
+<li><p>YYYY (1/16)</p></li>
+<li><p>TTTT (1/16)</p></li>
+<li><p>YTTT (4/16)</p></li>
+<li><p>TYYY (4/16)</p></li>
+<li><p>YYTT (6/16)</p></li>
+</ul>
+<div class="sourceCode" id="cb743"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">0</span><span class="op">:</span><span class="fl">4</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="va">x</span>,size<span class="op">=</span><span class="fl">4</span>,p<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span>
+<span><span class="va">y</span></span></code></pre></div>
+<pre><code>## [1] 0.0625 0.2500 0.3750 0.2500 0.0625</code></pre>
+</div>
+<div>
+<p><br></p>
+</div>
+<div>
+<hr>
+<div class="sourceCode" id="cb745"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span> ,type<span class="op">=</span><span class="st">"h"</span>,col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">10</span>,</span>
+<span>main<span class="op">=</span><span class="st">"bozuk parayi dört kere havaya atma"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="18_Veri_Uretimi_files/figure-html/unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<hr>
+<p><strong>Paranın otuz kere hava atılması</strong></p>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0.5 0.2 auto; margin-right: 1cm;">
+<div class="sourceCode" id="cb746"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">0</span><span class="op">:</span><span class="fl">30</span></span>
+<span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Binomial.html">dbinom</a></span><span class="op">(</span><span class="va">x</span>,size<span class="op">=</span><span class="fl">30</span>,p<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span>
+<span><span class="va">y</span></span></code></pre></div>
+<pre><code>##  [1] 9.31e-10 2.79e-08 4.05e-07 3.78e-06 2.55e-05 1.33e-04 5.53e-04 1.90e-03
+##  [9] 5.45e-03 1.33e-02 2.80e-02 5.09e-02 8.06e-02 1.12e-01 1.35e-01 1.44e-01
+## [17] 1.35e-01 1.12e-01 8.06e-02 5.09e-02 2.80e-02 1.33e-02 5.45e-03 1.90e-03
+## [25] 5.53e-04 1.33e-04 2.55e-05 3.78e-06 4.05e-07 2.79e-08 9.31e-10</code></pre>
+</div>
+<div style="flex: 2 1 auto;">
+<div class="sourceCode" id="cb748"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span> ,type<span class="op">=</span><span class="st">"h"</span>,col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">10</span>,</span>
+<span>main<span class="op">=</span><span class="st">"bozuk parayi otuz kere havaya atma"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="18_Veri_Uretimi_files/figure-html/unnamed-chunk-7-1.png" width="50%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="dağılımlar" class="section level2" number="19.1">
+<h2>
+<span class="header-section-number">19.1</span> Dağılımlar<a class="anchor" aria-label="anchor" href="#da%C4%9F%C4%B1l%C4%B1mlar"><i class="fas fa-link"></i></a>
+</h2>
+<p>Normal, log-normal, ki-kare, binom, poisson, uniform, gamma, beta vb. gibi farklı dağılımlar mevcuttur.</p>
+<ul>
+<li><p><strong>p</strong>, olasılık (probability) kümülatif dağılım fonksiyonuna ilişkin bilgileri</p></li>
+<li><p><strong>q</strong>, çeyreklik (quantile) kümülatif dağılım fonksiyonunun tersine ilişkin bilgileri</p></li>
+<li><p><strong>d</strong>, yoğunluk (density) yoğunluk fonksiyonuna ilişkin bilgileri</p></li>
+<li><p><strong>r</strong>, rastgele (random) belirlenen dağılımdaki rastgele veriyi</p></li>
+</ul>
+<p>Normal dağılama uygun veri üretmek için <strong>rnorm()</strong></p>
+<hr>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; margin-right: 2cm;">
+<div class="sourceCode" id="cb749"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">n</span><span class="op">=</span><span class="fl">50</span></span>
+<span><span class="va">nd1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">n</span>, mean<span class="op">=</span><span class="fl">50</span>, sd<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">nd1</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">nd1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 49.4
+## [1] 9.29</code></pre>
+</div>
+<div style="flex: 1;">
+<div class="sourceCode" id="cb751"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">nd1</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="18_Veri_Uretimi_files/figure-html/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<hr>
+<ul>
+<li>Tek biçimli (uniform) dağılıma ilişkin bir veri üretmek için <strong>runif()</strong>
+</li>
+</ul>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 0.5; margin-right: 1cm;">
+<div class="sourceCode" id="cb752"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">nd2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">n</span>, min<span class="op">=</span><span class="fl">50</span>, max<span class="op">=</span><span class="fl">150</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">nd2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">nd2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 50.9
+## [1] 29.5</code></pre>
+</div>
+<div style="flex: 2;">
+<div class="sourceCode" id="cb754"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">nd2</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="18_Veri_Uretimi_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+</div>
+<div id="iterasyon" class="section level2" number="19.2">
+<h2>
+<span class="header-section-number">19.2</span> İterasyon<a class="anchor" aria-label="anchor" href="#iterasyon"><i class="fas fa-link"></i></a>
+</h2>
+<p>Veri üretimlerinde tek bir örneklemin elde edilmesi <strong>güvenilir olmayabilir.</strong></p>
+<p>Örneğin, <strong>ortalaması 100</strong>, <strong>standart sapması 20</strong> olan normal dağılıma ilişkin veri üretildiğinde, elde edilen ortalama değer bir örneklem için <strong>örnekleme hatasından</strong> dolayı<strong>100 değerinden göreceli olarak farklı</strong> çıkabilir.</p>
+<div class="sourceCode" id="cb755"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">41</span><span class="op">)</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">2</span>, mean<span class="op">=</span><span class="fl">100</span>, sd<span class="op">=</span><span class="fl">20</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 94</code></pre>
+<p>veri üretme çalışmalarında <strong>tekrarlamaların yapılması önemlidir.</strong></p>
+<p>İterasyon, veri üretiminin fonksiyonlar ve döngüler kullanılarak genişletilmesi ve <strong>genellenebilir sonuçlar</strong> elde edilmesi olarak tanımlanabilir.</p>
+<div class="sourceCode" id="cb757"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">n_k</span> <span class="op">&lt;-</span> <span class="fl">10</span>                 <span class="co"># Küçük örneklem</span></span>
+<span><span class="va">n_b</span> <span class="op">&lt;-</span> <span class="fl">50</span>                 <span class="co"># Büyük örneklem</span></span>
+<span></span>
+<span><span class="va">tekrar</span> <span class="op">&lt;-</span> <span class="fl">10000</span>              <span class="co"># Tekrar sayısı</span></span>
+<span><span class="va">kucuk_orn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op">(</span><span class="va">tekrar</span><span class="op">)</span> <span class="co"># Küçük örneklem ort.</span></span>
+<span><span class="va">buyuk_orn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op">(</span><span class="va">tekrar</span><span class="op">)</span> <span class="co"># Büyük örneklem ort.</span></span>
+<span></span>
+<span><span class="va">orneklem.normal</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1000</span>, mean <span class="op">=</span> <span class="fl">35</span>, sd <span class="op">=</span> <span class="fl">15</span><span class="op">)</span><span class="co">#Sekil</span></span>
+<span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">tekrar</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">kucuk_orn</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">n_k</span>,mean <span class="op">=</span>  <span class="fl">35</span>, sd <span class="op">=</span> <span class="fl">15</span><span class="op">)</span>  <span class="op">)</span> </span>
+<span>  <span class="va">buyuk_orn</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">n_b</span>,mean <span class="op">=</span>  <span class="fl">35</span>, sd <span class="op">=</span> <span class="fl">15</span><span class="op">)</span>  <span class="op">)</span> </span>
+<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb758"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">orneklem.normal</span>, breaks <span class="op">=</span> <span class="fl">50</span>, </span>
+<span>main <span class="op">=</span> <span class="st">"Dağılımı"</span>, xlab <span class="op">=</span> <span class="st">""</span>,col <span class="op">=</span> <span class="st">"steelblue"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">kucuk_orn</span>, breaks <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>main <span class="op">=</span> <span class="st">"Küçük Örneklemlerin \n Ortalama Dağılımı"</span>, </span>
+<span>xlab <span class="op">=</span> <span class="st">"Ortalama"</span>,col <span class="op">=</span> <span class="st">"steelblue"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">buyuk_orn</span>, breaks <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>main <span class="op">=</span> <span class="st">"Büyük Örneklemlerin \n Ortalama Dağılımı"</span>, </span>
+<span>xlab <span class="op">=</span> <span class="st">"Ortalama"</span>,col <span class="op">=</span> <span class="st">"steelblue"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="18_Veri_Uretimi_files/figure-html/unnamed-chunk-14-1.png" width="50%" style="display: block; margin: auto;"></div>
+</div>
+<div id="iterasyonların-kaydedilmesi" class="section level2" number="19.3">
+<h2>
+<span class="header-section-number">19.3</span> İterasyonların Kaydedilmesi<a class="anchor" aria-label="anchor" href="#iterasyonlar%C4%B1n-kaydedilmesi"><i class="fas fa-link"></i></a>
+</h2>
+<p>Özellikle büyük verilerle çalışırken, <strong>iterasyonlar uzun zamanlar alabilir. </strong></p>
+<p>Her seferinde <strong>iterasyonların tekrarlanması</strong> yerine iterasyon sonuçlarının <strong>kaydedilip</strong> yeniden okutularak analizlere devam edilmesi gerekebilir.</p>
+<p><strong>kucuk_orn</strong> ve <strong>buyuk_orn</strong> veri setlerini <strong>iki ayrı klasöre yazdırnız.</strong></p>
+<div class="sourceCode" id="cb759"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="st">"Simulasyon_k"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning in dir.create("Simulasyon_k"): 'Simulasyon_k' already exists</code></pre>
+<div class="sourceCode" id="cb761"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="st">"Simulasyon_b"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning in dir.create("Simulasyon_b"): 'Simulasyon_b' already exists</code></pre>
+<div class="sourceCode" id="cb763"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">n_k</span>,mean <span class="op">=</span>  <span class="fl">35</span>, sd <span class="op">=</span> <span class="fl">15</span><span class="op">)</span>,</span>
+<span>file<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Simulasyon_k/simulasyon_"</span>,<span class="va">i</span>,<span class="st">".txt"</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span><span class="op">)</span></span>
+<span>   </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">n_b</span>,mean <span class="op">=</span>  <span class="fl">35</span>, sd <span class="op">=</span> <span class="fl">15</span><span class="op">)</span>,</span>
+<span>file<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Simulasyon_b/simulasyon_"</span>,<span class="va">i</span>,<span class="st">".txt"</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<p>Daha önce oluşturduğunuz <strong>kucuk_orn</strong> ve <strong>buyuk_orn</strong> veri setlerini iki ayrı klasörden okutup R nesnesi olarak yazdırınız.</p>
+<div class="sourceCode" id="cb764"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">kucuk_orn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">buyuk_orn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">kucuk_orn</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span>  </span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span>file<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Simulasyon_k/simulasyon_"</span>,<span class="va">i</span>,<span class="st">".txt"</span>,</span>
+<span>sep<span class="op">=</span><span class="st">""</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="va">buyuk_orn</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span>   <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span>file<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Simulasyon_b/simulasyon_"</span>,<span class="va">i</span>,<span class="st">".txt"</span>,</span>
+<span>sep<span class="op">=</span><span class="st">""</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+</div>
+<div id="psikometri-alanında-veri-üretimi" class="section level2" number="19.4">
+<h2>
+<span class="header-section-number">19.4</span> Psikometri Alanında Veri Üretimi<a class="anchor" aria-label="anchor" href="#psikometri-alan%C4%B1nda-veri-%C3%BCretimi"><i class="fas fa-link"></i></a>
+</h2>
+<p>Ölçme ve değerlendirme alanında gerçekleştirilen bazı çalışmalarda, çalışmanın amacı doğrultusunda, veri setlerinin üretilmesi gerekebilir.</p>
+<p>Bu çalışmalarda veri setleri çoğunlukla <strong>Monte Carlo (MC) teknikleri</strong> kullanılarak üretilir.</p>
+<p><strong>MC</strong> yaklaşımında <strong>matematiksel bir model</strong> kullanılarak bilgisayar yazılımı aracılığıyla <strong>rastgele örneklemler elde edilebilir. </strong></p>
+<p><strong>MC</strong> çalışmaları ile parametre değerlerini belirlemek, çalışmada <strong>bazı faktörleri (madde sayısı gibi) sabit tutup</strong> <strong>bazı faktörleri (örneklem büyüklüğü gibi) manipüle ederek</strong> değişkenlerin etkilerini incelemek mümkündür.</p>
+<p>Böylece belli özellikleri önceden bilinen veri setleri, ele alınan koşullar altında, <strong>yöntemlerin veya modellerin değerlendirilmesine</strong> ve karşılatırılmasına olanak sağlar.</p>
+<p>Ancak sonuçların kullanışlılığı için MC çalışmalarında modellenen koşulların <strong>gerçek uygulamalara</strong> ne kadar yakın olduğuna, replikasyon sayısına, vb. dikkat edilmesi gerekir (Harwell &amp; Others, 1996).</p>
+<ul>
+<li><p>Revelle (2019) tarafından üretilen <strong>psych</strong> ile YEM, MTK, ve KTK ya uygun veriler üretilebilir.</p></li>
+<li><p>Partchev (2017) tarafından yazılan <strong>irtoys</strong> paketinde bulunan 1, 2 ve 3 parametreli lojistik modele uygun veriler üretilebilir.</p></li>
+<li><p>Chalmers (2019) tarafından hazırlanan <strong>mirt</strong> paketiyle hem tamamlayıcı hem de tamamlayıcı olmayan ÇBMTK verisi üretilebilir.</p></li>
+<li><p>** ...**</p></li>
+</ul>
+</div>
+<div id="r-paketleri-ile-veri-üretimi" class="section level2" number="19.5">
+<h2>
+<span class="header-section-number">19.5</span> R Paketleri ile Veri Üretimi<a class="anchor" aria-label="anchor" href="#r-paketleri-ile-veri-%C3%BCretimi"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>hangi model?</p></li>
+<li><p>kaç madde?</p></li>
+<li><p>madde ve yetenek parametreleri ne olacak?</p></li>
+</ul>
+<p><strong>Aşama 1</strong></p>
+<p><strong>3PL</strong> modele dayali <strong>8 maddelik</strong> veri veri üretilmesi
+İlk aşama madde parametrelerinin belirlenmesi</p>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; margin-right: 1cm;">
+<div class="sourceCode" id="cb765"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">41</span><span class="op">)</span></span>
+<span><span class="va">madde</span> <span class="op">&lt;-</span> <span class="fl">8</span></span>
+<span><span class="va">maddepar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">madde</span>, mean <span class="op">=</span> <span class="fl">0</span>, sd <span class="op">=</span> <span class="fl">0.75</span><span class="op">)</span><span class="op">*</span><span class="fl">1.702</span>,    <span class="co">#a</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">madde</span>, mean <span class="op">=</span> <span class="fl">0.30</span>, sd <span class="op">=</span> <span class="fl">0.51</span><span class="op">)</span><span class="op">*</span><span class="fl">1.702</span>, <span class="co">#b</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">madde</span>, mean <span class="op">=</span> <span class="fl">0.16</span>, sd <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span>       <span class="co">#c </span></span></code></pre></div>
+</div>
+<div style="flex: 1;">
+<div class="sourceCode" id="cb766"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">maddepar</span></span></code></pre></div>
+<pre><code>##        [,1]      [,2]  [,3]
+## [1,] -1.014  1.379159 0.193
+## [2,]  0.252  2.409834 0.204
+## [3,]  1.279 -0.539118 0.170
+## [4,]  1.645  0.000801 0.274
+## [5,]  1.156  1.427334 0.115
+## [6,]  0.630  0.235798 0.267
+## [7,]  0.765  0.463257 0.102
+## [8,] -2.016  0.796831 0.158</code></pre>
+</div>
+</div>
+<p><strong>Aşama 2</strong>
+İkinci aşama yetenek parametrelerinin belirlenmesi</p>
+<p>1000 kişilik normal dağılıma dayalı veri üretimi</p>
+<div class="sourceCode" id="cb768"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">41</span><span class="op">)</span></span>
+<span><span class="va">birey</span> <span class="op">&lt;-</span> <span class="fl">1000</span></span>
+<span><span class="va">yetenek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">birey</span>, mean <span class="op">=</span> <span class="fl">0</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">yetenek</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span></span></code></pre></div>
+<pre><code>##  [1] -0.794  0.197  1.002  1.289  0.906  0.494  0.599 -1.580  1.001  2.188</code></pre>
+<p><strong>Aşama 1</strong></p>
+<p><strong>irtoys</strong> paketi <strong>sim</strong> fonksiyonu ile veri üretilmesi</p>
+<div class="sourceCode" id="cb770"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu">irtoys</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/irtoys/man/sim.html">sim</a></span><span class="op">(</span>ip <span class="op">=</span> <span class="va">maddepar</span>, x <span class="op">=</span> <span class="va">yetenek</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"madde"</span>, <span class="fl">1</span><span class="op">:</span><span class="va">madde</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##      madde1 madde2 madde3 madde4 madde5 madde6 madde7 madde8
+## [1,]      0      1      1      0      0      0      1      1
+## [2,]      1      0      1      1      0      1      0      0
+## [3,]      1      1      1      1      0      1      0      1
+## [4,]      1      1      0      1      0      1      1      0
+## [5,]      1      1      0      1      0      1      1      1
+## [6,]      1      0      1      1      0      1      0      0</code></pre>
+<p><strong>irtoys</strong> paketi <strong>sim</strong> fonksiyonu ile veri üretilmesi</p>
+<div class="sourceCode" id="cb772"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">irtoys</span><span class="op">)</span></span>
+<span><span class="va">ip</span> <span class="op">=</span> <span class="va">maddepar</span></span>
+<span><span class="va">x</span> <span class="op">=</span> <span class="va">yetenek</span></span>
+<span><span class="va">sim</span></span></code></pre></div>
+<pre><code>## function (ip, x = NULL) 
+## {
+##     if (is.list(ip)) 
+##         ip = ip$est
+##     i = irf(ip = ip, x = x)
+##     d = dim(i$f)
+##     u = runif(d[1] * d[2])
+##     dim(u) = d
+##     return(ifelse(i$f &gt; u, 1, 0))
+## }
+## &lt;bytecode: 0x000002346de32068&gt;
+## &lt;environment: namespace:irtoys&gt;</code></pre>
+<p><strong>Aşama 4</strong></p>
+<p>Üretilen verinin parametrelerinin kestirimi</p>
+<div class="sourceCode" id="cb774"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/philchalmers/mirt">mirt</a></span><span class="op">)</span></span>
+<span><span class="va">model3PL</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span><span class="va">veri</span>, <span class="co"># cevap matrisi</span></span>
+<span>                 <span class="fl">1</span>,  <span class="co"># tek boyutlu model</span></span>
+<span>                 itemtype <span class="op">=</span> <span class="st">"3PL"</span>, <span class="co"># 3PL</span></span>
+<span>                 verbose <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>                 technical <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>NCYCLES <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span>                 message <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">mirt</span><span class="fu">::</span><span class="fu">coef</span><span class="op">(</span><span class="va">model3PL</span>, IRTpars <span class="op">=</span> <span class="cn">TRUE</span>, simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">$</span><span class="va">items</span></span></code></pre></div>
+<pre><code>##             a      b       g u
+## madde1 -1.096  1.541 0.00484 1
+## madde2  0.308  2.155 0.21580 1
+## madde3  1.093 -0.932 0.02929 1
+## madde4  1.353  0.071 0.24129 1
+## madde5  0.975  1.547 0.08119 1
+## madde6  1.007  1.079 0.47165 1
+## madde7  0.697  0.711 0.08023 1
+## madde8 -1.890  0.970 0.00211 1</code></pre>
+<hr>
+<ul>
+<li><p>Veri üretimini tekrarlamak için fonksiyon yazmamız lazım.</p></li>
+<li>
+<p>Fonksiyon1</p>
+<ul>
+<li>
+<p>madde sayısı ve birey sayısına bağlı olarak</p>
+<ul>
+<li><p>madde parametresi üretsin</p></li>
+<li><p>yetenek parametresi üretsin</p></li>
+<li><p>madde cevapları üretsin</p></li>
+<li><p>çıktıda madde
+parametrelerini, yetenek parametrelerini
+ve cevap matrisini tutsun</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb776"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">veri_uretimi</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">madde</span>, <span class="va">birey</span> <span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">.....</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb777"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">veri_uretimi</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">maddesay</span>, <span class="va">bireysay</span>, <span class="va">seed</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="co"># seed ayaralanır</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="va">seed</span><span class="op">)</span></span>
+<span>  <span class="co"># madde parametreleri üretilir.</span></span>
+<span>  <span class="va">maddepar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">maddesay</span>, mean <span class="op">=</span> <span class="fl">1.13</span>, sd <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span><span class="op">*</span><span class="fl">1.702</span>, <span class="co">#a</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">maddesay</span>, mean <span class="op">=</span> <span class="fl">0.21</span>, sd <span class="op">=</span> <span class="fl">0.51</span><span class="op">)</span><span class="op">*</span><span class="fl">1.702</span>, <span class="co">#b</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">maddesay</span>, mean <span class="op">=</span> <span class="fl">0.16</span>, sd <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span> <span class="co">#c</span></span>
+<span>  <span class="co"># yetenek parametreleri üretilir</span></span>
+<span>  <span class="va">yetenek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">bireysay</span>, mean <span class="op">=</span> <span class="fl">0</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span>  <span class="co"># 3PL modele göre veri uretimi</span></span>
+<span>  <span class="va">cevaplar</span> <span class="op">&lt;-</span> <span class="fu">irtoys</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/irtoys/man/sim.html">sim</a></span><span class="op">(</span>ip <span class="op">=</span> <span class="va">maddepar</span>, x <span class="op">=</span> <span class="va">yetenek</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">cevaplar</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"madde"</span>, <span class="fl">1</span><span class="op">:</span><span class="va">maddesay</span><span class="op">)</span></span>
+<span>  <span class="co"># Parametrelerin ve ciktinin nesnede toplanması</span></span>
+<span>  <span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>maddepar <span class="op">=</span> <span class="va">maddepar</span>,</span>
+<span>               yetenek <span class="op">=</span> <span class="va">yetenek</span>,</span>
+<span>               seed <span class="op">=</span> <span class="va">seed</span>,</span>
+<span>               cevaplar <span class="op">=</span> <span class="va">cevaplar</span><span class="op">)</span></span>
+<span>  <span class="co"># Cikti</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb778"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">veri_1</span> <span class="op">&lt;-</span> <span class="fu">veri_uretimi</span><span class="op">(</span>madde <span class="op">=</span> <span class="fl">8</span>, birey <span class="op">=</span> <span class="fl">1000</span>, seed <span class="op">=</span> <span class="fl">666</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">veri_1</span><span class="op">$</span><span class="va">yetenek</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1]  0.0306 -1.4823 -1.1266 -1.7638 -1.0626 -1.3430</code></pre>
+<div class="sourceCode" id="cb780"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">veri_1</span><span class="op">$</span><span class="va">maddepar</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##      [,1]   [,2]  [,3]
+## [1,] 2.24 -1.198 0.203
+## [2,] 2.78  0.321 0.177
+## [3,] 1.77  2.224 0.131</code></pre>
+<div class="sourceCode" id="cb782"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">veri_1</span><span class="op">$</span><span class="va">cevaplar</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##      madde1 madde2 madde3 madde4 madde5 madde6 madde7 madde8
+## [1,]      1      1      0      1      1      1      0      0
+## [2,]      0      0      0      0      1      0      1      0
+## [3,]      1      0      0      1      0      1      0      1</code></pre>
+</div>
+<div id="paramtere-kestirimi" class="section level2" number="19.6">
+<h2>
+<span class="header-section-number">19.6</span> Paramtere kestirimi<a class="anchor" aria-label="anchor" href="#paramtere-kestirimi"><i class="fas fa-link"></i></a>
+</h2>
+<p>Fonksiyon2</p>
+<p><strong>veri_uretimi</strong> fonksiyonu ile üretilen veri girdi olsun</p>
+<p>hangi modele göre kestirim yapacağı argüman olsun. (2PL ya da 3PL )</p>
+<p>çıktı olarak kestirilen parametre matrisi verilsin</p>
+<div class="sourceCode" id="cb784"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">kestirilen_par</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">veri</span>, <span class="va">par</span><span class="op">=</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="va">....</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb785"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">kestirilen_par</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">veri</span>, <span class="va">par</span><span class="op">=</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span>
+<span></span>
+<span>  <span class="kw">if</span><span class="op">(</span><span class="va">par</span><span class="op">==</span><span class="fl">3</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="va">model</span> <span class="op">&lt;-</span> <span class="fu">mirt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span><span class="va">veri</span>, <span class="co"># cevap matrisi</span></span>
+<span>                         <span class="fl">1</span>,  <span class="co"># tek boyutlu model</span></span>
+<span>                         itemtype <span class="op">=</span> <span class="st">"3PL"</span>, <span class="co"># 3PL</span></span>
+<span>                         verbose <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>                         technical <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>NCYCLES <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span>                                          message <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="kw">else</span> <span class="op">{</span></span>
+<span>        <span class="va">model</span> <span class="op">&lt;-</span> <span class="fu">mirt</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span><span class="va">veri</span>, <span class="co"># cevap matrisi</span></span>
+<span>                         <span class="fl">1</span>,  <span class="co"># tek boyutlu model</span></span>
+<span>                         itemtype <span class="op">=</span> <span class="st">"2PL"</span>, <span class="co"># 2pl</span></span>
+<span>                         verbose <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>                         technical <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>NCYCLES <span class="op">=</span> <span class="fl">1000</span>,</span>
+<span>                                          message <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="co"># Madde parametreleri</span></span>
+<span><span class="va">kestirim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu">mirt</span><span class="fu">::</span><span class="fu">coef</span><span class="op">(</span><span class="va">model</span>, IRTpars <span class="op">=</span> <span class="cn">TRUE</span>, </span>
+<span>simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">$</span><span class="va">item</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">kestirim</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">kestirim</span> <span class="op">&lt;-</span> <span class="fu">kestirilen_par</span><span class="op">(</span><span class="va">veri_1</span><span class="op">$</span><span class="va">cevaplar</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb786"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">kestirim</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left"></th>
+<th align="right">a</th>
+<th align="right">b</th>
+<th align="right">g</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">madde1</td>
+<td align="right">2.21</td>
+<td align="right">-1.379</td>
+<td align="right">0.001</td>
+</tr>
+<tr class="even">
+<td align="left">madde2</td>
+<td align="right">5.47</td>
+<td align="right">0.408</td>
+<td align="right">0.203</td>
+</tr>
+<tr class="odd">
+<td align="left">madde3</td>
+<td align="right">1.05</td>
+<td align="right">2.800</td>
+<td align="right">0.086</td>
+</tr>
+<tr class="even">
+<td align="left">madde4</td>
+<td align="right">7.20</td>
+<td align="right">-0.735</td>
+<td align="right">0.439</td>
+</tr>
+<tr class="odd">
+<td align="left">madde5</td>
+<td align="right">1.47</td>
+<td align="right">1.147</td>
+<td align="right">0.224</td>
+</tr>
+<tr class="even">
+<td align="left">madde6</td>
+<td align="right">2.18</td>
+<td align="right">-1.272</td>
+<td align="right">0.001</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="kestirilen-değerler-ve-gerçek-değerler" class="section level2" number="19.7">
+<h2>
+<span class="header-section-number">19.7</span> Kestirilen değerler ve Gerçek Değerler<a class="anchor" aria-label="anchor" href="#kestirilen-de%C4%9Ferler-ve-ger%C3%A7ek-de%C4%9Ferler"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>RMSE</strong> her bir madde için her bir replikasyonda kestirilen parametre değeri ile gerçek parametre değeri arasındaki farkın karesinin ortalamasının kareköküdür</p>
+<p><span class="math display">\[RMSE(\tau) = \sqrt\frac{\sum_{r}^{R} (\hat{\tau}- \tau)^2}{R})\]</span></p>
+<p><strong>BIAS</strong> kestirime ilişkin sistematik hatayı ifade eden yanlılık her bir madde için her bir replikasyonda kestirilen parametre değerinin ortalaması ile gerçek parametre değeri arasındaki farktır ve aşağıdaki formül ile hesaplanır:</p>
+<p><span class="math display">\[BIAS(\tau) = \frac{\sum_{r}^{R}\hat{\tau}}{R} - \tau\]</span></p>
+<ul>
+<li>
+<strong>SE</strong> kestirime ilişkin rastgele hatayı ifade eden standart hata her bir madde için her bir replikasyonda kestirilen parametre değeri ile ortalama parametre kestirimi arasındaki farkın karesinin ortalamasının kareköküdür. Diğer bir ifadeyle replikasyonlarda kestirilen parametre değerlerinin standart sapmasıdır ve aşağıdaki formül ile hesaplanır:</li>
+</ul>
+<p><span class="math display">\[SE(\tau) = \sqrt\frac{\sum_{r}^{R} (\hat{\tau}- \overline{\hat{\tau}})^2}{R})\]</span></p>
+<p>Yanlılığın karesi ile standart hatanın karesinin toplamı RMSE’nin karesinin toplamına eşittir. RMSE, yanlılık ve standart hata arasındaki ilişki aşağıdaki eşitlik ile gösterilebilir:</p>
+<p><span class="math display">\[RMSE^2= Bias^2 +SE^2\]</span></p>
+<div class="sourceCode" id="cb787"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">hata</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">kestirim</span>, <span class="va">gercek</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  </span>
+<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb788"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">kestirim</span> <span class="op">=</span>  <span class="va">kestirim</span></span>
+<span><span class="va">gercek</span> <span class="op">=</span> <span class="va">veri_1</span><span class="op">$</span><span class="va">maddepa</span></span>
+<span><span class="va">hata</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">kestirim</span>, <span class="va">gercek</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>    parametreler <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>,</span>
+<span>    bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">:</span><span class="fl">3L</span>, <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">kestirim</span><span class="op">[</span>, <span class="va">i</span><span class="op">]</span> <span class="op">-</span> <span class="va">gercek</span><span class="op">[</span>,<span class="va">i</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">:</span><span class="fl">3L</span>, <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="op">(</span><span class="va">kestirim</span><span class="op">[</span>, <span class="va">i</span><span class="op">]</span> <span class="op">-</span> <span class="va">gercek</span><span class="op">[</span>,<span class="va">i</span><span class="op">]</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    korelasyon <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">:</span><span class="fl">3L</span>, <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">kestirim</span><span class="op">[</span>, <span class="va">i</span><span class="op">]</span>, <span class="va">gercek</span><span class="op">[</span>,<span class="va">i</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb789"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">hata</span><span class="op">(</span><span class="va">kestirim</span>,<span class="va">veri_1</span><span class="op">$</span><span class="va">maddepar</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">parametreler</th>
+<th align="right">bias</th>
+<th align="right">rmse</th>
+<th align="right">korelasyon</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">a</td>
+<td align="right">0.795</td>
+<td align="right">1.861</td>
+<td align="right">0.814</td>
+</tr>
+<tr class="even">
+<td align="left">b</td>
+<td align="right">0.086</td>
+<td align="right">0.309</td>
+<td align="right">0.978</td>
+</tr>
+<tr class="odd">
+<td align="left">c</td>
+<td align="right">-0.015</td>
+<td align="right">0.133</td>
+<td align="right">0.451</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="r-paketleri-ile-veri-üretimi-1" class="section level2" number="19.8">
+<h2>
+<span class="header-section-number">19.8</span> R Paketleri ile Veri Üretimi<a class="anchor" aria-label="anchor" href="#r-paketleri-ile-veri-%C3%BCretimi-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Fonksiyon yazarken nelere dikkat etmeliyiz?</p>
+<div class="sourceCode" id="cb790"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">temp2</span> <span class="op">&lt;-</span> <span class="fu">veri_uretimi</span><span class="op">(</span>maddesay <span class="op">=</span> <span class="fl">10</span>, bireysay <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Error in veri_uretimi(maddesay = 10, bireysay = 1000): argument "seed" is missing, with no default</code></pre>
+<div class="sourceCode" id="cb792"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">veri_uretimi</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">maddesay</span>, <span class="va">bireysay</span>, <span class="va">seed</span> <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">seed</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="va">seed</span><span class="op">)</span><span class="op">}</span></span>
+<span>  <span class="kw">else</span> <span class="op">{</span></span>
+<span>    <span class="va">seed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample.int</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">1</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="va">seed</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"atanan seed = "</span>, <span class="va">seed</span>, <span class="st">"\n"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span><span class="co"># madde parametreleri üretilir.</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Madde parametresi uretme"</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="va">maddepar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">maddesay</span>, mean <span class="op">=</span> <span class="fl">1.13</span>, sd <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span><span class="op">*</span><span class="fl">1.702</span>, <span class="co">#a</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">maddesay</span>, mean <span class="op">=</span> <span class="fl">0.21</span>, sd <span class="op">=</span> <span class="fl">0.51</span><span class="op">)</span><span class="op">*</span><span class="fl">1.702</span>, <span class="co">#b</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">maddesay</span>, mean <span class="op">=</span> <span class="fl">0.16</span>, sd <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span><span class="op">)</span> <span class="co">#c</span></span>
+<span></span>
+<span><span class="co"># yetenek parametreleri üretilir</span></span>
+<span><span class="va">yetenek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="va">bireysay</span>, mean <span class="op">=</span> <span class="fl">0</span>, sd <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co"># 3PL modele göre veri uretimi</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Üretilen veri"</span><span class="op">)</span></span>
+<span><span class="va">cevaplar</span> <span class="op">&lt;-</span> <span class="fu">irtoys</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/irtoys/man/sim.html">sim</a></span><span class="op">(</span>ip <span class="op">=</span> <span class="va">maddepar</span>, x <span class="op">=</span> <span class="va">yetenek</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">cevaplar</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"madde"</span>, <span class="fl">1</span><span class="op">:</span><span class="va">maddesay</span><span class="op">)</span></span>
+<span><span class="co"># Parametrelerin ve ciktinin nesnede toplanması</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Cıktıların birleştirilmesi"</span><span class="op">)</span></span>
+<span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>maddepar <span class="op">=</span> <span class="va">maddepar</span>,</span>
+<span>             yetenek <span class="op">=</span> <span class="va">yetenek</span>,</span>
+<span>             seed <span class="op">=</span> <span class="va">seed</span>,</span>
+<span>             cevaplar <span class="op">=</span> <span class="va">cevaplar</span><span class="op">)</span></span>
+<span><span class="co"># Cikti</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">veri</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span> <span class="va">temp2</span> <span class="op">&lt;-</span> <span class="fu">veri_uretimi</span><span class="op">(</span>maddesay <span class="op">=</span> <span class="fl">10</span>, bireysay <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## atanan seed =  5593 
+## [1] "Madde parametresi uretme"
+## [1] "Üretilen veri"
+## [1] "Cıktıların birleştirilmesi"</code></pre>
+</div>
+<div id="veri-üretiminde-tekrar" class="section level2" number="19.9">
+<h2>
+<span class="header-section-number">19.9</span> Veri Üretiminde Tekrar<a class="anchor" aria-label="anchor" href="#veri-%C3%BCretiminde-tekrar"><i class="fas fa-link"></i></a>
+</h2>
+<p>Tekrar etmek amacıyla <strong>döngülerden</strong> ya da <strong>apply</strong> fonksiyonlarından yararlanalılabilir.</p>
+<div class="sourceCode" id="cb794"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb794-1"><a href="veri-%C3%BCretimi.html#cb794-1" tabindex="-1"></a><span class="fu">replicate</span>(tekrar sayisi, fonksiyon)</span></code></pre></div>
+<p><code>replicate</code> fonksiyonu kullanıldığında oluşan çıktı liste biçiminde olacaktır.</p>
+<div class="sourceCode" id="cb795"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tekrarsayisi</span><span class="op">=</span><span class="fl">5L</span></span>
+<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span><span class="op">(</span><span class="va">tekrarsayisi</span>, <span class="fu">veri_uretimi</span><span class="op">(</span>maddesay <span class="op">=</span> <span class="fl">10</span>, bireysay <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## atanan seed =  7116 
+## [1] "Madde parametresi uretme"
+## [1] "Üretilen veri"
+## [1] "Cıktıların birleştirilmesi"
+## atanan seed =  727 
+## [1] "Madde parametresi uretme"
+## [1] "Üretilen veri"
+## [1] "Cıktıların birleştirilmesi"
+## atanan seed =  6970 
+## [1] "Madde parametresi uretme"
+## [1] "Üretilen veri"
+## [1] "Cıktıların birleştirilmesi"
+## atanan seed =  4875 
+## [1] "Madde parametresi uretme"
+## [1] "Üretilen veri"
+## [1] "Cıktıların birleştirilmesi"
+## atanan seed =  789 
+## [1] "Madde parametresi uretme"
+## [1] "Üretilen veri"
+## [1] "Cıktıların birleştirilmesi"</code></pre>
+<p>Oluşan nesnenin sadece maddepar bileşenin almak için
+çıktıların liste biçimindedir</p>
+<div class="sourceCode" id="cb797"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">:</span><span class="va">tekrarsayisi</span>, <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="va">x</span><span class="op">[</span>,<span class="va">i</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [[1]]
+## [[1]]$maddepar
+##       [,1]   [,2]   [,3]
+##  [1,] 2.63 -0.570 0.0752
+##  [2,] 1.53  0.065 0.1859
+##  [3,] 1.27  1.798 0.0994
+##  [4,] 1.93  2.325 0.1950
+##  [5,] 2.36  0.461 0.1757
+##  [6,] 1.81  0.827 0.1840
+##  [7,] 2.26  1.668 0.1773
+##  [8,] 2.21  0.170 0.1471
+##  [9,] 2.46  0.392 0.1278
+## [10,] 2.23  0.370 0.1622
+## 
+## 
+## [[2]]
+## [[2]]$maddepar
+##       [,1]   [,2]   [,3]
+##  [1,] 2.45  0.946 0.2168
+##  [2,] 1.92 -0.918 0.1914
+##  [3,] 1.81  1.793 0.1693
+##  [4,] 2.44 -0.037 0.1583
+##  [5,] 2.21  0.938 0.1930
+##  [6,] 1.77  0.582 0.1354
+##  [7,] 2.70  0.729 0.1620
+##  [8,] 2.20  0.657 0.1847
+##  [9,] 1.37 -0.646 0.0643
+## [10,] 2.32  0.275 0.2355
+## 
+## 
+## [[3]]
+## [[3]]$maddepar
+##        [,1]    [,2]   [,3]
+##  [1,] 0.953 -0.9018 0.1527
+##  [2,] 1.629  1.1330 0.1238
+##  [3,] 1.983  0.6882 0.2082
+##  [4,] 2.341 -0.0603 0.1029
+##  [5,] 1.816 -0.1821 0.0628
+##  [6,] 0.877  0.2849 0.1136
+##  [7,] 2.068  0.6827 0.1639
+##  [8,] 2.132  1.7466 0.1687
+##  [9,] 1.958  0.5841 0.1750
+## [10,] 1.622 -0.8964 0.0769
+## 
+## 
+## [[4]]
+## [[4]]$maddepar
+##       [,1]     [,2]   [,3]
+##  [1,] 1.66  0.53978 0.2016
+##  [2,] 2.06 -0.10367 0.1652
+##  [3,] 1.91 -0.00871 0.1806
+##  [4,] 1.73  1.60843 0.1435
+##  [5,] 2.06 -0.50558 0.0348
+##  [6,] 1.18 -0.59864 0.1434
+##  [7,] 2.25  2.52695 0.0724
+##  [8,] 2.12  2.02581 0.1501
+##  [9,] 2.16  0.15750 0.1643
+## [10,] 1.90  0.06026 0.2402
+## 
+## 
+## [[5]]
+## [[5]]$maddepar
+##        [,1]     [,2]   [,3]
+##  [1,] 2.146  0.00822 0.1249
+##  [2,] 0.961 -0.51301 0.1942
+##  [3,] 1.915  0.20316 0.1171
+##  [4,] 2.001 -0.06609 0.1784
+##  [5,] 1.770  1.16286 0.0885
+##  [6,] 1.717 -0.31480 0.1344
+##  [7,] 1.640  0.72448 0.1466
+##  [8,] 1.849 -0.16944 0.1500
+##  [9,] 1.493  0.53916 0.2028
+## [10,] 2.238 -0.31732 0.1517</code></pre>
+<p>Çıktıların liste olmaması için <code>sapply</code> de kullanılabilir.</p>
+<div class="sourceCode" id="cb799"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="fl">1L</span><span class="op">:</span><span class="va">tekrarsayisi</span>, <span class="kw">function</span><span class="op">(</span><span class="va">i</span><span class="op">)</span> <span class="va">x</span><span class="op">[</span>,<span class="va">i</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## $maddepar
+##       [,1]   [,2]   [,3]
+##  [1,] 2.63 -0.570 0.0752
+##  [2,] 1.53  0.065 0.1859
+##  [3,] 1.27  1.798 0.0994
+##  [4,] 1.93  2.325 0.1950
+##  [5,] 2.36  0.461 0.1757
+##  [6,] 1.81  0.827 0.1840
+##  [7,] 2.26  1.668 0.1773
+##  [8,] 2.21  0.170 0.1471
+##  [9,] 2.46  0.392 0.1278
+## [10,] 2.23  0.370 0.1622
+## 
+## $maddepar
+##       [,1]   [,2]   [,3]
+##  [1,] 2.45  0.946 0.2168
+##  [2,] 1.92 -0.918 0.1914
+##  [3,] 1.81  1.793 0.1693
+##  [4,] 2.44 -0.037 0.1583
+##  [5,] 2.21  0.938 0.1930
+##  [6,] 1.77  0.582 0.1354
+##  [7,] 2.70  0.729 0.1620
+##  [8,] 2.20  0.657 0.1847
+##  [9,] 1.37 -0.646 0.0643
+## [10,] 2.32  0.275 0.2355
+## 
+## $maddepar
+##        [,1]    [,2]   [,3]
+##  [1,] 0.953 -0.9018 0.1527
+##  [2,] 1.629  1.1330 0.1238
+##  [3,] 1.983  0.6882 0.2082
+##  [4,] 2.341 -0.0603 0.1029
+##  [5,] 1.816 -0.1821 0.0628
+##  [6,] 0.877  0.2849 0.1136
+##  [7,] 2.068  0.6827 0.1639
+##  [8,] 2.132  1.7466 0.1687
+##  [9,] 1.958  0.5841 0.1750
+## [10,] 1.622 -0.8964 0.0769
+## 
+## $maddepar
+##       [,1]     [,2]   [,3]
+##  [1,] 1.66  0.53978 0.2016
+##  [2,] 2.06 -0.10367 0.1652
+##  [3,] 1.91 -0.00871 0.1806
+##  [4,] 1.73  1.60843 0.1435
+##  [5,] 2.06 -0.50558 0.0348
+##  [6,] 1.18 -0.59864 0.1434
+##  [7,] 2.25  2.52695 0.0724
+##  [8,] 2.12  2.02581 0.1501
+##  [9,] 2.16  0.15750 0.1643
+## [10,] 1.90  0.06026 0.2402
+## 
+## $maddepar
+##        [,1]     [,2]   [,3]
+##  [1,] 2.146  0.00822 0.1249
+##  [2,] 0.961 -0.51301 0.1942
+##  [3,] 1.915  0.20316 0.1171
+##  [4,] 2.001 -0.06609 0.1784
+##  [5,] 1.770  1.16286 0.0885
+##  [6,] 1.717 -0.31480 0.1344
+##  [7,] 1.640  0.72448 0.1466
+##  [8,] 1.849 -0.16944 0.1500
+##  [9,] 1.493  0.53916 0.2028
+## [10,] 2.238 -0.31732 0.1517</code></pre>
+</div>
+<div id="doparallel" class="section level2" number="19.10">
+<h2>
+<span class="header-section-number">19.10</span> doParallel<a class="anchor" aria-label="anchor" href="#doparallel"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb801"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tekrar</span> <span class="op">=</span> <span class="fl">4</span> </span>
+<span><span class="va">seed</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample.int</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">maddesay</span> <span class="op">=</span> <span class="fl">10</span> <span class="co"># 10, 15, 20, or 25</span></span>
+<span><span class="va">bireysay</span> <span class="op">=</span> <span class="fl">1000</span> <span class="co"># 250, 500, 750, or 1000</span></span></code></pre></div>
+<div class="sourceCode" id="cb802"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/RevolutionAnalytics/doparallel">"doParallel"</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/parallel/detectCores.html">detectCores</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">cl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">makeCluster</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span> <span class="co"># en fazla n-2 </span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/doParallel/man/registerDoParallel.html">registerDoParallel</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 16</code></pre>
+<div id="foreach" class="section level3" number="19.10.1">
+<h3>
+<span class="header-section-number">19.10.1</span> foreach<a class="anchor" aria-label="anchor" href="#foreach"><i class="fas fa-link"></i></a>
+</h3>
+<p>Döngüler yavas olabilir, apply ailesi çıktıları kullanışlı olmayabilir.</p>
+<div class="sourceCode" id="cb804"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">foreach</a></span><span class="op">(</span>i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">%dopar%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">i</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 1.41
+## 
+## [[3]]
+## [1] 1.73
+## 
+## [[4]]
+## [1] 2</code></pre>
+<div class="sourceCode" id="cb806"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#coklu arguman</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">foreach</a></span><span class="op">(</span>i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>, j<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">%do%</a></span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">i</span><span class="op">+</span><span class="va">j</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">stopCluster</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span> <span class="co"># cekirdek atama işini bitirir.</span></span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1.41
+## 
+## [[2]]
+## [1] 2
+## 
+## [[3]]
+## [1] 2.45
+## 
+## [[4]]
+## [1] 2.83</code></pre>
+<div style="display: flex; justify-content: space-between;">
+<div style="flex: 1; margin-right: 2cm;">
+<div class="sourceCode" id="cb808"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1e6</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span> </span></code></pre></div>
+</div>
+<div style="flex: 1;">
+<div class="sourceCode" id="cb809"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/RevolutionAnalytics/doparallel">doParallel</a></span><span class="op">)</span></span>
+<span><span class="va">cl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">makeCluster</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span> <span class="co"># en fazla n-2 </span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/doParallel/man/registerDoParallel.html">registerDoParallel</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span>
+<span> <span class="fu"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">foreach</a></span><span class="op">(</span>i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">%dopar%</a></span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1e6</span><span class="op">)</span><span class="op">)</span></span>
+<span> <span class="op">}</span>   </span>
+<span><span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">stopCluster</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span> <span class="co"># cekirdek atama işini bitirir.</span></span></code></pre></div>
+<pre><code>## [[1]]
+## [1] -1431
+## 
+## [[2]]
+## [1] 1512
+## 
+## [[3]]
+## [1] 663
+## 
+## [[4]]
+## [1] 850
+## 
+## [[5]]
+## [1] 181</code></pre>
+</div>
+</div>
+<div class="sourceCode" id="cb811"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">makeCluster</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span> </span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/doParallel/man/registerDoParallel.html">registerDoParallel</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tekrar</span> <span class="op">=</span> <span class="fl">4</span> </span>
+<span><span class="va">seed</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample.int</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">maddesay</span> <span class="op">=</span> <span class="fl">10</span> <span class="co"># 10, 15, 20, or 25</span></span>
+<span><span class="va">bireysay</span> <span class="op">=</span> <span class="fl">1000</span> <span class="co"># 250, 500, 750, or 1000</span></span>
+<span></span>
+<span><span class="va">simulasyon</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">foreach</a></span><span class="op">(</span>i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span>,</span>
+<span>             .packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mirt"</span>, <span class="st">"doParallel"</span><span class="op">)</span>,</span>
+<span>             .combine <span class="op">=</span> <span class="va">rbind</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">%dopar%</a></span> <span class="op">{</span></span>
+<span>             <span class="co"># Adım 1 madde parametrelerini ve veri setini üretme</span></span>
+<span>             <span class="va">adim1</span> <span class="op">&lt;-</span> <span class="fu">veri_uretimi</span><span class="op">(</span>maddesay <span class="op">=</span><span class="va">maddesay</span>, bireysay <span class="op">=</span><span class="va">bireysay</span>, seed<span class="op">=</span><span class="va">seed</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span>             <span class="co"># Adım 2 üretilen veri seti üzerinden ketsirim yapma</span></span>
+<span>             <span class="va">adim2</span> <span class="op">&lt;-</span> <span class="fu">kestirilen_par</span><span class="op">(</span><span class="va">adim1</span><span class="op">$</span><span class="va">cevaplar</span><span class="op">)</span></span>
+<span>             <span class="co"># adim 3 raporlama</span></span>
+<span>             <span class="fu">hata</span><span class="op">(</span><span class="va">adim2</span>, <span class="va">adim1</span><span class="op">$</span><span class="va">maddepar</span><span class="op">)</span></span>
+<span>            <span class="op">}</span></span></code></pre></div>
+<p>Cikti düzenleme</p>
+<div class="sourceCode" id="cb812"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">simulasyon</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">parametreler</th>
+<th align="right">bias</th>
+<th align="right">rmse</th>
+<th align="right">korelasyon</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">a</td>
+<td align="right">0.199</td>
+<td align="right">0.590</td>
+<td align="right">0.629</td>
+</tr>
+<tr class="even">
+<td align="left">b</td>
+<td align="right">-0.132</td>
+<td align="right">0.217</td>
+<td align="right">0.988</td>
+</tr>
+<tr class="odd">
+<td align="left">c</td>
+<td align="right">-0.041</td>
+<td align="right">0.087</td>
+<td align="right">0.195</td>
+</tr>
+<tr class="even">
+<td align="left">a</td>
+<td align="right">-0.127</td>
+<td align="right">0.523</td>
+<td align="right">0.555</td>
+</tr>
+<tr class="odd">
+<td align="left">b</td>
+<td align="right">0.012</td>
+<td align="right">0.174</td>
+<td align="right">0.979</td>
+</tr>
+<tr class="even">
+<td align="left">c</td>
+<td align="right">-0.019</td>
+<td align="right">0.068</td>
+<td align="right">0.819</td>
+</tr>
+<tr class="odd">
+<td align="left">a</td>
+<td align="right">0.228</td>
+<td align="right">0.590</td>
+<td align="right">0.901</td>
+</tr>
+<tr class="even">
+<td align="left">b</td>
+<td align="right">-0.018</td>
+<td align="right">0.191</td>
+<td align="right">0.985</td>
+</tr>
+<tr class="odd">
+<td align="left">c</td>
+<td align="right">0.000</td>
+<td align="right">0.110</td>
+<td align="right">0.253</td>
+</tr>
+<tr class="even">
+<td align="left">a</td>
+<td align="right">0.471</td>
+<td align="right">1.424</td>
+<td align="right">0.091</td>
+</tr>
+<tr class="odd">
+<td align="left">b</td>
+<td align="right">0.037</td>
+<td align="right">0.260</td>
+<td align="right">0.960</td>
+</tr>
+<tr class="even">
+<td align="left">c</td>
+<td align="right">0.018</td>
+<td align="right">0.114</td>
+<td align="right">0.769</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="sourceCode" id="cb813"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="va">simulasyon_v1</span> <span class="op">&lt;-</span> <span class="va">simulasyon</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">parametreler</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">bias</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span>,</span>
+<span>            rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">rmse</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span>,</span>
+<span>            korelasyon <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">korelasyon</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>maddesay <span class="op">=</span> <span class="va">maddesay</span>,</span>
+<span>         bireysay <span class="op">=</span> <span class="va">bireysay</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb814"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">simulasyon_v1</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">parametreler</th>
+<th align="right">bias</th>
+<th align="right">rmse</th>
+<th align="right">korelasyon</th>
+<th align="right">maddesay</th>
+<th align="right">bireysay</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">a</td>
+<td align="right">0.192</td>
+<td align="right">0.782</td>
+<td align="right">0.544</td>
+<td align="right">10</td>
+<td align="right">1000</td>
+</tr>
+<tr class="even">
+<td align="left">b</td>
+<td align="right">-0.025</td>
+<td align="right">0.210</td>
+<td align="right">0.978</td>
+<td align="right">10</td>
+<td align="right">1000</td>
+</tr>
+<tr class="odd">
+<td align="left">c</td>
+<td align="right">-0.011</td>
+<td align="right">0.095</td>
+<td align="right">0.509</td>
+<td align="right">10</td>
+<td align="right">1000</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb815"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tekrar</span> <span class="op">=</span> <span class="fl">1</span>;<span class="va">seed</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample.int</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">maddesay</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">20</span> ,<span class="fl">40</span><span class="op">)</span></span>
+<span><span class="va">bireysay</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">250</span>, <span class="fl">500</span>, <span class="fl">1000</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># kumeler </span></span>
+<span><span class="va">cl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">makeCluster</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span>;<span class="fu"><a href="https://rdrr.io/pkg/doParallel/man/registerDoParallel.html">registerDoParallel</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># İc ice foreachler</span></span>
+<span><span class="va">sonuc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">foreach</a></span><span class="op">(</span>i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="va">tekrar</span>, </span>
+<span>                      .packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mirt"</span>, <span class="st">"doParallel"</span>, <span class="st">"dplyr"</span><span class="op">)</span>,</span>
+<span>                      .combine <span class="op">=</span> <span class="va">rbind</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">%:%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">foreach</a></span><span class="op">(</span>j<span class="op">=</span><span class="va">maddesay</span>, </span>
+<span>          .packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mirt"</span>, <span class="st">"doParallel"</span>, <span class="st">"dplyr"</span><span class="op">)</span>,</span>
+<span>          .combine <span class="op">=</span> <span class="va">rbind</span><span class="op">)</span>  <span class="op"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">%:%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">foreach</a></span><span class="op">(</span>k<span class="op">=</span><span class="va">bireysay</span>, </span>
+<span>          .packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mirt"</span>, <span class="st">"doParallel"</span>, <span class="st">"dplyr"</span><span class="op">)</span>,</span>
+<span>          .combine <span class="op">=</span> <span class="va">rbind</span><span class="op">)</span>    <span class="op"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">%dopar%</a></span> <span class="op">{</span></span>
+<span>            <span class="va">adim1</span> <span class="op">&lt;-</span> <span class="fu">veri_uretimi</span><span class="op">(</span>maddesay<span class="op">=</span><span class="va">j</span>, bireysay<span class="op">=</span><span class="va">k</span>, seed<span class="op">=</span><span class="va">seed</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span>            <span class="va">adim2</span> <span class="op">&lt;-</span> <span class="fu">kestirilen_par</span><span class="op">(</span><span class="va">adim1</span><span class="op">$</span><span class="va">cevaplar</span><span class="op">)</span></span>
+<span>            <span class="va">adim3</span> <span class="op">&lt;-</span> <span class="fu">hata</span><span class="op">(</span><span class="va">adim2</span>, <span class="va">adim1</span><span class="op">$</span><span class="va">maddepar</span><span class="op">)</span></span>
+<span>            <span class="va">adim3</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>              <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">parametreler</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>              <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>bias <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">bias</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span>,</span>
+<span>                        rmse <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">rmse</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span>,</span>
+<span>                        korelasyon <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">korelasyon</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>              <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>maddesay <span class="op">=</span> <span class="va">j</span>, bireysay <span class="op">=</span> <span class="va">k</span>,</span>
+<span>              <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>              <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>          <span class="op">}</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">stopCluster</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb816"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.table</a></span><span class="op">(</span><span class="va">adim3</span>, <span class="st">"results.csv"</span>, </span>
+<span>                        sep <span class="op">=</span> <span class="st">","</span>, </span>
+<span>                        col.names <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>                        row.names <span class="op">=</span> <span class="cn">FALSE</span>, </span>
+<span>                        append <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="co"># sonuçların eklenmesi için dosyayı </span></span>
+<span>                                         <span class="co"># açık tutacaktır</span></span></code></pre></div>
+<hr>
+<div class="sourceCode" id="cb817"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">iterations</span> <span class="op">=</span> <span class="fl">4</span>; <span class="va">seed</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample.int</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">maddesay</span> <span class="op">=</span> <span class="fl">10</span> ;<span class="va">bireysay</span> <span class="op">=</span> <span class="fl">1000</span> <span class="co">#250, 500, 750, or 1000</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"doSNOW"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: package 'doSNOW' was built under R version 4.3.3</code></pre>
+<pre><code>## Loading required package: snow</code></pre>
+<pre><code>## 
+## Attaching package: 'snow'</code></pre>
+<pre><code>## The following objects are masked from 'package:parallel':
+## 
+##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+##     clusterExport, clusterMap, clusterSplit, makeCluster, parApply,
+##     parCapply, parLapply, parRapply, parSapply, splitIndices,
+##     stopCluster</code></pre>
+<div class="sourceCode" id="cb822"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/snow/man/snow-startstop.html">makeCluster</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span>;<span class="fu"><a href="https://rdrr.io/pkg/doSNOW/man/registerDoSNOW.html">registerDoSNOW</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">pb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/txtProgressBar.html">txtProgressBar</a></span><span class="op">(</span>max <span class="op">=</span> <span class="va">iterations</span>, style <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="co"># Progres bar</span></span>
+<span><span class="va">progress</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/utils/txtProgressBar.html">setTxtProgressBar</a></span><span class="op">(</span><span class="va">pb</span>, <span class="va">n</span><span class="op">)</span><span class="op">}</span></span>
+<span><span class="va">opts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>progress <span class="op">=</span> <span class="va">progress</span><span class="op">)</span></span>
+<span><span class="va">sonuc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">foreach</a></span><span class="op">(</span>i<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="va">iterations</span>,</span>
+<span>                      .packages <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mirt"</span>, <span class="st">"doSNOW"</span><span class="op">)</span>,</span>
+<span>                      .options.snow <span class="op">=</span> <span class="va">opts</span>, <span class="co">#</span></span>
+<span>                      .combine <span class="op">=</span> <span class="va">rbind</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/pkg/foreach/man/foreach.html">%dopar%</a></span> <span class="op">{</span></span>
+<span>                        <span class="co"># Generate item parameters and data</span></span>
+<span>                        <span class="va">adim1</span> <span class="op">&lt;-</span> <span class="fu">veri_uretimi</span><span class="op">(</span><span class="va">maddesay</span>  , <span class="va">bireysay</span>, seed<span class="op">=</span><span class="va">seed</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span>                        <span class="co"># Estimate item parameters</span></span>
+<span>                        <span class="va">adim2</span> <span class="op">&lt;-</span> <span class="fu">kestirilen_par</span><span class="op">(</span><span class="va">adim1</span><span class="op">$</span><span class="va">cevaplar</span><span class="op">)</span></span>
+<span>                        <span class="co"># Summarize results</span></span>
+<span>                        <span class="fu">hata</span><span class="op">(</span><span class="va">adim2</span>, <span class="va">adim1</span><span class="op">$</span><span class="va">maddepar</span><span class="op">)</span></span>
+<span>                      <span class="op">}</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/connections.html">close</a></span><span class="op">(</span><span class="va">pb</span><span class="op">)</span> <span class="co"># kapat progress bar</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/snow/man/snow-startstop.html">stopCluster</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |==================                                                    |  25%
+  |                                                                            
+  |===================================                                   |  50%
+  |                                                                            
+  |====================================================                  |  75%
+  |                                                                            
+  |======================================================================| 100%</code></pre>
+
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
+<div id="ref-bertrams2009" class="csl-entry">
+Bertrams, A., &amp; Dickhäuser, O. (2009). Messung dispositioneller Selbstkontroll-Kapazität. <em>Diagnostica</em>, <em>55</em>(1), 2–10. <a href="https://doi.org/10.1026/0012-1924.55.1.2">https://doi.org/10.1026/0012-1924.55.1.2</a>
+</div>
+<div id="ref-QME" class="csl-entry">
+Brown, E., Zieffler, A., Nickodem, K., Vue, K., &amp; Anderson, E. (2016). <em>QME: Classic test theory item analysis</em>. <a href="https://github.com/zief0002/QME">https://github.com/zief0002/QME</a>
+</div>
+<div id="ref-DataExplorer" class="csl-entry">
+Cui, B. (2024). <em>DataExplorer: Automate data exploration and treatment</em>. <a href="https://CRAN.R-project.org/package=DataExplorer">https://CRAN.R-project.org/package=DataExplorer</a>
+</div>
+<div id="ref-car" class="csl-entry">
+Fox, J., &amp; Weisberg, S. (2019). <em>An <span></span>r<span></span> companion to applied regression</em>. <a href="https://socialsciences.mcmaster.ca/jfox/Books/Companion/">https://socialsciences.mcmaster.ca/jfox/Books/Companion/</a>
+</div>
+<div id="ref-ggcorrplot" class="csl-entry">
+Kassambara, A. (2023). <em>Ggcorrplot: Visualization of a correlation matrix using ’ggplot2’</em>. <a href="https://CRAN.R-project.org/package=ggcorrplot">https://CRAN.R-project.org/package=ggcorrplot</a>
+</div>
+<div id="ref-difR" class="csl-entry">
+Magis, D., Beland, S., Tuerlinckx, F., &amp; De Boeck, P. (2010). <em>A general framework and an r package for the detection of dichotomous differential item functioning</em>. <em>42</em>.
+</div>
+<div id="ref-skimr" class="csl-entry">
+Waring, E., Quinn, M., McNamara, A., Arino de la Rubia, E., Zhu, H., &amp; Ellis, S. (2022). <em>Skimr: Compact and flexible summaries of data</em>. <a href="https://CRAN.R-project.org/package=skimr">https://CRAN.R-project.org/package=skimr</a>
+</div>
+<div id="ref-psych" class="csl-entry">
+William Revelle. (2024). <em>Psych: Procedures for psychological, psychometric, and personality research</em>. <a href="https://CRAN.R-project.org/package=psych">https://CRAN.R-project.org/package=psych</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html"><span class="header-section-number">18</span> MTK ile Madde Analizi Uygulaması</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#veri-%C3%BCretimi"><span class="header-section-number">19</span> Veri Üretimi</a></li>
+<li><a class="nav-link" href="#da%C4%9F%C4%B1l%C4%B1mlar"><span class="header-section-number">19.1</span> Dağılımlar</a></li>
+<li><a class="nav-link" href="#iterasyon"><span class="header-section-number">19.2</span> İterasyon</a></li>
+<li><a class="nav-link" href="#iterasyonlar%C4%B1n-kaydedilmesi"><span class="header-section-number">19.3</span> İterasyonların Kaydedilmesi</a></li>
+<li><a class="nav-link" href="#psikometri-alan%C4%B1nda-veri-%C3%BCretimi"><span class="header-section-number">19.4</span> Psikometri Alanında Veri Üretimi</a></li>
+<li><a class="nav-link" href="#r-paketleri-ile-veri-%C3%BCretimi"><span class="header-section-number">19.5</span> R Paketleri ile Veri Üretimi</a></li>
+<li><a class="nav-link" href="#paramtere-kestirimi"><span class="header-section-number">19.6</span> Paramtere kestirimi</a></li>
+<li><a class="nav-link" href="#kestirilen-de%C4%9Ferler-ve-ger%C3%A7ek-de%C4%9Ferler"><span class="header-section-number">19.7</span> Kestirilen değerler ve Gerçek Değerler</a></li>
+<li><a class="nav-link" href="#r-paketleri-ile-veri-%C3%BCretimi-1"><span class="header-section-number">19.8</span> R Paketleri ile Veri Üretimi</a></li>
+<li><a class="nav-link" href="#veri-%C3%BCretiminde-tekrar"><span class="header-section-number">19.9</span> Veri Üretiminde Tekrar</a></li>
+<li>
+<a class="nav-link" href="#doparallel"><span class="header-section-number">19.10</span> doParallel</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#foreach"><span class="header-section-number">19.10.1</span> foreach</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="/blob/master/book/18_Veri_Uretimi.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="/edit/master/book/18_Veri_Uretimi.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>lavaan</strong>: R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" was written by Kubra Atalay Kabasakal. It was last built on 2024-04-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

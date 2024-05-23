@@ -241,9 +241,9 @@ sd()`fonksiyonunun iki argümanı olduğunu unutmayın: x` sayı vektörünü g�
 > sd(x = mydata)                 
 > ## Her iki argümanı da adla belirtin
 > sd(x = mydata, na.rm = FALSE)  
-[1] 0.9293469
-[1] 0.9293469
-[1] 0.9293469
+[1] 0.96035
+[1] 0.96035
+[1] 0.96035
 ```
 
 Fonksiyon argümanlarını isimle belirtirken, bunları hangi sırada belirttiğiniz önemli değildir.
@@ -253,7 +253,7 @@ Aşağıdaki örnekte, fonksiyon tanımında tanımlanan ilk argüman `x` olmas�
 ```r
 > ## Her iki argümanı da adla belirtin
 > sd(na.rm = FALSE, x = mydata)     
-[1] 0.9293469
+[1] 0.96035
 ```
 
 Konumsal eşleştirme ile ada göre eşleştirmeyi karıştırabilirsiniz.
@@ -262,7 +262,7 @@ Bir argüman isme göre eşleştirildiğinde, argüman listesinden "çıkarılı
 
 ```r
 > sd(na.rm = FALSE, mydata)
-[1] 0.9293469
+[1] 0.96035
 ```
 
 Burada, `mydata` nesnesi `x` argümanına atanır, çünkü henüz belirtilmemiş tek argüman budur.
@@ -326,7 +326,7 @@ Jenerik fonksiyonlar, metotlara ekstra argümanlar aktarılabilmesi için `...` 
 > mean
 function (x, ...) 
 UseMethod("mean")
-<bytecode: 0x00000225bf2342e8>
+<bytecode: 0x0000028c60624258>
 <environment: namespace:base>
 ```
 

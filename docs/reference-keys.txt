@@ -287,3 +287,15 @@ yetenek-parametresi-kestirimi
 madde-bilgi-fonksiyonu-1
 sıra-sizde-3
 kaynaklar-8
+veri-üretimi
+dağılımlar
+iterasyon
+iterasyonların-kaydedilmesi
+psikometri-alanında-veri-üretimi
+r-paketleri-ile-veri-üretimi
+paramtere-kestirimi
+kestirilen-değerler-ve-gerçek-değerler
+r-paketleri-ile-veri-üretimi-1
+veri-üretiminde-tekrar
+doparallel
+foreach
