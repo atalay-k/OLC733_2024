@@ -209,8 +209,8 @@
 <span><span class="va">nd1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">n</span>, mean<span class="op">=</span><span class="fl">50</span>, sd<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">nd1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">nd1</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] 49.4
-## [1] 9.29</code></pre>
+<pre><code>## [1] 50.9
+## [1] 9.73</code></pre>
 </div>
 <div style="flex: 1;">
 <div class="sourceCode" id="cb751"><pre class="downlit sourceCode r">
@@ -229,8 +229,8 @@
 <code class="sourceCode R"><span><span class="va">nd2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">n</span>, min<span class="op">=</span><span class="fl">50</span>, max<span class="op">=</span><span class="fl">150</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">nd2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">nd2</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] 50.9
-## [1] 29.5</code></pre>
+<pre><code>## [1] 50.5
+## [1] 25.1</code></pre>
 </div>
 <div style="flex: 2;">
 <div class="sourceCode" id="cb754"><pre class="downlit sourceCode r">
@@ -402,7 +402,7 @@
 ##     dim(u) = d
 ##     return(ifelse(i$f &gt; u, 1, 0))
 ## }
-## &lt;bytecode: 0x000002346de32068&gt;
+## &lt;bytecode: 0x000001c13ef97ad8&gt;
 ## &lt;environment: namespace:irtoys&gt;</code></pre>
 <p><strong>Aşama 4</strong></p>
 <p>Üretilen verinin parametrelerinin kestirimi</p>
@@ -585,10 +585,7 @@ ve cevap matrisini tutsun</p></li>
 <p><span class="math display">\[RMSE(\tau) = \sqrt\frac{\sum_{r}^{R} (\hat{\tau}- \tau)^2}{R})\]</span></p>
 <p><strong>BIAS</strong> kestirime ilişkin sistematik hatayı ifade eden yanlılık her bir madde için her bir replikasyonda kestirilen parametre değerinin ortalaması ile gerçek parametre değeri arasındaki farktır ve aşağıdaki formül ile hesaplanır:</p>
 <p><span class="math display">\[BIAS(\tau) = \frac{\sum_{r}^{R}\hat{\tau}}{R} - \tau\]</span></p>
-<ul>
-<li>
-<strong>SE</strong> kestirime ilişkin rastgele hatayı ifade eden standart hata her bir madde için her bir replikasyonda kestirilen parametre değeri ile ortalama parametre kestirimi arasındaki farkın karesinin ortalamasının kareköküdür. Diğer bir ifadeyle replikasyonlarda kestirilen parametre değerlerinin standart sapmasıdır ve aşağıdaki formül ile hesaplanır:</li>
-</ul>
+<p><strong>SE</strong> kestirime ilişkin rastgele hatayı ifade eden standart hata her bir madde için her bir replikasyonda kestirilen parametre değeri ile ortalama parametre kestirimi arasındaki farkın karesinin ortalamasının kareköküdür. Diğer bir ifadeyle replikasyonlarda kestirilen parametre değerlerinin standart sapmasıdır ve aşağıdaki formül ile hesaplanır:</p>
 <p><span class="math display">\[SE(\tau) = \sqrt\frac{\sum_{r}^{R} (\hat{\tau}- \overline{\hat{\tau}})^2}{R})\]</span></p>
 <p>Yanlılığın karesi ile standart hatanın karesinin toplamı RMSE’nin karesinin toplamına eşittir. RMSE, yanlılık ve standart hata arasındaki ilişki aşağıdaki eşitlik ile gösterilebilir:</p>
 <p><span class="math display">\[RMSE^2= Bias^2 +SE^2\]</span></p>
@@ -929,19 +926,19 @@ ve cevap matrisini tutsun</p></li>
 <span> <span class="op">}</span>   </span>
 <span><span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">stopCluster</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span> <span class="co"># cekirdek atama işini bitirir.</span></span></code></pre></div>
 <pre><code>## [[1]]
-## [1] -1431
+## [1] -62.3
 ## 
 ## [[2]]
-## [1] 1512
+## [1] -637
 ## 
 ## [[3]]
-## [1] 663
+## [1] 1398
 ## 
 ## [[4]]
-## [1] 850
+## [1] 653
 ## 
 ## [[5]]
-## [1] 181</code></pre>
+## [1] -624</code></pre>
 </div>
 </div>
 <div class="sourceCode" id="cb811"><pre class="downlit sourceCode r">
@@ -1144,19 +1141,8 @@ ve cevap matrisini tutsun</p></li>
 <div class="sourceCode" id="cb817"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">iterations</span> <span class="op">=</span> <span class="fl">4</span>; <span class="va">seed</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample.int</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">100</span><span class="op">)</span></span>
 <span><span class="va">maddesay</span> <span class="op">=</span> <span class="fl">10</span> ;<span class="va">bireysay</span> <span class="op">=</span> <span class="fl">1000</span> <span class="co">#250, 500, 750, or 1000</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"doSNOW"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## Warning: package 'doSNOW' was built under R version 4.3.3</code></pre>
-<pre><code>## Loading required package: snow</code></pre>
-<pre><code>## 
-## Attaching package: 'snow'</code></pre>
-<pre><code>## The following objects are masked from 'package:parallel':
-## 
-##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-##     clusterExport, clusterMap, clusterSplit, makeCluster, parApply,
-##     parCapply, parLapply, parRapply, parSapply, splitIndices,
-##     stopCluster</code></pre>
-<div class="sourceCode" id="cb822"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">cl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/snow/man/snow-startstop.html">makeCluster</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span>;<span class="fu"><a href="https://rdrr.io/pkg/doSNOW/man/registerDoSNOW.html">registerDoSNOW</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"doSNOW"</span><span class="op">)</span></span>
+<span><span class="va">cl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/snow/man/snow-startstop.html">makeCluster</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span>;<span class="fu"><a href="https://rdrr.io/pkg/doSNOW/man/registerDoSNOW.html">registerDoSNOW</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">pb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/txtProgressBar.html">txtProgressBar</a></span><span class="op">(</span>max <span class="op">=</span> <span class="va">iterations</span>, style <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="co"># Progres bar</span></span>
 <span><span class="va">progress</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/utils/txtProgressBar.html">setTxtProgressBar</a></span><span class="op">(</span><span class="va">pb</span>, <span class="va">n</span><span class="op">)</span><span class="op">}</span></span>

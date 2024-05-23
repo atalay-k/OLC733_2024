@@ -186,8 +186,8 @@ sd(nd1)
 ```
 
 ```
-## [1] 49.4
-## [1] 9.29
+## [1] 50.9
+## [1] 9.73
 ```
 :::
 
@@ -222,8 +222,8 @@ sd(nd2)
 ```
 
 ```
-## [1] 50.9
-## [1] 29.5
+## [1] 50.5
+## [1] 25.1
 ```
 :::
 
@@ -481,7 +481,7 @@ sim
 ##     dim(u) = d
 ##     return(ifelse(i$f > u, 1, 0))
 ## }
-## <bytecode: 0x000002346de32068>
+## <bytecode: 0x000001c13ef97ad8>
 ## <environment: namespace:irtoys>
 ```
 
@@ -683,7 +683,7 @@ $$BIAS(\tau) = \frac{\sum_{r}^{R}\hat{\tau}}{R} - \tau$$
 
 
 
-- **SE**  kestirime ilişkin rastgele hatayı ifade eden standart hata her bir madde için her bir replikasyonda kestirilen parametre değeri ile ortalama parametre kestirimi arasındaki farkın karesinin ortalamasının kareköküdür. Diğer bir ifadeyle replikasyonlarda kestirilen parametre değerlerinin standart sapmasıdır ve aşağıdaki formül ile hesaplanır: 
+**SE**  kestirime ilişkin rastgele hatayı ifade eden standart hata her bir madde için her bir replikasyonda kestirilen parametre değeri ile ortalama parametre kestirimi arasındaki farkın karesinin ortalamasının kareköküdür. Diğer bir ifadeyle replikasyonlarda kestirilen parametre değerlerinin standart sapmasıdır ve aşağıdaki formül ile hesaplanır: 
 
 $$SE(\tau) = \sqrt\frac{\sum_{r}^{R} (\hat{\tau}- \overline{\hat{\tau}})^2}{R})$$
 
@@ -1084,19 +1084,19 @@ stopCluster(cl) # cekirdek atama işini bitirir.
 
 ```
 ## [[1]]
-## [1] -1431
+## [1] -62.3
 ## 
 ## [[2]]
-## [1] 1512
+## [1] -637
 ## 
 ## [[3]]
-## [1] 663
+## [1] 1398
 ## 
 ## [[4]]
-## [1] 850
+## [1] 653
 ## 
 ## [[5]]
-## [1] 181
+## [1] -624
 ```
 :::
 
@@ -1240,31 +1240,6 @@ stopCluster(cl)
 iterations = 4; seed = sample.int(10000, 100)
 maddesay = 10 ;bireysay = 1000 #250, 500, 750, or 1000
 library("doSNOW")
-```
-
-```
-## Warning: package 'doSNOW' was built under R version 4.3.3
-```
-
-```
-## Loading required package: snow
-```
-
-```
-## 
-## Attaching package: 'snow'
-```
-
-```
-## The following objects are masked from 'package:parallel':
-## 
-##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
-##     clusterExport, clusterMap, clusterSplit, makeCluster, parApply,
-##     parCapply, parLapply, parRapply, parSapply, splitIndices,
-##     stopCluster
-```
-
-```r
 cl <- makeCluster(4);registerDoSNOW(cl)
 
 pb <- txtProgressBar(max = iterations, style = 3) # Progres bar
