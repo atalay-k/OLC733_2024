@@ -25,28 +25,27 @@
 ## İki kategorili (doğru-yanlış) MTK modelleri
 
 
-- En popüler dört tek boyutlu *iki kategorili madde yanıt verisi* MTK modelleri
-  - bir-parametreli lojistik  (1-PL)
+En popüler üç tek boyutlu *iki kategorili madde yanıt verisi* MTK modelleri
+
+bir-parametreli lojistik  (1-PL)
   
   $$P_i(\theta) = \frac{exp(\theta-b_i)}{1+exp(\theta-b_i)} = \frac{1}{1+exp[-(\theta-b_i)]}$$
 
 
-  - iki-parametreli lojistik  (2-PL)
+iki-parametreli lojistik  (2-PL)
   
   
 $$P_i(\theta) = \frac{exp[a_i(\theta-b_i)]}{1+exp[a_i(\theta-b_i)]}=\frac{1}{1+exp(-[a_i(\theta-b_i)])}$$
 
-  - üç-parametreli lojistik   (3-PL) 
+üç-parametreli lojistik   (3-PL) 
   
   $$P_i(\theta) = c_i + (1- ci)* \frac{exp[a_i(\theta-b_i)]}{1+exp[a_i(\theta-b_i)]}=c_i +\frac{1-c_i}{1+exp(-[a_i(\theta-b_i)])}$$
   
-  - dört-parametreli lojistik (4-PL) modellerdir. 
 
 
 ## mirt paketi yüklenmesi
 
-- Analizler **mirt** paketinde yapılacaktır.
-- Paketin yüklenmesi ve aktivite edilmesi aşağıdaki kodlarla sağlanır.
+Analizler **mirt** paketinde yapılacaktır. Paketin yüklenmesi ve aktivite edilmesi aşağıdaki kodlarla sağlanır.
 
 
 ```r
@@ -55,12 +54,12 @@ library("mirt")
 ```
 
 
-- MTK analizlerinin yapılacağı paketlere **ltm** Rizopoulos (2006) ve  **irtoys** Partchev vd. (2017) örnek verilebilir. Choi ve Asilkalkan (2019) `<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>`{=html} [makalesinde](https://doi.org/10.1080/15366367.2019.1586404) 45 farklı MTK paketine ilişkin açıklamalar bulunmaktadır.
+MTK analizlerinin yapılacağı paketlere **ltm** Rizopoulos (2006) ve  **irtoys** Partchev vd. (2017) örnek verilebilir. Choi ve Asilkalkan (2019) `<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>`{=html} [makalesinde](https://doi.org/10.1080/15366367.2019.1586404) 45 farklı MTK paketine ilişkin açıklamalar bulunmaktadır.
 
 
 - 1PL modelin hazırlanması
 
-- İlk olarak test edilecek model hazırlanmalıdır.
+İlk olarak test edilecek model hazırlanmalıdır.
 
 
 ```r
@@ -68,9 +67,9 @@ birpl_model <- "F = 1-15
                 CONSTRAIN = (1-15, a1)"
 ```
 
-- Kodun ilk satırı,  tek bir gizil özelliğin (F'nin) veri setindeki 1 ile 15 arasındaki sütunlardaki maddeler tarafından ölçüldüğünü göstermektedir
+Kodun ilk satırı,  tek bir gizil özelliğin (F'nin) veri setindeki 1 ile 15 arasındaki sütunlardaki maddeler tarafından ölçüldüğünü göstermektedir
 
-- CONSTRAIN ile başlayan ikinci satır ise 1'den 15'e kadar olan sütunlardaki maddeleri aynı madde ayırt ediciliğine (a1) sahip olacak şekilde sınırlar.
+CONSTRAIN ile başlayan ikinci satır ise 1'den 15'e kadar olan sütunlardaki maddeleri aynı madde ayırt ediciliğine (a1) sahip olacak şekilde sınırlar.
 
 - Sadece ilk 10 maddede madde ayırt ediciliğini aynı olacak şekilde sınırlamak isterseniz modeli aşağıdaki gibi düzenleyebilirsiniz.
 
@@ -81,9 +80,7 @@ birpl_model_v1 <- "F = 1-15
 ```
 
 
-- Veri aktarımı
-
-`<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>`{=html}: [Veriyi açılan linkten farklı kaydet ile alabilirsiniz.](https://raw.githubusercontent.com/atalay-k/mirt_k/main/dichotomous.csv)
+- Veri aktarımı `<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>`{=html}: [Veriyi açılan linkten farklı kaydet ile alabilirsiniz.](https://raw.githubusercontent.com/atalay-k/mirt_k/main/dichotomous.csv)
 
 
 
@@ -117,6 +114,7 @@ DataExplorer::plot_bar(ikikategorili)
 
 - Veriyi 1-0 olarak puanlamak için **key2binary()**
 fonksiyonunu kullanabilirsiniz.
+
 
 ```r
 veri <- read_csv("import/veri.csv")
@@ -243,7 +241,8 @@ itemstats(ikikategorili)
 ```r
 birpl_model <- "F = 1-15
                 CONSTRAIN = (1-15, a1)"
-birpl_uyum <- mirt(data = ikikategorili, model = birpl_model,SE=TRUE)
+birpl_uyum <- mirt(data = ikikategorili, model = birpl_model,SE=TRUE,
+                   verbose=FALSE)
 ```
 
 - birpl_uyum nesnesi
@@ -294,6 +293,10 @@ summary(omega(ikikategorili, plot = F))
 
 
 
+```r
+birpl_uyum <- mirt(data = ikikategorili, model = birpl_model,SE=TRUE,
+                    verbose=FALSE)
+```
 
 - Madde çiftlerinin yerel bağımsızlığını kontrol etmek için ise Yen'in Q3 istatistiği kullanılabilir.
 
@@ -419,8 +422,11 @@ itemfit(birpl_uyum) %>% kable(digits=2)
 - **simplify** argümanı **TRUE** değeri ile kullanıldığında parametreler liste yapısı yerine veri seti olarak elde edilir.
 
 
-```
-## Iteration: 1, Log-Lik: -7355.589, Max-Change: 0.07977Iteration: 2, Log-Lik: -7346.864, Max-Change: 0.03952Iteration: 3, Log-Lik: -7344.574, Max-Change: 0.02206Iteration: 4, Log-Lik: -7343.777, Max-Change: 0.00919Iteration: 5, Log-Lik: -7343.636, Max-Change: 0.00536Iteration: 6, Log-Lik: -7343.590, Max-Change: 0.00345Iteration: 7, Log-Lik: -7343.564, Max-Change: 0.00151Iteration: 8, Log-Lik: -7343.563, Max-Change: 0.00054Iteration: 9, Log-Lik: -7343.563, Max-Change: 0.00033Iteration: 10, Log-Lik: -7343.562, Max-Change: 0.00012Iteration: 11, Log-Lik: -7343.562, Max-Change: 0.00009
+```r
+birpl_model <- "F = 1-15
+                CONSTRAIN = (1-15, a1)"
+birpl_uyum <- mirt(data = ikikategorili, model = birpl_model,
+                    verbose=FALSE)
 ```
 
 
@@ -453,30 +459,6 @@ birpl_par$items
 ```
 
 
-```r
-birpl_par <- coef(birpl_uyum, 
-IRTpars = TRUE, simplify = TRUE)
-birpl_par$items
-```
-
-```
-##            a           b g u
-## V1  1.013626  1.76949298 0 1
-## V2  1.013626  2.89739255 0 1
-## V3  1.013626  1.82367304 0 1
-## V4  1.013626  1.91203231 0 1
-## V5  1.013626  1.12434465 0 1
-## V6  1.013626 -0.32009940 0 1
-## V7  1.013626  0.28823807 0 1
-## V8  1.013626  0.09959949 0 1
-## V9  1.013626  0.31260843 0 1
-## V10 1.013626 -2.73110850 0 1
-## V11 1.013626  2.28648733 0 1
-## V12 1.013626 -1.36726150 0 1
-## V13 1.013626 -3.05783719 0 1
-## V14 1.013626 -0.54748073 0 1
-## V15 1.013626 -0.19875398 0 1
-```
 
 
 - Her satır, madde adıyla başlar.
@@ -537,7 +519,7 @@ birpl_par$items
 plot(birpl_uyum,type = "trace", which.items = 1:15)
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-22-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 
@@ -551,7 +533,7 @@ plot(birpl_uyum, type = "trace", which.items = 1:15,
      layout=c(5, 3),theta_lim = c(-4, 4))
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-22-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 
@@ -567,7 +549,7 @@ panel.abline(h=0.5, lwd=1,
         lty=1)})
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-25-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-24-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 - Böylece çoktan seçmeli maddelerde **düşük yetenek düzeyine** sahip bireylerin **tahmin olasılığına izin verilmez.** Tahmin olmaması sayıltısı çoktan-seçmeli maddeleri içeren bir testin çok kolay olduğu durumlarda karşılanabilir.
@@ -583,16 +565,14 @@ plot(birpl_uyum, type = "trace", which.items = 1:15,
 facet_items = FALSE)
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-26-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-25-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ##  2-PL Model
 
 
-
--  2-PL Model için Analiz
-
 - Modelin hazırlanması
+
 
 ```r
 ikipl_model <- "F = 1 - 15"
@@ -602,17 +582,14 @@ ikipl_model <- "F = 1 - 15"
 
 ```r
 ikipl_uyum <- mirt(data = ikikategorili, model = ikipl_model,
-itemtype = "2PL", SE=TRUE)
+itemtype = "2PL", SE=TRUE,  verbose=FALSE)
 ```
 
-```
-## Iteration: 1, Log-Lik: -7355.589, Max-Change: 1.36358Iteration: 2, Log-Lik: -7198.383, Max-Change: 0.65912Iteration: 3, Log-Lik: -7170.537, Max-Change: 0.46260Iteration: 4, Log-Lik: -7162.738, Max-Change: 0.38909Iteration: 5, Log-Lik: -7159.685, Max-Change: 0.29704Iteration: 6, Log-Lik: -7158.349, Max-Change: 0.22782Iteration: 7, Log-Lik: -7157.056, Max-Change: 0.10551Iteration: 8, Log-Lik: -7156.900, Max-Change: 0.09235Iteration: 9, Log-Lik: -7156.824, Max-Change: 0.07639Iteration: 10, Log-Lik: -7156.702, Max-Change: 0.03322Iteration: 11, Log-Lik: -7156.687, Max-Change: 0.02994Iteration: 12, Log-Lik: -7156.681, Max-Change: 0.03699Iteration: 13, Log-Lik: -7156.667, Max-Change: 0.00433Iteration: 14, Log-Lik: -7156.661, Max-Change: 0.00143Iteration: 15, Log-Lik: -7156.661, Max-Change: 0.00070Iteration: 16, Log-Lik: -7156.661, Max-Change: 0.00037Iteration: 17, Log-Lik: -7156.661, Max-Change: 0.00185Iteration: 18, Log-Lik: -7156.661, Max-Change: 0.00130Iteration: 19, Log-Lik: -7156.661, Max-Change: 0.00080Iteration: 20, Log-Lik: -7156.661, Max-Change: 0.00065Iteration: 21, Log-Lik: -7156.661, Max-Change: 0.00039Iteration: 22, Log-Lik: -7156.661, Max-Change: 0.00129Iteration: 23, Log-Lik: -7156.661, Max-Change: 0.00063Iteration: 24, Log-Lik: -7156.661, Max-Change: 0.00045Iteration: 25, Log-Lik: -7156.661, Max-Change: 0.00127Iteration: 26, Log-Lik: -7156.661, Max-Change: 0.00079Iteration: 27, Log-Lik: -7156.660, Max-Change: 0.00052Iteration: 28, Log-Lik: -7156.660, Max-Change: 0.00025Iteration: 29, Log-Lik: -7156.660, Max-Change: 0.00123Iteration: 30, Log-Lik: -7156.660, Max-Change: 0.00071Iteration: 31, Log-Lik: -7156.660, Max-Change: 0.00024Iteration: 32, Log-Lik: -7156.660, Max-Change: 0.00120Iteration: 33, Log-Lik: -7156.660, Max-Change: 0.00071Iteration: 34, Log-Lik: -7156.660, Max-Change: 0.00024Iteration: 35, Log-Lik: -7156.660, Max-Change: 0.00118Iteration: 36, Log-Lik: -7156.660, Max-Change: 0.00069Iteration: 37, Log-Lik: -7156.660, Max-Change: 0.00023Iteration: 38, Log-Lik: -7156.660, Max-Change: 0.00115Iteration: 39, Log-Lik: -7156.660, Max-Change: 0.00067Iteration: 40, Log-Lik: -7156.660, Max-Change: 0.00023Iteration: 41, Log-Lik: -7156.660, Max-Change: 0.00112Iteration: 42, Log-Lik: -7156.660, Max-Change: 0.00066Iteration: 43, Log-Lik: -7156.660, Max-Change: 0.00022Iteration: 44, Log-Lik: -7156.660, Max-Change: 0.00110Iteration: 45, Log-Lik: -7156.660, Max-Change: 0.00064Iteration: 46, Log-Lik: -7156.660, Max-Change: 0.00022Iteration: 47, Log-Lik: -7156.660, Max-Change: 0.00107Iteration: 48, Log-Lik: -7156.660, Max-Change: 0.00063Iteration: 49, Log-Lik: -7156.660, Max-Change: 0.00021Iteration: 50, Log-Lik: -7156.660, Max-Change: 0.00105Iteration: 51, Log-Lik: -7156.660, Max-Change: 0.00062Iteration: 52, Log-Lik: -7156.660, Max-Change: 0.00021Iteration: 53, Log-Lik: -7156.660, Max-Change: 0.00102Iteration: 54, Log-Lik: -7156.660, Max-Change: 0.00060Iteration: 55, Log-Lik: -7156.660, Max-Change: 0.00020Iteration: 56, Log-Lik: -7156.660, Max-Change: 0.00100Iteration: 57, Log-Lik: -7156.660, Max-Change: 0.00059Iteration: 58, Log-Lik: -7156.660, Max-Change: 0.00020Iteration: 59, Log-Lik: -7156.660, Max-Change: 0.00097Iteration: 60, Log-Lik: -7156.660, Max-Change: 0.00058Iteration: 61, Log-Lik: -7156.660, Max-Change: 0.00019Iteration: 62, Log-Lik: -7156.660, Max-Change: 0.00095Iteration: 63, Log-Lik: -7156.660, Max-Change: 0.00056Iteration: 64, Log-Lik: -7156.660, Max-Change: 0.00019Iteration: 65, Log-Lik: -7156.660, Max-Change: 0.00093Iteration: 66, Log-Lik: -7156.660, Max-Change: 0.00055Iteration: 67, Log-Lik: -7156.660, Max-Change: 0.00018Iteration: 68, Log-Lik: -7156.660, Max-Change: 0.00091Iteration: 69, Log-Lik: -7156.660, Max-Change: 0.00054Iteration: 70, Log-Lik: -7156.660, Max-Change: 0.00018Iteration: 71, Log-Lik: -7156.660, Max-Change: 0.00089Iteration: 72, Log-Lik: -7156.660, Max-Change: 0.00053Iteration: 73, Log-Lik: -7156.659, Max-Change: 0.00018Iteration: 74, Log-Lik: -7156.659, Max-Change: 0.00087Iteration: 75, Log-Lik: -7156.659, Max-Change: 0.00052Iteration: 76, Log-Lik: -7156.659, Max-Change: 0.00017Iteration: 77, Log-Lik: -7156.659, Max-Change: 0.00085Iteration: 78, Log-Lik: -7156.659, Max-Change: 0.00051Iteration: 79, Log-Lik: -7156.659, Max-Change: 0.00017Iteration: 80, Log-Lik: -7156.659, Max-Change: 0.00083Iteration: 81, Log-Lik: -7156.659, Max-Change: 0.00050Iteration: 82, Log-Lik: -7156.659, Max-Change: 0.00016Iteration: 83, Log-Lik: -7156.659, Max-Change: 0.00081Iteration: 84, Log-Lik: -7156.659, Max-Change: 0.00048Iteration: 85, Log-Lik: -7156.659, Max-Change: 0.00016Iteration: 86, Log-Lik: -7156.659, Max-Change: 0.00079Iteration: 87, Log-Lik: -7156.659, Max-Change: 0.00047Iteration: 88, Log-Lik: -7156.659, Max-Change: 0.00016Iteration: 89, Log-Lik: -7156.659, Max-Change: 0.00077Iteration: 90, Log-Lik: -7156.659, Max-Change: 0.00046Iteration: 91, Log-Lik: -7156.659, Max-Change: 0.00015Iteration: 92, Log-Lik: -7156.659, Max-Change: 0.00075Iteration: 93, Log-Lik: -7156.659, Max-Change: 0.00045Iteration: 94, Log-Lik: -7156.659, Max-Change: 0.00015Iteration: 95, Log-Lik: -7156.659, Max-Change: 0.00074Iteration: 96, Log-Lik: -7156.659, Max-Change: 0.00044Iteration: 97, Log-Lik: -7156.659, Max-Change: 0.00015Iteration: 98, Log-Lik: -7156.659, Max-Change: 0.00072Iteration: 99, Log-Lik: -7156.659, Max-Change: 0.00043Iteration: 100, Log-Lik: -7156.659, Max-Change: 0.00014Iteration: 101, Log-Lik: -7156.659, Max-Change: 0.00070Iteration: 102, Log-Lik: -7156.659, Max-Change: 0.00043Iteration: 103, Log-Lik: -7156.659, Max-Change: 0.00014Iteration: 104, Log-Lik: -7156.659, Max-Change: 0.00069Iteration: 105, Log-Lik: -7156.659, Max-Change: 0.00042Iteration: 106, Log-Lik: -7156.659, Max-Change: 0.00014Iteration: 107, Log-Lik: -7156.659, Max-Change: 0.00067Iteration: 108, Log-Lik: -7156.659, Max-Change: 0.00041Iteration: 109, Log-Lik: -7156.659, Max-Change: 0.00013Iteration: 110, Log-Lik: -7156.659, Max-Change: 0.00066Iteration: 111, Log-Lik: -7156.659, Max-Change: 0.00040Iteration: 112, Log-Lik: -7156.659, Max-Change: 0.00013Iteration: 113, Log-Lik: -7156.659, Max-Change: 0.00064Iteration: 114, Log-Lik: -7156.659, Max-Change: 0.00039Iteration: 115, Log-Lik: -7156.659, Max-Change: 0.00013Iteration: 116, Log-Lik: -7156.659, Max-Change: 0.00063Iteration: 117, Log-Lik: -7156.659, Max-Change: 0.00038Iteration: 118, Log-Lik: -7156.659, Max-Change: 0.00012Iteration: 119, Log-Lik: -7156.659, Max-Change: 0.00061Iteration: 120, Log-Lik: -7156.659, Max-Change: 0.00037Iteration: 121, Log-Lik: -7156.659, Max-Change: 0.00012Iteration: 122, Log-Lik: -7156.659, Max-Change: 0.00060Iteration: 123, Log-Lik: -7156.659, Max-Change: 0.00036Iteration: 124, Log-Lik: -7156.659, Max-Change: 0.00012Iteration: 125, Log-Lik: -7156.659, Max-Change: 0.00058Iteration: 126, Log-Lik: -7156.659, Max-Change: 0.00036Iteration: 127, Log-Lik: -7156.659, Max-Change: 0.00012Iteration: 128, Log-Lik: -7156.659, Max-Change: 0.00057Iteration: 129, Log-Lik: -7156.659, Max-Change: 0.00035Iteration: 130, Log-Lik: -7156.659, Max-Change: 0.00011Iteration: 131, Log-Lik: -7156.659, Max-Change: 0.00056Iteration: 132, Log-Lik: -7156.659, Max-Change: 0.00034Iteration: 133, Log-Lik: -7156.659, Max-Change: 0.00011Iteration: 134, Log-Lik: -7156.659, Max-Change: 0.00055Iteration: 135, Log-Lik: -7156.659, Max-Change: 0.00033Iteration: 136, Log-Lik: -7156.659, Max-Change: 0.00011Iteration: 137, Log-Lik: -7156.659, Max-Change: 0.00053Iteration: 138, Log-Lik: -7156.659, Max-Change: 0.00033Iteration: 139, Log-Lik: -7156.659, Max-Change: 0.00011Iteration: 140, Log-Lik: -7156.659, Max-Change: 0.00052Iteration: 141, Log-Lik: -7156.659, Max-Change: 0.00032Iteration: 142, Log-Lik: -7156.659, Max-Change: 0.00010Iteration: 143, Log-Lik: -7156.659, Max-Change: 0.00051Iteration: 144, Log-Lik: -7156.659, Max-Change: 0.00031Iteration: 145, Log-Lik: -7156.659, Max-Change: 0.00010Iteration: 146, Log-Lik: -7156.659, Max-Change: 0.00050Iteration: 147, Log-Lik: -7156.659, Max-Change: 0.00031Iteration: 148, Log-Lik: -7156.659, Max-Change: 0.00010
-## 
-## Calculating information matrix...
-```
+
 
 
 -  2-PL Model için Model Uyum
+
 
 ```r
 M2(ikipl_uyum)
@@ -696,7 +673,7 @@ ikipl_par$items
 plot(ikipl_uyum, type = "trace", which.items = 1:15)
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-33-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-32-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 
@@ -706,7 +683,7 @@ plot(ikipl_uyum, type = "trace", which.items = 1:15,facet_items = FALSE,
      abline=c(h=0.5))
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-34-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-33-1.png" width="100%" style="display: block; margin: auto;" />
 
 ##  3-PL Model
 
@@ -720,11 +697,7 @@ ucpl_model <- "F = 1 - 15"
 
 ```r
 ucpl_uyum <- mirt(data = ikikategorili, model = ucpl_model,
-itemtype = "3PL")
-```
-
-```
-## Iteration: 1, Log-Lik: -7658.778, Max-Change: 2.58886Iteration: 2, Log-Lik: -7257.494, Max-Change: 1.80258Iteration: 3, Log-Lik: -7196.191, Max-Change: 0.86544Iteration: 4, Log-Lik: -7172.568, Max-Change: 0.36251Iteration: 5, Log-Lik: -7163.490, Max-Change: 0.57814Iteration: 6, Log-Lik: -7159.566, Max-Change: 0.74891Iteration: 7, Log-Lik: -7164.697, Max-Change: 0.66705Iteration: 8, Log-Lik: -7153.433, Max-Change: 0.75366Iteration: 9, Log-Lik: -7152.258, Max-Change: 0.38706Iteration: 10, Log-Lik: -7151.965, Max-Change: 1.18505Iteration: 11, Log-Lik: -7151.522, Max-Change: 0.31671Iteration: 12, Log-Lik: -7151.408, Max-Change: 0.25146Iteration: 13, Log-Lik: -7151.277, Max-Change: 0.24664Iteration: 14, Log-Lik: -7151.226, Max-Change: 0.25273Iteration: 15, Log-Lik: -7151.189, Max-Change: 0.23262Iteration: 16, Log-Lik: -7151.101, Max-Change: 0.05469Iteration: 17, Log-Lik: -7151.091, Max-Change: 0.00194Iteration: 18, Log-Lik: -7151.091, Max-Change: 0.00143Iteration: 19, Log-Lik: -7151.091, Max-Change: 0.00082Iteration: 20, Log-Lik: -7151.091, Max-Change: 0.00050Iteration: 21, Log-Lik: -7151.091, Max-Change: 0.00037Iteration: 22, Log-Lik: -7151.091, Max-Change: 0.00963Iteration: 23, Log-Lik: -7151.090, Max-Change: 0.00179Iteration: 24, Log-Lik: -7151.090, Max-Change: 0.00092Iteration: 25, Log-Lik: -7151.090, Max-Change: 0.00024Iteration: 26, Log-Lik: -7151.089, Max-Change: 0.00122Iteration: 27, Log-Lik: -7151.089, Max-Change: 0.00048Iteration: 28, Log-Lik: -7151.089, Max-Change: 0.00025Iteration: 29, Log-Lik: -7151.089, Max-Change: 0.00120Iteration: 30, Log-Lik: -7151.089, Max-Change: 0.00089Iteration: 31, Log-Lik: -7151.089, Max-Change: 0.00024Iteration: 32, Log-Lik: -7151.089, Max-Change: 0.00120Iteration: 33, Log-Lik: -7151.089, Max-Change: 0.00105Iteration: 34, Log-Lik: -7151.089, Max-Change: 0.00024Iteration: 35, Log-Lik: -7151.089, Max-Change: 0.00120Iteration: 36, Log-Lik: -7151.089, Max-Change: 0.00093Iteration: 37, Log-Lik: -7151.089, Max-Change: 0.00024Iteration: 38, Log-Lik: -7151.089, Max-Change: 0.00119Iteration: 39, Log-Lik: -7151.089, Max-Change: 0.00094Iteration: 40, Log-Lik: -7151.089, Max-Change: 0.00024Iteration: 41, Log-Lik: -7151.089, Max-Change: 0.00119Iteration: 42, Log-Lik: -7151.089, Max-Change: 0.00091Iteration: 43, Log-Lik: -7151.089, Max-Change: 0.00024Iteration: 44, Log-Lik: -7151.089, Max-Change: 0.00118Iteration: 45, Log-Lik: -7151.089, Max-Change: 0.00090Iteration: 46, Log-Lik: -7151.089, Max-Change: 0.00024Iteration: 47, Log-Lik: -7151.088, Max-Change: 0.00118Iteration: 48, Log-Lik: -7151.088, Max-Change: 0.00089Iteration: 49, Log-Lik: -7151.088, Max-Change: 0.00024Iteration: 50, Log-Lik: -7151.088, Max-Change: 0.00118Iteration: 51, Log-Lik: -7151.088, Max-Change: 0.00088Iteration: 52, Log-Lik: -7151.088, Max-Change: 0.00023Iteration: 53, Log-Lik: -7151.088, Max-Change: 0.00117Iteration: 54, Log-Lik: -7151.088, Max-Change: 0.00087Iteration: 55, Log-Lik: -7151.088, Max-Change: 0.00023Iteration: 56, Log-Lik: -7151.088, Max-Change: 0.00117Iteration: 57, Log-Lik: -7151.088, Max-Change: 0.00086Iteration: 58, Log-Lik: -7151.088, Max-Change: 0.00023Iteration: 59, Log-Lik: -7151.088, Max-Change: 0.00117Iteration: 60, Log-Lik: -7151.088, Max-Change: 0.00085Iteration: 61, Log-Lik: -7151.088, Max-Change: 0.00023Iteration: 62, Log-Lik: -7151.088, Max-Change: 0.00116Iteration: 63, Log-Lik: -7151.088, Max-Change: 0.00084Iteration: 64, Log-Lik: -7151.088, Max-Change: 0.00023Iteration: 65, Log-Lik: -7151.088, Max-Change: 0.00116Iteration: 66, Log-Lik: -7151.088, Max-Change: 0.00083Iteration: 67, Log-Lik: -7151.088, Max-Change: 0.00023Iteration: 68, Log-Lik: -7151.088, Max-Change: 0.00116Iteration: 69, Log-Lik: -7151.088, Max-Change: 0.00082Iteration: 70, Log-Lik: -7151.088, Max-Change: 0.00023Iteration: 71, Log-Lik: -7151.088, Max-Change: 0.00115Iteration: 72, Log-Lik: -7151.088, Max-Change: 0.00082Iteration: 73, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 74, Log-Lik: -7151.087, Max-Change: 0.00115Iteration: 75, Log-Lik: -7151.087, Max-Change: 0.00081Iteration: 76, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 77, Log-Lik: -7151.087, Max-Change: 0.00115Iteration: 78, Log-Lik: -7151.087, Max-Change: 0.00080Iteration: 79, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 80, Log-Lik: -7151.087, Max-Change: 0.00114Iteration: 81, Log-Lik: -7151.087, Max-Change: 0.00080Iteration: 82, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 83, Log-Lik: -7151.087, Max-Change: 0.00114Iteration: 84, Log-Lik: -7151.087, Max-Change: 0.00079Iteration: 85, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 86, Log-Lik: -7151.087, Max-Change: 0.00114Iteration: 87, Log-Lik: -7151.087, Max-Change: 0.00079Iteration: 88, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 89, Log-Lik: -7151.087, Max-Change: 0.00114Iteration: 90, Log-Lik: -7151.087, Max-Change: 0.00078Iteration: 91, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 92, Log-Lik: -7151.087, Max-Change: 0.00113Iteration: 93, Log-Lik: -7151.087, Max-Change: 0.00077Iteration: 94, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 95, Log-Lik: -7151.087, Max-Change: 0.00113Iteration: 96, Log-Lik: -7151.087, Max-Change: 0.00077Iteration: 97, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 98, Log-Lik: -7151.087, Max-Change: 0.00113Iteration: 99, Log-Lik: -7151.087, Max-Change: 0.00076Iteration: 100, Log-Lik: -7151.087, Max-Change: 0.00023Iteration: 101, Log-Lik: -7151.087, Max-Change: 0.00113Iteration: 102, Log-Lik: -7151.087, Max-Change: 0.00076Iteration: 103, Log-Lik: -7151.087, Max-Change: 0.00022Iteration: 104, Log-Lik: -7151.087, Max-Change: 0.00112Iteration: 105, Log-Lik: -7151.086, Max-Change: 0.00076Iteration: 106, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 107, Log-Lik: -7151.086, Max-Change: 0.00112Iteration: 108, Log-Lik: -7151.086, Max-Change: 0.00075Iteration: 109, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 110, Log-Lik: -7151.086, Max-Change: 0.00112Iteration: 111, Log-Lik: -7151.086, Max-Change: 0.00075Iteration: 112, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 113, Log-Lik: -7151.086, Max-Change: 0.00112Iteration: 114, Log-Lik: -7151.086, Max-Change: 0.00074Iteration: 115, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 116, Log-Lik: -7151.086, Max-Change: 0.00111Iteration: 117, Log-Lik: -7151.086, Max-Change: 0.00074Iteration: 118, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 119, Log-Lik: -7151.086, Max-Change: 0.00111Iteration: 120, Log-Lik: -7151.086, Max-Change: 0.00074Iteration: 121, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 122, Log-Lik: -7151.086, Max-Change: 0.00111Iteration: 123, Log-Lik: -7151.086, Max-Change: 0.00073Iteration: 124, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 125, Log-Lik: -7151.086, Max-Change: 0.00111Iteration: 126, Log-Lik: -7151.086, Max-Change: 0.00073Iteration: 127, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 128, Log-Lik: -7151.086, Max-Change: 0.00111Iteration: 129, Log-Lik: -7151.086, Max-Change: 0.00073Iteration: 130, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 131, Log-Lik: -7151.086, Max-Change: 0.00110Iteration: 132, Log-Lik: -7151.086, Max-Change: 0.00072Iteration: 133, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 134, Log-Lik: -7151.086, Max-Change: 0.00110Iteration: 135, Log-Lik: -7151.086, Max-Change: 0.00072Iteration: 136, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 137, Log-Lik: -7151.086, Max-Change: 0.00110Iteration: 138, Log-Lik: -7151.086, Max-Change: 0.00072Iteration: 139, Log-Lik: -7151.086, Max-Change: 0.00022Iteration: 140, Log-Lik: -7151.086, Max-Change: 0.00110Iteration: 141, Log-Lik: -7151.085, Max-Change: 0.00072Iteration: 142, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 143, Log-Lik: -7151.085, Max-Change: 0.00110Iteration: 144, Log-Lik: -7151.085, Max-Change: 0.00071Iteration: 145, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 146, Log-Lik: -7151.085, Max-Change: 0.00109Iteration: 147, Log-Lik: -7151.085, Max-Change: 0.00071Iteration: 148, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 149, Log-Lik: -7151.085, Max-Change: 0.00109Iteration: 150, Log-Lik: -7151.085, Max-Change: 0.00071Iteration: 151, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 152, Log-Lik: -7151.085, Max-Change: 0.00109Iteration: 153, Log-Lik: -7151.085, Max-Change: 0.00071Iteration: 154, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 155, Log-Lik: -7151.085, Max-Change: 0.00109Iteration: 156, Log-Lik: -7151.085, Max-Change: 0.00071Iteration: 157, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 158, Log-Lik: -7151.085, Max-Change: 0.00109Iteration: 159, Log-Lik: -7151.085, Max-Change: 0.00070Iteration: 160, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 161, Log-Lik: -7151.085, Max-Change: 0.00108Iteration: 162, Log-Lik: -7151.085, Max-Change: 0.00070Iteration: 163, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 164, Log-Lik: -7151.085, Max-Change: 0.00108Iteration: 165, Log-Lik: -7151.085, Max-Change: 0.00070Iteration: 166, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 167, Log-Lik: -7151.085, Max-Change: 0.00108Iteration: 168, Log-Lik: -7151.085, Max-Change: 0.00070Iteration: 169, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 170, Log-Lik: -7151.085, Max-Change: 0.00108Iteration: 171, Log-Lik: -7151.085, Max-Change: 0.00070Iteration: 172, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 173, Log-Lik: -7151.085, Max-Change: 0.00108Iteration: 174, Log-Lik: -7151.085, Max-Change: 0.00069Iteration: 175, Log-Lik: -7151.085, Max-Change: 0.00022Iteration: 176, Log-Lik: -7151.085, Max-Change: 0.00108Iteration: 177, Log-Lik: -7151.085, Max-Change: 0.00069Iteration: 178, Log-Lik: -7151.085, Max-Change: 0.00021Iteration: 179, Log-Lik: -7151.084, Max-Change: 0.00107Iteration: 180, Log-Lik: -7151.084, Max-Change: 0.00069Iteration: 181, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 182, Log-Lik: -7151.084, Max-Change: 0.00107Iteration: 183, Log-Lik: -7151.084, Max-Change: 0.00069Iteration: 184, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 185, Log-Lik: -7151.084, Max-Change: 0.00107Iteration: 186, Log-Lik: -7151.084, Max-Change: 0.00069Iteration: 187, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 188, Log-Lik: -7151.084, Max-Change: 0.00107Iteration: 189, Log-Lik: -7151.084, Max-Change: 0.00069Iteration: 190, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 191, Log-Lik: -7151.084, Max-Change: 0.00107Iteration: 192, Log-Lik: -7151.084, Max-Change: 0.00068Iteration: 193, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 194, Log-Lik: -7151.084, Max-Change: 0.00107Iteration: 195, Log-Lik: -7151.084, Max-Change: 0.00068Iteration: 196, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 197, Log-Lik: -7151.084, Max-Change: 0.00106Iteration: 198, Log-Lik: -7151.084, Max-Change: 0.00068Iteration: 199, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 200, Log-Lik: -7151.084, Max-Change: 0.00106Iteration: 201, Log-Lik: -7151.084, Max-Change: 0.00068Iteration: 202, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 203, Log-Lik: -7151.084, Max-Change: 0.00106Iteration: 204, Log-Lik: -7151.084, Max-Change: 0.00068Iteration: 205, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 206, Log-Lik: -7151.084, Max-Change: 0.00106Iteration: 207, Log-Lik: -7151.084, Max-Change: 0.00068Iteration: 208, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 209, Log-Lik: -7151.084, Max-Change: 0.00106Iteration: 210, Log-Lik: -7151.084, Max-Change: 0.00068Iteration: 211, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 212, Log-Lik: -7151.084, Max-Change: 0.00106Iteration: 213, Log-Lik: -7151.084, Max-Change: 0.00067Iteration: 214, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 215, Log-Lik: -7151.084, Max-Change: 0.00105Iteration: 216, Log-Lik: -7151.084, Max-Change: 0.00067Iteration: 217, Log-Lik: -7151.084, Max-Change: 0.00021Iteration: 218, Log-Lik: -7151.084, Max-Change: 0.00105Iteration: 219, Log-Lik: -7151.084, Max-Change: 0.00067Iteration: 220, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 221, Log-Lik: -7151.083, Max-Change: 0.00105Iteration: 222, Log-Lik: -7151.083, Max-Change: 0.00067Iteration: 223, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 224, Log-Lik: -7151.083, Max-Change: 0.00105Iteration: 225, Log-Lik: -7151.083, Max-Change: 0.00067Iteration: 226, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 227, Log-Lik: -7151.083, Max-Change: 0.00105Iteration: 228, Log-Lik: -7151.083, Max-Change: 0.00067Iteration: 229, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 230, Log-Lik: -7151.083, Max-Change: 0.00105Iteration: 231, Log-Lik: -7151.083, Max-Change: 0.00067Iteration: 232, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 233, Log-Lik: -7151.083, Max-Change: 0.00105Iteration: 234, Log-Lik: -7151.083, Max-Change: 0.00067Iteration: 235, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 236, Log-Lik: -7151.083, Max-Change: 0.00104Iteration: 237, Log-Lik: -7151.083, Max-Change: 0.00067Iteration: 238, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 239, Log-Lik: -7151.083, Max-Change: 0.00104Iteration: 240, Log-Lik: -7151.083, Max-Change: 0.00066Iteration: 241, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 242, Log-Lik: -7151.083, Max-Change: 0.00104Iteration: 243, Log-Lik: -7151.083, Max-Change: 0.00066Iteration: 244, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 245, Log-Lik: -7151.083, Max-Change: 0.00104Iteration: 246, Log-Lik: -7151.083, Max-Change: 0.00066Iteration: 247, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 248, Log-Lik: -7151.083, Max-Change: 0.00104Iteration: 249, Log-Lik: -7151.083, Max-Change: 0.00066Iteration: 250, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 251, Log-Lik: -7151.083, Max-Change: 0.00104Iteration: 252, Log-Lik: -7151.083, Max-Change: 0.00066Iteration: 253, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 254, Log-Lik: -7151.083, Max-Change: 0.00103Iteration: 255, Log-Lik: -7151.083, Max-Change: 0.00066Iteration: 256, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 257, Log-Lik: -7151.083, Max-Change: 0.00103Iteration: 258, Log-Lik: -7151.083, Max-Change: 0.00066Iteration: 259, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 260, Log-Lik: -7151.083, Max-Change: 0.00103Iteration: 261, Log-Lik: -7151.083, Max-Change: 0.00066Iteration: 262, Log-Lik: -7151.083, Max-Change: 0.00021Iteration: 263, Log-Lik: -7151.083, Max-Change: 0.00103Iteration: 264, Log-Lik: -7151.082, Max-Change: 0.00066Iteration: 265, Log-Lik: -7151.082, Max-Change: 0.00021Iteration: 266, Log-Lik: -7151.082, Max-Change: 0.00103Iteration: 267, Log-Lik: -7151.082, Max-Change: 0.00066Iteration: 268, Log-Lik: -7151.082, Max-Change: 0.00021Iteration: 269, Log-Lik: -7151.082, Max-Change: 0.00103Iteration: 270, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 271, Log-Lik: -7151.082, Max-Change: 0.00021Iteration: 272, Log-Lik: -7151.082, Max-Change: 0.00103Iteration: 273, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 274, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 275, Log-Lik: -7151.082, Max-Change: 0.00102Iteration: 276, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 277, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 278, Log-Lik: -7151.082, Max-Change: 0.00102Iteration: 279, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 280, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 281, Log-Lik: -7151.082, Max-Change: 0.00102Iteration: 282, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 283, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 284, Log-Lik: -7151.082, Max-Change: 0.00102Iteration: 285, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 286, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 287, Log-Lik: -7151.082, Max-Change: 0.00102Iteration: 288, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 289, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 290, Log-Lik: -7151.082, Max-Change: 0.00102Iteration: 291, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 292, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 293, Log-Lik: -7151.082, Max-Change: 0.00102Iteration: 294, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 295, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 296, Log-Lik: -7151.082, Max-Change: 0.00101Iteration: 297, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 298, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 299, Log-Lik: -7151.082, Max-Change: 0.00101Iteration: 300, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 301, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 302, Log-Lik: -7151.082, Max-Change: 0.00101Iteration: 303, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 304, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 305, Log-Lik: -7151.082, Max-Change: 0.00101Iteration: 306, Log-Lik: -7151.082, Max-Change: 0.00065Iteration: 307, Log-Lik: -7151.082, Max-Change: 0.00020Iteration: 308, Log-Lik: -7151.082, Max-Change: 0.00101Iteration: 309, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 310, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 311, Log-Lik: -7151.081, Max-Change: 0.00101Iteration: 312, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 313, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 314, Log-Lik: -7151.081, Max-Change: 0.00101Iteration: 315, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 316, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 317, Log-Lik: -7151.081, Max-Change: 0.00100Iteration: 318, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 319, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 320, Log-Lik: -7151.081, Max-Change: 0.00100Iteration: 321, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 322, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 323, Log-Lik: -7151.081, Max-Change: 0.00100Iteration: 324, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 325, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 326, Log-Lik: -7151.081, Max-Change: 0.00100Iteration: 327, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 328, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 329, Log-Lik: -7151.081, Max-Change: 0.00100Iteration: 330, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 331, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 332, Log-Lik: -7151.081, Max-Change: 0.00100Iteration: 333, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 334, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 335, Log-Lik: -7151.081, Max-Change: 0.00100Iteration: 336, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 337, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 338, Log-Lik: -7151.081, Max-Change: 0.00099Iteration: 339, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 340, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 341, Log-Lik: -7151.081, Max-Change: 0.00099Iteration: 342, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 343, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 344, Log-Lik: -7151.081, Max-Change: 0.00099Iteration: 345, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 346, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 347, Log-Lik: -7151.081, Max-Change: 0.00099Iteration: 348, Log-Lik: -7151.081, Max-Change: 0.00064Iteration: 349, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 350, Log-Lik: -7151.081, Max-Change: 0.00099Iteration: 351, Log-Lik: -7151.081, Max-Change: 0.00063Iteration: 352, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 353, Log-Lik: -7151.081, Max-Change: 0.00099Iteration: 354, Log-Lik: -7151.081, Max-Change: 0.00063Iteration: 355, Log-Lik: -7151.081, Max-Change: 0.00020Iteration: 356, Log-Lik: -7151.081, Max-Change: 0.00099Iteration: 357, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 358, Log-Lik: -7151.080, Max-Change: 0.00020Iteration: 359, Log-Lik: -7151.080, Max-Change: 0.00099Iteration: 360, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 361, Log-Lik: -7151.080, Max-Change: 0.00020Iteration: 362, Log-Lik: -7151.080, Max-Change: 0.00098Iteration: 363, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 364, Log-Lik: -7151.080, Max-Change: 0.00020Iteration: 365, Log-Lik: -7151.080, Max-Change: 0.00098Iteration: 366, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 367, Log-Lik: -7151.080, Max-Change: 0.00020Iteration: 368, Log-Lik: -7151.080, Max-Change: 0.00098Iteration: 369, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 370, Log-Lik: -7151.080, Max-Change: 0.00020Iteration: 371, Log-Lik: -7151.080, Max-Change: 0.00098Iteration: 372, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 373, Log-Lik: -7151.080, Max-Change: 0.00020Iteration: 374, Log-Lik: -7151.080, Max-Change: 0.00098Iteration: 375, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 376, Log-Lik: -7151.080, Max-Change: 0.00020Iteration: 377, Log-Lik: -7151.080, Max-Change: 0.00098Iteration: 378, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 379, Log-Lik: -7151.080, Max-Change: 0.00020Iteration: 380, Log-Lik: -7151.080, Max-Change: 0.00098Iteration: 381, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 382, Log-Lik: -7151.080, Max-Change: 0.00019Iteration: 383, Log-Lik: -7151.080, Max-Change: 0.00097Iteration: 384, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 385, Log-Lik: -7151.080, Max-Change: 0.00019Iteration: 386, Log-Lik: -7151.080, Max-Change: 0.00097Iteration: 387, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 388, Log-Lik: -7151.080, Max-Change: 0.00019Iteration: 389, Log-Lik: -7151.080, Max-Change: 0.00097Iteration: 390, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 391, Log-Lik: -7151.080, Max-Change: 0.00019Iteration: 392, Log-Lik: -7151.080, Max-Change: 0.00097Iteration: 393, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 394, Log-Lik: -7151.080, Max-Change: 0.00019Iteration: 395, Log-Lik: -7151.080, Max-Change: 0.00097Iteration: 396, Log-Lik: -7151.080, Max-Change: 0.00063Iteration: 397, Log-Lik: -7151.080, Max-Change: 0.00019Iteration: 398, Log-Lik: -7151.080, Max-Change: 0.00097Iteration: 399, Log-Lik: -7151.080, Max-Change: 0.00062Iteration: 400, Log-Lik: -7151.080, Max-Change: 0.00019Iteration: 401, Log-Lik: -7151.080, Max-Change: 0.00097Iteration: 402, Log-Lik: -7151.080, Max-Change: 0.00062Iteration: 403, Log-Lik: -7151.080, Max-Change: 0.00019Iteration: 404, Log-Lik: -7151.080, Max-Change: 0.00097Iteration: 405, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 406, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 407, Log-Lik: -7151.079, Max-Change: 0.00096Iteration: 408, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 409, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 410, Log-Lik: -7151.079, Max-Change: 0.00096Iteration: 411, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 412, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 413, Log-Lik: -7151.079, Max-Change: 0.00096Iteration: 414, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 415, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 416, Log-Lik: -7151.079, Max-Change: 0.00096Iteration: 417, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 418, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 419, Log-Lik: -7151.079, Max-Change: 0.00096Iteration: 420, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 421, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 422, Log-Lik: -7151.079, Max-Change: 0.00096Iteration: 423, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 424, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 425, Log-Lik: -7151.079, Max-Change: 0.00096Iteration: 426, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 427, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 428, Log-Lik: -7151.079, Max-Change: 0.00096Iteration: 429, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 430, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 431, Log-Lik: -7151.079, Max-Change: 0.00095Iteration: 432, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 433, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 434, Log-Lik: -7151.079, Max-Change: 0.00095Iteration: 435, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 436, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 437, Log-Lik: -7151.079, Max-Change: 0.00095Iteration: 438, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 439, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 440, Log-Lik: -7151.079, Max-Change: 0.00095Iteration: 441, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 442, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 443, Log-Lik: -7151.079, Max-Change: 0.00095Iteration: 444, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 445, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 446, Log-Lik: -7151.079, Max-Change: 0.00095Iteration: 447, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 448, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 449, Log-Lik: -7151.079, Max-Change: 0.00095Iteration: 450, Log-Lik: -7151.079, Max-Change: 0.00062Iteration: 451, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 452, Log-Lik: -7151.079, Max-Change: 0.00095Iteration: 453, Log-Lik: -7151.079, Max-Change: 0.00061Iteration: 454, Log-Lik: -7151.079, Max-Change: 0.00019Iteration: 455, Log-Lik: -7151.078, Max-Change: 0.00094Iteration: 456, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 457, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 458, Log-Lik: -7151.078, Max-Change: 0.00094Iteration: 459, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 460, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 461, Log-Lik: -7151.078, Max-Change: 0.00094Iteration: 462, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 463, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 464, Log-Lik: -7151.078, Max-Change: 0.00094Iteration: 465, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 466, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 467, Log-Lik: -7151.078, Max-Change: 0.00094Iteration: 468, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 469, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 470, Log-Lik: -7151.078, Max-Change: 0.00094Iteration: 471, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 472, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 473, Log-Lik: -7151.078, Max-Change: 0.00094Iteration: 474, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 475, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 476, Log-Lik: -7151.078, Max-Change: 0.00094Iteration: 477, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 478, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 479, Log-Lik: -7151.078, Max-Change: 0.00093Iteration: 480, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 481, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 482, Log-Lik: -7151.078, Max-Change: 0.00093Iteration: 483, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 484, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 485, Log-Lik: -7151.078, Max-Change: 0.00093Iteration: 486, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 487, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 488, Log-Lik: -7151.078, Max-Change: 0.00093Iteration: 489, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 490, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 491, Log-Lik: -7151.078, Max-Change: 0.00093Iteration: 492, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 493, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 494, Log-Lik: -7151.078, Max-Change: 0.00093Iteration: 495, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 496, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 497, Log-Lik: -7151.078, Max-Change: 0.00093Iteration: 498, Log-Lik: -7151.078, Max-Change: 0.00061Iteration: 499, Log-Lik: -7151.078, Max-Change: 0.00019Iteration: 500, Log-Lik: -7151.078, Max-Change: 0.00093
+itemtype = "3PL", verbose=FALSE)
 ```
 
 - Parametrelerin incelenmesi
@@ -812,7 +785,7 @@ ucpl_par$items
 plot(ucpl_uyum, type = "trace", which.items = 1:15)
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-41-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-40-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 
@@ -822,7 +795,7 @@ plot(ucpl_uyum, type = "trace", which.items = 1:15,facet_items = FALSE,
      abline=c(h=0.5))
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-42-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-41-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ##  Yetenek Parametresi Kestirimi
@@ -856,6 +829,9 @@ EAP  <- fscores(ikipl_uyum, method="EAP",full.scores.SE=TRUE)
 
 
 
+:::: {style="display: flex; justify-content: space-between;"}
+
+::: {style="flex: 1; margin-right: 1cm;"}
 
 ```r
 head(ML)
@@ -870,9 +846,9 @@ head(ML)
 ## [5,]  2.33978577 0.8193420
 ## [6,] -0.03367516 0.6027560
 ```
+:::
 
-
-
+::: {style="flex: 1; margin-right: 1cm;"}
 
 ```r
 head(MAP)
@@ -887,7 +863,9 @@ head(MAP)
 ## [5,]  1.5724578 0.4910050
 ## [6,] -0.0247113 0.5156826
 ```
+:::
 
+::: {style="flex: 1; margin-right: 1cm;"}
 
 ```r
 head(EAP)
@@ -902,6 +880,12 @@ head(EAP)
 ## [5,]  1.70157621 0.4909653
 ## [6,] -0.07368355 0.4928855
 ```
+:::
+
+::::
+
+
+
 
 
 
@@ -958,7 +942,7 @@ cor(yetenek_v1)
 pairs(yetenek_v1)
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-50-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-49-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ```r
@@ -999,6 +983,10 @@ anova(ikipl_uyum,ucpl_uyum)
 
 
 
+:::: {style="display: flex; justify-content: space-between;"}
+
+::: {style="flex: 1; margin-right: 1cm;"}
+
 
 ```r
 plot(birpl_uyum, 
@@ -1006,9 +994,11 @@ type = "infotrace",
 which.items = 5)
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;" />
 
+:::
 
+::: {style="flex: 1; margin-right: 1cm;"}
 
 ```r
 plot(ikipl_uyum, 
@@ -1016,8 +1006,10 @@ type = "infotrace",
 which.items = 5)
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;" />
+:::
 
+::: {style="flex: 1; margin-right: 1cm;"}
 
 ```r
 plot(ucpl_uyum, 
@@ -1025,15 +1017,46 @@ type = "infotrace",
 which.items = 5)
 ```
 
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-53-1.png" width="100%" style="display: block; margin: auto;" />
+:::
+
+::::
+
+
+
+
+:::: {style="display: flex; justify-content: space-between;"}
+
+::: {style="flex: 1; margin-right: 1cm;"}
+
+
+```r
+plot(ikipl_uyum, 
+type = "infotrace", 
+which.items = 1:15, layout=c(5, 3))
+```
+
 <img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;" />
 
+:::
+
+::: {style="flex: 1; margin-right: 1cm;"}
+
+```r
+plot(ikipl_uyum, 
+type = "infotrace", 
+which.items = 2:15, layout=c(5, 3))
+```
 
 <img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;" />
+:::
 
 
 
+::::
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-56-1.png" width="100%" style="display: block; margin: auto;" />
+
+
 
 
 
@@ -1044,8 +1067,12 @@ info.1 <- iteminfo(madde1, Theta)
 plot(Theta, info.1, type = 'l', main = 'Item information')
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-56-1.png" width="100%" style="display: block; margin: auto;" />
 
+
+:::: {style="display: flex; justify-content: space-between;"}
+
+::: {style="flex: 1; margin-right: 1cm;"}
 
 
 ```r
@@ -1054,8 +1081,11 @@ Theta,which.items = 1:5)
 plot(Theta, tinfo, type = 'l')
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-58-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;" />
 
+:::
+
+::: {style="flex: 1; margin-right: 1cm;"}
 
 ```r
 tinfo <- testinfo(ikipl_uyum, 
@@ -1063,8 +1093,10 @@ Theta,which.items = 1:10)
 plot(Theta, tinfo, type = 'l')
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-59-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-58-1.png" width="100%" style="display: block; margin: auto;" />
+:::
 
+::: {style="flex: 1; margin-right: 1cm;"}
 
 ```r
 tinfo <- testinfo(ikipl_uyum, 
@@ -1072,7 +1104,12 @@ Theta,which.items = 1:15)
 plot(Theta, tinfo, type = 'l')
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-60-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-59-1.png" width="100%" style="display: block; margin: auto;" />
+:::
+
+::::
+
+
 
 
 
@@ -1081,7 +1118,7 @@ tinfo <- testinfo(ikipl_uyum, Theta,which.items = c(1,3:5,7:10,11))
 plot(Theta, tinfo, type = 'l')
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-61-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-60-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 
@@ -1090,7 +1127,7 @@ plot(Theta, tinfo, type = 'l')
 plot(ikipl_uyum, type='infoSE')
 ```
 
-<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-62-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-61-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 

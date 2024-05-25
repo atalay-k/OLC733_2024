@@ -12,7 +12,7 @@ R’da veri üretimi yaparken çıktıların ne olduklarını bilmek yerine **ç
 
 -----
 
-:::: {style="display: flex; justify-content: space-between;"}
+:::: {style="display: flex; justify-content: space-between; align-items: flex-start;"}
 
 ::: {style="flex: 1; margin-right: 2cm;"}
 
@@ -38,13 +38,8 @@ y
 :::
 
 ::: {}
-<br>
-:::
+   
 
-::: {}
-   
-   
-   
 
 ```r
 plot(x, y ,type="h",col="red", lwd=10,
@@ -60,7 +55,7 @@ main="bozuk parayi iki kere havaya atma")
 
 -----
 
-:::: {style="display: flex; justify-content: space-between;"}
+:::: {style="display: flex; justify-content: space-between; align-items: flex-start;"}
 
 ::: {style="flex: 1; margin-right: 2cm;"}
 
@@ -88,14 +83,7 @@ y
 ```
 
 :::
-
 ::: {}
-<br>
-:::
-
-::: {}
-   
------
    
 
 ```r
@@ -114,9 +102,9 @@ main="bozuk parayi dört kere havaya atma")
 
 **Paranın otuz kere hava atılması**
 
-:::: {style="display: flex; justify-content: space-between;"}
+:::: {style="display: flex; justify-content: space-between; align-items: flex-start;"}
 
-::: {style="flex: 0.5 0.2 auto; margin-right: 1cm;"}
+::: {style="flex: 1 auto; margin-right: 1cm;"}
 
 ```r
 x <- 0:30
@@ -133,7 +121,7 @@ y
 
 :::
 
-::: {style="flex: 2 1 auto;"}
+::: {style="flex: 1 auto;"}
    
 
 ```r
@@ -186,8 +174,8 @@ sd(nd1)
 ```
 
 ```
-## [1] 50.9
-## [1] 9.73
+## [1] 53.2
+## [1] 10.9
 ```
 :::
 
@@ -222,8 +210,8 @@ sd(nd2)
 ```
 
 ```
-## [1] 50.5
-## [1] 25.1
+## [1] 50.1
+## [1] 25.5
 ```
 :::
 
@@ -305,21 +293,8 @@ Her seferinde **iterasyonların tekrarlanması** yerine iterasyon sonuçlarını
 
 ```r
 dir.create("Simulasyon_k")
-```
-
-```
-## Warning in dir.create("Simulasyon_k"): 'Simulasyon_k' already exists
-```
-
-```r
 dir.create("Simulasyon_b")
-```
 
-```
-## Warning in dir.create("Simulasyon_b"): 'Simulasyon_b' already exists
-```
-
-```r
 for (i in 1:5) {
   write.table(rnorm(n = n_k,mean =  35, sd = 15),
 file=paste("Simulasyon_k/simulasyon_",i,".txt", sep=""))
@@ -338,10 +313,11 @@ Daha önce oluşturduğunuz **kucuk_orn** ve **buyuk_orn** veri setlerini iki ay
 kucuk_orn <- list()
 buyuk_orn <- list()
 for(i in 1:5){
-  kucuk_orn[[i]] <-  
+kucuk_orn[[i]] <-  
 read.table(file=paste("Simulasyon_k/simulasyon_",i,".txt",
 sep=""))
-    buyuk_orn[[i]] <-   read.table(file=paste("Simulasyon_b/simulasyon_",i,".txt",
+buyuk_orn[[i]] <-
+read.table(file=paste("Simulasyon_b/simulasyon_",i,".txt",
 sep=""))
 }
 ```
@@ -380,9 +356,7 @@ Ancak sonuçların kullanışlılığı için MC çalışmalarında modellenen k
   
 - madde ve yetenek parametreleri ne olacak?
 
-**Aşama 1**
-
-**3PL** modele dayali **8 maddelik** veri veri üretilmesi
+**Aşama 1** **3PL** modele dayali **8 maddelik** veri veri üretilmesi
 İlk aşama madde parametrelerinin belirlenmesi
 
 
@@ -437,9 +411,7 @@ yetenek[1:10]
 ```
 ##  [1] -0.794  0.197  1.002  1.289  0.906  0.494  0.599 -1.580  1.001  2.188
 ```
-**Aşama 1**
-
-**irtoys** paketi **sim** fonksiyonu ile veri üretilmesi
+**Aşama 3** **irtoys** paketi **sim** fonksiyonu ile veri üretilmesi
 
 
 ```r
@@ -481,7 +453,7 @@ sim
 ##     dim(u) = d
 ##     return(ifelse(i$f > u, 1, 0))
 ## }
-## <bytecode: 0x000001c13ef97ad8>
+## <bytecode: 0x0000013ee7ef1e70>
 ## <environment: namespace:irtoys>
 ```
 
@@ -519,7 +491,7 @@ mirt::coef(model3PL, IRTpars = TRUE, simplify = TRUE)$items
 
 - Veri üretimini tekrarlamak  için fonksiyon yazmamız lazım.
 
-- Fonksiyon1
+- **Fonksiyon1**
 
   - madde sayısı ve birey sayısına bağlı olarak 
   
@@ -604,7 +576,7 @@ head(veri_1$cevaplar,3)
 
 ## Paramtere kestirimi
 
-Fonksiyon2
+**Fonksiyon2**
 
 **veri_uretimi** fonksiyonu ile üretilen veri girdi olsun
 
@@ -668,7 +640,7 @@ head(kestirim)
 
 </div>
 
-## Kestirilen değerler ve Gerçek Değerler
+## Kestirilen Değerler ve Gerçek Değerler
 
 **RMSE** her bir madde için her bir replikasyonda kestirilen parametre değeri ile gerçek parametre değeri arasındaki farkın karesinin ortalamasının kareköküdür 
 
@@ -703,12 +675,15 @@ hata <- function(kestirim, gercek) {
 kestirim =  kestirim
 gercek = veri_1$maddepa
 hata <- function(kestirim, gercek) {
-  result <- data.frame(
-    parametreler = c("a", "b", "c"),
-    bias = sapply(1L:3L, function(i) mean((kestirim[, i] - gercek[,i]))),
-    rmse = sapply(1L:3L, function(i) sqrt(mean((kestirim[, i] - gercek[,i])^2))),
-    korelasyon = sapply(1L:3L, function(i) cor(kestirim[, i], gercek[,i])))
-  return(result)
+result <- data.frame(parametreler = c("a", "b", "c"),
+
+bias = sapply(1L:3L, function(i) mean((kestirim[, i] - gercek[,i]))),
+
+rmse = sapply(1L:3L, function(i) sqrt(mean((kestirim[, i] - gercek[,i])^2))),
+
+korelasyon = sapply(1L:3L, function(i) cor(kestirim[, i], gercek[,i])))
+
+return(result)
 }
 ```
 
@@ -999,14 +974,12 @@ bireysay = 1000 # 250, 500, 750, or 1000
 
 
 ```r
-library("doParallel")
+library(doParallel)
 detectCores()
 cl <- makeCluster(4) # en fazla n-2 
 registerDoParallel(cl)
-```
-
-```
-## [1] 16
+# burada kod
+stopCluster(cl)
 ```
 
 
@@ -1016,7 +989,34 @@ Döngüler yavas olabilir, apply ailesi çıktıları kullanışlı olmayabilir.
 
 
 ```r
-foreach(i=1:4) %dopar% sqrt(i)
+library(doParallel)
+```
+
+```
+## Loading required package: foreach
+```
+
+```
+## 
+## Attaching package: 'foreach'
+```
+
+```
+## The following objects are masked from 'package:purrr':
+## 
+##     accumulate, when
+```
+
+```
+## Loading required package: iterators
+```
+
+```
+## Loading required package: parallel
+```
+
+```r
+foreach(i=1:4) %do% sqrt(i)
 ```
 
 ```
@@ -1039,8 +1039,6 @@ foreach(i=1:4) %dopar% sqrt(i)
 #coklu arguman
 foreach(i=1:4, j=1:4) %do%
 	sqrt(i+j)
-
-stopCluster(cl) # cekirdek atama işini bitirir.
 ```
 
 ```
@@ -1084,19 +1082,19 @@ stopCluster(cl) # cekirdek atama işini bitirir.
 
 ```
 ## [[1]]
-## [1] -62.3
+## [1] 775
 ## 
 ## [[2]]
-## [1] -637
+## [1] -421
 ## 
 ## [[3]]
-## [1] 1398
+## [1] -109
 ## 
 ## [[4]]
-## [1] 653
+## [1] -1294
 ## 
 ## [[5]]
-## [1] -624
+## [1] 32.7
 ```
 :::
 
@@ -1118,7 +1116,8 @@ simulasyon <- foreach(i=1:4,
              .packages = c("mirt", "doParallel"),
              .combine = rbind) %dopar% {
              # Adım 1 madde parametrelerini ve veri setini üretme
-             adim1 <- veri_uretimi(maddesay =maddesay, bireysay =bireysay, seed=seed[i])
+             adim1 <- veri_uretimi(maddesay =maddesay, 
+                      bireysay =bireysay, seed=seed[i])
              # Adım 2 üretilen veri seti üzerinden ketsirim yapma
              adim2 <- kestirilen_par(adim1$cevaplar)
              # adim 3 raporlama

@@ -122,12 +122,12 @@
 <li><p>YEM analizleri çıktılarında Tsukahara (2022) tarafından geliştirilen <strong>semoutput</strong> paketi;</p></li>
 <li><p>analizlere ilişkin diyagramların elde edilmesinde ise Epskamp vd. (2017) tarafından geliştirilen <strong>semPlot</strong> paketi kullanılacaktır.</p></li>
 </ul>
-<div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb334"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages(c("lavaan","semPlot"))</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span></code></pre></div>
 <pre><code>## This is lavaan 0.6-17
 ## lavaan is FREE software! Please report any bugs.</code></pre>
-<div class="sourceCode" id="cb338"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb336"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dr-JT/semoutput">semoutput</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SachaEpskamp/semPlot">semPlot</a></span><span class="op">)</span></span></code></pre></div>
 <ul>
@@ -573,7 +573,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p>Bu nedenle, .95 gibi CFI için sabit eşikler, küçük örneklem boyutları için daha doğru modelleri uyumlu göstermeyecek ve daha büyük örneklem boyutları için ise muhtemelen daha az uyumlu modelleri kabul edecektir.</p></li>
 <li><p>Esnek kesim noktaları belirli bir model ve örneklem özelliklerine uygun alternatif eşik değerleri sağlar. Bu amaçla <em>FCO</em> paketi kullanılabilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb339"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb337"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">FCO</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
@@ -645,7 +645,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p>DFA modeli tırnak işareti içinde tanımlanır ve faktörler maddeler ile <strong>'=~'</strong> işaretiyle ilişkilendirilir.</p></li>
 <li><p>İşaretin sol tarafında faktörler sağ tarafında maddeler yer alır. Her bir faktörde yer alan maddelerin adları sırasıyla <strong>+</strong> operatörüyle eklenir.</p></li>
 </ul>
-<div class="sourceCode" id="cb340"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb338"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="st">' F1  =~ m1 + m2 +m3'</span></span></code></pre></div>
 </div>
 <div id="uygulama" class="section level2" number="8.10">
@@ -701,7 +701,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <ul>
 <li>Verinin okunması (veriseti)[import/yasamdoyum.xlsx]</li>
 </ul>
-<div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb339"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span></span>
 <span><span class="va">yasamdoyum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"import/yasamdoyum.xlsx"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">yasamdoyum</span><span class="op">)</span></span></code></pre></div>
@@ -834,7 +834,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <ul>
 <li>Modelin tanımlanması</li>
 </ul>
-<div class="sourceCode" id="cb342"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb340"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model_1</span> <span class="op">&lt;-</span> </span>
 <span><span class="st">"</span></span>
 <span><span class="st">okul =~ okul1 + okul2 + okul3</span></span>
@@ -845,7 +845,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <ul>
 <li>DFA modelinin testi</li>
 </ul>
-<div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb341"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model_1_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/cfa.html">cfa</a></span><span class="op">(</span><span class="va">model_1</span>, data <span class="op">=</span> <span class="va">yasamdoyum</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_1_fit</span>, fit.measures <span class="op">=</span> <span class="cn">TRUE</span>, standardized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## lavaan 0.6.17 ended normally after 40 iterations
@@ -950,27 +950,27 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p>Sonrasında ki-kare istatistikleri ve model uyum indeksleri raporlanmıştır.</p></li>
 <li><p>Bu çıktıları daha düzgün elde etmek içi <strong>semoutput</strong> paketi kullanılabilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb343"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># devtools::install_github("dr-JT/semoutput")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dr-JT/semoutput">semoutput</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_sig.html">sem_sig</a></span><span class="op">(</span><span class="va">model_1_fit</span><span class="op">)</span></span></code></pre></div>
-<div id="aagzxwisav" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#aagzxwisav table {
+<div id="rfikxjvbpc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rfikxjvbpc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#aagzxwisav thead, #aagzxwisav tbody, #aagzxwisav tfoot, #aagzxwisav tr, #aagzxwisav td, #aagzxwisav th {
+#rfikxjvbpc thead, #rfikxjvbpc tbody, #rfikxjvbpc tfoot, #rfikxjvbpc tr, #rfikxjvbpc td, #rfikxjvbpc th {
   border-style: none;
 }
 
-#aagzxwisav p {
+#rfikxjvbpc p {
   margin: 0;
   padding: 0;
 }
 
-#aagzxwisav .gt_table {
+#rfikxjvbpc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -996,12 +996,12 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-left-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_caption {
+#rfikxjvbpc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#aagzxwisav .gt_title {
+#rfikxjvbpc .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1013,7 +1013,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-width: 0;
 }
 
-#aagzxwisav .gt_subtitle {
+#rfikxjvbpc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1025,7 +1025,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-width: 0;
 }
 
-#aagzxwisav .gt_heading {
+#rfikxjvbpc .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1037,13 +1037,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_bottom_border {
+#rfikxjvbpc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_col_headings {
+#rfikxjvbpc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1058,7 +1058,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_col_heading {
+#rfikxjvbpc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1078,7 +1078,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#aagzxwisav .gt_column_spanner_outer {
+#rfikxjvbpc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1090,15 +1090,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 4px;
 }
 
-#aagzxwisav .gt_column_spanner_outer:first-child {
+#rfikxjvbpc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#aagzxwisav .gt_column_spanner_outer:last-child {
+#rfikxjvbpc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#aagzxwisav .gt_column_spanner {
+#rfikxjvbpc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1110,11 +1110,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   width: 100%;
 }
 
-#aagzxwisav .gt_spanner_row {
+#rfikxjvbpc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#aagzxwisav .gt_group_heading {
+#rfikxjvbpc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1140,7 +1140,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   text-align: left;
 }
 
-#aagzxwisav .gt_empty_group_heading {
+#rfikxjvbpc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1155,15 +1155,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: middle;
 }
 
-#aagzxwisav .gt_from_md > :first-child {
+#rfikxjvbpc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#aagzxwisav .gt_from_md > :last-child {
+#rfikxjvbpc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#aagzxwisav .gt_row {
+#rfikxjvbpc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1182,7 +1182,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#aagzxwisav .gt_stub {
+#rfikxjvbpc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1195,7 +1195,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#aagzxwisav .gt_stub_row_group {
+#rfikxjvbpc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1209,15 +1209,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: top;
 }
 
-#aagzxwisav .gt_row_group_first td {
+#rfikxjvbpc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#aagzxwisav .gt_row_group_first th {
+#rfikxjvbpc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#aagzxwisav .gt_summary_row {
+#rfikxjvbpc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1227,16 +1227,16 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#aagzxwisav .gt_first_summary_row {
+#rfikxjvbpc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_first_summary_row.thick {
+#rfikxjvbpc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#aagzxwisav .gt_last_summary_row {
+#rfikxjvbpc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1246,7 +1246,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_grand_summary_row {
+#rfikxjvbpc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1256,7 +1256,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#aagzxwisav .gt_first_grand_summary_row {
+#rfikxjvbpc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1266,7 +1266,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_last_grand_summary_row_top {
+#rfikxjvbpc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1276,11 +1276,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_striped {
+#rfikxjvbpc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#aagzxwisav .gt_table_body {
+#rfikxjvbpc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1289,7 +1289,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_footnotes {
+#rfikxjvbpc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1303,7 +1303,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_footnote {
+#rfikxjvbpc .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1312,7 +1312,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#aagzxwisav .gt_sourcenotes {
+#rfikxjvbpc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1326,7 +1326,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#aagzxwisav .gt_sourcenote {
+#rfikxjvbpc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1334,63 +1334,63 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#aagzxwisav .gt_left {
+#rfikxjvbpc .gt_left {
   text-align: left;
 }
 
-#aagzxwisav .gt_center {
+#rfikxjvbpc .gt_center {
   text-align: center;
 }
 
-#aagzxwisav .gt_right {
+#rfikxjvbpc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#aagzxwisav .gt_font_normal {
+#rfikxjvbpc .gt_font_normal {
   font-weight: normal;
 }
 
-#aagzxwisav .gt_font_bold {
+#rfikxjvbpc .gt_font_bold {
   font-weight: bold;
 }
 
-#aagzxwisav .gt_font_italic {
+#rfikxjvbpc .gt_font_italic {
   font-style: italic;
 }
 
-#aagzxwisav .gt_super {
+#rfikxjvbpc .gt_super {
   font-size: 65%;
 }
 
-#aagzxwisav .gt_footnote_marks {
+#rfikxjvbpc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#aagzxwisav .gt_asterisk {
+#rfikxjvbpc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#aagzxwisav .gt_indent_1 {
+#rfikxjvbpc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#aagzxwisav .gt_indent_2 {
+#rfikxjvbpc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#aagzxwisav .gt_indent_3 {
+#rfikxjvbpc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#aagzxwisav .gt_indent_4 {
+#rfikxjvbpc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#aagzxwisav .gt_indent_5 {
+#rfikxjvbpc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1418,13 +1418,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <ul>
 <li>Model uyum istatistikleri semoutputtan aşağıdaki şekilde elde edilebilir.</li>
 </ul>
-<div class="sourceCode" id="cb346"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb344"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/dr-JT/semoutput">semoutput</a></span><span class="op">)</span></span>
 <span> <span class="co"># sem_fitmeasures(model_1_fit)</span></span></code></pre></div>
 <ul>
 <li>Model uyum istatistikleri fitmeasures fonkisyonu ile aşağıdaki şekilde elde edilebilir.</li>
 </ul>
-<div class="sourceCode" id="cb347"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb345"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/fitMeasures.html">fitmeasures</a></span><span class="op">(</span><span class="va">model_1_fit</span>,fit.measures <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"chisq"</span> ,<span class="st">"df"</span> , <span class="st">"pvalue"</span>,<span class="st">"cfi"</span>,<span class="st">"tli"</span>,<span class="st">"rmsea"</span>,<span class="st">"rmsea.ci.lower"</span>,   </span>
 <span><span class="st">"rmsea.ci.upper"</span>,<span class="st">"srmr"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##          chisq             df         pvalue            cfi            tli 
@@ -1434,13 +1434,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <ul>
 <li>Esnek kesim noktaları</li>
 </ul>
-<div class="sourceCode" id="cb349"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb347"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">FCO</span><span class="op">)</span></span>
 <span><span class="va">fits.esnek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/FCO/man/gen_fit.html">gen_fit</a></span><span class="op">(</span>mod1 <span class="op">=</span> <span class="va">model_1</span>, x <span class="op">=</span> <span class="va">yasamdoyum</span><span class="op">[</span>,<span class="fl">4</span><span class="op">:</span><span class="fl">13</span><span class="op">]</span>, rep <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/FCO/man/flex_co.html">flex_co</a></span><span class="op">(</span>fits <span class="op">=</span> <span class="va">fits.esnek</span>, index <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CFI"</span>, <span class="st">"SRMR"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">cutoff</span></span></code></pre></div>
 <pre><code>##        CFI       SRMR 
 ## 0.94664848 0.04558631</code></pre>
-<div class="sourceCode" id="cb351"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb349"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/FCO/man/recommend.html">recommend</a></span><span class="op">(</span><span class="va">fits.esnek</span><span class="op">)</span><span class="op">$</span><span class="va">cutoffs</span></span></code></pre></div>
 <pre><code>## Warning in recommend(fits.esnek): The number of replications is lower than the
 ## recommended minimum of 500. Consider with care.</code></pre>
@@ -1476,25 +1476,25 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p>Faktör yükleri incelendiğinde, <strong>her bir faktörün ilk maddesinin referans madde olarak tanımlandığı</strong> ve <strong>faktör yüklerinin bire eşitlendiği</strong> görülmektedir.</p></li>
 <li><p>Bu maddelere ilişkin standart hatalar, z ve p değerleri hesaplanmamıştır. Faktör yükler tablosunun ardından ise faktörler arası kovaryans, madde ve faktör varyans kestirimleri, standart hataları, z ve p değerleri yer almaktadır.</p></li>
 </ul>
-<div class="sourceCode" id="cb353"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb351"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_factorloadings.html">sem_factorloadings</a></span><span class="op">(</span><span class="va">model_1_fit</span>,standardized <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
-<div id="ybmiwmymwm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ybmiwmymwm table {
+<div id="zenhkuxftk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zenhkuxftk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ybmiwmymwm thead, #ybmiwmymwm tbody, #ybmiwmymwm tfoot, #ybmiwmymwm tr, #ybmiwmymwm td, #ybmiwmymwm th {
+#zenhkuxftk thead, #zenhkuxftk tbody, #zenhkuxftk tfoot, #zenhkuxftk tr, #zenhkuxftk td, #zenhkuxftk th {
   border-style: none;
 }
 
-#ybmiwmymwm p {
+#zenhkuxftk p {
   margin: 0;
   padding: 0;
 }
 
-#ybmiwmymwm .gt_table {
+#zenhkuxftk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1520,12 +1520,12 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-left-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_caption {
+#zenhkuxftk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ybmiwmymwm .gt_title {
+#zenhkuxftk .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -1537,7 +1537,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-width: 0;
 }
 
-#ybmiwmymwm .gt_subtitle {
+#zenhkuxftk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1549,7 +1549,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-width: 0;
 }
 
-#ybmiwmymwm .gt_heading {
+#zenhkuxftk .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -1561,13 +1561,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_bottom_border {
+#zenhkuxftk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_col_headings {
+#zenhkuxftk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -1582,7 +1582,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_col_heading {
+#zenhkuxftk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1602,7 +1602,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#ybmiwmymwm .gt_column_spanner_outer {
+#zenhkuxftk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1614,15 +1614,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 4px;
 }
 
-#ybmiwmymwm .gt_column_spanner_outer:first-child {
+#zenhkuxftk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ybmiwmymwm .gt_column_spanner_outer:last-child {
+#zenhkuxftk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ybmiwmymwm .gt_column_spanner {
+#zenhkuxftk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1634,11 +1634,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   width: 100%;
 }
 
-#ybmiwmymwm .gt_spanner_row {
+#zenhkuxftk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ybmiwmymwm .gt_group_heading {
+#zenhkuxftk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1664,7 +1664,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   text-align: left;
 }
 
-#ybmiwmymwm .gt_empty_group_heading {
+#zenhkuxftk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1679,15 +1679,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: middle;
 }
 
-#ybmiwmymwm .gt_from_md > :first-child {
+#zenhkuxftk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ybmiwmymwm .gt_from_md > :last-child {
+#zenhkuxftk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ybmiwmymwm .gt_row {
+#zenhkuxftk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1706,7 +1706,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#ybmiwmymwm .gt_stub {
+#zenhkuxftk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1719,7 +1719,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#ybmiwmymwm .gt_stub_row_group {
+#zenhkuxftk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1733,15 +1733,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: top;
 }
 
-#ybmiwmymwm .gt_row_group_first td {
+#zenhkuxftk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ybmiwmymwm .gt_row_group_first th {
+#zenhkuxftk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ybmiwmymwm .gt_summary_row {
+#zenhkuxftk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1751,16 +1751,16 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#ybmiwmymwm .gt_first_summary_row {
+#zenhkuxftk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_first_summary_row.thick {
+#zenhkuxftk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ybmiwmymwm .gt_last_summary_row {
+#zenhkuxftk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1770,7 +1770,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_grand_summary_row {
+#zenhkuxftk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1780,7 +1780,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#ybmiwmymwm .gt_first_grand_summary_row {
+#zenhkuxftk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1790,7 +1790,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_last_grand_summary_row_top {
+#zenhkuxftk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -1800,11 +1800,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_striped {
+#zenhkuxftk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ybmiwmymwm .gt_table_body {
+#zenhkuxftk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1813,7 +1813,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_footnotes {
+#zenhkuxftk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1827,7 +1827,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_footnote {
+#zenhkuxftk .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -1836,7 +1836,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#ybmiwmymwm .gt_sourcenotes {
+#zenhkuxftk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1850,7 +1850,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#ybmiwmymwm .gt_sourcenote {
+#zenhkuxftk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1858,63 +1858,63 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#ybmiwmymwm .gt_left {
+#zenhkuxftk .gt_left {
   text-align: left;
 }
 
-#ybmiwmymwm .gt_center {
+#zenhkuxftk .gt_center {
   text-align: center;
 }
 
-#ybmiwmymwm .gt_right {
+#zenhkuxftk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ybmiwmymwm .gt_font_normal {
+#zenhkuxftk .gt_font_normal {
   font-weight: normal;
 }
 
-#ybmiwmymwm .gt_font_bold {
+#zenhkuxftk .gt_font_bold {
   font-weight: bold;
 }
 
-#ybmiwmymwm .gt_font_italic {
+#zenhkuxftk .gt_font_italic {
   font-style: italic;
 }
 
-#ybmiwmymwm .gt_super {
+#zenhkuxftk .gt_super {
   font-size: 65%;
 }
 
-#ybmiwmymwm .gt_footnote_marks {
+#zenhkuxftk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ybmiwmymwm .gt_asterisk {
+#zenhkuxftk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ybmiwmymwm .gt_indent_1 {
+#zenhkuxftk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ybmiwmymwm .gt_indent_2 {
+#zenhkuxftk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ybmiwmymwm .gt_indent_3 {
+#zenhkuxftk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ybmiwmymwm .gt_indent_4 {
+#zenhkuxftk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ybmiwmymwm .gt_indent_5 {
+#zenhkuxftk .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2139,25 +2139,25 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <h2>
 <span class="header-section-number">8.11</span> DFA modelinin testi<a class="anchor" aria-label="anchor" href="#dfa-modelinin-testi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb354"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb352"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_factorloadings.html">sem_factorloadings</a></span><span class="op">(</span><span class="va">model_1_fit</span>,standardized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div id="lgzwebyubs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#lgzwebyubs table {
+<div id="erfswgnxao" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#erfswgnxao table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#lgzwebyubs thead, #lgzwebyubs tbody, #lgzwebyubs tfoot, #lgzwebyubs tr, #lgzwebyubs td, #lgzwebyubs th {
+#erfswgnxao thead, #erfswgnxao tbody, #erfswgnxao tfoot, #erfswgnxao tr, #erfswgnxao td, #erfswgnxao th {
   border-style: none;
 }
 
-#lgzwebyubs p {
+#erfswgnxao p {
   margin: 0;
   padding: 0;
 }
 
-#lgzwebyubs .gt_table {
+#erfswgnxao .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2183,12 +2183,12 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-left-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_caption {
+#erfswgnxao .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#lgzwebyubs .gt_title {
+#erfswgnxao .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2200,7 +2200,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-width: 0;
 }
 
-#lgzwebyubs .gt_subtitle {
+#erfswgnxao .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2212,7 +2212,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-width: 0;
 }
 
-#lgzwebyubs .gt_heading {
+#erfswgnxao .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2224,13 +2224,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_bottom_border {
+#erfswgnxao .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_col_headings {
+#erfswgnxao .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2245,7 +2245,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_col_heading {
+#erfswgnxao .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2265,7 +2265,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#lgzwebyubs .gt_column_spanner_outer {
+#erfswgnxao .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2277,15 +2277,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 4px;
 }
 
-#lgzwebyubs .gt_column_spanner_outer:first-child {
+#erfswgnxao .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lgzwebyubs .gt_column_spanner_outer:last-child {
+#erfswgnxao .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lgzwebyubs .gt_column_spanner {
+#erfswgnxao .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2297,11 +2297,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   width: 100%;
 }
 
-#lgzwebyubs .gt_spanner_row {
+#erfswgnxao .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#lgzwebyubs .gt_group_heading {
+#erfswgnxao .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2327,7 +2327,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   text-align: left;
 }
 
-#lgzwebyubs .gt_empty_group_heading {
+#erfswgnxao .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2342,15 +2342,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: middle;
 }
 
-#lgzwebyubs .gt_from_md > :first-child {
+#erfswgnxao .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#lgzwebyubs .gt_from_md > :last-child {
+#erfswgnxao .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#lgzwebyubs .gt_row {
+#erfswgnxao .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2369,7 +2369,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#lgzwebyubs .gt_stub {
+#erfswgnxao .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2382,7 +2382,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#lgzwebyubs .gt_stub_row_group {
+#erfswgnxao .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2396,15 +2396,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: top;
 }
 
-#lgzwebyubs .gt_row_group_first td {
+#erfswgnxao .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#lgzwebyubs .gt_row_group_first th {
+#erfswgnxao .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#lgzwebyubs .gt_summary_row {
+#erfswgnxao .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2414,16 +2414,16 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#lgzwebyubs .gt_first_summary_row {
+#erfswgnxao .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_first_summary_row.thick {
+#erfswgnxao .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#lgzwebyubs .gt_last_summary_row {
+#erfswgnxao .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2433,7 +2433,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_grand_summary_row {
+#erfswgnxao .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2443,7 +2443,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#lgzwebyubs .gt_first_grand_summary_row {
+#erfswgnxao .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2453,7 +2453,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_last_grand_summary_row_top {
+#erfswgnxao .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2463,11 +2463,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_striped {
+#erfswgnxao .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lgzwebyubs .gt_table_body {
+#erfswgnxao .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2476,7 +2476,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_footnotes {
+#erfswgnxao .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2490,7 +2490,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_footnote {
+#erfswgnxao .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -2499,7 +2499,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#lgzwebyubs .gt_sourcenotes {
+#erfswgnxao .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2513,7 +2513,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#lgzwebyubs .gt_sourcenote {
+#erfswgnxao .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2521,63 +2521,63 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#lgzwebyubs .gt_left {
+#erfswgnxao .gt_left {
   text-align: left;
 }
 
-#lgzwebyubs .gt_center {
+#erfswgnxao .gt_center {
   text-align: center;
 }
 
-#lgzwebyubs .gt_right {
+#erfswgnxao .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lgzwebyubs .gt_font_normal {
+#erfswgnxao .gt_font_normal {
   font-weight: normal;
 }
 
-#lgzwebyubs .gt_font_bold {
+#erfswgnxao .gt_font_bold {
   font-weight: bold;
 }
 
-#lgzwebyubs .gt_font_italic {
+#erfswgnxao .gt_font_italic {
   font-style: italic;
 }
 
-#lgzwebyubs .gt_super {
+#erfswgnxao .gt_super {
   font-size: 65%;
 }
 
-#lgzwebyubs .gt_footnote_marks {
+#erfswgnxao .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#lgzwebyubs .gt_asterisk {
+#erfswgnxao .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#lgzwebyubs .gt_indent_1 {
+#erfswgnxao .gt_indent_1 {
   text-indent: 5px;
 }
 
-#lgzwebyubs .gt_indent_2 {
+#erfswgnxao .gt_indent_2 {
   text-indent: 10px;
 }
 
-#lgzwebyubs .gt_indent_3 {
+#erfswgnxao .gt_indent_3 {
   text-indent: 15px;
 }
 
-#lgzwebyubs .gt_indent_4 {
+#erfswgnxao .gt_indent_4 {
   text-indent: 20px;
 }
 
-#lgzwebyubs .gt_indent_5 {
+#erfswgnxao .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2719,7 +2719,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p><strong>parameterEstimates()</strong> fonksiyonu parametre kestirimlerinin yanı sıra kestirimlerin standart hatalarını, güven aralıklarını, istenmesi durumunda standartlaştırılmış değerlerini ve <span class="math inline">\(R^2\)</span> değerlerini verir.</p></li>
 <li><p>Açıklanan varyans</p></li>
 </ul>
-<div class="sourceCode" id="cb355"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb353"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="co"># summary(model_1_fit, rsquare=TRUE)</span></span>
 <span><span class="co"># R-Square:</span></span>
 <span><span class="co">#                    Estimate</span></span>
@@ -2733,25 +2733,25 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <span><span class="co">#     aile1             0.551</span></span>
 <span><span class="co">#     aile2             0.715</span></span>
 <span><span class="co">#     aile3             0.260</span></span></code></pre></div>
-<div class="sourceCode" id="cb356"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb354"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_factorvar.html">sem_factorvar</a></span><span class="op">(</span><span class="va">model_1_fit</span><span class="op">)</span></span></code></pre></div>
-<div id="jqdzrrxpdz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jqdzrrxpdz table {
+<div id="qyfwywlsaj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qyfwywlsaj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jqdzrrxpdz thead, #jqdzrrxpdz tbody, #jqdzrrxpdz tfoot, #jqdzrrxpdz tr, #jqdzrrxpdz td, #jqdzrrxpdz th {
+#qyfwywlsaj thead, #qyfwywlsaj tbody, #qyfwywlsaj tfoot, #qyfwywlsaj tr, #qyfwywlsaj td, #qyfwywlsaj th {
   border-style: none;
 }
 
-#jqdzrrxpdz p {
+#qyfwywlsaj p {
   margin: 0;
   padding: 0;
 }
 
-#jqdzrrxpdz .gt_table {
+#qyfwywlsaj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2777,12 +2777,12 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-left-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_caption {
+#qyfwywlsaj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jqdzrrxpdz .gt_title {
+#qyfwywlsaj .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -2794,7 +2794,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-width: 0;
 }
 
-#jqdzrrxpdz .gt_subtitle {
+#qyfwywlsaj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2806,7 +2806,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-width: 0;
 }
 
-#jqdzrrxpdz .gt_heading {
+#qyfwywlsaj .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -2818,13 +2818,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_bottom_border {
+#qyfwywlsaj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_col_headings {
+#qyfwywlsaj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -2839,7 +2839,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_col_heading {
+#qyfwywlsaj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2859,7 +2859,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#jqdzrrxpdz .gt_column_spanner_outer {
+#qyfwywlsaj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2871,15 +2871,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 4px;
 }
 
-#jqdzrrxpdz .gt_column_spanner_outer:first-child {
+#qyfwywlsaj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jqdzrrxpdz .gt_column_spanner_outer:last-child {
+#qyfwywlsaj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jqdzrrxpdz .gt_column_spanner {
+#qyfwywlsaj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2891,11 +2891,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   width: 100%;
 }
 
-#jqdzrrxpdz .gt_spanner_row {
+#qyfwywlsaj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jqdzrrxpdz .gt_group_heading {
+#qyfwywlsaj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2921,7 +2921,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   text-align: left;
 }
 
-#jqdzrrxpdz .gt_empty_group_heading {
+#qyfwywlsaj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2936,15 +2936,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: middle;
 }
 
-#jqdzrrxpdz .gt_from_md > :first-child {
+#qyfwywlsaj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jqdzrrxpdz .gt_from_md > :last-child {
+#qyfwywlsaj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jqdzrrxpdz .gt_row {
+#qyfwywlsaj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -2963,7 +2963,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#jqdzrrxpdz .gt_stub {
+#qyfwywlsaj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2976,7 +2976,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#jqdzrrxpdz .gt_stub_row_group {
+#qyfwywlsaj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2990,15 +2990,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: top;
 }
 
-#jqdzrrxpdz .gt_row_group_first td {
+#qyfwywlsaj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jqdzrrxpdz .gt_row_group_first th {
+#qyfwywlsaj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jqdzrrxpdz .gt_summary_row {
+#qyfwywlsaj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3008,16 +3008,16 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#jqdzrrxpdz .gt_first_summary_row {
+#qyfwywlsaj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_first_summary_row.thick {
+#qyfwywlsaj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jqdzrrxpdz .gt_last_summary_row {
+#qyfwywlsaj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3027,7 +3027,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_grand_summary_row {
+#qyfwywlsaj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3037,7 +3037,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#jqdzrrxpdz .gt_first_grand_summary_row {
+#qyfwywlsaj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3047,7 +3047,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_last_grand_summary_row_top {
+#qyfwywlsaj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3057,11 +3057,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_striped {
+#qyfwywlsaj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jqdzrrxpdz .gt_table_body {
+#qyfwywlsaj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3070,7 +3070,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_footnotes {
+#qyfwywlsaj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3084,7 +3084,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_footnote {
+#qyfwywlsaj .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -3093,7 +3093,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#jqdzrrxpdz .gt_sourcenotes {
+#qyfwywlsaj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3107,7 +3107,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#jqdzrrxpdz .gt_sourcenote {
+#qyfwywlsaj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3115,63 +3115,63 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#jqdzrrxpdz .gt_left {
+#qyfwywlsaj .gt_left {
   text-align: left;
 }
 
-#jqdzrrxpdz .gt_center {
+#qyfwywlsaj .gt_center {
   text-align: center;
 }
 
-#jqdzrrxpdz .gt_right {
+#qyfwywlsaj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jqdzrrxpdz .gt_font_normal {
+#qyfwywlsaj .gt_font_normal {
   font-weight: normal;
 }
 
-#jqdzrrxpdz .gt_font_bold {
+#qyfwywlsaj .gt_font_bold {
   font-weight: bold;
 }
 
-#jqdzrrxpdz .gt_font_italic {
+#qyfwywlsaj .gt_font_italic {
   font-style: italic;
 }
 
-#jqdzrrxpdz .gt_super {
+#qyfwywlsaj .gt_super {
   font-size: 65%;
 }
 
-#jqdzrrxpdz .gt_footnote_marks {
+#qyfwywlsaj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jqdzrrxpdz .gt_asterisk {
+#qyfwywlsaj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jqdzrrxpdz .gt_indent_1 {
+#qyfwywlsaj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jqdzrrxpdz .gt_indent_2 {
+#qyfwywlsaj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jqdzrrxpdz .gt_indent_3 {
+#qyfwywlsaj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jqdzrrxpdz .gt_indent_4 {
+#qyfwywlsaj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jqdzrrxpdz .gt_indent_5 {
+#qyfwywlsaj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3229,7 +3229,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p>Örneğin okul2 değişkenin açıkladığı varyans 0.407 olarak kestirilmiştir.</p></li>
 <li><p>Bu kestirim okul2 değişkenin <strong>faktör yükünün karesinin</strong>, okul <strong>gizil değişkeninin açıkladığı varyans</strong> ile çarpımının, <strong>okul2 değişkeninin varyansına bölümü</strong> ile hesaplanır.</p></li>
 </ul>
-<div class="sourceCode" id="cb357"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb355"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="fl">1.431</span><span class="op">^</span><span class="fl">2</span> <span class="op">*</span> <span class="fl">0.327</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">yasamdoyum</span><span class="op">$</span><span class="va">okul2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0.4046344</code></pre>
 <ul>
@@ -3241,7 +3241,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p>okul3 göstergesi standartlaştırılmış faktör yükü <strong>0.857</strong>; okul2 göstergesin standartlaştırılmış hata varyansı <strong>1 -0.857^2=0.265</strong></p></li>
 </ul>
 <p>Ayrıca maddelere ilişkin kovaryans matrisi <strong>fitted()</strong> fonksiyonuyla; atıklar <strong>resid()</strong> fonksiyonuyla elde edilebilir.</p>
-<div class="sourceCode" id="cb359"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb357"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">model_1_fit</span>, type <span class="op">=</span> <span class="st">"normalized"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## $type
 ## [1] "normalized"
@@ -3277,13 +3277,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p><strong>Artık varyans</strong> her bir ölçülen değişkenin faktör tarafından <strong>açıklanmayan varyans</strong> miktarıdır.</p></li>
 <li><p>Örneğin, okul2 değişkenin varyansı 1.65 olarak kestirilmiştir.</p></li>
 </ul>
-<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb359"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">yasamdoyum</span><span class="op">$</span><span class="va">okul2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 1.654871</code></pre>
 <ul>
 <li>okul2 değişkenin okul faktörü tarafından açıklanmayan varyans miktarı 0.978 olarak kestirilmiştir.</li>
 </ul>
-<div class="sourceCode" id="cb363"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pars</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterEstimates</a></span><span class="op">(</span><span class="va">model_1_fit</span>,standardized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">pars</span><span class="op">[</span><span class="fl">12</span>,<span class="op">]</span></span></code></pre></div>
 <div class="kable-table">
@@ -3366,7 +3366,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p>Yakınsak geçerlik için ortalama varyans (Average variance Extracted-AVE) değeri incelenebilir. Bu katsayının 0.50'den büyük olması istenir. Faktörler ile maddelerin arasındaki varyansın en az %50'si açıklanması anlamına gelir.</p></li>
 <li><p>Bunun yanı sırasına iç tutarlılık bakılabilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb364"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb362"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">semTools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/semTools/man/semTools-deprecated.html">reliability</a></span><span class="op">(</span><span class="va">model_1_fit</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##             okul      kisi   arkadas      aile
 ## alpha  0.6521208 0.6772692 0.5897284 0.7284332
@@ -3378,7 +3378,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p>semTools paketinin reliability fonkisyonu AVE, alpha ve omega değerlerini vermektedir. omega1 ve omega2 model kovaryans modelini dikkate alır. Modifikasyon yapılmadığı durumda aynı çıkar. omega2 ilişkilendirilmiş hataları hesaba katar. omega3 ise hiyerarşik omega olarak bilinir ve gözlenenkovarynas matrisini kullanır.</p></li>
 <li><p>Standartlaştırılmamış Çözümler</p></li>
 </ul>
-<div class="sourceCode" id="cb366"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb364"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SachaEpskamp/semPlot">semPlot</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">model_1_fit</span>, what<span class="op">=</span><span class="st">"par"</span>,</span>
 <span>style<span class="op">=</span><span class="st">"lisrel"</span>,layout<span class="op">=</span><span class="st">"tree"</span>,residuals <span class="op">=</span> <span class="cn">TRUE</span>,rotation <span class="op">=</span> <span class="fl">2</span> <span class="op">)</span></span></code></pre></div>
@@ -3386,7 +3386,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <ul>
 <li>Standartlaştırılmış Çözümler</li>
 </ul>
-<div class="sourceCode" id="cb367"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb365"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">model_1_fit</span>, what<span class="op">=</span><span class="st">"std"</span>,</span>
 <span>style<span class="op">=</span><span class="st">"lisrel"</span>,layout<span class="op">=</span><span class="st">"tree"</span>,residuals <span class="op">=</span> <span class="cn">TRUE</span>,rotation <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="08_DFA_files/figure-html/unnamed-chunk-35-1.png" width="75%" style="display: block; margin: auto;"></div>
@@ -3394,25 +3394,25 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <h3>
 <span class="header-section-number">8.12.1</span> Faktorler arası korelasyon<a class="anchor" aria-label="anchor" href="#faktorler-aras%C4%B1-korelasyon"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb368"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb366"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_factorcor.html">sem_factorcor</a></span><span class="op">(</span><span class="va">model_1_fit</span><span class="op">)</span></span></code></pre></div>
-<div id="kuzpzzbnpk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#kuzpzzbnpk table {
+<div id="sydmxalhxl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sydmxalhxl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kuzpzzbnpk thead, #kuzpzzbnpk tbody, #kuzpzzbnpk tfoot, #kuzpzzbnpk tr, #kuzpzzbnpk td, #kuzpzzbnpk th {
+#sydmxalhxl thead, #sydmxalhxl tbody, #sydmxalhxl tfoot, #sydmxalhxl tr, #sydmxalhxl td, #sydmxalhxl th {
   border-style: none;
 }
 
-#kuzpzzbnpk p {
+#sydmxalhxl p {
   margin: 0;
   padding: 0;
 }
 
-#kuzpzzbnpk .gt_table {
+#sydmxalhxl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3438,12 +3438,12 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-left-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_caption {
+#sydmxalhxl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kuzpzzbnpk .gt_title {
+#sydmxalhxl .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -3455,7 +3455,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-width: 0;
 }
 
-#kuzpzzbnpk .gt_subtitle {
+#sydmxalhxl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3467,7 +3467,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-width: 0;
 }
 
-#kuzpzzbnpk .gt_heading {
+#sydmxalhxl .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -3479,13 +3479,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_bottom_border {
+#sydmxalhxl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_col_headings {
+#sydmxalhxl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -3500,7 +3500,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_col_heading {
+#sydmxalhxl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3520,7 +3520,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#kuzpzzbnpk .gt_column_spanner_outer {
+#sydmxalhxl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3532,15 +3532,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 4px;
 }
 
-#kuzpzzbnpk .gt_column_spanner_outer:first-child {
+#sydmxalhxl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kuzpzzbnpk .gt_column_spanner_outer:last-child {
+#sydmxalhxl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kuzpzzbnpk .gt_column_spanner {
+#sydmxalhxl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3552,11 +3552,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   width: 100%;
 }
 
-#kuzpzzbnpk .gt_spanner_row {
+#sydmxalhxl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kuzpzzbnpk .gt_group_heading {
+#sydmxalhxl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3582,7 +3582,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   text-align: left;
 }
 
-#kuzpzzbnpk .gt_empty_group_heading {
+#sydmxalhxl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3597,15 +3597,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: middle;
 }
 
-#kuzpzzbnpk .gt_from_md > :first-child {
+#sydmxalhxl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kuzpzzbnpk .gt_from_md > :last-child {
+#sydmxalhxl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kuzpzzbnpk .gt_row {
+#sydmxalhxl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3624,7 +3624,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#kuzpzzbnpk .gt_stub {
+#sydmxalhxl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3637,7 +3637,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#kuzpzzbnpk .gt_stub_row_group {
+#sydmxalhxl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3651,15 +3651,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: top;
 }
 
-#kuzpzzbnpk .gt_row_group_first td {
+#sydmxalhxl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kuzpzzbnpk .gt_row_group_first th {
+#sydmxalhxl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kuzpzzbnpk .gt_summary_row {
+#sydmxalhxl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3669,16 +3669,16 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#kuzpzzbnpk .gt_first_summary_row {
+#sydmxalhxl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_first_summary_row.thick {
+#sydmxalhxl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kuzpzzbnpk .gt_last_summary_row {
+#sydmxalhxl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3688,7 +3688,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_grand_summary_row {
+#sydmxalhxl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3698,7 +3698,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#kuzpzzbnpk .gt_first_grand_summary_row {
+#sydmxalhxl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3708,7 +3708,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_last_grand_summary_row_top {
+#sydmxalhxl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -3718,11 +3718,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_striped {
+#sydmxalhxl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kuzpzzbnpk .gt_table_body {
+#sydmxalhxl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3731,7 +3731,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_footnotes {
+#sydmxalhxl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3745,7 +3745,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_footnote {
+#sydmxalhxl .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -3754,7 +3754,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#kuzpzzbnpk .gt_sourcenotes {
+#sydmxalhxl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3768,7 +3768,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#kuzpzzbnpk .gt_sourcenote {
+#sydmxalhxl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3776,63 +3776,63 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#kuzpzzbnpk .gt_left {
+#sydmxalhxl .gt_left {
   text-align: left;
 }
 
-#kuzpzzbnpk .gt_center {
+#sydmxalhxl .gt_center {
   text-align: center;
 }
 
-#kuzpzzbnpk .gt_right {
+#sydmxalhxl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kuzpzzbnpk .gt_font_normal {
+#sydmxalhxl .gt_font_normal {
   font-weight: normal;
 }
 
-#kuzpzzbnpk .gt_font_bold {
+#sydmxalhxl .gt_font_bold {
   font-weight: bold;
 }
 
-#kuzpzzbnpk .gt_font_italic {
+#sydmxalhxl .gt_font_italic {
   font-style: italic;
 }
 
-#kuzpzzbnpk .gt_super {
+#sydmxalhxl .gt_super {
   font-size: 65%;
 }
 
-#kuzpzzbnpk .gt_footnote_marks {
+#sydmxalhxl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kuzpzzbnpk .gt_asterisk {
+#sydmxalhxl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kuzpzzbnpk .gt_indent_1 {
+#sydmxalhxl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kuzpzzbnpk .gt_indent_2 {
+#sydmxalhxl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kuzpzzbnpk .gt_indent_3 {
+#sydmxalhxl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kuzpzzbnpk .gt_indent_4 {
+#sydmxalhxl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kuzpzzbnpk .gt_indent_5 {
+#sydmxalhxl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3915,7 +3915,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <ul>
 <li>Standartlaştırılmamış Çözümler</li>
 </ul>
-<div class="sourceCode" id="cb369"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb367"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://lavaan.ugent.be">lavaan</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">model_1_v1</span> <span class="op">&lt;-</span> </span>
@@ -3934,8 +3934,8 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/datatable.html">datatable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/parameterEstimates.html">parameterestimates</a></span><span class="op">(</span><span class="va">model_1_v1_fit</span>,standardized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/pkg/DT/man/formatCurrency.html">formatRound</a></span><span class="op">(</span>columns<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'est'</span>, <span class="st">'se'</span>,<span class="st">"z"</span>,<span class="st">"pvalue"</span>,<span class="st">"ci.lower"</span>,<span class="st">"ci.upper"</span>,</span>
 <span>                          <span class="st">"std.lv"</span>,<span class="st">"std.all"</span>,<span class="st">"std.nox"</span><span class="op">)</span>, digits<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
-<div class="datatables html-widget html-fill-item" id="htmlwidget-5b0c444edfb171009a69" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5b0c444edfb171009a69">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],["okul","okul","okul","kisi","kisi","arkadas","arkadas","aile","aile","aile","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","okul","okul","kisi","kisi","arkadas"],["=~","=~","=~","=~","=~","=~","=~","=~","=~","=~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~"],["okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","kisi","arkadas","aile","arkadas","aile","aile"],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.09532638732788422,0.09679463950091463,0.1114940995301336,0.08192681383617136,0.0693460536495419,0.07197014395433951,0.05663837862543462,0.06990032416032131,0.06592851393181307,0.06016110659626348,0,0,0,0,0.1466949769891691,0.13717262255778,0.2088165359333629,0.09983187339180177,0.07625621127154139,0.07938247815344944,0.04686540515928586,0.07865068742183502,0.07668682036724415,0.06076689426218117,0.08265376950626695,0.08372381075339752,0.07655351114307003,0.08025292891308784,0.07990769765679392,0.0808755589827075],[6.002447977351229,8.458789230052396,10.236053318641,8.904427491287867,9.884083785679801,9.188359499551412,7.164142926412977,11.18648248440077,12.5832740873227,7.766299429010165,null,null,null,null,10.41432819359841,7.129737837350606,2.244956589399484,6.574769918377862,3.865441368151518,3.300852358152319,8.94851926688723,6.336377564622604,3.574371731941816,10.23970763434131,2.180920754470804,3.498093538639945,2.866669642133946,7.646312749220807,3.11902615270771,4.248819451717759],[1.943645466795374e-09,0,0,0,0,0,7.827072323607354e-13,0,0,7.993605777301127e-15,null,null,null,null,0,1.005640015705467e-12,0.02477091951616428,4.87283546846129e-11,0.0001108884862559556,0.0009639159197516456,0,2.352298356100846e-10,0.0003510698637092524,0,0.02918927833408991,0.0004685967539221902,0.004148157730689439,2.065014825802791e-14,0.001814498550043009,2.149000295270653e-05],[0.3853553948654901,0.6290514468188102,0.9227351279365279,0.5689377689094138,0.5495064368552341,0.5202286657742696,0.2947562573443124,0.6449366340114656,0.700379048113276,0.3493155656084292,1,1,1,1,1.240212763105869,0.7091514374206618,0.05951116851337179,0.4607047217146316,0.1453044859378197,0.10644304202449,0.3275214747852678,0.3442079365157467,0.1238037969244862,0.5031343068854388,0.01826290993270546,0.128778067701667,0.0694115016620987,0.4563461431869494,0.09261798929936915,0.1851124653386231],[0.7590279667434269,1.008479461455472,1.3597839670721,0.8900849778834411,0.821337972101403,0.8023464459996066,0.5167746218415025,0.9189408697352751,0.9588140738344776,0.5851427700059322,1,1,1,1,1.815246506329276,1.246858237176972,0.8780569481249821,0.8520384744288194,0.4442233413172165,0.417616638393087,0.5112304872514236,0.6525129659279747,0.4244106089418686,0.7413361552978963,0.3422597327702218,0.4569693751518799,0.3694957511231046,0.7709318438339601,0.4058504082890326,0.5021388310099262],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>lhs<\/th>\n      <th>op<\/th>\n      <th>rhs<\/th>\n      <th>est<\/th>\n      <th>se<\/th>\n      <th>z<\/th>\n      <th>pvalue<\/th>\n      <th>ci.lower<\/th>\n      <th>ci.upper<\/th>\n      <th>std.lv<\/th>\n      <th>std.all<\/th>\n      <th>std.nox<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[4,5,6,7,8,9,10,11,12]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"lhs","targets":1},{"name":"op","targets":2},{"name":"rhs","targets":3},{"name":"est","targets":4},{"name":"se","targets":5},{"name":"z","targets":6},{"name":"pvalue","targets":7},{"name":"ci.lower","targets":8},{"name":"ci.upper","targets":9},{"name":"std.lv","targets":10},{"name":"std.all","targets":11},{"name":"std.nox","targets":12}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render"],"jsHooks":[]}</script><p>aynı standartlaştırılmış çözümleri sağlar.</p>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-2e322d0c1a5288bcdc54" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2e322d0c1a5288bcdc54">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"],["okul","okul","okul","kisi","kisi","arkadas","arkadas","aile","aile","aile","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","okul","okul","kisi","kisi","arkadas"],["=~","=~","=~","=~","=~","=~","=~","=~","=~","=~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~","~~"],["okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","okul","kisi","arkadas","aile","okul1","okul2","okul3","kisi1","kisi2","arkadas1","arkadas2","aile1","aile2","aile3","kisi","arkadas","aile","arkadas","aile","aile"],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.09532638732788422,0.09679463950091463,0.1114940995301336,0.08192681383617136,0.0693460536495419,0.07197014395433951,0.05663837862543462,0.06990032416032131,0.06592851393181307,0.06016110659626348,0,0,0,0,0.1466949769891691,0.13717262255778,0.2088165359333629,0.09983187339180177,0.07625621127154139,0.07938247815344944,0.04686540515928586,0.07865068742183502,0.07668682036724415,0.06076689426218117,0.08265376950626695,0.08372381075339752,0.07655351114307003,0.08025292891308784,0.07990769765679392,0.0808755589827075],[6.002447977351229,8.458789230052396,10.236053318641,8.904427491287867,9.884083785679801,9.188359499551412,7.164142926412977,11.18648248440077,12.5832740873227,7.766299429010165,null,null,null,null,10.41432819359841,7.129737837350606,2.244956589399484,6.574769918377862,3.865441368151518,3.300852358152319,8.94851926688723,6.336377564622604,3.574371731941816,10.23970763434131,2.180920754470804,3.498093538639945,2.866669642133946,7.646312749220807,3.11902615270771,4.248819451717759],[1.943645466795374e-09,0,0,0,0,0,7.827072323607354e-13,0,0,7.993605777301127e-15,null,null,null,null,0,1.005640015705467e-12,0.02477091951616428,4.87283546846129e-11,0.0001108884862559556,0.0009639159197516456,0,2.352298356100846e-10,0.0003510698637092524,0,0.02918927833408991,0.0004685967539221902,0.004148157730689439,2.065014825802791e-14,0.001814498550043009,2.149000295270653e-05],[0.3853553948654901,0.6290514468188102,0.9227351279365279,0.5689377689094138,0.5495064368552341,0.5202286657742696,0.2947562573443124,0.6449366340114656,0.700379048113276,0.3493155656084292,1,1,1,1,1.240212763105869,0.7091514374206618,0.05951116851337179,0.4607047217146316,0.1453044859378197,0.10644304202449,0.3275214747852678,0.3442079365157467,0.1238037969244862,0.5031343068854388,0.01826290993270546,0.128778067701667,0.0694115016620987,0.4563461431869494,0.09261798929936915,0.1851124653386231],[0.7590279667434269,1.008479461455472,1.3597839670721,0.8900849778834411,0.821337972101403,0.8023464459996066,0.5167746218415025,0.9189408697352751,0.9588140738344776,0.5851427700059322,1,1,1,1,1.815246506329276,1.246858237176972,0.8780569481249821,0.8520384744288194,0.4442233413172165,0.417616638393087,0.5112304872514236,0.6525129659279747,0.4244106089418686,0.7413361552978963,0.3422597327702218,0.4569693751518799,0.3694957511231046,0.7709318438339601,0.4058504082890326,0.5021388310099262],[0.5721916808044585,0.818765454137141,1.141259547504314,0.7295113733964275,0.6854222044783186,0.6612875558869381,0.4057654395929074,0.7819387518733704,0.8295965609738768,0.4672291678071807,1,1,1,1,1.527729634717573,0.978004837298817,0.468784058319177,0.6563715980717255,0.2947639136275181,0.2620298402087886,0.4193759810183457,0.4983604512218607,0.2741072029331774,0.6222352310916676,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746],[0.4201012938623169,0.6377208515252132,0.8575186680148457,0.6691474027128134,0.7838812011231312,0.7907677295658515,0.5309585383825275,0.7422540821735442,0.8456744368290723,0.5096255419249748,1,1,1,1,0.8235149028952072,0.5933121155299571,0.2646617340060448,0.5522417534426959,0.3855302625257571,0.3746863978772685,0.71808303051869,0.4490588774967098,0.2848347468938314,0.7402818070176758,0.1802613213514636,0.2928737214267734,0.2194536263926016,0.6136389935104547,0.2492341987942009,0.3436256481742746]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>lhs<\/th>\n      <th>op<\/th>\n      <th>rhs<\/th>\n      <th>est<\/th>\n      <th>se<\/th>\n      <th>z<\/th>\n      <th>pvalue<\/th>\n      <th>ci.lower<\/th>\n      <th>ci.upper<\/th>\n      <th>std.lv<\/th>\n      <th>std.all<\/th>\n      <th>std.nox<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":4,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":5,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":6,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":7,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":8,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":9,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":10,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":11,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"targets":12,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 2, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":[4,5,6,7,8,9,10,11,12]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"lhs","targets":1},{"name":"op","targets":2},{"name":"rhs","targets":3},{"name":"est","targets":4},{"name":"se","targets":5},{"name":"z","targets":6},{"name":"pvalue","targets":7},{"name":"ci.lower","targets":8},{"name":"ci.upper","targets":9},{"name":"std.lv","targets":10},{"name":"std.all","targets":11},{"name":"std.nox","targets":12}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render","options.columnDefs.1.render","options.columnDefs.2.render","options.columnDefs.3.render","options.columnDefs.4.render","options.columnDefs.5.render","options.columnDefs.6.render","options.columnDefs.7.render","options.columnDefs.8.render"],"jsHooks":[]}</script><p>aynı standartlaştırılmış çözümleri sağlar.</p>
 </div>
 <div id="modifikasyon-indeksleri-1" class="section level3" number="8.12.2">
 <h3>
@@ -3945,7 +3945,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li>
 <strong>modindices()</strong> fonksiyonu doğrudan <strong>cfa()</strong> fonksiyonun çıktılarının atandığı ile çalıştırıldığında tüm modifikasyonları, modifikasyon yapıldığında ki-karedeki değişimi (mi değeri), parametrelerdeki beklenen değişimi (epc) ve istenmesi durumunda epc değerinin standartlaştırılmış değerlerini verir.</li>
 </ul>
-<div class="sourceCode" id="cb370"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb368"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/modificationIndices.html">modindices</a></span><span class="op">(</span><span class="va">model_1_fit</span>, sort<span class="op">=</span><span class="cn">TRUE</span>, standardized<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -4017,7 +4017,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <h3>
 <span class="header-section-number">8.12.3</span> Üç faktörlü model<a class="anchor" aria-label="anchor" href="#%C3%BC%C3%A7-fakt%C3%B6rl%C3%BC-model"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb371"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb369"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model_2f</span> <span class="op">&lt;-</span> <span class="st">"</span></span>
 <span><span class="st">okul =~ okul1 + okul2 + okul3</span></span>
 <span><span class="st">kisi_arkadas =~ kisi1 + kisi2 + arkadas1 + arkadas2</span></span>
@@ -4025,23 +4025,23 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <span><span class="st">"</span></span>
 <span><span class="va">model_2_fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/cfa.html">cfa</a></span><span class="op">(</span><span class="va">model_2f</span>, data <span class="op">=</span> <span class="va">yasamdoyum</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_sig.html">sem_sig</a></span><span class="op">(</span><span class="va">model_2_fit</span><span class="op">)</span></span></code></pre></div>
-<div id="meorrajkyx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#meorrajkyx table {
+<div id="osnmsiucrt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#osnmsiucrt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#meorrajkyx thead, #meorrajkyx tbody, #meorrajkyx tfoot, #meorrajkyx tr, #meorrajkyx td, #meorrajkyx th {
+#osnmsiucrt thead, #osnmsiucrt tbody, #osnmsiucrt tfoot, #osnmsiucrt tr, #osnmsiucrt td, #osnmsiucrt th {
   border-style: none;
 }
 
-#meorrajkyx p {
+#osnmsiucrt p {
   margin: 0;
   padding: 0;
 }
 
-#meorrajkyx .gt_table {
+#osnmsiucrt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4067,12 +4067,12 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-left-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_caption {
+#osnmsiucrt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#meorrajkyx .gt_title {
+#osnmsiucrt .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -4084,7 +4084,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-width: 0;
 }
 
-#meorrajkyx .gt_subtitle {
+#osnmsiucrt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4096,7 +4096,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-width: 0;
 }
 
-#meorrajkyx .gt_heading {
+#osnmsiucrt .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -4108,13 +4108,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_bottom_border {
+#osnmsiucrt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_col_headings {
+#osnmsiucrt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -4129,7 +4129,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_col_heading {
+#osnmsiucrt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4149,7 +4149,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#meorrajkyx .gt_column_spanner_outer {
+#osnmsiucrt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4161,15 +4161,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 4px;
 }
 
-#meorrajkyx .gt_column_spanner_outer:first-child {
+#osnmsiucrt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#meorrajkyx .gt_column_spanner_outer:last-child {
+#osnmsiucrt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#meorrajkyx .gt_column_spanner {
+#osnmsiucrt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4181,11 +4181,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   width: 100%;
 }
 
-#meorrajkyx .gt_spanner_row {
+#osnmsiucrt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#meorrajkyx .gt_group_heading {
+#osnmsiucrt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4211,7 +4211,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   text-align: left;
 }
 
-#meorrajkyx .gt_empty_group_heading {
+#osnmsiucrt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4226,15 +4226,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: middle;
 }
 
-#meorrajkyx .gt_from_md > :first-child {
+#osnmsiucrt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#meorrajkyx .gt_from_md > :last-child {
+#osnmsiucrt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#meorrajkyx .gt_row {
+#osnmsiucrt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4253,7 +4253,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#meorrajkyx .gt_stub {
+#osnmsiucrt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4266,7 +4266,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#meorrajkyx .gt_stub_row_group {
+#osnmsiucrt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4280,15 +4280,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: top;
 }
 
-#meorrajkyx .gt_row_group_first td {
+#osnmsiucrt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#meorrajkyx .gt_row_group_first th {
+#osnmsiucrt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#meorrajkyx .gt_summary_row {
+#osnmsiucrt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4298,16 +4298,16 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#meorrajkyx .gt_first_summary_row {
+#osnmsiucrt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_first_summary_row.thick {
+#osnmsiucrt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#meorrajkyx .gt_last_summary_row {
+#osnmsiucrt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4317,7 +4317,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_grand_summary_row {
+#osnmsiucrt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4327,7 +4327,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#meorrajkyx .gt_first_grand_summary_row {
+#osnmsiucrt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4337,7 +4337,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_last_grand_summary_row_top {
+#osnmsiucrt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4347,11 +4347,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_striped {
+#osnmsiucrt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#meorrajkyx .gt_table_body {
+#osnmsiucrt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4360,7 +4360,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_footnotes {
+#osnmsiucrt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4374,7 +4374,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_footnote {
+#osnmsiucrt .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -4383,7 +4383,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#meorrajkyx .gt_sourcenotes {
+#osnmsiucrt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4397,7 +4397,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#meorrajkyx .gt_sourcenote {
+#osnmsiucrt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4405,63 +4405,63 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#meorrajkyx .gt_left {
+#osnmsiucrt .gt_left {
   text-align: left;
 }
 
-#meorrajkyx .gt_center {
+#osnmsiucrt .gt_center {
   text-align: center;
 }
 
-#meorrajkyx .gt_right {
+#osnmsiucrt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#meorrajkyx .gt_font_normal {
+#osnmsiucrt .gt_font_normal {
   font-weight: normal;
 }
 
-#meorrajkyx .gt_font_bold {
+#osnmsiucrt .gt_font_bold {
   font-weight: bold;
 }
 
-#meorrajkyx .gt_font_italic {
+#osnmsiucrt .gt_font_italic {
   font-style: italic;
 }
 
-#meorrajkyx .gt_super {
+#osnmsiucrt .gt_super {
   font-size: 65%;
 }
 
-#meorrajkyx .gt_footnote_marks {
+#osnmsiucrt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#meorrajkyx .gt_asterisk {
+#osnmsiucrt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#meorrajkyx .gt_indent_1 {
+#osnmsiucrt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#meorrajkyx .gt_indent_2 {
+#osnmsiucrt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#meorrajkyx .gt_indent_3 {
+#osnmsiucrt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#meorrajkyx .gt_indent_4 {
+#osnmsiucrt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#meorrajkyx .gt_indent_5 {
+#osnmsiucrt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4486,37 +4486,37 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 </tr></tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb372"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb370"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># sem_fitmeasures(model_2_fit)</span></span></code></pre></div>
-<div class="sourceCode" id="cb373"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb371"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fits.esnek2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/FCO/man/gen_fit.html">gen_fit</a></span><span class="op">(</span>mod1 <span class="op">=</span> <span class="va">model_2f</span> , x <span class="op">=</span> <span class="va">yasamdoyum</span><span class="op">[</span>,<span class="fl">4</span><span class="op">:</span><span class="fl">13</span><span class="op">]</span>, rep <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Warning in pop_mod(mod = mod1, x = x, type = type, standardized =
 ## standardized): At least one loading is &gt; 1. Consider revision of standardized.</code></pre>
-<div class="sourceCode" id="cb375"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb373"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/FCO/man/flex_co.html">flex_co</a></span><span class="op">(</span>fits <span class="op">=</span> <span class="va">fits.esnek2</span>, index <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CFI"</span>, <span class="st">"SRMR"</span><span class="op">)</span><span class="op">)</span><span class="op">$</span><span class="va">cutoff</span></span></code></pre></div>
 <pre><code>## Warning in flex_co(fits = fits.esnek2, index = c("CFI", "SRMR")): The number of
 ## replications is lower than the recommended minimum of 500. Consider with care.</code></pre>
 <pre><code>##        CFI       SRMR 
 ## 0.94518618 0.05021492</code></pre>
-<div class="sourceCode" id="cb378"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb376"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_factorloadings.html">sem_factorloadings</a></span><span class="op">(</span><span class="va">model_2_fit</span><span class="op">)</span></span></code></pre></div>
-<div id="osutzotygr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#osutzotygr table {
+<div id="etkupowkuo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#etkupowkuo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#osutzotygr thead, #osutzotygr tbody, #osutzotygr tfoot, #osutzotygr tr, #osutzotygr td, #osutzotygr th {
+#etkupowkuo thead, #etkupowkuo tbody, #etkupowkuo tfoot, #etkupowkuo tr, #etkupowkuo td, #etkupowkuo th {
   border-style: none;
 }
 
-#osutzotygr p {
+#etkupowkuo p {
   margin: 0;
   padding: 0;
 }
 
-#osutzotygr .gt_table {
+#etkupowkuo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4542,12 +4542,12 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-left-color: #D3D3D3;
 }
 
-#osutzotygr .gt_caption {
+#etkupowkuo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#osutzotygr .gt_title {
+#etkupowkuo .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -4559,7 +4559,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-width: 0;
 }
 
-#osutzotygr .gt_subtitle {
+#etkupowkuo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4571,7 +4571,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-width: 0;
 }
 
-#osutzotygr .gt_heading {
+#etkupowkuo .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -4583,13 +4583,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#osutzotygr .gt_bottom_border {
+#etkupowkuo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#osutzotygr .gt_col_headings {
+#etkupowkuo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -4604,7 +4604,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#osutzotygr .gt_col_heading {
+#etkupowkuo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4624,7 +4624,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#osutzotygr .gt_column_spanner_outer {
+#etkupowkuo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4636,15 +4636,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 4px;
 }
 
-#osutzotygr .gt_column_spanner_outer:first-child {
+#etkupowkuo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#osutzotygr .gt_column_spanner_outer:last-child {
+#etkupowkuo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#osutzotygr .gt_column_spanner {
+#etkupowkuo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4656,11 +4656,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   width: 100%;
 }
 
-#osutzotygr .gt_spanner_row {
+#etkupowkuo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#osutzotygr .gt_group_heading {
+#etkupowkuo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4686,7 +4686,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   text-align: left;
 }
 
-#osutzotygr .gt_empty_group_heading {
+#etkupowkuo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4701,15 +4701,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: middle;
 }
 
-#osutzotygr .gt_from_md > :first-child {
+#etkupowkuo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#osutzotygr .gt_from_md > :last-child {
+#etkupowkuo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#osutzotygr .gt_row {
+#etkupowkuo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4728,7 +4728,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#osutzotygr .gt_stub {
+#etkupowkuo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4741,7 +4741,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#osutzotygr .gt_stub_row_group {
+#etkupowkuo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4755,15 +4755,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: top;
 }
 
-#osutzotygr .gt_row_group_first td {
+#etkupowkuo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#osutzotygr .gt_row_group_first th {
+#etkupowkuo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#osutzotygr .gt_summary_row {
+#etkupowkuo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4773,16 +4773,16 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#osutzotygr .gt_first_summary_row {
+#etkupowkuo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#osutzotygr .gt_first_summary_row.thick {
+#etkupowkuo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#osutzotygr .gt_last_summary_row {
+#etkupowkuo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4792,7 +4792,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#osutzotygr .gt_grand_summary_row {
+#etkupowkuo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4802,7 +4802,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#osutzotygr .gt_first_grand_summary_row {
+#etkupowkuo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4812,7 +4812,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-color: #D3D3D3;
 }
 
-#osutzotygr .gt_last_grand_summary_row_top {
+#etkupowkuo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -4822,11 +4822,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#osutzotygr .gt_striped {
+#etkupowkuo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#osutzotygr .gt_table_body {
+#etkupowkuo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4835,7 +4835,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#osutzotygr .gt_footnotes {
+#etkupowkuo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4849,7 +4849,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#osutzotygr .gt_footnote {
+#etkupowkuo .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -4858,7 +4858,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#osutzotygr .gt_sourcenotes {
+#etkupowkuo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4872,7 +4872,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#osutzotygr .gt_sourcenote {
+#etkupowkuo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4880,63 +4880,63 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#osutzotygr .gt_left {
+#etkupowkuo .gt_left {
   text-align: left;
 }
 
-#osutzotygr .gt_center {
+#etkupowkuo .gt_center {
   text-align: center;
 }
 
-#osutzotygr .gt_right {
+#etkupowkuo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#osutzotygr .gt_font_normal {
+#etkupowkuo .gt_font_normal {
   font-weight: normal;
 }
 
-#osutzotygr .gt_font_bold {
+#etkupowkuo .gt_font_bold {
   font-weight: bold;
 }
 
-#osutzotygr .gt_font_italic {
+#etkupowkuo .gt_font_italic {
   font-style: italic;
 }
 
-#osutzotygr .gt_super {
+#etkupowkuo .gt_super {
   font-size: 65%;
 }
 
-#osutzotygr .gt_footnote_marks {
+#etkupowkuo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#osutzotygr .gt_asterisk {
+#etkupowkuo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#osutzotygr .gt_indent_1 {
+#etkupowkuo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#osutzotygr .gt_indent_2 {
+#etkupowkuo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#osutzotygr .gt_indent_3 {
+#etkupowkuo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#osutzotygr .gt_indent_4 {
+#etkupowkuo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#osutzotygr .gt_indent_5 {
+#etkupowkuo .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5077,7 +5077,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <li><p>Eğer iki model hiyerarşikse ve her ikisi de veriye kabul edilebilir ölçüde uyum sağlıyorsa, iki modelin veriye uyumunu karşılaştırmak için ki-kare fark test uygulanabilir.</p></li>
 <li><p>üç faktörlü model iyi uyum göstermediği için sadece örnek amaçlı:</p></li>
 </ul>
-<div class="sourceCode" id="cb379"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb377"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">model_1_fit</span>,<span class="va">model_2_fit</span> <span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -5194,7 +5194,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 </ul>
 <div class="inline-figure"><img src="images/DFA_18.PNG" width="60%" style="display: block; margin: auto;"></div>
 <p>-- Şemalar Rindskopf ve Rose (1988)’dan alınmıştır.</p>
-<div class="sourceCode" id="cb380"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb378"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model_2order</span> <span class="op">&lt;-</span>  <span class="st">"</span></span>
 <span><span class="st">okul =~ okul1 + okul2 + okul3</span></span>
 <span><span class="st">kisi =~ kisi1 + kisi2</span></span>
@@ -5204,7 +5204,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 <span><span class="st"># ikinci düzey model</span></span>
 <span><span class="st">doyum =~ okul + kisi + arkadas + aile</span></span>
 <span><span class="st">"</span></span></code></pre></div>
-<div class="sourceCode" id="cb381"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb379"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">fit_model_2order</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lavaan/man/cfa.html">cfa</a></span><span class="op">(</span><span class="va">model_2order</span>, <span class="va">yasamdoyum</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">fit_model_2order</span>, fit.measures <span class="op">=</span> <span class="cn">TRUE</span>, standardized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## lavaan 0.6.17 ended normally after 67 iterations
@@ -5298,27 +5298,27 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 ##    .arkadas           0.070    0.106    0.661    0.509    0.159    0.159
 ##    .aile              0.518    0.097    5.360    0.000    0.851    0.851
 ##     doyum             0.032    0.021    1.536    0.125    1.000    1.000</code></pre>
-<div class="sourceCode" id="cb383"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb381"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># sem_fitmeasures(fit_model_2order)</span></span></code></pre></div>
-<div class="sourceCode" id="cb384"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb382"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semoutput/man/sem_factorloadings.html">sem_factorloadings</a></span><span class="op">(</span><span class="va">fit_model_2order</span>,standardized <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<div id="mnpmkkerwz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mnpmkkerwz table {
+<div id="bnglzvydbl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bnglzvydbl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mnpmkkerwz thead, #mnpmkkerwz tbody, #mnpmkkerwz tfoot, #mnpmkkerwz tr, #mnpmkkerwz td, #mnpmkkerwz th {
+#bnglzvydbl thead, #bnglzvydbl tbody, #bnglzvydbl tfoot, #bnglzvydbl tr, #bnglzvydbl td, #bnglzvydbl th {
   border-style: none;
 }
 
-#mnpmkkerwz p {
+#bnglzvydbl p {
   margin: 0;
   padding: 0;
 }
 
-#mnpmkkerwz .gt_table {
+#bnglzvydbl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5344,12 +5344,12 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-left-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_caption {
+#bnglzvydbl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mnpmkkerwz .gt_title {
+#bnglzvydbl .gt_title {
   color: #333333;
   font-size: 18px;
   font-weight: bolder;
@@ -5361,7 +5361,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-width: 0;
 }
 
-#mnpmkkerwz .gt_subtitle {
+#bnglzvydbl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5373,7 +5373,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-width: 0;
 }
 
-#mnpmkkerwz .gt_heading {
+#bnglzvydbl .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -5385,13 +5385,13 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_bottom_border {
+#bnglzvydbl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_col_headings {
+#bnglzvydbl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 0px;
   border-top-color: #D3D3D3;
@@ -5406,7 +5406,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_col_heading {
+#bnglzvydbl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5426,7 +5426,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#mnpmkkerwz .gt_column_spanner_outer {
+#bnglzvydbl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5438,15 +5438,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 4px;
 }
 
-#mnpmkkerwz .gt_column_spanner_outer:first-child {
+#bnglzvydbl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mnpmkkerwz .gt_column_spanner_outer:last-child {
+#bnglzvydbl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mnpmkkerwz .gt_column_spanner {
+#bnglzvydbl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5458,11 +5458,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   width: 100%;
 }
 
-#mnpmkkerwz .gt_spanner_row {
+#bnglzvydbl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mnpmkkerwz .gt_group_heading {
+#bnglzvydbl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5488,7 +5488,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   text-align: left;
 }
 
-#mnpmkkerwz .gt_empty_group_heading {
+#bnglzvydbl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5503,15 +5503,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: middle;
 }
 
-#mnpmkkerwz .gt_from_md > :first-child {
+#bnglzvydbl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mnpmkkerwz .gt_from_md > :last-child {
+#bnglzvydbl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mnpmkkerwz .gt_row {
+#bnglzvydbl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5530,7 +5530,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   overflow-x: hidden;
 }
 
-#mnpmkkerwz .gt_stub {
+#bnglzvydbl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5543,7 +5543,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#mnpmkkerwz .gt_stub_row_group {
+#bnglzvydbl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5557,15 +5557,15 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   vertical-align: top;
 }
 
-#mnpmkkerwz .gt_row_group_first td {
+#bnglzvydbl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mnpmkkerwz .gt_row_group_first th {
+#bnglzvydbl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mnpmkkerwz .gt_summary_row {
+#bnglzvydbl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5575,16 +5575,16 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#mnpmkkerwz .gt_first_summary_row {
+#bnglzvydbl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_first_summary_row.thick {
+#bnglzvydbl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mnpmkkerwz .gt_last_summary_row {
+#bnglzvydbl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5594,7 +5594,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_grand_summary_row {
+#bnglzvydbl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5604,7 +5604,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#mnpmkkerwz .gt_first_grand_summary_row {
+#bnglzvydbl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5614,7 +5614,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-top-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_last_grand_summary_row_top {
+#bnglzvydbl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
@@ -5624,11 +5624,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_striped {
+#bnglzvydbl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mnpmkkerwz .gt_table_body {
+#bnglzvydbl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5637,7 +5637,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-bottom-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_footnotes {
+#bnglzvydbl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5651,7 +5651,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_footnote {
+#bnglzvydbl .gt_footnote {
   margin: 0px;
   font-size: 14px;
   padding-top: 4px;
@@ -5660,7 +5660,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#mnpmkkerwz .gt_sourcenotes {
+#bnglzvydbl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5674,7 +5674,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   border-right-color: #D3D3D3;
 }
 
-#mnpmkkerwz .gt_sourcenote {
+#bnglzvydbl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5682,63 +5682,63 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
   padding-right: 15px;
 }
 
-#mnpmkkerwz .gt_left {
+#bnglzvydbl .gt_left {
   text-align: left;
 }
 
-#mnpmkkerwz .gt_center {
+#bnglzvydbl .gt_center {
   text-align: center;
 }
 
-#mnpmkkerwz .gt_right {
+#bnglzvydbl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mnpmkkerwz .gt_font_normal {
+#bnglzvydbl .gt_font_normal {
   font-weight: normal;
 }
 
-#mnpmkkerwz .gt_font_bold {
+#bnglzvydbl .gt_font_bold {
   font-weight: bold;
 }
 
-#mnpmkkerwz .gt_font_italic {
+#bnglzvydbl .gt_font_italic {
   font-style: italic;
 }
 
-#mnpmkkerwz .gt_super {
+#bnglzvydbl .gt_super {
   font-size: 65%;
 }
 
-#mnpmkkerwz .gt_footnote_marks {
+#bnglzvydbl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mnpmkkerwz .gt_asterisk {
+#bnglzvydbl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mnpmkkerwz .gt_indent_1 {
+#bnglzvydbl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mnpmkkerwz .gt_indent_2 {
+#bnglzvydbl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mnpmkkerwz .gt_indent_3 {
+#bnglzvydbl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mnpmkkerwz .gt_indent_4 {
+#bnglzvydbl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mnpmkkerwz .gt_indent_5 {
+#bnglzvydbl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5910,7 +5910,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
     </tr></tfoot>
 </table></div>
 </div>
-<div class="sourceCode" id="cb385"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb383"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">fit_model_2order</span>, <span class="va">model_2_fit</span>, <span class="va">model_1_fit</span> <span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -5973,11 +5973,11 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb386"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb384"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/semPlot/man/semPaths.html">semPaths</a></span><span class="op">(</span><span class="va">fit_model_2order</span>, <span class="st">"std"</span>, weighted <span class="op">=</span> <span class="cn">FALSE</span>, nCharNodes <span class="op">=</span> <span class="fl">7</span>, </span>
 <span>         shapeMan <span class="op">=</span> <span class="st">"rectangle"</span>, sizeMan <span class="op">=</span> <span class="fl">8</span>, sizeMan2 <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="08_DFA_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb387"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb385"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">semTools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/semTools/man/semTools-deprecated.html">reliability</a></span><span class="op">(</span><span class="va">fit_model_2order</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##             okul      kisi   arkadas      aile
 ## alpha  0.6521208 0.6772692 0.5897284 0.7284332
@@ -5985,7 +5985,7 @@ COV_{X_1,X_4} &amp; COV_{X_2,X_4} &amp; COV_{X_3,X_4} &amp; VAR_{X_4}\\
 ## omega2 0.6844920 0.6783398 0.6260070 0.7559295
 ## omega3 0.6853071 0.6783398 0.6260070 0.7624866
 ## avevar 0.4411637 0.5136422 0.4696157 0.5213877</code></pre>
-<div class="sourceCode" id="cb389"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb387"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">semTools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/semTools/man/semTools-deprecated.html">reliability</a></span><span class="op">(</span><span class="va">model_2_fit</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##             okul kisi_arkadas      aile
 ## alpha  0.6521208    0.6802465 0.7284332
