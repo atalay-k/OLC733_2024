@@ -82,7 +82,7 @@ if(x > 3) {
         y <- 0
 }
 x;y
-[1] 6.780665
+[1] 7.440859
 [1] 10
 ```
 
@@ -198,15 +198,15 @@ için test ediniz.
 ```r
 x <- rnorm(1)
 x
-[1] -0.1412439
+[1] -0.8934979
 ```
 
 Random olarak üretilen sayının 1'den büyük olması durumunda çıktı "1'den büyük" -1 ile 1 arasında olması durumunda "-1 ile +1 arasında" -1'den küçük olması durumunda ise "-1'den küçük" çıktısı versin.
 
 
 ```
-[1] 1.451438
-[1] "sayı 1'den büyüktür."
+[1] 0.05583055
+[1] "sayı -1 ile +1 arasında"
 ```
 
 ## if() & all()
@@ -268,7 +268,7 @@ goster3b
 goster3c
 [1] "Dogru"
 [1] 1 2 3
-[1] 640 507 241  51
+[1] 718  61 532 265
 ```
 
 
@@ -739,7 +739,7 @@ time2
 time3 <- system.time(z<-y^2)
 time3
    user  system elapsed 
-      0       0       0 
+   0.00    0.01    0.02 
 ```
 
 
