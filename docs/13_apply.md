@@ -42,7 +42,7 @@ function (X, FUN, ...)
         X <- as.list(X)
     .Internal(lapply(X, FUN))
 }
-<bytecode: 0x00000297ed8f4438>
+<bytecode: 0x000001c895c1c3c8>
 <environment: namespace:base>
 ```
 

@@ -203,8 +203,8 @@
 <span><span class="va">nd1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">n</span>, mean<span class="op">=</span><span class="fl">50</span>, sd<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">nd1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">nd1</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] 49.7
-## [1] 8.86</code></pre>
+<pre><code>## [1] 48.5
+## [1] 10.8</code></pre>
 </div>
 <div style="flex: 1;">
 <div class="sourceCode" id="cb748"><pre class="downlit sourceCode r">
@@ -223,8 +223,8 @@
 <code class="sourceCode R"><span><span class="va">nd2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">n</span>, min<span class="op">=</span><span class="fl">50</span>, max<span class="op">=</span><span class="fl">150</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">nd2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">nd2</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] 50.8
-## [1] 30</code></pre>
+<pre><code>## [1] 58
+## [1] 27.8</code></pre>
 </div>
 <div style="flex: 2;">
 <div class="sourceCode" id="cb751"><pre class="downlit sourceCode r">
@@ -392,7 +392,7 @@
 ##     dim(u) = d
 ##     return(ifelse(i$f &gt; u, 1, 0))
 ## }
-## &lt;bytecode: 0x000001d15e380f28&gt;
+## &lt;bytecode: 0x000002e15ea55f50&gt;
 ## &lt;environment: namespace:irtoys&gt;</code></pre>
 <p><strong>Aşama 4</strong></p>
 <p>Üretilen verinin parametrelerinin kestirimi</p>
@@ -928,19 +928,19 @@ ve cevap matrisini tutsun</p></li>
 <span> <span class="op">}</span>   </span>
 <span><span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">stopCluster</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span> <span class="co"># cekirdek atama işini bitirir.</span></span></code></pre></div>
 <pre><code>## [[1]]
-## [1] -984
+## [1] 2527
 ## 
 ## [[2]]
-## [1] 1140
+## [1] -1073
 ## 
 ## [[3]]
-## [1] -845
+## [1] 850
 ## 
 ## [[4]]
-## [1] -1721
+## [1] -366
 ## 
 ## [[5]]
-## [1] 1800</code></pre>
+## [1] 684</code></pre>
 </div>
 </div>
 <div class="sourceCode" id="cb809"><pre class="downlit sourceCode r">
