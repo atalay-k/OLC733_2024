@@ -99,6 +99,7 @@
 <li><a class="" href="mtk.html"><span class="header-section-number">17</span> MTK</a></li>
 <li><a class="" href="mtk-ile-madde-analizi-uygulamas%C4%B1.html"><span class="header-section-number">18</span> MTK ile Madde Analizi Uygulaması</a></li>
 <li><a class="active" href="veri-%C3%BCretimi.html"><span class="header-section-number">19</span> Veri Üretimi</a></li>
+<li><a class="" href="pl-verisinin-%C3%BCretimi.html"><span class="header-section-number">20</span> 2pl Verisinin Üretimi</a></li>
 </ul>
 
         <div class="book-extra">
@@ -202,8 +203,8 @@
 <span><span class="va">nd1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">n</span>, mean<span class="op">=</span><span class="fl">50</span>, sd<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">nd1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">nd1</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] 53.2
-## [1] 10.9</code></pre>
+<pre><code>## [1] 49.7
+## [1] 8.86</code></pre>
 </div>
 <div style="flex: 1;">
 <div class="sourceCode" id="cb748"><pre class="downlit sourceCode r">
@@ -222,8 +223,8 @@
 <code class="sourceCode R"><span><span class="va">nd2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span>n<span class="op">=</span><span class="va">n</span>, min<span class="op">=</span><span class="fl">50</span>, max<span class="op">=</span><span class="fl">150</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">nd2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">nd2</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] 50.1
-## [1] 25.5</code></pre>
+<pre><code>## [1] 50.8
+## [1] 30</code></pre>
 </div>
 <div style="flex: 2;">
 <div class="sourceCode" id="cb751"><pre class="downlit sourceCode r">
@@ -391,7 +392,7 @@
 ##     dim(u) = d
 ##     return(ifelse(i$f &gt; u, 1, 0))
 ## }
-## &lt;bytecode: 0x0000013ee7ef1e70&gt;
+## &lt;bytecode: 0x000001d15e380f28&gt;
 ## &lt;environment: namespace:irtoys&gt;</code></pre>
 <p><strong>Aşama 4</strong></p>
 <p>Üretilen verinin parametrelerinin kestirimi</p>
@@ -927,19 +928,19 @@ ve cevap matrisini tutsun</p></li>
 <span> <span class="op">}</span>   </span>
 <span><span class="fu"><a href="https://rdrr.io/r/parallel/makeCluster.html">stopCluster</a></span><span class="op">(</span><span class="va">cl</span><span class="op">)</span> <span class="co"># cekirdek atama işini bitirir.</span></span></code></pre></div>
 <pre><code>## [[1]]
-## [1] 775
+## [1] -984
 ## 
 ## [[2]]
-## [1] -421
+## [1] 1140
 ## 
 ## [[3]]
-## [1] -109
+## [1] -845
 ## 
 ## [[4]]
-## [1] -1294
+## [1] -1721
 ## 
 ## [[5]]
-## [1] 32.7</code></pre>
+## [1] 1800</code></pre>
 </div>
 </div>
 <div class="sourceCode" id="cb809"><pre class="downlit sourceCode r">
@@ -1174,32 +1175,6 @@ ve cevap matrisini tutsun</p></li>
   |                                                                            
   |======================================================================| 100%</code></pre>
 
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
-<div id="ref-bertrams2009" class="csl-entry">
-Bertrams, A., &amp; Dickhäuser, O. (2009). Messung dispositioneller Selbstkontroll-Kapazität. <em>Diagnostica</em>, <em>55</em>(1), 2–10. <a href="https://doi.org/10.1026/0012-1924.55.1.2">https://doi.org/10.1026/0012-1924.55.1.2</a>
-</div>
-<div id="ref-QME" class="csl-entry">
-Brown, E., Zieffler, A., Nickodem, K., Vue, K., &amp; Anderson, E. (2016). <em>QME: Classic test theory item analysis</em>. <a href="https://github.com/zief0002/QME">https://github.com/zief0002/QME</a>
-</div>
-<div id="ref-DataExplorer" class="csl-entry">
-Cui, B. (2024). <em>DataExplorer: Automate data exploration and treatment</em>. <a href="https://CRAN.R-project.org/package=DataExplorer">https://CRAN.R-project.org/package=DataExplorer</a>
-</div>
-<div id="ref-car" class="csl-entry">
-Fox, J., &amp; Weisberg, S. (2019). <em>An <span></span>r<span></span> companion to applied regression</em>. <a href="https://socialsciences.mcmaster.ca/jfox/Books/Companion/">https://socialsciences.mcmaster.ca/jfox/Books/Companion/</a>
-</div>
-<div id="ref-ggcorrplot" class="csl-entry">
-Kassambara, A. (2023). <em>Ggcorrplot: Visualization of a correlation matrix using ’ggplot2’</em>. <a href="https://CRAN.R-project.org/package=ggcorrplot">https://CRAN.R-project.org/package=ggcorrplot</a>
-</div>
-<div id="ref-difR" class="csl-entry">
-Magis, D., Beland, S., Tuerlinckx, F., &amp; De Boeck, P. (2010). <em>A general framework and an r package for the detection of dichotomous differential item functioning</em>. <em>42</em>.
-</div>
-<div id="ref-skimr" class="csl-entry">
-Waring, E., Quinn, M., McNamara, A., Arino de la Rubia, E., Zhu, H., &amp; Ellis, S. (2022). <em>Skimr: Compact and flexible summaries of data</em>. <a href="https://CRAN.R-project.org/package=skimr">https://CRAN.R-project.org/package=skimr</a>
-</div>
-<div id="ref-psych" class="csl-entry">
-William Revelle. (2024). <em>Psych: Procedures for psychological, psychometric, and personality research</em>. <a href="https://CRAN.R-project.org/package=psych">https://CRAN.R-project.org/package=psych</a>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1406,7 +1381,7 @@ $( document ).ready(function() {
 });
 </script><div class="chapter-nav">
 <div class="prev"><a href="mtk-ile-madde-analizi-uygulamas%C4%B1.html"><span class="header-section-number">18</span> MTK ile Madde Analizi Uygulaması</a></div>
-<div class="empty"></div>
+<div class="next"><a href="pl-verisinin-%C3%BCretimi.html"><span class="header-section-number">20</span> 2pl Verisinin Üretimi</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">

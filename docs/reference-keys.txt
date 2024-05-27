@@ -299,3 +299,5 @@ r-paketleri-ile-veri-üretimi-1
 veri-üretiminde-tekrar
 doparallel
 foreach
+pl-verisinin-üretimi
+çok-kategorili-madde-puanları-verisinin-üretimi
