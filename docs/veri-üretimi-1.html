@@ -117,71 +117,71 @@
 </h2>
 <p>İki Kategorili Madde Puanları üretimi Rasch modele göre</p>
 <p>p &lt;- 1/(1+exp(-(theta-bb))</p>
-<div class="sourceCode" id="cb818"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb820"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">theta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">madde_sayisi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span></span>
 <span><span class="va">kisi_sayisi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">theta</span><span class="op">)</span></span>
 <span><span class="va">replikasyon</span> <span class="op">&lt;-</span> <span class="fl">10</span></span></code></pre></div>
-<div class="sourceCode" id="cb819"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb821"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">b.mat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="va">b</span>, <span class="va">kisi_sayisi</span>, <span class="va">madde_sayisi</span>, byrow<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">b.mat</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##           [,1]     [,2]      [,3]      [,4]      [,5]      [,6]   [,7]
-## [1,] -1.088625 0.105625 -0.118729 0.7833514 0.3027934 0.9895439 1.2622
-## [2,] -1.088625 0.105625 -0.118729 0.7833514 0.3027934 0.9895439 1.2622
-## [3,] -1.088625 0.105625 -0.118729 0.7833514 0.3027934 0.9895439 1.2622
-## [4,] -1.088625 0.105625 -0.118729 0.7833514 0.3027934 0.9895439 1.2622
-## [5,] -1.088625 0.105625 -0.118729 0.7833514 0.3027934 0.9895439 1.2622
-## [6,] -1.088625 0.105625 -0.118729 0.7833514 0.3027934 0.9895439 1.2622
-##           [,8]    [,9]     [,10]      [,11]     [,12]      [,13]     [,14]
-## [1,] 0.7066962 1.02836 -1.027924 -0.9188015 0.7487808 -0.8461356 0.4857005
-## [2,] 0.7066962 1.02836 -1.027924 -0.9188015 0.7487808 -0.8461356 0.4857005
-## [3,] 0.7066962 1.02836 -1.027924 -0.9188015 0.7487808 -0.8461356 0.4857005
-## [4,] 0.7066962 1.02836 -1.027924 -0.9188015 0.7487808 -0.8461356 0.4857005
-## [5,] 0.7066962 1.02836 -1.027924 -0.9188015 0.7487808 -0.8461356 0.4857005
-## [6,] 0.7066962 1.02836 -1.027924 -0.9188015 0.7487808 -0.8461356 0.4857005
-##         [,15]    [,16]      [,17]      [,18]      [,19]      [,20]
-## [1,] 1.237421 1.524717 0.03098712 -0.4321774 0.05611239 -0.2232667
-## [2,] 1.237421 1.524717 0.03098712 -0.4321774 0.05611239 -0.2232667
-## [3,] 1.237421 1.524717 0.03098712 -0.4321774 0.05611239 -0.2232667
-## [4,] 1.237421 1.524717 0.03098712 -0.4321774 0.05611239 -0.2232667
-## [5,] 1.237421 1.524717 0.03098712 -0.4321774 0.05611239 -0.2232667
-## [6,] 1.237421 1.524717 0.03098712 -0.4321774 0.05611239 -0.2232667</code></pre>
-<div class="sourceCode" id="cb821"><pre class="downlit sourceCode r">
+<pre><code>##            [,1]      [,2]      [,3]      [,4]      [,5]      [,6]      [,7]
+## [1,] -0.1968303 -1.965699 0.3494793 0.1412925 -1.017317 -1.130268 0.7437413
+## [2,] -0.1968303 -1.965699 0.3494793 0.1412925 -1.017317 -1.130268 0.7437413
+## [3,] -0.1968303 -1.965699 0.3494793 0.1412925 -1.017317 -1.130268 0.7437413
+## [4,] -0.1968303 -1.965699 0.3494793 0.1412925 -1.017317 -1.130268 0.7437413
+## [5,] -0.1968303 -1.965699 0.3494793 0.1412925 -1.017317 -1.130268 0.7437413
+## [6,] -0.1968303 -1.965699 0.3494793 0.1412925 -1.017317 -1.130268 0.7437413
+##            [,8]      [,9]      [,10]    [,11]     [,12]     [,13]      [,14]
+## [1,] -0.3481656 0.9434318 -0.3475167 0.966566 0.4614009 0.3683399 -0.2071442
+## [2,] -0.3481656 0.9434318 -0.3475167 0.966566 0.4614009 0.3683399 -0.2071442
+## [3,] -0.3481656 0.9434318 -0.3475167 0.966566 0.4614009 0.3683399 -0.2071442
+## [4,] -0.3481656 0.9434318 -0.3475167 0.966566 0.4614009 0.3683399 -0.2071442
+## [5,] -0.3481656 0.9434318 -0.3475167 0.966566 0.4614009 0.3683399 -0.2071442
+## [6,] -0.3481656 0.9434318 -0.3475167 0.966566 0.4614009 0.3683399 -0.2071442
+##          [,15]     [,16]      [,17]      [,18]      [,19]      [,20]
+## [1,] -1.655824 -2.190674 -0.8106681 -0.3208806 -0.9449606 -0.1965492
+## [2,] -1.655824 -2.190674 -0.8106681 -0.3208806 -0.9449606 -0.1965492
+## [3,] -1.655824 -2.190674 -0.8106681 -0.3208806 -0.9449606 -0.1965492
+## [4,] -1.655824 -2.190674 -0.8106681 -0.3208806 -0.9449606 -0.1965492
+## [5,] -1.655824 -2.190674 -0.8106681 -0.3208806 -0.9449606 -0.1965492
+## [6,] -1.655824 -2.190674 -0.8106681 -0.3208806 -0.9449606 -0.1965492</code></pre>
+<div class="sourceCode" id="cb823"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">theta.mat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="va">theta</span>, <span class="va">kisi_sayisi</span>, <span class="va">madde_sayisi</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">theta.mat</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##            [,1]       [,2]       [,3]       [,4]       [,5]       [,6]
-## [1,]  0.3826399  0.3826399  0.3826399  0.3826399  0.3826399  0.3826399
-## [2,] -2.0568702 -2.0568702 -2.0568702 -2.0568702 -2.0568702 -2.0568702
-## [3,] -0.1406304 -0.1406304 -0.1406304 -0.1406304 -0.1406304 -0.1406304
-## [4,] -0.8143989 -0.8143989 -0.8143989 -0.8143989 -0.8143989 -0.8143989
-## [5,]  0.5807935  0.5807935  0.5807935  0.5807935  0.5807935  0.5807935
-## [6,]  0.5176484  0.5176484  0.5176484  0.5176484  0.5176484  0.5176484
+## [1,] -0.2052926 -0.2052926 -0.2052926 -0.2052926 -0.2052926 -0.2052926
+## [2,]  1.7730974  1.7730974  1.7730974  1.7730974  1.7730974  1.7730974
+## [3,]  1.4590805  1.4590805  1.4590805  1.4590805  1.4590805  1.4590805
+## [4,] -0.1869812 -0.1869812 -0.1869812 -0.1869812 -0.1869812 -0.1869812
+## [5,] -1.8804226 -1.8804226 -1.8804226 -1.8804226 -1.8804226 -1.8804226
+## [6,] -0.3560955 -0.3560955 -0.3560955 -0.3560955 -0.3560955 -0.3560955
 ##            [,7]       [,8]       [,9]      [,10]      [,11]      [,12]
-## [1,]  0.3826399  0.3826399  0.3826399  0.3826399  0.3826399  0.3826399
-## [2,] -2.0568702 -2.0568702 -2.0568702 -2.0568702 -2.0568702 -2.0568702
-## [3,] -0.1406304 -0.1406304 -0.1406304 -0.1406304 -0.1406304 -0.1406304
-## [4,] -0.8143989 -0.8143989 -0.8143989 -0.8143989 -0.8143989 -0.8143989
-## [5,]  0.5807935  0.5807935  0.5807935  0.5807935  0.5807935  0.5807935
-## [6,]  0.5176484  0.5176484  0.5176484  0.5176484  0.5176484  0.5176484
+## [1,] -0.2052926 -0.2052926 -0.2052926 -0.2052926 -0.2052926 -0.2052926
+## [2,]  1.7730974  1.7730974  1.7730974  1.7730974  1.7730974  1.7730974
+## [3,]  1.4590805  1.4590805  1.4590805  1.4590805  1.4590805  1.4590805
+## [4,] -0.1869812 -0.1869812 -0.1869812 -0.1869812 -0.1869812 -0.1869812
+## [5,] -1.8804226 -1.8804226 -1.8804226 -1.8804226 -1.8804226 -1.8804226
+## [6,] -0.3560955 -0.3560955 -0.3560955 -0.3560955 -0.3560955 -0.3560955
 ##           [,13]      [,14]      [,15]      [,16]      [,17]      [,18]
-## [1,]  0.3826399  0.3826399  0.3826399  0.3826399  0.3826399  0.3826399
-## [2,] -2.0568702 -2.0568702 -2.0568702 -2.0568702 -2.0568702 -2.0568702
-## [3,] -0.1406304 -0.1406304 -0.1406304 -0.1406304 -0.1406304 -0.1406304
-## [4,] -0.8143989 -0.8143989 -0.8143989 -0.8143989 -0.8143989 -0.8143989
-## [5,]  0.5807935  0.5807935  0.5807935  0.5807935  0.5807935  0.5807935
-## [6,]  0.5176484  0.5176484  0.5176484  0.5176484  0.5176484  0.5176484
+## [1,] -0.2052926 -0.2052926 -0.2052926 -0.2052926 -0.2052926 -0.2052926
+## [2,]  1.7730974  1.7730974  1.7730974  1.7730974  1.7730974  1.7730974
+## [3,]  1.4590805  1.4590805  1.4590805  1.4590805  1.4590805  1.4590805
+## [4,] -0.1869812 -0.1869812 -0.1869812 -0.1869812 -0.1869812 -0.1869812
+## [5,] -1.8804226 -1.8804226 -1.8804226 -1.8804226 -1.8804226 -1.8804226
+## [6,] -0.3560955 -0.3560955 -0.3560955 -0.3560955 -0.3560955 -0.3560955
 ##           [,19]      [,20]
-## [1,]  0.3826399  0.3826399
-## [2,] -2.0568702 -2.0568702
-## [3,] -0.1406304 -0.1406304
-## [4,] -0.8143989 -0.8143989
-## [5,]  0.5807935  0.5807935
-## [6,]  0.5176484  0.5176484</code></pre>
-<div class="sourceCode" id="cb823"><pre class="downlit sourceCode r">
+## [1,] -0.2052926 -0.2052926
+## [2,]  1.7730974  1.7730974
+## [3,]  1.4590805  1.4590805
+## [4,] -0.1869812 -0.1869812
+## [5,] -1.8804226 -1.8804226
+## [6,] -0.3560955 -0.3560955</code></pre>
+<div class="sourceCode" id="cb825"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="st">"Rasch"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Warning in dir.create("Rasch"): 'Rasch' already exists</code></pre>
-<div class="sourceCode" id="cb825"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb827"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">for</span> <span class="op">(</span><span class="va">r</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">replikasyon</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">logit</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">theta.mat</span><span class="op">-</span><span class="va">b.mat</span><span class="op">)</span></span>
 <span>  <span class="va">P</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="va">logit</span><span class="op">)</span><span class="op">)</span></span>
@@ -198,7 +198,7 @@
 </h2>
 <p>İki Kategorili Madde Puanları üretimi 2pl modele göre</p>
 <p>p &lt;- 1/(1+exp(-((aa)*(theta-bb))))</p>
-<div class="sourceCode" id="cb826"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb828"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">21</span><span class="op">)</span></span>
 <span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Lognormal.html">rlnorm</a></span><span class="op">(</span><span class="fl">20</span>, meanlog<span class="op">=</span><span class="fl">0.000</span>, sdlog<span class="op">=</span><span class="fl">0.200</span><span class="op">)</span>, <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">20</span>, mean<span class="op">=</span><span class="fl">0.000</span>, sd<span class="op">=</span><span class="fl">1.000</span><span class="op">)</span>, <span class="fl">3</span><span class="op">)</span></span>
@@ -207,21 +207,21 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">41</span><span class="op">)</span></span>
 <span><span class="va">birey</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">400</span>, mean<span class="op">=</span><span class="fl">0.500</span>, sd<span class="op">=</span><span class="fl">0.750</span><span class="op">)</span></span>
 <span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">birey</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb827"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb829"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">theta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">birey</span>, <span class="va">k</span><span class="op">)</span></span>
 <span><span class="va">aa</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">a</span>, each<span class="op">=</span><span class="va">n</span><span class="op">)</span></span>
 <span><span class="va">bb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">b</span>, each<span class="op">=</span><span class="va">n</span><span class="op">)</span></span>
 <span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">theta</span><span class="op">-</span><span class="va">bb</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">p</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0.361 0.574 0.732 0.779 0.715 0.636</code></pre>
-<div class="sourceCode" id="cb829"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb831"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="va">k</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">rr</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0.339 0.154 0.363 0.315 0.627 0.177</code></pre>
-<div class="sourceCode" id="cb831"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb833"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">puan</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">p</span><span class="op">&gt;</span><span class="va">rr</span>, <span class="fl">1</span>, <span class="fl">0</span><span class="op">)</span></span>
 <span><span class="va">puan</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="va">puan</span>, ncol<span class="op">=</span><span class="va">k</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb832"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb834"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">madde2PL</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/scan.html">scan</a></span><span class="op">(</span><span class="st">"import/madde2PL.dat"</span><span class="op">)</span>, byrow<span class="op">=</span><span class="cn">TRUE</span>, ncol<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">41</span><span class="op">)</span></span>
 <span><span class="va">birey</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">400</span><span class="op">)</span></span>
@@ -252,7 +252,7 @@
 <li><p>Rastgele değer, <strong>x</strong> kategorisinde hesaplanan olasılık değerinden küçük ancak <strong>x+1</strong> kategorisinde hesaplanan olasılık değerinden büyük ise madde puanı olarak <strong>x-1</strong> değeri atanır.</p></li>
 <li><p>a parametresi</p></li>
 </ul>
-<div class="sourceCode" id="cb833"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb835"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">26</span><span class="op">)</span></span>
 <span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Lognormal.html">rlnorm</a></span><span class="op">(</span><span class="fl">8</span>, meanlog<span class="op">=</span><span class="fl">0.000</span>, sdlog<span class="op">=</span><span class="fl">0.200</span><span class="op">)</span>, <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">a</span></span></code></pre></div>
@@ -260,12 +260,12 @@
 <ul>
 <li>b1 parametresi</li>
 </ul>
-<div class="sourceCode" id="cb835"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb837"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">b1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span>from<span class="op">=</span><span class="op">-</span><span class="fl">2.500</span>, to<span class="op">=</span><span class="op">-</span><span class="fl">0.750</span>, by<span class="op">=</span><span class="fl">0.250</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>diger b parametreleri</li>
 </ul>
-<div class="sourceCode" id="cb836"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb838"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">b2</span> <span class="op">&lt;-</span> <span class="va">b1</span><span class="op">+</span><span class="fl">1.250</span></span>
 <span><span class="va">b3</span> <span class="op">&lt;-</span> <span class="va">b2</span><span class="op">+</span><span class="fl">1.250</span></span>
 <span><span class="va">b4</span> <span class="op">&lt;-</span> <span class="va">b3</span><span class="op">+</span><span class="fl">1.250</span></span>
@@ -282,11 +282,11 @@
 <ul>
 <li>Madde sayısının nesneye atanması</li>
 </ul>
-<div class="sourceCode" id="cb838"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb840"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">k</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
 <span><span class="va">k</span></span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
-<div class="sourceCode" id="cb840"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb842"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">46</span><span class="op">)</span></span>
 <span><span class="va">birey</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">400</span><span class="op">)</span></span>
 <span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">birey</span><span class="op">)</span></span>
@@ -305,12 +305,12 @@
 <li><p>Her bir bireyin her bir maddeye ilişkin belirli bir kategorinin üstünde yanıt verme olasılıklarını (p1, p2, p3 ve p4) hesaplamak için birey parametresinin madde sayısı kadar tekrar etmesi gerekmektedir.</p></li>
 <li><p>Yetenek bireyin tekrarlanması</p></li>
 </ul>
-<div class="sourceCode" id="cb842"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb844"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">theta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">birey</span>, <span class="va">k</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Madde parametrelerinin tekrarlanması</li>
 </ul>
-<div class="sourceCode" id="cb843"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb845"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">aa</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">a</span>, each<span class="op">=</span><span class="va">n</span><span class="op">)</span></span>
 <span><span class="va">bb1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">b1</span>, each<span class="op">=</span><span class="va">n</span><span class="op">)</span></span>
 <span><span class="va">bb2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">b2</span>, each<span class="op">=</span><span class="va">n</span><span class="op">)</span></span>
@@ -318,14 +318,14 @@
 <span><span class="va">bb4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="va">b4</span>, each<span class="op">=</span><span class="va">n</span><span class="op">)</span></span></code></pre></div>
 <div style="display: flex; justify-content: space-between;">
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb844"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb846"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">p1</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">theta</span><span class="op">-</span><span class="va">bb1</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">p2</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">theta</span><span class="op">-</span><span class="va">bb2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">p3</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">theta</span><span class="op">-</span><span class="va">bb3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">p4</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">/</span><span class="op">(</span><span class="fl">1</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="op">-</span><span class="op">(</span><span class="op">(</span><span class="va">aa</span><span class="op">)</span><span class="op">*</span><span class="op">(</span><span class="va">theta</span><span class="op">-</span><span class="va">bb4</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb845"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb847"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">par</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">p1</span>,<span class="va">p2</span>,<span class="va">p3</span>,<span class="va">p4</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">par</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##             p1        p2        p3        p4
@@ -337,9 +337,9 @@
 ## [6,] 0.7731207 0.6010321 0.3997558 0.2274559</code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb847"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb849"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rr</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="va">k</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb848"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb850"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">par</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##             p1        p2        p3        p4
 ## [1,] 0.7399113 0.5570647 0.3573252 0.1973021
@@ -348,27 +348,27 @@
 ## [4,] 0.9197751 0.8352146 0.6914261 0.4976362
 ## [5,] 0.9165028 0.8291341 0.6820595 0.4867537
 ## [6,] 0.7731207 0.6010321 0.3997558 0.2274559</code></pre>
-<div class="sourceCode" id="cb850"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb852"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">rr</span>, <span class="fl">6</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0.3757090 0.4476721 0.7699587 0.7494361 0.9873121 0.9012236</code></pre>
 <p>Koşul cümlelerini yazmadan önce birinci bireyin birinci madde için puanını hesaplayalım.
 rastgele hesaplanan olasılık değeri 0.3757090'dur.</p>
-<div class="sourceCode" id="cb852"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb854"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rr</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
 <pre><code>## [1] 0.375709</code></pre>
-<p>Birinci kategorinin doğru cevaplanma olasılığı 0.7399113'dir.</p>
-<p>Birinci kategorinin doğru cevaplanma olasılığı rastgele hesaplanan olasılık değerinden büyük olmadığı için bu bireyin cevabı 0'dan büyük olacaktır.</p>
-<div class="sourceCode" id="cb854"><pre class="downlit sourceCode r">
+<p>Birinci kategorinin cevaplanma olasılığı 0.7399113'dir.</p>
+<p>Birinci kategorinin cevaplanma olasılığı rastgele hesaplanan olasılık değerinden büyük olmadığı için bu bireyin cevabı 0'dan büyük olacaktır.</p>
+<div class="sourceCode" id="cb856"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rr</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>  <span class="op">&gt;</span>  <span class="va">p1</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<p>İkinci kategorinin doğru cevaplanma olasılığı 0.5570647'dir.</p>
-<p>rastgele hesaplanan olasılık değeri 0.3757090, birinci kategorinin doğru cevaplanma olasılığından (0.7399113) küçük, ancak ikinci kategorinin doğru cevaplanma olasılığından (0.5570647) büyük olmadığı için birey cevabı 1'den büyük olacaktır.</p>
-<div class="sourceCode" id="cb856"><pre class="downlit sourceCode r">
+<p>İkinci kategorinin cevaplanma olasılığı 0.5570647'dir.</p>
+<p>rastgele hesaplanan olasılık değeri 0.3757090, birinci kategorinin cevaplanma olasılığından (0.7399113) küçük, ancak ikinci kategorinin cevaplanma olasılığından (0.5570647) büyük olmadığı için birey cevabı 1'den büyük olacaktır.</p>
+<div class="sourceCode" id="cb858"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rr</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">&lt;</span><span class="va">p1</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>  <span class="op">&amp;</span>   <span class="va">rr</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">&gt;</span><span class="va">p2</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<p>Üçünü kategorinin doğru cevaplanma olasılığı 0.3573252'dir.</p>
-<p>rastgele hesaplanan olasılık değeri 0.3757090, ikinci kategorinin doğru cevaplanma olasılığından (0.5570647) küçük, ancak üçüncü kategorinin doğru cevaplanma olasılığından (0.3573252) büyük olduğu için birey cevabı 2 olacaktır.</p>
-<div class="sourceCode" id="cb858"><pre class="downlit sourceCode r">
+<p>Üçünü kategorinin cevaplanma olasılığı 0.3573252'dir.</p>
+<p>rastgele hesaplanan olasılık değeri 0.3757090, ikinci kategorinin cevaplanma olasılığından (0.5570647) küçük, ancak üçüncü kategorinin cevaplanma olasılığından (0.3573252) büyük olduğu için birey cevabı 2 olacaktır.</p>
+<div class="sourceCode" id="cb860"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rr</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">&lt;</span><span class="va">p2</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>  <span class="op">&amp;</span>  <span class="va">rr</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">&gt;</span><span class="va">p3</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
@@ -381,7 +381,7 @@ rastgele hesaplanan olasılık değeri 0.3757090'dur.</p>
 <ul>
 <li>Madde Puanlarının Atanması</li>
 </ul>
-<div class="sourceCode" id="cb861"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb863"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">puan</span> <span class="op">&lt;-</span> <span class="fl">0</span></span>
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">j</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="op">(</span><span class="va">k</span><span class="op">*</span><span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="kw">if</span><span class="op">(</span><span class="op">(</span><span class="va">rr</span><span class="op">[</span><span class="va">j</span><span class="op">]</span><span class="op">&gt;</span><span class="va">p1</span><span class="op">[</span><span class="va">j</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="va">puan</span><span class="op">[</span><span class="va">j</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fl">0</span> </span>
@@ -395,7 +395,7 @@ rastgele hesaplanan olasılık değeri 0.3757090'dur.</p>
 <ul>
 <li>"puan" matrisinin ilk 2 satırının seçilmesi</li>
 </ul>
-<div class="sourceCode" id="cb862"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb864"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">puan</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>,<span class="op">]</span></span>
 <span><span class="va">id</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="va">n</span>, ncol<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span></span>
@@ -403,7 +403,7 @@ rastgele hesaplanan olasılık değeri 0.3757090'dur.</p>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
 ## [1,]    2    1    3    0    0    2    0    0
 ## [2,]    3    4    3    3    2    2    1    4</code></pre>
-<div class="sourceCode" id="cb864"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb866"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">maddeAT</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">a</span>,<span class="va">b1</span>,<span class="va">b2</span>,<span class="va">b3</span>,<span class="va">b4</span><span class="op">)</span></span>
 <span><span class="va">birey</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">400</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -411,11 +411,11 @@ rastgele hesaplanan olasılık değeri 0.3757090'dur.</p>
 <h2>
 <span class="header-section-number">20.4</span> mirt paketi ile veri üretimi<a class="anchor" aria-label="anchor" href="#mirt-paketi-ile-veri-%C3%BCretimi"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb865"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb867"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/philchalmers/mirt">mirt</a></span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Loading required package: stats4</code></pre>
 <pre><code>## Loading required package: lattice</code></pre>
-<div class="sourceCode" id="cb868"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb870"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Lognormal.html">rlnorm</a></span><span class="op">(</span><span class="fl">20</span>,<span class="fl">.2</span>,<span class="fl">.3</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">diffs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">20</span><span class="op">*</span><span class="fl">4</span>, <span class="fl">.3</span>, <span class="fl">1</span><span class="op">)</span>, <span class="fl">20</span><span class="op">)</span>, <span class="fl">1</span>, <span class="va">cumsum</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">diffs</span> <span class="op">&lt;-</span> <span class="op">-</span><span class="op">(</span><span class="va">diffs</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/colSums.html">rowMeans</a></span><span class="op">(</span><span class="va">diffs</span><span class="op">)</span><span class="op">)</span></span>

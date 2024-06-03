@@ -150,7 +150,7 @@
 <span class="header-section-number">18.2</span> mirt paketi yüklenmesi<a class="anchor" aria-label="anchor" href="#mirt-paketi-y%C3%BCklenmesi"><i class="fas fa-link"></i></a>
 </h2>
 <p>Analizler <strong>mirt</strong> paketinde yapılacaktır. Paketin yüklenmesi ve aktivite edilmesi aşağıdaki kodlarla sağlanır.</p>
-<div class="sourceCode" id="cb659"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb661"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("mirt")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/philchalmers/mirt">"mirt"</a></span><span class="op">)</span></span></code></pre></div>
 <p>MTK analizlerinin yapılacağı paketlere <strong>ltm</strong> Rizopoulos (2006) ve <strong>irtoys</strong> Partchev vd. (2017) örnek verilebilir. Choi ve Asilkalkan (2019) <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg><a href="https://doi.org/10.1080/15366367.2019.1586404">makalesinde</a> 45 farklı MTK paketine ilişkin açıklamalar bulunmaktadır.</p>
@@ -158,7 +158,7 @@
 <li>1PL modelin hazırlanması</li>
 </ul>
 <p>İlk olarak test edilecek model hazırlanmalıdır.</p>
-<div class="sourceCode" id="cb660"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb662"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">birpl_model</span> <span class="op">&lt;-</span> <span class="st">"F = 1-15</span></span>
 <span><span class="st">                CONSTRAIN = (1-15, a1)"</span></span></code></pre></div>
 <p>Kodun ilk satırı, tek bir gizil özelliğin (F'nin) veri setindeki 1 ile 15 arasındaki sütunlardaki maddeler tarafından ölçüldüğünü göstermektedir</p>
@@ -166,14 +166,14 @@
 <ul>
 <li>Sadece ilk 10 maddede madde ayırt ediciliğini aynı olacak şekilde sınırlamak isterseniz modeli aşağıdaki gibi düzenleyebilirsiniz.</li>
 </ul>
-<div class="sourceCode" id="cb661"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb663"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">birpl_model_v1</span> <span class="op">&lt;-</span> <span class="st">"F = 1-15</span></span>
 <span><span class="st">                CONSTRAIN = (1-10, a1)"</span></span></code></pre></div>
 <ul>
 <li>Veri aktarımı <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg>: <a href="https://raw.githubusercontent.com/atalay-k/mirt_k/main/dichotomous.csv">Veriyi açılan linkten farklı kaydet ile alabilirsiniz.</a>
 </li>
 </ul>
-<div class="sourceCode" id="cb662"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb664"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
 <span><span class="va">ikikategorili</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"import/dichotomous.csv"</span><span class="op">)</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ikikategorili</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
@@ -232,14 +232,14 @@
 </tbody>
 </table></div>
 </div>
-<div class="sourceCode" id="cb663"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb665"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">DataExplorer</span><span class="fu">::</span><span class="fu"><a href="http://boxuancui.github.io/DataExplorer/reference/plot_bar.html">plot_bar</a></span><span class="op">(</span><span class="va">ikikategorili</span><span class="op">)</span></span></code></pre></div>
 <p><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-6-2.png" width="100%" style="display: block; margin: auto;"></p>
 <ul>
 <li>Veriyi 1-0 olarak puanlamak için <strong>key2binary()</strong>
 fonksiyonunu kullanabilirsiniz.</li>
 </ul>
-<div class="sourceCode" id="cb664"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb666"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"import/veri.csv"</span><span class="op">)</span><span class="op">[</span>,<span class="op">-</span><span class="fl">1</span><span class="op">]</span></span></code></pre></div>
 <pre><code>## Rows: 262 Columns: 13
 ## ── Column specification ────────────────────────────────────────────────────────
@@ -248,12 +248,12 @@ fonksiyonunu kullanabilirsiniz.</li>
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb666"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb668"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">veri</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">veri</span>,<span class="va">as.character</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/philchalmers/mirt">mirt</a></span><span class="op">)</span></span>
 <span><span class="va">dat1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/key2binary.html">key2binary</a></span><span class="op">(</span><span class="va">veri</span>,</span>
 <span>    key <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"2"</span>,<span class="st">"3"</span>,<span class="st">"4"</span>,<span class="st">"5"</span>,<span class="st">"2"</span>,<span class="st">"3"</span>,<span class="st">"4"</span>,<span class="st">"5"</span>,<span class="st">"2"</span>,<span class="st">"3"</span>,<span class="st">"4"</span>,<span class="st">"5"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb667"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb669"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">veri</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##      Rot1_2 Rot1_3 Rot1_4 Rot1_5 Rot2_2
 ## [1,] "2"    "1"    "0"    "0"    "0"   
@@ -262,7 +262,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 ## [4,] "2"    "2"    "3"    "1"    "2"   
 ## [5,] "2"    "3"    "4"    "5"    "2"   
 ## [6,] "2"    "3"    "0"    "2"    "2"</code></pre>
-<div class="sourceCode" id="cb669"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb671"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dat1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##      Rot1_2 Rot1_3 Rot1_4 Rot1_5 Rot2_2 Rot2_3 Rot2_4 Rot2_5 Rot3_2 Rot3_3
 ## [1,]      1      0      0      0      0      1      0      0      0      0
@@ -282,7 +282,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <h3>
 <span class="header-section-number">18.2.1</span> Madde Istatistikleri<a class="anchor" aria-label="anchor" href="#madde-istatistikleri"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb671"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb673"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/mirt/man/itemstats.html">itemstats</a></span><span class="op">(</span><span class="va">ikikategorili</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## $overall
 ##     N mean_total.score sd_total.score ave.r sd.r alpha
@@ -332,7 +332,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <li><p>mirt paketinin <strong>mirt()</strong> fonksiyonu temel olarak data ve model olarak iki argümanla çalışır.</p></li>
 <li><p><strong>ikikategorili</strong> veri setinin <strong>birpl_model</strong> modeli için testi aşağıdaki gibi yapılabilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb673"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb675"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">birpl_model</span> <span class="op">&lt;-</span> <span class="st">"F = 1-15</span></span>
 <span><span class="st">                CONSTRAIN = (1-15, a1)"</span></span>
 <span><span class="va">birpl_uyum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ikikategorili</span>, model <span class="op">=</span> <span class="va">birpl_model</span>,SE<span class="op">=</span><span class="cn">TRUE</span>,</span>
@@ -353,7 +353,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <li>Tek boyutluluk tek boyutlu MTK modelleri, tüm maddelerin tek bir sürekli gizli değişkeni ölçtüğünü varsayar.</li>
 <li>Tek boyutluluk varsayımını test etmenin farklı yolları vardır. Örneğin, kavramsal olarak genel bir faktör tarafından hesaplanan ölçek puanlarındaki varyans yüzdesini yansıtan McDonald's hiyerarşik Omega'sını değerlendirebiliriz.</li>
 </ul>
-<div class="sourceCode" id="cb674"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb676"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/omega.html">omega</a></span><span class="op">(</span><span class="va">ikikategorili</span>, plot <span class="op">=</span> <span class="cn">F</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Omega 
@@ -381,7 +381,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 ## Omega total for total scores and subscales    0.74 0.60 0.53 0.39
 ## Omega general for total scores and subscales  0.58 0.36 0.43 0.26
 ## Omega group for total scores and subscales    0.09 0.25 0.09 0.14</code></pre>
-<div class="sourceCode" id="cb676"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb678"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">birpl_uyum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ikikategorili</span>, model <span class="op">=</span> <span class="va">birpl_model</span>,SE<span class="op">=</span><span class="cn">TRUE</span>,</span>
 <span>                    verbose<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <ul>
@@ -390,7 +390,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <li>ve j. maddelerinden elde edilen artıklar arasındaki korelasyon matrisi</li>
 </ol></li>
 </ul>
-<div class="sourceCode" id="cb677"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb679"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">Q3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">birpl_uyum</span>, type <span class="op">=</span> <span class="st">'Q3'</span>, method <span class="op">=</span> <span class="st">'ML'</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Q3 summary statistics:
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -431,7 +431,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <ul>
 <li>Yen .20'den yüksek korelasyonlara problemli olarak yaklaşmayı tavsiye etmiştir.</li>
 </ul>
-<div class="sourceCode" id="cb679"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb681"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Q3</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/lower.tri.html">lower.tri</a></span><span class="op">(</span><span class="va">Q3</span>,diag <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="cn">NA</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">Q3</span><span class="op">)</span> <span class="op">&gt;</span><span class="fl">0.2</span>,na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
@@ -440,7 +440,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <h3>
 <span class="header-section-number">18.2.4</span> Model Uyumu<a class="anchor" aria-label="anchor" href="#model-uyumu"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb681"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb683"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/M2.html">M2</a></span><span class="op">(</span><span class="va">birpl_uyum</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -489,7 +489,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <li><p><strong>SRMSR &lt;= .08</strong> kullanılarak verilerin modelin iyi uyum <strong>sağlamadığını</strong> göstermektedir.</p></li>
 </ul>
 <p>Madde uyumlarına baktığımızda özellikle V1, V2 maddelerinde yüksek ki-kare ve ve RMSEA değerleri gözlenmektedir.</p>
-<div class="sourceCode" id="cb682"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb684"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/mirt/man/itemfit.html">itemfit</a></span><span class="op">(</span><span class="va">birpl_uyum</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>digits<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
@@ -618,7 +618,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <li><p>Çok boyutlu MTK'da yer alan, eğim ve kesişim parametrelerini geleneksel MTK parametrelerine dönüştürmek için <strong>IRTpars</strong> argümanı <strong>TRUE</strong> değeri ile kullanılır.</p></li>
 <li><p><strong>simplify</strong> argümanı <strong>TRUE</strong> değeri ile kullanıldığında parametreler liste yapısı yerine veri seti olarak elde edilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb683"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb685"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">birpl_model</span> <span class="op">&lt;-</span> <span class="st">"F = 1-15</span></span>
 <span><span class="st">                CONSTRAIN = (1-15, a1)"</span></span>
 <span><span class="va">birpl_uyum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ikikategorili</span>, model <span class="op">=</span> <span class="va">birpl_model</span>,</span>
@@ -626,7 +626,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <ul>
 <li>parametre kestirimlerini olusturulan <strong>birpl_par</strong> nesnesinin <strong>items</strong> bileşeninden alabiliriz.</li>
 </ul>
-<div class="sourceCode" id="cb684"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb686"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">birpl_par</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">birpl_uyum</span>, </span>
 <span>                  IRTpars <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>                  simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -660,7 +660,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb686"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb688"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">birpl_par</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">birpl_uyum</span>, </span>
 <span>                  IRTpars <span class="op">=</span> <span class="cn">TRUE</span>, </span>
 <span>                  simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -696,18 +696,18 @@ fonksiyonunu kullanabilirsiniz.</li>
 <li>
 <strong>plot()</strong> fonksiyonu ile oluşturulan nesne içindeki maddeler için tek tek ya da istenilen maddeler için MKE çizdirilebilir.</li>
 </ul>
-<div class="sourceCode" id="cb688"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb690"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">birpl_uyum</span>,type <span class="op">=</span> <span class="st">"trace"</span>, which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
 <li><p>mirt paketi grafik çiziminde <strong>lattice</strong> paketini kullanmaktadır. lattice paketi özellikleri ile grafiklerinizi özelleştirebilirsiniz.</p></li>
 <li><p>Panelin oluşum şekli <strong>layout</strong> argümanı ile x ekseni limitlerini ise <strong>theta_lim</strong> argümanı ile değiştirilebilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb689"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb691"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">birpl_uyum</span>, type <span class="op">=</span> <span class="st">"trace"</span>, which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span>,</span>
 <span>     layout<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">3</span><span class="op">)</span>,theta_lim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">4</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-22-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb690"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb692"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">birpl_uyum</span>,</span>
 <span>     type <span class="op">=</span> <span class="st">"trace"</span>, </span>
 <span>which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span>, </span>
@@ -722,7 +722,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <li><p>Böylece çoktan seçmeli maddelerde <strong>düşük yetenek düzeyine</strong> sahip bireylerin <strong>tahmin olasılığına izin verilmez.</strong> Tahmin olmaması sayıltısı çoktan-seçmeli maddeleri içeren bir testin çok kolay olduğu durumlarda karşılanabilir.</p></li>
 <li><p><strong>facet_items</strong> argümanının FALSE değeri ile tüm maddelerin MKE tek bir grafikte elde edilebilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb691"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb693"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">birpl_uyum</span>, type <span class="op">=</span> <span class="st">"trace"</span>, which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span>,</span>
 <span>facet_items <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-25-1.png" width="100%" style="display: block; margin: auto;"></div>
@@ -735,18 +735,18 @@ fonksiyonunu kullanabilirsiniz.</li>
 <ul>
 <li>Modelin hazırlanması</li>
 </ul>
-<div class="sourceCode" id="cb692"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb694"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ikipl_model</span> <span class="op">&lt;-</span> <span class="st">"F = 1 - 15"</span></span></code></pre></div>
 <ul>
 <li>Modelin testi</li>
 </ul>
-<div class="sourceCode" id="cb693"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb695"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ikipl_uyum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ikikategorili</span>, model <span class="op">=</span> <span class="va">ikipl_model</span>,</span>
 <span>itemtype <span class="op">=</span> <span class="st">"2PL"</span>, SE<span class="op">=</span><span class="cn">TRUE</span>,  verbose<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>2-PL Model için Model Uyum</li>
 </ul>
-<div class="sourceCode" id="cb694"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb696"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/mirt/man/M2.html">M2</a></span><span class="op">(</span><span class="va">ikipl_uyum</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -791,7 +791,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <ul>
 <li>2-PL Model için Madde Uyum</li>
 </ul>
-<div class="sourceCode" id="cb695"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb697"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/mirt/man/itemfit.html">itemfit</a></span><span class="op">(</span><span class="va">ikipl_uyum</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -914,12 +914,12 @@ fonksiyonunu kullanabilirsiniz.</li>
 <ul>
 <li>2-PL Model Parametrelerin incelenmesi</li>
 </ul>
-<div class="sourceCode" id="cb696"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb698"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ikipl_par</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, IRTpars <span class="op">=</span> <span class="cn">TRUE</span>, simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Madde parametreleri oluşturulan nesnenin <strong>items</strong> bileşeninde yer almaktadır.</li>
 </ul>
-<div class="sourceCode" id="cb697"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb699"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ikipl_par</span><span class="op">$</span><span class="va">items</span></span></code></pre></div>
 <pre><code>##              a           b g u
 ## V1   4.9770527  0.97389708 0 1
@@ -940,10 +940,10 @@ fonksiyonunu kullanabilirsiniz.</li>
 <ul>
 <li>2-PL Model MKE</li>
 </ul>
-<div class="sourceCode" id="cb699"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb701"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, type <span class="op">=</span> <span class="st">"trace"</span>, which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-32-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb700"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb702"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, type <span class="op">=</span> <span class="st">"trace"</span>, which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span>,facet_items <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>     abline<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-33-1.png" width="100%" style="display: block; margin: auto;"></div>
@@ -955,23 +955,23 @@ fonksiyonunu kullanabilirsiniz.</li>
 <ul>
 <li>Modelin hazırlanması</li>
 </ul>
-<div class="sourceCode" id="cb701"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb703"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ucpl_model</span> <span class="op">&lt;-</span> <span class="st">"F = 1 - 15"</span></span></code></pre></div>
 <ul>
 <li>Modelin testi</li>
 </ul>
-<div class="sourceCode" id="cb702"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb704"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ucpl_uyum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/mirt.html">mirt</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">ikikategorili</span>, model <span class="op">=</span> <span class="va">ucpl_model</span>,</span>
 <span>itemtype <span class="op">=</span> <span class="st">"3PL"</span>, verbose<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>Parametrelerin incelenmesi</li>
 </ul>
-<div class="sourceCode" id="cb703"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb705"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ucpl_par</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">ucpl_uyum</span>, IRTpars <span class="op">=</span> <span class="cn">TRUE</span>, simplify <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li>3-PL Model için Model Uyum</li>
 </ul>
-<div class="sourceCode" id="cb704"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb706"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/mirt/man/M2.html">M2</a></span><span class="op">(</span><span class="va">ucpl_uyum</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1016,7 +1016,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <ul>
 <li>3-PL Model için Madde Uyum</li>
 </ul>
-<div class="sourceCode" id="cb705"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb707"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/mirt/man/itemfit.html">itemfit</a></span><span class="op">(</span><span class="va">ucpl_uyum</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
@@ -1140,7 +1140,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 <li><p>3-PL Model Madde Parametreleri</p></li>
 <li><p>Madde parametreleri oluşturulan nesnenin <strong>items</strong> bileşeninde yer almaktadır.</p></li>
 </ul>
-<div class="sourceCode" id="cb706"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb708"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ucpl_par</span><span class="op">$</span><span class="va">items</span></span></code></pre></div>
 <pre><code>##              a          b            g u
 ## V1   5.0095769  0.9730634 6.856953e-05 1
@@ -1161,10 +1161,10 @@ fonksiyonunu kullanabilirsiniz.</li>
 <ul>
 <li>3-PL Model MKE</li>
 </ul>
-<div class="sourceCode" id="cb708"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb710"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ucpl_uyum</span>, type <span class="op">=</span> <span class="st">"trace"</span>, which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-40-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb709"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb711"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ucpl_uyum</span>, type <span class="op">=</span> <span class="st">"trace"</span>, which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span>,facet_items <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>     abline<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>h<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-41-1.png" width="100%" style="display: block; margin: auto;"></div>
@@ -1182,16 +1182,16 @@ fonksiyonunu kullanabilirsiniz.</li>
 <li><p><strong>fscores()</strong> fonksiyonunun birinci argümanı object olup bu argümanın değeri <strong>mirt()</strong> fonksiyonunun çıktısı olarak kaydedilen nesnelerdir. Kestirim yönteminin türü method argümanıyla maksimum olabilirlik (ML) olarak belirlenmiştir.</p></li>
 <li><p>full.scores.SE argümanı için de TRUE değeri seçilerek kestirimlerin standart hataları istenebilir.</p></li>
 </ul>
-<div class="sourceCode" id="cb710"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb712"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ML</span>   <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/fscores.html">fscores</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, method<span class="op">=</span><span class="st">"ML"</span>,full.scores.SE<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Warning: The following factor score estimates failed to converge successfully:
 ##     112,568,796,959</code></pre>
-<div class="sourceCode" id="cb712"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb714"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">MAP</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/fscores.html">fscores</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, method<span class="op">=</span><span class="st">"MAP"</span>, full.scores.SE<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">EAP</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/fscores.html">fscores</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, method<span class="op">=</span><span class="st">"EAP"</span>,full.scores.SE<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div style="display: flex; justify-content: space-between;">
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb713"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb715"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ML</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##                F      SE_F
 ## [1,]  0.73603270 0.3806593
@@ -1202,7 +1202,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 ## [6,] -0.03367516 0.6027560</code></pre>
 </div>
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb715"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb717"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">MAP</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##               F      SE_F
 ## [1,]  0.6355854 0.3844652
@@ -1213,7 +1213,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 ## [6,] -0.0247113 0.5156826</code></pre>
 </div>
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb717"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb719"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">EAP</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##                F      SE_F
 ## [1,]  0.55522250 0.4072993
@@ -1224,7 +1224,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 ## [6,] -0.07368355 0.4928855</code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb719"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb721"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yetenek</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>ML<span class="op">=</span> <span class="va">ML</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>,MAP<span class="op">=</span><span class="va">MAP</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>,EAP<span class="op">=</span><span class="va">EAP</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="va">yetenek</span>,<span class="fl">2</span>,<span class="va">summary</span><span class="op">)</span></span></code></pre></div>
@@ -1235,7 +1235,7 @@ fonksiyonunu kullanabilirsiniz.</li>
 ## Mean           -Inf  0.02283950 -5.416872e-05
 ## 3rd Qu.  0.70642942  0.60541014  5.217741e-01
 ## Max.    19.99988027  2.20150199  2.295843e+00</code></pre>
-<div class="sourceCode" id="cb721"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb723"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yetenek_v1</span> <span class="op">&lt;-</span> <span class="va">yetenek</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/is.finite.html">is.infinite</a></span><span class="op">(</span><span class="va">yetenek</span><span class="op">$</span><span class="va">ML</span><span class="op">)</span>,<span class="op">]</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/apply.html">apply</a></span><span class="op">(</span><span class="va">yetenek_v1</span>,<span class="fl">2</span>,<span class="va">summary</span><span class="op">)</span></span></code></pre></div>
@@ -1246,16 +1246,16 @@ fonksiyonunu kullanabilirsiniz.</li>
 ## Mean     0.01367254  0.02538771  0.002515182
 ## 3rd Qu.  0.70642987  0.60541034  0.521774267
 ## Max.    19.99988027  2.20150199  2.295843371</code></pre>
-<div class="sourceCode" id="cb723"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb725"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">yetenek_v1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##            ML       MAP       EAP
 ## ML  1.0000000 0.8166070 0.8172591
 ## MAP 0.8166070 1.0000000 0.9982609
 ## EAP 0.8172591 0.9982609 1.0000000</code></pre>
-<div class="sourceCode" id="cb725"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb727"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/pairs.html">pairs</a></span><span class="op">(</span><span class="va">yetenek_v1</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-49-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb726"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb728"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">birpl_uyum</span>,<span class="va">ikipl_uyum</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>,<span class="va">ucpl_uyum</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
@@ -1374,21 +1374,21 @@ fonksiyonunu kullanabilirsiniz.</li>
 </ul>
 <div style="display: flex; justify-content: space-between;">
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb727"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb729"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">birpl_uyum</span>, </span>
 <span>type <span class="op">=</span> <span class="st">"infotrace"</span>, </span>
 <span>which.items <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-51-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb728"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb730"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, </span>
 <span>type <span class="op">=</span> <span class="st">"infotrace"</span>, </span>
 <span>which.items <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-52-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb729"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb731"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ucpl_uyum</span>, </span>
 <span>type <span class="op">=</span> <span class="st">"infotrace"</span>, </span>
 <span>which.items <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
@@ -1397,21 +1397,21 @@ fonksiyonunu kullanabilirsiniz.</li>
 </div>
 <div style="display: flex; justify-content: space-between;">
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb730"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb732"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, </span>
 <span>type <span class="op">=</span> <span class="st">"infotrace"</span>, </span>
 <span>which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span>, layout<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-54-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb731"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb733"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, </span>
 <span>type <span class="op">=</span> <span class="st">"infotrace"</span>, </span>
 <span>which.items <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">15</span>, layout<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-55-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div class="sourceCode" id="cb732"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb734"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">madde1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/extract.item.html">extract.item</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">Theta</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">6</span>,<span class="fl">6</span>, by <span class="op">=</span> <span class="fl">.1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">info.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/iteminfo.html">iteminfo</a></span><span class="op">(</span><span class="va">madde1</span>, <span class="va">Theta</span><span class="op">)</span></span>
@@ -1419,32 +1419,32 @@ fonksiyonunu kullanabilirsiniz.</li>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-56-1.png" width="100%" style="display: block; margin: auto;"></div>
 <div style="display: flex; justify-content: space-between;">
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb733"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb735"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tinfo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/testinfo.html">testinfo</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, </span>
 <span><span class="va">Theta</span>,which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">Theta</span>, <span class="va">tinfo</span>, type <span class="op">=</span> <span class="st">'l'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb734"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb736"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tinfo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/testinfo.html">testinfo</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, </span>
 <span><span class="va">Theta</span>,which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">Theta</span>, <span class="va">tinfo</span>, type <span class="op">=</span> <span class="st">'l'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-58-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 <div style="flex: 1; margin-right: 1cm;">
-<div class="sourceCode" id="cb735"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb737"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tinfo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/testinfo.html">testinfo</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, </span>
 <span><span class="va">Theta</span>,which.items <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">15</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">Theta</span>, <span class="va">tinfo</span>, type <span class="op">=</span> <span class="st">'l'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-59-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div class="sourceCode" id="cb736"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb738"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tinfo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/mirt/man/testinfo.html">testinfo</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, <span class="va">Theta</span>,which.items <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">:</span><span class="fl">5</span>,<span class="fl">7</span><span class="op">:</span><span class="fl">10</span>,<span class="fl">11</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">Theta</span>, <span class="va">tinfo</span>, type <span class="op">=</span> <span class="st">'l'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-60-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb737"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb739"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ikipl_uyum</span>, type<span class="op">=</span><span class="st">'infoSE'</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="17_MTK_uygulama_files/figure-html/unnamed-chunk-61-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
