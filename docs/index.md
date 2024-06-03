@@ -2,7 +2,7 @@
 title: "OLC733" # edit
 subtitle: "R ile Çok Değişkenli İstatistik ve Ölçme Uygulamaları" 
 author: "Kubra Atalay Kabasakal" # edit
-date: "2024-05-27"
+date: "2024-06-03"
 site: bookdown::bookdown_site
 documentclass: book
 classoption: oneside # for PDFs
